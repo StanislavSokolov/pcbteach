@@ -17,7 +17,7 @@
 // PROGRAM "Quartus Prime"
 // VERSION "Version 22.1std.0 Build 915 10/25/2022 SC Standard Edition"
 
-// DATE "01/16/2024 19:35:16"
+// DATE "01/18/2024 16:48:01"
 
 // 
 // Device: Altera EP4CE10E22C8 Package TQFP144
@@ -59,10 +59,9 @@ tri1 devpor;
 tri1 devoe;
 wire \pin_name3~output_o ;
 wire \pin_name4~output_o ;
-wire \pin_name1~input_o ;
 wire \pin_name2~input_o ;
-wire \inst~combout ;
-wire \inst1~combout ;
+wire \pin_name1~input_o ;
+wire \inst4~combout ;
 
 
 hard_block auto_generated_inst(
@@ -72,7 +71,7 @@ hard_block auto_generated_inst(
 
 // Location: IOOBUF_X34_Y9_N16
 cycloneive_io_obuf \pin_name3~output (
-	.i(\inst~combout ),
+	.i(!\inst4~combout ),
 	.oe(vcc),
 	.seriesterminationcontrol(16'b0000000000000000),
 	.devoe(devoe),
@@ -85,7 +84,7 @@ defparam \pin_name3~output .open_drain_output = "false";
 
 // Location: IOOBUF_X34_Y9_N9
 cycloneive_io_obuf \pin_name4~output (
-	.i(\inst1~combout ),
+	.i(!\inst4~combout ),
 	.oe(vcc),
 	.seriesterminationcontrol(16'b0000000000000000),
 	.devoe(devoe),
@@ -94,16 +93,6 @@ cycloneive_io_obuf \pin_name4~output (
 // synopsys translate_off
 defparam \pin_name4~output .bus_hold = "false";
 defparam \pin_name4~output .open_drain_output = "false";
-// synopsys translate_on
-
-// Location: IOIBUF_X34_Y12_N22
-cycloneive_io_ibuf \pin_name1~input (
-	.i(pin_name1),
-	.ibar(gnd),
-	.o(\pin_name1~input_o ));
-// synopsys translate_off
-defparam \pin_name1~input .bus_hold = "false";
-defparam \pin_name1~input .simulate_z_as = "z";
 // synopsys translate_on
 
 // Location: IOIBUF_X34_Y12_N15
@@ -116,38 +105,31 @@ defparam \pin_name2~input .bus_hold = "false";
 defparam \pin_name2~input .simulate_z_as = "z";
 // synopsys translate_on
 
-// Location: LCCOMB_X32_Y9_N0
-cycloneive_lcell_comb inst(
-// Equation(s):
-// \inst~combout  = \pin_name1~input_o  $ (\pin_name2~input_o )
-
-	.dataa(gnd),
-	.datab(gnd),
-	.datac(\pin_name1~input_o ),
-	.datad(\pin_name2~input_o ),
-	.cin(gnd),
-	.combout(\inst~combout ),
-	.cout());
+// Location: IOIBUF_X34_Y12_N22
+cycloneive_io_ibuf \pin_name1~input (
+	.i(pin_name1),
+	.ibar(gnd),
+	.o(\pin_name1~input_o ));
 // synopsys translate_off
-defparam inst.lut_mask = 16'h0FF0;
-defparam inst.sum_lutc_input = "datac";
+defparam \pin_name1~input .bus_hold = "false";
+defparam \pin_name1~input .simulate_z_as = "z";
 // synopsys translate_on
 
-// Location: LCCOMB_X32_Y9_N2
-cycloneive_lcell_comb inst1(
+// Location: LCCOMB_X32_Y11_N0
+cycloneive_lcell_comb inst4(
 // Equation(s):
-// \inst1~combout  = (\pin_name1~input_o ) # (\pin_name2~input_o )
+// \inst4~combout  = (\pin_name2~input_o ) # (\pin_name1~input_o )
 
-	.dataa(gnd),
+	.dataa(\pin_name2~input_o ),
 	.datab(gnd),
-	.datac(\pin_name1~input_o ),
-	.datad(\pin_name2~input_o ),
+	.datac(gnd),
+	.datad(\pin_name1~input_o ),
 	.cin(gnd),
-	.combout(\inst1~combout ),
+	.combout(\inst4~combout ),
 	.cout());
 // synopsys translate_off
-defparam inst1.lut_mask = 16'hFFF0;
-defparam inst1.sum_lutc_input = "datac";
+defparam inst4.lut_mask = 16'hFFAA;
+defparam inst4.sum_lutc_input = "datac";
 // synopsys translate_on
 
 assign pin_name3 = \pin_name3~output_o ;
