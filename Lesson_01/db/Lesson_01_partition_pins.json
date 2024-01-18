@@ -12,10 +12,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "pin_name1",
-					"strict" : false
-				},
-				{
 					"name" : "pin_name2",
 					"strict" : false
 				}
