@@ -17,7 +17,7 @@
 // PROGRAM "Quartus Prime"
 // VERSION "Version 22.1std.0 Build 915 10/25/2022 SC Standard Edition"
 
-// DATE "01/18/2024 17:33:17"
+// DATE "01/18/2024 17:40:51"
 
 // 
 // Device: Altera EP4CE10E22C8 Package TQFP144
@@ -31,19 +31,13 @@
 
 module Lesson_01 (
 	pin_name3,
-	pin_name1,
-	pin_name2,
-	pin_name4);
+	pin_name1);
 output 	pin_name3;
 input 	pin_name1;
-input 	pin_name2;
-output 	pin_name4;
 
 // Design Ports Information
 // pin_name3	=>  Location: PIN_84,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 8mA
 // pin_name1	=>  Location: PIN_88,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
-// pin_name4	=>  Location: PIN_85,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 8mA
-// pin_name2	=>  Location: PIN_89,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
 
 
 wire gnd;
@@ -59,8 +53,6 @@ tri1 devpor;
 tri1 devoe;
 wire \pin_name1~input_o ;
 wire \pin_name3~output_o ;
-wire \pin_name4~output_o ;
-wire \pin_name2~input_o ;
 
 
 hard_block auto_generated_inst(
@@ -70,7 +62,7 @@ hard_block auto_generated_inst(
 
 // Location: IOOBUF_X34_Y9_N16
 cycloneive_io_obuf \pin_name3~output (
-	.i(\pin_name2~input_o ),
+	.i(gnd),
 	.oe(vcc),
 	.seriesterminationcontrol(16'b0000000000000000),
 	.devoe(devoe),
@@ -79,29 +71,6 @@ cycloneive_io_obuf \pin_name3~output (
 // synopsys translate_off
 defparam \pin_name3~output .bus_hold = "false";
 defparam \pin_name3~output .open_drain_output = "false";
-// synopsys translate_on
-
-// Location: IOOBUF_X34_Y9_N9
-cycloneive_io_obuf \pin_name4~output (
-	.i(\pin_name2~input_o ),
-	.oe(vcc),
-	.seriesterminationcontrol(16'b0000000000000000),
-	.devoe(devoe),
-	.o(\pin_name4~output_o ),
-	.obar());
-// synopsys translate_off
-defparam \pin_name4~output .bus_hold = "false";
-defparam \pin_name4~output .open_drain_output = "false";
-// synopsys translate_on
-
-// Location: IOIBUF_X34_Y12_N15
-cycloneive_io_ibuf \pin_name2~input (
-	.i(pin_name2),
-	.ibar(gnd),
-	.o(\pin_name2~input_o ));
-// synopsys translate_off
-defparam \pin_name2~input .bus_hold = "false";
-defparam \pin_name2~input .simulate_z_as = "z";
 // synopsys translate_on
 
 // Location: IOIBUF_X34_Y12_N22
@@ -115,8 +84,6 @@ defparam \pin_name1~input .simulate_z_as = "z";
 // synopsys translate_on
 
 assign pin_name3 = \pin_name3~output_o ;
-
-assign pin_name4 = \pin_name4~output_o ;
 
 endmodule
 

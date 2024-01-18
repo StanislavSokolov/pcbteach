@@ -1,4 +1,4 @@
-Analysis & Synthesis Status : Successful - Thu Jan 18 17:33:07 2024
+Analysis & Synthesis Status : Successful - Thu Jan 18 17:40:43 2024
 Quartus Prime Version : 22.1std.0 Build 915 10/25/2022 SC Standard Edition
 Revision Name : Lesson_01
 Top-level Entity Name : Lesson_01
@@ -7,7 +7,7 @@ Total logic elements : 0
     Total combinational functions : 0
     Dedicated logic registers : 0
 Total registers : 0
-Total pins : 4
+Total pins : 2
 Total virtual pins : 0
 Total memory bits : 0
 Embedded Multiplier 9-bit elements : 0
