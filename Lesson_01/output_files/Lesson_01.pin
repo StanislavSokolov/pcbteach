@@ -152,12 +152,12 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : 80        :        :                   :      
 VCCIO5                       : 81        : power  :                   : 3.3V    : 5         :                
 GND                          : 82        : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 83        :        :                   :         : 5         :                
-pin_name3                    : 84        : output : 3.3-V LVTTL       :         : 5         : Y              
-pin_name4                    : 85        : output : 3.3-V LVTTL       :         : 5         : Y              
+C                            : 84        : output : 3.3-V LVTTL       :         : 5         : Y              
+D                            : 85        : output : 3.3-V LVTTL       :         : 5         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : 86        :        :                   :         : 5         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 87        :        :                   :         : 5         :                
-pin_name1                    : 88        : input  : 3.3-V LVTTL       :         : 5         : Y              
-pin_name2                    : 89        : input  : 3.3-V LVTTL       :         : 5         : Y              
+A                            : 88        : input  : 3.3-V LVTTL       :         : 5         : Y              
+B                            : 89        : input  : 3.3-V LVTTL       :         : 5         : Y              
 GND+                         : 90        :        :                   :         : 6         :                
 GND+                         : 91        :        :                   :         : 6         :                
 CONF_DONE                    : 92        :        :                   :         : 6         :                

@@ -17,7 +17,7 @@
 // PROGRAM "Quartus Prime"
 // VERSION "Version 22.1std.0 Build 915 10/25/2022 SC Standard Edition"
 
-// DATE "01/18/2024 16:48:01"
+// DATE "01/24/2024 15:38:29"
 
 // 
 // Device: Altera EP4CE10E22C8 Package TQFP144
@@ -30,20 +30,20 @@
 `timescale 1 ps/ 1 ps
 
 module Lesson_01 (
-	pin_name3,
-	pin_name1,
-	pin_name2,
-	pin_name4);
-output 	pin_name3;
-input 	pin_name1;
-input 	pin_name2;
-output 	pin_name4;
+	C,
+	A,
+	B,
+	D);
+output 	C;
+input 	A;
+input 	B;
+output 	D;
 
 // Design Ports Information
-// pin_name3	=>  Location: PIN_84,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 8mA
-// pin_name4	=>  Location: PIN_85,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 8mA
-// pin_name1	=>  Location: PIN_88,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
-// pin_name2	=>  Location: PIN_89,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+// C	=>  Location: PIN_84,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 8mA
+// D	=>  Location: PIN_85,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 8mA
+// A	=>  Location: PIN_88,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+// B	=>  Location: PIN_89,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
 
 
 wire gnd;
@@ -57,10 +57,10 @@ assign unknown = 1'bx;
 tri1 devclrn;
 tri1 devpor;
 tri1 devoe;
-wire \pin_name3~output_o ;
-wire \pin_name4~output_o ;
-wire \pin_name2~input_o ;
-wire \pin_name1~input_o ;
+wire \C~output_o ;
+wire \D~output_o ;
+wire \B~input_o ;
+wire \A~input_o ;
 wire \inst4~combout ;
 
 
@@ -70,60 +70,60 @@ hard_block auto_generated_inst(
 	.devoe(devoe));
 
 // Location: IOOBUF_X34_Y9_N16
-cycloneive_io_obuf \pin_name3~output (
+cycloneive_io_obuf \C~output (
 	.i(!\inst4~combout ),
 	.oe(vcc),
 	.seriesterminationcontrol(16'b0000000000000000),
 	.devoe(devoe),
-	.o(\pin_name3~output_o ),
+	.o(\C~output_o ),
 	.obar());
 // synopsys translate_off
-defparam \pin_name3~output .bus_hold = "false";
-defparam \pin_name3~output .open_drain_output = "false";
+defparam \C~output .bus_hold = "false";
+defparam \C~output .open_drain_output = "false";
 // synopsys translate_on
 
 // Location: IOOBUF_X34_Y9_N9
-cycloneive_io_obuf \pin_name4~output (
+cycloneive_io_obuf \D~output (
 	.i(!\inst4~combout ),
 	.oe(vcc),
 	.seriesterminationcontrol(16'b0000000000000000),
 	.devoe(devoe),
-	.o(\pin_name4~output_o ),
+	.o(\D~output_o ),
 	.obar());
 // synopsys translate_off
-defparam \pin_name4~output .bus_hold = "false";
-defparam \pin_name4~output .open_drain_output = "false";
+defparam \D~output .bus_hold = "false";
+defparam \D~output .open_drain_output = "false";
 // synopsys translate_on
 
 // Location: IOIBUF_X34_Y12_N15
-cycloneive_io_ibuf \pin_name2~input (
-	.i(pin_name2),
+cycloneive_io_ibuf \B~input (
+	.i(B),
 	.ibar(gnd),
-	.o(\pin_name2~input_o ));
+	.o(\B~input_o ));
 // synopsys translate_off
-defparam \pin_name2~input .bus_hold = "false";
-defparam \pin_name2~input .simulate_z_as = "z";
+defparam \B~input .bus_hold = "false";
+defparam \B~input .simulate_z_as = "z";
 // synopsys translate_on
 
 // Location: IOIBUF_X34_Y12_N22
-cycloneive_io_ibuf \pin_name1~input (
-	.i(pin_name1),
+cycloneive_io_ibuf \A~input (
+	.i(A),
 	.ibar(gnd),
-	.o(\pin_name1~input_o ));
+	.o(\A~input_o ));
 // synopsys translate_off
-defparam \pin_name1~input .bus_hold = "false";
-defparam \pin_name1~input .simulate_z_as = "z";
+defparam \A~input .bus_hold = "false";
+defparam \A~input .simulate_z_as = "z";
 // synopsys translate_on
 
 // Location: LCCOMB_X32_Y11_N0
 cycloneive_lcell_comb inst4(
 // Equation(s):
-// \inst4~combout  = (\pin_name2~input_o ) # (\pin_name1~input_o )
+// \inst4~combout  = (\B~input_o ) # (\A~input_o )
 
-	.dataa(\pin_name2~input_o ),
+	.dataa(\B~input_o ),
 	.datab(gnd),
 	.datac(gnd),
-	.datad(\pin_name1~input_o ),
+	.datad(\A~input_o ),
 	.cin(gnd),
 	.combout(\inst4~combout ),
 	.cout());
@@ -132,9 +132,9 @@ defparam inst4.lut_mask = 16'hFFAA;
 defparam inst4.sum_lutc_input = "datac";
 // synopsys translate_on
 
-assign pin_name3 = \pin_name3~output_o ;
+assign C = \C~output_o ;
 
-assign pin_name4 = \pin_name4~output_o ;
+assign D = \D~output_o ;
 
 endmodule
 
