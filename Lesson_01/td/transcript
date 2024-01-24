@@ -1,0 +1,25 @@
+# Compile of Lesson_01.vhd was successful.
+vsim -gui work.lesson_01
+# vsim -gui work.lesson_01 
+# Start time: 16:15:04 on Jan 24,2024
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.lesson_01(bdf_type)
+add wave -position end  sim:/lesson_01/A
+add wave -position end  sim:/lesson_01/B
+add wave -position end  sim:/lesson_01/C
+add wave -position end  sim:/lesson_01/D
+force -freeze sim:/lesson_01/A 0 0
+force -freeze sim:/lesson_01/B 0 0
+run
+force -freeze sim:/lesson_01/A 1 0
+force -freeze sim:/lesson_01/B 0 0
+run
+force -freeze sim:/lesson_01/B 1 0
+run
+force -freeze sim:/lesson_01/A 0 0
+run
+force -freeze sim:/lesson_01/B 0 0
+run
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf D:/GITEA/GitHub/ES/pcbteach/Lesson_01/td/wave.do
