@@ -1,6 +1,12 @@
 |Lesson_01
-pin_name3 <= inst.DB_MAX_OUTPUT_PORT_TYPE
-pin_name1 => inst2.IN0
-pin_name1 => inst.IN1
+FUN <= inst9.DB_MAX_OUTPUT_PORT_TYPE
+X => inst.IN0
+X => inst6.IN0
+X => inst2.IN0
+Y => inst.IN1
+Y => inst3.IN1
+Y => inst5.IN0
+Z => inst7.IN0
+Z => inst2.IN2
 
 
