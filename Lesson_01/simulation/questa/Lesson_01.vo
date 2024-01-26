@@ -17,7 +17,7 @@
 // PROGRAM "Quartus Prime"
 // VERSION "Version 22.1std.0 Build 915 10/25/2022 SC Standard Edition"
 
-// DATE "01/26/2024 15:08:45"
+// DATE "01/26/2024 16:03:07"
 
 // 
 // Device: Altera EP4CE10E22C8 Package TQFP144
@@ -33,14 +33,17 @@ module Lesson_01 (
 	FUN,
 	X,
 	Y,
-	Z);
+	Z,
+	FUNsimple);
 output 	FUN;
 input 	X;
 input 	Y;
 input 	Z;
+output 	FUNsimple;
 
 // Design Ports Information
 // FUN	=>  Location: PIN_84,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 8mA
+// FUNsimple	=>  Location: PIN_85,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 8mA
 // X	=>  Location: PIN_88,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
 // Y	=>  Location: PIN_89,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
 // Z	=>  Location: PIN_90,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
@@ -58,8 +61,9 @@ tri1 devclrn;
 tri1 devpor;
 tri1 devoe;
 wire \FUN~output_o ;
-wire \Y~input_o ;
+wire \FUNsimple~output_o ;
 wire \Z~input_o ;
+wire \Y~input_o ;
 wire \X~input_o ;
 wire \inst8~0_combout ;
 
@@ -82,14 +86,17 @@ defparam \FUN~output .bus_hold = "false";
 defparam \FUN~output .open_drain_output = "false";
 // synopsys translate_on
 
-// Location: IOIBUF_X34_Y12_N15
-cycloneive_io_ibuf \Y~input (
-	.i(Y),
-	.ibar(gnd),
-	.o(\Y~input_o ));
+// Location: IOOBUF_X34_Y9_N9
+cycloneive_io_obuf \FUNsimple~output (
+	.i(!\inst8~0_combout ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\FUNsimple~output_o ),
+	.obar());
 // synopsys translate_off
-defparam \Y~input .bus_hold = "false";
-defparam \Y~input .simulate_z_as = "z";
+defparam \FUNsimple~output .bus_hold = "false";
+defparam \FUNsimple~output .open_drain_output = "false";
 // synopsys translate_on
 
 // Location: IOIBUF_X34_Y12_N8
@@ -102,6 +109,16 @@ defparam \Z~input .bus_hold = "false";
 defparam \Z~input .simulate_z_as = "z";
 // synopsys translate_on
 
+// Location: IOIBUF_X34_Y12_N15
+cycloneive_io_ibuf \Y~input (
+	.i(Y),
+	.ibar(gnd),
+	.o(\Y~input_o ));
+// synopsys translate_off
+defparam \Y~input .bus_hold = "false";
+defparam \Y~input .simulate_z_as = "z";
+// synopsys translate_on
+
 // Location: IOIBUF_X34_Y12_N22
 cycloneive_io_ibuf \X~input (
 	.i(X),
@@ -112,24 +129,26 @@ defparam \X~input .bus_hold = "false";
 defparam \X~input .simulate_z_as = "z";
 // synopsys translate_on
 
-// Location: LCCOMB_X32_Y11_N0
+// Location: LCCOMB_X32_Y10_N0
 cycloneive_lcell_comb \inst8~0 (
 // Equation(s):
 // \inst8~0_combout  = \Z~input_o  $ (((\Y~input_o ) # (!\X~input_o )))
 
-	.dataa(\Y~input_o ),
+	.dataa(gnd),
 	.datab(\Z~input_o ),
-	.datac(gnd),
+	.datac(\Y~input_o ),
 	.datad(\X~input_o ),
 	.cin(gnd),
 	.combout(\inst8~0_combout ),
 	.cout());
 // synopsys translate_off
-defparam \inst8~0 .lut_mask = 16'h6633;
+defparam \inst8~0 .lut_mask = 16'h3C33;
 defparam \inst8~0 .sum_lutc_input = "datac";
 // synopsys translate_on
 
 assign FUN = \FUN~output_o ;
+
+assign FUNsimple = \FUNsimple~output_o ;
 
 endmodule
 

@@ -8,5 +8,6 @@ Y => inst3.IN1
 Y => inst5.IN0
 Z => inst7.IN0
 Z => inst2.IN2
+FUNsimple <= inst10.DB_MAX_OUTPUT_PORT_TYPE
 
 

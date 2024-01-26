@@ -8,6 +8,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "FUNsimple",
+					"strict" : false
+				},
+				{
 					"name" : "X",
 					"strict" : false
 				},
