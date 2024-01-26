@@ -17,7 +17,7 @@
 // PROGRAM "Quartus Prime"
 // VERSION "Version 22.1std.0 Build 915 10/25/2022 SC Standard Edition"
 
-// DATE "01/26/2024 16:11:36"
+// DATE "01/26/2024 16:15:27"
 
 // 
 // Device: Altera EP4CE10E22C8 Package TQFP144
@@ -32,17 +32,17 @@
 module Lesson_01 (
 	FUN,
 	B,
-	A,
-	C);
+	C,
+	A);
 output 	FUN;
 input 	B;
-input 	A;
 input 	C;
+input 	A;
 
 // Design Ports Information
 // FUN	=>  Location: PIN_84,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 8mA
-// B	=>  Location: PIN_89,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
 // C	=>  Location: PIN_90,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+// B	=>  Location: PIN_89,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
 // A	=>  Location: PIN_88,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
 
 
@@ -115,7 +115,7 @@ defparam \A~input .simulate_z_as = "z";
 // Location: LCCOMB_X32_Y11_N0
 cycloneive_lcell_comb \inst14~0 (
 // Equation(s):
-// \inst14~0_combout  = (\A~input_o  & (\B~input_o )) # (!\A~input_o  & ((\C~input_o )))
+// \inst14~0_combout  = (\C~input_o ) # ((\B~input_o  & \A~input_o ))
 
 	.dataa(\B~input_o ),
 	.datab(\C~input_o ),
@@ -125,7 +125,7 @@ cycloneive_lcell_comb \inst14~0 (
 	.combout(\inst14~0_combout ),
 	.cout());
 // synopsys translate_off
-defparam \inst14~0 .lut_mask = 16'hAACC;
+defparam \inst14~0 .lut_mask = 16'hEECC;
 defparam \inst14~0 .sum_lutc_input = "datac";
 // synopsys translate_on
 
