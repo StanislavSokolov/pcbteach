@@ -4,19 +4,19 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "FUN",
+					"name" : "S",
 					"strict" : false
 				},
 				{
-					"name" : "C",
-					"strict" : false
-				},
-				{
-					"name" : "B",
+					"name" : "P",
 					"strict" : false
 				},
 				{
 					"name" : "A",
+					"strict" : false
+				},
+				{
+					"name" : "B",
 					"strict" : false
 				}
 			]

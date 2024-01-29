@@ -1,29 +1,17 @@
 # Compile of Lesson_01.vhd was successful.
 vsim -gui work.lesson_01
 # vsim -gui work.lesson_01 
-# Start time: 16:15:04 on Jan 24,2024
+# Start time: 14:55:18 on Jan 29,2024
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
 # Loading work.lesson_01(bdf_type)
-add wave -position end  sim:/lesson_01/A
-add wave -position end  sim:/lesson_01/B
-add wave -position end  sim:/lesson_01/C
-add wave -position end  sim:/lesson_01/D
-force -freeze sim:/lesson_01/A 0 0
-force -freeze sim:/lesson_01/B 0 0
-run
-force -freeze sim:/lesson_01/A 1 0
-force -freeze sim:/lesson_01/B 0 0
-run
-force -freeze sim:/lesson_01/B 1 0
-run
-force -freeze sim:/lesson_01/A 0 0
-run
-force -freeze sim:/lesson_01/B 0 0
+add wave -position insertpoint sim:/lesson_01/*
+force -freeze sim:/lesson_01/A 1 0, 0 {50 ps} -r 100
+force -freeze sim:/lesson_01/B 1 0, 0 {100 ps} -r 200
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+force -freeze sim:/lesson_01/A 1 0, 0 {50 ps} -r 100
+force -freeze sim:/lesson_01/B 1 0, 0 {100 ps} -r 200
 run
 write format wave -window .main_pane.wave.interior.cs.body.pw.wf D:/GITEA/GitHub/ES/pcbteach/Lesson_01/td/wave.do
-# Project file D:/GITEA/GitHub/ES/pcbteach/Lesson_01/td/SimSkl.mpf is write protected, data cannot be saved.
-# Unable to save project.
-# End time: 16:22:12 on Jan 24,2024, Elapsed time: 0:07:08
-# Errors: 0, Warnings: 4

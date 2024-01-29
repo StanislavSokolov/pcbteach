@@ -17,7 +17,7 @@
 // PROGRAM "Quartus Prime"
 // VERSION "Version 22.1std.0 Build 915 10/25/2022 SC Standard Edition"
 
-// DATE "01/26/2024 16:15:27"
+// DATE "01/29/2024 14:52:35"
 
 // 
 // Device: Altera EP4CE10E22C8 Package TQFP144
@@ -30,20 +30,20 @@
 `timescale 1 ps/ 1 ps
 
 module Lesson_01 (
-	FUN,
+	S,
+	A,
 	B,
-	C,
-	A);
-output 	FUN;
-input 	B;
-input 	C;
+	P);
+output 	S;
 input 	A;
+input 	B;
+output 	P;
 
 // Design Ports Information
-// FUN	=>  Location: PIN_84,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 8mA
-// C	=>  Location: PIN_90,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
-// B	=>  Location: PIN_89,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+// S	=>  Location: PIN_84,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// P	=>  Location: PIN_85,	 I/O Standard: 2.5 V,	 Current Strength: Default
 // A	=>  Location: PIN_88,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+// B	=>  Location: PIN_89,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
 
 
 wire gnd;
@@ -57,11 +57,12 @@ assign unknown = 1'bx;
 tri1 devclrn;
 tri1 devpor;
 tri1 devoe;
-wire \FUN~output_o ;
-wire \B~input_o ;
-wire \C~input_o ;
+wire \S~output_o ;
+wire \P~output_o ;
 wire \A~input_o ;
-wire \inst14~0_combout ;
+wire \B~input_o ;
+wire \inst~combout ;
+wire \inst3~combout ;
 
 
 hard_block auto_generated_inst(
@@ -70,36 +71,29 @@ hard_block auto_generated_inst(
 	.devoe(devoe));
 
 // Location: IOOBUF_X34_Y9_N16
-cycloneive_io_obuf \FUN~output (
-	.i(!\inst14~0_combout ),
+cycloneive_io_obuf \S~output (
+	.i(\inst~combout ),
 	.oe(vcc),
 	.seriesterminationcontrol(16'b0000000000000000),
 	.devoe(devoe),
-	.o(\FUN~output_o ),
+	.o(\S~output_o ),
 	.obar());
 // synopsys translate_off
-defparam \FUN~output .bus_hold = "false";
-defparam \FUN~output .open_drain_output = "false";
+defparam \S~output .bus_hold = "false";
+defparam \S~output .open_drain_output = "false";
 // synopsys translate_on
 
-// Location: IOIBUF_X34_Y12_N15
-cycloneive_io_ibuf \B~input (
-	.i(B),
-	.ibar(gnd),
-	.o(\B~input_o ));
+// Location: IOOBUF_X34_Y9_N9
+cycloneive_io_obuf \P~output (
+	.i(\inst3~combout ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\P~output_o ),
+	.obar());
 // synopsys translate_off
-defparam \B~input .bus_hold = "false";
-defparam \B~input .simulate_z_as = "z";
-// synopsys translate_on
-
-// Location: IOIBUF_X34_Y12_N8
-cycloneive_io_ibuf \C~input (
-	.i(C),
-	.ibar(gnd),
-	.o(\C~input_o ));
-// synopsys translate_off
-defparam \C~input .bus_hold = "false";
-defparam \C~input .simulate_z_as = "z";
+defparam \P~output .bus_hold = "false";
+defparam \P~output .open_drain_output = "false";
 // synopsys translate_on
 
 // Location: IOIBUF_X34_Y12_N22
@@ -112,24 +106,53 @@ defparam \A~input .bus_hold = "false";
 defparam \A~input .simulate_z_as = "z";
 // synopsys translate_on
 
-// Location: LCCOMB_X32_Y11_N0
-cycloneive_lcell_comb \inst14~0 (
-// Equation(s):
-// \inst14~0_combout  = (\C~input_o ) # ((\B~input_o  & \A~input_o ))
-
-	.dataa(\B~input_o ),
-	.datab(\C~input_o ),
-	.datac(gnd),
-	.datad(\A~input_o ),
-	.cin(gnd),
-	.combout(\inst14~0_combout ),
-	.cout());
+// Location: IOIBUF_X34_Y12_N15
+cycloneive_io_ibuf \B~input (
+	.i(B),
+	.ibar(gnd),
+	.o(\B~input_o ));
 // synopsys translate_off
-defparam \inst14~0 .lut_mask = 16'hEECC;
-defparam \inst14~0 .sum_lutc_input = "datac";
+defparam \B~input .bus_hold = "false";
+defparam \B~input .simulate_z_as = "z";
 // synopsys translate_on
 
-assign FUN = \FUN~output_o ;
+// Location: LCCOMB_X32_Y9_N0
+cycloneive_lcell_comb inst(
+// Equation(s):
+// \inst~combout  = \A~input_o  $ (\B~input_o )
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(\A~input_o ),
+	.datad(\B~input_o ),
+	.cin(gnd),
+	.combout(\inst~combout ),
+	.cout());
+// synopsys translate_off
+defparam inst.lut_mask = 16'h0FF0;
+defparam inst.sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X32_Y9_N2
+cycloneive_lcell_comb inst3(
+// Equation(s):
+// \inst3~combout  = (\A~input_o  & \B~input_o )
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(\A~input_o ),
+	.datad(\B~input_o ),
+	.cin(gnd),
+	.combout(\inst3~combout ),
+	.cout());
+// synopsys translate_off
+defparam inst3.lut_mask = 16'hF000;
+defparam inst3.sum_lutc_input = "datac";
+// synopsys translate_on
+
+assign S = \S~output_o ;
+
+assign P = \P~output_o ;
 
 endmodule
 
@@ -144,7 +167,7 @@ module hard_block (
 // ~ALTERA_FLASH_nCE_nCSO~	=>  Location: PIN_8,	 I/O Standard: 2.5 V,	 Current Strength: Default
 // ~ALTERA_DCLK~	=>  Location: PIN_12,	 I/O Standard: 2.5 V,	 Current Strength: Default
 // ~ALTERA_DATA0~	=>  Location: PIN_13,	 I/O Standard: 2.5 V,	 Current Strength: Default
-// ~ALTERA_nCEO~	=>  Location: PIN_101,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 8mA
+// ~ALTERA_nCEO~	=>  Location: PIN_101,	 I/O Standard: 2.5 V,	 Current Strength: 8mA
 
 input 	devpor;
 input 	devclrn;
