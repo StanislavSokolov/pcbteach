@@ -1,12 +1,14 @@
-|FullAdder
-S <= HalfAdder:inst1.S
-P_ => HalfAdder:inst1.A
-A => HalfAdder:inst.A
-B => HalfAdder:inst.B
-P <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+|Task03
+Pout <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+A[0] => HalfAdder:inst.A
+A[1] => HalfAdder:inst4.A
+B[0] => HalfAdder:inst.B
+B[1] => HalfAdder:inst4.B
+S[0] <= HalfAdder:inst1.S
+S[1] <= HalfAdder:inst5.S
 
 
-|FullAdder|HalfAdder:inst1
+|Task03|HalfAdder:inst4
 S <= inst.DB_MAX_OUTPUT_PORT_TYPE
 A => inst.IN0
 A => inst3.IN0
@@ -15,7 +17,25 @@ B => inst3.IN1
 P <= inst3.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|FullAdder|HalfAdder:inst
+|Task03|HalfAdder:inst5
+S <= inst.DB_MAX_OUTPUT_PORT_TYPE
+A => inst.IN0
+A => inst3.IN0
+B => inst.IN1
+B => inst3.IN1
+P <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Task03|HalfAdder:inst
+S <= inst.DB_MAX_OUTPUT_PORT_TYPE
+A => inst.IN0
+A => inst3.IN0
+B => inst.IN1
+B => inst3.IN1
+P <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Task03|HalfAdder:inst1
 S <= inst.DB_MAX_OUTPUT_PORT_TYPE
 A => inst.IN0
 A => inst3.IN0

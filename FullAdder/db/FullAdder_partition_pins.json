@@ -4,23 +4,31 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "S",
+					"name" : "Pout",
 					"strict" : false
 				},
 				{
-					"name" : "P",
+					"name" : "S[1]",
 					"strict" : false
 				},
 				{
-					"name" : "P_",
+					"name" : "S[0]",
 					"strict" : false
 				},
 				{
-					"name" : "A",
+					"name" : "B[0]",
 					"strict" : false
 				},
 				{
-					"name" : "B",
+					"name" : "A[0]",
+					"strict" : false
+				},
+				{
+					"name" : "A[1]",
+					"strict" : false
+				},
+				{
+					"name" : "B[1]",
 					"strict" : false
 				}
 			]
