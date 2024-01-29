@@ -1,5 +1,5 @@
 Fitter report for Lesson_01
-Mon Jan 29 14:52:30 2024
+Mon Jan 29 16:03:48 2024
 Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Standard Edition
 
 
@@ -63,7 +63,7 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                          ;
 +------------------------------------+----------------------------------------------------+
-; Fitter Status                      ; Successful - Mon Jan 29 14:52:30 2024              ;
+; Fitter Status                      ; Successful - Mon Jan 29 16:03:48 2024              ;
 ; Quartus Prime Version              ; 22.1std.0 Build 915 10/25/2022 SC Standard Edition ;
 ; Revision Name                      ; Lesson_01                                          ;
 ; Top-level Entity Name              ; Lesson_01                                          ;
@@ -808,8 +808,8 @@ Warning (169177): 2 pins must meet Intel FPGA requirements for 3.3-, 3.0-, and 2
     Info (169178): Pin B uses I/O standard 3.3-V LVTTL at 89
 Info (144001): Generated suppressed messages file D:/GITEA/GitHub/ES/pcbteach/Lesson_01/output_files/Lesson_01.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 5532 megabytes
-    Info: Processing ended: Mon Jan 29 14:52:30 2024
+    Info: Peak virtual memory: 5528 megabytes
+    Info: Processing ended: Mon Jan 29 16:03:48 2024
     Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:03
 
