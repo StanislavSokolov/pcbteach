@@ -39,7 +39,7 @@
 
 set_global_assignment -name FAMILY "Cyclone IV E"
 set_global_assignment -name DEVICE EP4CE10E22C8
-set_global_assignment -name TOP_LEVEL_ENTITY Task03
+set_global_assignment -name TOP_LEVEL_ENTITY Task04
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 22.1STD.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "15:56:09  JANUARY 29, 2024"
 set_global_assignment -name LAST_QUARTUS_VERSION "22.1std.0 Standard Edition"
@@ -61,11 +61,10 @@ set_location_assignment PIN_88 -to A[0]
 set_location_assignment PIN_89 -to A[1]
 set_location_assignment PIN_90 -to B[0]
 set_location_assignment PIN_91 -to B[1]
-set_location_assignment PIN_84 -to S[1]
-set_location_assignment PIN_85 -to S[0]
-set_location_assignment PIN_86 -to Pout
 set_global_assignment -name BDF_FILE Task03.bdf
+set_global_assignment -name BDF_FILE Task04.bdf
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_location_assignment PIN_84 -to Relusl
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

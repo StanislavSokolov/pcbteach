@@ -1,5 +1,5 @@
 Flow report for FullAdder
-Mon Jan 29 16:46:31 2024
+Mon Jan 29 17:01:03 2024
 Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Standard Edition
 
 
@@ -41,18 +41,18 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------------------------------------------------------------------+
 ; Flow Summary                                                                            ;
 +------------------------------------+----------------------------------------------------+
-; Flow Status                        ; Successful - Mon Jan 29 16:46:31 2024              ;
+; Flow Status                        ; Successful - Mon Jan 29 17:01:03 2024              ;
 ; Quartus Prime Version              ; 22.1std.0 Build 915 10/25/2022 SC Standard Edition ;
 ; Revision Name                      ; FullAdder                                          ;
-; Top-level Entity Name              ; Task03                                             ;
+; Top-level Entity Name              ; Task04                                             ;
 ; Family                             ; Cyclone IV E                                       ;
 ; Device                             ; EP4CE10E22C8                                       ;
 ; Timing Models                      ; Final                                              ;
-; Total logic elements               ; 3 / 10,320 ( < 1 % )                               ;
-;     Total combinational functions  ; 3 / 10,320 ( < 1 % )                               ;
+; Total logic elements               ; 1 / 10,320 ( < 1 % )                               ;
+;     Total combinational functions  ; 1 / 10,320 ( < 1 % )                               ;
 ;     Dedicated logic registers      ; 0 / 10,320 ( 0 % )                                 ;
 ; Total registers                    ; 0                                                  ;
-; Total pins                         ; 7 / 92 ( 8 % )                                     ;
+; Total pins                         ; 5 / 92 ( 5 % )                                     ;
 ; Total virtual pins                 ; 0                                                  ;
 ; Total memory bits                  ; 0 / 423,936 ( 0 % )                                ;
 ; Embedded Multiplier 9-bit elements ; 0 / 46 ( 0 % )                                     ;
@@ -65,7 +65,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 01/29/2024 16:46:15 ;
+; Start date & time ; 01/29/2024 17:00:47 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; FullAdder           ;
 +-------------------+---------------------+
@@ -76,7 +76,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id                        ;
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID               ; 10995770589189.170653597515288         ; --            ; --          ; --                                ;
+; COMPILER_SIGNATURE_ID               ; 10995770589189.170653684715240         ; --            ; --          ; --                                ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_timing           ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_boundary_scan    ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_signal_integrity ;
@@ -87,11 +87,11 @@ https://fpgasoftware.intel.com/eula.
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --                                ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --                                ;
 ; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                                   ; --            ; --          ; --                                ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; Task03      ; Top                               ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; Task03      ; Top                               ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; Task03      ; Top                               ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; Task04      ; Top                               ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; Task04      ; Top                               ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; Task04      ; Top                               ;
 ; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --          ; --                                ;
-; TOP_LEVEL_ENTITY                    ; Task03                                 ; FullAdder     ; --          ; --                                ;
+; TOP_LEVEL_ENTITY                    ; Task04                                 ; FullAdder     ; --          ; --                                ;
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 
 
@@ -101,9 +101,9 @@ https://fpgasoftware.intel.com/eula.
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Analysis & Synthesis ; 00:00:08     ; 1.0                     ; 4779 MB             ; 00:00:20                           ;
-; Fitter               ; 00:00:03     ; 1.0                     ; 5532 MB             ; 00:00:03                           ;
-; Assembler            ; 00:00:01     ; 1.0                     ; 4726 MB             ; 00:00:01                           ;
-; Timing Analyzer      ; 00:00:01     ; 1.0                     ; 4777 MB             ; 00:00:01                           ;
+; Fitter               ; 00:00:03     ; 1.0                     ; 5535 MB             ; 00:00:03                           ;
+; Assembler            ; 00:00:01     ; 1.0                     ; 4717 MB             ; 00:00:01                           ;
+; Timing Analyzer      ; 00:00:01     ; 1.0                     ; 4779 MB             ; 00:00:01                           ;
 ; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4663 MB             ; 00:00:01                           ;
 ; Total                ; 00:00:13     ; --                      ; --                  ; 00:00:26                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+

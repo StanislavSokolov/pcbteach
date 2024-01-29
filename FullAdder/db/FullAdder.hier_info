@@ -1,46 +1,8 @@
-|Task03
-Pout <= inst3.DB_MAX_OUTPUT_PORT_TYPE
-A[0] => HalfAdder:inst.A
-A[1] => HalfAdder:inst4.A
-B[0] => HalfAdder:inst.B
-B[1] => HalfAdder:inst4.B
-S[0] <= HalfAdder:inst1.S
-S[1] <= HalfAdder:inst5.S
-
-
-|Task03|HalfAdder:inst4
-S <= inst.DB_MAX_OUTPUT_PORT_TYPE
-A => inst.IN0
-A => inst3.IN0
-B => inst.IN1
-B => inst3.IN1
-P <= inst3.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|Task03|HalfAdder:inst5
-S <= inst.DB_MAX_OUTPUT_PORT_TYPE
-A => inst.IN0
-A => inst3.IN0
-B => inst.IN1
-B => inst3.IN1
-P <= inst3.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|Task03|HalfAdder:inst
-S <= inst.DB_MAX_OUTPUT_PORT_TYPE
-A => inst.IN0
-A => inst3.IN0
-B => inst.IN1
-B => inst3.IN1
-P <= inst3.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|Task03|HalfAdder:inst1
-S <= inst.DB_MAX_OUTPUT_PORT_TYPE
-A => inst.IN0
-A => inst3.IN0
-B => inst.IN1
-B => inst3.IN1
-P <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+|Task04
+Relusl <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+A[0] => inst.IN0
+A[1] => inst2.IN0
+B[0] => inst.IN1
+B[1] => inst2.IN1
 
 
