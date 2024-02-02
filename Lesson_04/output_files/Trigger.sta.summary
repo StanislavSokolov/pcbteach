@@ -1,0 +1,89 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'CLK'
+Slack : -2.504
+TNS   : -41.137
+
+Type  : Slow 1200mV 85C Model Setup 'debouncer:inst1|inst'
+Slack : -1.774
+TNS   : -1.774
+
+Type  : Slow 1200mV 85C Model Hold 'debouncer:inst1|inst'
+Slack : 0.032
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'CLK'
+Slack : 0.744
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLK'
+Slack : -3.000
+TNS   : -38.688
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'debouncer:inst1|lpm_compare:inst5|cmpr_mth:auto_generated|aeb_output_dffe0a[0]'
+Slack : -1.487
+TNS   : -1.487
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'debouncer:inst1|inst'
+Slack : 0.422
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'CLK'
+Slack : -2.182
+TNS   : -34.390
+
+Type  : Slow 1200mV 0C Model Setup 'debouncer:inst1|inst'
+Slack : -1.612
+TNS   : -1.612
+
+Type  : Slow 1200mV 0C Model Hold 'debouncer:inst1|inst'
+Slack : 0.027
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'CLK'
+Slack : 0.692
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLK'
+Slack : -3.000
+TNS   : -38.688
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'debouncer:inst1|lpm_compare:inst5|cmpr_mth:auto_generated|aeb_output_dffe0a[0]'
+Slack : -1.487
+TNS   : -1.487
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'debouncer:inst1|inst'
+Slack : 0.443
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'CLK'
+Slack : -0.561
+TNS   : -9.794
+
+Type  : Fast 1200mV 0C Model Setup 'debouncer:inst1|inst'
+Slack : -0.236
+TNS   : -0.236
+
+Type  : Fast 1200mV 0C Model Hold 'debouncer:inst1|inst'
+Slack : 0.015
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'CLK'
+Slack : 0.297
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLK'
+Slack : -3.000
+TNS   : -34.174
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'debouncer:inst1|lpm_compare:inst5|cmpr_mth:auto_generated|aeb_output_dffe0a[0]'
+Slack : -1.000
+TNS   : -1.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'debouncer:inst1|inst'
+Slack : 0.450
+TNS   : 0.000
+
+------------------------------------------------------------
