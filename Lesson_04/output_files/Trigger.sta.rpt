@@ -1,5 +1,5 @@
 Timing Analyzer report for Trigger
-Fri Feb  2 17:46:00 2024
+Mon Feb  5 14:26:05 2024
 Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Standard Edition
 
 
@@ -104,7 +104,7 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.3%      ;
+;     Processors 2-4         ;   0.2%      ;
 +----------------------------+-------------+
 
 
@@ -114,6 +114,7 @@ https://fpgasoftware.intel.com/eula.
 ; Clock Name                                                                     ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                                                                            ;
 +--------------------------------------------------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------------------------------------------------------------------------------+
 ; CLK                                                                            ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { CLK }                                                                            ;
+; debouncer:inst1|inst                                                           ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { debouncer:inst1|inst }                                                           ;
 ; debouncer:inst1|lpm_compare:inst5|cmpr_mth:auto_generated|aeb_output_dffe0a[0] ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { debouncer:inst1|lpm_compare:inst5|cmpr_mth:auto_generated|aeb_output_dffe0a[0] } ;
 +--------------------------------------------------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------------------------------------------------------------------------------+
 
@@ -139,7 +140,7 @@ HTML report is unavailable in plain text report export.
 +-------+--------+--------------------+
 ; Clock ; Slack  ; End Point TNS      ;
 +-------+--------+--------------------+
-; CLK   ; -2.504 ; -41.243            ;
+; CLK   ; -2.504 ; -41.242            ;
 +-------+--------+--------------------+
 
 
@@ -171,6 +172,7 @@ No paths to report.
 +--------------------------------------------------------------------------------+--------+---------------+
 ; CLK                                                                            ; -3.000 ; -38.688       ;
 ; debouncer:inst1|lpm_compare:inst5|cmpr_mth:auto_generated|aeb_output_dffe0a[0] ; -1.487 ; -1.487        ;
+; debouncer:inst1|inst                                                           ; 0.430  ; 0.000         ;
 +--------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -194,14 +196,14 @@ No paths to report.
 ; -2.203 ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[5]  ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[22]  ; CLK          ; CLK         ; 1.000        ; -0.081     ; 3.123      ;
 ; -2.186 ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[3]  ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[21]  ; CLK          ; CLK         ; 1.000        ; -0.081     ; 3.106      ;
 ; -2.182 ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[1]  ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[19]  ; CLK          ; CLK         ; 1.000        ; -0.081     ; 3.102      ;
-; -2.127 ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[20] ; debouncer:inst1|lpm_compare:inst5|cmpr_mth:auto_generated|aeb_output_dffe0a[0] ; CLK          ; CLK         ; 1.000        ; -0.079     ; 3.049      ;
+; -2.126 ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[20] ; debouncer:inst1|lpm_compare:inst5|cmpr_mth:auto_generated|aeb_output_dffe0a[0] ; CLK          ; CLK         ; 1.000        ; -0.079     ; 3.048      ;
 ; -2.125 ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[0]  ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[18]  ; CLK          ; CLK         ; 1.000        ; -0.081     ; 3.045      ;
 ; -2.118 ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[2]  ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[20]  ; CLK          ; CLK         ; 1.000        ; -0.081     ; 3.038      ;
 ; -2.103 ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[4]  ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[22]  ; CLK          ; CLK         ; 1.000        ; -0.081     ; 3.023      ;
 ; -2.101 ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[2]  ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[19]  ; CLK          ; CLK         ; 1.000        ; -0.081     ; 3.021      ;
 ; -2.098 ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[0]  ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[17]  ; CLK          ; CLK         ; 1.000        ; -0.081     ; 3.018      ;
-; -2.087 ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[22] ; debouncer:inst1|lpm_compare:inst5|cmpr_mth:auto_generated|aeb_output_dffe0a[0] ; CLK          ; CLK         ; 1.000        ; -0.079     ; 3.009      ;
-; -2.086 ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[21] ; debouncer:inst1|lpm_compare:inst5|cmpr_mth:auto_generated|aeb_output_dffe0a[0] ; CLK          ; CLK         ; 1.000        ; -0.079     ; 3.008      ;
+; -2.086 ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[22] ; debouncer:inst1|lpm_compare:inst5|cmpr_mth:auto_generated|aeb_output_dffe0a[0] ; CLK          ; CLK         ; 1.000        ; -0.079     ; 3.008      ;
+; -2.085 ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[21] ; debouncer:inst1|lpm_compare:inst5|cmpr_mth:auto_generated|aeb_output_dffe0a[0] ; CLK          ; CLK         ; 1.000        ; -0.079     ; 3.007      ;
 ; -2.084 ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[4]  ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[21]  ; CLK          ; CLK         ; 1.000        ; -0.081     ; 3.004      ;
 ; -2.070 ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[3]  ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[18]  ; CLK          ; CLK         ; 1.000        ; -0.081     ; 2.990      ;
 ; -2.066 ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[1]  ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[16]  ; CLK          ; CLK         ; 1.000        ; -0.081     ; 2.986      ;
@@ -212,8 +214,8 @@ No paths to report.
 ; -2.033 ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[14] ; debouncer:inst1|lpm_compare:inst5|cmpr_mth:auto_generated|aeb_output_dffe0a[0] ; CLK          ; CLK         ; 1.000        ; -0.079     ; 2.955      ;
 ; -2.027 ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[5]  ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[21]  ; CLK          ; CLK         ; 1.000        ; -0.081     ; 2.947      ;
 ; -2.026 ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[11] ; debouncer:inst1|lpm_compare:inst5|cmpr_mth:auto_generated|aeb_output_dffe0a[0] ; CLK          ; CLK         ; 1.000        ; -0.079     ; 2.948      ;
-; -1.988 ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[17] ; debouncer:inst1|lpm_compare:inst5|cmpr_mth:auto_generated|aeb_output_dffe0a[0] ; CLK          ; CLK         ; 1.000        ; -0.079     ; 2.910      ;
-; -1.986 ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[18] ; debouncer:inst1|lpm_compare:inst5|cmpr_mth:auto_generated|aeb_output_dffe0a[0] ; CLK          ; CLK         ; 1.000        ; -0.079     ; 2.908      ;
+; -1.987 ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[17] ; debouncer:inst1|lpm_compare:inst5|cmpr_mth:auto_generated|aeb_output_dffe0a[0] ; CLK          ; CLK         ; 1.000        ; -0.079     ; 2.909      ;
+; -1.985 ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[18] ; debouncer:inst1|lpm_compare:inst5|cmpr_mth:auto_generated|aeb_output_dffe0a[0] ; CLK          ; CLK         ; 1.000        ; -0.079     ; 2.907      ;
 ; -1.979 ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[0]  ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[16]  ; CLK          ; CLK         ; 1.000        ; -0.081     ; 2.899      ;
 ; -1.972 ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[2]  ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[18]  ; CLK          ; CLK         ; 1.000        ; -0.081     ; 2.892      ;
 ; -1.966 ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[6]  ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[22]  ; CLK          ; CLK         ; 1.000        ; -0.081     ; 2.886      ;
@@ -239,7 +241,7 @@ No paths to report.
 ; -1.811 ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[4]  ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[18]  ; CLK          ; CLK         ; 1.000        ; -0.081     ; 2.731      ;
 ; -1.809 ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[2]  ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[15]  ; CLK          ; CLK         ; 1.000        ; -0.081     ; 2.729      ;
 ; -1.806 ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[0]  ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[13]  ; CLK          ; CLK         ; 1.000        ; -0.081     ; 2.726      ;
-; -1.801 ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[15] ; debouncer:inst1|lpm_compare:inst5|cmpr_mth:auto_generated|aeb_output_dffe0a[0] ; CLK          ; CLK         ; 1.000        ; -0.079     ; 2.723      ;
+; -1.800 ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[15] ; debouncer:inst1|lpm_compare:inst5|cmpr_mth:auto_generated|aeb_output_dffe0a[0] ; CLK          ; CLK         ; 1.000        ; -0.079     ; 2.722      ;
 ; -1.792 ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[4]  ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[17]  ; CLK          ; CLK         ; 1.000        ; -0.081     ; 2.712      ;
 ; -1.787 ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[6]  ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[19]  ; CLK          ; CLK         ; 1.000        ; -0.081     ; 2.707      ;
 ; -1.786 ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[8]  ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[21]  ; CLK          ; CLK         ; 1.000        ; -0.081     ; 2.706      ;
@@ -249,7 +251,7 @@ No paths to report.
 ; -1.763 ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[9]  ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[20]  ; CLK          ; CLK         ; 1.000        ; -0.081     ; 2.683      ;
 ; -1.762 ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[11] ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[22]  ; CLK          ; CLK         ; 1.000        ; -0.080     ; 2.683      ;
 ; -1.761 ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[7]  ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[18]  ; CLK          ; CLK         ; 1.000        ; -0.081     ; 2.681      ;
-; -1.751 ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[19] ; debouncer:inst1|lpm_compare:inst5|cmpr_mth:auto_generated|aeb_output_dffe0a[0] ; CLK          ; CLK         ; 1.000        ; -0.079     ; 2.673      ;
+; -1.750 ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[19] ; debouncer:inst1|lpm_compare:inst5|cmpr_mth:auto_generated|aeb_output_dffe0a[0] ; CLK          ; CLK         ; 1.000        ; -0.079     ; 2.672      ;
 ; -1.748 ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[3]  ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[15]  ; CLK          ; CLK         ; 1.000        ; -0.081     ; 2.668      ;
 ; -1.744 ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[1]  ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[13]  ; CLK          ; CLK         ; 1.000        ; -0.081     ; 2.664      ;
 ; -1.735 ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[5]  ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[17]  ; CLK          ; CLK         ; 1.000        ; -0.081     ; 2.655      ;
@@ -266,7 +268,7 @@ No paths to report.
 ; -1.663 ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[2]  ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[13]  ; CLK          ; CLK         ; 1.000        ; -0.081     ; 2.583      ;
 ; -1.660 ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[0]  ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[11]  ; CLK          ; CLK         ; 1.000        ; -0.081     ; 2.580      ;
 ; -1.657 ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[9]  ; debouncer:inst1|lpm_compare:inst5|cmpr_mth:auto_generated|aeb_output_dffe0a[0] ; CLK          ; CLK         ; 1.000        ; -0.080     ; 2.578      ;
-; -1.652 ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[16] ; debouncer:inst1|lpm_compare:inst5|cmpr_mth:auto_generated|aeb_output_dffe0a[0] ; CLK          ; CLK         ; 1.000        ; -0.079     ; 2.574      ;
+; -1.651 ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[16] ; debouncer:inst1|lpm_compare:inst5|cmpr_mth:auto_generated|aeb_output_dffe0a[0] ; CLK          ; CLK         ; 1.000        ; -0.079     ; 2.573      ;
 ; -1.650 ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[3]  ; debouncer:inst1|lpm_compare:inst5|cmpr_mth:auto_generated|aeb_output_dffe0a[0] ; CLK          ; CLK         ; 1.000        ; -0.080     ; 2.571      ;
 ; -1.646 ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[4]  ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[15]  ; CLK          ; CLK         ; 1.000        ; -0.081     ; 2.566      ;
 ; -1.641 ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[6]  ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[17]  ; CLK          ; CLK         ; 1.000        ; -0.081     ; 2.561      ;
@@ -443,6 +445,7 @@ No paths to report.
 +--------------------------------------------------------------------------------+--------+---------------+
 ; CLK                                                                            ; -3.000 ; -38.688       ;
 ; debouncer:inst1|lpm_compare:inst5|cmpr_mth:auto_generated|aeb_output_dffe0a[0] ; -1.487 ; -1.487        ;
+; debouncer:inst1|inst                                                           ; 0.445  ; 0.000         ;
 +--------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -673,7 +676,7 @@ No synchronizer chains to report.
 +-------+--------+-------------------+
 ; Clock ; Slack  ; End Point TNS     ;
 +-------+--------+-------------------+
-; CLK   ; -0.561 ; -10.644           ;
+; CLK   ; -0.561 ; -10.643           ;
 +-------+--------+-------------------+
 
 
@@ -705,6 +708,7 @@ No paths to report.
 +--------------------------------------------------------------------------------+--------+---------------+
 ; CLK                                                                            ; -3.000 ; -34.174       ;
 ; debouncer:inst1|lpm_compare:inst5|cmpr_mth:auto_generated|aeb_output_dffe0a[0] ; -1.000 ; -1.000        ;
+; debouncer:inst1|inst                                                           ; 0.463  ; 0.000         ;
 +--------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -755,13 +759,13 @@ No paths to report.
 ; -0.380 ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[0]   ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[18]  ; CLK                                                                            ; CLK         ; 1.000        ; -0.037     ; 1.330      ;
 ; -0.375 ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[4]   ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[22]  ; CLK                                                                            ; CLK         ; 1.000        ; -0.037     ; 1.325      ;
 ; -0.365 ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[3]   ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[19]  ; CLK                                                                            ; CLK         ; 1.000        ; -0.037     ; 1.315      ;
-; -0.363 ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[22]  ; debouncer:inst1|lpm_compare:inst5|cmpr_mth:auto_generated|aeb_output_dffe0a[0] ; CLK                                                                            ; CLK         ; 1.000        ; -0.034     ; 1.316      ;
+; -0.362 ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[22]  ; debouncer:inst1|lpm_compare:inst5|cmpr_mth:auto_generated|aeb_output_dffe0a[0] ; CLK                                                                            ; CLK         ; 1.000        ; -0.034     ; 1.315      ;
 ; -0.361 ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[1]   ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[17]  ; CLK                                                                            ; CLK         ; 1.000        ; -0.037     ; 1.311      ;
 ; -0.361 ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[3]   ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[18]  ; CLK                                                                            ; CLK         ; 1.000        ; -0.037     ; 1.311      ;
-; -0.361 ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[20]  ; debouncer:inst1|lpm_compare:inst5|cmpr_mth:auto_generated|aeb_output_dffe0a[0] ; CLK                                                                            ; CLK         ; 1.000        ; -0.034     ; 1.314      ;
+; -0.360 ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[20]  ; debouncer:inst1|lpm_compare:inst5|cmpr_mth:auto_generated|aeb_output_dffe0a[0] ; CLK                                                                            ; CLK         ; 1.000        ; -0.034     ; 1.313      ;
 ; -0.359 ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[5]   ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[21]  ; CLK                                                                            ; CLK         ; 1.000        ; -0.037     ; 1.309      ;
-; -0.358 ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[21]  ; debouncer:inst1|lpm_compare:inst5|cmpr_mth:auto_generated|aeb_output_dffe0a[0] ; CLK                                                                            ; CLK         ; 1.000        ; -0.034     ; 1.311      ;
 ; -0.357 ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[1]   ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[16]  ; CLK                                                                            ; CLK         ; 1.000        ; -0.037     ; 1.307      ;
+; -0.357 ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[21]  ; debouncer:inst1|lpm_compare:inst5|cmpr_mth:auto_generated|aeb_output_dffe0a[0] ; CLK                                                                            ; CLK         ; 1.000        ; -0.034     ; 1.310      ;
 ; -0.355 ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[5]   ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[20]  ; CLK                                                                            ; CLK         ; 1.000        ; -0.037     ; 1.305      ;
 ; -0.354 ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[7]   ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[22]  ; CLK                                                                            ; CLK         ; 1.000        ; -0.037     ; 1.304      ;
 ; -0.351 ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[2]   ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[19]  ; CLK                                                                            ; CLK         ; 1.000        ; -0.037     ; 1.301      ;
@@ -811,7 +815,7 @@ No paths to report.
 ; -0.209 ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[6]   ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[19]  ; CLK                                                                            ; CLK         ; 1.000        ; -0.037     ; 1.159      ;
 ; -0.208 ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[8]   ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[21]  ; CLK                                                                            ; CLK         ; 1.000        ; -0.037     ; 1.158      ;
 ; -0.208 ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[4]   ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[17]  ; CLK                                                                            ; CLK         ; 1.000        ; -0.037     ; 1.158      ;
-; -0.205 ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[19]  ; debouncer:inst1|lpm_compare:inst5|cmpr_mth:auto_generated|aeb_output_dffe0a[0] ; CLK                                                                            ; CLK         ; 1.000        ; -0.034     ; 1.158      ;
+; -0.204 ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[19]  ; debouncer:inst1|lpm_compare:inst5|cmpr_mth:auto_generated|aeb_output_dffe0a[0] ; CLK                                                                            ; CLK         ; 1.000        ; -0.034     ; 1.157      ;
 ; -0.183 ; debouncer:inst1|lpm_counter:inst4|cntr_0ig:auto_generated|counter_reg_bit[12]  ; debouncer:inst1|lpm_compare:inst5|cmpr_mth:auto_generated|aeb_output_dffe0a[0] ; CLK                                                                            ; CLK         ; 1.000        ; -0.034     ; 1.136      ;
 +--------+--------------------------------------------------------------------------------+--------------------------------------------------------------------------------+--------------------------------------------------------------------------------+-------------+--------------+------------+------------+
 
@@ -937,9 +941,11 @@ No synchronizer chains to report.
 +---------------------------------------------------------------------------------+---------+-------+----------+---------+---------------------+
 ; Worst-case Slack                                                                ; -2.504  ; 0.297 ; N/A      ; N/A     ; -3.000              ;
 ;  CLK                                                                            ; -2.504  ; 0.297 ; N/A      ; N/A     ; -3.000              ;
+;  debouncer:inst1|inst                                                           ; N/A     ; N/A   ; N/A      ; N/A     ; 0.430               ;
 ;  debouncer:inst1|lpm_compare:inst5|cmpr_mth:auto_generated|aeb_output_dffe0a[0] ; N/A     ; N/A   ; N/A      ; N/A     ; -1.487              ;
-; Design-wide TNS                                                                 ; -41.243 ; 0.0   ; 0.0      ; 0.0     ; -40.175             ;
-;  CLK                                                                            ; -41.243 ; 0.000 ; N/A      ; N/A     ; -38.688             ;
+; Design-wide TNS                                                                 ; -41.242 ; 0.0   ; 0.0      ; 0.0     ; -40.175             ;
+;  CLK                                                                            ; -41.242 ; 0.000 ; N/A      ; N/A     ; -38.688             ;
+;  debouncer:inst1|inst                                                           ; N/A     ; N/A   ; N/A      ; N/A     ; 0.000               ;
 ;  debouncer:inst1|lpm_compare:inst5|cmpr_mth:auto_generated|aeb_output_dffe0a[0] ; N/A     ; N/A   ; N/A      ; N/A     ; -1.487              ;
 +---------------------------------------------------------------------------------+---------+-------+----------+---------+---------------------+
 
@@ -1046,7 +1052,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; Unconstrained Input Ports       ; 2     ; 2    ;
 ; Unconstrained Input Port Paths  ; 2     ; 2    ;
 ; Unconstrained Output Ports      ; 1     ; 1    ;
-; Unconstrained Output Port Paths ; 2     ; 2    ;
+; Unconstrained Output Port Paths ; 1     ; 1    ;
 +---------------------------------+-------+------+
 
 
@@ -1056,6 +1062,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; Target                                                                         ; Clock                                                                          ; Type ; Status      ;
 +--------------------------------------------------------------------------------+--------------------------------------------------------------------------------+------+-------------+
 ; CLK                                                                            ; CLK                                                                            ; Base ; Constrained ;
+; debouncer:inst1|inst                                                           ; debouncer:inst1|inst                                                           ; Base ; Constrained ;
 ; debouncer:inst1|lpm_compare:inst5|cmpr_mth:auto_generated|aeb_output_dffe0a[0] ; debouncer:inst1|lpm_compare:inst5|cmpr_mth:auto_generated|aeb_output_dffe0a[0] ; Base ; Constrained ;
 +--------------------------------------------------------------------------------+--------------------------------------------------------------------------------+------+-------------+
 
@@ -1104,25 +1111,20 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 22.1std.0 Build 915 10/25/2022 SC Standard Edition
-    Info: Processing started: Fri Feb  2 17:45:58 2024
+    Info: Processing started: Mon Feb  5 14:26:02 2024
 Info: Command: quartus_sta Trigger -c Trigger
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
+Warning (335093): The Timing Analyzer is analyzing 1 combinational loops as latches. For more details, run the Check Timing command in the Timing Analyzer or view the "User-Specified and Inferred Latches" table in the Analysis & Synthesis report.
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'Trigger.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
 Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
 Info (332105): Deriving Clocks
     Info (332105): create_clock -period 1.000 -name CLK CLK
     Info (332105): create_clock -period 1.000 -name debouncer:inst1|lpm_compare:inst5|cmpr_mth:auto_generated|aeb_output_dffe0a[0] debouncer:inst1|lpm_compare:inst5|cmpr_mth:auto_generated|aeb_output_dffe0a[0]
-Warning (332125): Found combinational loop of 6 nodes
-    Warning (332126): Node "inst21~1|combout"
-    Warning (332126): Node "inst21~1|datac"
-    Warning (332126): Node "inst7~1|datac"
-    Warning (332126): Node "inst7~1|combout"
-    Warning (332126): Node "inst7~1|datad"
-    Warning (332126): Node "inst21~1|datad"
+    Info (332105): create_clock -period 1.000 -name debouncer:inst1|inst debouncer:inst1|inst
 Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
@@ -1132,7 +1134,7 @@ Critical Warning (332148): Timing requirements not met
 Info (332146): Worst-case setup slack is -2.504
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.504             -41.243 CLK 
+    Info (332119):    -2.504             -41.242 CLK 
 Info (332146): Worst-case hold slack is 0.743
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
@@ -1144,6 +1146,7 @@ Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119): ========= =================== =====================
     Info (332119):    -3.000             -38.688 CLK 
     Info (332119):    -1.487              -1.487 debouncer:inst1|lpm_compare:inst5|cmpr_mth:auto_generated|aeb_output_dffe0a[0] 
+    Info (332119):     0.430               0.000 debouncer:inst1|inst 
 Info: Analyzing Slow 1200mV 0C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
@@ -1165,6 +1168,7 @@ Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119): ========= =================== =====================
     Info (332119):    -3.000             -38.688 CLK 
     Info (332119):    -1.487              -1.487 debouncer:inst1|lpm_compare:inst5|cmpr_mth:auto_generated|aeb_output_dffe0a[0] 
+    Info (332119):     0.445               0.000 debouncer:inst1|inst 
 Info: Analyzing Fast 1200mV 0C Model
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
@@ -1172,7 +1176,7 @@ Critical Warning (332148): Timing requirements not met
 Info (332146): Worst-case setup slack is -0.561
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.561             -10.644 CLK 
+    Info (332119):    -0.561             -10.643 CLK 
 Info (332146): Worst-case hold slack is 0.297
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
@@ -1184,12 +1188,13 @@ Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119): ========= =================== =====================
     Info (332119):    -3.000             -34.174 CLK 
     Info (332119):    -1.000              -1.000 debouncer:inst1|lpm_compare:inst5|cmpr_mth:auto_generated|aeb_output_dffe0a[0] 
+    Info (332119):     0.463               0.000 debouncer:inst1|inst 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
-Info: Quartus Prime Timing Analyzer was successful. 0 errors, 12 warnings
+Info: Quartus Prime Timing Analyzer was successful. 0 errors, 6 warnings
     Info: Peak virtual memory: 4787 megabytes
-    Info: Processing ended: Fri Feb  2 17:46:00 2024
-    Info: Elapsed time: 00:00:02
+    Info: Processing ended: Mon Feb  5 14:26:05 2024
+    Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:01
 
 

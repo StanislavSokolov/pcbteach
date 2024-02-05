@@ -1,9 +1,8 @@
 |Trigger
 Q <= inst20.DB_MAX_OUTPUT_PORT_TYPE
-T => inst15.IN0
-T => inst16.IN1
 C => debouncer:inst1.btn_in
 CLK => debouncer:inst1.clk
+T => inst18.IN1
 
 
 |Trigger|debouncer:inst1
