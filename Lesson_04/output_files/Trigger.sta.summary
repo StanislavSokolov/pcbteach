@@ -4,62 +4,86 @@ Timing Analyzer Summary
 
 Type  : Slow 1200mV 85C Model Setup 'CLK'
 Slack : -2.504
-TNS   : -41.242
+TNS   : -42.055
+
+Type  : Slow 1200mV 85C Model Setup 'debouncer:inst9|inst'
+Slack : -0.998
+TNS   : -0.998
 
 Type  : Slow 1200mV 85C Model Hold 'CLK'
-Slack : 0.743
+Slack : 0.685
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'debouncer:inst9|inst'
+Slack : 0.692
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLK'
 Slack : -3.000
 TNS   : -38.688
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'debouncer:inst1|lpm_compare:inst5|cmpr_mth:auto_generated|aeb_output_dffe0a[0]'
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'debouncer:inst9|lpm_compare:inst5|cmpr_mth:auto_generated|aeb_output_dffe0a[0]'
 Slack : -1.487
 TNS   : -1.487
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'debouncer:inst1|inst'
-Slack : 0.430
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'debouncer:inst9|inst'
+Slack : 0.460
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Setup 'CLK'
-Slack : -2.097
-TNS   : -34.488
+Slack : -2.298
+TNS   : -35.306
+
+Type  : Slow 1200mV 0C Model Setup 'debouncer:inst9|inst'
+Slack : -0.849
+TNS   : -0.849
 
 Type  : Slow 1200mV 0C Model Hold 'CLK'
-Slack : 0.692
+Slack : 0.621
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'debouncer:inst9|inst'
+Slack : 0.622
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLK'
 Slack : -3.000
 TNS   : -38.688
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'debouncer:inst1|lpm_compare:inst5|cmpr_mth:auto_generated|aeb_output_dffe0a[0]'
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'debouncer:inst9|lpm_compare:inst5|cmpr_mth:auto_generated|aeb_output_dffe0a[0]'
 Slack : -1.487
-TNS   : -1.487
+TNS   : -1.515
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'debouncer:inst1|inst'
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'debouncer:inst9|inst'
 Slack : 0.445
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Setup 'CLK'
-Slack : -0.561
-TNS   : -10.643
+Slack : -0.580
+TNS   : -13.590
+
+Type  : Fast 1200mV 0C Model Setup 'debouncer:inst9|inst'
+Slack : -0.210
+TNS   : -0.210
 
 Type  : Fast 1200mV 0C Model Hold 'CLK'
-Slack : 0.297
+Slack : 0.264
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'debouncer:inst9|inst'
+Slack : 0.627
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLK'
 Slack : -3.000
 TNS   : -34.174
 
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'debouncer:inst1|lpm_compare:inst5|cmpr_mth:auto_generated|aeb_output_dffe0a[0]'
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'debouncer:inst9|lpm_compare:inst5|cmpr_mth:auto_generated|aeb_output_dffe0a[0]'
 Slack : -1.000
 TNS   : -1.000
 
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'debouncer:inst1|inst'
-Slack : 0.463
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'debouncer:inst9|inst'
+Slack : 0.424
 TNS   : 0.000
 
 ------------------------------------------------------------

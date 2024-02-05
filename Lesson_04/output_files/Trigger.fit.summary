@@ -1,12 +1,12 @@
-Fitter Status : Successful - Mon Feb  5 14:25:57 2024
+Fitter Status : Successful - Mon Feb  5 15:27:51 2024
 Quartus Prime Version : 22.1std.0 Build 915 10/25/2022 SC Standard Edition
 Revision Name : Trigger
 Top-level Entity Name : Trigger
 Family : Cyclone IV E
 Device : EP4CE10E22C8
 Timing Models : Final
-Total logic elements : 34 / 10,320 ( < 1 % )
-    Total combinational functions : 33 / 10,320 ( < 1 % )
+Total logic elements : 35 / 10,320 ( < 1 % )
+    Total combinational functions : 34 / 10,320 ( < 1 % )
     Dedicated logic registers : 25 / 10,320 ( < 1 % )
 Total registers : 25
 Total pins : 4 / 92 ( 4 % )

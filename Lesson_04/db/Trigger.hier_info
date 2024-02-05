@@ -1,11 +1,27 @@
 |Trigger
+Q <= D-Trigger:inst19.Q
+D => D-Trigger:inst.D
+C => debouncer:inst9.btn_in
+CLK => debouncer:inst9.clk
+
+
+|Trigger|D-Trigger:inst19
 Q <= inst20.DB_MAX_OUTPUT_PORT_TYPE
-C => debouncer:inst1.btn_in
-CLK => debouncer:inst1.clk
-T => inst18.IN1
+C => inst19.IN0
+C => inst18.IN0
+D => inst18.IN1
+nQ <= inst21.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Trigger|debouncer:inst1
+|Trigger|D-Trigger:inst
+Q <= inst20.DB_MAX_OUTPUT_PORT_TYPE
+C => inst19.IN0
+C => inst18.IN0
+D => inst18.IN1
+nQ <= inst21.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Trigger|debouncer:inst9
 btn_out <= inst.DB_MAX_OUTPUT_PORT_TYPE
 btn_in => inst1.IN0
 btn_in => inst.IN1
@@ -13,7 +29,7 @@ clk => LPM_COMPARE:inst5.clock
 clk => LPM_COUNTER:inst4.clock
 
 
-|Trigger|debouncer:inst1|LPM_COMPARE:inst5
+|Trigger|debouncer:inst9|LPM_COMPARE:inst5
 dataa[0] => cmpr_mth:auto_generated.dataa[0]
 dataa[1] => cmpr_mth:auto_generated.dataa[1]
 dataa[2] => cmpr_mth:auto_generated.dataa[2]
@@ -71,7 +87,7 @@ aneb <= <GND>
 ageb <= <GND>
 
 
-|Trigger|debouncer:inst1|LPM_COMPARE:inst5|cmpr_mth:auto_generated
+|Trigger|debouncer:inst9|LPM_COMPARE:inst5|cmpr_mth:auto_generated
 aeb <= aeb_output_dffe0a[0].DB_MAX_OUTPUT_PORT_TYPE
 clock => aeb_output_dffe0a[0].CLK
 dataa[0] => data_wire[3].IN0
@@ -99,7 +115,7 @@ dataa[21] => data_wire[13].IN0
 dataa[22] => data_wire[14].IN0
 
 
-|Trigger|debouncer:inst1|LPM_COUNTER:inst4
+|Trigger|debouncer:inst9|LPM_COUNTER:inst4
 clock => cntr_0ig:auto_generated.clock
 clk_en => ~NO_FANOUT~
 cnt_en => ~NO_FANOUT~
@@ -178,7 +194,7 @@ eq[14] <= <GND>
 eq[15] <= <GND>
 
 
-|Trigger|debouncer:inst1|LPM_COUNTER:inst4|cntr_0ig:auto_generated
+|Trigger|debouncer:inst9|LPM_COUNTER:inst4|cntr_0ig:auto_generated
 clock => counter_reg_bit[22].CLK
 clock => counter_reg_bit[21].CLK
 clock => counter_reg_bit[20].CLK
