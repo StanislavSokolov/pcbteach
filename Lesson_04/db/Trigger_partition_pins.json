@@ -8,14 +8,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "D",
-					"strict" : false
-				},
-				{
-					"name" : "C",
-					"strict" : false
-				},
-				{
 					"name" : "CLK",
 					"strict" : false
 				}

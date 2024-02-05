@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Trigger
-Mon Feb  5 15:27:47 2024
+Mon Feb  5 15:50:50 2024
 Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Standard Edition
 
 
@@ -15,11 +15,9 @@ Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Standard Edition
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Logic Cells Representing Combinational Loops
   9. General Register Statistics
- 10. Parameter Settings for User Entity Instance: debouncer:inst9|LPM_COMPARE:inst5
- 11. Parameter Settings for User Entity Instance: debouncer:inst9|LPM_COUNTER:inst4
- 12. Post-Synthesis Netlist Statistics for Top Partition
- 13. Elapsed Time Per Partition
- 14. Analysis & Synthesis Messages
+ 10. Post-Synthesis Netlist Statistics for Top Partition
+ 11. Elapsed Time Per Partition
+ 12. Analysis & Synthesis Messages
 
 
 
@@ -46,16 +44,16 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                            ;
 +------------------------------------+----------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Feb  5 15:27:47 2024              ;
+; Analysis & Synthesis Status        ; Successful - Mon Feb  5 15:50:50 2024              ;
 ; Quartus Prime Version              ; 22.1std.0 Build 915 10/25/2022 SC Standard Edition ;
 ; Revision Name                      ; Trigger                                            ;
 ; Top-level Entity Name              ; Trigger                                            ;
 ; Family                             ; Cyclone IV E                                       ;
-; Total logic elements               ; 35                                                 ;
-;     Total combinational functions  ; 34                                                 ;
-;     Dedicated logic registers      ; 25                                                 ;
-; Total registers                    ; 25                                                 ;
-; Total pins                         ; 4                                                  ;
+; Total logic elements               ; 75                                                 ;
+;     Total combinational functions  ; 75                                                 ;
+;     Dedicated logic registers      ; 0                                                  ;
+; Total registers                    ; 0                                                  ;
+; Total pins                         ; 2                                                  ;
 ; Total virtual pins                 ; 0                                                  ;
 ; Total memory bits                  ; 0                                                  ;
 ; Embedded Multiplier 9-bit elements ; 0                                                  ;
@@ -158,98 +156,203 @@ https://fpgasoftware.intel.com/eula.
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 4           ;
+; Maximum used               ; 1           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                 ;
-+----------------------------------+-----------------+------------------------------------------+------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                                ; File Name with Absolute Path                                                 ; Library ;
-+----------------------------------+-----------------+------------------------------------------+------------------------------------------------------------------------------+---------+
-; Trigger.bdf                      ; yes             ; User Block Diagram/Schematic File        ; D:/GITEA/GitHub/ES/pcbteach/Lesson_04/Trigger.bdf                            ;         ;
-; d-trigger.bdf                    ; yes             ; Auto-Found Block Diagram/Schematic File  ; D:/GITEA/GitHub/ES/pcbteach/Lesson_04/d-trigger.bdf                          ;         ;
-; debouncer.bdf                    ; yes             ; Auto-Found Block Diagram/Schematic File  ; D:/GITEA/GitHub/ES/pcbteach/Lesson_04/debouncer.bdf                          ;         ;
-; lpm_compare.tdf                  ; yes             ; Megafunction                             ; d:/intelfpga/22.1std/quartus/libraries/megafunctions/lpm_compare.tdf         ;         ;
-; comptree.inc                     ; yes             ; Megafunction                             ; d:/intelfpga/22.1std/quartus/libraries/megafunctions/comptree.inc            ;         ;
-; altshift.inc                     ; yes             ; Megafunction                             ; d:/intelfpga/22.1std/quartus/libraries/megafunctions/altshift.inc            ;         ;
-; aglobal221.inc                   ; yes             ; Megafunction                             ; d:/intelfpga/22.1std/quartus/libraries/megafunctions/aglobal221.inc          ;         ;
-; db/cmpr_mth.tdf                  ; yes             ; Auto-Generated Megafunction              ; D:/GITEA/GitHub/ES/pcbteach/Lesson_04/db/cmpr_mth.tdf                        ;         ;
-; lpm_counter.tdf                  ; yes             ; Megafunction                             ; d:/intelfpga/22.1std/quartus/libraries/megafunctions/lpm_counter.tdf         ;         ;
-; lpm_constant.inc                 ; yes             ; Megafunction                             ; d:/intelfpga/22.1std/quartus/libraries/megafunctions/lpm_constant.inc        ;         ;
-; lpm_decode.inc                   ; yes             ; Megafunction                             ; d:/intelfpga/22.1std/quartus/libraries/megafunctions/lpm_decode.inc          ;         ;
-; lpm_add_sub.inc                  ; yes             ; Megafunction                             ; d:/intelfpga/22.1std/quartus/libraries/megafunctions/lpm_add_sub.inc         ;         ;
-; cmpconst.inc                     ; yes             ; Megafunction                             ; d:/intelfpga/22.1std/quartus/libraries/megafunctions/cmpconst.inc            ;         ;
-; lpm_compare.inc                  ; yes             ; Megafunction                             ; d:/intelfpga/22.1std/quartus/libraries/megafunctions/lpm_compare.inc         ;         ;
-; lpm_counter.inc                  ; yes             ; Megafunction                             ; d:/intelfpga/22.1std/quartus/libraries/megafunctions/lpm_counter.inc         ;         ;
-; dffeea.inc                       ; yes             ; Megafunction                             ; d:/intelfpga/22.1std/quartus/libraries/megafunctions/dffeea.inc              ;         ;
-; alt_counter_stratix.inc          ; yes             ; Megafunction                             ; d:/intelfpga/22.1std/quartus/libraries/megafunctions/alt_counter_stratix.inc ;         ;
-; db/cntr_0ig.tdf                  ; yes             ; Auto-Generated Megafunction              ; D:/GITEA/GitHub/ES/pcbteach/Lesson_04/db/cntr_0ig.tdf                        ;         ;
-+----------------------------------+-----------------+------------------------------------------+------------------------------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                    ;
++----------------------------------+-----------------+------------------------------------------+-----------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                                ; File Name with Absolute Path                                    ; Library ;
++----------------------------------+-----------------+------------------------------------------+-----------------------------------------------------------------+---------+
+; Trigger.bdf                      ; yes             ; User Block Diagram/Schematic File        ; D:/GITEA/GitHub/ES/pcbteach/Lesson_04/Trigger.bdf               ;         ;
+; D-Trigger10.bdf                  ; yes             ; User Block Diagram/Schematic File        ; D:/GITEA/GitHub/ES/pcbteach/Lesson_04/D-Trigger10.bdf           ;         ;
+; D-TriggerWithRiseEdge.bdf        ; yes             ; User Block Diagram/Schematic File        ; D:/GITEA/GitHub/ES/pcbteach/Lesson_04/D-TriggerWithRiseEdge.bdf ;         ;
+; D-Trigger5.bdf                   ; yes             ; User Block Diagram/Schematic File        ; D:/GITEA/GitHub/ES/pcbteach/Lesson_04/D-Trigger5.bdf            ;         ;
+; d-trigger.bdf                    ; yes             ; Auto-Found Block Diagram/Schematic File  ; D:/GITEA/GitHub/ES/pcbteach/Lesson_04/d-trigger.bdf             ;         ;
++----------------------------------+-----------------+------------------------------------------+-----------------------------------------------------------------+---------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                                                                                  ;
-+---------------------------------------------+--------------------------------------------------------------------------------+
-; Resource                                    ; Usage                                                                          ;
-+---------------------------------------------+--------------------------------------------------------------------------------+
-; Estimated Total logic elements              ; 35                                                                             ;
-;                                             ;                                                                                ;
-; Total combinational functions               ; 34                                                                             ;
-; Logic element usage by number of LUT inputs ;                                                                                ;
-;     -- 4 input functions                    ; 6                                                                              ;
-;     -- 3 input functions                    ; 4                                                                              ;
-;     -- <=2 input functions                  ; 24                                                                             ;
-;                                             ;                                                                                ;
-; Logic elements by mode                      ;                                                                                ;
-;     -- normal mode                          ; 12                                                                             ;
-;     -- arithmetic mode                      ; 22                                                                             ;
-;                                             ;                                                                                ;
-; Total registers                             ; 25                                                                             ;
-;     -- Dedicated logic registers            ; 25                                                                             ;
-;     -- I/O registers                        ; 0                                                                              ;
-;                                             ;                                                                                ;
-; I/O pins                                    ; 4                                                                              ;
-;                                             ;                                                                                ;
-; Embedded Multiplier 9-bit elements          ; 0                                                                              ;
-;                                             ;                                                                                ;
-; Maximum fan-out node                        ; debouncer:inst9|lpm_compare:inst5|cmpr_mth:auto_generated|aeb_output_dffe0a[0] ;
-; Maximum fan-out                             ; 24                                                                             ;
-; Total fan-out                               ; 182                                                                            ;
-; Average fan-out                             ; 2.72                                                                           ;
-+---------------------------------------------+--------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                                                         ;
++---------------------------------------------+-----------------------------------------------------------------------+
+; Resource                                    ; Usage                                                                 ;
++---------------------------------------------+-----------------------------------------------------------------------+
+; Estimated Total logic elements              ; 75                                                                    ;
+;                                             ;                                                                       ;
+; Total combinational functions               ; 75                                                                    ;
+; Logic element usage by number of LUT inputs ;                                                                       ;
+;     -- 4 input functions                    ; 24                                                                    ;
+;     -- 3 input functions                    ; 51                                                                    ;
+;     -- <=2 input functions                  ; 0                                                                     ;
+;                                             ;                                                                       ;
+; Logic elements by mode                      ;                                                                       ;
+;     -- normal mode                          ; 75                                                                    ;
+;     -- arithmetic mode                      ; 0                                                                     ;
+;                                             ;                                                                       ;
+; Total registers                             ; 0                                                                     ;
+;     -- Dedicated logic registers            ; 0                                                                     ;
+;     -- I/O registers                        ; 0                                                                     ;
+;                                             ;                                                                       ;
+; I/O pins                                    ; 2                                                                     ;
+;                                             ;                                                                       ;
+; Embedded Multiplier 9-bit elements          ; 0                                                                     ;
+;                                             ;                                                                       ;
+; Maximum fan-out node                        ; D-Trigger5:inst|D-TriggerWithRiseEdge:inst1|D-Trigger:inst19|inst21~1 ;
+; Maximum fan-out                             ; 5                                                                     ;
+; Total fan-out                               ; 252                                                                   ;
+; Average fan-out                             ; 3.19                                                                  ;
++---------------------------------------------+-----------------------------------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                             ;
-+------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------+-------------+--------------+
-; Compilation Hierarchy Node         ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                ; Entity Name ; Library Name ;
-+------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------+-------------+--------------+
-; |Trigger                           ; 34 (1)              ; 25 (0)                    ; 0           ; 0            ; 0       ; 0         ; 4    ; 0            ; |Trigger                                                           ; Trigger     ; work         ;
-;    |D-Trigger:inst19|              ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger:inst19                                          ; D-Trigger   ; work         ;
-;    |D-Trigger:inst|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger:inst                                            ; D-Trigger   ; work         ;
-;    |debouncer:inst9|               ; 31 (0)              ; 25 (1)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|debouncer:inst9                                           ; debouncer   ; work         ;
-;       |lpm_compare:inst5|          ; 8 (0)               ; 1 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|debouncer:inst9|lpm_compare:inst5                         ; lpm_compare ; work         ;
-;          |cmpr_mth:auto_generated| ; 8 (8)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|debouncer:inst9|lpm_compare:inst5|cmpr_mth:auto_generated ; cmpr_mth    ; work         ;
-;       |lpm_counter:inst4|          ; 23 (0)              ; 23 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|debouncer:inst9|lpm_counter:inst4                         ; lpm_counter ; work         ;
-;          |cntr_0ig:auto_generated| ; 23 (23)             ; 23 (23)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|debouncer:inst9|lpm_counter:inst4|cntr_0ig:auto_generated ; cntr_0ig    ; work         ;
-+------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------+-------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                              ;
++-------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------+-----------------------+--------------+
+; Compilation Hierarchy Node          ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                      ; Entity Name           ; Library Name ;
++-------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------+-----------------------+--------------+
+; |Trigger                            ; 75 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 2    ; 0            ; |Trigger                                                                 ; Trigger               ; work         ;
+;    |D-Trigger10:inst11|             ; 30 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger10:inst11                                              ; D-Trigger10           ; work         ;
+;       |D-TriggerWithRiseEdge:inst1| ; 3 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger10:inst11|D-TriggerWithRiseEdge:inst1                  ; D-TriggerWithRiseEdge ; work         ;
+;          |D-Trigger:inst19|         ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger10:inst11|D-TriggerWithRiseEdge:inst1|D-Trigger:inst19 ; D-Trigger             ; work         ;
+;          |D-Trigger:inst|           ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger10:inst11|D-TriggerWithRiseEdge:inst1|D-Trigger:inst   ; D-Trigger             ; work         ;
+;       |D-TriggerWithRiseEdge:inst2| ; 3 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger10:inst11|D-TriggerWithRiseEdge:inst2                  ; D-TriggerWithRiseEdge ; work         ;
+;          |D-Trigger:inst19|         ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger10:inst11|D-TriggerWithRiseEdge:inst2|D-Trigger:inst19 ; D-Trigger             ; work         ;
+;          |D-Trigger:inst|           ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger10:inst11|D-TriggerWithRiseEdge:inst2|D-Trigger:inst   ; D-Trigger             ; work         ;
+;       |D-TriggerWithRiseEdge:inst3| ; 3 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger10:inst11|D-TriggerWithRiseEdge:inst3                  ; D-TriggerWithRiseEdge ; work         ;
+;          |D-Trigger:inst19|         ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger10:inst11|D-TriggerWithRiseEdge:inst3|D-Trigger:inst19 ; D-Trigger             ; work         ;
+;          |D-Trigger:inst|           ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger10:inst11|D-TriggerWithRiseEdge:inst3|D-Trigger:inst   ; D-Trigger             ; work         ;
+;       |D-TriggerWithRiseEdge:inst4| ; 3 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger10:inst11|D-TriggerWithRiseEdge:inst4                  ; D-TriggerWithRiseEdge ; work         ;
+;          |D-Trigger:inst19|         ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger10:inst11|D-TriggerWithRiseEdge:inst4|D-Trigger:inst19 ; D-Trigger             ; work         ;
+;          |D-Trigger:inst|           ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger10:inst11|D-TriggerWithRiseEdge:inst4|D-Trigger:inst   ; D-Trigger             ; work         ;
+;       |D-TriggerWithRiseEdge:inst5| ; 3 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger10:inst11|D-TriggerWithRiseEdge:inst5                  ; D-TriggerWithRiseEdge ; work         ;
+;          |D-Trigger:inst19|         ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger10:inst11|D-TriggerWithRiseEdge:inst5|D-Trigger:inst19 ; D-Trigger             ; work         ;
+;          |D-Trigger:inst|           ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger10:inst11|D-TriggerWithRiseEdge:inst5|D-Trigger:inst   ; D-Trigger             ; work         ;
+;       |D-TriggerWithRiseEdge:inst6| ; 3 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger10:inst11|D-TriggerWithRiseEdge:inst6                  ; D-TriggerWithRiseEdge ; work         ;
+;          |D-Trigger:inst19|         ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger10:inst11|D-TriggerWithRiseEdge:inst6|D-Trigger:inst19 ; D-Trigger             ; work         ;
+;          |D-Trigger:inst|           ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger10:inst11|D-TriggerWithRiseEdge:inst6|D-Trigger:inst   ; D-Trigger             ; work         ;
+;       |D-TriggerWithRiseEdge:inst7| ; 3 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger10:inst11|D-TriggerWithRiseEdge:inst7                  ; D-TriggerWithRiseEdge ; work         ;
+;          |D-Trigger:inst19|         ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger10:inst11|D-TriggerWithRiseEdge:inst7|D-Trigger:inst19 ; D-Trigger             ; work         ;
+;          |D-Trigger:inst|           ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger10:inst11|D-TriggerWithRiseEdge:inst7|D-Trigger:inst   ; D-Trigger             ; work         ;
+;       |D-TriggerWithRiseEdge:inst8| ; 3 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger10:inst11|D-TriggerWithRiseEdge:inst8                  ; D-TriggerWithRiseEdge ; work         ;
+;          |D-Trigger:inst19|         ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger10:inst11|D-TriggerWithRiseEdge:inst8|D-Trigger:inst19 ; D-Trigger             ; work         ;
+;          |D-Trigger:inst|           ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger10:inst11|D-TriggerWithRiseEdge:inst8|D-Trigger:inst   ; D-Trigger             ; work         ;
+;       |D-TriggerWithRiseEdge:inst9| ; 3 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger10:inst11|D-TriggerWithRiseEdge:inst9                  ; D-TriggerWithRiseEdge ; work         ;
+;          |D-Trigger:inst19|         ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger10:inst11|D-TriggerWithRiseEdge:inst9|D-Trigger:inst19 ; D-Trigger             ; work         ;
+;          |D-Trigger:inst|           ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger10:inst11|D-TriggerWithRiseEdge:inst9|D-Trigger:inst   ; D-Trigger             ; work         ;
+;       |D-TriggerWithRiseEdge:inst|  ; 3 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger10:inst11|D-TriggerWithRiseEdge:inst                   ; D-TriggerWithRiseEdge ; work         ;
+;          |D-Trigger:inst19|         ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger10:inst11|D-TriggerWithRiseEdge:inst|D-Trigger:inst19  ; D-Trigger             ; work         ;
+;          |D-Trigger:inst|           ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger10:inst11|D-TriggerWithRiseEdge:inst|D-Trigger:inst    ; D-Trigger             ; work         ;
+;    |D-Trigger10:inst12|             ; 30 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger10:inst12                                              ; D-Trigger10           ; work         ;
+;       |D-TriggerWithRiseEdge:inst1| ; 3 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger10:inst12|D-TriggerWithRiseEdge:inst1                  ; D-TriggerWithRiseEdge ; work         ;
+;          |D-Trigger:inst19|         ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger10:inst12|D-TriggerWithRiseEdge:inst1|D-Trigger:inst19 ; D-Trigger             ; work         ;
+;          |D-Trigger:inst|           ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger10:inst12|D-TriggerWithRiseEdge:inst1|D-Trigger:inst   ; D-Trigger             ; work         ;
+;       |D-TriggerWithRiseEdge:inst2| ; 3 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger10:inst12|D-TriggerWithRiseEdge:inst2                  ; D-TriggerWithRiseEdge ; work         ;
+;          |D-Trigger:inst19|         ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger10:inst12|D-TriggerWithRiseEdge:inst2|D-Trigger:inst19 ; D-Trigger             ; work         ;
+;          |D-Trigger:inst|           ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger10:inst12|D-TriggerWithRiseEdge:inst2|D-Trigger:inst   ; D-Trigger             ; work         ;
+;       |D-TriggerWithRiseEdge:inst3| ; 3 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger10:inst12|D-TriggerWithRiseEdge:inst3                  ; D-TriggerWithRiseEdge ; work         ;
+;          |D-Trigger:inst19|         ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger10:inst12|D-TriggerWithRiseEdge:inst3|D-Trigger:inst19 ; D-Trigger             ; work         ;
+;          |D-Trigger:inst|           ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger10:inst12|D-TriggerWithRiseEdge:inst3|D-Trigger:inst   ; D-Trigger             ; work         ;
+;       |D-TriggerWithRiseEdge:inst4| ; 3 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger10:inst12|D-TriggerWithRiseEdge:inst4                  ; D-TriggerWithRiseEdge ; work         ;
+;          |D-Trigger:inst19|         ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger10:inst12|D-TriggerWithRiseEdge:inst4|D-Trigger:inst19 ; D-Trigger             ; work         ;
+;          |D-Trigger:inst|           ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger10:inst12|D-TriggerWithRiseEdge:inst4|D-Trigger:inst   ; D-Trigger             ; work         ;
+;       |D-TriggerWithRiseEdge:inst5| ; 3 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger10:inst12|D-TriggerWithRiseEdge:inst5                  ; D-TriggerWithRiseEdge ; work         ;
+;          |D-Trigger:inst19|         ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger10:inst12|D-TriggerWithRiseEdge:inst5|D-Trigger:inst19 ; D-Trigger             ; work         ;
+;          |D-Trigger:inst|           ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger10:inst12|D-TriggerWithRiseEdge:inst5|D-Trigger:inst   ; D-Trigger             ; work         ;
+;       |D-TriggerWithRiseEdge:inst6| ; 3 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger10:inst12|D-TriggerWithRiseEdge:inst6                  ; D-TriggerWithRiseEdge ; work         ;
+;          |D-Trigger:inst19|         ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger10:inst12|D-TriggerWithRiseEdge:inst6|D-Trigger:inst19 ; D-Trigger             ; work         ;
+;          |D-Trigger:inst|           ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger10:inst12|D-TriggerWithRiseEdge:inst6|D-Trigger:inst   ; D-Trigger             ; work         ;
+;       |D-TriggerWithRiseEdge:inst7| ; 3 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger10:inst12|D-TriggerWithRiseEdge:inst7                  ; D-TriggerWithRiseEdge ; work         ;
+;          |D-Trigger:inst19|         ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger10:inst12|D-TriggerWithRiseEdge:inst7|D-Trigger:inst19 ; D-Trigger             ; work         ;
+;          |D-Trigger:inst|           ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger10:inst12|D-TriggerWithRiseEdge:inst7|D-Trigger:inst   ; D-Trigger             ; work         ;
+;       |D-TriggerWithRiseEdge:inst8| ; 3 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger10:inst12|D-TriggerWithRiseEdge:inst8                  ; D-TriggerWithRiseEdge ; work         ;
+;          |D-Trigger:inst19|         ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger10:inst12|D-TriggerWithRiseEdge:inst8|D-Trigger:inst19 ; D-Trigger             ; work         ;
+;          |D-Trigger:inst|           ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger10:inst12|D-TriggerWithRiseEdge:inst8|D-Trigger:inst   ; D-Trigger             ; work         ;
+;       |D-TriggerWithRiseEdge:inst9| ; 3 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger10:inst12|D-TriggerWithRiseEdge:inst9                  ; D-TriggerWithRiseEdge ; work         ;
+;          |D-Trigger:inst19|         ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger10:inst12|D-TriggerWithRiseEdge:inst9|D-Trigger:inst19 ; D-Trigger             ; work         ;
+;          |D-Trigger:inst|           ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger10:inst12|D-TriggerWithRiseEdge:inst9|D-Trigger:inst   ; D-Trigger             ; work         ;
+;       |D-TriggerWithRiseEdge:inst|  ; 3 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger10:inst12|D-TriggerWithRiseEdge:inst                   ; D-TriggerWithRiseEdge ; work         ;
+;          |D-Trigger:inst19|         ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger10:inst12|D-TriggerWithRiseEdge:inst|D-Trigger:inst19  ; D-Trigger             ; work         ;
+;          |D-Trigger:inst|           ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger10:inst12|D-TriggerWithRiseEdge:inst|D-Trigger:inst    ; D-Trigger             ; work         ;
+;    |D-Trigger5:inst|                ; 15 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger5:inst                                                 ; D-Trigger5            ; work         ;
+;       |D-TriggerWithRiseEdge:inst1| ; 3 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger5:inst|D-TriggerWithRiseEdge:inst1                     ; D-TriggerWithRiseEdge ; work         ;
+;          |D-Trigger:inst19|         ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger5:inst|D-TriggerWithRiseEdge:inst1|D-Trigger:inst19    ; D-Trigger             ; work         ;
+;          |D-Trigger:inst|           ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger5:inst|D-TriggerWithRiseEdge:inst1|D-Trigger:inst      ; D-Trigger             ; work         ;
+;       |D-TriggerWithRiseEdge:inst2| ; 3 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger5:inst|D-TriggerWithRiseEdge:inst2                     ; D-TriggerWithRiseEdge ; work         ;
+;          |D-Trigger:inst19|         ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger5:inst|D-TriggerWithRiseEdge:inst2|D-Trigger:inst19    ; D-Trigger             ; work         ;
+;          |D-Trigger:inst|           ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger5:inst|D-TriggerWithRiseEdge:inst2|D-Trigger:inst      ; D-Trigger             ; work         ;
+;       |D-TriggerWithRiseEdge:inst3| ; 3 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger5:inst|D-TriggerWithRiseEdge:inst3                     ; D-TriggerWithRiseEdge ; work         ;
+;          |D-Trigger:inst19|         ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger5:inst|D-TriggerWithRiseEdge:inst3|D-Trigger:inst19    ; D-Trigger             ; work         ;
+;          |D-Trigger:inst|           ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger5:inst|D-TriggerWithRiseEdge:inst3|D-Trigger:inst      ; D-Trigger             ; work         ;
+;       |D-TriggerWithRiseEdge:inst4| ; 3 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger5:inst|D-TriggerWithRiseEdge:inst4                     ; D-TriggerWithRiseEdge ; work         ;
+;          |D-Trigger:inst19|         ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger5:inst|D-TriggerWithRiseEdge:inst4|D-Trigger:inst19    ; D-Trigger             ; work         ;
+;          |D-Trigger:inst|           ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger5:inst|D-TriggerWithRiseEdge:inst4|D-Trigger:inst      ; D-Trigger             ; work         ;
+;       |D-TriggerWithRiseEdge:inst|  ; 3 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger5:inst|D-TriggerWithRiseEdge:inst                      ; D-TriggerWithRiseEdge ; work         ;
+;          |D-Trigger:inst19|         ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger5:inst|D-TriggerWithRiseEdge:inst|D-Trigger:inst19     ; D-Trigger             ; work         ;
+;          |D-Trigger:inst|           ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger5:inst|D-TriggerWithRiseEdge:inst|D-Trigger:inst       ; D-Trigger             ; work         ;
++-------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------+-----------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+------------------------------------------------------------+
-; Logic Cells Representing Combinational Loops               ;
-+--------------------------------------------------------+---+
-; Logic Cell Name                                        ;   ;
-+--------------------------------------------------------+---+
-; D-Trigger:inst19|inst20~0                              ;   ;
-; D-Trigger:inst|inst20~0                                ;   ;
-; Number of logic cells representing combinational loops ; 2 ;
-+--------------------------------------------------------+---+
++-------------------------------------------------------------------------------+
+; Logic Cells Representing Combinational Loops                                  ;
++--------------------------------------------------------------------------+----+
+; Logic Cell Name                                                          ;    ;
++--------------------------------------------------------------------------+----+
+; D-Trigger10:inst12|D-TriggerWithRiseEdge:inst|D-Trigger:inst|inst20~0    ;    ;
+; D-Trigger10:inst12|D-TriggerWithRiseEdge:inst|D-Trigger:inst19|inst21~0  ;    ;
+; D-Trigger10:inst12|D-TriggerWithRiseEdge:inst1|D-Trigger:inst|inst20~0   ;    ;
+; D-Trigger10:inst12|D-TriggerWithRiseEdge:inst1|D-Trigger:inst19|inst21~0 ;    ;
+; D-Trigger10:inst12|D-TriggerWithRiseEdge:inst2|D-Trigger:inst|inst20~0   ;    ;
+; D-Trigger10:inst12|D-TriggerWithRiseEdge:inst2|D-Trigger:inst19|inst21~0 ;    ;
+; D-Trigger10:inst12|D-TriggerWithRiseEdge:inst3|D-Trigger:inst|inst20~0   ;    ;
+; D-Trigger10:inst12|D-TriggerWithRiseEdge:inst3|D-Trigger:inst19|inst21~0 ;    ;
+; D-Trigger10:inst12|D-TriggerWithRiseEdge:inst4|D-Trigger:inst|inst20~0   ;    ;
+; D-Trigger10:inst12|D-TriggerWithRiseEdge:inst4|D-Trigger:inst19|inst21~0 ;    ;
+; D-Trigger10:inst12|D-TriggerWithRiseEdge:inst5|D-Trigger:inst|inst20~0   ;    ;
+; D-Trigger10:inst12|D-TriggerWithRiseEdge:inst5|D-Trigger:inst19|inst21~0 ;    ;
+; D-Trigger10:inst12|D-TriggerWithRiseEdge:inst6|D-Trigger:inst|inst20~0   ;    ;
+; D-Trigger10:inst12|D-TriggerWithRiseEdge:inst6|D-Trigger:inst19|inst21~0 ;    ;
+; D-Trigger10:inst12|D-TriggerWithRiseEdge:inst7|D-Trigger:inst|inst20~0   ;    ;
+; D-Trigger10:inst12|D-TriggerWithRiseEdge:inst7|D-Trigger:inst19|inst21~0 ;    ;
+; D-Trigger10:inst12|D-TriggerWithRiseEdge:inst8|D-Trigger:inst|inst20~0   ;    ;
+; D-Trigger10:inst12|D-TriggerWithRiseEdge:inst8|D-Trigger:inst19|inst21~0 ;    ;
+; D-Trigger10:inst12|D-TriggerWithRiseEdge:inst9|D-Trigger:inst|inst20~0   ;    ;
+; D-Trigger10:inst12|D-TriggerWithRiseEdge:inst9|D-Trigger:inst19|inst21~0 ;    ;
+; D-Trigger10:inst11|D-TriggerWithRiseEdge:inst|D-Trigger:inst|inst20~0    ;    ;
+; D-Trigger10:inst11|D-TriggerWithRiseEdge:inst|D-Trigger:inst19|inst21~0  ;    ;
+; D-Trigger10:inst11|D-TriggerWithRiseEdge:inst1|D-Trigger:inst|inst20~0   ;    ;
+; D-Trigger10:inst11|D-TriggerWithRiseEdge:inst1|D-Trigger:inst19|inst21~0 ;    ;
+; D-Trigger10:inst11|D-TriggerWithRiseEdge:inst2|D-Trigger:inst|inst20~0   ;    ;
+; D-Trigger10:inst11|D-TriggerWithRiseEdge:inst2|D-Trigger:inst19|inst21~0 ;    ;
+; D-Trigger10:inst11|D-TriggerWithRiseEdge:inst3|D-Trigger:inst|inst20~0   ;    ;
+; D-Trigger10:inst11|D-TriggerWithRiseEdge:inst3|D-Trigger:inst19|inst21~0 ;    ;
+; D-Trigger10:inst11|D-TriggerWithRiseEdge:inst4|D-Trigger:inst|inst20~0   ;    ;
+; D-Trigger10:inst11|D-TriggerWithRiseEdge:inst4|D-Trigger:inst19|inst21~0 ;    ;
+; D-Trigger10:inst11|D-TriggerWithRiseEdge:inst5|D-Trigger:inst|inst20~0   ;    ;
+; D-Trigger10:inst11|D-TriggerWithRiseEdge:inst5|D-Trigger:inst19|inst21~0 ;    ;
+; D-Trigger10:inst11|D-TriggerWithRiseEdge:inst6|D-Trigger:inst|inst20~0   ;    ;
+; D-Trigger10:inst11|D-TriggerWithRiseEdge:inst6|D-Trigger:inst19|inst21~0 ;    ;
+; D-Trigger10:inst11|D-TriggerWithRiseEdge:inst7|D-Trigger:inst|inst20~0   ;    ;
+; D-Trigger10:inst11|D-TriggerWithRiseEdge:inst7|D-Trigger:inst19|inst21~0 ;    ;
+; D-Trigger10:inst11|D-TriggerWithRiseEdge:inst8|D-Trigger:inst|inst20~0   ;    ;
+; D-Trigger10:inst11|D-TriggerWithRiseEdge:inst8|D-Trigger:inst19|inst21~0 ;    ;
+; D-Trigger10:inst11|D-TriggerWithRiseEdge:inst9|D-Trigger:inst|inst20~0   ;    ;
+; D-Trigger10:inst11|D-TriggerWithRiseEdge:inst9|D-Trigger:inst19|inst21~0 ;    ;
+; D-Trigger5:inst|D-TriggerWithRiseEdge:inst|D-Trigger:inst|inst20~0       ;    ;
+; D-Trigger5:inst|D-TriggerWithRiseEdge:inst|D-Trigger:inst19|inst21~0     ;    ;
+; D-Trigger5:inst|D-TriggerWithRiseEdge:inst1|D-Trigger:inst|inst20~0      ;    ;
+; D-Trigger5:inst|D-TriggerWithRiseEdge:inst1|D-Trigger:inst19|inst21~0    ;    ;
+; D-Trigger5:inst|D-TriggerWithRiseEdge:inst2|D-Trigger:inst|inst20~0      ;    ;
+; D-Trigger5:inst|D-TriggerWithRiseEdge:inst2|D-Trigger:inst19|inst21~0    ;    ;
+; D-Trigger5:inst|D-TriggerWithRiseEdge:inst3|D-Trigger:inst|inst20~0      ;    ;
+; D-Trigger5:inst|D-TriggerWithRiseEdge:inst3|D-Trigger:inst19|inst21~0    ;    ;
+; D-Trigger5:inst|D-TriggerWithRiseEdge:inst4|D-Trigger:inst|inst20~0      ;    ;
+; D-Trigger5:inst|D-TriggerWithRiseEdge:inst4|D-Trigger:inst19|inst21~0    ;    ;
+; Number of logic cells representing combinational loops                   ; 50 ;
++--------------------------------------------------------------------------+----+
 Note: All cells listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
@@ -258,9 +361,9 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 25    ;
+; Total registers                              ; 0     ;
 ; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 23    ;
+; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 0     ;
@@ -268,77 +371,19 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 +----------------------------------------------+-------+
 
 
-+--------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: debouncer:inst9|LPM_COMPARE:inst5 ;
-+------------------------+--------------+----------------------------------------+
-; Parameter Name         ; Value        ; Type                                   ;
-+------------------------+--------------+----------------------------------------+
-; lpm_width              ; 23           ; Untyped                                ;
-; LPM_REPRESENTATION     ; UNSIGNED     ; Untyped                                ;
-; LPM_PIPELINE           ; 1            ; Untyped                                ;
-; CHAIN_SIZE             ; 8            ; Untyped                                ;
-; ONE_INPUT_IS_CONSTANT  ; YES          ; Untyped                                ;
-; CARRY_CHAIN            ; MANUAL       ; Untyped                                ;
-; CASCADE_CHAIN          ; MANUAL       ; Untyped                                ;
-; CARRY_CHAIN_LENGTH     ; 48           ; CARRY_CHAIN_LENGTH                     ;
-; CASCADE_CHAIN_LENGTH   ; 2            ; CASCADE_CHAIN_LENGTH                   ;
-; DEVICE_FAMILY          ; Cyclone IV E ; Untyped                                ;
-; CBXI_PARAMETER         ; cmpr_mth     ; Untyped                                ;
-; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY                             ;
-; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY                           ;
-; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE                           ;
-; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE                         ;
-+------------------------+--------------+----------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+--------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: debouncer:inst9|LPM_COUNTER:inst4 ;
-+------------------------+-------------------+-----------------------------------+
-; Parameter Name         ; Value             ; Type                              ;
-+------------------------+-------------------+-----------------------------------+
-; AUTO_CARRY_CHAINS      ; ON                ; AUTO_CARRY                        ;
-; IGNORE_CARRY_BUFFERS   ; OFF               ; IGNORE_CARRY                      ;
-; AUTO_CASCADE_CHAINS    ; ON                ; AUTO_CASCADE                      ;
-; IGNORE_CASCADE_BUFFERS ; OFF               ; IGNORE_CASCADE                    ;
-; LPM_WIDTH              ; 23                ; Untyped                           ;
-; LPM_DIRECTION          ; DEFAULT           ; Untyped                           ;
-; LPM_MODULUS            ; 0                 ; Untyped                           ;
-; LPM_AVALUE             ; UNUSED            ; Untyped                           ;
-; LPM_SVALUE             ; UNUSED            ; Untyped                           ;
-; LPM_PORT_UPDOWN        ; PORT_CONNECTIVITY ; Untyped                           ;
-; DEVICE_FAMILY          ; Cyclone IV E      ; Untyped                           ;
-; CARRY_CHAIN            ; MANUAL            ; Untyped                           ;
-; CARRY_CHAIN_LENGTH     ; 48                ; CARRY_CHAIN_LENGTH                ;
-; NOT_GATE_PUSH_BACK     ; ON                ; NOT_GATE_PUSH_BACK                ;
-; CARRY_CNT_EN           ; SMART             ; Untyped                           ;
-; LABWIDE_SCLR           ; ON                ; Untyped                           ;
-; USE_NEW_VERSION        ; TRUE              ; Untyped                           ;
-; CBXI_PARAMETER         ; cntr_0ig          ; Untyped                           ;
-+------------------------+-------------------+-----------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 4                           ;
-; cycloneiii_ff         ; 25                          ;
-;     SLD               ; 23                          ;
-;     plain             ; 2                           ;
-; cycloneiii_lcell_comb ; 35                          ;
-;     arith             ; 22                          ;
-;         2 data inputs ; 22                          ;
-;     normal            ; 13                          ;
-;         0 data inputs ; 1                           ;
-;         1 data inputs ; 2                           ;
-;         3 data inputs ; 4                           ;
-;         4 data inputs ; 6                           ;
+; boundary_port         ; 2                           ;
+; cycloneiii_lcell_comb ; 75                          ;
+;     normal            ; 75                          ;
+;         3 data inputs ; 51                          ;
+;         4 data inputs ; 24                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 3.20                        ;
-; Average LUT depth     ; 2.48                        ;
+; Max LUT depth         ; 19.00                       ;
+; Average LUT depth     ; 11.40                       ;
 +-----------------------+-----------------------------+
 
 
@@ -357,7 +402,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 22.1std.0 Build 915 10/25/2022 SC Standard Edition
-    Info: Processing started: Mon Feb  5 15:27:39 2024
+    Info: Processing started: Mon Feb  5 15:50:42 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Trigger -c Trigger
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -365,41 +410,28 @@ Info (12021): Found 1 design units, including 1 entities, in source file trigger
     Info (12023): Found entity 1: Trigger
 Info (12021): Found 1 design units, including 1 entities, in source file d-trigger10.bdf
     Info (12023): Found entity 1: D-Trigger10
+Info (12021): Found 1 design units, including 1 entities, in source file d-triggerwithriseedge.bdf
+    Info (12023): Found entity 1: D-TriggerWithRiseEdge
+Info (12021): Found 1 design units, including 1 entities, in source file d-trigger5.bdf
+    Info (12023): Found entity 1: D-Trigger5
 Info (12127): Elaborating entity "Trigger" for the top level hierarchy
+Info (12128): Elaborating entity "D-Trigger5" for hierarchy "D-Trigger5:inst"
+Info (12128): Elaborating entity "D-TriggerWithRiseEdge" for hierarchy "D-Trigger5:inst|D-TriggerWithRiseEdge:inst4"
 Warning (12125): Using design file d-trigger.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: D-Trigger
-Info (12128): Elaborating entity "D-Trigger" for hierarchy "D-Trigger:inst19"
-Warning (12125): Using design file debouncer.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: debouncer
-Info (12128): Elaborating entity "debouncer" for hierarchy "debouncer:inst9"
-Info (12128): Elaborating entity "LPM_COMPARE" for hierarchy "debouncer:inst9|LPM_COMPARE:inst5"
-Info (12130): Elaborated megafunction instantiation "debouncer:inst9|LPM_COMPARE:inst5"
-Info (12133): Instantiated megafunction "debouncer:inst9|LPM_COMPARE:inst5" with the following parameter:
-    Info (12134): Parameter "DATAB" = "1000000"
-    Info (12134): Parameter "LPM_PIPELINE" = "1"
-    Info (12134): Parameter "LPM_WIDTH" = "23"
-    Info (12134): Parameter "ONE_INPUT_IS_CONSTANT" = "YES"
-Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_mth.tdf
-    Info (12023): Found entity 1: cmpr_mth File: D:/GITEA/GitHub/ES/pcbteach/Lesson_04/db/cmpr_mth.tdf Line: 23
-Info (12128): Elaborating entity "cmpr_mth" for hierarchy "debouncer:inst9|LPM_COMPARE:inst5|cmpr_mth:auto_generated" File: d:/intelfpga/22.1std/quartus/libraries/megafunctions/lpm_compare.tdf Line: 281
-Info (12128): Elaborating entity "LPM_COUNTER" for hierarchy "debouncer:inst9|LPM_COUNTER:inst4"
-Info (12130): Elaborated megafunction instantiation "debouncer:inst9|LPM_COUNTER:inst4"
-Info (12133): Instantiated megafunction "debouncer:inst9|LPM_COUNTER:inst4" with the following parameter:
-    Info (12134): Parameter "LPM_WIDTH" = "23"
-Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_0ig.tdf
-    Info (12023): Found entity 1: cntr_0ig File: D:/GITEA/GitHub/ES/pcbteach/Lesson_04/db/cntr_0ig.tdf Line: 26
-Info (12128): Elaborating entity "cntr_0ig" for hierarchy "debouncer:inst9|LPM_COUNTER:inst4|cntr_0ig:auto_generated" File: d:/intelfpga/22.1std/quartus/libraries/megafunctions/lpm_counter.tdf Line: 259
+Info (12128): Elaborating entity "D-Trigger" for hierarchy "D-Trigger5:inst|D-TriggerWithRiseEdge:inst4|D-Trigger:inst19"
+Info (12128): Elaborating entity "D-Trigger10" for hierarchy "D-Trigger10:inst11"
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 39 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 3 input pins
+Info (21057): Implemented 77 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 1 input pins
     Info (21059): Implemented 1 output pins
-    Info (21061): Implemented 35 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 3 warnings
-    Info: Peak virtual memory: 4797 megabytes
-    Info: Processing ended: Mon Feb  5 15:27:47 2024
-    Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:20
+    Info (21061): Implemented 75 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 4774 megabytes
+    Info: Processing ended: Mon Feb  5 15:50:51 2024
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:19
 
 
