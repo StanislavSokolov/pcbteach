@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Mon Feb  5 15:50:50 2024
+Analysis & Synthesis Status : Successful - Mon Feb  5 16:15:37 2024
 Quartus Prime Version : 22.1std.0 Build 915 10/25/2022 SC Standard Edition
 Revision Name : Trigger
 Top-level Entity Name : Trigger
 Family : Cyclone IV E
-Total logic elements : 75
-    Total combinational functions : 75
+Total logic elements : 88
+    Total combinational functions : 88
     Dedicated logic registers : 0
 Total registers : 0
-Total pins : 2
+Total pins : 4
 Total virtual pins : 0
 Total memory bits : 0
 Embedded Multiplier 9-bit elements : 0

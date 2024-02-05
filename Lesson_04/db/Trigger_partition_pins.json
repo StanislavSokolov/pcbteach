@@ -4,7 +4,15 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "Q",
+					"name" : "Red",
+					"strict" : false
+				},
+				{
+					"name" : "Yellow",
+					"strict" : false
+				},
+				{
+					"name" : "Green",
 					"strict" : false
 				},
 				{

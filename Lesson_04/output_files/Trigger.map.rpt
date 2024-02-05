@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Trigger
-Mon Feb  5 15:50:50 2024
+Mon Feb  5 16:15:38 2024
 Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Standard Edition
 
 
@@ -44,16 +44,16 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                            ;
 +------------------------------------+----------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Feb  5 15:50:50 2024              ;
+; Analysis & Synthesis Status        ; Successful - Mon Feb  5 16:15:37 2024              ;
 ; Quartus Prime Version              ; 22.1std.0 Build 915 10/25/2022 SC Standard Edition ;
 ; Revision Name                      ; Trigger                                            ;
 ; Top-level Entity Name              ; Trigger                                            ;
 ; Family                             ; Cyclone IV E                                       ;
-; Total logic elements               ; 75                                                 ;
-;     Total combinational functions  ; 75                                                 ;
+; Total logic elements               ; 88                                                 ;
+;     Total combinational functions  ; 88                                                 ;
 ;     Dedicated logic registers      ; 0                                                  ;
 ; Total registers                    ; 0                                                  ;
-; Total pins                         ; 2                                                  ;
+; Total pins                         ; 4                                                  ;
 ; Total virtual pins                 ; 0                                                  ;
 ; Total memory bits                  ; 0                                                  ;
 ; Embedded Multiplier 9-bit elements ; 0                                                  ;
@@ -176,36 +176,36 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------+-----------------+------------------------------------------+-----------------------------------------------------------------+---------+
 
 
-+---------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                                                                         ;
-+---------------------------------------------+-----------------------------------------------------------------------+
-; Resource                                    ; Usage                                                                 ;
-+---------------------------------------------+-----------------------------------------------------------------------+
-; Estimated Total logic elements              ; 75                                                                    ;
-;                                             ;                                                                       ;
-; Total combinational functions               ; 75                                                                    ;
-; Logic element usage by number of LUT inputs ;                                                                       ;
-;     -- 4 input functions                    ; 24                                                                    ;
-;     -- 3 input functions                    ; 51                                                                    ;
-;     -- <=2 input functions                  ; 0                                                                     ;
-;                                             ;                                                                       ;
-; Logic elements by mode                      ;                                                                       ;
-;     -- normal mode                          ; 75                                                                    ;
-;     -- arithmetic mode                      ; 0                                                                     ;
-;                                             ;                                                                       ;
-; Total registers                             ; 0                                                                     ;
-;     -- Dedicated logic registers            ; 0                                                                     ;
-;     -- I/O registers                        ; 0                                                                     ;
-;                                             ;                                                                       ;
-; I/O pins                                    ; 2                                                                     ;
-;                                             ;                                                                       ;
-; Embedded Multiplier 9-bit elements          ; 0                                                                     ;
-;                                             ;                                                                       ;
-; Maximum fan-out node                        ; D-Trigger5:inst|D-TriggerWithRiseEdge:inst1|D-Trigger:inst19|inst21~1 ;
-; Maximum fan-out                             ; 5                                                                     ;
-; Total fan-out                               ; 252                                                                   ;
-; Average fan-out                             ; 3.19                                                                  ;
-+---------------------------------------------+-----------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                                       ;
++---------------------------------------------+-----------------------------------------------------+
+; Resource                                    ; Usage                                               ;
++---------------------------------------------+-----------------------------------------------------+
+; Estimated Total logic elements              ; 88                                                  ;
+;                                             ;                                                     ;
+; Total combinational functions               ; 88                                                  ;
+; Logic element usage by number of LUT inputs ;                                                     ;
+;     -- 4 input functions                    ; 28                                                  ;
+;     -- 3 input functions                    ; 60                                                  ;
+;     -- <=2 input functions                  ; 0                                                   ;
+;                                             ;                                                     ;
+; Logic elements by mode                      ;                                                     ;
+;     -- normal mode                          ; 88                                                  ;
+;     -- arithmetic mode                      ; 0                                                   ;
+;                                             ;                                                     ;
+; Total registers                             ; 0                                                   ;
+;     -- Dedicated logic registers            ; 0                                                   ;
+;     -- I/O registers                        ; 0                                                   ;
+;                                             ;                                                     ;
+; I/O pins                                    ; 4                                                   ;
+;                                             ;                                                     ;
+; Embedded Multiplier 9-bit elements          ; 0                                                   ;
+;                                             ;                                                     ;
+; Maximum fan-out node                        ; D-TriggerWithRiseEdge:inst4|D-Trigger:inst19|inst20 ;
+; Maximum fan-out                             ; 5                                                   ;
+; Total fan-out                               ; 299                                                 ;
+; Average fan-out                             ; 3.11                                                ;
++---------------------------------------------+-----------------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -213,7 +213,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------+-----------------------+--------------+
 ; Compilation Hierarchy Node          ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                      ; Entity Name           ; Library Name ;
 +-------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------+-----------------------+--------------+
-; |Trigger                            ; 75 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 2    ; 0            ; |Trigger                                                                 ; Trigger               ; work         ;
+; |Trigger                            ; 88 (1)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 4    ; 0            ; |Trigger                                                                 ; Trigger               ; work         ;
 ;    |D-Trigger10:inst11|             ; 30 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger10:inst11                                              ; D-Trigger10           ; work         ;
 ;       |D-TriggerWithRiseEdge:inst1| ; 3 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger10:inst11|D-TriggerWithRiseEdge:inst1                  ; D-TriggerWithRiseEdge ; work         ;
 ;          |D-Trigger:inst19|         ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger10:inst11|D-TriggerWithRiseEdge:inst1|D-Trigger:inst19 ; D-Trigger             ; work         ;
@@ -292,6 +292,18 @@ https://fpgasoftware.intel.com/eula.
 ;       |D-TriggerWithRiseEdge:inst|  ; 3 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger5:inst|D-TriggerWithRiseEdge:inst                      ; D-TriggerWithRiseEdge ; work         ;
 ;          |D-Trigger:inst19|         ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger5:inst|D-TriggerWithRiseEdge:inst|D-Trigger:inst19     ; D-Trigger             ; work         ;
 ;          |D-Trigger:inst|           ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger5:inst|D-TriggerWithRiseEdge:inst|D-Trigger:inst       ; D-Trigger             ; work         ;
+;    |D-TriggerWithRiseEdge:inst4|    ; 3 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-TriggerWithRiseEdge:inst4                                     ; D-TriggerWithRiseEdge ; work         ;
+;       |D-Trigger:inst19|            ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-TriggerWithRiseEdge:inst4|D-Trigger:inst19                    ; D-Trigger             ; work         ;
+;       |D-Trigger:inst|              ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-TriggerWithRiseEdge:inst4|D-Trigger:inst                      ; D-Trigger             ; work         ;
+;    |D-TriggerWithRiseEdge:inst5|    ; 3 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-TriggerWithRiseEdge:inst5                                     ; D-TriggerWithRiseEdge ; work         ;
+;       |D-Trigger:inst19|            ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-TriggerWithRiseEdge:inst5|D-Trigger:inst19                    ; D-Trigger             ; work         ;
+;       |D-Trigger:inst|              ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-TriggerWithRiseEdge:inst5|D-Trigger:inst                      ; D-Trigger             ; work         ;
+;    |D-TriggerWithRiseEdge:inst7|    ; 3 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-TriggerWithRiseEdge:inst7                                     ; D-TriggerWithRiseEdge ; work         ;
+;       |D-Trigger:inst19|            ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-TriggerWithRiseEdge:inst7|D-Trigger:inst19                    ; D-Trigger             ; work         ;
+;       |D-Trigger:inst|              ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-TriggerWithRiseEdge:inst7|D-Trigger:inst                      ; D-Trigger             ; work         ;
+;    |D-TriggerWithRiseEdge:inst8|    ; 3 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-TriggerWithRiseEdge:inst8                                     ; D-TriggerWithRiseEdge ; work         ;
+;       |D-Trigger:inst19|            ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-TriggerWithRiseEdge:inst8|D-Trigger:inst19                    ; D-Trigger             ; work         ;
+;       |D-Trigger:inst|              ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-TriggerWithRiseEdge:inst8|D-Trigger:inst                      ; D-Trigger             ; work         ;
 +-------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------+-----------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -351,7 +363,15 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; D-Trigger5:inst|D-TriggerWithRiseEdge:inst3|D-Trigger:inst19|inst21~0    ;    ;
 ; D-Trigger5:inst|D-TriggerWithRiseEdge:inst4|D-Trigger:inst|inst20~0      ;    ;
 ; D-Trigger5:inst|D-TriggerWithRiseEdge:inst4|D-Trigger:inst19|inst21~0    ;    ;
-; Number of logic cells representing combinational loops                   ; 50 ;
+; D-TriggerWithRiseEdge:inst8|D-Trigger:inst|inst20~0                      ;    ;
+; D-TriggerWithRiseEdge:inst8|D-Trigger:inst19|inst21~0                    ;    ;
+; D-TriggerWithRiseEdge:inst7|D-Trigger:inst|inst20~0                      ;    ;
+; D-TriggerWithRiseEdge:inst7|D-Trigger:inst19|inst21~0                    ;    ;
+; D-TriggerWithRiseEdge:inst4|D-Trigger:inst|inst20~0                      ;    ;
+; D-TriggerWithRiseEdge:inst4|D-Trigger:inst19|inst21~0                    ;    ;
+; D-TriggerWithRiseEdge:inst5|D-Trigger:inst|inst20~0                      ;    ;
+; D-TriggerWithRiseEdge:inst5|D-Trigger:inst19|inst21~0                    ;    ;
+; Number of logic cells representing combinational loops                   ; 58 ;
 +--------------------------------------------------------------------------+----+
 Note: All cells listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
@@ -376,14 +396,15 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 2                           ;
-; cycloneiii_lcell_comb ; 75                          ;
-;     normal            ; 75                          ;
-;         3 data inputs ; 51                          ;
-;         4 data inputs ; 24                          ;
+; boundary_port         ; 4                           ;
+; cycloneiii_lcell_comb ; 90                          ;
+;     normal            ; 90                          ;
+;         1 data inputs ; 2                           ;
+;         3 data inputs ; 60                          ;
+;         4 data inputs ; 28                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 19.00                       ;
-; Average LUT depth     ; 11.40                       ;
+; Max LUT depth         ; 23.00                       ;
+; Average LUT depth     ; 13.87                       ;
 +-----------------------+-----------------------------+
 
 
@@ -402,7 +423,7 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 22.1std.0 Build 915 10/25/2022 SC Standard Edition
-    Info: Processing started: Mon Feb  5 15:50:42 2024
+    Info: Processing started: Mon Feb  5 16:15:29 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Trigger -c Trigger
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -415,23 +436,25 @@ Info (12021): Found 1 design units, including 1 entities, in source file d-trigg
 Info (12021): Found 1 design units, including 1 entities, in source file d-trigger5.bdf
     Info (12023): Found entity 1: D-Trigger5
 Info (12127): Elaborating entity "Trigger" for the top level hierarchy
-Info (12128): Elaborating entity "D-Trigger5" for hierarchy "D-Trigger5:inst"
-Info (12128): Elaborating entity "D-TriggerWithRiseEdge" for hierarchy "D-Trigger5:inst|D-TriggerWithRiseEdge:inst4"
+Warning (275011): Block or symbol "NOT" of instance "inst9" overlaps another block or symbol
+Warning (275011): Block or symbol "NOT" of instance "inst13" overlaps another block or symbol
+Info (12128): Elaborating entity "D-TriggerWithRiseEdge" for hierarchy "D-TriggerWithRiseEdge:inst5"
 Warning (12125): Using design file d-trigger.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: D-Trigger
-Info (12128): Elaborating entity "D-Trigger" for hierarchy "D-Trigger5:inst|D-TriggerWithRiseEdge:inst4|D-Trigger:inst19"
+Info (12128): Elaborating entity "D-Trigger" for hierarchy "D-TriggerWithRiseEdge:inst5|D-Trigger:inst19"
+Info (12128): Elaborating entity "D-Trigger5" for hierarchy "D-Trigger5:inst"
 Info (12128): Elaborating entity "D-Trigger10" for hierarchy "D-Trigger10:inst11"
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 77 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 92 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 1 input pins
-    Info (21059): Implemented 1 output pins
-    Info (21061): Implemented 75 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
+    Info (21059): Implemented 3 output pins
+    Info (21061): Implemented 88 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4 warnings
     Info: Peak virtual memory: 4774 megabytes
-    Info: Processing ended: Mon Feb  5 15:50:51 2024
+    Info: Processing ended: Mon Feb  5 16:15:38 2024
     Info: Elapsed time: 00:00:09
-    Info: Total CPU time (on all processors): 00:00:19
+    Info: Total CPU time (on all processors): 00:00:20
 
 
