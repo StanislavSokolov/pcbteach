@@ -157,9 +157,9 @@ Q1                           : 85        : output : 2.5 V             :         
 Q2                           : 86        : output : 2.5 V             :         : 5         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : 87        :        :                   :         : 5         :                
 C                            : 88        : input  : 2.5 V             :         : 5         : Y              
-D0                           : 89        : input  : 2.5 V             :         : 5         : Y              
-D1                           : 90        : input  : 2.5 V             :         : 6         : Y              
-D2                           : 91        : input  : 2.5 V             :         : 6         : Y              
+D                            : 89        : input  : 2.5 V             :         : 5         : Y              
+OE                           : 90        : input  : 2.5 V             :         : 6         : Y              
+GND+                         : 91        :        :                   :         : 6         :                
 CONF_DONE                    : 92        :        :                   :         : 6         :                
 VCCIO6                       : 93        : power  :                   : 2.5V    : 6         :                
 MSEL0                        : 94        :        :                   :         : 6         :                

@@ -1,12 +1,21 @@
 |Trigger
-Q0 <= D-TriggerWithRisingEdge:inst3.Q
-D0 => D-TriggerWithRisingEdge:inst3.D
+Q0 <= D-Trigger:inst.Q
+D => D-TriggerWithRisingEdge:inst3.D
 C => debouncer:inst9.btn_in
 CLK => debouncer:inst9.clk
-Q1 <= D-TriggerWithRisingEdge:inst2.Q
-D1 => D-TriggerWithRisingEdge:inst2.D
-Q2 <= D-TriggerWithRisingEdge:inst1.Q
-D2 => D-TriggerWithRisingEdge:inst1.D
+OE => D-Trigger:inst.C
+OE => D-Trigger:inst4.C
+OE => D-Trigger:inst5.C
+Q1 <= D-Trigger:inst4.Q
+Q2 <= D-Trigger:inst5.Q
+
+
+|Trigger|D-Trigger:inst
+Q <= inst20.DB_MAX_OUTPUT_PORT_TYPE
+C => inst19.IN0
+C => inst18.IN0
+D => inst18.IN1
+nQ <= inst21.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |Trigger|D-TriggerWithRisingEdge:inst3
@@ -258,6 +267,14 @@ sclr => _.IN0
 sclr => _.IN0
 
 
+|Trigger|D-Trigger:inst4
+Q <= inst20.DB_MAX_OUTPUT_PORT_TYPE
+C => inst19.IN0
+C => inst18.IN0
+D => inst18.IN1
+nQ <= inst21.DB_MAX_OUTPUT_PORT_TYPE
+
+
 |Trigger|D-TriggerWithRisingEdge:inst2
 Q <= D-Trigger:inst19.Q
 D => D-Trigger:inst.D
@@ -275,6 +292,14 @@ nQ <= inst21.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |Trigger|D-TriggerWithRisingEdge:inst2|D-Trigger:inst
+Q <= inst20.DB_MAX_OUTPUT_PORT_TYPE
+C => inst19.IN0
+C => inst18.IN0
+D => inst18.IN1
+nQ <= inst21.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Trigger|D-Trigger:inst5
 Q <= inst20.DB_MAX_OUTPUT_PORT_TYPE
 C => inst19.IN0
 C => inst18.IN0
