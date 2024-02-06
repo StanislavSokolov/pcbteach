@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Trigger
-Mon Feb  5 16:25:34 2024
+Tue Feb  6 17:36:25 2024
 Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Standard Edition
 
 
@@ -46,16 +46,16 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                            ;
 +------------------------------------+----------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Feb  5 16:25:34 2024              ;
+; Analysis & Synthesis Status        ; Successful - Tue Feb  6 17:36:25 2024              ;
 ; Quartus Prime Version              ; 22.1std.0 Build 915 10/25/2022 SC Standard Edition ;
 ; Revision Name                      ; Trigger                                            ;
 ; Top-level Entity Name              ; Trigger                                            ;
 ; Family                             ; Cyclone IV E                                       ;
-; Total logic elements               ; 35                                                 ;
-;     Total combinational functions  ; 34                                                 ;
+; Total logic elements               ; 39                                                 ;
+;     Total combinational functions  ; 38                                                 ;
 ;     Dedicated logic registers      ; 25                                                 ;
 ; Total registers                    ; 25                                                 ;
-; Total pins                         ; 4                                                  ;
+; Total pins                         ; 8                                                  ;
 ; Total virtual pins                 ; 0                                                  ;
 ; Total memory bits                  ; 0                                                  ;
 ; Embedded Multiplier 9-bit elements ; 0                                                  ;
@@ -172,6 +172,7 @@ https://fpgasoftware.intel.com/eula.
 ; File Name with User-Entered Path ; Used in Netlist ; File Type                                ; File Name with Absolute Path                                                 ; Library ;
 +----------------------------------+-----------------+------------------------------------------+------------------------------------------------------------------------------+---------+
 ; Trigger.bdf                      ; yes             ; User Block Diagram/Schematic File        ; D:/GITEA/GitHub/ES/pcbteach/Lesson_04/Trigger.bdf                            ;         ;
+; D-TriggerWithRisingEdge.bdf      ; yes             ; User Block Diagram/Schematic File        ; D:/GITEA/GitHub/ES/pcbteach/Lesson_04/D-TriggerWithRisingEdge.bdf            ;         ;
 ; d-trigger.bdf                    ; yes             ; Auto-Found Block Diagram/Schematic File  ; D:/GITEA/GitHub/ES/pcbteach/Lesson_04/d-trigger.bdf                          ;         ;
 ; debouncer.bdf                    ; yes             ; Auto-Found Block Diagram/Schematic File  ; D:/GITEA/GitHub/ES/pcbteach/Lesson_04/debouncer.bdf                          ;         ;
 ; lpm_compare.tdf                  ; yes             ; Megafunction                             ; d:/intelfpga/22.1std/quartus/libraries/megafunctions/lpm_compare.tdf         ;         ;
@@ -197,59 +198,70 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+--------------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                          ;
 +---------------------------------------------+--------------------------------------------------------------------------------+
-; Estimated Total logic elements              ; 35                                                                             ;
+; Estimated Total logic elements              ; 39                                                                             ;
 ;                                             ;                                                                                ;
-; Total combinational functions               ; 34                                                                             ;
+; Total combinational functions               ; 38                                                                             ;
 ; Logic element usage by number of LUT inputs ;                                                                                ;
 ;     -- 4 input functions                    ; 6                                                                              ;
-;     -- 3 input functions                    ; 4                                                                              ;
+;     -- 3 input functions                    ; 8                                                                              ;
 ;     -- <=2 input functions                  ; 24                                                                             ;
 ;                                             ;                                                                                ;
 ; Logic elements by mode                      ;                                                                                ;
-;     -- normal mode                          ; 12                                                                             ;
+;     -- normal mode                          ; 16                                                                             ;
 ;     -- arithmetic mode                      ; 22                                                                             ;
 ;                                             ;                                                                                ;
 ; Total registers                             ; 25                                                                             ;
 ;     -- Dedicated logic registers            ; 25                                                                             ;
 ;     -- I/O registers                        ; 0                                                                              ;
 ;                                             ;                                                                                ;
-; I/O pins                                    ; 4                                                                              ;
+; I/O pins                                    ; 8                                                                              ;
 ;                                             ;                                                                                ;
 ; Embedded Multiplier 9-bit elements          ; 0                                                                              ;
 ;                                             ;                                                                                ;
 ; Maximum fan-out node                        ; debouncer:inst9|lpm_compare:inst5|cmpr_mth:auto_generated|aeb_output_dffe0a[0] ;
 ; Maximum fan-out                             ; 24                                                                             ;
-; Total fan-out                               ; 182                                                                            ;
-; Average fan-out                             ; 2.72                                                                           ;
+; Total fan-out                               ; 200                                                                            ;
+; Average fan-out                             ; 2.53                                                                           ;
 +---------------------------------------------+--------------------------------------------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                             ;
-+------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------+-------------+--------------+
-; Compilation Hierarchy Node         ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                ; Entity Name ; Library Name ;
-+------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------+-------------+--------------+
-; |Trigger                           ; 34 (1)              ; 25 (0)                    ; 0           ; 0            ; 0       ; 0         ; 4    ; 0            ; |Trigger                                                           ; Trigger     ; work         ;
-;    |D-Trigger:inst19|              ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger:inst19                                          ; D-Trigger   ; work         ;
-;    |D-Trigger:inst|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-Trigger:inst                                            ; D-Trigger   ; work         ;
-;    |debouncer:inst9|               ; 31 (0)              ; 25 (1)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|debouncer:inst9                                           ; debouncer   ; work         ;
-;       |lpm_compare:inst5|          ; 8 (0)               ; 1 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|debouncer:inst9|lpm_compare:inst5                         ; lpm_compare ; work         ;
-;          |cmpr_mth:auto_generated| ; 8 (8)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|debouncer:inst9|lpm_compare:inst5|cmpr_mth:auto_generated ; cmpr_mth    ; work         ;
-;       |lpm_counter:inst4|          ; 23 (0)              ; 23 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|debouncer:inst9|lpm_counter:inst4                         ; lpm_counter ; work         ;
-;          |cntr_0ig:auto_generated| ; 23 (23)             ; 23 (23)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|debouncer:inst9|lpm_counter:inst4|cntr_0ig:auto_generated ; cntr_0ig    ; work         ;
-+------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------+-------------+--------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                         ;
++------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------+-------------------------+--------------+
+; Compilation Hierarchy Node         ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                ; Entity Name             ; Library Name ;
++------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------+-------------------------+--------------+
+; |Trigger                           ; 38 (1)              ; 25 (0)                    ; 0           ; 0            ; 0       ; 0         ; 8    ; 0            ; |Trigger                                                           ; Trigger                 ; work         ;
+;    |D-TriggerWithRisingEdge:inst1| ; 2 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-TriggerWithRisingEdge:inst1                             ; D-TriggerWithRisingEdge ; work         ;
+;       |D-Trigger:inst19|           ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-TriggerWithRisingEdge:inst1|D-Trigger:inst19            ; D-Trigger               ; work         ;
+;       |D-Trigger:inst|             ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-TriggerWithRisingEdge:inst1|D-Trigger:inst              ; D-Trigger               ; work         ;
+;    |D-TriggerWithRisingEdge:inst2| ; 2 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-TriggerWithRisingEdge:inst2                             ; D-TriggerWithRisingEdge ; work         ;
+;       |D-Trigger:inst19|           ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-TriggerWithRisingEdge:inst2|D-Trigger:inst19            ; D-Trigger               ; work         ;
+;       |D-Trigger:inst|             ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-TriggerWithRisingEdge:inst2|D-Trigger:inst              ; D-Trigger               ; work         ;
+;    |D-TriggerWithRisingEdge:inst3| ; 2 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-TriggerWithRisingEdge:inst3                             ; D-TriggerWithRisingEdge ; work         ;
+;       |D-Trigger:inst19|           ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-TriggerWithRisingEdge:inst3|D-Trigger:inst19            ; D-Trigger               ; work         ;
+;       |D-Trigger:inst|             ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|D-TriggerWithRisingEdge:inst3|D-Trigger:inst              ; D-Trigger               ; work         ;
+;    |debouncer:inst9|               ; 31 (0)              ; 25 (1)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|debouncer:inst9                                           ; debouncer               ; work         ;
+;       |lpm_compare:inst5|          ; 8 (0)               ; 1 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|debouncer:inst9|lpm_compare:inst5                         ; lpm_compare             ; work         ;
+;          |cmpr_mth:auto_generated| ; 8 (8)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|debouncer:inst9|lpm_compare:inst5|cmpr_mth:auto_generated ; cmpr_mth                ; work         ;
+;       |lpm_counter:inst4|          ; 23 (0)              ; 23 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|debouncer:inst9|lpm_counter:inst4                         ; lpm_counter             ; work         ;
+;          |cntr_0ig:auto_generated| ; 23 (23)             ; 23 (23)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Trigger|debouncer:inst9|lpm_counter:inst4|cntr_0ig:auto_generated ; cntr_0ig                ; work         ;
++------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------+-------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+------------------------------------------------------------+
-; Logic Cells Representing Combinational Loops               ;
-+--------------------------------------------------------+---+
-; Logic Cell Name                                        ;   ;
-+--------------------------------------------------------+---+
-; D-Trigger:inst19|inst20~0                              ;   ;
-; D-Trigger:inst|inst20~0                                ;   ;
-; Number of logic cells representing combinational loops ; 2 ;
-+--------------------------------------------------------+---+
++-------------------------------------------------------------+
+; Logic Cells Representing Combinational Loops                ;
++---------------------------------------------------------+---+
+; Logic Cell Name                                         ;   ;
++---------------------------------------------------------+---+
+; D-TriggerWithRisingEdge:inst3|D-Trigger:inst19|inst20~0 ;   ;
+; D-TriggerWithRisingEdge:inst2|D-Trigger:inst19|inst20~0 ;   ;
+; D-TriggerWithRisingEdge:inst1|D-Trigger:inst19|inst20~0 ;   ;
+; D-TriggerWithRisingEdge:inst3|D-Trigger:inst|inst20~0   ;   ;
+; D-TriggerWithRisingEdge:inst2|D-Trigger:inst|inst20~0   ;   ;
+; D-TriggerWithRisingEdge:inst1|D-Trigger:inst|inst20~0   ;   ;
+; Number of logic cells representing combinational loops  ; 6 ;
++---------------------------------------------------------+---+
 Note: All cells listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
@@ -324,21 +336,21 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 4                           ;
+; boundary_port         ; 8                           ;
 ; cycloneiii_ff         ; 25                          ;
 ;     SLD               ; 23                          ;
 ;     plain             ; 2                           ;
-; cycloneiii_lcell_comb ; 35                          ;
+; cycloneiii_lcell_comb ; 41                          ;
 ;     arith             ; 22                          ;
 ;         2 data inputs ; 22                          ;
-;     normal            ; 13                          ;
+;     normal            ; 19                          ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 2                           ;
-;         3 data inputs ; 4                           ;
+;         1 data inputs ; 4                           ;
+;         3 data inputs ; 8                           ;
 ;         4 data inputs ; 6                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 3.20                        ;
-; Average LUT depth     ; 2.48                        ;
+; Average LUT depth     ; 2.30                        ;
 +-----------------------+-----------------------------+
 
 
@@ -357,7 +369,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 22.1std.0 Build 915 10/25/2022 SC Standard Edition
-    Info: Processing started: Mon Feb  5 16:25:25 2024
+    Info: Processing started: Tue Feb  6 17:36:16 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Trigger -c Trigger
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -365,10 +377,13 @@ Info (12021): Found 1 design units, including 1 entities, in source file trigger
     Info (12023): Found entity 1: Trigger
 Info (12021): Found 1 design units, including 1 entities, in source file d-trigger10.bdf
     Info (12023): Found entity 1: D-Trigger10
+Info (12021): Found 1 design units, including 1 entities, in source file d-triggerwithrisingedge.bdf
+    Info (12023): Found entity 1: D-TriggerWithRisingEdge
 Info (12127): Elaborating entity "Trigger" for the top level hierarchy
+Info (12128): Elaborating entity "D-TriggerWithRisingEdge" for hierarchy "D-TriggerWithRisingEdge:inst3"
 Warning (12125): Using design file d-trigger.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: D-Trigger
-Info (12128): Elaborating entity "D-Trigger" for hierarchy "D-Trigger:inst19"
+Info (12128): Elaborating entity "D-Trigger" for hierarchy "D-TriggerWithRisingEdge:inst3|D-Trigger:inst19"
 Warning (12125): Using design file debouncer.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: debouncer
 Info (12128): Elaborating entity "debouncer" for hierarchy "debouncer:inst9"
@@ -392,13 +407,13 @@ Info (12128): Elaborating entity "cntr_0ig" for hierarchy "debouncer:inst9|LPM_C
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 39 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 3 input pins
-    Info (21059): Implemented 1 output pins
-    Info (21061): Implemented 35 logic cells
+Info (21057): Implemented 47 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 5 input pins
+    Info (21059): Implemented 3 output pins
+    Info (21061): Implemented 39 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 3 warnings
     Info: Peak virtual memory: 4793 megabytes
-    Info: Processing ended: Mon Feb  5 16:25:34 2024
+    Info: Processing ended: Tue Feb  6 17:36:25 2024
     Info: Elapsed time: 00:00:09
     Info: Total CPU time (on all processors): 00:00:20
 
