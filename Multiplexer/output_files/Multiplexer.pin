@@ -28,7 +28,7 @@
  -- VCCIO         : Dedicated power pin, which MUST be connected to VCC
  --                 of its bank.
  --                  Bank 1:       2.5V
- --                  Bank 2:       3.3V
+ --                  Bank 2:       2.5V
  --                  Bank 3:       2.5V
  --                  Bank 4:       2.5V
  --                  Bank 5:       3.3V
@@ -93,8 +93,8 @@ nCE                          : 21        :        :                   :         
 GND                          : 22        : gnd    :                   :         :           :                
 GND+                         : 23        :        :                   :         : 1         :                
 GND+                         : 24        :        :                   :         : 2         :                
-RESET                        : 25        : input  : 3.3-V LVTTL       :         : 2         : Y              
-VCCIO2                       : 26        : power  :                   : 3.3V    : 2         :                
+GND+                         : 25        :        :                   :         : 2         :                
+VCCIO2                       : 26        : power  :                   : 2.5V    : 2         :                
 GND                          : 27        : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 28        :        :                   :         : 2         :                
 VCCINT                       : 29        : power  :                   : 1.2V    :           :                
@@ -152,10 +152,10 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : 80        :        :                   :      
 VCCIO5                       : 81        : power  :                   : 3.3V    : 5         :                
 GND                          : 82        : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 83        :        :                   :         : 5         :                
-LED1                         : 84        : output : 3.3-V LVTTL       :         : 5         : Y              
-LED2                         : 85        : output : 3.3-V LVTTL       :         : 5         : Y              
-LED3                         : 86        : output : 3.3-V LVTTL       :         : 5         : Y              
-LED4                         : 87        : output : 3.3-V LVTTL       :         : 5         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : 84        :        :                   :         : 5         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : 85        :        :                   :         : 5         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : 86        :        :                   :         : 5         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : 87        :        :                   :         : 5         :                
 KEY1                         : 88        : input  : 3.3-V LVTTL       :         : 5         : Y              
 KEY2                         : 89        : input  : 3.3-V LVTTL       :         : 5         : Y              
 KEY3                         : 90        : input  : 3.3-V LVTTL       :         : 6         : Y              
