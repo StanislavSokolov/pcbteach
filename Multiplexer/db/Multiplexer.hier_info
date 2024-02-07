@@ -1,0 +1,9 @@
+|Multiplexer
+LED1 <= inst.DB_MAX_OUTPUT_PORT_TYPE
+KEY1 => inst2.IN0
+KEY4 => inst7.IN0
+KEY3 => inst8.IN0
+KEY2 => inst6.IN0
+RESET => inst3.IN0
+
+
