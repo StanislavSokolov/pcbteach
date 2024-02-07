@@ -71,4 +71,35 @@ set_location_assignment PIN_88 -to KEY1
 set_location_assignment PIN_89 -to KEY2
 set_location_assignment PIN_90 -to KEY3
 set_location_assignment PIN_91 -to KEY4
+set_global_assignment -name BDF_FILE "D-multiplexer.bdf"
+set_location_assignment PIN_133 -to DIG1_EN
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DIG1_EN
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DIG2_EN
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DIG3_EN
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DIG4_EN
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED2
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED3
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED4
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SEG_0
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SEG_1
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SEG_2
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SEG_3
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SEG_4
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SEG_5
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SEG_6
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SEG_7
+set_location_assignment PIN_135 -to DIG2_EN
+set_location_assignment PIN_136 -to DIG3_EN
+set_location_assignment PIN_137 -to DIG4_EN
+set_location_assignment PIN_85 -to LED2
+set_location_assignment PIN_86 -to LED3
+set_location_assignment PIN_87 -to LED4
+set_location_assignment PIN_128 -to SEG_0
+set_location_assignment PIN_121 -to SEG_1
+set_location_assignment PIN_125 -to SEG_2
+set_location_assignment PIN_129 -to SEG_3
+set_location_assignment PIN_132 -to SEG_4
+set_location_assignment PIN_126 -to SEG_5
+set_location_assignment PIN_124 -to SEG_6
+set_location_assignment PIN_127 -to SEG_7
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

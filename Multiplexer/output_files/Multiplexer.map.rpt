@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Multiplexer
-Wed Feb  7 11:58:28 2024
+Wed Feb  7 13:18:30 2024
 Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Standard Edition
 
 
@@ -43,16 +43,16 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                            ;
 +------------------------------------+----------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Feb  7 11:58:28 2024              ;
+; Analysis & Synthesis Status        ; Successful - Wed Feb  7 13:18:30 2024              ;
 ; Quartus Prime Version              ; 22.1std.0 Build 915 10/25/2022 SC Standard Edition ;
 ; Revision Name                      ; Multiplexer                                        ;
 ; Top-level Entity Name              ; Multiplexer                                        ;
 ; Family                             ; Cyclone IV E                                       ;
-; Total logic elements               ; 2                                                  ;
-;     Total combinational functions  ; 2                                                  ;
+; Total logic elements               ; 16                                                 ;
+;     Total combinational functions  ; 16                                                 ;
 ;     Dedicated logic registers      ; 0                                                  ;
 ; Total registers                    ; 0                                                  ;
-; Total pins                         ; 6                                                  ;
+; Total pins                         ; 21                                                 ;
 ; Total virtual pins                 ; 0                                                  ;
 ; Total memory bits                  ; 0                                                  ;
 ; Embedded Multiplier 9-bit elements ; 0                                                  ;
@@ -162,13 +162,14 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                      ;
-+----------------------------------+-----------------+------------------------------------+---------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                            ; Library ;
-+----------------------------------+-----------------+------------------------------------+---------------------------------------------------------+---------+
-; Multiplexer.bdf                  ; yes             ; User Block Diagram/Schematic File  ; D:/GITEA/GitHub/ES/pcbteach/Multiplexer/Multiplexer.bdf ;         ;
-+----------------------------------+-----------------+------------------------------------+---------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                        ;
++----------------------------------+-----------------+------------------------------------+-----------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                              ; Library ;
++----------------------------------+-----------------+------------------------------------+-----------------------------------------------------------+---------+
+; Multiplexer.bdf                  ; yes             ; User Block Diagram/Schematic File  ; D:/GITEA/GitHub/ES/pcbteach/Multiplexer/Multiplexer.bdf   ;         ;
+; D-multiplexer.bdf                ; yes             ; User Block Diagram/Schematic File  ; D:/GITEA/GitHub/ES/pcbteach/Multiplexer/D-multiplexer.bdf ;         ;
++----------------------------------+-----------------+------------------------------------+-----------------------------------------------------------+---------+
 
 
 +----------------------------------------------------------+
@@ -176,40 +177,43 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+------------+
 ; Resource                                    ; Usage      ;
 +---------------------------------------------+------------+
-; Estimated Total logic elements              ; 2          ;
+; Estimated Total logic elements              ; 16         ;
 ;                                             ;            ;
-; Total combinational functions               ; 2          ;
+; Total combinational functions               ; 16         ;
 ; Logic element usage by number of LUT inputs ;            ;
 ;     -- 4 input functions                    ; 2          ;
-;     -- 3 input functions                    ; 0          ;
-;     -- <=2 input functions                  ; 0          ;
+;     -- 3 input functions                    ; 10         ;
+;     -- <=2 input functions                  ; 4          ;
 ;                                             ;            ;
 ; Logic elements by mode                      ;            ;
-;     -- normal mode                          ; 2          ;
+;     -- normal mode                          ; 16         ;
 ;     -- arithmetic mode                      ; 0          ;
 ;                                             ;            ;
 ; Total registers                             ; 0          ;
 ;     -- Dedicated logic registers            ; 0          ;
 ;     -- I/O registers                        ; 0          ;
 ;                                             ;            ;
-; I/O pins                                    ; 6          ;
+; I/O pins                                    ; 21         ;
 ;                                             ;            ;
 ; Embedded Multiplier 9-bit elements          ; 0          ;
 ;                                             ;            ;
-; Maximum fan-out node                        ; KEY4~input ;
-; Maximum fan-out                             ; 2          ;
-; Total fan-out                               ; 15         ;
-; Average fan-out                             ; 1.07       ;
+; Maximum fan-out node                        ; KEY2~input ;
+; Maximum fan-out                             ; 12         ;
+; Total fan-out                               ; 79         ;
+; Average fan-out                             ; 1.36       ;
 +---------------------------------------------+------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                      ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; |Multiplexer               ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 6    ; 0            ; |Multiplexer        ; Multiplexer ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                      ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------+---------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name               ; Entity Name   ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------+---------------+--------------+
+; |Multiplexer               ; 16 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 21   ; 0            ; |Multiplexer                      ; Multiplexer   ; work         ;
+;    |D-multiplexer:inst12|  ; 6 (6)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplexer|D-multiplexer:inst12 ; D-multiplexer ; work         ;
+;    |D-multiplexer:inst13|  ; 6 (6)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplexer|D-multiplexer:inst13 ; D-multiplexer ; work         ;
+;    |D-multiplexer:inst14|  ; 4 (4)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplexer|D-multiplexer:inst14 ; D-multiplexer ; work         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------+---------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -233,13 +237,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 6                           ;
-; cycloneiii_lcell_comb ; 2                           ;
-;     normal            ; 2                           ;
+; boundary_port         ; 21                          ;
+; cycloneiii_lcell_comb ; 30                          ;
+;     normal            ; 30                          ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 12                          ;
+;         2 data inputs ; 4                           ;
+;         3 data inputs ; 10                          ;
 ;         4 data inputs ; 2                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 2.00                        ;
-; Average LUT depth     ; 1.86                        ;
+; Max LUT depth         ; 3.00                        ;
+; Average LUT depth     ; 2.80                        ;
 +-----------------------+-----------------------------+
 
 
@@ -258,24 +266,38 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 22.1std.0 Build 915 10/25/2022 SC Standard Edition
-    Info: Processing started: Wed Feb  7 11:58:19 2024
+    Info: Processing started: Wed Feb  7 13:18:22 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Multiplexer -c Multiplexer
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file multiplexer.bdf
     Info (12023): Found entity 1: Multiplexer
+Info (12021): Found 1 design units, including 1 entities, in source file d-multiplexer.bdf
+    Info (12023): Found entity 1: D-multiplexer
 Info (12127): Elaborating entity "Multiplexer" for the top level hierarchy
+Warning (275011): Block or symbol "NOT" of instance "inst21" overlaps another block or symbol
+Warning (275011): Block or symbol "NOT" of instance "inst23" overlaps another block or symbol
+Warning (275011): Block or symbol "NOT" of instance "inst25" overlaps another block or symbol
+Warning (275011): Block or symbol "NOT" of instance "inst27" overlaps another block or symbol
+Warning (275011): Block or symbol "NOT" of instance "inst30" overlaps another block or symbol
+Warning (275011): Block or symbol "NOT" of instance "inst32" overlaps another block or symbol
+Info (12128): Elaborating entity "D-multiplexer" for hierarchy "D-multiplexer:inst12"
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "DIG1_EN" is stuck at GND
+    Warning (13410): Pin "DIG2_EN" is stuck at VCC
+    Warning (13410): Pin "DIG4_EN" is stuck at VCC
+    Warning (13410): Pin "DIG3_EN" is stuck at VCC
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 8 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 37 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 5 input pins
-    Info (21059): Implemented 1 output pins
-    Info (21061): Implemented 2 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4779 megabytes
-    Info: Processing ended: Wed Feb  7 11:58:28 2024
-    Info: Elapsed time: 00:00:09
+    Info (21059): Implemented 16 output pins
+    Info (21061): Implemented 16 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 12 warnings
+    Info: Peak virtual memory: 4774 megabytes
+    Info: Processing ended: Wed Feb  7 13:18:30 2024
+    Info: Elapsed time: 00:00:08
     Info: Total CPU time (on all processors): 00:00:20
 
 

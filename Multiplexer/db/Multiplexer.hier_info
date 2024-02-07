@@ -1,9 +1,92 @@
 |Multiplexer
-LED1 <= inst.DB_MAX_OUTPUT_PORT_TYPE
-KEY1 => inst2.IN0
-KEY4 => inst7.IN0
-KEY3 => inst8.IN0
-KEY2 => inst6.IN0
-RESET => inst3.IN0
+LED1 <= inst21.DB_MAX_OUTPUT_PORT_TYPE
+KEY1 => inst16.IN0
+KEY2 => inst17.IN0
+KEY3 => inst18.IN0
+KEY4 => inst19.IN0
+RESET => inst34.IN0
+LED2 <= inst22.DB_MAX_OUTPUT_PORT_TYPE
+LED3 <= inst23.DB_MAX_OUTPUT_PORT_TYPE
+LED4 <= inst24.DB_MAX_OUTPUT_PORT_TYPE
+SEG_0 <= inst30.DB_MAX_OUTPUT_PORT_TYPE
+SEG_1 <= inst31.DB_MAX_OUTPUT_PORT_TYPE
+SEG_2 <= inst32.DB_MAX_OUTPUT_PORT_TYPE
+SEG_3 <= inst33.DB_MAX_OUTPUT_PORT_TYPE
+SEG_4 <= inst25.DB_MAX_OUTPUT_PORT_TYPE
+SEG_6 <= inst27.DB_MAX_OUTPUT_PORT_TYPE
+SEG_5 <= inst26.DB_MAX_OUTPUT_PORT_TYPE
+SEG_7 <= inst28.DB_MAX_OUTPUT_PORT_TYPE
+DIG1_EN <= <GND>
+DIG2_EN <= <VCC>
+DIG4_EN <= <VCC>
+DIG3_EN <= <VCC>
+
+
+|Multiplexer|D-multiplexer:inst12
+OUT0 <= inst.DB_MAX_OUTPUT_PORT_TYPE
+S0 => inst5.IN0
+S0 => inst14.IN0
+S0 => inst8.IN0
+S1 => inst6.IN0
+S1 => inst7.IN1
+S1 => inst8.IN1
+D => inst.IN1
+D => inst1.IN1
+D => inst2.IN1
+D => inst3.IN1
+OUT1 <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+OUT2 <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+OUT3 <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Multiplexer|D-multiplexer:inst
+OUT0 <= inst.DB_MAX_OUTPUT_PORT_TYPE
+S0 => inst5.IN0
+S0 => inst14.IN0
+S0 => inst8.IN0
+S1 => inst6.IN0
+S1 => inst7.IN1
+S1 => inst8.IN1
+D => inst.IN1
+D => inst1.IN1
+D => inst2.IN1
+D => inst3.IN1
+OUT1 <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+OUT2 <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+OUT3 <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Multiplexer|D-multiplexer:inst13
+OUT0 <= inst.DB_MAX_OUTPUT_PORT_TYPE
+S0 => inst5.IN0
+S0 => inst14.IN0
+S0 => inst8.IN0
+S1 => inst6.IN0
+S1 => inst7.IN1
+S1 => inst8.IN1
+D => inst.IN1
+D => inst1.IN1
+D => inst2.IN1
+D => inst3.IN1
+OUT1 <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+OUT2 <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+OUT3 <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Multiplexer|D-multiplexer:inst14
+OUT0 <= inst.DB_MAX_OUTPUT_PORT_TYPE
+S0 => inst5.IN0
+S0 => inst14.IN0
+S0 => inst8.IN0
+S1 => inst6.IN0
+S1 => inst7.IN1
+S1 => inst8.IN1
+D => inst.IN1
+D => inst1.IN1
+D => inst2.IN1
+D => inst3.IN1
+OUT1 <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+OUT2 <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+OUT3 <= inst3.DB_MAX_OUTPUT_PORT_TYPE
 
 
