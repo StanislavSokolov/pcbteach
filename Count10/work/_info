@@ -1,0 +1,110 @@
+m255
+K3
+13
+cModel Technology
+dD:\altera\Quartus II 13
+Ecount10
+Z0 w1707504094
+Z1 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z2 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z3 dD:\GITEA\GitHub\ES\pcbteach\Count10
+Z4 8D:/GITEA/GitHub/ES/pcbteach/Count10/Count10.vhd
+Z5 FD:/GITEA/GitHub/ES/pcbteach/Count10/Count10.vhd
+l0
+L24
+ValHWmV22?0kRAWaIQRRNT1
+Z6 OV;C;10.1d;51
+32
+Z7 !s108 1707504197.196000
+Z8 !s90 -reportprogress|300|-work|work|-2002|-explicit|D:/GITEA/GitHub/ES/pcbteach/Count10/Count10.vhd|
+Z9 !s107 D:/GITEA/GitHub/ES/pcbteach/Count10/Count10.vhd|
+Z10 o-work work -2002 -explicit -O0
+Z11 tExplicit 1
+!s100 8B;cIM?^XQ;Wd_ajkc;YI3
+!i10b 1
+Abdf_type
+R1
+R2
+DEx4 work 7 count10 0 22 alHWmV22?0kRAWaIQRRNT1
+l64
+L35
+V]122o67M60fR55DT=i=fC1
+R6
+32
+R7
+R8
+R9
+R10
+R11
+!s100 c9?e1HdLgEYHY6a5HCOjD0
+!i10b 1
+Edtrigger
+Z12 w1707503921
+R1
+R2
+R3
+Z13 8D:/GITEA/GitHub/ES/pcbteach/Count10/DTrigger.vhd
+Z14 FD:/GITEA/GitHub/ES/pcbteach/Count10/DTrigger.vhd
+l0
+L24
+Vb4NBY7dV2mXBRzVEk><^32
+R6
+32
+Z15 !s108 1707504197.698000
+Z16 !s90 -reportprogress|300|-work|work|-2002|-explicit|D:/GITEA/GitHub/ES/pcbteach/Count10/DTrigger.vhd|
+Z17 !s107 D:/GITEA/GitHub/ES/pcbteach/Count10/DTrigger.vhd|
+R10
+R11
+!s100 TKdHfY3z94;?djU?Fbm`A3
+!i10b 1
+Abdf_type
+R1
+R2
+DEx4 work 8 dtrigger 0 22 b4NBY7dV2mXBRzVEk><^32
+l42
+L34
+VC=E_:gE6`zO0KS39naBCj2
+R6
+32
+R15
+R16
+R17
+R10
+R11
+!s100 IPzl9j<FWePjMEnZjEiAD2
+!i10b 1
+Edtriggerwithrisingedge
+Z18 w1707504003
+R1
+R2
+R3
+Z19 8D:/GITEA/GitHub/ES/pcbteach/Count10/DTriggerWithRisingEdge.vhd
+Z20 FD:/GITEA/GitHub/ES/pcbteach/Count10/DTriggerWithRisingEdge.vhd
+l0
+L24
+VjnRk7Sa=7Eb^1MT^M3RV91
+!s100 f851UdB=VZoQeRjDldCg32
+R6
+32
+!i10b 1
+Z21 !s108 1707504198.014000
+Z22 !s90 -reportprogress|300|-work|work|-2002|-explicit|D:/GITEA/GitHub/ES/pcbteach/Count10/DTriggerWithRisingEdge.vhd|
+Z23 !s107 D:/GITEA/GitHub/ES/pcbteach/Count10/DTriggerWithRisingEdge.vhd|
+R10
+R11
+Abdf_type
+R1
+R2
+DEx4 work 22 dtriggerwithrisingedge 0 22 jnRk7Sa=7Eb^1MT^M3RV91
+l48
+L34
+VAf7>cZf0SigI0ODXa;N1U2
+!s100 0JVDCIJ@L9?MjSK0EgEoB2
+R6
+32
+!i10b 1
+R21
+R22
+R23
+R10
+R11

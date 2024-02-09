@@ -1,0 +1,1440 @@
+TimeQuest Timing Analyzer report for Count10
+Fri Feb 09 21:41:13 2024
+Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow 1200mV 85C Model Fmax Summary
+  6. Timing Closure Recommendations
+  7. Slow 1200mV 85C Model Setup Summary
+  8. Slow 1200mV 85C Model Hold Summary
+  9. Slow 1200mV 85C Model Recovery Summary
+ 10. Slow 1200mV 85C Model Removal Summary
+ 11. Slow 1200mV 85C Model Minimum Pulse Width Summary
+ 12. Slow 1200mV 85C Model Setup: 'C'
+ 13. Slow 1200mV 85C Model Hold: 'C'
+ 14. Slow 1200mV 85C Model Minimum Pulse Width: 'C'
+ 15. Setup Times
+ 16. Hold Times
+ 17. Clock to Output Times
+ 18. Minimum Clock to Output Times
+ 19. Slow 1200mV 85C Model Metastability Report
+ 20. Slow 1200mV 0C Model Fmax Summary
+ 21. Slow 1200mV 0C Model Setup Summary
+ 22. Slow 1200mV 0C Model Hold Summary
+ 23. Slow 1200mV 0C Model Recovery Summary
+ 24. Slow 1200mV 0C Model Removal Summary
+ 25. Slow 1200mV 0C Model Minimum Pulse Width Summary
+ 26. Slow 1200mV 0C Model Setup: 'C'
+ 27. Slow 1200mV 0C Model Hold: 'C'
+ 28. Slow 1200mV 0C Model Minimum Pulse Width: 'C'
+ 29. Setup Times
+ 30. Hold Times
+ 31. Clock to Output Times
+ 32. Minimum Clock to Output Times
+ 33. Slow 1200mV 0C Model Metastability Report
+ 34. Fast 1200mV 0C Model Setup Summary
+ 35. Fast 1200mV 0C Model Hold Summary
+ 36. Fast 1200mV 0C Model Recovery Summary
+ 37. Fast 1200mV 0C Model Removal Summary
+ 38. Fast 1200mV 0C Model Minimum Pulse Width Summary
+ 39. Fast 1200mV 0C Model Setup: 'C'
+ 40. Fast 1200mV 0C Model Hold: 'C'
+ 41. Fast 1200mV 0C Model Minimum Pulse Width: 'C'
+ 42. Setup Times
+ 43. Hold Times
+ 44. Clock to Output Times
+ 45. Minimum Clock to Output Times
+ 46. Fast 1200mV 0C Model Metastability Report
+ 47. Multicorner Timing Analysis Summary
+ 48. Setup Times
+ 49. Hold Times
+ 50. Clock to Output Times
+ 51. Minimum Clock to Output Times
+ 52. Board Trace Model Assignments
+ 53. Input Transition Times
+ 54. Signal Integrity Metrics (Slow 1200mv 0c Model)
+ 55. Signal Integrity Metrics (Slow 1200mv 85c Model)
+ 56. Signal Integrity Metrics (Fast 1200mv 0c Model)
+ 57. Setup Transfers
+ 58. Hold Transfers
+ 59. Report TCCS
+ 60. Report RSKM
+ 61. Unconstrained Paths
+ 62. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                        ;
++--------------------+-----------------------------------------------------+
+; Quartus II Version ; Version 13.1.0 Build 162 10/23/2013 SJ Full Version ;
+; Revision Name      ; Count10                                             ;
+; Device Family      ; Cyclone IV E                                        ;
+; Device Name        ; EP4CE10E22C8                                        ;
+; Timing Models      ; Final                                               ;
+; Delay Model        ; Combined                                            ;
+; Rise/Fall Delays   ; Enabled                                             ;
++--------------------+-----------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 6           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 6           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-6         ; < 0.1%      ;
+;     Processors 7-12        ;   0.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                          ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; C          ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { C }   ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+
+
++-------------------------------------------------+
+; Slow 1200mV 85C Model Fmax Summary              ;
++-----------+-----------------+------------+------+
+; Fmax      ; Restricted Fmax ; Clock Name ; Note ;
++-----------+-----------------+------------+------+
+; 39.64 MHz ; 39.64 MHz       ; C          ;      ;
++-----------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
+----------------------------------
+; Timing Closure Recommendations ;
+----------------------------------
+HTML report is unavailable in plain text report export.
+
+
++-------------------------------------+
+; Slow 1200mV 85C Model Setup Summary ;
++-------+---------+-------------------+
+; Clock ; Slack   ; End Point TNS     ;
++-------+---------+-------------------+
+; C     ; -12.112 ; -54.285           ;
++-------+---------+-------------------+
+
+
++------------------------------------+
+; Slow 1200mV 85C Model Hold Summary ;
++-------+--------+-------------------+
+; Clock ; Slack  ; End Point TNS     ;
++-------+--------+-------------------+
+; C     ; -5.756 ; -14.917           ;
++-------+--------+-------------------+
+
+
+------------------------------------------
+; Slow 1200mV 85C Model Recovery Summary ;
+------------------------------------------
+No paths to report.
+
+
+-----------------------------------------
+; Slow 1200mV 85C Model Removal Summary ;
+-----------------------------------------
+No paths to report.
+
+
++---------------------------------------------------+
+; Slow 1200mV 85C Model Minimum Pulse Width Summary ;
++-------+--------+----------------------------------+
+; Clock ; Slack  ; End Point TNS                    ;
++-------+--------+----------------------------------+
+; C     ; -5.047 ; -107.685                         ;
++-------+--------+----------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Setup: 'C'                                                                                                                                                            ;
++---------+------------------------------------------------------+------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack   ; From Node                                            ; To Node                                              ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++---------+------------------------------------------------------+------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -12.112 ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; -6.019     ; 3.076      ;
+; -12.007 ; DTriggerWithRisingEdge:inst4|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; -4.224     ; 4.766      ;
+; -11.653 ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; -4.960     ; 3.792      ;
+; -11.548 ; DTriggerWithRisingEdge:inst4|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; -3.165     ; 5.482      ;
+; -11.399 ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; -5.437     ; 5.408      ;
+; -10.930 ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; -3.993     ; 4.420      ;
+; -10.471 ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; -2.934     ; 5.136      ;
+; -10.172 ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; -4.456     ; 4.662      ;
+; -10.008 ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; -3.546     ; 5.408      ;
+; -9.839  ; DTriggerWithRisingEdge:inst4|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; -3.642     ; 5.643      ;
+; -9.762  ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; -3.411     ; 5.297      ;
+; -9.681  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; -4.541     ; 4.586      ;
+; -9.399  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; -5.123     ; 1.259      ;
+; -8.986  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; -2.793     ; 3.792      ;
+; -8.940  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; -4.064     ; 1.975      ;
+; -8.890  ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; -5.038     ; 1.335      ;
+; -8.881  ; DTriggerWithRisingEdge:inst4|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; -0.998     ; 5.482      ;
+; -8.804  ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; -0.767     ; 5.136      ;
+; -8.650  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; -2.188     ; 5.408      ;
+; -8.523  ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; -3.979     ; 2.143      ;
+; -8.448  ; DTriggerWithRisingEdge:inst4|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; -1.751     ; 5.643      ;
+; -8.363  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; -2.770     ; 3.076      ;
+; -8.249  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; -2.609     ; 4.586      ;
+; -7.942  ; DTriggerWithRisingEdge:inst9|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; 0.703      ; 5.628      ;
+; -7.918  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; -2.278     ; 4.586      ;
+; -7.904  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; -1.711     ; 3.792      ;
+; -7.880  ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst4|DTrigger:inst2|inst21~1 ; C            ; C           ; 0.500        ; -3.938     ; 3.275      ;
+; -7.780  ; DTriggerWithRisingEdge:inst9|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; 0.669      ; 5.932      ;
+; -7.740  ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; -2.524     ; 4.662      ;
+; -7.502  ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; -2.286     ; 4.662      ;
+; -7.483  ; DTriggerWithRisingEdge:inst9|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; 1.762      ; 6.344      ;
+; -7.384  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; C            ; C           ; 1.000        ; -3.949     ; 3.245      ;
+; -7.371  ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; -1.520     ; 5.297      ;
+; -7.321  ; DTriggerWithRisingEdge:inst9|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; 1.728      ; 6.648      ;
+; -7.220  ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; -2.868     ; 1.335      ;
+; -7.157  ; C                                                    ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; 2.138      ; 6.278      ;
+; -6.853  ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; -1.809     ; 2.143      ;
+; -6.698  ; C                                                    ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; 3.197      ; 6.994      ;
+; -6.636  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; -2.860     ; 1.259      ;
+; -6.612  ; DTriggerWithRisingEdge:inst9|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; 1.251      ; 6.809      ;
+; -6.568  ; C                                                    ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; 2.138      ; 6.189      ;
+; -6.196  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; 0.497      ; 3.792      ;
+; -6.177  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; -1.801     ; 1.975      ;
+; -6.111  ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; -0.395     ; 4.662      ;
+; -6.109  ; C                                                    ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; 3.197      ; 6.905      ;
+; -5.988  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; -0.026     ; 5.408      ;
+; -5.774  ; DTriggerWithRisingEdge:inst9|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; 1.285      ; 6.505      ;
+; -5.654  ; DTriggerWithRisingEdge:inst9|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; 3.895      ; 6.648      ;
+; -5.621  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; C            ; C           ; 0.500        ; -1.686     ; 3.245      ;
+; -5.527  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; -0.387     ; 4.586      ;
+; -5.400  ; C                                                    ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; 2.720      ; 7.066      ;
+; -4.989  ; C                                                    ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; 2.720      ; 7.155      ;
+; -4.976  ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; 0.068      ; 2.143      ;
+; -4.816  ; DTriggerWithRisingEdge:inst9|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; 3.929      ; 6.344      ;
+; -4.510  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; 0.366      ; 1.975      ;
+; -4.442  ; C                                                    ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; 5.364      ; 6.905      ;
+; -4.393  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; -0.017     ; 1.975      ;
+; -4.383  ; DTriggerWithRisingEdge:inst9|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; 3.176      ; 6.505      ;
+; -4.221  ; DTriggerWithRisingEdge:inst9|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; 3.142      ; 6.809      ;
+; -4.186  ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; 0.358      ; 2.143      ;
+; -4.117  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; C            ; C           ; 0.500        ; -0.182     ; 3.245      ;
+; -4.031  ; C                                                    ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; 5.364      ; 6.994      ;
+; -3.598  ; C                                                    ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; 4.611      ; 7.155      ;
+; -3.234  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; C            ; C           ; 1.000        ; 0.201      ; 3.245      ;
+; -3.009  ; C                                                    ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; 4.611      ; 7.066      ;
+; -2.021  ; DTriggerWithRisingEdge:inst9|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst9|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; -0.060     ; 1.470      ;
+; -1.836  ; DTriggerWithRisingEdge:inst9|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst9|DTrigger:inst2|inst21~1 ; C            ; C           ; 0.500        ; 0.006      ; 0.841      ;
++---------+------------------------------------------------------+------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Hold: 'C'                                                                                                                                                            ;
++--------+------------------------------------------------------+------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                            ; To Node                                              ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------------------------------------+------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -5.756 ; C                                                    ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 8.157      ; 2.401      ;
+; -5.366 ; C                                                    ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 8.157      ; 2.291      ;
+; -4.295 ; DTriggerWithRisingEdge:inst9|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 6.748      ; 2.453      ;
+; -3.752 ; DTriggerWithRisingEdge:inst4|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 5.964      ; 2.212      ;
+; -3.741 ; C                                                    ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 7.261      ; 3.520      ;
+; -3.604 ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 6.019      ; 1.915      ;
+; -3.583 ; DTriggerWithRisingEdge:inst9|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 5.852      ; 2.269      ;
+; -3.466 ; C                                                    ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 7.261      ; 3.295      ;
+; -3.442 ; C                                                    ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 6.131      ; 2.689      ;
+; -3.206 ; DTriggerWithRisingEdge:inst9|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 6.716      ; 3.010      ;
+; -2.892 ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 4.845      ; 1.953      ;
+; -2.798 ; C                                                    ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 6.131      ; 2.833      ;
+; -2.617 ; C                                                    ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 4.908      ; 2.291      ;
+; -2.559 ; DTriggerWithRisingEdge:inst9|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 4.722      ; 1.663      ;
+; -2.543 ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 4.960      ; 1.917      ;
+; -2.494 ; DTriggerWithRisingEdge:inst9|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 5.820      ; 2.826      ;
+; -2.470 ; DTriggerWithRisingEdge:inst9|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 4.690      ; 2.220      ;
+; -2.227 ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 3.546      ; 0.819      ;
+; -2.180 ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 3.949      ; 1.769      ;
+; -2.010 ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 4.541      ; 2.531      ;
+; -2.007 ; C                                                    ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 4.908      ; 2.401      ;
+; -1.831 ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 4.064      ; 1.733      ;
+; -1.807 ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 2.934      ; 1.127      ;
+; -1.703 ; C                                                    ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 4.998      ; 3.295      ;
+; -1.313 ; DTriggerWithRisingEdge:inst4|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 3.938      ; 2.125      ;
+; -1.156 ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 2.819      ; 1.163      ;
+; -1.123 ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; C            ; C           ; 0.000        ; 3.979      ; 2.856      ;
+; -1.094 ; DTriggerWithRisingEdge:inst4|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 5.068      ; 3.974      ;
+; -0.986 ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 3.411      ; 1.925      ;
+; -0.978 ; C                                                    ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 4.998      ; 3.520      ;
+; -0.946 ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 5.123      ; 3.677      ;
+; -0.876 ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 2.793      ; 1.917      ;
+; -0.869 ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 2.188      ; 0.819      ;
+; -0.855 ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 2.770      ; 1.915      ;
+; -0.855 ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst4|DTrigger:inst2|inst21~1 ; C            ; C           ; -0.500       ; 4.224      ; 2.869      ;
+; -0.820 ; DTriggerWithRisingEdge:inst9|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 3.589      ; 2.269      ;
+; -0.731 ; DTriggerWithRisingEdge:inst9|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 3.557      ; 2.826      ;
+; -0.546 ; DTriggerWithRisingEdge:inst9|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 3.499      ; 2.453      ;
+; -0.505 ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 2.958      ; 1.953      ;
+; -0.457 ; DTriggerWithRisingEdge:inst9|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 3.467      ; 3.010      ;
+; -0.003 ; DTriggerWithRisingEdge:inst4|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 2.715      ; 2.212      ;
+; 0.206  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 1.711      ; 1.917      ;
+; 0.231  ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 0.932      ; 1.163      ;
+; 0.405  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 1.520      ; 1.925      ;
+; 0.422  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 2.609      ; 2.531      ;
+; 0.583  ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 1.686      ; 1.769      ;
+; 0.753  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 2.278      ; 2.531      ;
+; 0.793  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 0.026      ; 0.819      ;
+; 0.793  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 0.026      ; 0.819      ;
+; 0.817  ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 2.860      ; 3.677      ;
+; 0.857  ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 1.596      ; 1.953      ;
+; 0.860  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 0.767      ; 1.127      ;
+; 1.141  ; DTriggerWithRisingEdge:inst9|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst9|DTrigger:inst2|inst21~1 ; C            ; C           ; -0.500       ; 0.060      ; 0.701      ;
+; 1.547  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; C            ; C           ; -0.500       ; 1.809      ; 2.856      ;
+; 1.669  ; DTriggerWithRisingEdge:inst4|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 2.805      ; 3.974      ;
+; 1.716  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 0.017      ; 1.733      ;
+; 1.716  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 0.017      ; 1.733      ;
+; 1.752  ; DTriggerWithRisingEdge:inst9|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst9|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; -0.006     ; 1.246      ;
+; 1.970  ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; -0.201     ; 1.769      ;
+; 2.087  ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 0.182      ; 1.769      ;
+; 2.144  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 0.387      ; 2.531      ;
+; 2.285  ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; -0.332     ; 1.953      ;
+; 2.599  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; -0.366     ; 1.733      ;
+; 2.914  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; -0.497     ; 1.917      ;
+; 3.036  ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 0.035      ; 3.071      ;
+; 3.214  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; C            ; C           ; 0.000        ; -0.358     ; 2.856      ;
+; 3.424  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; C            ; C           ; -0.500       ; -0.068     ; 2.856      ;
++--------+------------------------------------------------------+------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Minimum Pulse Width: 'C'                                                                                        ;
++--------+--------------+----------------+------------------+-------+------------+------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                               ;
++--------+--------------+----------------+------------------+-------+------------+------------------------------------------------------+
+; -5.047 ; -5.047       ; 0.000          ; Low Pulse Width  ; C     ; Fall       ; inst3|inst|inst20~1|datac                            ;
+; -5.038 ; -5.038       ; 0.000          ; Low Pulse Width  ; C     ; Fall       ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ;
+; -5.021 ; -5.021       ; 0.000          ; Low Pulse Width  ; C     ; Fall       ; inst21~0|combout                                     ;
+; -4.992 ; -4.992       ; 0.000          ; High Pulse Width ; C     ; Rise       ; inst23|combout                                       ;
+; -4.983 ; -4.983       ; 0.000          ; High Pulse Width ; C     ; Fall       ; inst21~0|combout                                     ;
+; -4.967 ; -4.967       ; 0.000          ; High Pulse Width ; C     ; Fall       ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ;
+; -4.958 ; -4.958       ; 0.000          ; High Pulse Width ; C     ; Fall       ; inst3|inst|inst20~1|datac                            ;
+; -4.952 ; -4.952       ; 0.000          ; High Pulse Width ; C     ; Rise       ; inst21~0|dataa                                       ;
+; -4.952 ; -4.952       ; 0.000          ; Low Pulse Width  ; C     ; Rise       ; inst21~0|dataa                                       ;
+; -4.910 ; -4.910       ; 0.000          ; Low Pulse Width  ; C     ; Rise       ; inst23|combout                                       ;
+; -3.695 ; -3.695       ; 0.000          ; Low Pulse Width  ; C     ; Rise       ; inst22~0|combout                                     ;
+; -3.678 ; -3.678       ; 0.000          ; Low Pulse Width  ; C     ; Rise       ; inst21~0|datac                                       ;
+; -3.678 ; -3.678       ; 0.000          ; Low Pulse Width  ; C     ; Rise       ; inst4|inst2|inst21~1|datac                           ;
+; -3.677 ; -3.677       ; 0.000          ; Low Pulse Width  ; C     ; Rise       ; inst4|inst|inst20~1|datac                            ;
+; -3.669 ; -3.669       ; 0.000          ; High Pulse Width ; C     ; Fall       ; DTriggerWithRisingEdge:inst4|DTrigger:inst2|inst21~1 ;
+; -3.669 ; -3.669       ; 0.000          ; Low Pulse Width  ; C     ; Rise       ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ;
+; -3.427 ; -3.427       ; 0.000          ; Low Pulse Width  ; C     ; Fall       ; DTriggerWithRisingEdge:inst4|DTrigger:inst2|inst21~1 ;
+; -3.426 ; -3.426       ; 0.000          ; High Pulse Width ; C     ; Rise       ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ;
+; -3.416 ; -3.416       ; 0.000          ; High Pulse Width ; C     ; Rise       ; inst21~0|datac                                       ;
+; -3.416 ; -3.416       ; 0.000          ; High Pulse Width ; C     ; Rise       ; inst4|inst2|inst21~1|datac                           ;
+; -3.416 ; -3.416       ; 0.000          ; High Pulse Width ; C     ; Rise       ; inst4|inst|inst20~1|datac                            ;
+; -3.398 ; -3.398       ; 0.000          ; High Pulse Width ; C     ; Rise       ; inst22~0|combout                                     ;
+; -3.000 ; 1.000        ; 4.000          ; Port Rate        ; C     ; Rise       ; C                                                    ;
+; -1.319 ; -1.319       ; 0.000          ; Low Pulse Width  ; C     ; Rise       ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ;
+; -1.306 ; -1.306       ; 0.000          ; Low Pulse Width  ; C     ; Rise       ; inst2|inst2|inst21~1|datad                           ;
+; -1.306 ; -1.306       ; 0.000          ; Low Pulse Width  ; C     ; Rise       ; inst2|inst|inst20~1|datad                            ;
+; -1.282 ; -1.282       ; 0.000          ; Low Pulse Width  ; C     ; Rise       ; inst20~0|combout                                     ;
+; -1.268 ; -1.268       ; 0.000          ; High Pulse Width ; C     ; Fall       ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ;
+; -1.191 ; -1.191       ; 0.000          ; Low Pulse Width  ; C     ; Fall       ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ;
+; -1.177 ; -1.177       ; 0.000          ; High Pulse Width ; C     ; Rise       ; inst20~0|combout                                     ;
+; -1.155 ; -1.155       ; 0.000          ; High Pulse Width ; C     ; Rise       ; inst2|inst|inst20~1|datad                            ;
+; -1.154 ; -1.154       ; 0.000          ; High Pulse Width ; C     ; Rise       ; inst2|inst2|inst21~1|datad                           ;
+; -1.142 ; -1.142       ; 0.000          ; High Pulse Width ; C     ; Rise       ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ;
+; 0.271  ; 0.271        ; 0.000          ; Low Pulse Width  ; C     ; Rise       ; inst3|inst|inst20~1|datac                            ;
+; 0.279  ; 0.279        ; 0.000          ; Low Pulse Width  ; C     ; Rise       ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ;
+; 0.280  ; 0.280        ; 0.000          ; High Pulse Width ; C     ; Fall       ; inst23|combout                                       ;
+; 0.296  ; 0.296        ; 0.000          ; Low Pulse Width  ; C     ; Rise       ; inst21~0|combout                                     ;
+; 0.313  ; 0.313        ; 0.000          ; Low Pulse Width  ; C     ; Rise       ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ;
+; 0.320  ; 0.320        ; 0.000          ; High Pulse Width ; C     ; Fall       ; inst21~0|dataa                                       ;
+; 0.327  ; 0.327        ; 0.000          ; High Pulse Width ; C     ; Fall       ; inst20~0|combout                                     ;
+; 0.349  ; 0.349        ; 0.000          ; High Pulse Width ; C     ; Fall       ; inst2|inst|inst20~1|datad                            ;
+; 0.350  ; 0.350        ; 0.000          ; High Pulse Width ; C     ; Fall       ; inst2|inst2|inst21~1|datad                           ;
+; 0.362  ; 0.362        ; 0.000          ; High Pulse Width ; C     ; Fall       ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ;
+; 0.400  ; 0.400        ; 0.000          ; Low Pulse Width  ; C     ; Rise       ; inst9|inst|inst20~1|datad                            ;
+; 0.401  ; 0.401        ; 0.000          ; Low Pulse Width  ; C     ; Rise       ; inst23|datad                                         ;
+; 0.402  ; 0.402        ; 0.000          ; Low Pulse Width  ; C     ; Rise       ; inst22~0|datad                                       ;
+; 0.402  ; 0.402        ; 0.000          ; Low Pulse Width  ; C     ; Rise       ; inst9|inst2|inst21~1|datac                           ;
+; 0.403  ; 0.403        ; 0.000          ; Low Pulse Width  ; C     ; Rise       ; inst9|inst2|inst20|datac                             ;
+; 0.409  ; 0.409        ; 0.000          ; Low Pulse Width  ; C     ; Rise       ; DTriggerWithRisingEdge:inst9|DTrigger:inst2|inst21~1 ;
+; 0.410  ; 0.410        ; 0.000          ; High Pulse Width ; C     ; Fall       ; inst9|inst2|inst20|combout                           ;
+; 0.435  ; 0.435        ; 0.000          ; High Pulse Width ; C     ; Fall       ; inst19|datab                                         ;
+; 0.438  ; 0.438        ; 0.000          ; High Pulse Width ; C     ; Fall       ; DTriggerWithRisingEdge:inst9|DTrigger:inst|inst20~1  ;
+; 0.454  ; 0.454        ; 0.000          ; Low Pulse Width  ; C     ; Rise       ; C~input|o                                            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; C     ; Rise       ; C~input|i                                            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; C     ; Rise       ; C~input|i                                            ;
+; 0.546  ; 0.546        ; 0.000          ; High Pulse Width ; C     ; Rise       ; C~input|o                                            ;
+; 0.558  ; 0.558        ; 0.000          ; Low Pulse Width  ; C     ; Fall       ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ;
+; 0.560  ; 0.560        ; 0.000          ; Low Pulse Width  ; C     ; Fall       ; DTriggerWithRisingEdge:inst9|DTrigger:inst|inst20~1  ;
+; 0.564  ; 0.564        ; 0.000          ; Low Pulse Width  ; C     ; Fall       ; inst19|datab                                         ;
+; 0.571  ; 0.571        ; 0.000          ; Low Pulse Width  ; C     ; Fall       ; inst2|inst2|inst21~1|datad                           ;
+; 0.571  ; 0.571        ; 0.000          ; Low Pulse Width  ; C     ; Fall       ; inst2|inst|inst20~1|datad                            ;
+; 0.588  ; 0.588        ; 0.000          ; Low Pulse Width  ; C     ; Fall       ; inst9|inst2|inst20|combout                           ;
+; 0.589  ; 0.589        ; 0.000          ; High Pulse Width ; C     ; Rise       ; DTriggerWithRisingEdge:inst9|DTrigger:inst2|inst21~1 ;
+; 0.595  ; 0.595        ; 0.000          ; Low Pulse Width  ; C     ; Fall       ; inst20~0|combout                                     ;
+; 0.595  ; 0.595        ; 0.000          ; High Pulse Width ; C     ; Rise       ; inst9|inst2|inst20|datac                             ;
+; 0.596  ; 0.596        ; 0.000          ; High Pulse Width ; C     ; Rise       ; inst9|inst2|inst21~1|datac                           ;
+; 0.597  ; 0.597        ; 0.000          ; High Pulse Width ; C     ; Rise       ; inst22~0|datad                                       ;
+; 0.597  ; 0.597        ; 0.000          ; High Pulse Width ; C     ; Rise       ; inst23|datad                                         ;
+; 0.597  ; 0.597        ; 0.000          ; High Pulse Width ; C     ; Rise       ; inst9|inst|inst20~1|datad                            ;
+; 0.609  ; 0.609        ; 0.000          ; High Pulse Width ; C     ; Rise       ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ;
+; 0.644  ; 0.644        ; 0.000          ; Low Pulse Width  ; C     ; Fall       ; inst21~0|dataa                                       ;
+; 0.654  ; 0.654        ; 0.000          ; High Pulse Width ; C     ; Rise       ; inst21~0|combout                                     ;
+; 0.670  ; 0.670        ; 0.000          ; High Pulse Width ; C     ; Rise       ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ;
+; 0.680  ; 0.680        ; 0.000          ; High Pulse Width ; C     ; Rise       ; inst3|inst|inst20~1|datac                            ;
+; 0.686  ; 0.686        ; 0.000          ; Low Pulse Width  ; C     ; Fall       ; inst23|combout                                       ;
++--------+--------------+----------------+------------------+-------+------------+------------------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; C         ; C          ; 7.568 ; 7.657 ; Rise       ; C               ;
+; C         ; C          ; 5.900 ; 5.989 ; Fall       ; C               ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Hold Times                                                            ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; C         ; C          ; 3.442 ; 3.298 ; Rise       ; C               ;
+; C         ; C          ; 5.866 ; 5.756 ; Fall       ; C               ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; D0        ; C          ; 6.961  ; 7.256  ; Rise       ; C               ;
+; D1        ; C          ; 14.084 ; 13.978 ; Rise       ; C               ;
+; D2        ; C          ; 17.986 ; 18.193 ; Rise       ; C               ;
+; D3        ; C          ; 16.829 ; 16.855 ; Rise       ; C               ;
+; D0        ; C          ; 6.274  ; 6.521  ; Fall       ; C               ;
+; D1        ; C          ; 16.806 ; 16.809 ; Fall       ; C               ;
+; D2        ; C          ; 19.248 ; 19.312 ; Fall       ; C               ;
+; D3        ; C          ; 16.838 ; 16.880 ; Fall       ; C               ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; D0        ; C          ; 5.687 ; 5.976 ; Rise       ; C               ;
+; D1        ; C          ; 5.880 ; 6.012 ; Rise       ; C               ;
+; D2        ; C          ; 7.871 ; 7.920 ; Rise       ; C               ;
+; D3        ; C          ; 6.134 ; 6.318 ; Rise       ; C               ;
+; D0        ; C          ; 5.687 ; 5.976 ; Fall       ; C               ;
+; D1        ; C          ; 5.880 ; 6.012 ; Fall       ; C               ;
+; D2        ; C          ; 7.871 ; 7.920 ; Fall       ; C               ;
+; D3        ; C          ; 6.134 ; 6.318 ; Fall       ; C               ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
+----------------------------------------------
+; Slow 1200mV 85C Model Metastability Report ;
+----------------------------------------------
+No synchronizer chains to report.
+
+
++-------------------------------------------------+
+; Slow 1200mV 0C Model Fmax Summary               ;
++-----------+-----------------+------------+------+
+; Fmax      ; Restricted Fmax ; Clock Name ; Note ;
++-----------+-----------------+------------+------+
+; 42.31 MHz ; 42.31 MHz       ; C          ;      ;
++-----------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++------------------------------------+
+; Slow 1200mV 0C Model Setup Summary ;
++-------+---------+------------------+
+; Clock ; Slack   ; End Point TNS    ;
++-------+---------+------------------+
+; C     ; -11.317 ; -50.747          ;
++-------+---------+------------------+
+
+
++-----------------------------------+
+; Slow 1200mV 0C Model Hold Summary ;
++-------+--------+------------------+
+; Clock ; Slack  ; End Point TNS    ;
++-------+--------+------------------+
+; C     ; -5.356 ; -13.943          ;
++-------+--------+------------------+
+
+
+-----------------------------------------
+; Slow 1200mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Slow 1200mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++--------------------------------------------------+
+; Slow 1200mV 0C Model Minimum Pulse Width Summary ;
++-------+--------+---------------------------------+
+; Clock ; Slack  ; End Point TNS                   ;
++-------+--------+---------------------------------+
+; C     ; -4.775 ; -100.281                        ;
++-------+--------+---------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Setup: 'C'                                                                                                                                                             ;
++---------+------------------------------------------------------+------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack   ; From Node                                            ; To Node                                              ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++---------+------------------------------------------------------+------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -11.317 ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; -5.571     ; 2.866      ;
+; -11.287 ; DTriggerWithRisingEdge:inst4|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; -3.926     ; 4.481      ;
+; -10.979 ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; -4.643     ; 3.576      ;
+; -10.949 ; DTriggerWithRisingEdge:inst4|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; -2.998     ; 5.191      ;
+; -10.595 ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; -5.058     ; 5.044      ;
+; -10.168 ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; -3.644     ; 4.144      ;
+; -9.830  ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; -2.716     ; 4.854      ;
+; -9.477  ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; -4.133     ; 4.351      ;
+; -9.431  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; -3.394     ; 5.044      ;
+; -9.226  ; DTriggerWithRisingEdge:inst4|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; -3.413     ; 5.320      ;
+; -9.107  ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; -3.131     ; 4.983      ;
+; -8.939  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; -4.199     ; 4.247      ;
+; -8.778  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; -4.712     ; 1.186      ;
+; -8.440  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; -3.784     ; 1.896      ;
+; -8.373  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; -2.537     ; 3.576      ;
+; -8.343  ; DTriggerWithRisingEdge:inst4|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; -0.892     ; 5.191      ;
+; -8.316  ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; -4.646     ; 1.290      ;
+; -8.224  ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; -0.610     ; 4.854      ;
+; -8.062  ; DTriggerWithRisingEdge:inst4|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; -1.749     ; 5.320      ;
+; -8.028  ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; -3.718     ; 2.050      ;
+; -7.974  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; -1.937     ; 5.044      ;
+; -7.738  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; -2.498     ; 4.247      ;
+; -7.696  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; -2.450     ; 2.866      ;
+; -7.553  ; DTriggerWithRisingEdge:inst9|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; 0.658      ; 5.331      ;
+; -7.391  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; -2.151     ; 4.247      ;
+; -7.360  ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst4|DTrigger:inst2|inst21~1 ; C            ; C           ; 0.500        ; -3.627     ; 3.161      ;
+; -7.358  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; -1.522     ; 3.576      ;
+; -7.276  ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; -2.432     ; 4.351      ;
+; -7.272  ; DTriggerWithRisingEdge:inst9|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; 0.649      ; 5.541      ;
+; -7.215  ; DTriggerWithRisingEdge:inst9|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; 1.586      ; 6.041      ;
+; -7.067  ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; -2.223     ; 4.351      ;
+; -6.943  ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; -1.467     ; 4.983      ;
+; -6.934  ; DTriggerWithRisingEdge:inst9|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; 1.577      ; 6.251      ;
+; -6.906  ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; -2.736     ; 1.290      ;
+; -6.864  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; C            ; C           ; 1.000        ; -3.626     ; 3.109      ;
+; -6.804  ; C                                                    ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; 2.027      ; 5.951      ;
+; -6.618  ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; -1.808     ; 2.050      ;
+; -6.466  ; C                                                    ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; 2.955      ; 6.661      ;
+; -6.230  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; -2.664     ; 1.186      ;
+; -6.211  ; DTriggerWithRisingEdge:inst9|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; 1.162      ; 6.380      ;
+; -6.194  ; C                                                    ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; 2.027      ; 5.841      ;
+; -5.903  ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; -0.559     ; 4.351      ;
+; -5.892  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; -1.736     ; 1.896      ;
+; -5.856  ; C                                                    ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; 2.955      ; 6.551      ;
+; -5.715  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; 0.621      ; 3.576      ;
+; -5.561  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; -0.024     ; 5.044      ;
+; -5.492  ; DTriggerWithRisingEdge:inst9|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; 1.171      ; 6.170      ;
+; -5.328  ; DTriggerWithRisingEdge:inst9|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; 3.683      ; 6.251      ;
+; -5.316  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; C            ; C           ; 0.500        ; -1.578     ; 3.109      ;
+; -5.227  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; -0.487     ; 4.247      ;
+; -5.133  ; C                                                    ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; 2.540      ; 6.680      ;
+; -4.761  ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; 0.049      ; 2.050      ;
+; -4.743  ; C                                                    ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; 2.540      ; 6.790      ;
+; -4.609  ; DTriggerWithRisingEdge:inst9|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; 3.692      ; 6.041      ;
+; -4.328  ; DTriggerWithRisingEdge:inst9|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; 2.835      ; 6.170      ;
+; -4.286  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; 0.370      ; 1.896      ;
+; -4.250  ; C                                                    ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; 5.061      ; 6.551      ;
+; -4.173  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; -0.017     ; 1.896      ;
+; -4.047  ; DTriggerWithRisingEdge:inst9|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; 2.826      ; 6.380      ;
+; -4.039  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; C            ; C           ; 0.500        ; -0.301     ; 3.109      ;
+; -4.012  ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; 0.298      ; 2.050      ;
+; -3.860  ; C                                                    ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; 5.061      ; 6.661      ;
+; -3.579  ; C                                                    ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; 4.204      ; 6.790      ;
+; -3.152  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; C            ; C           ; 1.000        ; 0.086      ; 3.109      ;
+; -2.969  ; C                                                    ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; 4.204      ; 6.680      ;
+; -1.905  ; DTriggerWithRisingEdge:inst9|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst9|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; -0.033     ; 1.425      ;
+; -1.727  ; DTriggerWithRisingEdge:inst9|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst9|DTrigger:inst2|inst21~1 ; C            ; C           ; 0.500        ; -0.016     ; 0.759      ;
++---------+------------------------------------------------------+------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Hold: 'C'                                                                                                                                                             ;
++--------+------------------------------------------------------+------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                            ; To Node                                              ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------------------------------------+------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -5.356 ; C                                                    ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 7.598      ; 2.242      ;
+; -4.961 ; C                                                    ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 7.598      ; 2.137      ;
+; -4.041 ; DTriggerWithRisingEdge:inst9|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 6.253      ; 2.212      ;
+; -3.580 ; DTriggerWithRisingEdge:inst4|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 5.554      ; 1.974      ;
+; -3.362 ; C                                                    ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 6.739      ; 3.377      ;
+; -3.349 ; DTriggerWithRisingEdge:inst9|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 5.394      ; 2.045      ;
+; -3.347 ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 5.571      ; 1.724      ;
+; -3.231 ; C                                                    ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 6.739      ; 3.008      ;
+; -3.203 ; C                                                    ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 5.671      ; 2.468      ;
+; -3.064 ; DTriggerWithRisingEdge:inst9|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 6.245      ; 2.681      ;
+; -2.744 ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 4.485      ; 1.741      ;
+; -2.474 ; C                                                    ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 5.671      ; 2.697      ;
+; -2.410 ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 4.643      ; 1.733      ;
+; -2.372 ; DTriggerWithRisingEdge:inst9|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 5.386      ; 2.514      ;
+; -2.344 ; DTriggerWithRisingEdge:inst9|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 4.318      ; 1.974      ;
+; -2.340 ; C                                                    ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 4.477      ; 2.137      ;
+; -2.321 ; DTriggerWithRisingEdge:inst9|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 4.326      ; 1.505      ;
+; -2.144 ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 3.394      ; 0.750      ;
+; -2.052 ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 3.626      ; 1.574      ;
+; -1.939 ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 4.199      ; 2.260      ;
+; -1.735 ; C                                                    ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 4.477      ; 2.242      ;
+; -1.718 ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 3.784      ; 1.566      ;
+; -1.690 ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 2.716      ; 1.026      ;
+; -1.683 ; C                                                    ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 4.691      ; 3.008      ;
+; -1.227 ; DTriggerWithRisingEdge:inst4|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 3.627      ; 1.900      ;
+; -1.158 ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; C            ; C           ; 0.000        ; 3.718      ; 2.560      ;
+; -1.147 ; DTriggerWithRisingEdge:inst4|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 4.695      ; 3.548      ;
+; -1.024 ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 2.558      ; 1.034      ;
+; -0.914 ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 4.712      ; 3.298      ;
+; -0.911 ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 3.131      ; 1.720      ;
+; -0.864 ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst4|DTrigger:inst2|inst21~1 ; C            ; C           ; -0.500       ; 3.926      ; 2.562      ;
+; -0.824 ; DTriggerWithRisingEdge:inst9|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 3.338      ; 2.514      ;
+; -0.814 ; C                                                    ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 4.691      ; 3.377      ;
+; -0.804 ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 2.537      ; 1.733      ;
+; -0.801 ; DTriggerWithRisingEdge:inst9|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 3.346      ; 2.045      ;
+; -0.726 ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 2.450      ; 1.724      ;
+; -0.687 ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 1.937      ; 0.750      ;
+; -0.580 ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 2.821      ; 1.741      ;
+; -0.443 ; DTriggerWithRisingEdge:inst9|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 3.124      ; 2.681      ;
+; -0.420 ; DTriggerWithRisingEdge:inst9|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 3.132      ; 2.212      ;
+; 0.041  ; DTriggerWithRisingEdge:inst4|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 2.433      ; 1.974      ;
+; 0.140  ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 0.894      ; 1.034      ;
+; 0.211  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 1.522      ; 1.733      ;
+; 0.253  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 1.467      ; 1.720      ;
+; 0.262  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 2.498      ; 2.260      ;
+; 0.496  ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 1.578      ; 1.574      ;
+; 0.609  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 2.151      ; 2.260      ;
+; 0.634  ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 2.664      ; 3.298      ;
+; 0.726  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 0.024      ; 0.750      ;
+; 0.726  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 0.024      ; 0.750      ;
+; 0.877  ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 1.364      ; 1.741      ;
+; 0.916  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 0.610      ; 1.026      ;
+; 1.104  ; DTriggerWithRisingEdge:inst9|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst9|DTrigger:inst2|inst21~1 ; C            ; C           ; -0.500       ; 0.033      ; 0.637      ;
+; 1.252  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; C            ; C           ; -0.500       ; 1.808      ; 2.560      ;
+; 1.401  ; DTriggerWithRisingEdge:inst4|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 2.647      ; 3.548      ;
+; 1.549  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 0.017      ; 1.566      ;
+; 1.549  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 0.017      ; 1.566      ;
+; 1.584  ; DTriggerWithRisingEdge:inst9|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst9|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 0.016      ; 1.100      ;
+; 1.660  ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; -0.086     ; 1.574      ;
+; 1.773  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 0.487      ; 2.260      ;
+; 1.773  ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 0.301      ; 1.574      ;
+; 2.078  ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; -0.337     ; 1.741      ;
+; 2.436  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; -0.370     ; 1.566      ;
+; 2.724  ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 0.034      ; 2.758      ;
+; 2.854  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; -0.621     ; 1.733      ;
+; 2.858  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; C            ; C           ; 0.000        ; -0.298     ; 2.560      ;
+; 3.109  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; C            ; C           ; -0.500       ; -0.049     ; 2.560      ;
++--------+------------------------------------------------------+------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Minimum Pulse Width: 'C'                                                                                         ;
++--------+--------------+----------------+------------------+-------+------------+------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                               ;
++--------+--------------+----------------+------------------+-------+------------+------------------------------------------------------+
+; -4.775 ; -4.775       ; 0.000          ; Low Pulse Width  ; C     ; Fall       ; inst3|inst|inst20~1|datac                            ;
+; -4.764 ; -4.764       ; 0.000          ; Low Pulse Width  ; C     ; Fall       ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ;
+; -4.758 ; -4.758       ; 0.000          ; Low Pulse Width  ; C     ; Fall       ; inst21~0|combout                                     ;
+; -4.701 ; -4.701       ; 0.000          ; High Pulse Width ; C     ; Rise       ; inst23|combout                                       ;
+; -4.685 ; -4.685       ; 0.000          ; High Pulse Width ; C     ; Rise       ; inst21~0|dataa                                       ;
+; -4.589 ; -4.589       ; 0.000          ; High Pulse Width ; C     ; Fall       ; inst21~0|combout                                     ;
+; -4.584 ; -4.584       ; 0.000          ; High Pulse Width ; C     ; Fall       ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ;
+; -4.576 ; -4.576       ; 0.000          ; Low Pulse Width  ; C     ; Rise       ; inst21~0|dataa                                       ;
+; -4.573 ; -4.573       ; 0.000          ; High Pulse Width ; C     ; Fall       ; inst3|inst|inst20~1|datac                            ;
+; -4.558 ; -4.558       ; 0.000          ; Low Pulse Width  ; C     ; Rise       ; inst23|combout                                       ;
+; -3.456 ; -3.456       ; 0.000          ; Low Pulse Width  ; C     ; Rise       ; inst22~0|combout                                     ;
+; -3.392 ; -3.392       ; 0.000          ; Low Pulse Width  ; C     ; Rise       ; inst21~0|datac                                       ;
+; -3.392 ; -3.392       ; 0.000          ; Low Pulse Width  ; C     ; Rise       ; inst4|inst2|inst21~1|datac                           ;
+; -3.391 ; -3.391       ; 0.000          ; Low Pulse Width  ; C     ; Rise       ; inst4|inst|inst20~1|datac                            ;
+; -3.381 ; -3.381       ; 0.000          ; Low Pulse Width  ; C     ; Rise       ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ;
+; -3.374 ; -3.374       ; 0.000          ; High Pulse Width ; C     ; Fall       ; DTriggerWithRisingEdge:inst4|DTrigger:inst2|inst21~1 ;
+; -3.120 ; -3.120       ; 0.000          ; Low Pulse Width  ; C     ; Fall       ; DTriggerWithRisingEdge:inst4|DTrigger:inst2|inst21~1 ;
+; -3.112 ; -3.112       ; 0.000          ; High Pulse Width ; C     ; Rise       ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ;
+; -3.101 ; -3.101       ; 0.000          ; High Pulse Width ; C     ; Rise       ; inst21~0|datac                                       ;
+; -3.100 ; -3.100       ; 0.000          ; High Pulse Width ; C     ; Rise       ; inst4|inst2|inst21~1|datac                           ;
+; -3.100 ; -3.100       ; 0.000          ; High Pulse Width ; C     ; Rise       ; inst4|inst|inst20~1|datac                            ;
+; -3.033 ; -3.033       ; 0.000          ; High Pulse Width ; C     ; Rise       ; inst22~0|combout                                     ;
+; -3.000 ; 1.000        ; 4.000          ; Port Rate        ; C     ; Rise       ; C                                                    ;
+; -1.319 ; -1.319       ; 0.000          ; Low Pulse Width  ; C     ; Rise       ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ;
+; -1.312 ; -1.312       ; 0.000          ; Low Pulse Width  ; C     ; Rise       ; inst2|inst2|inst21~1|datad                           ;
+; -1.311 ; -1.311       ; 0.000          ; Low Pulse Width  ; C     ; Rise       ; inst2|inst|inst20~1|datad                            ;
+; -1.297 ; -1.297       ; 0.000          ; Low Pulse Width  ; C     ; Rise       ; inst20~0|combout                                     ;
+; -1.266 ; -1.266       ; 0.000          ; High Pulse Width ; C     ; Fall       ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ;
+; -1.087 ; -1.087       ; 0.000          ; Low Pulse Width  ; C     ; Fall       ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ;
+; -1.056 ; -1.056       ; 0.000          ; High Pulse Width ; C     ; Rise       ; inst20~0|combout                                     ;
+; -1.042 ; -1.042       ; 0.000          ; High Pulse Width ; C     ; Rise       ; inst2|inst2|inst21~1|datad                           ;
+; -1.042 ; -1.042       ; 0.000          ; High Pulse Width ; C     ; Rise       ; inst2|inst|inst20~1|datad                            ;
+; -1.034 ; -1.034       ; 0.000          ; High Pulse Width ; C     ; Rise       ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ;
+; 0.097  ; 0.097        ; 0.000          ; Low Pulse Width  ; C     ; Rise       ; inst3|inst|inst20~1|datac                            ;
+; 0.107  ; 0.107        ; 0.000          ; Low Pulse Width  ; C     ; Rise       ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ;
+; 0.113  ; 0.113        ; 0.000          ; Low Pulse Width  ; C     ; Rise       ; inst21~0|combout                                     ;
+; 0.135  ; 0.135        ; 0.000          ; High Pulse Width ; C     ; Fall       ; inst23|combout                                       ;
+; 0.151  ; 0.151        ; 0.000          ; High Pulse Width ; C     ; Fall       ; inst21~0|dataa                                       ;
+; 0.190  ; 0.190        ; 0.000          ; Low Pulse Width  ; C     ; Rise       ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ;
+; 0.221  ; 0.221        ; 0.000          ; High Pulse Width ; C     ; Fall       ; inst20~0|combout                                     ;
+; 0.235  ; 0.235        ; 0.000          ; High Pulse Width ; C     ; Fall       ; inst2|inst2|inst21~1|datad                           ;
+; 0.235  ; 0.235        ; 0.000          ; High Pulse Width ; C     ; Fall       ; inst2|inst|inst20~1|datad                            ;
+; 0.243  ; 0.243        ; 0.000          ; High Pulse Width ; C     ; Fall       ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ;
+; 0.373  ; 0.373        ; 0.000          ; Low Pulse Width  ; C     ; Rise       ; inst23|datad                                         ;
+; 0.373  ; 0.373        ; 0.000          ; Low Pulse Width  ; C     ; Rise       ; inst9|inst|inst20~1|datad                            ;
+; 0.374  ; 0.374        ; 0.000          ; Low Pulse Width  ; C     ; Rise       ; inst22~0|datad                                       ;
+; 0.381  ; 0.381        ; 0.000          ; Low Pulse Width  ; C     ; Rise       ; inst9|inst2|inst20|datac                             ;
+; 0.381  ; 0.381        ; 0.000          ; Low Pulse Width  ; C     ; Rise       ; inst9|inst2|inst21~1|datac                           ;
+; 0.390  ; 0.390        ; 0.000          ; Low Pulse Width  ; C     ; Rise       ; DTriggerWithRisingEdge:inst9|DTrigger:inst2|inst21~1 ;
+; 0.390  ; 0.390        ; 0.000          ; High Pulse Width ; C     ; Fall       ; inst9|inst2|inst20|combout                           ;
+; 0.399  ; 0.399        ; 0.000          ; High Pulse Width ; C     ; Fall       ; inst19|datab                                         ;
+; 0.419  ; 0.419        ; 0.000          ; High Pulse Width ; C     ; Fall       ; DTriggerWithRisingEdge:inst9|DTrigger:inst|inst20~1  ;
+; 0.475  ; 0.475        ; 0.000          ; Low Pulse Width  ; C     ; Rise       ; C~input|o                                            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; C     ; Rise       ; C~input|i                                            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; C     ; Rise       ; C~input|i                                            ;
+; 0.525  ; 0.525        ; 0.000          ; High Pulse Width ; C     ; Rise       ; C~input|o                                            ;
+; 0.538  ; 0.538        ; 0.000          ; Low Pulse Width  ; C     ; Fall       ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ;
+; 0.545  ; 0.545        ; 0.000          ; Low Pulse Width  ; C     ; Fall       ; inst2|inst2|inst21~1|datad                           ;
+; 0.546  ; 0.546        ; 0.000          ; Low Pulse Width  ; C     ; Fall       ; inst2|inst|inst20~1|datad                            ;
+; 0.560  ; 0.560        ; 0.000          ; Low Pulse Width  ; C     ; Fall       ; inst20~0|combout                                     ;
+; 0.578  ; 0.578        ; 0.000          ; Low Pulse Width  ; C     ; Fall       ; DTriggerWithRisingEdge:inst9|DTrigger:inst|inst20~1  ;
+; 0.591  ; 0.591        ; 0.000          ; High Pulse Width ; C     ; Rise       ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ;
+; 0.597  ; 0.597        ; 0.000          ; Low Pulse Width  ; C     ; Fall       ; inst19|datab                                         ;
+; 0.606  ; 0.606        ; 0.000          ; High Pulse Width ; C     ; Rise       ; DTriggerWithRisingEdge:inst9|DTrigger:inst2|inst21~1 ;
+; 0.606  ; 0.606        ; 0.000          ; Low Pulse Width  ; C     ; Fall       ; inst9|inst2|inst20|combout                           ;
+; 0.615  ; 0.615        ; 0.000          ; High Pulse Width ; C     ; Rise       ; inst9|inst2|inst20|datac                             ;
+; 0.615  ; 0.615        ; 0.000          ; High Pulse Width ; C     ; Rise       ; inst9|inst2|inst21~1|datac                           ;
+; 0.622  ; 0.622        ; 0.000          ; High Pulse Width ; C     ; Rise       ; inst22~0|datad                                       ;
+; 0.622  ; 0.622        ; 0.000          ; High Pulse Width ; C     ; Rise       ; inst23|datad                                         ;
+; 0.623  ; 0.623        ; 0.000          ; High Pulse Width ; C     ; Rise       ; inst9|inst|inst20~1|datad                            ;
+; 0.820  ; 0.820        ; 0.000          ; Low Pulse Width  ; C     ; Fall       ; inst21~0|dataa                                       ;
+; 0.838  ; 0.838        ; 0.000          ; Low Pulse Width  ; C     ; Fall       ; inst23|combout                                       ;
+; 0.842  ; 0.842        ; 0.000          ; High Pulse Width ; C     ; Rise       ; inst21~0|combout                                     ;
+; 0.847  ; 0.847        ; 0.000          ; High Pulse Width ; C     ; Rise       ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ;
+; 0.859  ; 0.859        ; 0.000          ; High Pulse Width ; C     ; Rise       ; inst3|inst|inst20~1|datac                            ;
++--------+--------------+----------------+------------------+-------+------------+------------------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; C         ; C          ; 7.194 ; 7.304 ; Rise       ; C               ;
+; C         ; C          ; 5.633 ; 5.743 ; Fall       ; C               ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Hold Times                                                            ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; C         ; C          ; 3.203 ; 2.974 ; Rise       ; C               ;
+; C         ; C          ; 5.461 ; 5.356 ; Fall       ; C               ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; D0        ; C          ; 6.272  ; 6.746  ; Rise       ; C               ;
+; D1        ; C          ; 13.000 ; 12.861 ; Rise       ; C               ;
+; D2        ; C          ; 16.490 ; 16.776 ; Rise       ; C               ;
+; D3        ; C          ; 15.500 ; 15.567 ; Rise       ; C               ;
+; D0        ; C          ; 5.706  ; 6.022  ; Fall       ; C               ;
+; D1        ; C          ; 15.501 ; 15.504 ; Fall       ; C               ;
+; D2        ; C          ; 17.608 ; 17.820 ; Fall       ; C               ;
+; D3        ; C          ; 15.462 ; 15.581 ; Fall       ; C               ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; D0        ; C          ; 5.120 ; 5.510 ; Rise       ; C               ;
+; D1        ; C          ; 5.273 ; 5.530 ; Rise       ; C               ;
+; D2        ; C          ; 7.039 ; 7.169 ; Rise       ; C               ;
+; D3        ; C          ; 5.535 ; 5.807 ; Rise       ; C               ;
+; D0        ; C          ; 5.120 ; 5.510 ; Fall       ; C               ;
+; D1        ; C          ; 5.273 ; 5.530 ; Fall       ; C               ;
+; D2        ; C          ; 7.039 ; 7.169 ; Fall       ; C               ;
+; D3        ; C          ; 5.535 ; 5.807 ; Fall       ; C               ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
+---------------------------------------------
+; Slow 1200mV 0C Model Metastability Report ;
+---------------------------------------------
+No synchronizer chains to report.
+
+
++------------------------------------+
+; Fast 1200mV 0C Model Setup Summary ;
++-------+--------+-------------------+
+; Clock ; Slack  ; End Point TNS     ;
++-------+--------+-------------------+
+; C     ; -5.372 ; -21.286           ;
++-------+--------+-------------------+
+
+
++-----------------------------------+
+; Fast 1200mV 0C Model Hold Summary ;
++-------+--------+------------------+
+; Clock ; Slack  ; End Point TNS    ;
++-------+--------+------------------+
+; C     ; -2.515 ; -6.302           ;
++-------+--------+------------------+
+
+
+-----------------------------------------
+; Fast 1200mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Fast 1200mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++--------------------------------------------------+
+; Fast 1200mV 0C Model Minimum Pulse Width Summary ;
++-------+--------+---------------------------------+
+; Clock ; Slack  ; End Point TNS                   ;
++-------+--------+---------------------------------+
+; C     ; -3.000 ; -38.086                         ;
++-------+--------+---------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Setup: 'C'                                                                                                                                                            ;
++--------+------------------------------------------------------+------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                            ; To Node                                              ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------------------------------------+------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -5.372 ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; -2.972     ; 1.303      ;
+; -5.196 ; DTriggerWithRisingEdge:inst4|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; -2.082     ; 2.017      ;
+; -5.143 ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; -2.495     ; 1.594      ;
+; -4.967 ; DTriggerWithRisingEdge:inst4|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; -1.605     ; 2.308      ;
+; -4.247 ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; -2.358     ; 2.247      ;
+; -4.236 ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; -1.847     ; 2.247      ;
+; -4.129 ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; -1.711     ; 1.821      ;
+; -4.106 ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; -2.508     ; 0.501      ;
+; -3.900 ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; -1.234     ; 2.112      ;
+; -3.877 ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; -2.031     ; 0.792      ;
+; -3.547 ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; -1.500     ; 1.905      ;
+; -3.522 ; DTriggerWithRisingEdge:inst9|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; -0.066     ; 2.359      ;
+; -3.518 ; DTriggerWithRisingEdge:inst4|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; -1.468     ; 2.408      ;
+; -3.507 ; DTriggerWithRisingEdge:inst4|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; -0.957     ; 2.408      ;
+; -3.483 ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; -1.335     ; 1.594      ;
+; -3.451 ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; -1.097     ; 2.212      ;
+; -3.429 ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; -1.894     ; 1.893      ;
+; -3.401 ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; -1.366     ; 1.893      ;
+; -3.307 ; DTriggerWithRisingEdge:inst4|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; -0.445     ; 2.308      ;
+; -3.293 ; DTriggerWithRisingEdge:inst9|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; 0.411      ; 2.650      ;
+; -3.258 ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; -2.114     ; 0.547      ;
+; -3.240 ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; -0.074     ; 2.112      ;
+; -3.225 ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; -1.581     ; 0.547      ;
+; -3.183 ; C                                                    ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; 0.883      ; 2.969      ;
+; -3.176 ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; -1.637     ; 0.985      ;
+; -3.162 ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; -1.262     ; 1.303      ;
+; -3.143 ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; -1.104     ; 0.985      ;
+; -3.037 ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; -0.648     ; 2.247      ;
+; -2.954 ; C                                                    ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; 1.360      ; 3.260      ;
+; -2.933 ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; -0.785     ; 1.594      ;
+; -2.819 ; DTriggerWithRisingEdge:inst9|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; 0.252      ; 2.474      ;
+; -2.800 ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst4|DTrigger:inst2|inst21~1 ; C            ; C           ; 0.500        ; -1.302     ; 1.501      ;
+; -2.688 ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; C            ; C           ; 1.000        ; -1.678     ; 1.496      ;
+; -2.653 ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; -0.618     ; 1.893      ;
+; -2.590 ; DTriggerWithRisingEdge:inst9|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; 0.729      ; 2.765      ;
+; -2.517 ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; -0.970     ; 1.905      ;
+; -2.514 ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; -0.967     ; 1.905      ;
+; -2.503 ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; -0.456     ; 1.905      ;
+; -2.440 ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; -0.586     ; 2.212      ;
+; -2.330 ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; -1.232     ; 0.501      ;
+; -2.321 ; C                                                    ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; 0.883      ; 2.607      ;
+; -2.256 ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; 0.392      ; 1.594      ;
+; -2.141 ; DTriggerWithRisingEdge:inst9|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; 0.866      ; 2.865      ;
+; -2.101 ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; -0.755     ; 0.792      ;
+; -2.092 ; C                                                    ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; 1.360      ; 2.898      ;
+; -1.930 ; DTriggerWithRisingEdge:inst9|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; 1.889      ; 2.765      ;
+; -1.912 ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; C            ; C           ; 0.500        ; -0.402     ; 1.496      ;
+; -1.911 ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; C            ; C           ; 0.500        ; -0.401     ; 1.496      ;
+; -1.899 ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; -0.010     ; 2.247      ;
+; -1.844 ; DTriggerWithRisingEdge:inst9|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; 0.548      ; 2.750      ;
+; -1.833 ; DTriggerWithRisingEdge:inst9|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; 1.059      ; 2.750      ;
+; -1.750 ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; 0.289      ; 0.985      ;
+; -1.643 ; C                                                    ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; 1.497      ; 2.998      ;
+; -1.642 ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; -0.107     ; 1.893      ;
+; -1.633 ; DTriggerWithRisingEdge:inst9|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; 1.571      ; 2.650      ;
+; -1.505 ; C                                                    ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; 1.497      ; 3.360      ;
+; -1.494 ; C                                                    ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; 2.008      ; 3.360      ;
+; -1.483 ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; 0.056      ; 0.985      ;
+; -1.441 ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; 0.405      ; 0.792      ;
+; -1.432 ; C                                                    ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; 2.520      ; 2.898      ;
+; -1.353 ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; -0.007     ; 0.792      ;
+; -1.294 ; C                                                    ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; 2.520      ; 3.260      ;
+; -1.130 ; DTriggerWithRisingEdge:inst9|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; 1.377      ; 2.865      ;
+; -0.901 ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; C            ; C           ; 1.000        ; 0.109      ; 1.496      ;
+; -0.819 ; DTriggerWithRisingEdge:inst9|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst9|DTrigger:inst2|inst21~1 ; C            ; C           ; 0.500        ; -0.330     ; 0.374      ;
+; -0.632 ; C                                                    ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 1.000        ; 2.008      ; 2.998      ;
+; -0.217 ; DTriggerWithRisingEdge:inst9|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst9|DTrigger:inst|inst20~1  ; C            ; C           ; 0.500        ; 0.309      ; 0.615      ;
++--------+------------------------------------------------------+------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Hold: 'C'                                                                                                                                                             ;
++--------+------------------------------------------------------+------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                            ; To Node                                              ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------------------------------------+------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -2.515 ; C                                                    ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 3.855      ; 1.340      ;
+; -2.392 ; C                                                    ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 3.855      ; 0.963      ;
+; -1.885 ; DTriggerWithRisingEdge:inst9|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 2.915      ; 1.030      ;
+; -1.681 ; DTriggerWithRisingEdge:inst4|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 2.563      ; 0.882      ;
+; -1.679 ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 2.972      ; 0.793      ;
+; -1.653 ; C                                                    ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 3.391      ; 1.738      ;
+; -1.503 ; DTriggerWithRisingEdge:inst9|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 3.236      ; 1.233      ;
+; -1.501 ; DTriggerWithRisingEdge:inst9|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 2.451      ; 0.950      ;
+; -1.439 ; C                                                    ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 3.391      ; 1.452      ;
+; -1.421 ; C                                                    ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 2.594      ; 1.173      ;
+; -1.334 ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 2.142      ; 0.808      ;
+; -1.190 ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 2.495      ; 0.805      ;
+; -1.182 ; C                                                    ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 2.145      ; 0.963      ;
+; -1.119 ; DTriggerWithRisingEdge:inst9|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 2.772      ; 1.153      ;
+; -1.068 ; DTriggerWithRisingEdge:inst9|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 1.975      ; 0.907      ;
+; -1.004 ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 1.847      ; 0.343      ;
+; -0.950 ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 1.678      ; 0.728      ;
+; -0.879 ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 1.894      ; 1.015      ;
+; -0.806 ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 2.031      ; 0.725      ;
+; -0.755 ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 1.234      ; 0.479      ;
+; -0.663 ; C                                                    ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 2.115      ; 1.452      ;
+; -0.602 ; C                                                    ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 2.594      ; 1.492      ;
+; -0.530 ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 1.335      ; 0.805      ;
+; -0.499 ; DTriggerWithRisingEdge:inst4|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 2.099      ; 1.600      ;
+; -0.497 ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 2.508      ; 1.511      ;
+; -0.469 ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 1.262      ; 0.793      ;
+; -0.450 ; DTriggerWithRisingEdge:inst9|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 1.654      ; 0.704      ;
+; -0.373 ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; C            ; C           ; 0.000        ; 1.637      ; 1.264      ;
+; -0.343 ; DTriggerWithRisingEdge:inst9|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 1.496      ; 1.153      ;
+; -0.340 ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst4|DTrigger:inst2|inst21~1 ; C            ; C           ; -0.500       ; 2.082      ; 1.242      ;
+; -0.323 ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 1.631      ; 0.808      ;
+; -0.305 ; C                                                    ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 2.145      ; 1.340      ;
+; -0.293 ; DTriggerWithRisingEdge:inst9|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 1.526      ; 1.233      ;
+; 0.020  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 0.785      ; 0.805      ;
+; 0.101  ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 0.881      ; 0.482      ;
+; 0.112  ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 0.370      ; 0.482      ;
+; 0.117  ; DTriggerWithRisingEdge:inst4|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 1.302      ; 0.919      ;
+; 0.123  ; C                                                    ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 2.115      ; 1.738      ;
+; 0.149  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 1.366      ; 1.015      ;
+; 0.172  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 1.097      ; 0.769      ;
+; 0.183  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 0.586      ; 0.769      ;
+; 0.195  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 0.648      ; 0.343      ;
+; 0.275  ; DTriggerWithRisingEdge:inst9|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 1.175      ; 0.950      ;
+; 0.279  ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 1.232      ; 1.511      ;
+; 0.325  ; DTriggerWithRisingEdge:inst9|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 1.205      ; 1.030      ;
+; 0.333  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 0.010      ; 0.343      ;
+; 0.333  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 0.010      ; 0.343      ;
+; 0.529  ; DTriggerWithRisingEdge:inst4|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 0.853      ; 0.882      ;
+; 0.660  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; C            ; C           ; -0.500       ; 1.104      ; 1.264      ;
+; 0.692  ; DTriggerWithRisingEdge:inst9|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst9|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 0.330      ; 0.522      ;
+; 0.718  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 0.007      ; 0.725      ;
+; 0.718  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 0.007      ; 0.725      ;
+; 0.826  ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 0.402      ; 0.728      ;
+; 0.827  ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 0.401      ; 0.728      ;
+; 0.837  ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; -0.109     ; 0.728      ;
+; 0.876  ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 0.432      ; 0.808      ;
+; 0.897  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 0.618      ; 1.015      ;
+; 0.905  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 0.074      ; 0.479      ;
+; 0.906  ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; -0.098     ; 0.808      ;
+; 0.908  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 0.107      ; 1.015      ;
+; 1.089  ; DTriggerWithRisingEdge:inst9|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst9|DTrigger:inst2|inst21~1 ; C            ; C           ; -0.500       ; -0.309     ; 0.280      ;
+; 1.251  ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ; C            ; C           ; 0.000        ; 0.014      ; 1.265      ;
+; 1.277  ; DTriggerWithRisingEdge:inst4|DTrigger:inst2|inst21~1 ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; 0.823      ; 1.600      ;
+; 1.320  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; C            ; C           ; 0.000        ; -0.056     ; 1.264      ;
+; 1.630  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; -0.405     ; 0.725      ;
+; 1.697  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ; C            ; C           ; -0.500       ; -0.392     ; 0.805      ;
+; 2.053  ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ; C            ; C           ; -0.500       ; -0.289     ; 1.264      ;
++--------+------------------------------------------------------+------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Minimum Pulse Width: 'C'                                                                                         ;
++--------+--------------+----------------+------------------+-------+------------+------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                               ;
++--------+--------------+----------------+------------------+-------+------------+------------------------------------------------------+
+; -3.000 ; 1.000        ; 4.000          ; Port Rate        ; C     ; Rise       ; C                                                    ;
+; -2.247 ; -2.247       ; 0.000          ; High Pulse Width ; C     ; Fall       ; inst21~0|combout                                     ;
+; -2.231 ; -2.231       ; 0.000          ; High Pulse Width ; C     ; Fall       ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ;
+; -2.226 ; -2.226       ; 0.000          ; High Pulse Width ; C     ; Fall       ; inst3|inst|inst20~1|datac                            ;
+; -2.219 ; -2.219       ; 0.000          ; Low Pulse Width  ; C     ; Rise       ; inst21~0|dataa                                       ;
+; -2.183 ; -2.183       ; 0.000          ; Low Pulse Width  ; C     ; Rise       ; inst23|combout                                       ;
+; -1.563 ; -1.563       ; 0.000          ; High Pulse Width ; C     ; Fall       ; DTriggerWithRisingEdge:inst4|DTrigger:inst2|inst21~1 ;
+; -1.561 ; -1.561       ; 0.000          ; Low Pulse Width  ; C     ; Rise       ; inst21~0|datac                                       ;
+; -1.560 ; -1.560       ; 0.000          ; Low Pulse Width  ; C     ; Rise       ; inst4|inst2|inst21~1|datac                           ;
+; -1.560 ; -1.560       ; 0.000          ; Low Pulse Width  ; C     ; Rise       ; inst4|inst|inst20~1|datac                            ;
+; -1.555 ; -1.555       ; 0.000          ; Low Pulse Width  ; C     ; Rise       ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ;
+; -1.521 ; -1.521       ; 0.000          ; Low Pulse Width  ; C     ; Rise       ; inst22~0|combout                                     ;
+; -1.387 ; -1.387       ; 0.000          ; Low Pulse Width  ; C     ; Fall       ; inst3|inst|inst20~1|datac                            ;
+; -1.382 ; -1.382       ; 0.000          ; Low Pulse Width  ; C     ; Fall       ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ;
+; -1.379 ; -1.379       ; 0.000          ; High Pulse Width ; C     ; Rise       ; inst23|combout                                       ;
+; -1.365 ; -1.365       ; 0.000          ; Low Pulse Width  ; C     ; Fall       ; inst21~0|combout                                     ;
+; -1.345 ; -1.345       ; 0.000          ; High Pulse Width ; C     ; Rise       ; inst21~0|dataa                                       ;
+; -0.835 ; -0.835       ; 0.000          ; High Pulse Width ; C     ; Rise       ; inst22~0|combout                                     ;
+; -0.802 ; -0.802       ; 0.000          ; High Pulse Width ; C     ; Rise       ; DTriggerWithRisingEdge:inst4|DTrigger:inst|inst20~1  ;
+; -0.798 ; -0.798       ; 0.000          ; High Pulse Width ; C     ; Rise       ; inst21~0|datac                                       ;
+; -0.798 ; -0.798       ; 0.000          ; High Pulse Width ; C     ; Rise       ; inst4|inst2|inst21~1|datac                           ;
+; -0.797 ; -0.797       ; 0.000          ; High Pulse Width ; C     ; Rise       ; inst4|inst|inst20~1|datac                            ;
+; -0.795 ; -0.795       ; 0.000          ; Low Pulse Width  ; C     ; Fall       ; DTriggerWithRisingEdge:inst4|DTrigger:inst2|inst21~1 ;
+; -0.605 ; -0.605       ; 0.000          ; Low Pulse Width  ; C     ; Rise       ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ;
+; -0.599 ; -0.599       ; 0.000          ; Low Pulse Width  ; C     ; Rise       ; inst2|inst2|inst21~1|datad                           ;
+; -0.599 ; -0.599       ; 0.000          ; Low Pulse Width  ; C     ; Rise       ; inst2|inst|inst20~1|datad                            ;
+; -0.595 ; -0.595       ; 0.000          ; High Pulse Width ; C     ; Fall       ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ;
+; -0.579 ; -0.579       ; 0.000          ; Low Pulse Width  ; C     ; Rise       ; inst20~0|combout                                     ;
+; 0.087  ; 0.087        ; 0.000          ; High Pulse Width ; C     ; Rise       ; inst20~0|combout                                     ;
+; 0.088  ; 0.088        ; 0.000          ; High Pulse Width ; C     ; Fall       ; inst20~0|combout                                     ;
+; 0.102  ; 0.102        ; 0.000          ; Low Pulse Width  ; C     ; Fall       ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ;
+; 0.103  ; 0.103        ; 0.000          ; Low Pulse Width  ; C     ; Rise       ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ;
+; 0.107  ; 0.107        ; 0.000          ; High Pulse Width ; C     ; Rise       ; inst2|inst2|inst21~1|datad                           ;
+; 0.107  ; 0.107        ; 0.000          ; High Pulse Width ; C     ; Rise       ; inst2|inst|inst20~1|datad                            ;
+; 0.108  ; 0.108        ; 0.000          ; High Pulse Width ; C     ; Fall       ; inst2|inst2|inst21~1|datad                           ;
+; 0.108  ; 0.108        ; 0.000          ; High Pulse Width ; C     ; Fall       ; inst2|inst|inst20~1|datad                            ;
+; 0.112  ; 0.112        ; 0.000          ; High Pulse Width ; C     ; Rise       ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ;
+; 0.114  ; 0.114        ; 0.000          ; High Pulse Width ; C     ; Fall       ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ;
+; 0.120  ; 0.120        ; 0.000          ; Low Pulse Width  ; C     ; Rise       ; C~input|o                                            ;
+; 0.131  ; 0.131        ; 0.000          ; Low Pulse Width  ; C     ; Rise       ; inst9|inst2|inst20|datac                             ;
+; 0.131  ; 0.131        ; 0.000          ; Low Pulse Width  ; C     ; Rise       ; inst9|inst2|inst21~1|datac                           ;
+; 0.133  ; 0.133        ; 0.000          ; Low Pulse Width  ; C     ; Rise       ; inst23|datad                                         ;
+; 0.133  ; 0.133        ; 0.000          ; Low Pulse Width  ; C     ; Rise       ; inst9|inst|inst20~1|datad                            ;
+; 0.134  ; 0.134        ; 0.000          ; Low Pulse Width  ; C     ; Rise       ; inst22~0|datad                                       ;
+; 0.135  ; 0.135        ; 0.000          ; Low Pulse Width  ; C     ; Rise       ; DTriggerWithRisingEdge:inst9|DTrigger:inst2|inst21~1 ;
+; 0.135  ; 0.135        ; 0.000          ; High Pulse Width ; C     ; Fall       ; inst9|inst2|inst20|combout                           ;
+; 0.137  ; 0.137        ; 0.000          ; High Pulse Width ; C     ; Fall       ; DTriggerWithRisingEdge:inst9|DTrigger:inst|inst20~1  ;
+; 0.163  ; 0.163        ; 0.000          ; High Pulse Width ; C     ; Fall       ; inst19|datab                                         ;
+; 0.214  ; 0.214        ; 0.000          ; High Pulse Width ; C     ; Fall       ; inst23|combout                                       ;
+; 0.229  ; 0.229        ; 0.000          ; Low Pulse Width  ; C     ; Rise       ; inst3|inst|inst20~1|datac                            ;
+; 0.234  ; 0.234        ; 0.000          ; Low Pulse Width  ; C     ; Rise       ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ;
+; 0.248  ; 0.248        ; 0.000          ; High Pulse Width ; C     ; Fall       ; inst21~0|dataa                                       ;
+; 0.250  ; 0.250        ; 0.000          ; Low Pulse Width  ; C     ; Rise       ; inst21~0|combout                                     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; C     ; Rise       ; C~input|i                                            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; C     ; Rise       ; C~input|i                                            ;
+; 0.718  ; 0.718        ; 0.000          ; High Pulse Width ; C     ; Rise       ; inst21~0|combout                                     ;
+; 0.724  ; 0.724        ; 0.000          ; Low Pulse Width  ; C     ; Fall       ; inst21~0|dataa                                       ;
+; 0.735  ; 0.735        ; 0.000          ; High Pulse Width ; C     ; Rise       ; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~1  ;
+; 0.740  ; 0.740        ; 0.000          ; High Pulse Width ; C     ; Rise       ; inst3|inst|inst20~1|datac                            ;
+; 0.760  ; 0.760        ; 0.000          ; Low Pulse Width  ; C     ; Fall       ; inst23|combout                                       ;
+; 0.789  ; 0.789        ; 0.000          ; Low Pulse Width  ; C     ; Fall       ; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~1  ;
+; 0.794  ; 0.794        ; 0.000          ; Low Pulse Width  ; C     ; Fall       ; inst2|inst2|inst21~1|datad                           ;
+; 0.794  ; 0.794        ; 0.000          ; Low Pulse Width  ; C     ; Fall       ; inst2|inst|inst20~1|datad                            ;
+; 0.798  ; 0.798        ; 0.000          ; High Pulse Width ; C     ; Rise       ; DTriggerWithRisingEdge:inst2|DTrigger:inst2|inst21~1 ;
+; 0.814  ; 0.814        ; 0.000          ; Low Pulse Width  ; C     ; Fall       ; inst20~0|combout                                     ;
+; 0.835  ; 0.835        ; 0.000          ; Low Pulse Width  ; C     ; Fall       ; inst19|datab                                         ;
+; 0.861  ; 0.861        ; 0.000          ; Low Pulse Width  ; C     ; Fall       ; DTriggerWithRisingEdge:inst9|DTrigger:inst|inst20~1  ;
+; 0.864  ; 0.864        ; 0.000          ; Low Pulse Width  ; C     ; Fall       ; inst9|inst2|inst20|combout                           ;
+; 0.865  ; 0.865        ; 0.000          ; High Pulse Width ; C     ; Rise       ; DTriggerWithRisingEdge:inst9|DTrigger:inst2|inst21~1 ;
+; 0.865  ; 0.865        ; 0.000          ; High Pulse Width ; C     ; Rise       ; inst22~0|datad                                       ;
+; 0.865  ; 0.865        ; 0.000          ; High Pulse Width ; C     ; Rise       ; inst23|datad                                         ;
+; 0.866  ; 0.866        ; 0.000          ; High Pulse Width ; C     ; Rise       ; inst9|inst|inst20~1|datad                            ;
+; 0.868  ; 0.868        ; 0.000          ; High Pulse Width ; C     ; Rise       ; inst9|inst2|inst20|datac                             ;
+; 0.869  ; 0.869        ; 0.000          ; High Pulse Width ; C     ; Rise       ; inst9|inst2|inst21~1|datac                           ;
+; 0.880  ; 0.880        ; 0.000          ; High Pulse Width ; C     ; Rise       ; C~input|o                                            ;
++--------+--------------+----------------+------------------+-------+------------+------------------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; C         ; C          ; 3.321 ; 3.683 ; Rise       ; C               ;
+; C         ; C          ; 2.143 ; 2.505 ; Fall       ; C               ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Hold Times                                                            ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; C         ; C          ; 1.421 ; 1.102 ; Rise       ; C               ;
+; C         ; C          ; 2.892 ; 2.515 ; Fall       ; C               ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; D0        ; C          ; 3.365 ; 3.235 ; Rise       ; C               ;
+; D1        ; C          ; 6.191 ; 6.166 ; Rise       ; C               ;
+; D2        ; C          ; 8.268 ; 8.134 ; Rise       ; C               ;
+; D3        ; C          ; 7.363 ; 7.318 ; Rise       ; C               ;
+; D0        ; C          ; 3.369 ; 3.314 ; Fall       ; C               ;
+; D1        ; C          ; 7.803 ; 7.780 ; Fall       ; C               ;
+; D2        ; C          ; 9.200 ; 9.018 ; Fall       ; C               ;
+; D3        ; C          ; 7.754 ; 7.692 ; Fall       ; C               ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; D0        ; C          ; 2.793 ; 3.079 ; Rise       ; C               ;
+; D1        ; C          ; 2.889 ; 2.782 ; Rise       ; C               ;
+; D2        ; C          ; 3.999 ; 3.868 ; Rise       ; C               ;
+; D3        ; C          ; 2.964 ; 3.253 ; Rise       ; C               ;
+; D0        ; C          ; 2.793 ; 3.079 ; Fall       ; C               ;
+; D1        ; C          ; 2.889 ; 2.782 ; Fall       ; C               ;
+; D2        ; C          ; 3.999 ; 3.868 ; Fall       ; C               ;
+; D3        ; C          ; 2.964 ; 3.253 ; Fall       ; C               ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
+---------------------------------------------
+; Fast 1200mV 0C Model Metastability Report ;
+---------------------------------------------
+No synchronizer chains to report.
+
+
++---------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                             ;
++------------------+---------+---------+----------+---------+---------------------+
+; Clock            ; Setup   ; Hold    ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+---------+---------+----------+---------+---------------------+
+; Worst-case Slack ; -12.112 ; -5.756  ; N/A      ; N/A     ; -5.047              ;
+;  C               ; -12.112 ; -5.756  ; N/A      ; N/A     ; -5.047              ;
+; Design-wide TNS  ; -54.285 ; -14.917 ; 0.0      ; 0.0     ; -107.685            ;
+;  C               ; -54.285 ; -14.917 ; N/A      ; N/A     ; -107.685            ;
++------------------+---------+---------+----------+---------+---------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; C         ; C          ; 7.568 ; 7.657 ; Rise       ; C               ;
+; C         ; C          ; 5.900 ; 5.989 ; Fall       ; C               ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Hold Times                                                            ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; C         ; C          ; 3.442 ; 3.298 ; Rise       ; C               ;
+; C         ; C          ; 5.866 ; 5.756 ; Fall       ; C               ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; D0        ; C          ; 6.961  ; 7.256  ; Rise       ; C               ;
+; D1        ; C          ; 14.084 ; 13.978 ; Rise       ; C               ;
+; D2        ; C          ; 17.986 ; 18.193 ; Rise       ; C               ;
+; D3        ; C          ; 16.829 ; 16.855 ; Rise       ; C               ;
+; D0        ; C          ; 6.274  ; 6.521  ; Fall       ; C               ;
+; D1        ; C          ; 16.806 ; 16.809 ; Fall       ; C               ;
+; D2        ; C          ; 19.248 ; 19.312 ; Fall       ; C               ;
+; D3        ; C          ; 16.838 ; 16.880 ; Fall       ; C               ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; D0        ; C          ; 2.793 ; 3.079 ; Rise       ; C               ;
+; D1        ; C          ; 2.889 ; 2.782 ; Rise       ; C               ;
+; D2        ; C          ; 3.999 ; 3.868 ; Rise       ; C               ;
+; D3        ; C          ; 2.964 ; 3.253 ; Rise       ; C               ;
+; D0        ; C          ; 2.793 ; 3.079 ; Fall       ; C               ;
+; D1        ; C          ; 2.889 ; 2.782 ; Fall       ; C               ;
+; D2        ; C          ; 3.999 ; 3.868 ; Fall       ; C               ;
+; D3        ; C          ; 2.964 ; 3.253 ; Fall       ; C               ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Board Trace Model Assignments                                                                                                                                                                                                                                                                                                                                                                                    ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; Pin           ; I/O Standard ; Near Tline Length ; Near Tline L per Length ; Near Tline C per Length ; Near Series R ; Near Differential R ; Near Pull-up R ; Near Pull-down R ; Near C ; Far Tline Length ; Far Tline L per Length ; Far Tline C per Length ; Far Series R ; Far Pull-up R ; Far Pull-down R ; Far C ; Termination Voltage ; Far Differential R ; EBD File Name ; EBD Signal Name ; EBD Far-end ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; D0            ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; D1            ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; D2            ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; D3            ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+
+
++----------------------------------------------------------------------------+
+; Input Transition Times                                                     ;
++-------------------------+--------------+-----------------+-----------------+
+; Pin                     ; I/O Standard ; 10-90 Rise Time ; 90-10 Fall Time ;
++-------------------------+--------------+-----------------+-----------------+
+; C                       ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_ASDO_DATA1~     ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_FLASH_nCE_nCSO~ ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_DATA0~          ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
++-------------------------+--------------+-----------------+-----------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1200mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; D0            ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.07e-09 V                   ; 2.38 V              ; -0.0073 V           ; 0.097 V                              ; 0.018 V                              ; 4.24e-10 s                  ; 3.65e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 2.07e-09 V                  ; 2.38 V             ; -0.0073 V          ; 0.097 V                             ; 0.018 V                             ; 4.24e-10 s                 ; 3.65e-10 s                 ; No                        ; Yes                       ;
+; D1            ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.07e-09 V                   ; 2.36 V              ; -0.00737 V          ; 0.209 V                              ; 0.012 V                              ; 5.22e-10 s                  ; 5.33e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 2.07e-09 V                  ; 2.36 V             ; -0.00737 V         ; 0.209 V                             ; 0.012 V                             ; 5.22e-10 s                 ; 5.33e-10 s                 ; Yes                       ; Yes                       ;
+; D2            ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.07e-09 V                   ; 2.33 V              ; -0.00421 V          ; 0.165 V                              ; 0.078 V                              ; 3.11e-09 s                  ; 2.85e-09 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 2.07e-09 V                  ; 2.33 V             ; -0.00421 V         ; 0.165 V                             ; 0.078 V                             ; 3.11e-09 s                 ; 2.85e-09 s                 ; Yes                       ; Yes                       ;
+; D3            ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.07e-09 V                   ; 2.36 V              ; -0.00737 V          ; 0.209 V                              ; 0.012 V                              ; 5.22e-10 s                  ; 5.33e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 2.07e-09 V                  ; 2.36 V             ; -0.00737 V         ; 0.209 V                             ; 0.012 V                             ; 5.22e-10 s                 ; 5.33e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.74e-09 V                   ; 2.37 V              ; -0.0346 V           ; 0.198 V                              ; 0.094 V                              ; 3.14e-10 s                  ; 2.92e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.74e-09 V                  ; 2.37 V             ; -0.0346 V          ; 0.198 V                             ; 0.094 V                             ; 3.14e-10 s                 ; 2.92e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.57e-09 V                   ; 2.37 V              ; -0.00683 V          ; 0.171 V                              ; 0.018 V                              ; 4.97e-10 s                  ; 6.66e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 2.57e-09 V                  ; 2.37 V             ; -0.00683 V         ; 0.171 V                             ; 0.018 V                             ; 4.97e-10 s                 ; 6.66e-10 s                 ; Yes                       ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1200mv 85c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; D0            ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.93e-07 V                   ; 2.35 V              ; -0.00834 V          ; 0.127 V                              ; 0.035 V                              ; 4.7e-10 s                   ; 4.64e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.93e-07 V                  ; 2.35 V             ; -0.00834 V         ; 0.127 V                             ; 0.035 V                             ; 4.7e-10 s                  ; 4.64e-10 s                 ; Yes                       ; Yes                       ;
+; D1            ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.93e-07 V                   ; 2.34 V              ; -0.00869 V          ; 0.14 V                               ; 0.046 V                              ; 6.89e-10 s                  ; 6.56e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.93e-07 V                  ; 2.34 V             ; -0.00869 V         ; 0.14 V                              ; 0.046 V                             ; 6.89e-10 s                 ; 6.56e-10 s                 ; Yes                       ; Yes                       ;
+; D2            ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.93e-07 V                   ; 2.33 V              ; -0.0022 V           ; 0.088 V                              ; 0.056 V                              ; 3.76e-09 s                  ; 3.48e-09 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.93e-07 V                  ; 2.33 V             ; -0.0022 V          ; 0.088 V                             ; 0.056 V                             ; 3.76e-09 s                 ; 3.48e-09 s                 ; Yes                       ; Yes                       ;
+; D3            ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.93e-07 V                   ; 2.34 V              ; -0.00869 V          ; 0.14 V                               ; 0.046 V                              ; 6.89e-10 s                  ; 6.56e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.93e-07 V                  ; 2.34 V             ; -0.00869 V         ; 0.14 V                              ; 0.046 V                             ; 6.89e-10 s                 ; 6.56e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.55e-07 V                   ; 2.35 V              ; -0.00221 V          ; 0.097 V                              ; 0.005 V                              ; 4.49e-10 s                  ; 3.85e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.55e-07 V                  ; 2.35 V             ; -0.00221 V         ; 0.097 V                             ; 0.005 V                             ; 4.49e-10 s                 ; 3.85e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.54e-07 V                   ; 2.34 V              ; -0.00774 V          ; 0.109 V                              ; 0.026 V                              ; 6.58e-10 s                  ; 8.24e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 2.54e-07 V                  ; 2.34 V             ; -0.00774 V         ; 0.109 V                             ; 0.026 V                             ; 6.58e-10 s                 ; 8.24e-10 s                 ; Yes                       ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Fast 1200mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; D0            ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.74e-08 V                   ; 2.73 V              ; -0.0384 V           ; 0.169 V                              ; 0.089 V                              ; 2.7e-10 s                   ; 2.62e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 2.74e-08 V                  ; 2.73 V             ; -0.0384 V          ; 0.169 V                             ; 0.089 V                             ; 2.7e-10 s                  ; 2.62e-10 s                 ; Yes                       ; Yes                       ;
+; D1            ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.74e-08 V                   ; 2.71 V              ; -0.0317 V           ; 0.148 V                              ; 0.064 V                              ; 4.51e-10 s                  ; 4.15e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 2.74e-08 V                  ; 2.71 V             ; -0.0317 V          ; 0.148 V                             ; 0.064 V                             ; 4.51e-10 s                 ; 4.15e-10 s                 ; No                        ; Yes                       ;
+; D2            ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.74e-08 V                   ; 2.64 V              ; -0.0117 V           ; 0.202 V                              ; 0.176 V                              ; 2.38e-09 s                  ; 2.22e-09 s                  ; No                         ; Yes                        ; 2.62 V                      ; 2.74e-08 V                  ; 2.64 V             ; -0.0117 V          ; 0.202 V                             ; 0.176 V                             ; 2.38e-09 s                 ; 2.22e-09 s                 ; No                        ; Yes                       ;
+; D3            ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.74e-08 V                   ; 2.71 V              ; -0.0317 V           ; 0.148 V                              ; 0.064 V                              ; 4.51e-10 s                  ; 4.15e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 2.74e-08 V                  ; 2.71 V             ; -0.0317 V          ; 0.148 V                             ; 0.064 V                             ; 4.51e-10 s                 ; 4.15e-10 s                 ; No                        ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.22e-08 V                   ; 2.74 V              ; -0.06 V             ; 0.158 V                              ; 0.08 V                               ; 2.68e-10 s                  ; 2.19e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 2.22e-08 V                  ; 2.74 V             ; -0.06 V            ; 0.158 V                             ; 0.08 V                              ; 2.68e-10 s                 ; 2.19e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 3.54e-08 V                   ; 2.7 V               ; -0.00943 V          ; 0.276 V                              ; 0.035 V                              ; 3.19e-10 s                  ; 4.99e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 3.54e-08 V                  ; 2.7 V              ; -0.00943 V         ; 0.276 V                             ; 0.035 V                             ; 3.19e-10 s                 ; 4.99e-10 s                 ; No                        ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; C          ; C        ; 74       ; 76       ; 66       ; 64       ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; C          ; C        ; 74       ; 76       ; 66       ; 64       ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 1     ; 1    ;
+; Unconstrained Input Port Paths  ; 4     ; 4    ;
+; Unconstrained Output Ports      ; 4     ; 4    ;
+; Unconstrained Output Port Paths ; 27    ; 27   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.1.0 Build 162 10/23/2013 SJ Full Version
+    Info: Processing started: Fri Feb 09 21:41:10 2024
+Info: Command: quartus_sta Count10 -c Count10
+Info: qsta_default_script.tcl version: #1
+Info (11104): Parallel Compilation has detected 12 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 6 of the 6 physical processors detected instead.
+Info (21077): Core supply voltage is 1.2V
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Warning (335093): TimeQuest Timing Analyzer is analyzing 7 combinational loops as latches.
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'Count10.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name C C
+Warning (332125): Found combinational loop of 16 nodes
+    Warning (332126): Node "inst20~0|combout"
+    Warning (332126): Node "inst19|dataa"
+    Warning (332126): Node "inst19|combout"
+    Warning (332126): Node "inst23|datac"
+    Warning (332126): Node "inst23|combout"
+    Warning (332126): Node "inst20~0|datac"
+    Warning (332126): Node "inst3|inst2|inst21~1|datac"
+    Warning (332126): Node "inst3|inst2|inst21~1|combout"
+    Warning (332126): Node "inst20~0|dataa"
+    Warning (332126): Node "inst3|inst2|inst21~1|dataa"
+    Warning (332126): Node "inst22~0|dataa"
+    Warning (332126): Node "inst22~0|combout"
+    Warning (332126): Node "inst4|inst2|inst20|datac"
+    Warning (332126): Node "inst4|inst2|inst20|combout"
+    Warning (332126): Node "inst20~0|datab"
+    Warning (332126): Node "inst3|inst2|inst21~1|datab"
+Info (332097): The following timing edges are non-unate.  TimeQuest will assume pos-unate behavior for these edges in the clock network.
+    Info (332098): From: inst19|datab  to: inst3|inst2|inst21~1|combout
+    Info (332098): From: inst22~0|datad  to: inst4|inst2|inst20|combout
+    Info (332098): From: inst23|datad  to: inst4|inst2|inst20|combout
+Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
+Info (332154): The derive_clock_uncertainty command did not apply clock uncertainty to any clock-to-clock transfers.
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow 1200mV 85C Model
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -12.112
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):   -12.112             -54.285 C 
+Info (332146): Worst-case hold slack is -5.756
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -5.756             -14.917 C 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -5.047
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -5.047            -107.685 C 
+Info: Analyzing Slow 1200mV 0C Model
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Info (332097): The following timing edges are non-unate.  TimeQuest will assume pos-unate behavior for these edges in the clock network.
+    Info (332098): From: inst19|datab  to: inst3|inst2|inst21~1|combout
+    Info (332098): From: inst22~0|datad  to: inst4|inst2|inst20|combout
+    Info (332098): From: inst23|datad  to: inst4|inst2|inst20|combout
+Info (332154): The derive_clock_uncertainty command did not apply clock uncertainty to any clock-to-clock transfers.
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -11.317
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):   -11.317             -50.747 C 
+Info (332146): Worst-case hold slack is -5.356
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -5.356             -13.943 C 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -4.775
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -4.775            -100.281 C 
+Info: Analyzing Fast 1200mV 0C Model
+Info (332097): The following timing edges are non-unate.  TimeQuest will assume pos-unate behavior for these edges in the clock network.
+    Info (332098): From: inst19|datab  to: inst3|inst2|inst21~1|combout
+    Info (332098): From: inst22~0|datad  to: inst4|inst2|inst20|combout
+    Info (332098): From: inst23|datad  to: inst4|inst2|inst20|combout
+Info (332154): The derive_clock_uncertainty command did not apply clock uncertainty to any clock-to-clock transfers.
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -5.372
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -5.372             -21.286 C 
+Info (332146): Worst-case hold slack is -2.515
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.515              -6.302 C 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000             -38.086 C 
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 22 warnings
+    Info: Peak virtual memory: 4693 megabytes
+    Info: Processing ended: Fri Feb 09 21:41:13 2024
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:02
+
+

@@ -1,0 +1,109 @@
+|Count10
+D0 <= inst8.DB_MAX_OUTPUT_PORT_TYPE
+C => DTriggerWithRisingEdge:inst9.C
+C => inst23.IN0
+D1 <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+D2 <= inst6.DB_MAX_OUTPUT_PORT_TYPE
+D3 <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Count10|DTriggerWithRisingEdge:inst9
+Q <= DTrigger:inst2.Q
+D => DTrigger:inst.D
+C => DTrigger:inst.C
+C => inst1.IN0
+C => inst1.IN1
+nQ <= DTrigger:inst2.nQ
+
+
+|Count10|DTriggerWithRisingEdge:inst9|DTrigger:inst2
+Q <= inst20.DB_MAX_OUTPUT_PORT_TYPE
+C => inst19.IN0
+C => inst18.IN0
+D => inst18.IN1
+nQ <= inst21.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Count10|DTriggerWithRisingEdge:inst9|DTrigger:inst
+Q <= inst20.DB_MAX_OUTPUT_PORT_TYPE
+C => inst19.IN0
+C => inst18.IN0
+D => inst18.IN1
+nQ <= inst21.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Count10|DTriggerWithRisingEdge:inst4
+Q <= DTrigger:inst2.Q
+D => DTrigger:inst.D
+C => DTrigger:inst.C
+C => inst1.IN0
+C => inst1.IN1
+nQ <= DTrigger:inst2.nQ
+
+
+|Count10|DTriggerWithRisingEdge:inst4|DTrigger:inst2
+Q <= inst20.DB_MAX_OUTPUT_PORT_TYPE
+C => inst19.IN0
+C => inst18.IN0
+D => inst18.IN1
+nQ <= inst21.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Count10|DTriggerWithRisingEdge:inst4|DTrigger:inst
+Q <= inst20.DB_MAX_OUTPUT_PORT_TYPE
+C => inst19.IN0
+C => inst18.IN0
+D => inst18.IN1
+nQ <= inst21.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Count10|DTriggerWithRisingEdge:inst2
+Q <= DTrigger:inst2.Q
+D => DTrigger:inst.D
+C => DTrigger:inst.C
+C => inst1.IN0
+C => inst1.IN1
+nQ <= DTrigger:inst2.nQ
+
+
+|Count10|DTriggerWithRisingEdge:inst2|DTrigger:inst2
+Q <= inst20.DB_MAX_OUTPUT_PORT_TYPE
+C => inst19.IN0
+C => inst18.IN0
+D => inst18.IN1
+nQ <= inst21.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Count10|DTriggerWithRisingEdge:inst2|DTrigger:inst
+Q <= inst20.DB_MAX_OUTPUT_PORT_TYPE
+C => inst19.IN0
+C => inst18.IN0
+D => inst18.IN1
+nQ <= inst21.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Count10|DTriggerWithRisingEdge:inst3
+Q <= DTrigger:inst2.Q
+D => DTrigger:inst.D
+C => DTrigger:inst.C
+C => inst1.IN0
+C => inst1.IN1
+nQ <= DTrigger:inst2.nQ
+
+
+|Count10|DTriggerWithRisingEdge:inst3|DTrigger:inst2
+Q <= inst20.DB_MAX_OUTPUT_PORT_TYPE
+C => inst19.IN0
+C => inst18.IN0
+D => inst18.IN1
+nQ <= inst21.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Count10|DTriggerWithRisingEdge:inst3|DTrigger:inst
+Q <= inst20.DB_MAX_OUTPUT_PORT_TYPE
+C => inst19.IN0
+C => inst18.IN0
+D => inst18.IN1
+nQ <= inst21.DB_MAX_OUTPUT_PORT_TYPE
+
+
