@@ -1,0 +1,134 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dD:/GITEA/GitHub/ES/pcbteach/Count10
+Ecount10
+Z0 w1707466432
+Z1 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z2 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 4
+Z3 dD:/GITEA/GitHub/ES/pcbteach/Count10/td
+Z4 8D:/GITEA/GitHub/ES/pcbteach/Count10/Count10.vhd
+Z5 FD:/GITEA/GitHub/ES/pcbteach/Count10/Count10.vhd
+l0
+Z6 L25 1
+VY?PcReBIRb8Y0G]@OfblJ0
+!s100 BNij`XnA_2>db45AYMKmO2
+Z7 OV;C;2020.1;71
+32
+Z8 !s110 1707469116
+!i10b 1
+Z9 !s108 1707469116.000000
+Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/GITEA/GitHub/ES/pcbteach/Count10/Count10.vhd|
+Z11 !s107 D:/GITEA/GitHub/ES/pcbteach/Count10/Count10.vhd|
+!i113 1
+Z12 o-work work -2002 -explicit
+Z13 tExplicit 1 CvgOpt 0
+Abdf_type
+R1
+R2
+DEx4 work 7 count10 0 22 Y?PcReBIRb8Y0G]@OfblJ0
+!i122 4
+l65
+L36 106
+VJ6aS[2QR1ZoA]`QhSj7933
+!s100 lO95D8ZlL`4R^HH09U9Mg0
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Edtrigger
+Z14 w1707464401
+R1
+R2
+!i122 5
+R3
+Z15 8D:/GITEA/GitHub/ES/pcbteach/Count10/DTrigger.vhd
+Z16 FD:/GITEA/GitHub/ES/pcbteach/Count10/DTrigger.vhd
+l0
+R6
+V2DB>2fP23EY?Vo@P;RGCm2
+!s100 <BYf=ThnK@WUMMYi=2DFL0
+R7
+32
+R8
+!i10b 1
+R9
+Z17 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/GITEA/GitHub/ES/pcbteach/Count10/DTrigger.vhd|
+Z18 !s107 D:/GITEA/GitHub/ES/pcbteach/Count10/DTrigger.vhd|
+!i113 1
+R12
+R13
+Abdf_type
+R1
+R2
+DEx4 work 8 dtrigger 0 22 2DB>2fP23EY?Vo@P;RGCm2
+!i122 5
+l43
+L35 27
+VnLFKmk@iezoDagQ;02:LE3
+!s100 Bc9Nnd?mDKK8E<Mf[>@>^3
+R7
+32
+R8
+!i10b 1
+R9
+R17
+R18
+!i113 1
+R12
+R13
+Edtriggerwithrisingedge
+Z19 w1707464548
+R1
+R2
+!i122 6
+R3
+Z20 8D:/GITEA/GitHub/ES/pcbteach/Count10/DTriggerWithRisingEdge.vhd
+Z21 FD:/GITEA/GitHub/ES/pcbteach/Count10/DTriggerWithRisingEdge.vhd
+l0
+R6
+V1kJASdj<h>RQicJhLCf163
+!s100 fYJWdSVX`kfV345hSL9g@1
+R7
+32
+R8
+!i10b 1
+R9
+Z22 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/GITEA/GitHub/ES/pcbteach/Count10/DTriggerWithRisingEdge.vhd|
+Z23 !s107 D:/GITEA/GitHub/ES/pcbteach/Count10/DTriggerWithRisingEdge.vhd|
+!i113 1
+R12
+R13
+Abdf_type
+R1
+R2
+Z24 DEx4 work 22 dtriggerwithrisingedge 0 22 1kJASdj<h>RQicJhLCf163
+!i122 6
+l49
+Z25 L35 35
+Z26 VN40o7QHb`C0fF9>RckM]O2
+Z27 !s100 V9D1L9?Jl`fK[Jb72iaYE1
+R7
+32
+R8
+!i10b 1
+R9
+R22
+R23
+!i113 1
+R12
+R13
