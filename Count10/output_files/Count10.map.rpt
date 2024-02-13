@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Count10
-Fri Feb 09 15:47:21 2024
+Mon Feb 12 16:34:50 2024
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Full Version
 
 
@@ -42,7 +42,7 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Feb 09 15:47:21 2024       ;
+; Analysis & Synthesis Status        ; Successful - Mon Feb 12 16:34:50 2024       ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Full Version ;
 ; Revision Name                      ; Count10                                     ;
 ; Top-level Entity Name              ; Count10                                     ;
@@ -168,80 +168,80 @@ applicable agreement for further details.
 +----------------------------------+-----------------+------------------------------------+----------------------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                   ; Library ;
 +----------------------------------+-----------------+------------------------------------+----------------------------------------------------------------+---------+
-; Count10.bdf                      ; yes             ; User Block Diagram/Schematic File  ; D:/GITEA/GitHub/ES/pcbteach/Count10/Count10.bdf                ;         ;
+; Count10.vhd                      ; yes             ; User VHDL File                     ; D:/GITEA/GitHub/ES/pcbteach/Count10/Count10.vhd                ;         ;
 ; DTrigger.bdf                     ; yes             ; User Block Diagram/Schematic File  ; D:/GITEA/GitHub/ES/pcbteach/Count10/DTrigger.bdf               ;         ;
 ; DTriggerWithRisingEdge.bdf       ; yes             ; User Block Diagram/Schematic File  ; D:/GITEA/GitHub/ES/pcbteach/Count10/DTriggerWithRisingEdge.bdf ;         ;
 +----------------------------------+-----------------+------------------------------------+----------------------------------------------------------------+---------+
 
 
-+------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary          ;
-+---------------------------------------------+--------+
-; Resource                                    ; Usage  ;
-+---------------------------------------------+--------+
-; Estimated Total logic elements              ; 17     ;
-;                                             ;        ;
-; Total combinational functions               ; 17     ;
-; Logic element usage by number of LUT inputs ;        ;
-;     -- 4 input functions                    ; 8      ;
-;     -- 3 input functions                    ; 8      ;
-;     -- <=2 input functions                  ; 1      ;
-;                                             ;        ;
-; Logic elements by mode                      ;        ;
-;     -- normal mode                          ; 17     ;
-;     -- arithmetic mode                      ; 0      ;
-;                                             ;        ;
-; Total registers                             ; 0      ;
-;     -- Dedicated logic registers            ; 0      ;
-;     -- I/O registers                        ; 0      ;
-;                                             ;        ;
-; I/O pins                                    ; 5      ;
-; Embedded Multiplier 9-bit elements          ; 0      ;
-; Maximum fan-out node                        ; inst19 ;
-; Maximum fan-out                             ; 5      ;
-; Total fan-out                               ; 67     ;
-; Average fan-out                             ; 2.48   ;
-+---------------------------------------------+--------+
++-------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                       ;
++---------------------------------------------+---------------------+
+; Resource                                    ; Usage               ;
++---------------------------------------------+---------------------+
+; Estimated Total logic elements              ; 17                  ;
+;                                             ;                     ;
+; Total combinational functions               ; 17                  ;
+; Logic element usage by number of LUT inputs ;                     ;
+;     -- 4 input functions                    ; 8                   ;
+;     -- 3 input functions                    ; 8                   ;
+;     -- <=2 input functions                  ; 1                   ;
+;                                             ;                     ;
+; Logic elements by mode                      ;                     ;
+;     -- normal mode                          ; 17                  ;
+;     -- arithmetic mode                      ; 0                   ;
+;                                             ;                     ;
+; Total registers                             ; 0                   ;
+;     -- Dedicated logic registers            ; 0                   ;
+;     -- I/O registers                        ; 0                   ;
+;                                             ;                     ;
+; I/O pins                                    ; 5                   ;
+; Embedded Multiplier 9-bit elements          ; 0                   ;
+; Maximum fan-out node                        ; SYNTHESIZED_WIRE_27 ;
+; Maximum fan-out                             ; 5                   ;
+; Total fan-out                               ; 67                  ;
+; Average fan-out                             ; 2.48                ;
++---------------------------------------------+---------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                 ;
-+-----------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------+--------------+
-; Compilation Hierarchy Node        ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                  ; Library Name ;
-+-----------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------+--------------+
-; |Count10                          ; 17 (5)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 5    ; 0            ; |Count10                                             ; work         ;
-;    |DTriggerWithRisingEdge:inst1| ; 3 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Count10|DTriggerWithRisingEdge:inst1                ; work         ;
-;       |DTrigger:inst3|            ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Count10|DTriggerWithRisingEdge:inst1|DTrigger:inst3 ; work         ;
-;       |DTrigger:inst|             ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Count10|DTriggerWithRisingEdge:inst1|DTrigger:inst  ; work         ;
-;    |DTriggerWithRisingEdge:inst2| ; 3 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Count10|DTriggerWithRisingEdge:inst2                ; work         ;
-;       |DTrigger:inst3|            ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Count10|DTriggerWithRisingEdge:inst2|DTrigger:inst3 ; work         ;
-;       |DTrigger:inst|             ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Count10|DTriggerWithRisingEdge:inst2|DTrigger:inst  ; work         ;
-;    |DTriggerWithRisingEdge:inst3| ; 3 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Count10|DTriggerWithRisingEdge:inst3                ; work         ;
-;       |DTrigger:inst3|            ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Count10|DTriggerWithRisingEdge:inst3|DTrigger:inst3 ; work         ;
-;       |DTrigger:inst|             ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Count10|DTriggerWithRisingEdge:inst3|DTrigger:inst  ; work         ;
-;    |DTriggerWithRisingEdge:inst|  ; 3 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Count10|DTriggerWithRisingEdge:inst                 ; work         ;
-;       |DTrigger:inst3|            ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Count10|DTriggerWithRisingEdge:inst|DTrigger:inst3  ; work         ;
-;       |DTrigger:inst|             ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Count10|DTriggerWithRisingEdge:inst|DTrigger:inst   ; work         ;
-+-----------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------+--------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                         ;
++---------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------+--------------+
+; Compilation Hierarchy Node            ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                      ; Library Name ;
++---------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------+--------------+
+; |Count10                              ; 17 (5)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 5    ; 0            ; |Count10                                                 ; work         ;
+;    |DTriggerWithRisingEdge:b2v_inst1| ; 3 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Count10|DTriggerWithRisingEdge:b2v_inst1                ; work         ;
+;       |DTrigger:inst3|                ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Count10|DTriggerWithRisingEdge:b2v_inst1|DTrigger:inst3 ; work         ;
+;       |DTrigger:inst|                 ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Count10|DTriggerWithRisingEdge:b2v_inst1|DTrigger:inst  ; work         ;
+;    |DTriggerWithRisingEdge:b2v_inst2| ; 3 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Count10|DTriggerWithRisingEdge:b2v_inst2                ; work         ;
+;       |DTrigger:inst3|                ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Count10|DTriggerWithRisingEdge:b2v_inst2|DTrigger:inst3 ; work         ;
+;       |DTrigger:inst|                 ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Count10|DTriggerWithRisingEdge:b2v_inst2|DTrigger:inst  ; work         ;
+;    |DTriggerWithRisingEdge:b2v_inst3| ; 3 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Count10|DTriggerWithRisingEdge:b2v_inst3                ; work         ;
+;       |DTrigger:inst3|                ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Count10|DTriggerWithRisingEdge:b2v_inst3|DTrigger:inst3 ; work         ;
+;       |DTrigger:inst|                 ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Count10|DTriggerWithRisingEdge:b2v_inst3|DTrigger:inst  ; work         ;
+;    |DTriggerWithRisingEdge:b2v_inst|  ; 3 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Count10|DTriggerWithRisingEdge:b2v_inst                 ; work         ;
+;       |DTrigger:inst3|                ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Count10|DTriggerWithRisingEdge:b2v_inst|DTrigger:inst3  ; work         ;
+;       |DTrigger:inst|                 ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Count10|DTriggerWithRisingEdge:b2v_inst|DTrigger:inst   ; work         ;
++---------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+------------------------------------------------------------+
-; Logic Cells Representing Combinational Loops               ;
-+--------------------------------------------------------+---+
-; Logic Cell Name                                        ;   ;
-+--------------------------------------------------------+---+
-; DTriggerWithRisingEdge:inst3|DTrigger:inst|inst20~0    ;   ;
-; DTriggerWithRisingEdge:inst3|DTrigger:inst3|inst21~0   ;   ;
-; inst19~0                                               ;   ;
-; DTriggerWithRisingEdge:inst2|DTrigger:inst|inst20~0    ;   ;
-; DTriggerWithRisingEdge:inst2|DTrigger:inst3|inst21~0   ;   ;
-; DTriggerWithRisingEdge:inst1|DTrigger:inst|inst20~0    ;   ;
-; DTriggerWithRisingEdge:inst1|DTrigger:inst3|inst21~0   ;   ;
-; DTriggerWithRisingEdge:inst|DTrigger:inst|inst20~0     ;   ;
-; DTriggerWithRisingEdge:inst|DTrigger:inst3|inst21~0    ;   ;
-; Number of logic cells representing combinational loops ; 9 ;
-+--------------------------------------------------------+---+
++--------------------------------------------------------------+
+; Logic Cells Representing Combinational Loops                 ;
++----------------------------------------------------------+---+
+; Logic Cell Name                                          ;   ;
++----------------------------------------------------------+---+
+; DTriggerWithRisingEdge:b2v_inst3|DTrigger:inst|inst20~0  ;   ;
+; DTriggerWithRisingEdge:b2v_inst3|DTrigger:inst3|inst21~0 ;   ;
+; SYNTHESIZED_WIRE_27~0                                    ;   ;
+; DTriggerWithRisingEdge:b2v_inst2|DTrigger:inst|inst20~0  ;   ;
+; DTriggerWithRisingEdge:b2v_inst2|DTrigger:inst3|inst21~0 ;   ;
+; DTriggerWithRisingEdge:b2v_inst1|DTrigger:inst|inst20~0  ;   ;
+; DTriggerWithRisingEdge:b2v_inst1|DTrigger:inst3|inst21~0 ;   ;
+; DTriggerWithRisingEdge:b2v_inst|DTrigger:inst|inst20~0   ;   ;
+; DTriggerWithRisingEdge:b2v_inst|DTrigger:inst3|inst21~0  ;   ;
+; Number of logic cells representing combinational loops   ; 9 ;
++----------------------------------------------------------+---+
 Note: All cells listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
@@ -265,7 +265,7 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -275,18 +275,19 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Full Version
-    Info: Processing started: Fri Feb 09 15:47:20 2024
+    Info: Processing started: Mon Feb 12 16:34:45 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Count10 -c Count10
 Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
-Info (12021): Found 1 design units, including 1 entities, in source file count10.bdf
+Info (12021): Found 2 design units, including 1 entities, in source file count10.vhd
+    Info (12022): Found design unit 1: Count10-bdf_type
     Info (12023): Found entity 1: Count10
 Info (12021): Found 1 design units, including 1 entities, in source file dtrigger.bdf
     Info (12023): Found entity 1: DTrigger
 Info (12021): Found 1 design units, including 1 entities, in source file dtriggerwithrisingedge.bdf
     Info (12023): Found entity 1: DTriggerWithRisingEdge
 Info (12127): Elaborating entity "Count10" for the top level hierarchy
-Info (12128): Elaborating entity "DTriggerWithRisingEdge" for hierarchy "DTriggerWithRisingEdge:inst3"
-Info (12128): Elaborating entity "DTrigger" for hierarchy "DTriggerWithRisingEdge:inst3|DTrigger:inst3"
+Info (12128): Elaborating entity "DTriggerWithRisingEdge" for hierarchy "DTriggerWithRisingEdge:b2v_inst"
+Info (12128): Elaborating entity "DTrigger" for hierarchy "DTriggerWithRisingEdge:b2v_inst|DTrigger:inst3"
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
@@ -295,9 +296,9 @@ Info (21057): Implemented 22 device resources after synthesis - the final resour
     Info (21059): Implemented 4 output pins
     Info (21061): Implemented 17 logic cells
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 4651 megabytes
-    Info: Processing ended: Fri Feb 09 15:47:21 2024
-    Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Peak virtual memory: 4699 megabytes
+    Info: Processing ended: Mon Feb 12 16:34:50 2024
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:02
 
 

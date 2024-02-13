@@ -1,0 +1,40 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\GITEA\GitHub\ES\pcbteach\Count10\simulation\modelsim
+Ecount10
+Z1 w1707744806
+Z2 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z3 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z4 dD:\GITEA\GitHub\ES\pcbteach\Count10\simulation\modelsim
+Z5 8D:/GITEA/GitHub/ES/pcbteach/Count10/Count10.vhd
+Z6 FD:/GITEA/GitHub/ES/pcbteach/Count10/Count10.vhd
+l0
+L24
+VRTNQLWV8OhbCAIEdjg>Vo3
+!s100 8B;cIM?^XQ;Wd_ajkc;YI3
+Z7 OV;C;10.1d;51
+31
+!i10b 1
+Z8 !s108 1707744997.795000
+Z9 !s90 -reportprogress|300|-93|-work|work|D:/GITEA/GitHub/ES/pcbteach/Count10/Count10.vhd|
+Z10 !s107 D:/GITEA/GitHub/ES/pcbteach/Count10/Count10.vhd|
+Z11 o-93 -work work -O0
+Z12 tExplicit 1
+Abdf_type
+R2
+R3
+DEx4 work 7 count10 0 22 RTNQLWV8OhbCAIEdjg>Vo3
+l64
+L35
+V5IH9zJKiY_jEAgP4[zPb?0
+!s100 DbN^U@KNT=nl7XaD32hhO2
+R7
+31
+!i10b 1
+R8
+R9
+R10
+R11
+R12
