@@ -1,0 +1,52 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity VHDLstart02 is
+
+Port ( 
+	clk : in STD_LOGIC;
+	button : in STD_LOGIC;
+	led5 : out STD_LOGIC_VECTOR(6 downto 0) := b"0000001";
+	en5 : out STD_LOGIC
+	);
+end VHDLstart02;
+
+architecture Behavioral of VHDLstart02 is
+	signal counter : natural range 0 to 9 := 0;
+	signal buttonPrev : std_logic := '1';
+begin		
+
+		en5 <= '0';
+
+	process(clk)
+	begin
+		if rising_edge(clk) then 
+			if button = '0' and buttonPrev = '1' then
+				if (counter = 9) then 
+					counter <= 0;
+				else	
+					counter <= counter + 1;
+				end if;
+			end if;	
+			buttonPrev <= button;	
+		end if;
+	end process;
+	
+	process(counter)
+	begin
+		case counter is
+			when 0 => led5 <= b"0000001";
+			when 1 => led5 <= b"1001111";
+			when 2 => led5 <= b"0010010";
+			when 3 => led5 <= b"0000110";
+			when 4 => led5 <= b"1001100";
+			when 5 => led5 <= b"0100100";
+			when 6 => led5 <= b"0100000";
+			when 7 => led5 <= b"0001111";
+			when 8 => led5 <= b"0000000";
+			when 9 => led5 <= b"0000100";
+			when others => led5 <= b"0000001";
+		end case;	
+	end process;
+	
+end Behavioral;
