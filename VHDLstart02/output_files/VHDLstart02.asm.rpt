@@ -1,5 +1,5 @@
 Assembler report for VHDLstart02
-Wed Feb 14 11:59:22 2024
+Wed Feb 14 16:36:34 2024
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Full Version
 
 
@@ -37,7 +37,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Wed Feb 14 11:59:22 2024 ;
+; Assembler Status      ; Successful - Wed Feb 14 16:36:34 2024 ;
 ; Revision Name         ; VHDLstart02                           ;
 ; Top-level Entity Name ; VHDLstart02                           ;
 ; Family                ; Cyclone IV E                          ;
@@ -92,8 +92,8 @@ applicable agreement for further details.
 ; Option         ; Setting                                                                       ;
 +----------------+-------------------------------------------------------------------------------+
 ; Device         ; EP4CE10E22C8                                                                  ;
-; JTAG usercode  ; 0x00094CEB                                                                    ;
-; Checksum       ; 0x00094CEB                                                                    ;
+; JTAG usercode  ; 0x000B5886                                                                    ;
+; Checksum       ; 0x000B5886                                                                    ;
 +----------------+-------------------------------------------------------------------------------+
 
 
@@ -103,13 +103,13 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Assembler
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Full Version
-    Info: Processing started: Wed Feb 14 11:59:21 2024
+    Info: Processing started: Wed Feb 14 16:36:33 2024
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off VHDLstart02 -c VHDLstart02
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus II 64-Bit Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 4607 megabytes
-    Info: Processing ended: Wed Feb 14 11:59:22 2024
+    Info: Peak virtual memory: 4602 megabytes
+    Info: Processing ended: Wed Feb 14 16:36:34 2024
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 

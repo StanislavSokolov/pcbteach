@@ -1,0 +1,8 @@
+
+State Machine - |VHDLstart02|stateCoffeeMachine
+Name stateCoffeeMachine.Unsuccessful stateCoffeeMachine.Implementation stateCoffeeMachine.Payment stateCoffeeMachine.Selection stateCoffeeMachine.Waiting 
+stateCoffeeMachine.Waiting 0 0 0 0 0 
+stateCoffeeMachine.Selection 0 0 0 1 1 
+stateCoffeeMachine.Payment 0 0 1 0 1 
+stateCoffeeMachine.Implementation 0 1 0 0 1 
+stateCoffeeMachine.Unsuccessful 1 0 0 0 1 

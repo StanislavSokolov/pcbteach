@@ -31,7 +31,7 @@
  --					Bank 3:		2.5V
  --					Bank 4:		2.5V
  --					Bank 5:		3.3V
- --					Bank 6:		2.5V
+ --					Bank 6:		3.3V
  --					Bank 7:		3.3V
  --					Bank 8:		3.3V
  -- GND           : Dedicated ground pin. Dedicated GND pins MUST be connected to GND.
@@ -151,16 +151,16 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : 80        :        :                   :      
 VCCIO5                       : 81        : power  :                   : 3.3V    : 5         :                
 GND                          : 82        : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 83        :        :                   :         : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 84        :        :                   :         : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 85        :        :                   :         : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 86        :        :                   :         : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 87        :        :                   :         : 5         :                
-button                       : 88        : input  : 3.3-V LVTTL       :         : 5         : Y              
-GND+                         : 89        :        :                   :         : 5         :                
-GND+                         : 90        :        :                   :         : 6         :                
-GND+                         : 91        :        :                   :         : 6         :                
+led1[3]                      : 84        : output : 3.3-V LVTTL       :         : 5         : Y              
+led1[2]                      : 85        : output : 3.3-V LVTTL       :         : 5         : Y              
+led1[1]                      : 86        : output : 3.3-V LVTTL       :         : 5         : Y              
+led1[0]                      : 87        : output : 3.3-V LVTTL       :         : 5         : Y              
+buttonWaiting                : 88        : input  : 3.3-V LVTTL       :         : 5         : Y              
+buttonLeft                   : 89        : input  : 3.3-V LVTTL       :         : 5         : Y              
+buttonRight                  : 90        : input  : 3.3-V LVTTL       :         : 6         : Y              
+buttonSelection              : 91        : input  : 3.3-V LVTTL       :         : 6         : Y              
 CONF_DONE                    : 92        :        :                   :         : 6         :                
-VCCIO6                       : 93        : power  :                   : 2.5V    : 6         :                
+VCCIO6                       : 93        : power  :                   : 3.3V    : 6         :                
 MSEL0                        : 94        :        :                   :         : 6         :                
 GND                          : 95        : gnd    :                   :         :           :                
 MSEL1                        : 96        :        :                   :         : 6         :                
@@ -168,7 +168,7 @@ MSEL2                        : 97        :        :                   :         
 RESERVED_INPUT_WITH_WEAK_PULLUP : 98        :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 99        :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 100       :        :                   :         : 6         :                
-~ALTERA_nCEO~ / RESERVED_OUTPUT_OPEN_DRAIN : 101       : output : 2.5 V             :         : 6         : N              
+~ALTERA_nCEO~ / RESERVED_OUTPUT_OPEN_DRAIN : 101       : output : 3.3-V LVTTL       :         : 6         : N              
 VCCINT                       : 102       : power  :                   : 1.2V    :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 103       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 104       :        :                   :         : 6         :                
@@ -200,11 +200,11 @@ led5[3]                      : 129       : output : 3.3-V LVTTL       :         
 VCCIO8                       : 130       : power  :                   : 3.3V    : 8         :                
 GND                          : 131       : gnd    :                   :         :           :                
 led5[2]                      : 132       : output : 3.3-V LVTTL       :         : 8         : Y              
-en5                          : 133       : output : 3.3-V LVTTL       :         : 8         : Y              
+en[0]                        : 133       : output : 3.3-V LVTTL       :         : 8         : Y              
 VCCINT                       : 134       : power  :                   : 1.2V    :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 135       :        :                   :         : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 136       :        :                   :         : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 137       :        :                   :         : 8         :                
+en[1]                        : 135       : output : 3.3-V LVTTL       :         : 8         : Y              
+en[2]                        : 136       : output : 3.3-V LVTTL       :         : 8         : Y              
+en[3]                        : 137       : output : 3.3-V LVTTL       :         : 8         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : 138       :        :                   :         : 8         :                
 VCCIO8                       : 139       : power  :                   : 3.3V    : 8         :                
 GND                          : 140       : gnd    :                   :         :           :                
