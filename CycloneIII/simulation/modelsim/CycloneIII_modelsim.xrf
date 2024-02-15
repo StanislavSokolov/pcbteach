@@ -1,0 +1,13 @@
+vendor_name = ModelSim
+source_file = 1, D:/GITEA/GitHub/ES/pcbteach/CycloneIII/CycloneIII.bdf
+source_file = 1, D:/GITEA/GitHub/ES/pcbteach/CycloneIII/db/CycloneIII.cbx.xml
+design_name = CycloneIII
+instance = comp, \led_1~output\, led_1~output, CycloneIII, 1
+instance = comp, \led_2~output\, led_2~output, CycloneIII, 1
+instance = comp, \led_3~output\, led_3~output, CycloneIII, 1
+instance = comp, \led_4~output\, led_4~output, CycloneIII, 1
+instance = comp, \led_5~output\, led_5~output, CycloneIII, 1
+instance = comp, \mode_1~input\, mode_1~input, CycloneIII, 1
+instance = comp, \mode_2~input\, mode_2~input, CycloneIII, 1
+instance = comp, \mode_3~input\, mode_3~input, CycloneIII, 1
+instance = comp, \inst2~0\, inst2~0, CycloneIII, 1
