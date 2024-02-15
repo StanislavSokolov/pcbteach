@@ -1,5 +1,11 @@
 <?xml version="1.0" ?>
 <LOG_ROOT>
 	<PROJECT NAME="VHDLstart02">
+		<CBX_INST_ENTRY INSTANCE_NAME="|VHDLstart02|lpm_divide:Div0" CBX_FILE_NAME="lpm_divide_cvo.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|VHDLstart02|lpm_divide:Div2" CBX_FILE_NAME="lpm_divide_o0p.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|VHDLstart02|lpm_divide:Mod1" CBX_FILE_NAME="lpm_divide_o9m.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|VHDLstart02|lpm_divide:Div1" CBX_FILE_NAME="lpm_divide_dvo.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|VHDLstart02|lpm_divide:Mod0" CBX_FILE_NAME="lpm_divide_m9m.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|VHDLstart02|lpm_divide:Mod2" CBX_FILE_NAME="lpm_divide_o9m.tdf"/>
 	</PROJECT>
 </LOG_ROOT>

@@ -25,14 +25,16 @@ architecture Behavioral of VHDLstart02 is
 	signal buttonRightPrev : std_logic := '0';
 	signal buttonSelectionPrev : std_logic := '0';
 	
-	signal timeForNormalSignal : natural range 0 to 100000 := 0;
+	signal timeForNormalSignal : natural range 0 to 2000000 := 0;
 	signal enableButton : std_logic := '0';
+	signal enableButtonPrev : std_logic := '0';
 	
 	signal selectionDrink : natural range 0 to 3 := 0;
 	
 	signal money : natural range 0 to 50 := 0;
 	
-	signal procent : natural range 0 to 100 :=0;
+	signal procent : natural range 0 to 101 :=0;
+	signal procentCount : natural range 0 to 20000000 := 0;
 	
 	signal timeForUnsuccessfulMessage : natural range 0 to 200000000 := 0;
 	
@@ -45,6 +47,13 @@ architecture Behavioral of VHDLstart02 is
 	signal bufferForIndicator1 : std_logic_vector(6 downto 0) := b"1111111";
 	signal bufferForIndicator2 : std_logic_vector(6 downto 0) := b"1111111";
 	signal bufferForIndicator3 : std_logic_vector(6 downto 0) := b"1111111";
+	signal digit0 : natural range 0 to 9 := 0;
+	signal digit1 : natural range 0 to 9 := 0;
+	signal digit2 : natural range 0 to 9 := 0;
+	signal digit3 : natural range 0 to 9 := 0;
+	signal digitBuf1 : natural range 0 to 9 := 0;
+	signal digitBuf2 : natural range 0 to 9 := 0;
+	signal digitBuf3 : natural range 0 to 9 := 0;
 begin		
 
 	
@@ -134,7 +143,8 @@ begin
 				buttonLeftPrev <= buttonLeft;
 				buttonRightPrev <= buttonRight;
 				buttonSelectionPrev <= buttonSelection;
-			end if;	
+			end if;
+			enableButtonPrev <= enableButton;
 		end if;
 	end process;	
 	
@@ -154,6 +164,7 @@ begin
 					selectionDrink <= 0;
 					money <= 0;
 					procent <= 0;
+					procentCount <= 0;
 					timeForUnsuccessfulMessage <= 0;
 				when Selection	=> 
 					if buttonLeft = '0' and buttonLeftPrev = '1' then
@@ -216,14 +227,21 @@ begin
 								end if;
 							when others => stateCoffeeMachine <= Waiting;
 						end case;
-					enableButton <= '1';	
+						enableButton <= '1';	
 					elsif buttonWaiting = '0' and buttonWaitingPrev = '1' then
 						stateCoffeeMachine <= Waiting;
 						enableButton <= '1';		
 					end if;	
 				when Implementation =>
-					if procent = 100 then
+					if (procent > 100) then
 						stateCoffeeMachine <= Waiting;
+					else 
+						if (procentCount < 20000000) then 
+							procentCount <= procentCount + 1;
+						else 
+							procentCount <= 0;
+							procent <= procent + 1;
+						end if;
 					end if;
 				when Unsuccessful => 
 					if timeForUnsuccessfulMessage < 200000000 then
@@ -234,7 +252,7 @@ begin
 				when others => led <= b"1111";
 			end case;
 			if enableButton = '1' then
-				if timeForNormalSignal < 100000 then
+				if timeForNormalSignal < 2000000 then
 					timeForNormalSignal <= timeForNormalSignal + 1;
 				else 
 					timeForNormalSignal <= 0;
@@ -286,46 +304,98 @@ begin
 				when Payment => 
 					bufferForIndicator0 <= b"1111111";
 					bufferForIndicator1 <= b"1111111";
-					case money is
-						when 0 =>
-							bufferForIndicator2 <= b"1111111";
-							bufferForIndicator3 <= b"0000001";
-						when 5 => 
-							bufferForIndicator2 <= b"1111111";
-							bufferForIndicator3 <= b"0100100";
-						when 10 => 
-							bufferForIndicator2 <= b"1001111";
-							bufferForIndicator3 <= b"0000001";
-						when 15 => 
-							bufferForIndicator2 <= b"1001111";
-							bufferForIndicator3 <= b"0100100";						
-						when 20 => 
-							bufferForIndicator2 <= b"0010010";
-							bufferForIndicator3 <= b"0000001";						
-						when 25 =>
-							bufferForIndicator2 <= b"0010010";
-							bufferForIndicator3 <= b"0100100";						
-						when 30 =>
-							bufferForIndicator2 <= b"0000110";
-							bufferForIndicator3 <= b"0000001";						
-						when 35 =>
-							bufferForIndicator2 <= b"0000110";
-							bufferForIndicator3 <= b"0100100";						
-						when 40 =>
-							bufferForIndicator2 <= b"1001100";
-							bufferForIndicator3 <= b"0000001";						
-						when 45 =>
-							bufferForIndicator2 <= b"1001100";
-							bufferForIndicator3 <= b"0100100";							
-						when 50 => 
-							bufferForIndicator2 <= b"0100100";
-							bufferForIndicator3 <= b"0000001";						
-						when others => 
-							bufferForIndicator2 <= b"1111111";
-							bufferForIndicator3 <= b"1111111";
-					end case;	
-				when Implementation =>
-
+					if (enableButton = '1' and enableButtonPrev = '0') then
+						digitBuf3 <= money rem 10;
+						digitBuf2 <= (money - (money rem 10)) / 10;
+					end if;
+					digit3 <= digitBuf3;
+					digit2 <= digitBuf2;
+						case digit3 is
+							when 0 => bufferForIndicator3 <= b"0000001";
+							when 1 => bufferForIndicator3 <= b"1001111";
+							when 2 => bufferForIndicator3 <= b"0010010";
+							when 3 => bufferForIndicator3 <= b"0000110";
+							when 4 => bufferForIndicator3 <= b"1001100";
+							when 5 => bufferForIndicator3 <= b"0100100";
+							when 6 => bufferForIndicator3 <= b"0100000";
+							when 7 => bufferForIndicator3 <= b"0001111";
+							when 8 => bufferForIndicator3 <= b"0000000";
+							when 9 => bufferForIndicator3 <= b"0000100";
+							when others => bufferForIndicator3 <= b"0000001";
+						end case;
+						case digit2 is							
+							when 0 => if money > 9 then
+											bufferForIndicator2 <= b"0000001";
+										else
+											bufferForIndicator2 <= b"1111111";
+										end if;	
+							when 1 => bufferForIndicator2 <= b"1001111";
+							when 2 => bufferForIndicator2 <= b"0010010";
+							when 3 => bufferForIndicator2 <= b"0000110";
+							when 4 => bufferForIndicator2 <= b"1001100";
+							when 5 => bufferForIndicator2 <= b"0100100";
+							when 6 => bufferForIndicator2 <= b"0100000";
+							when 7 => bufferForIndicator2 <= b"0001111";
+							when 8 => bufferForIndicator2 <= b"0000000";
+							when 9 => bufferForIndicator2 <= b"0000100";
+							when others => bufferForIndicator2 <= b"0000001";
+						end case;
+				when Implementation =>						
+					bufferForIndicator0 <= b"1111111";
+					digit3 <= procent rem 10;
+					if (procent = 100) then
+						digit2 <= 0;
+					else 	
+						digit2 <= (procent - (procent rem 10)) / 10;
+					end if;
+					digit1 <= (procent - (procent rem 10) - (procent rem 100)) / 100;
+						case digit3 is
+							when 0 => bufferForIndicator3 <= b"0000001";
+							when 1 => bufferForIndicator3 <= b"1001111";
+							when 2 => bufferForIndicator3 <= b"0010010";
+							when 3 => bufferForIndicator3 <= b"0000110";
+							when 4 => bufferForIndicator3 <= b"1001100";
+							when 5 => bufferForIndicator3 <= b"0100100";
+							when 6 => bufferForIndicator3 <= b"0100000";
+							when 7 => bufferForIndicator3 <= b"0001111";
+							when 8 => bufferForIndicator3 <= b"0000000";
+							when 9 => bufferForIndicator3 <= b"0000100";
+							when others => bufferForIndicator3 <= b"0000001";
+						end case;
+						case digit2 is							
+							when 0 => if procent > 9 then
+											bufferForIndicator2 <= b"0000001";
+										else
+											bufferForIndicator2 <= b"1111111";
+										end if;	
+							when 1 => bufferForIndicator2 <= b"1001111";
+							when 2 => bufferForIndicator2 <= b"0010010";
+							when 3 => bufferForIndicator2 <= b"0000110";
+							when 4 => bufferForIndicator2 <= b"1001100";
+							when 5 => bufferForIndicator2 <= b"0100100";
+							when 6 => bufferForIndicator2 <= b"0100000";
+							when 7 => bufferForIndicator2 <= b"0001111";
+							when 8 => bufferForIndicator2 <= b"0000000";
+							when 9 => bufferForIndicator2 <= b"0000100";
+							when others => bufferForIndicator2 <= b"0000001";
+						end case;
+						case digit1 is
+							when 0 => if procent > 99 then
+											bufferForIndicator1 <= b"0000001";
+										else
+											bufferForIndicator1 <= b"1111111";
+										end if;
+							when 1 => bufferForIndicator1 <= b"1001111";
+							when 2 => bufferForIndicator1 <= b"0010010";
+							when 3 => bufferForIndicator1 <= b"0000110";
+							when 4 => bufferForIndicator1 <= b"1001100";
+							when 5 => bufferForIndicator1 <= b"0100100";
+							when 6 => bufferForIndicator1 <= b"0100000";
+							when 7 => bufferForIndicator1 <= b"0001111";
+							when 8 => bufferForIndicator1 <= b"0000000";
+							when 9 => bufferForIndicator1 <= b"0000100";
+							when others => bufferForIndicator1 <= b"0000001";
+						end case;
 				when Unsuccessful =>
 					bufferForIndicator0 <= b"1111111";
 					bufferForIndicator1 <= b"1110001";
@@ -339,22 +409,5 @@ begin
 			end case;
 		end if;
 	end process;
-	
---	process(counter)
---	begin
---		case counter is
---			when 0 => led5 <= b"0000001";
---			when 1 => led5 <= b"1001111";
---			when 2 => led5 <= b"0010010";
---			when 3 => led5 <= b"0000110";
---			when 4 => led5 <= b"1001100";
---			when 5 => led5 <= b"0100100";
---			when 6 => led5 <= b"0100000";
---			when 7 => led5 <= b"0001111";
---			when 8 => led5 <= b"0000000";
---			when 9 => led5 <= b"0000100";
---			when others => led5 <= b"0000001";
---		end case;	
---	end process;
 	
 end Behavioral;
