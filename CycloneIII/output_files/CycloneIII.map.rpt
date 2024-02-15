@@ -1,5 +1,5 @@
 Analysis & Synthesis report for CycloneIII
-Thu Feb 15 15:57:10 2024
+Thu Feb 15 16:16:49 2024
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Full Version
 
 
@@ -13,9 +13,11 @@ Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Full Version
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Elapsed Time Per Partition
- 10. Analysis & Synthesis Messages
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Elapsed Time Per Partition
+ 12. Analysis & Synthesis Messages
 
 
 
@@ -41,16 +43,16 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Feb 15 15:57:10 2024       ;
+; Analysis & Synthesis Status        ; Successful - Thu Feb 15 16:16:49 2024       ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Full Version ;
 ; Revision Name                      ; CycloneIII                                  ;
-; Top-level Entity Name              ; CycloneIII                                  ;
+; Top-level Entity Name              ; TestWithCLK                                 ;
 ; Family                             ; Cyclone III                                 ;
-; Total logic elements               ; 3                                           ;
-;     Total combinational functions  ; 3                                           ;
-;     Dedicated logic registers      ; 0                                           ;
-; Total registers                    ; 0                                           ;
-; Total pins                         ; 8                                           ;
+; Total logic elements               ; 34                                          ;
+;     Total combinational functions  ; 34                                          ;
+;     Dedicated logic registers      ; 25                                          ;
+; Total registers                    ; 25                                          ;
+; Total pins                         ; 6                                           ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -64,7 +66,7 @@ applicable agreement for further details.
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                     ; EP3C25Q240C8       ;                    ;
-; Top-level entity name                                                      ; CycloneIII         ; CycloneIII         ;
+; Top-level entity name                                                      ; TestWithCLK        ; CycloneIII         ;
 ; Family name                                                                ; Cyclone III        ; Cyclone IV GX      ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
@@ -162,43 +164,43 @@ applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                    ;
-+----------------------------------+-----------------+------------------------------------+-------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                          ; Library ;
-+----------------------------------+-----------------+------------------------------------+-------------------------------------------------------+---------+
-; CycloneIII.bdf                   ; yes             ; User Block Diagram/Schematic File  ; D:/GITEA/GitHub/ES/pcbteach/CycloneIII/CycloneIII.bdf ;         ;
-+----------------------------------+-----------------+------------------------------------+-------------------------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                  ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                           ; Library ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------+---------+
+; TestWithCLK.vhd                  ; yes             ; User VHDL File  ; D:/GITEA/GitHub/ES/pcbteach/CycloneIII/TestWithCLK.vhd ;         ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------+---------+
 
 
-+------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                ;
-+---------------------------------------------+--------------+
-; Resource                                    ; Usage        ;
-+---------------------------------------------+--------------+
-; Estimated Total logic elements              ; 3            ;
-;                                             ;              ;
-; Total combinational functions               ; 3            ;
-; Logic element usage by number of LUT inputs ;              ;
-;     -- 4 input functions                    ; 0            ;
-;     -- 3 input functions                    ; 1            ;
-;     -- <=2 input functions                  ; 2            ;
-;                                             ;              ;
-; Logic elements by mode                      ;              ;
-;     -- normal mode                          ; 3            ;
-;     -- arithmetic mode                      ; 0            ;
-;                                             ;              ;
-; Total registers                             ; 0            ;
-;     -- Dedicated logic registers            ; 0            ;
-;     -- I/O registers                        ; 0            ;
-;                                             ;              ;
-; I/O pins                                    ; 8            ;
-; Embedded Multiplier 9-bit elements          ; 0            ;
-; Maximum fan-out node                        ; mode_2~input ;
-; Maximum fan-out                             ; 4            ;
-; Total fan-out                               ; 20           ;
-; Average fan-out                             ; 1.05         ;
-+---------------------------------------------+--------------+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimated Total logic elements              ; 34          ;
+;                                             ;             ;
+; Total combinational functions               ; 34          ;
+; Logic element usage by number of LUT inputs ;             ;
+;     -- 4 input functions                    ; 8           ;
+;     -- 3 input functions                    ; 1           ;
+;     -- <=2 input functions                  ; 25          ;
+;                                             ;             ;
+; Logic elements by mode                      ;             ;
+;     -- normal mode                          ; 11          ;
+;     -- arithmetic mode                      ; 23          ;
+;                                             ;             ;
+; Total registers                             ; 25          ;
+;     -- Dedicated logic registers            ; 25          ;
+;     -- I/O registers                        ; 0           ;
+;                                             ;             ;
+; I/O pins                                    ; 6           ;
+; Embedded Multiplier 9-bit elements          ; 0           ;
+; Maximum fan-out node                        ; LessThan0~8 ;
+; Maximum fan-out                             ; 25          ;
+; Total fan-out                               ; 169         ;
+; Average fan-out                             ; 2.38        ;
++---------------------------------------------+-------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -206,9 +208,19 @@ applicable agreement for further details.
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
 ; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-; |CycloneIII                ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 8    ; 0            ; |CycloneIII         ; work         ;
+; |TestWithCLK               ; 34 (34)           ; 25 (25)      ; 0           ; 0            ; 0       ; 0         ; 6    ; 0            ; |TestWithCLK        ; work         ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------+
+; Registers Removed During Synthesis                            ;
++---------------------------------------+-----------------------+
+; Register name                         ; Reason for Removal    ;
++---------------------------------------+-----------------------+
+; ledBuf[1..4]                          ; Merged with ledBuf[0] ;
+; Total Number of Removed Registers = 4 ;                       ;
++---------------------------------------+-----------------------+
 
 
 +------------------------------------------------------+
@@ -216,14 +228,24 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 0     ;
-; Number of registers using Synchronous Clear  ; 0     ;
+; Total registers                              ; 25    ;
+; Number of registers using Synchronous Clear  ; 24    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; ledBuf[0]                              ; 6       ;
+; Total number of inverted registers = 1 ;         ;
++----------------------------------------+---------+
 
 
 +-------------------------------+
@@ -241,22 +263,25 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Full Version
-    Info: Processing started: Thu Feb 15 15:57:09 2024
+    Info: Processing started: Thu Feb 15 16:16:48 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off CycloneIII -c CycloneIII
 Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
 Info (12021): Found 1 design units, including 1 entities, in source file cycloneiii.bdf
     Info (12023): Found entity 1: CycloneIII
-Info (12127): Elaborating entity "CycloneIII" for the top level hierarchy
+Info (12021): Found 2 design units, including 1 entities, in source file testwithclk.vhd
+    Info (12022): Found design unit 1: TestWithCLK-Behavioral
+    Info (12023): Found entity 1: TestWithCLK
+Info (12127): Elaborating entity "TestWithCLK" for the top level hierarchy
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 11 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 3 input pins
+Info (21057): Implemented 40 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 1 input pins
     Info (21059): Implemented 5 output pins
-    Info (21061): Implemented 3 logic cells
+    Info (21061): Implemented 34 logic cells
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 4651 megabytes
-    Info: Processing ended: Thu Feb 15 15:57:10 2024
+    Info: Peak virtual memory: 4683 megabytes
+    Info: Processing ended: Thu Feb 15 16:16:49 2024
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 

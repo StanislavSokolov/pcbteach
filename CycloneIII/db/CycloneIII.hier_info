@@ -1,17 +1,37 @@
-|CycloneIII
-led_1 <= inst.DB_MAX_OUTPUT_PORT_TYPE
-mode_1 => inst.IN0
-mode_1 => inst2.IN2
-mode_1 => inst4.IN0
-mode_2 => inst.IN1
-mode_2 => inst1.IN0
-mode_2 => inst2.IN0
-mode_2 => inst3.IN0
-led_2 <= inst1.DB_MAX_OUTPUT_PORT_TYPE
-mode_3 => inst1.IN1
-mode_3 => inst2.IN1
-led_3 <= inst2.DB_MAX_OUTPUT_PORT_TYPE
-led_4 <= inst3.DB_MAX_OUTPUT_PORT_TYPE
-led_5 <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+|TestWithCLK
+clk => ledBuf[0].CLK
+clk => ledBuf[1].CLK
+clk => ledBuf[2].CLK
+clk => ledBuf[3].CLK
+clk => ledBuf[4].CLK
+clk => counter[0].CLK
+clk => counter[1].CLK
+clk => counter[2].CLK
+clk => counter[3].CLK
+clk => counter[4].CLK
+clk => counter[5].CLK
+clk => counter[6].CLK
+clk => counter[7].CLK
+clk => counter[8].CLK
+clk => counter[9].CLK
+clk => counter[10].CLK
+clk => counter[11].CLK
+clk => counter[12].CLK
+clk => counter[13].CLK
+clk => counter[14].CLK
+clk => counter[15].CLK
+clk => counter[16].CLK
+clk => counter[17].CLK
+clk => counter[18].CLK
+clk => counter[19].CLK
+clk => counter[20].CLK
+clk => counter[21].CLK
+clk => counter[22].CLK
+clk => counter[23].CLK
+led1[0] << ledBuf[0].DB_MAX_OUTPUT_PORT_TYPE
+led1[1] << ledBuf[1].DB_MAX_OUTPUT_PORT_TYPE
+led1[2] << ledBuf[2].DB_MAX_OUTPUT_PORT_TYPE
+led1[3] << ledBuf[3].DB_MAX_OUTPUT_PORT_TYPE
+led1[4] << ledBuf[4].DB_MAX_OUTPUT_PORT_TYPE
 
 
