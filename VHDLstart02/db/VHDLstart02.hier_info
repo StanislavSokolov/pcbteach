@@ -1,11 +1,46 @@
-|VHDLstart02
-clk => buttonPrev.CLK
-clk => counter[0].CLK
-clk => counter[1].CLK
-clk => counter[2].CLK
-clk => counter[3].CLK
-button => buttonPrev.DATAIN
-button => process_0.IN1
+|IndicatorProject
+en5 <= Indicator:inst3.en5
+clk => Counter:inst.clk
+clk => DigitalFilter:inst2.CLK
+button => DigitalFilter:inst2.INPUT
+led5[0] <= Indicator:inst3.led5[0]
+led5[1] <= Indicator:inst3.led5[1]
+led5[2] <= Indicator:inst3.led5[2]
+led5[3] <= Indicator:inst3.led5[3]
+led5[4] <= Indicator:inst3.led5[4]
+led5[5] <= Indicator:inst3.led5[5]
+led5[6] <= Indicator:inst3.led5[6]
+
+
+|IndicatorProject|Indicator:inst3
+counter[0] => Mux0.IN19
+counter[0] => Mux1.IN19
+counter[0] => Mux2.IN19
+counter[0] => Mux3.IN19
+counter[0] => Mux4.IN19
+counter[0] => Mux5.IN19
+counter[0] => Mux6.IN19
+counter[1] => Mux0.IN18
+counter[1] => Mux1.IN18
+counter[1] => Mux2.IN18
+counter[1] => Mux3.IN18
+counter[1] => Mux4.IN18
+counter[1] => Mux5.IN18
+counter[1] => Mux6.IN18
+counter[2] => Mux0.IN17
+counter[2] => Mux1.IN17
+counter[2] => Mux2.IN17
+counter[2] => Mux3.IN17
+counter[2] => Mux4.IN17
+counter[2] => Mux5.IN17
+counter[2] => Mux6.IN17
+counter[3] => Mux0.IN16
+counter[3] => Mux1.IN16
+counter[3] => Mux2.IN16
+counter[3] => Mux3.IN16
+counter[3] => Mux4.IN16
+counter[3] => Mux5.IN16
+counter[3] => Mux6.IN16
 led5[0] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
 led5[1] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
 led5[2] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
@@ -13,6 +48,37 @@ led5[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
 led5[4] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
 led5[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
 led5[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
-en5 <= <GND>
+en => en5.DATAIN
+en5 <= en.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|IndicatorProject|Counter:inst
+clk => buttonPrev.CLK
+clk => counter[0].CLK
+clk => counter[1].CLK
+clk => counter[2].CLK
+clk => counter[3].CLK
+button => buttonPrev.DATAIN
+button => process_0.IN1
+output[0] <= counter[0].DB_MAX_OUTPUT_PORT_TYPE
+output[1] <= counter[1].DB_MAX_OUTPUT_PORT_TYPE
+output[2] <= counter[2].DB_MAX_OUTPUT_PORT_TYPE
+output[3] <= counter[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|IndicatorProject|DigitalFilter:inst2
+CLK => OUTPUT~reg0.CLK
+CLK => count[0].CLK
+CLK => count[1].CLK
+CLK => count[2].CLK
+CLK => count[3].CLK
+CLK => latch.CLK
+INPUT => count.OUTPUTSELECT
+INPUT => count.OUTPUTSELECT
+INPUT => count.OUTPUTSELECT
+INPUT => count.OUTPUTSELECT
+INPUT => OUTPUT.OUTPUTSELECT
+INPUT => latch.DATAIN
+OUTPUT <= OUTPUT~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
