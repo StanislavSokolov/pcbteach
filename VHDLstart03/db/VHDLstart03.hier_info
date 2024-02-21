@@ -1,0 +1,86 @@
+|VHDLstart03
+indicator[0] <= DynamicIllumination4Indicators:inst2.indicator0
+indicator[1] <= DynamicIllumination4Indicators:inst2.indicator1
+indicator[2] <= DynamicIllumination4Indicators:inst2.indicator2
+indicator[3] <= DynamicIllumination4Indicators:inst2.indicator3
+clk => Count250000:inst.clkIn
+segment[0] <= DynamicIllumination4Indicators:inst2.segment[0]
+segment[1] <= DynamicIllumination4Indicators:inst2.segment[1]
+segment[2] <= DynamicIllumination4Indicators:inst2.segment[2]
+segment[3] <= DynamicIllumination4Indicators:inst2.segment[3]
+segment[4] <= DynamicIllumination4Indicators:inst2.segment[4]
+segment[5] <= DynamicIllumination4Indicators:inst2.segment[5]
+segment[6] <= DynamicIllumination4Indicators:inst2.segment[6]
+
+
+|VHDLstart03|DynamicIllumination4Indicators:inst2
+clk => clkCounter[0].CLK
+clk => clkCounter[1].CLK
+enable[0] => Mux11.IN3
+enable[1] => Mux11.IN2
+enable[2] => Mux11.IN1
+enable[3] => Mux11.IN0
+indicator0[0] => Mux10.IN0
+indicator0[1] => Mux9.IN0
+indicator0[2] => Mux8.IN0
+indicator0[3] => Mux7.IN0
+indicator0[4] => Mux6.IN0
+indicator0[5] => Mux5.IN0
+indicator0[6] => Mux4.IN0
+indicator1[0] => Mux10.IN1
+indicator1[1] => Mux9.IN1
+indicator1[2] => Mux8.IN1
+indicator1[3] => Mux7.IN1
+indicator1[4] => Mux6.IN1
+indicator1[5] => Mux5.IN1
+indicator1[6] => Mux4.IN1
+indicator2[0] => Mux10.IN2
+indicator2[1] => Mux9.IN2
+indicator2[2] => Mux8.IN2
+indicator2[3] => Mux7.IN2
+indicator2[4] => Mux6.IN2
+indicator2[5] => Mux5.IN2
+indicator2[6] => Mux4.IN2
+indicator3[0] => Mux10.IN3
+indicator3[1] => Mux9.IN3
+indicator3[2] => Mux8.IN3
+indicator3[3] => Mux7.IN3
+indicator3[4] => Mux6.IN3
+indicator3[5] => Mux5.IN3
+indicator3[6] => Mux4.IN3
+segment[0] <= segment[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
+segment[1] <= segment[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
+segment[2] <= segment[2]$latch.DB_MAX_OUTPUT_PORT_TYPE
+segment[3] <= segment[3]$latch.DB_MAX_OUTPUT_PORT_TYPE
+segment[4] <= segment[4]$latch.DB_MAX_OUTPUT_PORT_TYPE
+segment[5] <= segment[5]$latch.DB_MAX_OUTPUT_PORT_TYPE
+segment[6] <= segment[6]$latch.DB_MAX_OUTPUT_PORT_TYPE
+indicator[0] <= indicator[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
+indicator[1] <= indicator[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
+indicator[2] <= indicator[2]$latch.DB_MAX_OUTPUT_PORT_TYPE
+indicator[3] <= indicator[3]$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|VHDLstart03|Count250000:inst
+clkIn => clkOutBuf.CLK
+clkIn => clkCounter[0].CLK
+clkIn => clkCounter[1].CLK
+clkIn => clkCounter[2].CLK
+clkIn => clkCounter[3].CLK
+clkIn => clkCounter[4].CLK
+clkIn => clkCounter[5].CLK
+clkIn => clkCounter[6].CLK
+clkIn => clkCounter[7].CLK
+clkIn => clkCounter[8].CLK
+clkIn => clkCounter[9].CLK
+clkIn => clkCounter[10].CLK
+clkIn => clkCounter[11].CLK
+clkIn => clkCounter[12].CLK
+clkIn => clkCounter[13].CLK
+clkIn => clkCounter[14].CLK
+clkIn => clkCounter[15].CLK
+clkIn => clkCounter[16].CLK
+clkIn => clkCounter[17].CLK
+clkOut <= clkOutBuf.DB_MAX_OUTPUT_PORT_TYPE
+
+

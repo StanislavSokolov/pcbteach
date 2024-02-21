@@ -1,0 +1,32 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity DataConversionUnit is
+
+Port ( 
+	clk : in STD_LOGIC;
+	update : in STD_LOGIC;
+	data : in STD_LOGIC_VECTOR(7 downto 0);
+	indicator0 : out STD_LOGIC_vector(6 downto 0);
+	indicator1 : out STD_LOGIC_vector(6 downto 0)
+	);
+end DataConversionUnit;
+
+architecture Behavioral of DataConversionUnit is
+	signal clkCounter : natural range 0 to 250000 := 0;
+	signal updatePrev : std_logic := '0';
+begin	
+	
+	process(clkIn)
+	begin
+		if rising_edge(clkIn) then
+			if update = '1' and updatePrev = '0' then
+				
+			end if;
+			udatePrev <= update;
+		end if;	
+	end process;
+	
+	clkOut <= clkOutBuf;
+	
+end Behavioral;
