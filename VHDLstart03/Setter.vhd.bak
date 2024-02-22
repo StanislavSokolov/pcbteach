@@ -1,0 +1,50 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity Setter is
+
+Port ( 
+	clk : in STD_LOGIC;
+	key1 : in STD_LOGIC;
+	key2 : in STD_LOGIC;
+	key3 : in STD_LOGIC;
+	key4 : in STD_LOGIC;
+	reset : in STD_LOGIC;
+	data : out STD_LOGIC_VECTOR(7 downto 0);
+	update : out STD_LOGIC
+	);
+end Setter;
+
+architecture Behavioral of Setter is
+	signal count : natural range 0 to 5200 := 0; -- 9600 bod (104 msec)
+	signal bitPosition : natural range 0 to 7 := 0;
+	signal resetPrev : std_logic := '1';
+	signal updateBuf : std_logic := '1';
+	signal ledBuf : std_logic := '0';
+	signal dataBuf : std_logic_vector(7 downto 0) := b"00000000";
+begin	
+
+	update <= updateBuf;
+
+	process(clk)
+	begin
+		if rising_edge(clk) then
+			if reset = '0' and resetPrev = '1' then
+				updateBuf <= '1';
+			else
+				if updateBuf = '1' then 
+					if countUpdate < 7 then
+						countUpdate <= countUpdate + 1;
+					else 
+						countUpdate <= 0;
+						updateBuf <= '0';
+					end if;
+				end if;
+			end if;
+			resetPrev <= reset;
+		end if;
+	end process;		
+	
+	
+	
+end Behavioral;

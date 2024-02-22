@@ -1,5 +1,5 @@
 Analysis & Synthesis report for VHDLstart03
-Thu Feb 22 14:34:51 2024
+Thu Feb 22 16:06:23 2024
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Full Version
 
 
@@ -14,12 +14,15 @@ Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Full Version
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. State Machine - |VHDLstart03|ReceiverUART:inst6|stateUART
-  9. User-Specified and Inferred Latches
- 10. General Register Statistics
- 11. Inverted Register Statistics
- 12. Multiplexer Restructuring Statistics (Restructuring Performed)
- 13. Elapsed Time Per Partition
- 14. Analysis & Synthesis Messages
+  9. State Machine - |VHDLstart03|TransmitterUART:inst15|stateUART
+ 10. User-Specified and Inferred Latches
+ 11. Registers Removed During Synthesis
+ 12. Removed Registers Triggering Further Register Optimizations
+ 13. General Register Statistics
+ 14. Inverted Register Statistics
+ 15. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 16. Elapsed Time Per Partition
+ 17. Analysis & Synthesis Messages
 
 
 
@@ -45,16 +48,16 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Feb 22 14:34:51 2024       ;
+; Analysis & Synthesis Status        ; Successful - Thu Feb 22 16:06:23 2024       ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Full Version ;
 ; Revision Name                      ; VHDLstart03                                 ;
 ; Top-level Entity Name              ; VHDLstart03                                 ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 140                                         ;
-;     Total combinational functions  ; 121                                         ;
-;     Dedicated logic registers      ; 74                                          ;
-; Total registers                    ; 74                                          ;
-; Total pins                         ; 14                                          ;
+; Total logic elements               ; 182                                         ;
+;     Total combinational functions  ; 153                                         ;
+;     Dedicated logic registers      ; 109                                         ;
+; Total registers                    ; 109                                         ;
+; Total pins                         ; 20                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -178,6 +181,8 @@ applicable agreement for further details.
 ; DataConversionUnit.vhd             ; yes             ; User VHDL File                     ; D:/GITEA/GitHub/ES/pcbteach/VHDLstart03/DataConversionUnit.vhd             ;         ;
 ; DigitalFilter8.vhd                 ; yes             ; User VHDL File                     ; D:/GITEA/GitHub/ES/pcbteach/VHDLstart03/DigitalFilter8.vhd                 ;         ;
 ; ReceiverUART.vhd                   ; yes             ; User VHDL File                     ; D:/GITEA/GitHub/ES/pcbteach/VHDLstart03/ReceiverUART.vhd                   ;         ;
+; TransmitterUART.vhd                ; yes             ; User VHDL File                     ; D:/GITEA/GitHub/ES/pcbteach/VHDLstart03/TransmitterUART.vhd                ;         ;
+; Setter.vhd                         ; yes             ; User VHDL File                     ; D:/GITEA/GitHub/ES/pcbteach/VHDLstart03/Setter.vhd                         ;         ;
 +------------------------------------+-----------------+------------------------------------+----------------------------------------------------------------------------+---------+
 
 
@@ -186,28 +191,28 @@ applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 140       ;
+; Estimated Total logic elements              ; 182       ;
 ;                                             ;           ;
-; Total combinational functions               ; 121       ;
+; Total combinational functions               ; 153       ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 47        ;
-;     -- 3 input functions                    ; 36        ;
-;     -- <=2 input functions                  ; 38        ;
+;     -- 4 input functions                    ; 63        ;
+;     -- 3 input functions                    ; 38        ;
+;     -- <=2 input functions                  ; 52        ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 93        ;
+;     -- normal mode                          ; 125       ;
 ;     -- arithmetic mode                      ; 28        ;
 ;                                             ;           ;
-; Total registers                             ; 74        ;
-;     -- Dedicated logic registers            ; 74        ;
+; Total registers                             ; 109       ;
+;     -- Dedicated logic registers            ; 109       ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
-; I/O pins                                    ; 14        ;
+; I/O pins                                    ; 20        ;
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 72        ;
-; Total fan-out                               ; 599       ;
-; Average fan-out                             ; 2.69      ;
+; Maximum fan-out                             ; 107       ;
+; Total fan-out                               ; 777       ;
+; Average fan-out                             ; 2.57      ;
 +---------------------------------------------+-----------+
 
 
@@ -216,12 +221,17 @@ applicable agreement for further details.
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                               ; Library Name ;
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------+--------------+
-; |VHDLstart03                              ; 121 (0)           ; 74 (0)       ; 0           ; 0            ; 0       ; 0         ; 14   ; 0            ; |VHDLstart03                                      ; work         ;
+; |VHDLstart03                              ; 153 (0)           ; 109 (0)      ; 0           ; 0            ; 0       ; 0         ; 20   ; 0            ; |VHDLstart03                                      ; work         ;
 ;    |Count250000:inst|                     ; 22 (22)           ; 18 (18)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VHDLstart03|Count250000:inst                     ; work         ;
 ;    |DataConversionUnit:inst1|             ; 15 (15)           ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VHDLstart03|DataConversionUnit:inst1             ; work         ;
-;    |DigitalFilter8:inst5|                 ; 6 (6)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VHDLstart03|DigitalFilter8:inst5                 ; work         ;
+;    |DigitalFilter8:inst12|                ; 6 (6)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VHDLstart03|DigitalFilter8:inst12                ; work         ;
+;    |DigitalFilter8:inst13|                ; 6 (6)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VHDLstart03|DigitalFilter8:inst13                ; work         ;
+;    |DigitalFilter8:inst7|                 ; 6 (6)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VHDLstart03|DigitalFilter8:inst7                 ; work         ;
+;    |DigitalFilter8:inst8|                 ; 6 (6)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VHDLstart03|DigitalFilter8:inst8                 ; work         ;
+;    |DigitalFilter8:inst9|                 ; 6 (6)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VHDLstart03|DigitalFilter8:inst9                 ; work         ;
 ;    |DynamicIllumination4Indicators:inst2| ; 18 (18)           ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VHDLstart03|DynamicIllumination4Indicators:inst2 ; work         ;
-;    |ReceiverUART:inst6|                   ; 60 (60)           ; 40 (40)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VHDLstart03|ReceiverUART:inst6                   ; work         ;
+;    |Setter:inst14|                        ; 28 (28)           ; 25 (25)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VHDLstart03|Setter:inst14                        ; work         ;
+;    |TransmitterUART:inst15|               ; 40 (40)           ; 30 (30)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VHDLstart03|TransmitterUART:inst15               ; work         ;
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -238,6 +248,19 @@ Encoding Type:  One-Hot
 ; stateUART.Stopping      ; 0                  ; 1                  ; 0                       ; 0                  ; 1                 ;
 ; stateUART.Updating      ; 1                  ; 0                  ; 0                       ; 0                  ; 1                 ;
 +-------------------------+--------------------+--------------------+-------------------------+--------------------+-------------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------------------+
+; State Machine - |VHDLstart03|TransmitterUART:inst15|stateUART                                                   ;
++-------------------------+--------------------+-------------------------+--------------------+-------------------+
+; Name                    ; stateUART.Stopping ; stateUART.ReceivingData ; stateUART.Starting ; stateUART.Waiting ;
++-------------------------+--------------------+-------------------------+--------------------+-------------------+
+; stateUART.Waiting       ; 0                  ; 0                       ; 0                  ; 0                 ;
+; stateUART.Starting      ; 0                  ; 0                       ; 1                  ; 1                 ;
+; stateUART.ReceivingData ; 0                  ; 1                       ; 0                  ; 1                 ;
+; stateUART.Stopping      ; 1                  ; 0                       ; 0                  ; 1                 ;
++-------------------------+--------------------+-------------------------+--------------------+-------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------+
@@ -260,17 +283,53 @@ Encoding Type:  One-Hot
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
++----------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                           ;
++--------------------------------------------+-------------------------------------------------+
+; Register name                              ; Reason for Removal                              ;
++--------------------------------------------+-------------------------------------------------+
+; TransmitterUART:inst15|updatePrev          ; Merged with DataConversionUnit:inst1|updatePrev ;
+; DigitalFilter8:inst5|output                ; Lost fanout                                     ;
+; ReceiverUART:inst6|rxPrev                  ; Lost fanout                                     ;
+; ReceiverUART:inst6|count[3..12]            ; Lost fanout                                     ;
+; ReceiverUART:inst6|bitPosition[0..2]       ; Lost fanout                                     ;
+; DigitalFilter8:inst5|latch                 ; Lost fanout                                     ;
+; DigitalFilter8:inst5|count[0..2]           ; Lost fanout                                     ;
+; ReceiverUART:inst6|count[0..2]             ; Lost fanout                                     ;
+; ReceiverUART:inst6|stateUART.Waiting       ; Lost fanout                                     ;
+; ReceiverUART:inst6|stateUART.Starting      ; Lost fanout                                     ;
+; ReceiverUART:inst6|stateUART.ReceivingData ; Lost fanout                                     ;
+; ReceiverUART:inst6|stateUART.Stopping      ; Lost fanout                                     ;
+; ReceiverUART:inst6|stateUART.Updating      ; Lost fanout                                     ;
+; Total Number of Removed Registers = 28     ;                                                 ;
++--------------------------------------------+-------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                 ;
++-----------------------------------+--------------------+------------------------------------------------------------------------------------+
+; Register name                     ; Reason for Removal ; Registers Removed due to This Register                                             ;
++-----------------------------------+--------------------+------------------------------------------------------------------------------------+
+; ReceiverUART:inst6|count[12]      ; Lost Fanouts       ; ReceiverUART:inst6|count[11], ReceiverUART:inst6|stateUART.Waiting,                ;
+;                                   ;                    ; ReceiverUART:inst6|stateUART.Starting, ReceiverUART:inst6|stateUART.ReceivingData, ;
+;                                   ;                    ; ReceiverUART:inst6|stateUART.Stopping, ReceiverUART:inst6|stateUART.Updating       ;
+; DigitalFilter8:inst5|output       ; Lost Fanouts       ; DigitalFilter8:inst5|latch, DigitalFilter8:inst5|count[2],                         ;
+;                                   ;                    ; DigitalFilter8:inst5|count[0], DigitalFilter8:inst5|count[1]                       ;
+; ReceiverUART:inst6|bitPosition[2] ; Lost Fanouts       ; ReceiverUART:inst6|bitPosition[0], ReceiverUART:inst6|bitPosition[1]               ;
++-----------------------------------+--------------------+------------------------------------------------------------------------------------+
+
+
 +------------------------------------------------------+
 ; General Register Statistics                          ;
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 74    ;
+; Total registers                              ; 109   ;
 ; Number of registers using Synchronous Clear  ; 30    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 30    ;
+; Number of registers using Clock Enable       ; 37    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -280,22 +339,38 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------+---------+
 ; Inverted Register                      ; Fan out ;
 +----------------------------------------+---------+
-; ReceiverUART:inst6|rxPrev              ; 3       ;
-; Total number of inverted registers = 1 ;         ;
+; TransmitterUART:inst15|tx              ; 2       ;
+; Setter:inst14|updateBuf                ; 8       ;
+; Setter:inst14|resetPrev                ; 4       ;
+; Setter:inst14|key4Prev                 ; 3       ;
+; Setter:inst14|key3Prev                 ; 1       ;
+; Setter:inst14|key2Prev                 ; 3       ;
+; Setter:inst14|key1Prev                 ; 1       ;
+; Total number of inverted registers = 7 ;         ;
 +----------------------------------------+---------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                        ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                              ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------+
-; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |VHDLstart03|DigitalFilter8:inst5|count[0]              ;
-; 8:1                ; 13 bits   ; 65 LEs        ; 13 LEs               ; 52 LEs                 ; Yes        ; |VHDLstart03|ReceiverUART:inst6|count[6]                ;
-; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |VHDLstart03|DynamicIllumination4Indicators:inst2|Mux10 ;
-; 9:1                ; 3 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; No         ; |VHDLstart03|ReceiverUART:inst6|Selector3               ;
-; 10:1               ; 2 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |VHDLstart03|ReceiverUART:inst6|Selector0               ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------+
+; 4:1                ; 13 bits   ; 26 LEs        ; 13 LEs               ; 13 LEs                 ; Yes        ; |VHDLstart03|TransmitterUART:inst15|count[8]           ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |VHDLstart03|DigitalFilter8:inst5|count[2]             ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |VHDLstart03|DigitalFilter8:inst13|count[0]            ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |VHDLstart03|DigitalFilter8:inst9|count[1]             ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |VHDLstart03|DigitalFilter8:inst12|count[1]            ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |VHDLstart03|DigitalFilter8:inst7|count[2]             ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |VHDLstart03|DigitalFilter8:inst8|count[0]             ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |VHDLstart03|Setter:inst14|dataBuf1[3]                 ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |VHDLstart03|Setter:inst14|dataBuf0[3]                 ;
+; 8:1                ; 13 bits   ; 65 LEs        ; 13 LEs               ; 52 LEs                 ; Yes        ; |VHDLstart03|ReceiverUART:inst6|count[5]               ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |VHDLstart03|DynamicIllumination4Indicators:inst2|Mux7 ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |VHDLstart03|TransmitterUART:inst15|Selector3          ;
+; 9:1                ; 3 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; No         ; |VHDLstart03|ReceiverUART:inst6|Selector2              ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |VHDLstart03|TransmitterUART:inst15|Selector0          ;
+; 10:1               ; 2 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |VHDLstart03|ReceiverUART:inst6|Selector0              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------+
 
 
 +-------------------------------+
@@ -313,7 +388,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Full Version
-    Info: Processing started: Thu Feb 22 14:34:49 2024
+    Info: Processing started: Thu Feb 22 16:06:21 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off VHDLstart03 -c VHDLstart03
 Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
 Info (12021): Found 2 design units, including 1 entities, in source file count250000.vhd
@@ -333,6 +408,12 @@ Info (12021): Found 2 design units, including 1 entities, in source file digital
 Info (12021): Found 2 design units, including 1 entities, in source file receiveruart.vhd
     Info (12022): Found design unit 1: ReceiverUART-Behavioral
     Info (12023): Found entity 1: ReceiverUART
+Info (12021): Found 2 design units, including 1 entities, in source file transmitteruart.vhd
+    Info (12022): Found design unit 1: TransmitterUART-Behavioral
+    Info (12023): Found entity 1: TransmitterUART
+Info (12021): Found 2 design units, including 1 entities, in source file setter.vhd
+    Info (12022): Found design unit 1: Setter-Behavioral
+    Info (12023): Found entity 1: Setter
 Info (12127): Elaborating entity "VHDLstart03" for the top level hierarchy
 Warning (275080): Converted elements in bus name "indicator" using legacy naming rules. Make any assignments on the new names, not on the original names.
     Warning (275081): Converted element name(s) from "indicator[3..0]" to "indicator3..0"
@@ -344,8 +425,9 @@ Warning (275080): Converted elements in bus name "indicator2" using legacy namin
     Warning (275081): Converted element name(s) from "indicator2[6..0]" to "indicator26..0"
 Warning (275080): Converted elements in bus name "indicator3" using legacy naming rules. Make any assignments on the new names, not on the original names.
     Warning (275081): Converted element name(s) from "indicator3[6..0]" to "indicator36..0"
-Info (12128): Elaborating entity "ReceiverUART" for hierarchy "ReceiverUART:inst6"
-Info (12128): Elaborating entity "DigitalFilter8" for hierarchy "DigitalFilter8:inst5"
+Info (12128): Elaborating entity "TransmitterUART" for hierarchy "TransmitterUART:inst15"
+Info (12128): Elaborating entity "Setter" for hierarchy "Setter:inst14"
+Info (12128): Elaborating entity "DigitalFilter8" for hierarchy "DigitalFilter8:inst7"
 Info (12128): Elaborating entity "DynamicIllumination4Indicators" for hierarchy "DynamicIllumination4Indicators:inst2"
 Warning (10492): VHDL Process Statement warning at DynamicIllumination4Indicators.vhd(36): signal "enable" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10492): VHDL Process Statement warning at DynamicIllumination4Indicators.vhd(36): signal "indicator0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
@@ -370,19 +452,23 @@ Info (10041): Inferred latch for "indicator[2]" at DynamicIllumination4Indicator
 Info (10041): Inferred latch for "indicator[3]" at DynamicIllumination4Indicators.vhd(33)
 Info (12128): Elaborating entity "Count250000" for hierarchy "Count250000:inst"
 Info (12128): Elaborating entity "DataConversionUnit" for hierarchy "DataConversionUnit:inst1"
+Info (12128): Elaborating entity "ReceiverUART" for hierarchy "ReceiverUART:inst6"
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "indicator[3]" is stuck at VCC
     Warning (13410): Pin "indicator[2]" is stuck at VCC
 Info (286030): Timing-Driven Synthesis is running
+Info (17049): 27 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 154 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 2 input pins
-    Info (21059): Implemented 12 output pins
-    Info (21061): Implemented 140 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 23 warnings
-    Info: Peak virtual memory: 4695 megabytes
-    Info: Processing ended: Thu Feb 22 14:34:51 2024
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "rx"
+Info (21057): Implemented 202 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 7 input pins
+    Info (21059): Implemented 13 output pins
+    Info (21061): Implemented 182 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 25 warnings
+    Info: Peak virtual memory: 4684 megabytes
+    Info: Processing ended: Thu Feb 22 16:06:23 2024
     Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 

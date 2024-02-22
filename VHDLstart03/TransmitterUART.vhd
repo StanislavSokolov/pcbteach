@@ -1,0 +1,76 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity TransmitterUART is
+
+Port ( 
+	clk : in STD_LOGIC;
+	tx : out STD_LOGIC := '1';
+	data : in STD_LOGIC_VECTOR(7 downto 0);
+	update : in STD_LOGIC;
+	led : out STD_LOGIC
+	);
+end TransmitterUART;
+
+architecture Behavioral of TransmitterUART is
+	signal count : natural range 0 to 5200 := 0; -- 9600 bod (104 msec)
+	signal bitPosition : natural range 0 to 7 := 0;
+	signal updatePrev : std_logic := '0';
+	signal ledBuf : std_logic := '0';
+	signal dataBuf : std_logic_vector(7 downto 0) := b"00000000";
+	
+	
+	type UART is (Waiting, Starting, ReceivingData, Stopping);
+	signal stateUART : UART := Waiting;
+begin	
+
+	led <= ledBuf;
+	
+	process(clk)
+	begin
+		if rising_edge(clk) then
+			case stateUART is
+				when Waiting =>
+					if update = '1' and updatePrev = '0' then
+						dataBuf <= data;
+						stateUART <= Starting;
+						count <= 0;
+					end if;
+					tx <= '1';
+				when Starting =>
+					if count < 5200 then
+						count <= count + 1;
+					else
+						count <= 0;
+						stateUART <= ReceivingData;
+					end if;
+					tx <= '0';	
+				when ReceivingData =>
+					if count < 5200 then
+						count <= count + 1;
+						tx <= dataBuf(bitPosition);
+					else
+						count <= 0;
+						if bitPosition < 7 then
+							bitPosition <= bitPosition + 1;
+						else
+							bitPosition <= 0;
+							stateUART <= Stopping;
+						end if;
+					end if;
+				when Stopping =>					
+					tx <= '1';
+					if count < 5200 then
+						count <= count + 1;
+					else
+						count <= 0;
+						ledBuf <= not ledBuf;
+						stateUART <= Waiting;
+					end if;
+				when others =>
+			end case;
+			updatePrev <= update;
+		end if;	
+	end process;
+	
+end Behavioral;

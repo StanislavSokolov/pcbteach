@@ -1,10 +1,22 @@
 |VHDLstart03
-led <= ReceiverUART:inst6.led
-clk => ReceiverUART:inst6.clk
-clk => DigitalFilter8:inst5.clk
+led <= TransmitterUART:inst15.led
+clk => TransmitterUART:inst15.clk
+clk => Setter:inst14.clk
+clk => DigitalFilter8:inst7.clk
+clk => DigitalFilter8:inst8.clk
+clk => DigitalFilter8:inst9.clk
+clk => DigitalFilter8:inst12.clk
+clk => DigitalFilter8:inst13.clk
 clk => Count250000:inst.clkIn
 clk => DataConversionUnit:inst1.clk
-rx => DigitalFilter8:inst5.input
+clk => DigitalFilter8:inst5.clk
+clk => ReceiverUART:inst6.clk
+key1 => DigitalFilter8:inst7.input
+key2 => DigitalFilter8:inst8.input
+key3 => DigitalFilter8:inst9.input
+key4 => DigitalFilter8:inst12.input
+reset => DigitalFilter8:inst13.input
+tx <= TransmitterUART:inst15.tx
 indicator[0] <= DynamicIllumination4Indicators:inst2.indicator0
 indicator[1] <= DynamicIllumination4Indicators:inst2.indicator1
 indicator[2] <= DynamicIllumination4Indicators:inst2.indicator2
@@ -16,31 +28,16 @@ segment[3] <= DynamicIllumination4Indicators:inst2.segment[3]
 segment[4] <= DynamicIllumination4Indicators:inst2.segment[4]
 segment[5] <= DynamicIllumination4Indicators:inst2.segment[5]
 segment[6] <= DynamicIllumination4Indicators:inst2.segment[6]
+rx => DigitalFilter8:inst5.input
 
 
-|VHDLstart03|ReceiverUART:inst6
-clk => rxPrev.CLK
+|VHDLstart03|TransmitterUART:inst15
+clk => updatePrev.CLK
 clk => ledBuf.CLK
-clk => data[0]~reg0.CLK
-clk => data[1]~reg0.CLK
-clk => data[2]~reg0.CLK
-clk => data[3]~reg0.CLK
-clk => data[4]~reg0.CLK
-clk => data[5]~reg0.CLK
-clk => data[6]~reg0.CLK
-clk => data[7]~reg0.CLK
 clk => bitPosition[0].CLK
 clk => bitPosition[1].CLK
 clk => bitPosition[2].CLK
-clk => dataBuf[0].CLK
-clk => dataBuf[1].CLK
-clk => dataBuf[2].CLK
-clk => dataBuf[3].CLK
-clk => dataBuf[4].CLK
-clk => dataBuf[5].CLK
-clk => dataBuf[6].CLK
-clk => dataBuf[7].CLK
-clk => update~reg0.CLK
+clk => tx~reg0.CLK
 clk => count[0].CLK
 clk => count[1].CLK
 clk => count[2].CLK
@@ -54,48 +51,133 @@ clk => count[9].CLK
 clk => count[10].CLK
 clk => count[11].CLK
 clk => count[12].CLK
-clk => stateUART~6.DATAIN
-rx => dataBuf.DATAB
-rx => dataBuf.DATAB
-rx => dataBuf.DATAB
-rx => dataBuf.DATAB
-rx => dataBuf.DATAB
-rx => dataBuf.DATAB
-rx => dataBuf.DATAB
-rx => dataBuf.DATAB
-rx => rxPrev.DATAIN
-rx => count.OUTPUTSELECT
-rx => count.OUTPUTSELECT
-rx => count.OUTPUTSELECT
-rx => count.OUTPUTSELECT
-rx => count.OUTPUTSELECT
-rx => count.OUTPUTSELECT
-rx => count.OUTPUTSELECT
-rx => count.OUTPUTSELECT
-rx => count.OUTPUTSELECT
-rx => count.OUTPUTSELECT
-rx => count.OUTPUTSELECT
-rx => count.OUTPUTSELECT
-rx => count.OUTPUTSELECT
-rx => stateUART.OUTPUTSELECT
-rx => stateUART.OUTPUTSELECT
-rx => stateUART.OUTPUTSELECT
-rx => stateUART.OUTPUTSELECT
-rx => stateUART.OUTPUTSELECT
-rx => process_0.IN1
-data[0] <= data[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data[1] <= data[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data[2] <= data[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data[3] <= data[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data[4] <= data[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data[5] <= data[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data[6] <= data[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data[7] <= data[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-update <= update~reg0.DB_MAX_OUTPUT_PORT_TYPE
+clk => dataBuf[0].CLK
+clk => dataBuf[1].CLK
+clk => dataBuf[2].CLK
+clk => dataBuf[3].CLK
+clk => dataBuf[4].CLK
+clk => dataBuf[5].CLK
+clk => dataBuf[6].CLK
+clk => dataBuf[7].CLK
+clk => stateUART~5.DATAIN
+tx <= tx~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[0] => dataBuf.DATAB
+data[1] => dataBuf.DATAB
+data[2] => dataBuf.DATAB
+data[3] => dataBuf.DATAB
+data[4] => dataBuf.DATAB
+data[5] => dataBuf.DATAB
+data[6] => dataBuf.DATAB
+data[7] => dataBuf.DATAB
+update => process_0.IN1
+update => updatePrev.DATAIN
 led <= ledBuf.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|VHDLstart03|DigitalFilter8:inst5
+|VHDLstart03|Setter:inst14
+clk => key4Prev.CLK
+clk => key3Prev.CLK
+clk => dataBuf1[0].CLK
+clk => dataBuf1[1].CLK
+clk => dataBuf1[2].CLK
+clk => dataBuf1[3].CLK
+clk => key2Prev.CLK
+clk => key1Prev.CLK
+clk => dataBuf0[0].CLK
+clk => dataBuf0[1].CLK
+clk => dataBuf0[2].CLK
+clk => dataBuf0[3].CLK
+clk => resetPrev.CLK
+clk => countUpdate[0].CLK
+clk => countUpdate[1].CLK
+clk => countUpdate[2].CLK
+clk => dataBuf[0].CLK
+clk => dataBuf[1].CLK
+clk => dataBuf[2].CLK
+clk => dataBuf[3].CLK
+clk => dataBuf[4].CLK
+clk => dataBuf[5].CLK
+clk => dataBuf[6].CLK
+clk => dataBuf[7].CLK
+clk => updateBuf.CLK
+key1 => key1Prev.DATAIN
+key1 => process_1.IN1
+key2 => key2Prev.DATAIN
+key2 => process_1.IN1
+key3 => key3Prev.DATAIN
+key3 => process_1.IN1
+key4 => key4Prev.DATAIN
+key4 => process_1.IN1
+reset => resetPrev.DATAIN
+reset => process_0.IN1
+data[0] <= dataBuf[0].DB_MAX_OUTPUT_PORT_TYPE
+data[1] <= dataBuf[1].DB_MAX_OUTPUT_PORT_TYPE
+data[2] <= dataBuf[2].DB_MAX_OUTPUT_PORT_TYPE
+data[3] <= dataBuf[3].DB_MAX_OUTPUT_PORT_TYPE
+data[4] <= dataBuf[4].DB_MAX_OUTPUT_PORT_TYPE
+data[5] <= dataBuf[5].DB_MAX_OUTPUT_PORT_TYPE
+data[6] <= dataBuf[6].DB_MAX_OUTPUT_PORT_TYPE
+data[7] <= dataBuf[7].DB_MAX_OUTPUT_PORT_TYPE
+update <= updateBuf.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|VHDLstart03|DigitalFilter8:inst7
+clk => output~reg0.CLK
+clk => count[0].CLK
+clk => count[1].CLK
+clk => count[2].CLK
+clk => latch.CLK
+input => count.OUTPUTSELECT
+input => count.OUTPUTSELECT
+input => count.OUTPUTSELECT
+input => output.OUTPUTSELECT
+input => latch.DATAIN
+output <= output~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|VHDLstart03|DigitalFilter8:inst8
+clk => output~reg0.CLK
+clk => count[0].CLK
+clk => count[1].CLK
+clk => count[2].CLK
+clk => latch.CLK
+input => count.OUTPUTSELECT
+input => count.OUTPUTSELECT
+input => count.OUTPUTSELECT
+input => output.OUTPUTSELECT
+input => latch.DATAIN
+output <= output~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|VHDLstart03|DigitalFilter8:inst9
+clk => output~reg0.CLK
+clk => count[0].CLK
+clk => count[1].CLK
+clk => count[2].CLK
+clk => latch.CLK
+input => count.OUTPUTSELECT
+input => count.OUTPUTSELECT
+input => count.OUTPUTSELECT
+input => output.OUTPUTSELECT
+input => latch.DATAIN
+output <= output~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|VHDLstart03|DigitalFilter8:inst12
+clk => output~reg0.CLK
+clk => count[0].CLK
+clk => count[1].CLK
+clk => count[2].CLK
+clk => latch.CLK
+input => count.OUTPUTSELECT
+input => count.OUTPUTSELECT
+input => count.OUTPUTSELECT
+input => output.OUTPUTSELECT
+input => latch.DATAIN
+output <= output~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|VHDLstart03|DigitalFilter8:inst13
 clk => output~reg0.CLK
 clk => count[0].CLK
 clk => count[1].CLK
@@ -213,5 +295,96 @@ indicator1[3] <= Mux10.DB_MAX_OUTPUT_PORT_TYPE
 indicator1[4] <= Mux9.DB_MAX_OUTPUT_PORT_TYPE
 indicator1[5] <= Mux8.DB_MAX_OUTPUT_PORT_TYPE
 indicator1[6] <= Mux7.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|VHDLstart03|DigitalFilter8:inst5
+clk => output~reg0.CLK
+clk => count[0].CLK
+clk => count[1].CLK
+clk => count[2].CLK
+clk => latch.CLK
+input => count.OUTPUTSELECT
+input => count.OUTPUTSELECT
+input => count.OUTPUTSELECT
+input => output.OUTPUTSELECT
+input => latch.DATAIN
+output <= output~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|VHDLstart03|ReceiverUART:inst6
+clk => rxPrev.CLK
+clk => ledBuf.CLK
+clk => data[0]~reg0.CLK
+clk => data[1]~reg0.CLK
+clk => data[2]~reg0.CLK
+clk => data[3]~reg0.CLK
+clk => data[4]~reg0.CLK
+clk => data[5]~reg0.CLK
+clk => data[6]~reg0.CLK
+clk => data[7]~reg0.CLK
+clk => bitPosition[0].CLK
+clk => bitPosition[1].CLK
+clk => bitPosition[2].CLK
+clk => dataBuf[0].CLK
+clk => dataBuf[1].CLK
+clk => dataBuf[2].CLK
+clk => dataBuf[3].CLK
+clk => dataBuf[4].CLK
+clk => dataBuf[5].CLK
+clk => dataBuf[6].CLK
+clk => dataBuf[7].CLK
+clk => update~reg0.CLK
+clk => count[0].CLK
+clk => count[1].CLK
+clk => count[2].CLK
+clk => count[3].CLK
+clk => count[4].CLK
+clk => count[5].CLK
+clk => count[6].CLK
+clk => count[7].CLK
+clk => count[8].CLK
+clk => count[9].CLK
+clk => count[10].CLK
+clk => count[11].CLK
+clk => count[12].CLK
+clk => stateUART~6.DATAIN
+rx => dataBuf.DATAB
+rx => dataBuf.DATAB
+rx => dataBuf.DATAB
+rx => dataBuf.DATAB
+rx => dataBuf.DATAB
+rx => dataBuf.DATAB
+rx => dataBuf.DATAB
+rx => dataBuf.DATAB
+rx => rxPrev.DATAIN
+rx => count.OUTPUTSELECT
+rx => count.OUTPUTSELECT
+rx => count.OUTPUTSELECT
+rx => count.OUTPUTSELECT
+rx => count.OUTPUTSELECT
+rx => count.OUTPUTSELECT
+rx => count.OUTPUTSELECT
+rx => count.OUTPUTSELECT
+rx => count.OUTPUTSELECT
+rx => count.OUTPUTSELECT
+rx => count.OUTPUTSELECT
+rx => count.OUTPUTSELECT
+rx => count.OUTPUTSELECT
+rx => stateUART.OUTPUTSELECT
+rx => stateUART.OUTPUTSELECT
+rx => stateUART.OUTPUTSELECT
+rx => stateUART.OUTPUTSELECT
+rx => stateUART.OUTPUTSELECT
+rx => process_0.IN1
+data[0] <= data[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[1] <= data[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[2] <= data[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[3] <= data[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[4] <= data[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[5] <= data[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[6] <= data[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[7] <= data[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+update <= update~reg0.DB_MAX_OUTPUT_PORT_TYPE
+led <= ledBuf.DB_MAX_OUTPUT_PORT_TYPE
 
 
