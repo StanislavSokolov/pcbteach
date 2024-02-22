@@ -33,7 +33,7 @@ begin
 	process(dataBuf)
 	begin
 		indicator0Buf <= dataBuf rem 16;
-		indicator0Buf <= ((dataBuf - (dataBuf rem 16))/16);
+		indicator1Buf <= (dataBuf - (dataBuf rem 16))/16;
 	end process;
 	
 	process(indicator0Buf)
@@ -49,13 +49,13 @@ begin
 			when 7 => indicator0 <= b"1111000";
 			when 8 => indicator0 <= b"0000000";
 			when 9 => indicator0 <= b"0010000";
-			when 10 => indicator0 <= b"0000100";
-			when 11 => indicator0 <= b"0000100";
-			when 12 => indicator0 <= b"0000100";
-			when 13 => indicator0 <= b"0000100";
-			when 14 => indicator0 <= b"0000100";
-			when 15 => indicator0 <= b"0000100";
-			when others => indicator0 <= b"0000001";
+			when 10 => indicator0 <= b"0001000";
+			when 11 => indicator0 <= b"0000011";
+			when 12 => indicator0 <= b"1000110";
+			when 13 => indicator0 <= b"0100001";
+			when 14 => indicator0 <= b"0000110";
+			when 15 => indicator0 <= b"0001110";
+			when others => indicator0 <= b"0111111";
 		end case;
 	end process;
 
@@ -72,13 +72,13 @@ begin
 			when 7 => indicator1 <= b"1111000";
 			when 8 => indicator1 <= b"0000000";
 			when 9 => indicator1 <= b"0010000";
-			when 10 => indicator1 <= b"0000100";
-			when 11 => indicator1 <= b"0000100";
-			when 12 => indicator1 <= b"0000100";
-			when 13 => indicator1 <= b"0000100";
-			when 14 => indicator1 <= b"0000100";
-			when 15 => indicator1 <= b"0000100";
-			when others => indicator1 <= b"0000001";
+			when 10 => indicator1 <= b"0001000";
+			when 11 => indicator1 <= b"0000011";
+			when 12 => indicator1 <= b"1000110";
+			when 13 => indicator1 <= b"0100001";
+			when 14 => indicator1 <= b"0000110";
+			when 15 => indicator1 <= b"0001110";
+			when others => indicator1 <= b"0111111";
 		end case;
 	end process;	
 end Behavioral;

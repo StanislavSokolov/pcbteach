@@ -3,111 +3,111 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'clk'
-Slack : -2.890
-TNS   : -45.207
+Slack : -3.308
+TNS   : -159.701
 
 Type  : Slow 1200mV 85C Model Setup 'DynamicIllumination4Indicators:inst2|clkCounter[1]'
-Slack : -0.782
-TNS   : -1.533
+Slack : -2.407
+TNS   : -13.603
 
 Type  : Slow 1200mV 85C Model Setup 'Count250000:inst|clkOutBuf'
-Slack : -0.412
-TNS   : -0.412
+Slack : -0.653
+TNS   : -0.653
 
 Type  : Slow 1200mV 85C Model Hold 'Count250000:inst|clkOutBuf'
-Slack : -0.258
-TNS   : -0.258
-
-Type  : Slow 1200mV 85C Model Hold 'clk'
-Slack : -0.094
-TNS   : -0.094
+Slack : -0.327
+TNS   : -0.327
 
 Type  : Slow 1200mV 85C Model Hold 'DynamicIllumination4Indicators:inst2|clkCounter[1]'
-Slack : 0.267
-TNS   : 0.000
+Slack : -0.156
+TNS   : -0.273
+
+Type  : Slow 1200mV 85C Model Hold 'clk'
+Slack : -0.142
+TNS   : -0.142
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -29.766
+TNS   : -110.064
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Count250000:inst|clkOutBuf'
 Slack : -1.487
 TNS   : -2.974
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'DynamicIllumination4Indicators:inst2|clkCounter[1]'
-Slack : 0.443
+Slack : 0.465
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Setup 'clk'
-Slack : -2.659
-TNS   : -41.428
+Slack : -3.016
+TNS   : -144.062
 
 Type  : Slow 1200mV 0C Model Setup 'DynamicIllumination4Indicators:inst2|clkCounter[1]'
-Slack : -0.585
-TNS   : -1.139
+Slack : -2.115
+TNS   : -11.661
 
 Type  : Slow 1200mV 0C Model Setup 'Count250000:inst|clkOutBuf'
-Slack : -0.299
-TNS   : -0.299
-
-Type  : Slow 1200mV 0C Model Hold 'Count250000:inst|clkOutBuf'
-Slack : -0.144
-TNS   : -0.144
-
-Type  : Slow 1200mV 0C Model Hold 'clk'
-Slack : -0.028
-TNS   : -0.028
+Slack : -0.514
+TNS   : -0.514
 
 Type  : Slow 1200mV 0C Model Hold 'DynamicIllumination4Indicators:inst2|clkCounter[1]'
-Slack : 0.199
-TNS   : 0.000
+Slack : -0.219
+TNS   : -0.661
+
+Type  : Slow 1200mV 0C Model Hold 'Count250000:inst|clkOutBuf'
+Slack : -0.191
+TNS   : -0.191
+
+Type  : Slow 1200mV 0C Model Hold 'clk'
+Slack : -0.100
+TNS   : -0.100
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -29.766
+TNS   : -110.064
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Count250000:inst|clkOutBuf'
 Slack : -1.487
 TNS   : -2.974
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'DynamicIllumination4Indicators:inst2|clkCounter[1]'
-Slack : 0.338
+Slack : 0.275
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Setup 'clk'
-Slack : -0.639
-TNS   : -8.593
+Slack : -0.794
+TNS   : -29.705
 
 Type  : Fast 1200mV 0C Model Setup 'DynamicIllumination4Indicators:inst2|clkCounter[1]'
-Slack : 0.188
-TNS   : 0.000
+Slack : -0.526
+TNS   : -1.158
 
 Type  : Fast 1200mV 0C Model Setup 'Count250000:inst|clkOutBuf'
-Slack : 0.317
+Slack : 0.302
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'Count250000:inst|clkOutBuf'
-Slack : -0.225
-TNS   : -0.225
+Slack : -0.294
+TNS   : -0.294
 
 Type  : Fast 1200mV 0C Model Hold 'clk'
-Slack : -0.106
-TNS   : -0.106
+Slack : -0.178
+TNS   : -0.178
 
 Type  : Fast 1200mV 0C Model Hold 'DynamicIllumination4Indicators:inst2|clkCounter[1]'
-Slack : 0.135
-TNS   : 0.000
+Slack : -0.104
+TNS   : -0.376
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -26.466
+TNS   : -96.788
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Count250000:inst|clkOutBuf'
 Slack : -1.000
 TNS   : -2.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'DynamicIllumination4Indicators:inst2|clkCounter[1]'
-Slack : 0.398
+Slack : 0.322
 TNS   : 0.000
 
 ------------------------------------------------------------

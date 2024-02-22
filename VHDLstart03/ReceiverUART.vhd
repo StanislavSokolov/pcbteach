@@ -13,7 +13,7 @@ Port (
 end ReceiverUART;
 
 architecture Behavioral of ReceiverUART is
-	signal count : natural range 0 to 52000 := 0; -- 9600 bod (104 msec)
+	signal count : natural range 0 to 5200 := 0; -- 9600 bod (104 msec)
 	signal bitPosition : natural range 0 to 7 := 0;
 	signal rxPrev : std_logic := '1';
 	signal ledBuf : std_logic := '0';
@@ -35,20 +35,21 @@ begin
 						stateUART <= Starting;
 						count <= 0;
 					end if;
+					update <= '0';
 				when Starting =>
 					if rx = '0' then
-						if count < 52000/2 then
+						if count < 5200/2 then
 							count <= count + 1;
 						else
 							count <= 0;
-							stateUART <= Waiting;
+							stateUART <= ReceivingData;
 						end if;
 					else 
 						stateUART <= Waiting;
 						count <= 0;
 					end if;	
 				when ReceivingData =>
-					if count < 52000 then
+					if count < 5200 then
 						count <= count + 1;
 					else
 						count <= 0;
@@ -69,6 +70,7 @@ begin
 					stateUART <= Waiting;
 				when others =>
 			end case;
+			rxPrev <= rx;
 		end if;	
 	end process;
 	
