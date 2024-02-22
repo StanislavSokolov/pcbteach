@@ -200,7 +200,6 @@ clkIn => clkCounter[13].CLK
 clkIn => clkCounter[14].CLK
 clkIn => clkCounter[15].CLK
 clkIn => clkCounter[16].CLK
-clkIn => clkCounter[17].CLK
 clkOut <= clkOutBuf.DB_MAX_OUTPUT_PORT_TYPE
 
 
@@ -210,16 +209,20 @@ clk => dataBuf[0].CLK
 clk => dataBuf[1].CLK
 clk => dataBuf[2].CLK
 clk => dataBuf[3].CLK
+clk => dataBuf[4].CLK
+clk => dataBuf[5].CLK
+clk => dataBuf[6].CLK
+clk => dataBuf[7].CLK
 update => process_0.IN1
 update => updatePrev.DATAIN
 data[0] => dataBuf[0].DATAIN
 data[1] => dataBuf[1].DATAIN
 data[2] => dataBuf[2].DATAIN
 data[3] => dataBuf[3].DATAIN
-data[4] => ~NO_FANOUT~
-data[5] => ~NO_FANOUT~
-data[6] => ~NO_FANOUT~
-data[7] => ~NO_FANOUT~
+data[4] => dataBuf[4].DATAIN
+data[5] => dataBuf[5].DATAIN
+data[6] => dataBuf[6].DATAIN
+data[7] => dataBuf[7].DATAIN
 indicator0[0] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
 indicator0[1] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
 indicator0[2] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
@@ -227,12 +230,12 @@ indicator0[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
 indicator0[4] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
 indicator0[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
 indicator0[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
-indicator1[0] <= <VCC>
+indicator1[0] <= <GND>
 indicator1[1] <= <GND>
 indicator1[2] <= <GND>
 indicator1[3] <= <GND>
 indicator1[4] <= <GND>
 indicator1[5] <= <GND>
-indicator1[6] <= <GND>
+indicator1[6] <= <VCC>
 
 

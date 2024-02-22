@@ -10,14 +10,14 @@ Port (
 end Count250000;
 
 architecture Behavioral of Count250000 is
-	signal clkCounter : natural range 0 to 250000 := 0;
+	signal clkCounter : natural range 0 to 100000 := 0;
 	signal clkOutBuf : std_logic := '0';
 begin	
 	
 	process(clkIn)
 	begin
 		if rising_edge(clkIn) then
-			if clkCounter < 250000 then
+			if clkCounter < 100000 then
 				clkCounter <= clkCounter + 1;
 			else
 				clkCounter <= 0;
