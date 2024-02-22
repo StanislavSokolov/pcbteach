@@ -1,0 +1,8 @@
+
+State Machine - |VHDLstart03|ReceiverUART:inst6|stateUART
+Name stateUART.Updating stateUART.Stopping stateUART.ReceivingData stateUART.Starting stateUART.Waiting 
+stateUART.Waiting 0 0 0 0 0 
+stateUART.Starting 0 0 0 1 1 
+stateUART.ReceivingData 0 0 1 0 1 
+stateUART.Stopping 0 1 0 0 1 
+stateUART.Updating 1 0 0 0 1 

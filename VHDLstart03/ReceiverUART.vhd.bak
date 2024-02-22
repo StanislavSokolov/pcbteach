@@ -1,0 +1,31 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity ReceiverUART is
+
+Port ( 
+	clkIn : in STD_LOGIC;
+	clkOut : out STD_LOGIC
+	);
+end ReceiverUART;
+
+architecture Behavioral of ReceiverUART is
+	signal clkCounter : natural range 0 to 250000 := 0;
+	signal clkOutBuf : std_logic := '0';
+begin	
+	
+	process(clkIn)
+	begin
+		if rising_edge(clkIn) then
+			if clkCounter < 250000 then
+				clkCounter <= clkCounter + 1;
+			else
+				clkCounter <= 0;
+				clkOutBuf <= not clkOutBuf;		
+			end if;
+		end if;	
+	end process;
+	
+	clkOut <= clkOutBuf;
+	
+end Behavioral;

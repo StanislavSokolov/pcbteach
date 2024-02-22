@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus II 64-Bit"
 -- VERSION "Version 13.1.0 Build 162 10/23/2013 SJ Full Version"
 
--- DATE "02/21/2024 16:52:10"
+-- DATE "02/22/2024 11:23:23"
 
 -- 
 -- Device: Altera EP4CE10E22C8 Package TQFP144
@@ -35,25 +35,29 @@ USE IEEE.STD_LOGIC_1164.ALL;
 
 ENTITY 	VHDLstart03 IS
     PORT (
-	indicator : OUT std_logic_vector(3 DOWNTO 0);
+	led : OUT std_logic;
 	clk : IN std_logic;
+	rx : IN std_logic;
+	indicator : OUT std_logic_vector(3 DOWNTO 0);
 	segment : OUT std_logic_vector(6 DOWNTO 0)
 	);
 END VHDLstart03;
 
 -- Design Ports Information
--- indicator[3]	=>  Location: PIN_52,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- indicator[2]	=>  Location: PIN_68,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- indicator[1]	=>  Location: PIN_28,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- indicator[0]	=>  Location: PIN_30,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- segment[6]	=>  Location: PIN_64,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- segment[5]	=>  Location: PIN_42,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- segment[4]	=>  Location: PIN_71,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- segment[3]	=>  Location: PIN_54,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- segment[2]	=>  Location: PIN_142,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- segment[1]	=>  Location: PIN_99,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- segment[0]	=>  Location: PIN_133,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- clk	=>  Location: PIN_23,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- led	=>  Location: PIN_84,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 8mA
+-- indicator[3]	=>  Location: PIN_137,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 8mA
+-- indicator[2]	=>  Location: PIN_136,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 8mA
+-- indicator[1]	=>  Location: PIN_135,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 8mA
+-- indicator[0]	=>  Location: PIN_133,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 8mA
+-- segment[6]	=>  Location: PIN_124,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 8mA
+-- segment[5]	=>  Location: PIN_126,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 8mA
+-- segment[4]	=>  Location: PIN_132,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 8mA
+-- segment[3]	=>  Location: PIN_129,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 8mA
+-- segment[2]	=>  Location: PIN_125,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 8mA
+-- segment[1]	=>  Location: PIN_121,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 8mA
+-- segment[0]	=>  Location: PIN_128,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 8mA
+-- rx	=>  Location: PIN_115,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- clk	=>  Location: PIN_23,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
 
 
 ARCHITECTURE structure OF VHDLstart03 IS
@@ -66,12 +70,16 @@ SIGNAL devpor : std_logic := '1';
 SIGNAL ww_devoe : std_logic;
 SIGNAL ww_devclrn : std_logic;
 SIGNAL ww_devpor : std_logic;
-SIGNAL ww_indicator : std_logic_vector(3 DOWNTO 0);
+SIGNAL ww_led : std_logic;
 SIGNAL ww_clk : std_logic;
+SIGNAL ww_rx : std_logic;
+SIGNAL ww_indicator : std_logic_vector(3 DOWNTO 0);
 SIGNAL ww_segment : std_logic_vector(6 DOWNTO 0);
-SIGNAL \inst|clkOutBuf~clkctrl_INCLK_bus\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \inst2|clkCounter[1]~clkctrl_INCLK_bus\ : std_logic_vector(3 DOWNTO 0);
+SIGNAL \inst|clkOutBuf~clkctrl_INCLK_bus\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \clk~inputclkctrl_INCLK_bus\ : std_logic_vector(3 DOWNTO 0);
+SIGNAL \rx~input_o\ : std_logic;
+SIGNAL \led~output_o\ : std_logic;
 SIGNAL \indicator[3]~output_o\ : std_logic;
 SIGNAL \indicator[2]~output_o\ : std_logic;
 SIGNAL \indicator[1]~output_o\ : std_logic;
@@ -107,7 +115,6 @@ SIGNAL \inst|clkCounter[6]~31\ : std_logic;
 SIGNAL \inst|clkCounter[7]~32_combout\ : std_logic;
 SIGNAL \inst|clkCounter[7]~33\ : std_logic;
 SIGNAL \inst|clkCounter[8]~34_combout\ : std_logic;
-SIGNAL \inst|clkCounter[8]~feeder_combout\ : std_logic;
 SIGNAL \inst|clkCounter[8]~35\ : std_logic;
 SIGNAL \inst|clkCounter[9]~36_combout\ : std_logic;
 SIGNAL \inst|clkCounter[9]~37\ : std_logic;
@@ -134,26 +141,46 @@ SIGNAL \inst2|clkCounter[0]~1_combout\ : std_logic;
 SIGNAL \inst2|clkCounter[1]~0_combout\ : std_logic;
 SIGNAL \inst2|clkCounter[1]~feeder_combout\ : std_logic;
 SIGNAL \inst2|clkCounter[1]~clkctrl_outclk\ : std_logic;
+SIGNAL \inst1|updatePrev~feeder_combout\ : std_logic;
+SIGNAL \inst1|updatePrev~q\ : std_logic;
+SIGNAL \inst1|dataBuf[3]~0_combout\ : std_logic;
+SIGNAL \inst2|Mux8~0_combout\ : std_logic;
+SIGNAL \inst2|segment\ : std_logic_vector(6 DOWNTO 0);
 SIGNAL \inst2|indicator\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \inst2|clkCounter\ : std_logic_vector(1 DOWNTO 0);
 SIGNAL \inst|clkCounter\ : std_logic_vector(17 DOWNTO 0);
+SIGNAL \inst1|dataBuf\ : std_logic_vector(3 DOWNTO 0);
 
 BEGIN
 
-indicator <= ww_indicator;
+led <= ww_led;
 ww_clk <= clk;
+ww_rx <= rx;
+indicator <= ww_indicator;
 segment <= ww_segment;
 ww_devoe <= devoe;
 ww_devclrn <= devclrn;
 ww_devpor <= devpor;
 
-\inst|clkOutBuf~clkctrl_INCLK_bus\ <= (vcc & vcc & vcc & \inst|clkOutBuf~q\);
-
 \inst2|clkCounter[1]~clkctrl_INCLK_bus\ <= (vcc & vcc & vcc & \inst2|clkCounter\(1));
+
+\inst|clkOutBuf~clkctrl_INCLK_bus\ <= (vcc & vcc & vcc & \inst|clkOutBuf~q\);
 
 \clk~inputclkctrl_INCLK_bus\ <= (vcc & vcc & vcc & \clk~input_o\);
 
--- Location: IOOBUF_X16_Y0_N9
+-- Location: IOOBUF_X34_Y9_N16
+\led~output\ : cycloneive_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false")
+-- pragma translate_on
+PORT MAP (
+	i => GND,
+	devoe => ww_devoe,
+	o => \led~output_o\);
+
+-- Location: IOOBUF_X7_Y24_N2
 \indicator[3]~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -165,7 +192,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \indicator[3]~output_o\);
 
--- Location: IOOBUF_X30_Y0_N9
+-- Location: IOOBUF_X9_Y24_N9
 \indicator[2]~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -177,7 +204,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \indicator[2]~output_o\);
 
--- Location: IOOBUF_X0_Y9_N9
+-- Location: IOOBUF_X11_Y24_N16
 \indicator[1]~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -189,7 +216,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \indicator[1]~output_o\);
 
--- Location: IOOBUF_X0_Y8_N16
+-- Location: IOOBUF_X13_Y24_N23
 \indicator[0]~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -201,7 +228,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \indicator[0]~output_o\);
 
--- Location: IOOBUF_X25_Y0_N2
+-- Location: IOOBUF_X18_Y24_N16
 \segment[6]~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -213,7 +240,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \segment[6]~output_o\);
 
--- Location: IOOBUF_X3_Y0_N2
+-- Location: IOOBUF_X16_Y24_N2
 \segment[5]~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -225,7 +252,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \segment[5]~output_o\);
 
--- Location: IOOBUF_X32_Y0_N16
+-- Location: IOOBUF_X13_Y24_N16
 \segment[4]~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -237,7 +264,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \segment[4]~output_o\);
 
--- Location: IOOBUF_X18_Y0_N23
+-- Location: IOOBUF_X16_Y24_N23
 \segment[3]~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -249,7 +276,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \segment[3]~output_o\);
 
--- Location: IOOBUF_X3_Y24_N23
+-- Location: IOOBUF_X18_Y24_N23
 \segment[2]~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -257,11 +284,11 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => GND,
+	i => \inst2|segment\(2),
 	devoe => ww_devoe,
 	o => \segment[2]~output_o\);
 
--- Location: IOOBUF_X34_Y17_N16
+-- Location: IOOBUF_X23_Y24_N16
 \segment[1]~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -273,7 +300,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \segment[1]~output_o\);
 
--- Location: IOOBUF_X13_Y24_N23
+-- Location: IOOBUF_X16_Y24_N16
 \segment[0]~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -281,7 +308,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => GND,
+	i => \inst2|segment\(0),
 	devoe => ww_devoe,
 	o => \segment[0]~output_o\);
 
@@ -326,7 +353,7 @@ PORT MAP (
 	combout => \inst|clkCounter[0]~18_combout\,
 	cout => \inst|clkCounter[0]~19\);
 
--- Location: LCCOMB_X33_Y12_N22
+-- Location: LCCOMB_X33_Y12_N30
 \inst|LessThan0~0\ : cycloneive_lcell_comb
 -- Equation(s):
 -- \inst|LessThan0~0_combout\ = (((!\inst|clkCounter\(13) & !\inst|clkCounter\(12))) # (!\inst|clkCounter\(14))) # (!\inst|clkCounter\(15))
@@ -343,10 +370,10 @@ PORT MAP (
 	datad => \inst|clkCounter\(14),
 	combout => \inst|LessThan0~0_combout\);
 
--- Location: LCCOMB_X33_Y12_N26
+-- Location: LCCOMB_X33_Y12_N22
 \inst|LessThan0~2\ : cycloneive_lcell_comb
 -- Equation(s):
--- \inst|LessThan0~2_combout\ = (!\inst|clkCounter\(8) & (!\inst|clkCounter\(10) & (!\inst|clkCounter\(11) & !\inst|clkCounter\(9))))
+-- \inst|LessThan0~2_combout\ = (!\inst|clkCounter\(11) & (!\inst|clkCounter\(10) & (!\inst|clkCounter\(8) & !\inst|clkCounter\(9))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -354,9 +381,9 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \inst|clkCounter\(8),
+	dataa => \inst|clkCounter\(11),
 	datab => \inst|clkCounter\(10),
-	datac => \inst|clkCounter\(11),
+	datac => \inst|clkCounter\(8),
 	datad => \inst|clkCounter\(9),
 	combout => \inst|LessThan0~2_combout\);
 
@@ -394,7 +421,7 @@ PORT MAP (
 	datad => \inst|LessThan0~1_combout\,
 	combout => \inst|LessThan0~3_combout\);
 
--- Location: LCCOMB_X33_Y12_N28
+-- Location: LCCOMB_X33_Y12_N26
 \inst|LessThan0~4\ : cycloneive_lcell_comb
 -- Equation(s):
 -- \inst|LessThan0~4_combout\ = (\inst|clkCounter\(17) & (\inst|clkCounter\(16) & !\inst|LessThan0~3_combout\))
@@ -664,31 +691,17 @@ PORT MAP (
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1100001100001100",
+	lut_mask => "1010010100001010",
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	datab => \inst|clkCounter\(8),
+	dataa => \inst|clkCounter\(8),
 	datad => VCC,
 	cin => \inst|clkCounter[7]~33\,
 	combout => \inst|clkCounter[8]~34_combout\,
 	cout => \inst|clkCounter[8]~35\);
 
--- Location: LCCOMB_X33_Y12_N30
-\inst|clkCounter[8]~feeder\ : cycloneive_lcell_comb
--- Equation(s):
--- \inst|clkCounter[8]~feeder_combout\ = \inst|clkCounter[8]~34_combout\
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111000011110000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datac => \inst|clkCounter[8]~34_combout\,
-	combout => \inst|clkCounter[8]~feeder_combout\);
-
--- Location: FF_X33_Y12_N31
+-- Location: FF_X33_Y13_N31
 \inst|clkCounter[8]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -697,7 +710,7 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
-	d => \inst|clkCounter[8]~feeder_combout\,
+	d => \inst|clkCounter[8]~34_combout\,
 	sclr => \inst|LessThan0~4_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
@@ -1042,7 +1055,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \inst|clkOutBuf~q\);
 
--- Location: CLKCTRL_G7
+-- Location: CLKCTRL_G6
 \inst|clkOutBuf~clkctrl\ : cycloneive_clkctrl
 -- pragma translate_off
 GENERIC MAP (
@@ -1055,7 +1068,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	outclk => \inst|clkOutBuf~clkctrl_outclk\);
 
--- Location: LCCOMB_X1_Y11_N24
+-- Location: LCCOMB_X18_Y23_N24
 \inst2|clkCounter[0]~1\ : cycloneive_lcell_comb
 -- Equation(s):
 -- \inst2|clkCounter[0]~1_combout\ = !\inst2|clkCounter\(0)
@@ -1069,7 +1082,7 @@ PORT MAP (
 	datac => \inst2|clkCounter\(0),
 	combout => \inst2|clkCounter[0]~1_combout\);
 
--- Location: FF_X1_Y11_N25
+-- Location: FF_X18_Y23_N25
 \inst2|clkCounter[0]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1083,22 +1096,22 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \inst2|clkCounter\(0));
 
--- Location: LCCOMB_X1_Y11_N28
+-- Location: LCCOMB_X18_Y23_N10
 \inst2|clkCounter[1]~0\ : cycloneive_lcell_comb
 -- Equation(s):
 -- \inst2|clkCounter[1]~0_combout\ = \inst2|clkCounter\(1) $ (\inst2|clkCounter\(0))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0000111111110000",
+	lut_mask => "0101010110101010",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => \inst2|clkCounter\(1),
+	dataa => \inst2|clkCounter\(1),
 	datad => \inst2|clkCounter\(0),
 	combout => \inst2|clkCounter[1]~0_combout\);
 
--- Location: LCCOMB_X1_Y11_N16
+-- Location: LCCOMB_X18_Y23_N20
 \inst2|clkCounter[1]~feeder\ : cycloneive_lcell_comb
 -- Equation(s):
 -- \inst2|clkCounter[1]~feeder_combout\ = \inst2|clkCounter[1]~0_combout\
@@ -1112,7 +1125,7 @@ PORT MAP (
 	datad => \inst2|clkCounter[1]~0_combout\,
 	combout => \inst2|clkCounter[1]~feeder_combout\);
 
--- Location: FF_X1_Y11_N17
+-- Location: FF_X18_Y23_N21
 \inst2|clkCounter[1]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1126,7 +1139,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \inst2|clkCounter\(1));
 
--- Location: CLKCTRL_G0
+-- Location: CLKCTRL_G8
 \inst2|clkCounter[1]~clkctrl\ : cycloneive_clkctrl
 -- pragma translate_off
 GENERIC MAP (
@@ -1139,37 +1152,153 @@ PORT MAP (
 	devpor => ww_devpor,
 	outclk => \inst2|clkCounter[1]~clkctrl_outclk\);
 
--- Location: LCCOMB_X1_Y11_N30
+-- Location: LCCOMB_X18_Y23_N14
 \inst2|indicator[1]\ : cycloneive_lcell_comb
 -- Equation(s):
--- \inst2|indicator\(1) = (GLOBAL(\inst2|clkCounter[1]~clkctrl_outclk\) & (\inst2|indicator\(1))) # (!GLOBAL(\inst2|clkCounter[1]~clkctrl_outclk\) & ((!\inst2|clkCounter\(0))))
+-- \inst2|indicator\(1) = (GLOBAL(\inst2|clkCounter[1]~clkctrl_outclk\) & ((\inst2|indicator\(1)))) # (!GLOBAL(\inst2|clkCounter[1]~clkctrl_outclk\) & (!\inst2|clkCounter\(0)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1010000010101111",
+	lut_mask => "1111000000110011",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \inst2|indicator\(1),
-	datac => \inst2|clkCounter[1]~clkctrl_outclk\,
-	datad => \inst2|clkCounter\(0),
+	datab => \inst2|clkCounter\(0),
+	datac => \inst2|indicator\(1),
+	datad => \inst2|clkCounter[1]~clkctrl_outclk\,
 	combout => \inst2|indicator\(1));
 
--- Location: LCCOMB_X1_Y11_N26
+-- Location: LCCOMB_X18_Y23_N26
 \inst2|indicator[0]\ : cycloneive_lcell_comb
 -- Equation(s):
--- \inst2|indicator\(0) = (GLOBAL(\inst2|clkCounter[1]~clkctrl_outclk\) & (\inst2|indicator\(0))) # (!GLOBAL(\inst2|clkCounter[1]~clkctrl_outclk\) & ((\inst2|clkCounter\(0))))
+-- \inst2|indicator\(0) = (GLOBAL(\inst2|clkCounter[1]~clkctrl_outclk\) & ((\inst2|indicator\(0)))) # (!GLOBAL(\inst2|clkCounter[1]~clkctrl_outclk\) & (\inst2|clkCounter\(0)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1010111110100000",
+	lut_mask => "1111000011001100",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \inst2|indicator\(0),
-	datac => \inst2|clkCounter[1]~clkctrl_outclk\,
-	datad => \inst2|clkCounter\(0),
+	datab => \inst2|clkCounter\(0),
+	datac => \inst2|indicator\(0),
+	datad => \inst2|clkCounter[1]~clkctrl_outclk\,
 	combout => \inst2|indicator\(0));
+
+-- Location: LCCOMB_X18_Y23_N12
+\inst1|updatePrev~feeder\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \inst1|updatePrev~feeder_combout\ = VCC
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111111111111",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	combout => \inst1|updatePrev~feeder_combout\);
+
+-- Location: FF_X18_Y23_N13
+\inst1|updatePrev\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clk~inputclkctrl_outclk\,
+	d => \inst1|updatePrev~feeder_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst1|updatePrev~q\);
+
+-- Location: LCCOMB_X18_Y23_N8
+\inst1|dataBuf[3]~0\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \inst1|dataBuf[3]~0_combout\ = (\inst1|dataBuf\(3)) # (!\inst1|updatePrev~q\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111000011111111",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \inst1|dataBuf\(3),
+	datad => \inst1|updatePrev~q\,
+	combout => \inst1|dataBuf[3]~0_combout\);
+
+-- Location: FF_X18_Y23_N9
+\inst1|dataBuf[3]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clk~inputclkctrl_outclk\,
+	d => \inst1|dataBuf[3]~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst1|dataBuf\(3));
+
+-- Location: LCCOMB_X18_Y23_N30
+\inst2|Mux8~0\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \inst2|Mux8~0_combout\ = (!\inst2|clkCounter\(0) & !\inst1|dataBuf\(3))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000010100000101",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst2|clkCounter\(0),
+	datac => \inst1|dataBuf\(3),
+	combout => \inst2|Mux8~0_combout\);
+
+-- Location: LCCOMB_X18_Y23_N22
+\inst2|segment[2]\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \inst2|segment\(2) = (GLOBAL(\inst2|clkCounter[1]~clkctrl_outclk\) & (\inst2|segment\(2))) # (!GLOBAL(\inst2|clkCounter[1]~clkctrl_outclk\) & ((\inst2|Mux8~0_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010101011110000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst2|segment\(2),
+	datac => \inst2|Mux8~0_combout\,
+	datad => \inst2|clkCounter[1]~clkctrl_outclk\,
+	combout => \inst2|segment\(2));
+
+-- Location: LCCOMB_X18_Y23_N28
+\inst2|segment[0]\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \inst2|segment\(0) = (GLOBAL(\inst2|clkCounter[1]~clkctrl_outclk\) & (\inst2|segment\(0))) # (!GLOBAL(\inst2|clkCounter[1]~clkctrl_outclk\) & ((!\inst2|Mux8~0_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100110000001111",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \inst2|segment\(0),
+	datac => \inst2|Mux8~0_combout\,
+	datad => \inst2|clkCounter[1]~clkctrl_outclk\,
+	combout => \inst2|segment\(0));
+
+-- Location: IOIBUF_X28_Y24_N22
+\rx~input\ : cycloneive_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_rx,
+	o => \rx~input_o\);
+
+ww_led <= \led~output_o\;
 
 ww_indicator(3) <= \indicator[3]~output_o\;
 

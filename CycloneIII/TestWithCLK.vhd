@@ -5,13 +5,13 @@ entity TestWithCLK is
 
 Port ( 
 	clk : in STD_LOGIC;
-	led1 : out STD_LOGIC_VECTOR(4 downto 0) := b"11111"
+	led1 : out STD_LOGIC_VECTOR(4 downto 0) := b"10101"
 	);
 end TestWithCLK;
 
 architecture Behavioral of TestWithCLK is
 	signal counter : natural range 0 to 16666667 := 0;
-	signal ledBuf : STD_LOGIC_VECTOR(4 downto 0) := b"11111";
+	signal ledBuf : STD_LOGIC_VECTOR(4 downto 0) := b"10101";
 begin		
 
 	process(clk)
