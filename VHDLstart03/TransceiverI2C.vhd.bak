@@ -21,13 +21,6 @@ architecture Behavioral of TransceiverI2C is
 	signal ledBuf : std_logic := '0';
 	signal dataBuf : std_logic_vector(7 downto 0) := b"00000000";
 	
-	signal deviceAddress : std_logic_vector(7 downto 0) := b"10010000";
-	signal readBit : std_logic := '1';
-	signal writeBit : std_logic := '0';
-	signal pointerByte : std_logic_vector(7 downto 0) := b"00000000";
-	signal mSByteFromDevice : std_logic_vector(7 downto 0) := b"00000000";
-	signal lSByteFromDevice : std_logic_vector(7 downto 0) := b"00000000";
-	
 	
 	type I2C is (Waiting, Starting, TransmittingData, ReceivingData, Stopping, Updating);
 	signal stateI2C : I2C := Waiting;
