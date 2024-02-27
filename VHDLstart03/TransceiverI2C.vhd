@@ -10,7 +10,8 @@ Port (
 	sda : inout STD_LOGIC;
 	data : out STD_LOGIC_VECTOR(7 downto 0);
 	update : out STD_LOGIC;
-	led : out STD_LOGIC
+	led : out STD_LOGIC;
+	ledError : out STD_LOGIC
 	);
 end TransceiverI2C;
 
@@ -21,6 +22,7 @@ architecture Behavioral of TransceiverI2C is
 	signal ledBuf : std_logic := '0';
 	signal dataBuf : std_logic_vector(7 downto 0) := b"00000000";
 	
+	signal rw : std_logic := '0';
 	signal deviceAddress : std_logic_vector(6 downto 0) := b"1001000";
 	signal readBit : std_logic := '1';
 	signal writeBit : std_logic := '0';
@@ -28,12 +30,15 @@ architecture Behavioral of TransceiverI2C is
 	signal mSByteFromDevice : std_logic_vector(7 downto 0) := b"00000000";
 	signal lSByteFromDevice : std_logic_vector(7 downto 0) := b"00000000";
 	
+	signal error : std_logic := '1';
 	
-	type I2C is (Waiting, Starting, WritingBit, TransmittingData, ReceivingData, Stopping, Updating);
+	
+	type I2C is (Waiting, Starting, DeviceAddressPreparing, DeviceAddressSending, TransmittingData, ReceivingData, Stopping, Updating);
 	signal stateI2C : I2C := Waiting;
 begin	
 
 	led <= ledBuf;
+	ledError <= error;
 	
 	process(clk)
 	begin
@@ -48,41 +53,189 @@ begin
 					scl <= '1';
 					update <= '0';
 					bitPosition <= 7;
+					rw <= '0';
 				when Starting =>
 					if count < 125 then
-						count <= count + 1;
 						sda <= '0';
+					else 
+						count <= 0;
+						scl <= '0';
+						stateUART <= DeviceAddressPreparing;
+					end if;				
+				when DeviceAddressPreparing =>
+					if count < 100 then
+						count <= count + 1;
+					elsif count < 125 then
+						count <= count + 1;
+						sda <= deviceAddress(bitPosition);
+					else	
+						count <= 0;
+						scl <= '1';						
+						stateI2C <= DeviceAddressSending;
+					end if;
+				when DeviceAddressSending => 
+					if count < 125 then
+						count <= count + 1;
 					else
 						count <= 0;
 						scl <= '0';
-						stateUART <= WritingBit;
-					end if;
-				when WritingBit =>
-					if count < 125 then
-						count <= count + 1;
-					else
-						count <= 0;
-						scl <= '1';	
-						if bitPosition > 0 then 		
-							stateUART <= ReceivingData;
+						if bitPosition > 1 then
 							bitPosition <= bitPosition - 1;
+							stateI2C <= DeviceAddressPreparing;
 						else 
-							stateUART <= Stopping;
 							bitPosition <= 7;
+							if rw = '0' then
+								stateI2C <= WriteBitPreparing;
+							else 
+								stateI2C <= ReadBitPreparing;
+							end if;
+						end if;
+					end if;						
+				when WriteBitPreparing =>
+					if count < 100 then
+						count <= count + 1;
+					elsif count < 125 then
+						count <= count + 1;
+						sda <= writeBit;
+					else	
+						count <= 0;
+						scl <= '1';						
+						stateI2C <= WriteBitSending;
 					end if;
-				when ReceivingData =>
+				when WriteBitSending => 
 					if count < 125 then
 						count <= count + 1;
 					else
 						count <= 0;
-						sda <= deviceAddress(bitPosition);
-						scl <= '0';						
-						stateUART <= WritingBit;
+						scl <= '0';
+						stateI2C <= AcknowledgeChecking1;
+					end if;	
+				when AcknowledgeChecking1 =>
+					if count < 125 then
+						count <= count + 1;
+					else	
+						count <= 0;
+						scl <= '1';
+						stateI2C <= AcknowledgeChecking2;
+					end if;	
+				when AcknowledgeChecking2 =>
+					if count < 125 then
+						count <= count + 1;
+					else	
+						count <= 0;
+						scl <= '0';
+						if sda = '0' then
+							stateI2C <= PointerBytePreparing;
+						else 
+							stateI2C <= Waiting;
+							error <= not error;
+						end if;	
 					end if;
-				when Stopping =>
-					data <= dataBuf;
-					ledBuf <= not ledBuf;
-					stateUART <= Updating;
+				when PointerBytePreparing =>
+					if count < 100 then
+						count <= count + 1;
+					elsif count < 125 then
+						count <= count + 1;
+						sda <= pointerByte(bitPosition);
+					else	
+						count <= 0;
+						scl <= '1';						
+						stateI2C <= PointerByteSending;
+					end if;
+				when PointerByteSending => 
+					if count < 125 then
+						count <= count + 1;
+					else
+						count <= 0;
+						scl <= '0';
+						if bitPosition > 0 then
+							bitPosition <= bitPosition - 1;
+							stateI2C <= PointerBytePreparing;
+						else 
+							bitPosition <= 7;
+							stateI2C <= AcknowledgeChecking3;
+						end if;
+					end if;	
+				when AcknowledgeChecking3 =>
+					if count < 125 then
+						count <= count + 1;
+					else	
+						count <= 0;
+						scl <= '1';
+						stateI2C <= AcknowledgeChecking4;
+					end if;	
+				when AcknowledgeChecking4 =>
+					if count < 125 then
+						count <= count + 1;
+					else	
+						count <= 0;
+						scl <= '0';
+						if sda = '0' then
+							stateI2C <= PresetPointerStopping1;
+						else 
+							stateI2C <= Waiting;
+							error <= not error;
+						end if;	
+					end if;
+				when PresetPointerStopping1 =>
+					if count < 100 then
+						count <= count + 1;
+					elsif count < 125 then
+						count <= count + 1;
+						sda <= '1';
+					else 	
+						count <= 0;
+						scl <= '1';
+						stateI2C <= PresetPointerStopping2;
+					end if;
+				when PresetPointerStopping2 =>
+					if count < 125 then
+						count <= count + 1;
+					else 
+						count <= 0;
+						rw <= '1';
+						stateI2C <= Starting;
+					end if;	
+				when ReadBitPreparing =>
+					if count < 100 then
+						count <= count + 1;
+					elsif count < 125 then
+						count <= count + 1;
+						sda <= readBit;
+					else	
+						count <= 0;
+						scl <= '1';						
+						stateI2C <= ReadBitSending;
+					end if;
+				when ReadBitSending => 
+					if count < 125 then
+						count <= count + 1;
+					else
+						count <= 0;
+						scl <= '0';
+						stateI2C <= AcknowledgeChecking5;
+					end if;
+				when AcknowledgeChecking5 =>
+					if count < 125 then
+						count <= count + 1;
+					else	
+						count <= 0;
+						scl <= '1';
+						stateI2C <= AcknowledgeChecking6;
+					end if;	
+				when AcknowledgeChecking6 =>
+					if count < 125 then
+						count <= count + 1;
+					else	
+						count <= 0;
+						scl <= '0';
+						if sda = '0' then
+							stateI2C <= MSByteFromDeviceReading;
+						else 
+							stateI2C <= Waiting;
+							error <= not error;
+						end if;	
+					end if;		
 				when Updating =>
 					update <= '1';	
 					stateUART <= Waiting;
