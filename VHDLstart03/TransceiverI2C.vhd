@@ -15,13 +15,13 @@ Port (
 end TransceiverI2C;
 
 architecture Behavioral of TransceiverI2C is
-	signal count : natural range 0 to 5200 := 0; -- 9600 bod (104 msec)
+	signal count : natural range 0 to 250 := 0; -- period = 5 msec
 	signal bitPosition : natural range 0 to 7 := 0;
 	signal startPrev : std_logic := '1';
 	signal ledBuf : std_logic := '0';
 	signal dataBuf : std_logic_vector(7 downto 0) := b"00000000";
 	
-	signal deviceAddress : std_logic_vector(7 downto 0) := b"10010000";
+	signal deviceAddress : std_logic_vector(6 downto 0) := b"1001000";
 	signal readBit : std_logic := '1';
 	signal writeBit : std_logic := '0';
 	signal pointerByte : std_logic_vector(7 downto 0) := b"00000000";
@@ -29,7 +29,7 @@ architecture Behavioral of TransceiverI2C is
 	signal lSByteFromDevice : std_logic_vector(7 downto 0) := b"00000000";
 	
 	
-	type I2C is (Waiting, Starting, TransmittingData, ReceivingData, Stopping, Updating);
+	type I2C is (Waiting, Starting, WritingBit, TransmittingData, ReceivingData, Stopping, Updating);
 	signal stateI2C : I2C := Waiting;
 begin	
 
@@ -41,34 +41,43 @@ begin
 			case stateI2C is
 				when Waiting =>
 					if start = '0' and startPrev = '1' then
-						stateI2C <= Starting;
-						count <= 0;
+						stateI2C <= Starting;	
 					end if;
+					count <= 0;
+					sda <= '1';
+					scl <= '1';
 					update <= '0';
+					bitPosition <= 7;
 				when Starting =>
-					if rx = '0' then
-						if count < 5200/2 then
-							count <= count + 1;
-						else
-							count <= 0;
-							stateUART <= ReceivingData;
-						end if;
-					else 
-						stateUART <= Waiting;
+					if count < 125 then
+						count <= count + 1;
+						sda <= '0';
+					else
 						count <= 0;
-					end if;	
-				when ReceivingData =>
-					if count < 5200 then
+						scl <= '0';
+						stateUART <= WritingBit;
+					end if;
+				when WritingBit =>
+					if count < 125 then
 						count <= count + 1;
 					else
 						count <= 0;
-						dataBuf(bitPosition) <= rx;
-						if bitPosition < 7 then
-							bitPosition <= bitPosition + 1;
-						else
-							bitPosition <= 0;
+						scl <= '1';	
+						if bitPosition > 0 then 		
+							stateUART <= ReceivingData;
+							bitPosition <= bitPosition - 1;
+						else 
 							stateUART <= Stopping;
-						end if;
+							bitPosition <= 7;
+					end if;
+				when ReceivingData =>
+					if count < 125 then
+						count <= count + 1;
+					else
+						count <= 0;
+						sda <= deviceAddress(bitPosition);
+						scl <= '0';						
+						stateUART <= WritingBit;
 					end if;
 				when Stopping =>
 					data <= dataBuf;
