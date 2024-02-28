@@ -1,5 +1,5 @@
 Analysis & Synthesis report for VHDLstart03
-Thu Feb 22 16:06:23 2024
+Wed Feb 28 16:44:51 2024
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Full Version
 
 
@@ -15,14 +15,15 @@ Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Full Version
   7. Analysis & Synthesis Resource Utilization by Entity
   8. State Machine - |VHDLstart03|ReceiverUART:inst6|stateUART
   9. State Machine - |VHDLstart03|TransmitterUART:inst15|stateUART
- 10. User-Specified and Inferred Latches
- 11. Registers Removed During Synthesis
- 12. Removed Registers Triggering Further Register Optimizations
- 13. General Register Statistics
- 14. Inverted Register Statistics
- 15. Multiplexer Restructuring Statistics (Restructuring Performed)
- 16. Elapsed Time Per Partition
- 17. Analysis & Synthesis Messages
+ 10. State Machine - |VHDLstart03|TransceiverI2C:inst10|stateI2C
+ 11. User-Specified and Inferred Latches
+ 12. Registers Removed During Synthesis
+ 13. Removed Registers Triggering Further Register Optimizations
+ 14. General Register Statistics
+ 15. Inverted Register Statistics
+ 16. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 17. Elapsed Time Per Partition
+ 18. Analysis & Synthesis Messages
 
 
 
@@ -48,16 +49,16 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Feb 22 16:06:23 2024       ;
+; Analysis & Synthesis Status        ; Successful - Wed Feb 28 16:44:51 2024       ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Full Version ;
 ; Revision Name                      ; VHDLstart03                                 ;
 ; Top-level Entity Name              ; VHDLstart03                                 ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 182                                         ;
-;     Total combinational functions  ; 153                                         ;
-;     Dedicated logic registers      ; 109                                         ;
-; Total registers                    ; 109                                         ;
-; Total pins                         ; 20                                          ;
+; Total logic elements               ; 258                                         ;
+;     Total combinational functions  ; 228                                         ;
+;     Dedicated logic registers      ; 154                                         ;
+; Total registers                    ; 154                                         ;
+; Total pins                         ; 23                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -157,16 +158,15 @@ applicable agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 8           ;
-; Maximum allowed            ; 4           ;
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 6           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 2           ;
+; Maximum used               ; 1           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ; < 0.1%      ;
-;     Processors 3-8         ;   0.0%      ;
+;     Processors 2-12        ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -183,6 +183,8 @@ applicable agreement for further details.
 ; ReceiverUART.vhd                   ; yes             ; User VHDL File                     ; D:/GITEA/GitHub/ES/pcbteach/VHDLstart03/ReceiverUART.vhd                   ;         ;
 ; TransmitterUART.vhd                ; yes             ; User VHDL File                     ; D:/GITEA/GitHub/ES/pcbteach/VHDLstart03/TransmitterUART.vhd                ;         ;
 ; Setter.vhd                         ; yes             ; User VHDL File                     ; D:/GITEA/GitHub/ES/pcbteach/VHDLstart03/Setter.vhd                         ;         ;
+; Count500.vhd                       ; yes             ; User VHDL File                     ; D:/GITEA/GitHub/ES/pcbteach/VHDLstart03/Count500.vhd                       ;         ;
+; TransceiverI2C.vhd                 ; yes             ; User VHDL File                     ; D:/GITEA/GitHub/ES/pcbteach/VHDLstart03/TransceiverI2C.vhd                 ;         ;
 +------------------------------------+-----------------+------------------------------------+----------------------------------------------------------------------------+---------+
 
 
@@ -191,28 +193,28 @@ applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 182       ;
+; Estimated Total logic elements              ; 258       ;
 ;                                             ;           ;
-; Total combinational functions               ; 153       ;
+; Total combinational functions               ; 228       ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 63        ;
-;     -- 3 input functions                    ; 38        ;
-;     -- <=2 input functions                  ; 52        ;
+;     -- 4 input functions                    ; 106       ;
+;     -- 3 input functions                    ; 48        ;
+;     -- <=2 input functions                  ; 74        ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 125       ;
-;     -- arithmetic mode                      ; 28        ;
+;     -- normal mode                          ; 185       ;
+;     -- arithmetic mode                      ; 43        ;
 ;                                             ;           ;
-; Total registers                             ; 109       ;
-;     -- Dedicated logic registers            ; 109       ;
+; Total registers                             ; 154       ;
+;     -- Dedicated logic registers            ; 154       ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
-; I/O pins                                    ; 20        ;
+; I/O pins                                    ; 23        ;
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 107       ;
-; Total fan-out                               ; 777       ;
-; Average fan-out                             ; 2.57      ;
+; Maximum fan-out                             ; 142       ;
+; Total fan-out                               ; 1141      ;
+; Average fan-out                             ; 2.67      ;
 +---------------------------------------------+-----------+
 
 
@@ -221,17 +223,18 @@ applicable agreement for further details.
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                               ; Library Name ;
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------+--------------+
-; |VHDLstart03                              ; 153 (0)           ; 109 (0)      ; 0           ; 0            ; 0       ; 0         ; 20   ; 0            ; |VHDLstart03                                      ; work         ;
+; |VHDLstart03                              ; 228 (0)           ; 154 (0)      ; 0           ; 0            ; 0       ; 0         ; 23   ; 0            ; |VHDLstart03                                      ; work         ;
 ;    |Count250000:inst|                     ; 22 (22)           ; 18 (18)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VHDLstart03|Count250000:inst                     ; work         ;
-;    |DataConversionUnit:inst1|             ; 15 (15)           ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VHDLstart03|DataConversionUnit:inst1             ; work         ;
+;    |Count500:inst11|                      ; 12 (12)           ; 10 (10)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VHDLstart03|Count500:inst11                      ; work         ;
 ;    |DigitalFilter8:inst12|                ; 6 (6)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VHDLstart03|DigitalFilter8:inst12                ; work         ;
 ;    |DigitalFilter8:inst13|                ; 6 (6)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VHDLstart03|DigitalFilter8:inst13                ; work         ;
 ;    |DigitalFilter8:inst7|                 ; 6 (6)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VHDLstart03|DigitalFilter8:inst7                 ; work         ;
 ;    |DigitalFilter8:inst8|                 ; 6 (6)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VHDLstart03|DigitalFilter8:inst8                 ; work         ;
 ;    |DigitalFilter8:inst9|                 ; 6 (6)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VHDLstart03|DigitalFilter8:inst9                 ; work         ;
-;    |DynamicIllumination4Indicators:inst2| ; 18 (18)           ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VHDLstart03|DynamicIllumination4Indicators:inst2 ; work         ;
+;    |DynamicIllumination4Indicators:inst2| ; 4 (4)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VHDLstart03|DynamicIllumination4Indicators:inst2 ; work         ;
 ;    |Setter:inst14|                        ; 28 (28)           ; 25 (25)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VHDLstart03|Setter:inst14                        ; work         ;
-;    |TransmitterUART:inst15|               ; 40 (40)           ; 30 (30)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VHDLstart03|TransmitterUART:inst15               ; work         ;
+;    |TransceiverI2C:inst10|                ; 94 (94)           ; 44 (44)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VHDLstart03|TransceiverI2C:inst10                ; work         ;
+;    |TransmitterUART:inst15|               ; 38 (38)           ; 30 (30)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VHDLstart03|TransmitterUART:inst15               ; work         ;
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -263,60 +266,91 @@ Encoding Type:  One-Hot
 +-------------------------+--------------------+-------------------------+--------------------+-------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                                                               ;
-+-----------------------------------------------------+----------------------------------------------------+------------------------+
-; Latch Name                                          ; Latch Enable Signal                                ; Free of Timing Hazards ;
-+-----------------------------------------------------+----------------------------------------------------+------------------------+
-; DynamicIllumination4Indicators:inst2|indicator[2]   ; DynamicIllumination4Indicators:inst2|clkCounter[1] ; yes                    ;
-; DynamicIllumination4Indicators:inst2|indicator[1]   ; DynamicIllumination4Indicators:inst2|clkCounter[1] ; yes                    ;
-; DynamicIllumination4Indicators:inst2|indicator[0]   ; DynamicIllumination4Indicators:inst2|clkCounter[1] ; yes                    ;
-; DynamicIllumination4Indicators:inst2|segment[6]     ; DynamicIllumination4Indicators:inst2|clkCounter[1] ; yes                    ;
-; DynamicIllumination4Indicators:inst2|segment[5]     ; DynamicIllumination4Indicators:inst2|clkCounter[1] ; yes                    ;
-; DynamicIllumination4Indicators:inst2|segment[4]     ; DynamicIllumination4Indicators:inst2|clkCounter[1] ; yes                    ;
-; DynamicIllumination4Indicators:inst2|segment[3]     ; DynamicIllumination4Indicators:inst2|clkCounter[1] ; yes                    ;
-; DynamicIllumination4Indicators:inst2|segment[2]     ; DynamicIllumination4Indicators:inst2|clkCounter[1] ; yes                    ;
-; DynamicIllumination4Indicators:inst2|segment[1]     ; DynamicIllumination4Indicators:inst2|clkCounter[1] ; yes                    ;
-; DynamicIllumination4Indicators:inst2|segment[0]     ; DynamicIllumination4Indicators:inst2|clkCounter[1] ; yes                    ;
-; Number of user-specified and inferred latches = 10  ;                                                    ;                        ;
-+-----------------------------------------------------+----------------------------------------------------+------------------------+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |VHDLstart03|TransceiverI2C:inst10|stateI2C                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   ;
++------------------------------------+-------------------+--------------------------------+------------------------------------+----------------------------------+------------------------------------+----------------------------------+-----------------------------+-------------------------------+--------------------------------+-------------------------------+-------------------------------+-------------------------------+-------------------------------+-------------------------------+-------------------------------+-------------------------------+-------------------------------+-------------------------------+-------------------------+---------------------------+--------------------------+----------------------------+-------------------------------+---------------------------------+-------------------+------------------+
+; Name                               ; stateI2C.Updating ; stateI2C.PresetPointerStopping ; stateI2C.LSByteFromDevicePreparing ; stateI2C.LSByteFromDeviceReading ; stateI2C.MSByteFromDevicePreparing ; stateI2C.MSByteFromDeviceReading ; stateI2C.PointerByteSending ; stateI2C.PointerBytePreparing ; stateI2C.AcknowledgeChecking10 ; stateI2C.AcknowledgeChecking9 ; stateI2C.AcknowledgeChecking8 ; stateI2C.AcknowledgeChecking7 ; stateI2C.AcknowledgeChecking6 ; stateI2C.AcknowledgeChecking5 ; stateI2C.AcknowledgeChecking4 ; stateI2C.AcknowledgeChecking3 ; stateI2C.AcknowledgeChecking2 ; stateI2C.AcknowledgeChecking1 ; stateI2C.ReadBitSending ; stateI2C.ReadBitPreparing ; stateI2C.WriteBitSending ; stateI2C.WriteBitPreparing ; stateI2C.DeviceAddressSending ; stateI2C.DeviceAddressPreparing ; stateI2C.Starting ; stateI2C.Waiting ;
++------------------------------------+-------------------+--------------------------------+------------------------------------+----------------------------------+------------------------------------+----------------------------------+-----------------------------+-------------------------------+--------------------------------+-------------------------------+-------------------------------+-------------------------------+-------------------------------+-------------------------------+-------------------------------+-------------------------------+-------------------------------+-------------------------------+-------------------------+---------------------------+--------------------------+----------------------------+-------------------------------+---------------------------------+-------------------+------------------+
+; stateI2C.Waiting                   ; 0                 ; 0                              ; 0                                  ; 0                                ; 0                                  ; 0                                ; 0                           ; 0                             ; 0                              ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                       ; 0                         ; 0                        ; 0                          ; 0                             ; 0                               ; 0                 ; 0                ;
+; stateI2C.Starting                  ; 0                 ; 0                              ; 0                                  ; 0                                ; 0                                  ; 0                                ; 0                           ; 0                             ; 0                              ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                       ; 0                         ; 0                        ; 0                          ; 0                             ; 0                               ; 1                 ; 1                ;
+; stateI2C.DeviceAddressPreparing    ; 0                 ; 0                              ; 0                                  ; 0                                ; 0                                  ; 0                                ; 0                           ; 0                             ; 0                              ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                       ; 0                         ; 0                        ; 0                          ; 0                             ; 1                               ; 0                 ; 1                ;
+; stateI2C.DeviceAddressSending      ; 0                 ; 0                              ; 0                                  ; 0                                ; 0                                  ; 0                                ; 0                           ; 0                             ; 0                              ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                       ; 0                         ; 0                        ; 0                          ; 1                             ; 0                               ; 0                 ; 1                ;
+; stateI2C.WriteBitPreparing         ; 0                 ; 0                              ; 0                                  ; 0                                ; 0                                  ; 0                                ; 0                           ; 0                             ; 0                              ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                       ; 0                         ; 0                        ; 1                          ; 0                             ; 0                               ; 0                 ; 1                ;
+; stateI2C.WriteBitSending           ; 0                 ; 0                              ; 0                                  ; 0                                ; 0                                  ; 0                                ; 0                           ; 0                             ; 0                              ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                       ; 0                         ; 1                        ; 0                          ; 0                             ; 0                               ; 0                 ; 1                ;
+; stateI2C.ReadBitPreparing          ; 0                 ; 0                              ; 0                                  ; 0                                ; 0                                  ; 0                                ; 0                           ; 0                             ; 0                              ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                       ; 1                         ; 0                        ; 0                          ; 0                             ; 0                               ; 0                 ; 1                ;
+; stateI2C.ReadBitSending            ; 0                 ; 0                              ; 0                                  ; 0                                ; 0                                  ; 0                                ; 0                           ; 0                             ; 0                              ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 1                       ; 0                         ; 0                        ; 0                          ; 0                             ; 0                               ; 0                 ; 1                ;
+; stateI2C.AcknowledgeChecking1      ; 0                 ; 0                              ; 0                                  ; 0                                ; 0                                  ; 0                                ; 0                           ; 0                             ; 0                              ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 1                             ; 0                       ; 0                         ; 0                        ; 0                          ; 0                             ; 0                               ; 0                 ; 1                ;
+; stateI2C.AcknowledgeChecking2      ; 0                 ; 0                              ; 0                                  ; 0                                ; 0                                  ; 0                                ; 0                           ; 0                             ; 0                              ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 1                             ; 0                             ; 0                       ; 0                         ; 0                        ; 0                          ; 0                             ; 0                               ; 0                 ; 1                ;
+; stateI2C.AcknowledgeChecking3      ; 0                 ; 0                              ; 0                                  ; 0                                ; 0                                  ; 0                                ; 0                           ; 0                             ; 0                              ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 1                             ; 0                             ; 0                             ; 0                       ; 0                         ; 0                        ; 0                          ; 0                             ; 0                               ; 0                 ; 1                ;
+; stateI2C.AcknowledgeChecking4      ; 0                 ; 0                              ; 0                                  ; 0                                ; 0                                  ; 0                                ; 0                           ; 0                             ; 0                              ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 1                             ; 0                             ; 0                             ; 0                             ; 0                       ; 0                         ; 0                        ; 0                          ; 0                             ; 0                               ; 0                 ; 1                ;
+; stateI2C.AcknowledgeChecking5      ; 0                 ; 0                              ; 0                                  ; 0                                ; 0                                  ; 0                                ; 0                           ; 0                             ; 0                              ; 0                             ; 0                             ; 0                             ; 0                             ; 1                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                       ; 0                         ; 0                        ; 0                          ; 0                             ; 0                               ; 0                 ; 1                ;
+; stateI2C.AcknowledgeChecking6      ; 0                 ; 0                              ; 0                                  ; 0                                ; 0                                  ; 0                                ; 0                           ; 0                             ; 0                              ; 0                             ; 0                             ; 0                             ; 1                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                       ; 0                         ; 0                        ; 0                          ; 0                             ; 0                               ; 0                 ; 1                ;
+; stateI2C.AcknowledgeChecking7      ; 0                 ; 0                              ; 0                                  ; 0                                ; 0                                  ; 0                                ; 0                           ; 0                             ; 0                              ; 0                             ; 0                             ; 1                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                       ; 0                         ; 0                        ; 0                          ; 0                             ; 0                               ; 0                 ; 1                ;
+; stateI2C.AcknowledgeChecking8      ; 0                 ; 0                              ; 0                                  ; 0                                ; 0                                  ; 0                                ; 0                           ; 0                             ; 0                              ; 0                             ; 1                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                       ; 0                         ; 0                        ; 0                          ; 0                             ; 0                               ; 0                 ; 1                ;
+; stateI2C.AcknowledgeChecking9      ; 0                 ; 0                              ; 0                                  ; 0                                ; 0                                  ; 0                                ; 0                           ; 0                             ; 0                              ; 1                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                       ; 0                         ; 0                        ; 0                          ; 0                             ; 0                               ; 0                 ; 1                ;
+; stateI2C.AcknowledgeChecking10     ; 0                 ; 0                              ; 0                                  ; 0                                ; 0                                  ; 0                                ; 0                           ; 0                             ; 1                              ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                       ; 0                         ; 0                        ; 0                          ; 0                             ; 0                               ; 0                 ; 1                ;
+; stateI2C.PointerBytePreparing      ; 0                 ; 0                              ; 0                                  ; 0                                ; 0                                  ; 0                                ; 0                           ; 1                             ; 0                              ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                       ; 0                         ; 0                        ; 0                          ; 0                             ; 0                               ; 0                 ; 1                ;
+; stateI2C.PointerByteSending        ; 0                 ; 0                              ; 0                                  ; 0                                ; 0                                  ; 0                                ; 1                           ; 0                             ; 0                              ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                       ; 0                         ; 0                        ; 0                          ; 0                             ; 0                               ; 0                 ; 1                ;
+; stateI2C.MSByteFromDeviceReading   ; 0                 ; 0                              ; 0                                  ; 0                                ; 0                                  ; 1                                ; 0                           ; 0                             ; 0                              ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                       ; 0                         ; 0                        ; 0                          ; 0                             ; 0                               ; 0                 ; 1                ;
+; stateI2C.MSByteFromDevicePreparing ; 0                 ; 0                              ; 0                                  ; 0                                ; 1                                  ; 0                                ; 0                           ; 0                             ; 0                              ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                       ; 0                         ; 0                        ; 0                          ; 0                             ; 0                               ; 0                 ; 1                ;
+; stateI2C.LSByteFromDeviceReading   ; 0                 ; 0                              ; 0                                  ; 1                                ; 0                                  ; 0                                ; 0                           ; 0                             ; 0                              ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                       ; 0                         ; 0                        ; 0                          ; 0                             ; 0                               ; 0                 ; 1                ;
+; stateI2C.LSByteFromDevicePreparing ; 0                 ; 0                              ; 1                                  ; 0                                ; 0                                  ; 0                                ; 0                           ; 0                             ; 0                              ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                       ; 0                         ; 0                        ; 0                          ; 0                             ; 0                               ; 0                 ; 1                ;
+; stateI2C.PresetPointerStopping     ; 0                 ; 1                              ; 0                                  ; 0                                ; 0                                  ; 0                                ; 0                           ; 0                             ; 0                              ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                       ; 0                         ; 0                        ; 0                          ; 0                             ; 0                               ; 0                 ; 1                ;
+; stateI2C.Updating                  ; 1                 ; 0                              ; 0                                  ; 0                                ; 0                                  ; 0                                ; 0                           ; 0                             ; 0                              ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                       ; 0                         ; 0                        ; 0                          ; 0                             ; 0                               ; 0                 ; 1                ;
++------------------------------------+-------------------+--------------------------------+------------------------------------+----------------------------------+------------------------------------+----------------------------------+-----------------------------+-------------------------------+--------------------------------+-------------------------------+-------------------------------+-------------------------------+-------------------------------+-------------------------------+-------------------------------+-------------------------------+-------------------------------+-------------------------------+-------------------------+---------------------------+--------------------------+----------------------------+-------------------------------+---------------------------------+-------------------+------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                              ;
++----------------------------------------------------+----------------------------------------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal                                ; Free of Timing Hazards ;
++----------------------------------------------------+----------------------------------------------------+------------------------+
+; DynamicIllumination4Indicators:inst2|indicator[2]  ; DynamicIllumination4Indicators:inst2|clkCounter[1] ; yes                    ;
+; DynamicIllumination4Indicators:inst2|indicator[1]  ; DynamicIllumination4Indicators:inst2|clkCounter[1] ; yes                    ;
+; DynamicIllumination4Indicators:inst2|indicator[0]  ; DynamicIllumination4Indicators:inst2|clkCounter[1] ; yes                    ;
+; Number of user-specified and inferred latches = 3  ;                                                    ;                        ;
++----------------------------------------------------+----------------------------------------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
-+----------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                           ;
-+--------------------------------------------+-------------------------------------------------+
-; Register name                              ; Reason for Removal                              ;
-+--------------------------------------------+-------------------------------------------------+
-; TransmitterUART:inst15|updatePrev          ; Merged with DataConversionUnit:inst1|updatePrev ;
-; DigitalFilter8:inst5|output                ; Lost fanout                                     ;
-; ReceiverUART:inst6|rxPrev                  ; Lost fanout                                     ;
-; ReceiverUART:inst6|count[3..12]            ; Lost fanout                                     ;
-; ReceiverUART:inst6|bitPosition[0..2]       ; Lost fanout                                     ;
-; DigitalFilter8:inst5|latch                 ; Lost fanout                                     ;
-; DigitalFilter8:inst5|count[0..2]           ; Lost fanout                                     ;
-; ReceiverUART:inst6|count[0..2]             ; Lost fanout                                     ;
-; ReceiverUART:inst6|stateUART.Waiting       ; Lost fanout                                     ;
-; ReceiverUART:inst6|stateUART.Starting      ; Lost fanout                                     ;
-; ReceiverUART:inst6|stateUART.ReceivingData ; Lost fanout                                     ;
-; ReceiverUART:inst6|stateUART.Stopping      ; Lost fanout                                     ;
-; ReceiverUART:inst6|stateUART.Updating      ; Lost fanout                                     ;
-; Total Number of Removed Registers = 28     ;                                                 ;
-+--------------------------------------------+-------------------------------------------------+
++-------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                  ;
++--------------------------------------------+----------------------------------------+
+; Register name                              ; Reason for Removal                     ;
++--------------------------------------------+----------------------------------------+
+; DataConversionUnit:inst1|dataBuf[0..7]     ; Stuck at GND due to stuck port data_in ;
+; TransceiverI2C:inst10|update               ; Lost fanout                            ;
+; DigitalFilter8:inst5|output                ; Lost fanout                            ;
+; ReceiverUART:inst6|rxPrev                  ; Lost fanout                            ;
+; ReceiverUART:inst6|count[3..12]            ; Lost fanout                            ;
+; ReceiverUART:inst6|bitPosition[0..2]       ; Lost fanout                            ;
+; DigitalFilter8:inst5|latch                 ; Lost fanout                            ;
+; DigitalFilter8:inst5|count[0..2]           ; Lost fanout                            ;
+; ReceiverUART:inst6|count[0..2]             ; Lost fanout                            ;
+; ReceiverUART:inst6|stateUART.Waiting       ; Lost fanout                            ;
+; ReceiverUART:inst6|stateUART.Starting      ; Lost fanout                            ;
+; ReceiverUART:inst6|stateUART.ReceivingData ; Lost fanout                            ;
+; ReceiverUART:inst6|stateUART.Stopping      ; Lost fanout                            ;
+; ReceiverUART:inst6|stateUART.Updating      ; Lost fanout                            ;
+; Total Number of Removed Registers = 36     ;                                        ;
++--------------------------------------------+----------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                 ;
-+-----------------------------------+--------------------+------------------------------------------------------------------------------------+
-; Register name                     ; Reason for Removal ; Registers Removed due to This Register                                             ;
-+-----------------------------------+--------------------+------------------------------------------------------------------------------------+
-; ReceiverUART:inst6|count[12]      ; Lost Fanouts       ; ReceiverUART:inst6|count[11], ReceiverUART:inst6|stateUART.Waiting,                ;
-;                                   ;                    ; ReceiverUART:inst6|stateUART.Starting, ReceiverUART:inst6|stateUART.ReceivingData, ;
-;                                   ;                    ; ReceiverUART:inst6|stateUART.Stopping, ReceiverUART:inst6|stateUART.Updating       ;
-; DigitalFilter8:inst5|output       ; Lost Fanouts       ; DigitalFilter8:inst5|latch, DigitalFilter8:inst5|count[2],                         ;
-;                                   ;                    ; DigitalFilter8:inst5|count[0], DigitalFilter8:inst5|count[1]                       ;
-; ReceiverUART:inst6|bitPosition[2] ; Lost Fanouts       ; ReceiverUART:inst6|bitPosition[0], ReceiverUART:inst6|bitPosition[1]               ;
-+-----------------------------------+--------------------+------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                          ;
++-------------------------------------+---------------------------+------------------------------------------------------------------------------------+
+; Register name                       ; Reason for Removal        ; Registers Removed due to This Register                                             ;
++-------------------------------------+---------------------------+------------------------------------------------------------------------------------+
+; ReceiverUART:inst6|count[12]        ; Lost Fanouts              ; ReceiverUART:inst6|count[11], ReceiverUART:inst6|stateUART.Waiting,                ;
+;                                     ;                           ; ReceiverUART:inst6|stateUART.Starting, ReceiverUART:inst6|stateUART.ReceivingData, ;
+;                                     ;                           ; ReceiverUART:inst6|stateUART.Stopping, ReceiverUART:inst6|stateUART.Updating       ;
+; DigitalFilter8:inst5|output         ; Lost Fanouts              ; DigitalFilter8:inst5|latch, DigitalFilter8:inst5|count[2],                         ;
+;                                     ;                           ; DigitalFilter8:inst5|count[0], DigitalFilter8:inst5|count[1]                       ;
+; ReceiverUART:inst6|bitPosition[2]   ; Lost Fanouts              ; ReceiverUART:inst6|bitPosition[0], ReceiverUART:inst6|bitPosition[1]               ;
+; DataConversionUnit:inst1|dataBuf[0] ; Stuck at GND              ; TransceiverI2C:inst10|update                                                       ;
+;                                     ; due to stuck port data_in ;                                                                                    ;
++-------------------------------------+---------------------------+------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -324,12 +358,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 109   ;
-; Number of registers using Synchronous Clear  ; 30    ;
+; Total registers                              ; 154   ;
+; Number of registers using Synchronous Clear  ; 47    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 37    ;
+; Number of registers using Clock Enable       ; 51    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -339,38 +373,42 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------+---------+
 ; Inverted Register                      ; Fan out ;
 +----------------------------------------+---------+
+; TransceiverI2C:inst10|error            ; 4       ;
 ; TransmitterUART:inst15|tx              ; 2       ;
-; Setter:inst14|updateBuf                ; 8       ;
+; Setter:inst14|updateBuf                ; 7       ;
+; TransceiverI2C:inst10|startPrev        ; 2       ;
 ; Setter:inst14|resetPrev                ; 4       ;
 ; Setter:inst14|key4Prev                 ; 3       ;
 ; Setter:inst14|key3Prev                 ; 1       ;
 ; Setter:inst14|key2Prev                 ; 3       ;
 ; Setter:inst14|key1Prev                 ; 1       ;
-; Total number of inverted registers = 7 ;         ;
+; Total number of inverted registers = 9 ;         ;
 +----------------------------------------+---------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                       ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                             ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------+
-; 4:1                ; 13 bits   ; 26 LEs        ; 13 LEs               ; 13 LEs                 ; Yes        ; |VHDLstart03|TransmitterUART:inst15|count[8]           ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |VHDLstart03|DigitalFilter8:inst5|count[2]             ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |VHDLstart03|DigitalFilter8:inst13|count[0]            ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |VHDLstart03|DigitalFilter8:inst9|count[1]             ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |VHDLstart03|DigitalFilter8:inst12|count[1]            ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |VHDLstart03|DigitalFilter8:inst7|count[2]             ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |VHDLstart03|DigitalFilter8:inst8|count[0]             ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |VHDLstart03|Setter:inst14|dataBuf1[3]                 ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |VHDLstart03|Setter:inst14|dataBuf0[3]                 ;
-; 8:1                ; 13 bits   ; 65 LEs        ; 13 LEs               ; 52 LEs                 ; Yes        ; |VHDLstart03|ReceiverUART:inst6|count[5]               ;
-; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |VHDLstart03|DynamicIllumination4Indicators:inst2|Mux7 ;
-; 7:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |VHDLstart03|TransmitterUART:inst15|Selector3          ;
-; 9:1                ; 3 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; No         ; |VHDLstart03|ReceiverUART:inst6|Selector2              ;
-; 9:1                ; 2 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |VHDLstart03|TransmitterUART:inst15|Selector0          ;
-; 10:1               ; 2 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |VHDLstart03|ReceiverUART:inst6|Selector0              ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
+; 4:1                ; 13 bits   ; 26 LEs        ; 13 LEs               ; 13 LEs                 ; Yes        ; |VHDLstart03|TransmitterUART:inst15|count[1]      ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |VHDLstart03|DigitalFilter8:inst5|count[0]        ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |VHDLstart03|DigitalFilter8:inst13|count[0]       ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |VHDLstart03|DigitalFilter8:inst9|count[2]        ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |VHDLstart03|DigitalFilter8:inst12|count[1]       ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |VHDLstart03|DigitalFilter8:inst7|count[2]        ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |VHDLstart03|DigitalFilter8:inst8|count[1]        ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |VHDLstart03|Setter:inst14|dataBuf1[1]            ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |VHDLstart03|Setter:inst14|dataBuf0[2]            ;
+; 8:1                ; 13 bits   ; 65 LEs        ; 13 LEs               ; 52 LEs                 ; Yes        ; |VHDLstart03|ReceiverUART:inst6|count[6]          ;
+; 14:1               ; 3 bits    ; 27 LEs        ; 3 LEs                ; 24 LEs                 ; Yes        ; |VHDLstart03|TransceiverI2C:inst10|bitPosition[2] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 8 LEs                ; 32 LEs                 ; Yes        ; |VHDLstart03|TransceiverI2C:inst10|count[2]       ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |VHDLstart03|TransmitterUART:inst15|Selector1     ;
+; 9:1                ; 3 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; No         ; |VHDLstart03|ReceiverUART:inst6|Selector1         ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |VHDLstart03|TransmitterUART:inst15|Selector0     ;
+; 10:1               ; 2 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |VHDLstart03|ReceiverUART:inst6|Selector4         ;
+; 10:1               ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; No         ; |VHDLstart03|TransceiverI2C:inst10|Selector6      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
 
 
 +-------------------------------+
@@ -378,7 +416,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -388,9 +426,9 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Full Version
-    Info: Processing started: Thu Feb 22 16:06:21 2024
+    Info: Processing started: Wed Feb 28 16:44:47 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off VHDLstart03 -c VHDLstart03
-Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
+Info (11104): Parallel Compilation has detected 12 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 6 of the 6 physical processors detected instead.
 Info (12021): Found 2 design units, including 1 entities, in source file count250000.vhd
     Info (12022): Found design unit 1: Count250000-Behavioral
     Info (12023): Found entity 1: Count250000
@@ -414,6 +452,12 @@ Info (12021): Found 2 design units, including 1 entities, in source file transmi
 Info (12021): Found 2 design units, including 1 entities, in source file setter.vhd
     Info (12022): Found design unit 1: Setter-Behavioral
     Info (12023): Found entity 1: Setter
+Info (12021): Found 2 design units, including 1 entities, in source file count500.vhd
+    Info (12022): Found design unit 1: Count500-Behavioral
+    Info (12023): Found entity 1: Count500
+Info (12021): Found 2 design units, including 1 entities, in source file transceiveri2c.vhd
+    Info (12022): Found design unit 1: TransceiverI2C-Behavioral
+    Info (12023): Found entity 1: TransceiverI2C
 Info (12127): Elaborating entity "VHDLstart03" for the top level hierarchy
 Warning (275080): Converted elements in bus name "indicator" using legacy naming rules. Make any assignments on the new names, not on the original names.
     Warning (275081): Converted element name(s) from "indicator[3..0]" to "indicator3..0"
@@ -425,6 +469,16 @@ Warning (275080): Converted elements in bus name "indicator2" using legacy namin
     Warning (275081): Converted element name(s) from "indicator2[6..0]" to "indicator26..0"
 Warning (275080): Converted elements in bus name "indicator3" using legacy naming rules. Make any assignments on the new names, not on the original names.
     Warning (275081): Converted element name(s) from "indicator3[6..0]" to "indicator36..0"
+Info (12128): Elaborating entity "TransceiverI2C" for hierarchy "TransceiverI2C:inst10"
+Warning (10541): VHDL Signal Declaration warning at TransceiverI2C.vhd(11): used implicit default value for signal "data" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10540): VHDL Signal Declaration warning at TransceiverI2C.vhd(26): used explicit default value for signal "deviceAddress" because signal was never assigned a value
+Warning (10540): VHDL Signal Declaration warning at TransceiverI2C.vhd(27): used explicit default value for signal "readBit" because signal was never assigned a value
+Warning (10540): VHDL Signal Declaration warning at TransceiverI2C.vhd(28): used explicit default value for signal "writeBit" because signal was never assigned a value
+Warning (10540): VHDL Signal Declaration warning at TransceiverI2C.vhd(29): used explicit default value for signal "pointerByte" because signal was never assigned a value
+Warning (10036): Verilog HDL or VHDL warning at TransceiverI2C.vhd(30): object "mSByteFromDevice" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at TransceiverI2C.vhd(31): object "lSByteFromDevice" assigned a value but never read
+Info (12128): Elaborating entity "Count500" for hierarchy "Count500:inst11"
+Info (12128): Elaborating entity "Count250000" for hierarchy "Count250000:inst"
 Info (12128): Elaborating entity "TransmitterUART" for hierarchy "TransmitterUART:inst15"
 Info (12128): Elaborating entity "Setter" for hierarchy "Setter:inst14"
 Info (12128): Elaborating entity "DigitalFilter8" for hierarchy "DigitalFilter8:inst7"
@@ -450,26 +504,34 @@ Info (10041): Inferred latch for "indicator[0]" at DynamicIllumination4Indicator
 Info (10041): Inferred latch for "indicator[1]" at DynamicIllumination4Indicators.vhd(33)
 Info (10041): Inferred latch for "indicator[2]" at DynamicIllumination4Indicators.vhd(33)
 Info (10041): Inferred latch for "indicator[3]" at DynamicIllumination4Indicators.vhd(33)
-Info (12128): Elaborating entity "Count250000" for hierarchy "Count250000:inst"
 Info (12128): Elaborating entity "DataConversionUnit" for hierarchy "DataConversionUnit:inst1"
 Info (12128): Elaborating entity "ReceiverUART" for hierarchy "ReceiverUART:inst6"
+Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
+    Warning (13047): Converted the fan-out from the tri-state buffer "TransceiverI2C:inst10|sda" to the node "TransceiverI2C:inst10|ledBuf" into an OR gate
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "indicator[3]" is stuck at VCC
     Warning (13410): Pin "indicator[2]" is stuck at VCC
+    Warning (13410): Pin "segment[6]" is stuck at VCC
+    Warning (13410): Pin "segment[5]" is stuck at GND
+    Warning (13410): Pin "segment[4]" is stuck at GND
+    Warning (13410): Pin "segment[3]" is stuck at GND
+    Warning (13410): Pin "segment[2]" is stuck at GND
+    Warning (13410): Pin "segment[1]" is stuck at GND
+    Warning (13410): Pin "segment[0]" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 27 registers lost all their fanouts during netlist optimizations.
+Info (17049): 28 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "rx"
-Info (21057): Implemented 202 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 281 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 7 input pins
-    Info (21059): Implemented 13 output pins
-    Info (21061): Implemented 182 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 25 warnings
-    Info: Peak virtual memory: 4684 megabytes
-    Info: Processing ended: Thu Feb 22 16:06:23 2024
-    Info: Elapsed time: 00:00:02
+    Info (21059): Implemented 16 output pins
+    Info (21061): Implemented 258 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 41 warnings
+    Info: Peak virtual memory: 4689 megabytes
+    Info: Processing ended: Wed Feb 28 16:44:51 2024
+    Info: Elapsed time: 00:00:04
     Info: Total CPU time (on all processors): 00:00:02
 
 

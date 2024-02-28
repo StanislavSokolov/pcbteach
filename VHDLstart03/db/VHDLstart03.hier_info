@@ -1,5 +1,7 @@
 |VHDLstart03
-led <= TransmitterUART:inst15.led
+led <= TransceiverI2C:inst10.ledError
+clk => TransceiverI2C:inst10.clk
+clk => Count250000:inst.clkIn
 clk => TransmitterUART:inst15.clk
 clk => Setter:inst14.clk
 clk => DigitalFilter8:inst7.clk
@@ -7,16 +9,18 @@ clk => DigitalFilter8:inst8.clk
 clk => DigitalFilter8:inst9.clk
 clk => DigitalFilter8:inst12.clk
 clk => DigitalFilter8:inst13.clk
-clk => Count250000:inst.clkIn
 clk => DataConversionUnit:inst1.clk
 clk => DigitalFilter8:inst5.clk
 clk => ReceiverUART:inst6.clk
+tx <= TransmitterUART:inst15.tx
 key1 => DigitalFilter8:inst7.input
 key2 => DigitalFilter8:inst8.input
 key3 => DigitalFilter8:inst9.input
 key4 => DigitalFilter8:inst12.input
 reset => DigitalFilter8:inst13.input
-tx <= TransmitterUART:inst15.tx
+sda <= TransceiverI2C:inst10.sda
+scl <= TransceiverI2C:inst10.scl
+led1 <= TransceiverI2C:inst10.led
 indicator[0] <= DynamicIllumination4Indicators:inst2.indicator0
 indicator[1] <= DynamicIllumination4Indicators:inst2.indicator1
 indicator[2] <= DynamicIllumination4Indicators:inst2.indicator2
@@ -29,6 +33,80 @@ segment[4] <= DynamicIllumination4Indicators:inst2.segment[4]
 segment[5] <= DynamicIllumination4Indicators:inst2.segment[5]
 segment[6] <= DynamicIllumination4Indicators:inst2.segment[6]
 rx => DigitalFilter8:inst5.input
+
+
+|VHDLstart03|TransceiverI2C:inst10
+clk => startPrev.CLK
+clk => ledBuf.CLK
+clk => error.CLK
+clk => rw.CLK
+clk => bitPosition[0].CLK
+clk => bitPosition[1].CLK
+clk => bitPosition[2].CLK
+clk => update~reg0.CLK
+clk => scl~reg0.CLK
+clk => sda~reg0.CLK
+clk => sda~en.CLK
+clk => count[0].CLK
+clk => count[1].CLK
+clk => count[2].CLK
+clk => count[3].CLK
+clk => count[4].CLK
+clk => count[5].CLK
+clk => count[6].CLK
+clk => count[7].CLK
+clk => stateI2C~27.DATAIN
+start => startPrev.DATAIN
+start => process_0.IN1
+scl <= scl~reg0.DB_MAX_OUTPUT_PORT_TYPE
+sda <> sda
+data[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+data[1] <= data[1].DB_MAX_OUTPUT_PORT_TYPE
+data[2] <= data[2].DB_MAX_OUTPUT_PORT_TYPE
+data[3] <= data[3].DB_MAX_OUTPUT_PORT_TYPE
+data[4] <= data[4].DB_MAX_OUTPUT_PORT_TYPE
+data[5] <= data[5].DB_MAX_OUTPUT_PORT_TYPE
+data[6] <= data[6].DB_MAX_OUTPUT_PORT_TYPE
+data[7] <= data[7].DB_MAX_OUTPUT_PORT_TYPE
+update <= update~reg0.DB_MAX_OUTPUT_PORT_TYPE
+led <= ledBuf.DB_MAX_OUTPUT_PORT_TYPE
+ledError <= error.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|VHDLstart03|Count500:inst11
+clkIn => clkOutBuf.CLK
+clkIn => clkCounter[0].CLK
+clkIn => clkCounter[1].CLK
+clkIn => clkCounter[2].CLK
+clkIn => clkCounter[3].CLK
+clkIn => clkCounter[4].CLK
+clkIn => clkCounter[5].CLK
+clkIn => clkCounter[6].CLK
+clkIn => clkCounter[7].CLK
+clkIn => clkCounter[8].CLK
+clkOut <= clkOutBuf.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|VHDLstart03|Count250000:inst
+clkIn => clkOutBuf.CLK
+clkIn => clkCounter[0].CLK
+clkIn => clkCounter[1].CLK
+clkIn => clkCounter[2].CLK
+clkIn => clkCounter[3].CLK
+clkIn => clkCounter[4].CLK
+clkIn => clkCounter[5].CLK
+clkIn => clkCounter[6].CLK
+clkIn => clkCounter[7].CLK
+clkIn => clkCounter[8].CLK
+clkIn => clkCounter[9].CLK
+clkIn => clkCounter[10].CLK
+clkIn => clkCounter[11].CLK
+clkIn => clkCounter[12].CLK
+clkIn => clkCounter[13].CLK
+clkIn => clkCounter[14].CLK
+clkIn => clkCounter[15].CLK
+clkIn => clkCounter[16].CLK
+clkOut <= clkOutBuf.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |VHDLstart03|TransmitterUART:inst15
@@ -237,28 +315,6 @@ indicator[0] <= indicator[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
 indicator[1] <= indicator[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
 indicator[2] <= indicator[2]$latch.DB_MAX_OUTPUT_PORT_TYPE
 indicator[3] <= indicator[3]$latch.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|VHDLstart03|Count250000:inst
-clkIn => clkOutBuf.CLK
-clkIn => clkCounter[0].CLK
-clkIn => clkCounter[1].CLK
-clkIn => clkCounter[2].CLK
-clkIn => clkCounter[3].CLK
-clkIn => clkCounter[4].CLK
-clkIn => clkCounter[5].CLK
-clkIn => clkCounter[6].CLK
-clkIn => clkCounter[7].CLK
-clkIn => clkCounter[8].CLK
-clkIn => clkCounter[9].CLK
-clkIn => clkCounter[10].CLK
-clkIn => clkCounter[11].CLK
-clkIn => clkCounter[12].CLK
-clkIn => clkCounter[13].CLK
-clkIn => clkCounter[14].CLK
-clkIn => clkCounter[15].CLK
-clkIn => clkCounter[16].CLK
-clkOut <= clkOutBuf.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |VHDLstart03|DataConversionUnit:inst1

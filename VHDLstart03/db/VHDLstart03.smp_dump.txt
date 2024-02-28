@@ -13,3 +13,32 @@ stateUART.Waiting 0 0 0 0
 stateUART.Starting 0 0 1 1 
 stateUART.ReceivingData 0 1 0 1 
 stateUART.Stopping 1 0 0 1 
+
+State Machine - |VHDLstart03|TransceiverI2C:inst10|stateI2C
+Name stateI2C.Updating stateI2C.PresetPointerStopping stateI2C.LSByteFromDevicePreparing stateI2C.LSByteFromDeviceReading stateI2C.MSByteFromDevicePreparing stateI2C.MSByteFromDeviceReading stateI2C.PointerByteSending stateI2C.PointerBytePreparing stateI2C.AcknowledgeChecking10 stateI2C.AcknowledgeChecking9 stateI2C.AcknowledgeChecking8 stateI2C.AcknowledgeChecking7 stateI2C.AcknowledgeChecking6 stateI2C.AcknowledgeChecking5 stateI2C.AcknowledgeChecking4 stateI2C.AcknowledgeChecking3 stateI2C.AcknowledgeChecking2 stateI2C.AcknowledgeChecking1 stateI2C.ReadBitSending stateI2C.ReadBitPreparing stateI2C.WriteBitSending stateI2C.WriteBitPreparing stateI2C.DeviceAddressSending stateI2C.DeviceAddressPreparing stateI2C.Starting stateI2C.Waiting 
+stateI2C.Waiting 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+stateI2C.Starting 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+stateI2C.DeviceAddressPreparing 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+stateI2C.DeviceAddressSending 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+stateI2C.WriteBitPreparing 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+stateI2C.WriteBitSending 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+stateI2C.ReadBitPreparing 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+stateI2C.ReadBitSending 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+stateI2C.AcknowledgeChecking1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+stateI2C.AcknowledgeChecking2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+stateI2C.AcknowledgeChecking3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+stateI2C.AcknowledgeChecking4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+stateI2C.AcknowledgeChecking5 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+stateI2C.AcknowledgeChecking6 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+stateI2C.AcknowledgeChecking7 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+stateI2C.AcknowledgeChecking8 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+stateI2C.AcknowledgeChecking9 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+stateI2C.AcknowledgeChecking10 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+stateI2C.PointerBytePreparing 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+stateI2C.PointerByteSending 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+stateI2C.MSByteFromDeviceReading 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+stateI2C.MSByteFromDevicePreparing 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+stateI2C.LSByteFromDeviceReading 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+stateI2C.LSByteFromDevicePreparing 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+stateI2C.PresetPointerStopping 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+stateI2C.Updating 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
