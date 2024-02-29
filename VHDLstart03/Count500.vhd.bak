@@ -17,7 +17,7 @@ begin
 	process(clkIn)
 	begin
 		if rising_edge(clkIn) then
-			if clkCounter < 250 then
+			if clkCounter < 500 then
 				clkCounter <= clkCounter + 1;
 			else
 				clkCounter <= 0;

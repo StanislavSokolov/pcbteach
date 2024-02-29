@@ -1,5 +1,5 @@
 Flow report for VHDLstart03
-Wed Feb 28 16:45:16 2024
+Thu Feb 29 18:35:06 2024
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Full Version
 
 
@@ -40,17 +40,17 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Wed Feb 28 16:45:16 2024       ;
+; Flow Status                        ; Successful - Thu Feb 29 18:35:06 2024       ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Full Version ;
 ; Revision Name                      ; VHDLstart03                                 ;
 ; Top-level Entity Name              ; VHDLstart03                                 ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE10E22C8                                ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 246 / 10,320 ( 2 % )                        ;
-;     Total combinational functions  ; 228 / 10,320 ( 2 % )                        ;
-;     Dedicated logic registers      ; 154 / 10,320 ( 1 % )                        ;
-; Total registers                    ; 154                                         ;
+; Total logic elements               ; 285 / 10,320 ( 3 % )                        ;
+;     Total combinational functions  ; 272 / 10,320 ( 3 % )                        ;
+;     Dedicated logic registers      ; 181 / 10,320 ( 2 % )                        ;
+; Total registers                    ; 181                                         ;
 ; Total pins                         ; 23 / 92 ( 25 % )                            ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0 / 423,936 ( 0 % )                         ;
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 02/28/2024 16:44:47 ;
+; Start date & time ; 02/29/2024 18:34:50 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; VHDLstart03         ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +-------------------------------------+--------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                          ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+--------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 66160494706865.170912788711060 ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 30902508249626.170922088906288 ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                           ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)         ; <None>        ; --          ; --             ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                             ; --            ; --          ; --             ;
@@ -93,12 +93,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:03     ; 1.0                     ; 4689 MB             ; 00:00:02                           ;
-; Fitter                    ; 00:00:12     ; 1.0                     ; 5551 MB             ; 00:00:06                           ;
-; Assembler                 ; 00:00:01     ; 1.0                     ; 4583 MB             ; 00:00:01                           ;
-; TimeQuest Timing Analyzer ; 00:00:03     ; 1.0                     ; 4702 MB             ; 00:00:02                           ;
-; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 4560 MB             ; 00:00:01                           ;
-; Total                     ; 00:00:20     ; --                      ; --                  ; 00:00:12                           ;
+; Analysis & Synthesis      ; 00:00:02     ; 1.0                     ; 4687 MB             ; 00:00:02                           ;
+; Fitter                    ; 00:00:05     ; 1.6                     ; 5376 MB             ; 00:00:07                           ;
+; Assembler                 ; 00:00:01     ; 1.0                     ; 4589 MB             ; 00:00:01                           ;
+; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 4682 MB             ; 00:00:02                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 4566 MB             ; 00:00:01                           ;
+; Total                     ; 00:00:11     ; --                      ; --                  ; 00:00:13                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -107,11 +107,11 @@ applicable agreement for further details.
 +---------------------------+------------------+-----------+------------+----------------+
 ; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
 +---------------------------+------------------+-----------+------------+----------------+
-; Analysis & Synthesis      ; Stas             ; Windows 7 ; 6.2        ; x86_64         ;
-; Fitter                    ; Stas             ; Windows 7 ; 6.2        ; x86_64         ;
-; Assembler                 ; Stas             ; Windows 7 ; 6.2        ; x86_64         ;
-; TimeQuest Timing Analyzer ; Stas             ; Windows 7 ; 6.2        ; x86_64         ;
-; EDA Netlist Writer        ; Stas             ; Windows 7 ; 6.2        ; x86_64         ;
+; Analysis & Synthesis      ; STAS-W10         ; Windows 7 ; 6.2        ; x86_64         ;
+; Fitter                    ; STAS-W10         ; Windows 7 ; 6.2        ; x86_64         ;
+; Assembler                 ; STAS-W10         ; Windows 7 ; 6.2        ; x86_64         ;
+; TimeQuest Timing Analyzer ; STAS-W10         ; Windows 7 ; 6.2        ; x86_64         ;
+; EDA Netlist Writer        ; STAS-W10         ; Windows 7 ; 6.2        ; x86_64         ;
 +---------------------------+------------------+-----------+------------+----------------+
 
 

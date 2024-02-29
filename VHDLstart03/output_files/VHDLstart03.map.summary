@@ -1,12 +1,12 @@
-Analysis & Synthesis Status : Successful - Wed Feb 28 16:44:51 2024
+Analysis & Synthesis Status : Successful - Thu Feb 29 18:34:51 2024
 Quartus II 64-Bit Version : 13.1.0 Build 162 10/23/2013 SJ Full Version
 Revision Name : VHDLstart03
 Top-level Entity Name : VHDLstart03
 Family : Cyclone IV E
-Total logic elements : 258
-    Total combinational functions : 228
-    Dedicated logic registers : 154
-Total registers : 154
+Total logic elements : 320
+    Total combinational functions : 272
+    Dedicated logic registers : 181
+Total registers : 181
 Total pins : 23
 Total virtual pins : 0
 Total memory bits : 0

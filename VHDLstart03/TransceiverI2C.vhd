@@ -19,8 +19,8 @@ architecture Behavioral of TransceiverI2C is
 	signal count : natural range 0 to 250 := 0; -- period = 5 msec
 	signal bitPosition : natural range 0 to 7 := 0;
 	signal startPrev : std_logic := '1';
-	signal ledBuf : std_logic := '0';
-	signal dataBuf : std_logic_vector(7 downto 0) := b"00000000";
+	signal ledBuf : std_logic := '1';
+	signal dataBuf : std_logic_vector(7 downto 0) := b"00000011";
 	
 	signal rw : std_logic := '0';
 	signal deviceAddress : std_logic_vector(6 downto 0) := b"1001000";
@@ -43,23 +43,27 @@ begin
 	process(clk)
 	begin
 		if rising_edge(clk) then
+			startPrev <= start;
 			case stateI2C is
 				when Waiting =>
-					if start = '0' and startPrev = '1' then
+					if start = '0' and startPrev = '1' then						
 						stateI2C <= Starting;	
 					end if;
 					count <= 0;
-					sda <= '1';
-					scl <= '1';
+					sda <= 'Z';
+					scl <= 'Z';
 					update <= '0';
-					bitPosition <= 7;
+					bitPosition <= 6;
 					rw <= '0';
 				when Starting =>
-					if count < 125 then
+					if count < 25 then
+						count <= count + 1;
+					elsif count < 125 then
+						count <= count + 1;
 						sda <= '0';
 					else 
 						count <= 0;
-						scl <= '0';
+						scl <= '0';						
 						stateI2C <= DeviceAddressPreparing;
 					end if;				
 				when DeviceAddressPreparing =>
@@ -79,7 +83,7 @@ begin
 					else
 						count <= 0;
 						scl <= '0';
-						if bitPosition > 1 then
+						if bitPosition > 0 then
 							bitPosition <= bitPosition - 1;
 							stateI2C <= DeviceAddressPreparing;
 						else 
@@ -108,12 +112,12 @@ begin
 					else
 						count <= 0;
 						scl <= '0';
-						sda <= 'Z';
+						sda <= 'Z';						
 						stateI2C <= AcknowledgeChecking1;
 					end if;	
 				when AcknowledgeChecking1 =>
 					if count < 125 then
-						count <= count + 1;
+						count <= count + 1;						
 					else	
 						count <= 0;
 						scl <= '1';
@@ -125,12 +129,12 @@ begin
 					else	
 						count <= 0;
 						scl <= '0';
-						if sda = '0' then
+						if sda = '0' then	
 							stateI2C <= PointerBytePreparing;
 						else 
 							stateI2C <= Waiting;
 							error <= not error;
-						end if;	
+						end if;							
 					end if;
 				when PointerBytePreparing =>
 					if count < 100 then
@@ -153,7 +157,7 @@ begin
 							bitPosition <= bitPosition - 1;
 							stateI2C <= PointerBytePreparing;
 						else 
-							bitPosition <= 7;
+							bitPosition <= 6;
 							stateI2C <= AcknowledgeChecking3;
 							sda <= 'Z';
 						end if;
@@ -172,7 +176,7 @@ begin
 					else	
 						count <= 0;
 						scl <= '0';
-						if sda = '0' then
+						if sda = '0' then							
 							stateI2C <= PresetPointerStopping;
 						else 
 							stateI2C <= Waiting;
@@ -228,7 +232,7 @@ begin
 						if sda = '0' then
 							stateI2C <= MSByteFromDeviceReading;
 							bitPosition <= 7;
-						else 
+						else 							
 							stateI2C <= Waiting;
 							error <= not error;
 						end if;	
@@ -254,7 +258,7 @@ begin
 						else 
 							bitPosition <= 7;
 							stateI2C <= AcknowledgeChecking7;
-							sda <= 'Z';
+							sda <= '0';
 						end if;
 					end if;
 				when AcknowledgeChecking7 =>
@@ -271,13 +275,7 @@ begin
 					else	
 						count <= 0;
 						scl <= '0';
-						if sda = '0' then
-							stateI2C <= LSByteFromDeviceReading;
-							bitPosition <= 7;
-						else 
-							stateI2C <= Waiting;
-							error <= not error;
-						end if;	
+						stateI2C <= LSByteFromDeviceReading;							
 					end if;
 				when LSByteFromDeviceReading =>
 					if count < 125 then
@@ -293,50 +291,51 @@ begin
 						count <= count + 1;
 					else
 						count <= 0;
-						scl <= '0';
+						scl <= '0';						
 						if bitPosition > 0 then
 							bitPosition <= bitPosition - 1;
 							stateI2C <= LSByteFromDeviceReading;
 						else 
 							bitPosition <= 7;
-							stateI2C <= AcknowledgeChecking9;
-							sda <= 'Z';
+							stateI2C <= AcknowledgeChecking9;							
 						end if;
 					end if;
 				when AcknowledgeChecking9 =>
-					if count < 125 then
+					if count < 100 then
 						count <= count + 1;
+					elsif count < 125 then
+						count <= count + 1;
+						sda <= '1';
 					else	
 						count <= 0;
-						scl <= '1';
+						scl <= '1';	
 						stateI2C <= AcknowledgeChecking10;
 					end if;	
 				when AcknowledgeChecking10 =>
 					if count < 125 then
 						count <= count + 1;
-					else	
+					else
 						count <= 0;
 						scl <= '0';
-						if sda = '1' then
-							stateI2C <= Updating;
-							ledBuf <= not ledBuf;
-							bitPosition <= 7;
-						else 
-							stateI2C <= Waiting;
-							error <= not error;
-						end if;	
+						stateI2C <= Updating;
+						ledBuf <= not ledBuf;
+						bitPosition <= 6;
+						data(7 downto 3) <= mSByteFromDevice(4 downto 0);
+						data(2 downto 0) <= lSByteFromDevice(7 downto 5);
 					end if;	
 				when Updating =>
 					if count < 25 then
+						count <= count + 1;						
+					elsif count < 125 then
 						count <= count + 1;
+						sda <= '0';
 						update <= '1';
-					else
+					else						
 						count <= 0;	
 						stateI2C <= Waiting;
 					end if;	
 				when others =>
-			end case;
-			startPrev <= start;
+			end case;			
 		end if;	
 	end process;
 	

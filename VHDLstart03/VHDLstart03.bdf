@@ -208,22 +208,6 @@ applicable agreement for further details.
 )
 (pin
 	(output)
-	(rect 880 -128 1056 -112)
-	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
-	(text "sda" (rect 90 0 107 12)(font "Arial" ))
-	(pt 0 8)
-	(drawing
-		(line (pt 0 8)(pt 52 8))
-		(line (pt 52 4)(pt 78 4))
-		(line (pt 52 12)(pt 78 12))
-		(line (pt 52 12)(pt 52 4))
-		(line (pt 78 4)(pt 82 8))
-		(line (pt 82 8)(pt 78 12))
-		(line (pt 78 12)(pt 82 8))
-	)
-)
-(pin
-	(output)
 	(rect 880 -144 1056 -128)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
 	(text "scl" (rect 90 0 104 12)(font "Arial" ))
@@ -237,6 +221,7 @@ applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
+	(annotation_block (location)(rect 1056 -128 1104 -112))
 )
 (pin
 	(output)
@@ -253,6 +238,24 @@ applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
+	(annotation_block (location)(rect 1056 -64 1104 -48))
+)
+(pin
+	(bidir)
+	(rect 880 -128 1056 -112)
+	(text "BIDIR" (rect 1 0 25 10)(font "Arial" (font_size 6)))
+	(text "sda" (rect 90 0 107 12)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 56 4)(pt 78 4))
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 56 12)(pt 78 12))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 78 12)(pt 82 8))
+		(line (pt 56 4)(pt 52 8))
+		(line (pt 52 8)(pt 56 12))
+	)
+	(text "VCC" (rect 4 7 24 17)(font "Arial" (font_size 6)))
 )
 (symbol
 	(rect 312 88 456 168)
@@ -1000,10 +1003,6 @@ applicable agreement for further details.
 	(pt 880 480)
 )
 (connector
-	(pt 312 232)
-	(pt 272 232)
-)
-(connector
 	(pt 696 480)
 	(pt 688 480)
 )
@@ -1152,10 +1151,6 @@ applicable agreement for further details.
 	(pt 544 24)
 )
 (connector
-	(pt 544 24)
-	(pt 560 24)
-)
-(connector
 	(pt 456 120)
 	(pt 544 120)
 )
@@ -1224,22 +1219,6 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 272 -200)
-	(pt 272 232)
-)
-(connector
-	(pt 736 -200)
-	(pt 272 -200)
-)
-(connector
-	(pt 736 -200)
-	(pt 736 -88)
-)
-(connector
-	(pt 736 -88)
-	(pt 704 -88)
-)
-(connector
 	(pt 880 496)
 	(pt 864 496)
 )
@@ -1254,6 +1233,30 @@ applicable agreement for further details.
 (connector
 	(pt 704 -72)
 	(pt 880 -72)
+)
+(connector
+	(pt 544 24)
+	(pt 560 24)
+)
+(connector
+	(pt 312 232)
+	(pt 272 232)
+)
+(connector
+	(pt 704 -88)
+	(pt 736 -88)
+)
+(connector
+	(pt 736 -88)
+	(pt 736 -200)
+)
+(connector
+	(pt 736 -200)
+	(pt 272 -200)
+)
+(connector
+	(pt 272 -200)
+	(pt 272 232)
 )
 (junction (pt 472 24))
 (junction (pt 472 40))
