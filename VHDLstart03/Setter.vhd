@@ -24,9 +24,9 @@ architecture Behavioral of Setter is
 	signal key3Prev : std_logic := '1';
 	signal key4Prev : std_logic := '1';
 	signal updateBuf : std_logic := '1';
-	signal dataBuf : std_logic_vector(7 downto 0) := b"00000000";
-	signal dataBuf0 : std_logic_vector(3 downto 0) := b"0000";
-	signal dataBuf1 : std_logic_vector(3 downto 0) := b"0000";
+	signal dataBuf : std_logic_vector(7 downto 0) := b"11111111";
+	signal dataBuf0 : std_logic_vector(3 downto 0) := b"1111";
+	signal dataBuf1 : std_logic_vector(3 downto 0) := b"1111";
 begin	
 
 	update <= updateBuf;
@@ -35,9 +35,9 @@ begin
 	process(clk)
 	begin
 		if rising_edge(clk) then
+			dataBuf <= dataBuf1 & dataBuf0;
 			if reset = '0' and resetPrev = '1' then
-				updateBuf <= '1';
-				dataBuf <= dataBuf1 & dataBuf0;
+				updateBuf <= '1';				
 			else
 				if updateBuf = '1' then 
 					if countUpdate < 7 then

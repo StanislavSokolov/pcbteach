@@ -256,6 +256,7 @@ applicable agreement for further details.
 		(line (pt 52 8)(pt 56 12))
 	)
 	(text "VCC" (rect 4 7 24 17)(font "Arial" (font_size 6)))
+	(annotation_block (location)(rect 1056 -112 1112 -96))
 )
 (symbol
 	(rect 312 88 456 168)
@@ -1110,15 +1111,6 @@ applicable agreement for further details.
 	(pt 488 368)
 )
 (connector
-	(pt 688 512)
-	(pt 696 512)
-)
-(connector
-	(pt 672 496)
-	(pt 672 600)
-	(bus)
-)
-(connector
 	(pt 312 840)
 	(pt 248 840)
 )
@@ -1199,64 +1191,60 @@ applicable agreement for further details.
 	(pt 704 -136)
 )
 (connector
-	(pt 704 -104)
-	(pt 720 -104)
-	(bus)
-)
-(connector
-	(pt 720 -104)
-	(pt 720 -184)
-	(bus)
-)
-(connector
-	(pt 720 -184)
-	(pt 256 -184)
-	(bus)
-)
-(connector
-	(pt 256 -184)
-	(pt 256 248)
-	(bus)
-)
-(connector
-	(pt 880 496)
-	(pt 864 496)
-)
-(connector
-	(pt 864 -56)
-	(pt 864 496)
-)
-(connector
-	(pt 864 -56)
-	(pt 704 -56)
-)
-(connector
 	(pt 704 -72)
 	(pt 880 -72)
-)
-(connector
-	(pt 544 24)
-	(pt 560 24)
 )
 (connector
 	(pt 312 232)
 	(pt 272 232)
 )
 (connector
-	(pt 704 -88)
-	(pt 736 -88)
+	(pt 672 304)
+	(pt 256 304)
+	(bus)
 )
 (connector
-	(pt 736 -88)
-	(pt 736 -200)
+	(pt 672 304)
+	(pt 672 496)
+	(bus)
 )
 (connector
-	(pt 736 -200)
-	(pt 272 -200)
+	(pt 672 496)
+	(pt 672 600)
+	(bus)
 )
 (connector
-	(pt 272 -200)
+	(pt 256 304)
+	(pt 256 248)
+	(bus)
+)
+(connector
+	(pt 848 496)
+	(pt 880 496)
+)
+(connector
+	(pt 688 512)
+	(pt 696 512)
+)
+(connector
 	(pt 272 232)
+	(pt 272 -40)
+)
+(connector
+	(pt 272 -40)
+	(pt 528 -40)
+)
+(connector
+	(pt 528 -40)
+	(pt 528 24)
+)
+(connector
+	(pt 528 24)
+	(pt 544 24)
+)
+(connector
+	(pt 544 24)
+	(pt 560 24)
 )
 (junction (pt 472 24))
 (junction (pt 472 40))
@@ -1274,3 +1262,5 @@ applicable agreement for further details.
 (junction (pt 480 368))
 (junction (pt 288 736))
 (junction (pt 544 120))
+(junction (pt 672 496))
+(junction (pt 544 24))
