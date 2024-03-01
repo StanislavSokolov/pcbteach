@@ -1,0 +1,40 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+
+ENTITY test_tb_vhd IS
+END test_tb_vhd;
+
+ARCHITECTURE behavior of test_tb_vhd is
+
+COMPONENT or_gate
+PORT(
+a : IN std_logic;
+b : IN std_logic;
+q : OUT std_logic
+);
+END COMPONENT;
+
+SIGNAL a_tb : std_logic := '0';
+SIGNAL b_tb : std_logic := '0';;
+SIGNAL q_tb : std_logic;
+BEGIN
+
+uut: or_gate PORT MAP(
+a => a_tb,
+b => b_tb,
+q => q_tb
+);
+
+PROCESS
+BEGIN
+a_tb <= '0';
+b_tb <= '0';
+wait for 100 ns;
+a_tb <= '1';
+wait for 100 ns;
+b_tb <= '1';
+wait for 100 ns;
+a_tb <= '0';
+wait for 100 ns;
+END PROCESS;
+END;
