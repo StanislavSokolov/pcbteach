@@ -1,33 +1,59 @@
-# Compile of or_gate.vhd was successful.
-# Compile of TestBench01.vhd was successful.
-# 2 compiles, 0 failed with no errors.
-vsim -gui work.testbench01
-# vsim -gui work.testbench01 
-# Start time: 17:15:59 on Mar 01,2024
+vsim -gui work.or_gate work.testbench01
+# vsim -gui work.or_gate work.testbench01 
+# Start time: 13:18:43 on Mar 04,2024
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
-# Loading work.testbench01(behavior)
 # Loading work.or_gate(rtl)
-run
+# Loading work.testbench01(behavior)
+add wave -position end  sim:/testbench01/tp
 add wave -position end  sim:/testbench01/a_tb
 add wave -position end  sim:/testbench01/b_tb
 add wave -position end  sim:/testbench01/q_tb
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+add wave -position end  sim:/testbench01/expected
 run
-run
-run
-run
-run
-run
-run
-run
-run
-restart
-run
-run
-restart
-run
-# End time: 17:24:37 on Mar 01,2024, Elapsed time: 0:08:38
+# ** Note: No error found (t = 800000 ps)
+#    Time: 800 ns  Iteration: 0  Instance: /testbench01
+# ** Note: No error found (t = 810000 ps)
+#    Time: 810 ns  Iteration: 0  Instance: /testbench01
+# ** Note: No error found (t = 820000 ps)
+#    Time: 820 ns  Iteration: 0  Instance: /testbench01
+# ** Note: No error found (t = 830000 ps)
+#    Time: 830 ns  Iteration: 0  Instance: /testbench01
+# ** Note: No error found (t = 840000 ps)
+#    Time: 840 ns  Iteration: 0  Instance: /testbench01
+# ** Note: No error found (t = 850000 ps)
+#    Time: 850 ns  Iteration: 0  Instance: /testbench01
+# ** Note: No error found (t = 860000 ps)
+#    Time: 860 ns  Iteration: 0  Instance: /testbench01
+# ** Note: No error found (t = 870000 ps)
+#    Time: 870 ns  Iteration: 0  Instance: /testbench01
+# ** Note: No error found (t = 880000 ps)
+#    Time: 880 ns  Iteration: 0  Instance: /testbench01
+# ** Note: No error found (t = 890000 ps)
+#    Time: 890 ns  Iteration: 0  Instance: /testbench01
+# ** Note: No error found (t = 900000 ps)
+#    Time: 900 ns  Iteration: 0  Instance: /testbench01
+# ** Note: No error found (t = 910000 ps)
+#    Time: 910 ns  Iteration: 0  Instance: /testbench01
+# ** Note: No error found (t = 920000 ps)
+#    Time: 920 ns  Iteration: 0  Instance: /testbench01
+# ** Note: No error found (t = 930000 ps)
+#    Time: 930 ns  Iteration: 0  Instance: /testbench01
+# ** Note: No error found (t = 940000 ps)
+#    Time: 940 ns  Iteration: 0  Instance: /testbench01
+# ** Note: No error found (t = 950000 ps)
+#    Time: 950 ns  Iteration: 0  Instance: /testbench01
+# ** Note: No error found (t = 960000 ps)
+#    Time: 960 ns  Iteration: 0  Instance: /testbench01
+# ** Note: No error found (t = 970000 ps)
+#    Time: 970 ns  Iteration: 0  Instance: /testbench01
+# ** Note: No error found (t = 980000 ps)
+#    Time: 980 ns  Iteration: 0  Instance: /testbench01
+# ** Note: No error found (t = 990000 ps)
+#    Time: 990 ns  Iteration: 0  Instance: /testbench01
+# ** Note: No error found (t = 1000000 ps)
+#    Time: 1 us  Iteration: 0  Instance: /testbench01
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf D:/GITEA/GitHub/ES/pcbteach/TestBench01/tb/work/wave.do
+# End time: 13:19:40 on Mar 04,2024, Elapsed time: 0:00:57
 # Errors: 0, Warnings: 1

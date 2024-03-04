@@ -51,43 +51,43 @@ R10
 R11
 R12
 Etestbench01
-Z13 w1709300069
+Z13 w1709547084
 R1
 R2
-!i122 1
+!i122 2
 R3
 Z14 8D:/GITEA/GitHub/ES/pcbteach/TestBench01/TestBench01.vhd
 Z15 FD:/GITEA/GitHub/ES/pcbteach/TestBench01/TestBench01.vhd
 l0
 L4 1
-VJC17ME6LWjaRU?iC9_BRM1
-!s100 cSL10gJM^Cld9UZ>7ko502
+V9Jk5WTSQ8iMKJaF5VO;670
+!s100 n^]BfP@^3hYT:WJ@T3<We1
 R6
 32
-R7
+Z16 !s110 1709547230
 !i10b 1
-Z16 !s108 1709302542.000000
-Z17 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/GITEA/GitHub/ES/pcbteach/TestBench01/TestBench01.vhd|
-!s107 D:/GITEA/GitHub/ES/pcbteach/TestBench01/TestBench01.vhd|
+Z17 !s108 1709547230.000000
+Z18 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/GITEA/GitHub/ES/pcbteach/TestBench01/TestBench01.vhd|
+Z19 !s107 D:/GITEA/GitHub/ES/pcbteach/TestBench01/TestBench01.vhd|
 !i113 1
 R11
 R12
 Abehavior
 R1
 R2
-DEx4 work 11 testbench01 0 22 JC17ME6LWjaRU?iC9_BRM1
-!i122 1
-l21
-L7 36
-VKeXK:@^4oF2PKUSY<H46]2
-!s100 0NA0Ml6U46=I5DKK>>hQf3
+DEx4 work 11 testbench01 0 22 9Jk5WTSQ8iMKJaF5VO;670
+!i122 2
+l23
+L8 59
+VH_@G>X@^2z1J3l_6k8AXJ1
+!s100 ?9;en3<>=Fz8AQ?P4]Bge0
 R6
 32
-R7
-!i10b 1
 R16
+!i10b 1
 R17
-Z18 !s107 D:/GITEA/GitHub/ES/pcbteach/TestBench01/TestBench01.vhd|
+R18
+R19
 !i113 1
 R11
 R12

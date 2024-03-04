@@ -29,7 +29,7 @@
 (DELAYFILE
   (SDFVERSION "2.1")
   (DESIGN "or_gate")
-  (DATE "03/01/2024 17:07:15")
+  (DATE "03/04/2024 13:11:41")
   (VENDOR "Altera")
   (PROGRAM "Quartus II 64-Bit")
   (VERSION "Version 13.1.0 Build 162 10/23/2013 SJ Full Version")
