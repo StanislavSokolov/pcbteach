@@ -77,4 +77,38 @@ begin
 			end if;	
 		end if;
 	end process;
+	
+	process(clk_tb)
+		variable int : integer := 0;
+		variable int_vect : std_logic_vector(31 downto 0) := (others => '0');
+		variable count_for_Y : natural range 0 to 8 := 0;
+	begin
+		if rising_edge(clk_tb) then	
+			if find_tb = '0' then
+				int_vect(3 + count_for_Y*4 downto count_for_Y*4) := y_tb;
+				count_for_Y := count_for_Y + 1;
+			end if;
+			if count_for_Y = 8 then
+				if finish = '1' then
+					int_vect(31 downto count_for_Y*4) := (others => '0');
+					int := conv_integer(int_vect(31 downto 0));
+					write (outputFile, int);
+					file_close(outputFile);
+				else
+					int := conv_integer(int_vect(31 downto 0));	
+					write (outputFile, int);
+				end if;
+				int_vect(31 downto 0) := (others => '0')	;
+				count_for_Y := 0;
+			end if;	
+		end if;
+	end process;
+	
+	process (finish)
+	begin
+		if finish = '1' then	
+			file_close(inputFile);
+			stop;
+		end if;
+	end process;	
 end bev;
