@@ -1,5 +1,5 @@
 Fitter report for TestBenchTask2
-Mon Mar 04 18:25:37 2024
+Mon Mar 11 17:03:46 2024
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Full Version
 
 
@@ -67,7 +67,7 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Mon Mar 04 18:25:37 2024       ;
+; Fitter Status                      ; Successful - Mon Mar 11 17:03:46 2024       ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Full Version ;
 ; Revision Name                      ; TestBenchTask2                              ;
 ; Top-level Entity Name              ; TestBenchTask2                              ;
@@ -96,6 +96,7 @@ applicable agreement for further details.
 ; Minimum Core Junction Temperature                                          ; 0                                     ;                                       ;
 ; Maximum Core Junction Temperature                                          ; 85                                    ;                                       ;
 ; Fit Attempts to Skip                                                       ; 0                                     ; 0.0                                   ;
+; Device I/O Standard                                                        ; 2.5 V                                 ;                                       ;
 ; Use smart compilation                                                      ; Off                                   ; Off                                   ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                                    ; On                                    ;
 ; Enable compact report table                                                ; Off                                   ; Off                                   ;
@@ -163,38 +164,20 @@ applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+--------------------------------------------+
-; I/O Assignment Warnings                    ;
-+------------+-------------------------------+
-; Pin Name   ; Reason                        ;
-+------------+-------------------------------+
-; dataout[0] ; Incomplete set of assignments ;
-; dataout[1] ; Incomplete set of assignments ;
-; dataout[2] ; Incomplete set of assignments ;
-; dataout[3] ; Incomplete set of assignments ;
-; dataout[4] ; Incomplete set of assignments ;
-; dataout[5] ; Incomplete set of assignments ;
-; dataout[6] ; Incomplete set of assignments ;
-; dataout[7] ; Incomplete set of assignments ;
-; w_r        ; Incomplete set of assignments ;
-; clk        ; Incomplete set of assignments ;
-; datain[0]  ; Incomplete set of assignments ;
-; address[0] ; Incomplete set of assignments ;
-; address[1] ; Incomplete set of assignments ;
-; address[2] ; Incomplete set of assignments ;
-; address[3] ; Incomplete set of assignments ;
-; address[4] ; Incomplete set of assignments ;
-; address[5] ; Incomplete set of assignments ;
-; address[6] ; Incomplete set of assignments ;
-; address[7] ; Incomplete set of assignments ;
-; datain[1]  ; Incomplete set of assignments ;
-; datain[2]  ; Incomplete set of assignments ;
-; datain[3]  ; Incomplete set of assignments ;
-; datain[4]  ; Incomplete set of assignments ;
-; datain[5]  ; Incomplete set of assignments ;
-; datain[6]  ; Incomplete set of assignments ;
-; datain[7]  ; Incomplete set of assignments ;
-+------------+-------------------------------+
++---------------------------------------------------+
+; I/O Assignment Warnings                           ;
++------------+--------------------------------------+
+; Pin Name   ; Reason                               ;
++------------+--------------------------------------+
+; dataout[0] ; Missing drive strength and slew rate ;
+; dataout[1] ; Missing drive strength and slew rate ;
+; dataout[2] ; Missing drive strength and slew rate ;
+; dataout[3] ; Missing drive strength and slew rate ;
+; dataout[4] ; Missing drive strength and slew rate ;
+; dataout[5] ; Missing drive strength and slew rate ;
+; dataout[6] ; Missing drive strength and slew rate ;
+; dataout[7] ; Missing drive strength and slew rate ;
++------------+--------------------------------------+
 
 
 +-------------------------------------------------------------------------------------------------+
@@ -1088,7 +1071,7 @@ Info (176215): I/O bank details before I/O pin placement
         Info (176213): I/O bank number 6 does not use VREF pins and has undetermined VCCIO pins. 1 total pin(s) used --  9 pins available
         Info (176213): I/O bank number 7 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  13 pins available
         Info (176213): I/O bank number 8 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  12 pins available
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:00
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:01
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
 Info (170191): Fitter placement operations beginning
@@ -1101,18 +1084,18 @@ Info (170194): Fitter routing operations ending: elapsed time is 00:00:00
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
-Info (11888): Total time spent on timing analysis during the Fitter is 0.09 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.14 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:00
+Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
 Info (144001): Generated suppressed messages file D:/GITEA/GitHub/ES/pcbteach/TestBench02/output_files/TestBenchTask2.fit.smsg
 Info: Quartus II 64-Bit Fitter was successful. 0 errors, 3 warnings
-    Info: Peak virtual memory: 5378 megabytes
-    Info: Processing ended: Mon Mar 04 18:25:37 2024
+    Info: Peak virtual memory: 5377 megabytes
+    Info: Processing ended: Mon Mar 11 17:03:46 2024
     Info: Elapsed time: 00:00:04
-    Info: Total CPU time (on all processors): 00:00:04
+    Info: Total CPU time (on all processors): 00:00:05
 
 
 +----------------------------+

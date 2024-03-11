@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus II 64-Bit"
 -- VERSION "Version 13.1.0 Build 162 10/23/2013 SJ Full Version"
 
--- DATE "03/04/2024 18:25:44"
+-- DATE "03/11/2024 17:03:53"
 
 -- 
 -- Device: Altera EP4CE10E22C8 Package TQFP144
@@ -39,7 +39,7 @@ ENTITY 	TestBenchTask2 IS
 	datain : IN std_logic_vector(7 DOWNTO 0);
 	address : IN std_logic_vector(7 DOWNTO 0);
 	w_r : IN std_logic;
-	dataout : OUT std_logic_vector(7 DOWNTO 0)
+	dataout : BUFFER std_logic_vector(7 DOWNTO 0)
 	);
 END TestBenchTask2;
 

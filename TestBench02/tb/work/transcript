@@ -1,0 +1,41 @@
+# Compile of Task02_tb.vhd was successful with warnings.
+# Compile of TestBenchTask2.vhd was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui work.task02_tb work.testbenchtask2
+# vsim -gui work.task02_tb work.testbenchtask2 
+# Start time: 17:05:16 on Mar 11,2024
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.task02_tb(bev)
+# Loading work.testbenchtask2(bev)
+# ** Warning: (vsim-7) Failed to open VHDL file "test.dat" in rb mode.
+# No such file or directory. (errno = ENOENT)
+#    Time: 0 ps  Iteration: 0  Instance: /task02_tb File: D:/GITEA/GitHub/ES/pcbteach/TestBench02/Task02_tb.vhd
+add wave -position end  sim:/task02_tb/tp
+add wave -position end  sim:/task02_tb/clk_tb
+add wave -position end  sim:/task02_tb/clk_tp
+add wave -position end  sim:/task02_tb/datain_tb
+add wave -position end  sim:/task02_tb/address_tb
+add wave -position end  sim:/task02_tb/w_r_tb
+add wave -position end  sim:/task02_tb/dataout_tb
+add wave -position end  sim:/task02_tb/memory
+add wave -position end  sim:/task02_tb/enableRead
+add wave -position end  sim:/task02_tb/enableReadPrev
+add wave -position end  sim:/task02_tb/enableWrite
+add wave -position end  sim:/task02_tb/enableWritePrev
+add wave -position end  sim:/task02_tb/enableCheck
+add wave -position end  sim:/task02_tb/enableCheckPrev
+add wave -position end  sim:/task02_tb/finishRead
+add wave -position end  sim:/task02_tb/x_tb
+add wave -position end  sim:/task02_tb/y_tb
+add wave -position end  sim:/task02_tb/countMem
+add wave -position end  sim:/task02_tb/stateRWCM
+run
+# ** Note: At t = 420000 ps x_tb = y_tb. It's ok
+#    Time: 420 ns  Iteration: 0  Instance: /task02_tb
+# ** Failure: Finish at t = 540000 ps
+#    Time: 540 ns  Iteration: 0  Process: /task02_tb/line__107 File: D:/GITEA/GitHub/ES/pcbteach/TestBench02/Task02_tb.vhd
+# Break in Process line__107 at D:/GITEA/GitHub/ES/pcbteach/TestBench02/Task02_tb.vhd line 136
