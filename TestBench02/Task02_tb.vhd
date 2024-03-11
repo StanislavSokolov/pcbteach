@@ -8,7 +8,7 @@ library std;
 	use std.env.stop;
  
 entity Task02_tb is
-	generic (tp: time := 10ns);
+	generic (tp: time := 20ns);
 end entity;
 
 architecture bev of Task02_tb is
@@ -25,6 +25,7 @@ port(
 end component;
 
 signal clk_tb : std_logic := '0';
+signal clk_tp : std_logic := '0';
 signal datain_tb : std_logic_vector(7 downto 0);
 signal address_tb : std_logic_vector(7 downto 0);
 	-- write when 0, read when 1
@@ -39,12 +40,18 @@ file inputFile : intfile open read_mode is "test.hex";
 file outputFile : intfile open write_mode is "test2.hex";
 
 signal enableRead : std_logic_vector := '1';
-signal enableWrite : std_logic_vector := '0';
+signal enableReadPrev : std_logic_vector := '0';
+signal enableWrite : std_logic_vector := '1';
+signal enableWritePrev : std_logic_vector := '0';
 
 signal finishRead  : std_logic := '0';
 
 signal x_tb : std_logic_vector(31 downto 0) := (others => '0');
 signal countMem : natural range 0 to 255 := 0;
+
+
+type ReadWriteCheckMachine is (Reading, Checking, Writing, Stopping);
+signal stateRWCM : ReadWriteCheckMachine := Reading;
 
 begin
 
@@ -57,16 +64,16 @@ begin
 			dataout => dataout_tb;		
 		);
 		
-	clk_tb <= not clk_tb after 20ns;	
+	clk_tp <= not clk_tp after tp;	
 
 	-- читаем данные из файла (по 4 бита 8 раз)
-	process(clk_tb)
+	process(clk_tp)
 		variable int : integer := 0;
 		variable int_vect : std_logic_vector(31 downto 0) := (others => '0');
 		variable count_for_X : natural range 0 to 7 := 0;
 	begin
-		if rising_edge(clk_tb) then
-			if enableRead = '1' then
+		if rising_edge(clk_tp) then
+			if stateRWCM = Reading and enableRead = '1' then
 				if count_for_X = 0 then	
 					if not EndFile(test.hex) then
 						Read(test.hex, int);
@@ -81,72 +88,117 @@ begin
 					enableRead <= '0';
 				else 
 					count_for_X := count_for_X + 1;
-				end if;
-			else
-				if startRead = '1' then
-					enableRead <= '1';
 				end if;	
-			end if;	
-		end if;
-	end process;
-	
-	-- записываем в память прочитанный буфер из 32 бит в четыре ячейки
-	process(clk_tb)
-		variable count_for_datain_tb : natural range 0 to 3 := 0;
-	begin
-		if enableRead = '0' and startWrite = '0' then
-			clk_tb <= '0';
-			wait for 50ns;
-			address_tb <= conv_std_logic_vector(countMem, 8);
-			datain_tb <= x_tb(7 + count_for_datain_tb*8 downto count_for_datain_tb*8);
-			clk_tb <= '1';
-			w_r_tb <= '0';
-			if count_for_datain_tb < 3 then
-				count_for_datain_tb := count_for_datain_tb + 1;
-			else
-				count_for_datain_tb := 0;
-				startWrite <= '1';
+			elsif stateRWCM /= Reading then
+				enableRead <= '1';
 			end if;
-			wait for 50ns;
-		elsif enableRead = '0' and startWrite = '1'
-			startRead <= '0';
 		end if;
 	end process;
-
-		
-		
 	
-	process(clk_tb)
+	-- процес, в котором перезаписываются предыдущие значения флагом
+	process(clk_tp)
+	begin 
+		if rising_edge(clk_tp) then	
+			enableReadPrev <= enableRead;
+			enableCheckPrev <= enableCheckPrev;
+			enableWritePrev <= enableWrite;
+		end if;
+	end process;
+	
+	-- сама машина
+	process(clk_tp)
+	begin 
+		if rising_edge(clk_tp) then
+			case stateRWCM is
+				when Reading =>
+					if enableRead = '0' and enableReadPrev = '1' then
+						stateRWCM <= Checking;
+					end if;
+				when Checking =>
+					if enableCheck = '0' and enableCheckPrev = '1' then
+						stateRWCM <= Writing;
+					end if;
+				when Writing => 
+					if enableWrite = '0' and enableWritePrev = '1' then
+						if finishRead = '1' then
+							stateRWCM <= Stopping;
+						else 
+							stateRWCM <= Reading;
+						end if;
+					end if;
+				when Stopping => 
+					file_close(outputFile);
+					file_close(inputFile);
+					stop;
+				when others =>
+					file_close(outputFile);
+					file_close(inputFile);
+					stop;
+			end case;
+		end if;
+	end process;
+				
+	
+	-- записываем в память прочитанный буфер из 32 бит в четыре ячейки и читаем его
+	process
+		variable count_for_data_tb : natural range 0 to 3 := 0;
+	begin
+		if stateRWCM = Checking and enableCheck = '1' then
+			clk_tb <= '0';
+			address_tb <= conv_std_logic_vector(countMem, 8);
+			datain_tb <= x_tb(7 + count_for_data_tb*8 downto count_for_data_tb*8);
+			w_r_tb <= '0';
+			wait for 50ns;
+			clk_tb <= '1';
+			wait for 50ns;
+			clk_tb <= '0';
+			w_r_tb <= '1';
+			wait for 50ns;
+			clk_tb <= '1';
+			wait for 50ns;
+			y_tb(7 + count_for_data_tb*8 downto count_for_data_tb*8) <= dataout_tb;
+			clk_tb <= '0';
+			if count_for_data_tb < 3 then
+				count_for_data_tb := count_for_data_tb + 1;
+			else
+				count_for_data_tb := 0;
+				enableCheck <= '0';
+			end if;
+			countMem <= countMem + 1;
+			wait for 50ns;
+		elsif stateRWCM /= Checking then
+				enableCheck <= '1';
+		end if;
+	end process;
+		
+	--записываем в файл
+	process(clk_tp)
 		variable int : integer := 0;
 		variable int_vect : std_logic_vector(31 downto 0) := (others => '0');
 		variable count_for_Y : natural range 0 to 8 := 0;
 	begin
-		if rising_edge(clk_tb) then	
-			if find_tb = '0' then
+		if rising_edge(clk_tp) then	
+			if stateRWCM <= Writing and enableWrite = '1' then 
 				int_vect(3 + count_for_Y*4 downto count_for_Y*4) := y_tb;
 				count_for_Y := count_for_Y + 1;
-			end if;
-			if count_for_Y = 8 then
-				if finish = '1' then
-					int_vect(31 downto count_for_Y*4) := (others => '0');
-					int := conv_integer(int_vect(31 downto 0));
-					write (outputFile, int);
-					file_close(outputFile);
-				else
-					int := conv_integer(int_vect(31 downto 0));	
-					write (outputFile, int);
 				end if;
-				int_vect(31 downto 0) := (others => '0')	;
-				count_for_Y := 0;
+				if count_for_Y = 8 then
+					if finish = '1' then
+						int_vect(31 downto count_for_Y*4) := (others => '0');
+						int := conv_integer(int_vect(31 downto 0));
+						write (outputFile, int);
+						file_close(outputFile);
+					else
+						int := conv_integer(int_vect(31 downto 0));	
+						write (outputFile, int);
+					end if;
+					int_vect(31 downto 0) := (others => '0')	;
+					count_for_Y := 0;
+				end if;
+			elsif stateRWCM /= Writing then
+				enableWrite = '1';
 			end if;	
 		end if;
 	end process;
 	
-	process (finish)
-	begin
-		if finish = '1' then	
-			file_close(inputFile);
-			stop;
-		end if;
-	end process;	
 end bev;
