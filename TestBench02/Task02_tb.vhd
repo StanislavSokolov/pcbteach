@@ -1,6 +1,7 @@
 library ieee;
 	use ieee.std_logic_1164.all;
 	use ieee.std_logic_arith.all;
+	use ieee.std_logic_textio.all;
 --	use ieee.numeric_std.all;
 	use ieee.std_logic_unsigned.all;
  
@@ -35,9 +36,10 @@ signal dataout_tb : std_logic_vector(7 downto 0);
 type mem is array (255 downto 0) of std_logic_vector(7 downto 0);
 signal memory : mem;
 
-type intfile is file of integer;
-file inputFile : text open read_mode is "test.dat";
-file outputFile : intfile open write_mode is "test2.dat";
+type infile is file of integer;
+type outfile is file of integer;
+file inputFile : infile open read_mode is "test.dat";
+file outputFile : outfile open write_mode is "test2.dat";
 
 signal enableRead : std_logic := '1';
 signal enableReadPrev : std_logic := '1';
@@ -48,13 +50,16 @@ signal enableCheckPrev : std_logic := '1';
 
 signal finishRead  : std_logic := '0';
 
-signal x_tb : std_logic_vector(15 downto 0) := x"ABCD";
-signal y_tb : std_logic_vector(15 downto 0) := (others => '0');
+signal x_tb : std_logic_vector(31 downto 0) := (others => '0');
+signal y_tb : std_logic_vector(31 downto 0) := (others => '0');
 signal countMem : natural range 0 to 255 := 0;
 
 
 type ReadWriteCheckMachine is (Reading, Checking, Writing, Stopping);
-signal stateRWCM : ReadWriteCheckMachine := Checking;
+signal stateRWCM : ReadWriteCheckMachine := Reading;
+
+type CheckingMachine is (Waiting, Setting, Writing, Preparing, Reading, Stopping);
+signal stateCM : CheckingMachine := Waiting;
 
 begin
 
@@ -72,21 +77,26 @@ begin
 	-- С‡РёС‚Р°РµРј РґР°РЅРЅС‹Рµ РёР· С„Р°Р№Р»Р° (РїРѕ 4 Р±РёС‚Р° 8 СЂР°Р·)
 	process(clk_tp)
 		variable int : integer := 0;
-		variable str : line;
-		variable int_vect : std_logic_vector(15 downto 0) := (others => '0');
+		variable int_vect : std_logic_vector(31 downto 0) := (others => '0');
+		variable count : natural range 0 to 7 := 0;
 	begin
 		if rising_edge(clk_tp) then
-			if stateRWCM = Reading and enableRead = '1' then
+			if stateRWCM = Reading and enableRead = '1' then				
 				if not EndFile(inputFile) then
-					ReadLine(inputFile, str);
-					read(str, int);
-					int_vect := conv_std_logic_vector(int, 16);
+					read(inputFile, int);
+					int_vect := conv_std_logic_vector(int, 32);
 				else 
-					finishRead <= '1';
-					enableRead <= '0';
+					finishRead <= '1';					
 				end if;
 				x_tb <= int_vect;
-				enableRead <= '0';				
+				enableRead <= '0';
+--				if count < 7 then
+--					enableRead <= '0';
+--					count := count + 1;
+--				else 
+--					finishRead <= '1';
+--					count := 0;
+--				end if;					
 			elsif stateRWCM /= Reading then
 				enableRead <= '1';
 			end if;
@@ -126,8 +136,8 @@ begin
 					end if;
 				when Writing => 
 					if enableWrite = '0' and enableWritePrev = '1' then
-						--stateRWCM <= Reading;
-						stateRWCM <= Stopping;
+						stateRWCM <= Reading;
+						--stateRWCM <= Stopping;
 					end if;
 				when Stopping => 
 					file_close(outputFile);
@@ -147,44 +157,59 @@ begin
 				
 	
 	-- Р·Р°РїРёСЃС‹РІР°РµРј РІ РїР°РјСЏС‚СЊ РїСЂРѕС‡РёС‚Р°РЅРЅС‹Р№ Р±СѓС„РµСЂ РёР· 32 Р±РёС‚ РІ С‡РµС‚С‹СЂРµ СЏС‡РµР№РєРё Рё С‡РёС‚Р°РµРј РµРіРѕ
-	process
-		variable count_for_data_tb : natural range 0 to 1 := 1;
+	process(clk_tp)
+		variable count_for_data_tb : natural range 0 to 3 := 3;
 	begin
-		if stateRWCM = Checking and enableCheck = '1' then
-			clk_tb <= '0';
-			address_tb <= conv_std_logic_vector(countMem, 8);
-			datain_tb <= x_tb(7 + count_for_data_tb*8 downto count_for_data_tb*8);
-			w_r_tb <= '0';
-			wait for 50ns;
-			clk_tb <= '1';
-			wait for 50ns;
-			clk_tb <= '0';
-			w_r_tb <= '1';
-			wait for 50ns;
-			clk_tb <= '1';
-			wait for 50ns;
-			y_tb(7 + count_for_data_tb*8 downto count_for_data_tb*8) <= dataout_tb;
-			if count_for_data_tb > 0 then
-				count_for_data_tb := count_for_data_tb - 1;
-			else
-				count_for_data_tb := 1;
-				enableCheck <= '0';
-			end if;
-			countMem <= countMem + 1;
-		elsif stateRWCM /= Checking then
-				enableCheck <= '1';
-		end if;
+		if rising_edge(clk_tp) then
+			case stateCM is
+				when Waiting => 
+					if stateRWCM = Checking and enableCheck = '1' then
+						stateCM <= Setting;
+					elsif stateRWCM /= Checking then
+						enableCheck <= '1';
+					end if;
+				when Setting =>
+					clk_tb <= '0';
+					address_tb <= conv_std_logic_vector(countMem, 8);
+					datain_tb <= x_tb(7 + count_for_data_tb*8 downto count_for_data_tb*8);
+					w_r_tb <= '0';
+					stateCM <= Writing;
+				when Writing => 
+					clk_tb <= '1';					
+					stateCM <= Preparing;
+				when Preparing =>
+					clk_tb <= '0';
+					w_r_tb <= '1';
+					stateCM <= Reading;
+				when Reading =>
+					clk_tb <= '1';
+					stateCM <= Stopping;
+				when Stopping =>
+					clk_tb <= '0';
+					y_tb(7 + count_for_data_tb*8 downto count_for_data_tb*8) <= dataout_tb;
+					countMem <= countMem + 1;
+					if count_for_data_tb > 0 then
+						count_for_data_tb := count_for_data_tb - 1;
+						stateCM <= Setting;
+					else
+						count_for_data_tb := 1;
+						enableCheck <= '0';
+						stateCM <= Waiting;
+					end if;
+				when others =>
+			end case;			
+		end if;	
 	end process;
 		
 	--Р·Р°РїРёСЃС‹РІР°РµРј РІ С„Р°Р№Р»
 	process(clk_tp)
 		variable int : integer := 0;
-		variable int_vect : std_logic_vector(15 downto 0) := (others => '0');
+		variable int_vect : std_logic_vector(31 downto 0) := (others => '0');
 	begin
 		if rising_edge(clk_tp) then	
 			if stateRWCM = Writing and enableWrite = '1' then 
 				int_vect := y_tb;
-				int := conv_integer(int_vect(15 downto 0));
+				int := conv_integer(int_vect(31 downto 0));
 				write (outputFile, int);
 				enableWrite <= '0';	
 			elsif stateRWCM /= Writing then

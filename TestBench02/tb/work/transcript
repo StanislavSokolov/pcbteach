@@ -3,17 +3,15 @@
 # 2 compiles, 0 failed with no errors.
 vsim -gui work.task02_tb work.testbenchtask2
 # vsim -gui work.task02_tb work.testbenchtask2 
-# Start time: 17:05:16 on Mar 11,2024
+# Start time: 18:56:51 on Mar 11,2024
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
 # Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_textio(body)
 # Loading ieee.std_logic_unsigned(body)
 # Loading work.task02_tb(bev)
 # Loading work.testbenchtask2(bev)
-# ** Warning: (vsim-7) Failed to open VHDL file "test.dat" in rb mode.
-# No such file or directory. (errno = ENOENT)
-#    Time: 0 ps  Iteration: 0  Instance: /task02_tb File: D:/GITEA/GitHub/ES/pcbteach/TestBench02/Task02_tb.vhd
 add wave -position end  sim:/task02_tb/tp
 add wave -position end  sim:/task02_tb/clk_tb
 add wave -position end  sim:/task02_tb/clk_tp
@@ -33,9 +31,22 @@ add wave -position end  sim:/task02_tb/x_tb
 add wave -position end  sim:/task02_tb/y_tb
 add wave -position end  sim:/task02_tb/countMem
 add wave -position end  sim:/task02_tb/stateRWCM
+add wave -position end  sim:/task02_tb/stateCM
+# Compile of Task02_tb.vhd was successful with warnings.
 run
-# ** Note: At t = 420000 ps x_tb = y_tb. It's ok
-#    Time: 420 ns  Iteration: 0  Instance: /task02_tb
-# ** Failure: Finish at t = 540000 ps
-#    Time: 540 ns  Iteration: 0  Process: /task02_tb/line__107 File: D:/GITEA/GitHub/ES/pcbteach/TestBench02/Task02_tb.vhd
-# Break in Process line__107 at D:/GITEA/GitHub/ES/pcbteach/TestBench02/Task02_tb.vhd line 136
+# ** Note: At t = 940000 ps x_tb = y_tb. It's ok
+#    Time: 940 ns  Iteration: 0  Instance: /task02_tb
+# ** Failure: Mismatch at t = 1580000 ps x_tb /= y_tb
+#    Time: 1580 ns  Iteration: 0  Process: /task02_tb/line__117 File: D:/GITEA/GitHub/ES/pcbteach/TestBench02/Task02_tb.vhd
+# Break in Process line__117 at D:/GITEA/GitHub/ES/pcbteach/TestBench02/Task02_tb.vhd line 131
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.task02_tb(bev)
+run
+# ** Note: At t = 940000 ps x_tb = y_tb. It's ok
+#    Time: 940 ns  Iteration: 0  Instance: /task02_tb
+# ** Failure: Mismatch at t = 1580000 ps x_tb /= y_tb
+#    Time: 1580 ns  Iteration: 0  Process: /task02_tb/line__117 File: D:/GITEA/GitHub/ES/pcbteach/TestBench02/Task02_tb.vhd
+# Break in Process line__117 at D:/GITEA/GitHub/ES/pcbteach/TestBench02/Task02_tb.vhd line 131
+# End time: 18:58:22 on Mar 11,2024, Elapsed time: 0:01:31
+# Errors: 1, Warnings: 1
