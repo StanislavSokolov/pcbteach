@@ -89,14 +89,7 @@ begin
 					finishRead <= '1';					
 				end if;
 				x_tb <= int_vect;
-				enableRead <= '0';
---				if count < 7 then
---					enableRead <= '0';
---					count := count + 1;
---				else 
---					finishRead <= '1';
---					count := 0;
---				end if;					
+				enableRead <= '0';		
 			elsif stateRWCM /= Reading then
 				enableRead <= '1';
 			end if;
@@ -137,7 +130,6 @@ begin
 				when Writing => 
 					if enableWrite = '0' and enableWritePrev = '1' then
 						stateRWCM <= Reading;
-						--stateRWCM <= Stopping;
 					end if;
 				when Stopping => 
 					file_close(outputFile);
@@ -192,7 +184,7 @@ begin
 						count_for_data_tb := count_for_data_tb - 1;
 						stateCM <= Setting;
 					else
-						count_for_data_tb := 1;
+						count_for_data_tb := 3;
 						enableCheck <= '0';
 						stateCM <= Waiting;
 					end if;
