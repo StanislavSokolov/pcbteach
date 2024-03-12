@@ -58,7 +58,7 @@ signal countMem : natural range 0 to 255 := 0;
 type ReadWriteCheckMachine is (Reading, Checking, Writing, Stopping);
 signal stateRWCM : ReadWriteCheckMachine := Reading;
 
-type CheckingMachine is (Waiting, Setting, Writing, Preparing, Reading, Stopping);
+type CheckingMachine is (Waiting, Setting, Writing, Preparing, Reading, Stopping, Checking);
 signal stateCM : CheckingMachine := Waiting;
 
 begin
@@ -81,15 +81,15 @@ begin
 		variable count : natural range 0 to 7 := 0;
 	begin
 		if rising_edge(clk_tp) then
-			if stateRWCM = Reading and enableRead = '1' then				
+			if stateRWCM = Reading and enableRead = '1' and finishRead = '0' then				
 				if not EndFile(inputFile) then
 					read(inputFile, int);
 					int_vect := conv_std_logic_vector(int, 32);
+					enableRead <= '0';
+					x_tb <= int_vect;
 				else 
 					finishRead <= '1';					
-				end if;
-				x_tb <= int_vect;
-				enableRead <= '0';		
+				end if;										
 			elsif stateRWCM /= Reading then
 				enableRead <= '1';
 			end if;
@@ -120,12 +120,6 @@ begin
 				when Checking =>
 					if enableCheck = '0' and enableCheckPrev = '1' then
 						stateRWCM <= Writing;
-						assert (x_tb = y_tb)
-						report "Mismatch at t = " & time'image(now) & " x_tb /= y_tb"
-						severity failure;
-						assert (x_tb /= y_tb)
-						report "At t = " & time'image(now) & " x_tb = y_tb. It's ok"
-						severity note;
 					end if;
 				when Writing => 
 					if enableWrite = '0' and enableWritePrev = '1' then
@@ -179,7 +173,17 @@ begin
 				when Stopping =>
 					clk_tb <= '0';
 					y_tb(7 + count_for_data_tb*8 downto count_for_data_tb*8) <= dataout_tb;
+					stateCM <= Checking;
+				when Checking =>
 					countMem <= countMem + 1;
+					if count_for_data_tb = 2 or count_for_data_tb = 0 then
+						assert (x_tb(15 + count_for_data_tb*8 downto count_for_data_tb*8) = y_tb(15 + count_for_data_tb*8 downto count_for_data_tb*8))
+						report "Mismatch at t = " & time'image(now) & " x_tb /= y_tb"
+						severity failure;
+						assert (x_tb(15 + count_for_data_tb*8 downto count_for_data_tb*8) /= y_tb(15 + count_for_data_tb*8 downto count_for_data_tb*8))
+						report "At t = " & time'image(now) & " x_tb = y_tb. It's ok"
+						severity note;
+					end if;	
 					if count_for_data_tb > 0 then
 						count_for_data_tb := count_for_data_tb - 1;
 						stateCM <= Setting;

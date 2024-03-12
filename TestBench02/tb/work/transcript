@@ -3,7 +3,7 @@
 # 2 compiles, 0 failed with no errors.
 vsim -gui work.task02_tb work.testbenchtask2
 # vsim -gui work.task02_tb work.testbenchtask2 
-# Start time: 18:56:51 on Mar 11,2024
+# Start time: 11:11:16 on Mar 12,2024
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -32,21 +32,40 @@ add wave -position end  sim:/task02_tb/y_tb
 add wave -position end  sim:/task02_tb/countMem
 add wave -position end  sim:/task02_tb/stateRWCM
 add wave -position end  sim:/task02_tb/stateCM
-# Compile of Task02_tb.vhd was successful with warnings.
 run
-# ** Note: At t = 940000 ps x_tb = y_tb. It's ok
-#    Time: 940 ns  Iteration: 0  Instance: /task02_tb
-# ** Failure: Mismatch at t = 1580000 ps x_tb /= y_tb
-#    Time: 1580 ns  Iteration: 0  Process: /task02_tb/line__117 File: D:/GITEA/GitHub/ES/pcbteach/TestBench02/Task02_tb.vhd
-# Break in Process line__117 at D:/GITEA/GitHub/ES/pcbteach/TestBench02/Task02_tb.vhd line 131
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.task02_tb(bev)
-run
-# ** Note: At t = 940000 ps x_tb = y_tb. It's ok
-#    Time: 940 ns  Iteration: 0  Instance: /task02_tb
-# ** Failure: Mismatch at t = 1580000 ps x_tb /= y_tb
-#    Time: 1580 ns  Iteration: 0  Process: /task02_tb/line__117 File: D:/GITEA/GitHub/ES/pcbteach/TestBench02/Task02_tb.vhd
-# Break in Process line__117 at D:/GITEA/GitHub/ES/pcbteach/TestBench02/Task02_tb.vhd line 131
-# End time: 18:58:22 on Mar 11,2024, Elapsed time: 0:01:31
-# Errors: 1, Warnings: 1
+# ** Note: At t = 580000 ps x_tb = y_tb. It's ok
+#    Time: 580 ns  Iteration: 0  Instance: /task02_tb
+# ** Note: At t = 1060000 ps x_tb = y_tb. It's ok
+#    Time: 1060 ns  Iteration: 0  Instance: /task02_tb
+# ** Note: At t = 1780000 ps x_tb = y_tb. It's ok
+#    Time: 1780 ns  Iteration: 0  Instance: /task02_tb
+# ** Note: At t = 2260000 ps x_tb = y_tb. It's ok
+#    Time: 2260 ns  Iteration: 0  Instance: /task02_tb
+# ** Note: At t = 2980000 ps x_tb = y_tb. It's ok
+#    Time: 2980 ns  Iteration: 0  Instance: /task02_tb
+# ** Note: At t = 3460000 ps x_tb = y_tb. It's ok
+#    Time: 3460 ns  Iteration: 0  Instance: /task02_tb
+# ** Note: At t = 4180000 ps x_tb = y_tb. It's ok
+#    Time: 4180 ns  Iteration: 0  Instance: /task02_tb
+# ** Note: At t = 4660000 ps x_tb = y_tb. It's ok
+#    Time: 4660 ns  Iteration: 0  Instance: /task02_tb
+# ** Note: At t = 5380000 ps x_tb = y_tb. It's ok
+#    Time: 5380 ns  Iteration: 0  Instance: /task02_tb
+# ** Note: At t = 5860000 ps x_tb = y_tb. It's ok
+#    Time: 5860 ns  Iteration: 0  Instance: /task02_tb
+# ** Note: At t = 6580000 ps x_tb = y_tb. It's ok
+#    Time: 6580 ns  Iteration: 0  Instance: /task02_tb
+# ** Note: At t = 7060000 ps x_tb = y_tb. It's ok
+#    Time: 7060 ns  Iteration: 0  Instance: /task02_tb
+# ** Note: At t = 7780000 ps x_tb = y_tb. It's ok
+#    Time: 7780 ns  Iteration: 0  Instance: /task02_tb
+# ** Note: At t = 8260000 ps x_tb = y_tb. It's ok
+#    Time: 8260 ns  Iteration: 0  Instance: /task02_tb
+# ** Note: At t = 8980000 ps x_tb = y_tb. It's ok
+#    Time: 8980 ns  Iteration: 0  Instance: /task02_tb
+# ** Note: At t = 9460000 ps x_tb = y_tb. It's ok
+#    Time: 9460 ns  Iteration: 0  Instance: /task02_tb
+# ** Failure: Finish at t = 9700000 ps
+#    Time: 9700 ns  Iteration: 0  Process: /task02_tb/line__110 File: D:/GITEA/GitHub/ES/pcbteach/TestBench02/Task02_tb.vhd
+# Break in Process line__110 at D:/GITEA/GitHub/ES/pcbteach/TestBench02/Task02_tb.vhd line 132
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf D:/GITEA/GitHub/ES/pcbteach/TestBench02/tb/work/wave.do
