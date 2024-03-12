@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus II 64-Bit"
 -- VERSION "Version 13.1.0 Build 162 10/23/2013 SJ Full Version"
 
--- DATE "02/19/2024 16:53:09"
+-- DATE "03/12/2024 15:26:57"
 
 -- 
 -- Device: Altera EP3C25Q240C8 Package PQFP240
@@ -36,17 +36,17 @@ USE IEEE.STD_LOGIC_1164.ALL;
 ENTITY 	TestWithCLK IS
     PORT (
 	clk : IN std_logic;
-	led1 : OUT std_logic_vector(4 DOWNTO 0)
+	led1 : BUFFER std_logic_vector(4 DOWNTO 0)
 	);
 END TestWithCLK;
 
 -- Design Ports Information
--- led1[0]	=>  Location: PIN_171,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- led1[1]	=>  Location: PIN_169,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- led1[2]	=>  Location: PIN_168,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- led1[3]	=>  Location: PIN_167,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- led1[4]	=>  Location: PIN_166,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- clk	=>  Location: PIN_31,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- led1[0]	=>  Location: PIN_171,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 8mA
+-- led1[1]	=>  Location: PIN_169,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 8mA
+-- led1[2]	=>  Location: PIN_168,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 8mA
+-- led1[3]	=>  Location: PIN_167,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 8mA
+-- led1[4]	=>  Location: PIN_166,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 8mA
+-- clk	=>  Location: PIN_31,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
 
 
 ARCHITECTURE structure OF TestWithCLK IS

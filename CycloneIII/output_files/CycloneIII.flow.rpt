@@ -1,5 +1,5 @@
 Flow report for CycloneIII
-Mon Feb 19 16:53:09 2024
+Tue Mar 12 15:26:58 2024
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Full Version
 
 
@@ -40,7 +40,7 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Mon Feb 19 16:53:09 2024       ;
+; Flow Status                        ; Successful - Tue Mar 12 15:26:58 2024       ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Full Version ;
 ; Revision Name                      ; CycloneIII                                  ;
 ; Top-level Entity Name              ; TestWithCLK                                 ;
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 02/19/2024 16:52:42 ;
+; Start date & time ; 03/12/2024 15:26:41 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; CycloneIII          ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +-------------------------------------+--------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                          ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+--------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 30902508249626.170835076202068 ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 30902508249626.171024640105624 ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                           ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)         ; <None>        ; --          ; --             ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                             ; --            ; --          ; --             ;
@@ -94,12 +94,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:05     ; 1.0                     ; 4683 MB             ; 00:00:01                           ;
-; Fitter                    ; 00:00:09     ; 1.0                     ; 5397 MB             ; 00:00:06                           ;
+; Analysis & Synthesis      ; 00:00:02     ; 1.0                     ; 4683 MB             ; 00:00:01                           ;
+; Fitter                    ; 00:00:05     ; 1.0                     ; 5394 MB             ; 00:00:06                           ;
 ; Assembler                 ; 00:00:02     ; 1.0                     ; 4594 MB             ; 00:00:01                           ;
-; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 4689 MB             ; 00:00:01                           ;
+; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 4692 MB             ; 00:00:01                           ;
 ; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 4550 MB             ; 00:00:00                           ;
-; Total                     ; 00:00:19     ; --                      ; --                  ; 00:00:09                           ;
+; Total                     ; 00:00:12     ; --                      ; --                  ; 00:00:09                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

@@ -69,3 +69,5 @@ run
 #    Time: 9700 ns  Iteration: 0  Process: /task02_tb/line__110 File: D:/GITEA/GitHub/ES/pcbteach/TestBench02/Task02_tb.vhd
 # Break in Process line__110 at D:/GITEA/GitHub/ES/pcbteach/TestBench02/Task02_tb.vhd line 132
 write format wave -window .main_pane.wave.interior.cs.body.pw.wf D:/GITEA/GitHub/ES/pcbteach/TestBench02/tb/work/wave.do
+# End time: 11:47:21 on Mar 12,2024, Elapsed time: 0:36:05
+# Errors: 1, Warnings: 2
