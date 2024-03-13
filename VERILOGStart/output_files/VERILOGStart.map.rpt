@@ -1,5 +1,5 @@
 Analysis & Synthesis report for VERILOGStart
-Wed Mar 13 17:03:13 2024
+Wed Mar 13 17:51:25 2024
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Full Version
 
 
@@ -41,16 +41,16 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Mar 13 17:03:13 2024       ;
+; Analysis & Synthesis Status        ; Successful - Wed Mar 13 17:51:25 2024       ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Full Version ;
 ; Revision Name                      ; VERILOGStart                                ;
 ; Top-level Entity Name              ; VERILOGStart                                ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 47                                          ;
-;     Total combinational functions  ; 47                                          ;
-;     Dedicated logic registers      ; 26                                          ;
-; Total registers                    ; 26                                          ;
-; Total pins                         ; 2                                           ;
+; Total logic elements               ; 142                                         ;
+;     Total combinational functions  ; 139                                         ;
+;     Dedicated logic registers      ; 109                                         ;
+; Total registers                    ; 109                                         ;
+; Total pins                         ; 9                                           ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -176,28 +176,28 @@ applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 47        ;
+; Estimated Total logic elements              ; 142       ;
 ;                                             ;           ;
-; Total combinational functions               ; 47        ;
+; Total combinational functions               ; 139       ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 8         ;
-;     -- 3 input functions                    ; 0         ;
-;     -- <=2 input functions                  ; 39        ;
+;     -- 4 input functions                    ; 25        ;
+;     -- 3 input functions                    ; 9         ;
+;     -- <=2 input functions                  ; 105       ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 23        ;
-;     -- arithmetic mode                      ; 24        ;
+;     -- normal mode                          ; 43        ;
+;     -- arithmetic mode                      ; 96        ;
 ;                                             ;           ;
-; Total registers                             ; 26        ;
-;     -- Dedicated logic registers            ; 26        ;
+; Total registers                             ; 109       ;
+;     -- Dedicated logic registers            ; 109       ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
-; I/O pins                                    ; 2         ;
+; I/O pins                                    ; 9         ;
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 26        ;
-; Total fan-out                               ; 164       ;
-; Average fan-out                             ; 2.13      ;
+; Maximum fan-out                             ; 109       ;
+; Total fan-out                               ; 665       ;
+; Average fan-out                             ; 2.50      ;
 +---------------------------------------------+-----------+
 
 
@@ -206,7 +206,7 @@ applicable agreement for further details.
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
 ; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-; |VERILOGStart              ; 47 (47)           ; 26 (26)      ; 0           ; 0            ; 0       ; 0         ; 2    ; 0            ; |VERILOGStart       ; work         ;
+; |VERILOGStart              ; 139 (139)         ; 109 (109)    ; 0           ; 0            ; 0       ; 0         ; 9    ; 0            ; |VERILOGStart       ; work         ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -216,8 +216,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 26    ;
-; Number of registers using Synchronous Clear  ; 0     ;
+; Total registers                              ; 109   ;
+; Number of registers using Synchronous Clear  ; 100   ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
@@ -241,24 +241,27 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Full Version
-    Info: Processing started: Wed Mar 13 17:03:12 2024
+    Info: Processing started: Wed Mar 13 17:51:23 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off VERILOGStart -c VERILOGStart
 Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
 Info (12021): Found 1 design units, including 1 entities, in source file verilogstart.v
     Info (12023): Found entity 1: VERILOGStart
 Info (12127): Elaborating entity "VERILOGStart" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at VERILOGStart.v(10): truncated value with size 32 to match size of target (25)
+Warning (10230): Verilog HDL assignment warning at VERILOGStart.v(14): truncated value with size 32 to match size of target (25)
+Warning (10230): Verilog HDL assignment warning at VERILOGStart.v(23): truncated value with size 32 to match size of target (25)
+Warning (10230): Verilog HDL assignment warning at VERILOGStart.v(32): truncated value with size 32 to match size of target (25)
+Warning (10230): Verilog HDL assignment warning at VERILOGStart.v(41): truncated value with size 32 to match size of target (25)
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 49 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 1 input pins
-    Info (21059): Implemented 1 output pins
-    Info (21061): Implemented 47 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4644 megabytes
-    Info: Processing ended: Wed Mar 13 17:03:13 2024
-    Info: Elapsed time: 00:00:01
+Info (21057): Implemented 151 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 4 input pins
+    Info (21059): Implemented 5 output pins
+    Info (21061): Implemented 142 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 4651 megabytes
+    Info: Processing ended: Wed Mar 13 17:51:25 2024
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:01
 
 
