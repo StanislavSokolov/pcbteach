@@ -1,0 +1,82 @@
+|VERILOGStart02
+en[0] <= <GND>
+en[1] <= <VCC>
+en[2] <= <VCC>
+en[3] <= <VCC>
+seg[0] <= dc7:inst.q[0]
+seg[1] <= dc7:inst.q[1]
+seg[2] <= dc7:inst.q[2]
+seg[3] <= dc7:inst.q[3]
+seg[4] <= dc7:inst.q[4]
+seg[5] <= dc7:inst.q[5]
+seg[6] <= dc7:inst.q[6]
+clk => countMod9:inst5.clk
+clk => filter30:inst7.clk
+button => filter30:inst7.d
+
+
+|VERILOGStart02|dc7:inst
+q[0] <= q.DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= q.DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= q.DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= q.DB_MAX_OUTPUT_PORT_TYPE
+q[4] <= q.DB_MAX_OUTPUT_PORT_TYPE
+q[5] <= q.DB_MAX_OUTPUT_PORT_TYPE
+q[6] <= q.DB_MAX_OUTPUT_PORT_TYPE
+d[0] => q.IN1
+d[0] => q.IN1
+d[0] => q.IN0
+d[0] => q.IN1
+d[0] => q.IN1
+d[0] => q.IN1
+d[0] => q.IN1
+d[0] => q.IN1
+d[0] => q.IN1
+d[0] => q.IN1
+d[1] => q.IN1
+d[1] => q.IN0
+d[1] => q.IN1
+d[1] => q.IN1
+d[1] => q.IN0
+d[1] => q.IN1
+d[2] => q.IN0
+d[2] => q.IN0
+d[2] => q.IN1
+d[3] => q.IN1
+d[3] => q.IN1
+d[3] => q.IN1
+d[3] => q.IN1
+
+
+|VERILOGStart02|countMod9:inst5
+count[0] <= count[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[1] <= count[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[2] <= count[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[3] <= count[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+clk => buttonPrev.CLK
+clk => count[0]~reg0.CLK
+clk => count[1]~reg0.CLK
+clk => count[2]~reg0.CLK
+clk => count[3]~reg0.CLK
+button => always0.IN1
+button => buttonPrev.DATAIN
+
+
+|VERILOGStart02|filter30:inst7
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+d => count.OUTPUTSELECT
+d => count.OUTPUTSELECT
+d => count.OUTPUTSELECT
+d => count.OUTPUTSELECT
+d => count.OUTPUTSELECT
+d => q.OUTPUTSELECT
+d => latch.DATAIN
+clk => q~reg0.CLK
+clk => latch.CLK
+clk => count[0].CLK
+clk => count[1].CLK
+clk => count[2].CLK
+clk => count[3].CLK
+clk => count[4].CLK
+
+
