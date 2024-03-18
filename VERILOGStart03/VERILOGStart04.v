@@ -26,6 +26,7 @@ module VERILOGStart04(clk, buttonWaiting, buttonLeft, buttonRight, buttonSelecti
 	
 	reg[7:0] procent = 0;
 	reg[25:0] procentCount = 0;
+	reg[28:0] timeForUnsuccessfulMessage = 0;
 	
 	reg[3:0] digit0 = 0, digit1 = 0, digit2 = 0, digit3 = 0, digitBuf1 = 0, digitBuf2 = 0, digitBuf3 = 0;
 	
@@ -141,6 +142,127 @@ module VERILOGStart04(clk, buttonWaiting, buttonLeft, buttonRight, buttonSelecti
 		buttonLeftPrev <= buttonLeft;
 		buttonRightPrev <= buttonRight;
 		buttonSelectionPrev <= buttonSelection;
+	end
+	
+	// CoffeeMachine
+	always@(posedge clk)
+	begin
+			case (stateCoffeeMachine) 
+				Waiting :
+					begin
+						if ((buttonWaiting == 0 && buttonWaitingPrev == 1) ||
+							(buttonLeft == 0 && buttonLeftPrev == 1) ||
+							(buttonRight == 0 && buttonRightPrev == 1) ||
+							(buttonSelection == 0 && buttonSelectionPrev == 1))
+							begin
+								stateCoffeeMachine <= Selection;
+							end
+						selectionDrink <= 0;
+						money <= 0;
+						procent <= 0;
+						procentCount <= 0;
+						timeForUnsuccessfulMessage <= 0;
+					end	
+				Selection :
+					begin
+						if (buttonLeft == 0 && buttonLeftPrev == 1)
+							begin
+								if (selectionDrink == 0)
+									selectionDrink <= 3;
+								else 
+									selectionDrink <= selectionDrink - 1;
+							end	
+						else if (buttonRight == 0 && buttonRightPrev == 1) 
+							begin
+								if (selectionDrink == 3)
+									selectionDrink <= 0;
+								else 
+									selectionDrink <= selectionDrink + 1;
+							end	
+						else if (buttonSelection == 0 && buttonSelectionPrev == 1)
+							begin
+								stateCoffeeMachine <= Payment;
+							end	
+						else if (buttonWaiting == 0 && buttonWaitingPrev == 1)
+							begin
+								stateCoffeeMachine <= Waiting;
+							end
+					end
+				Payment :
+					begin
+						if (buttonLeft == 0 && buttonLeftPrev == 1)
+							begin
+								if (money > 0) 
+									money <= money - 5;
+							end	
+						else if (buttonRight == 0 && buttonRightPrev == 1)
+							begin
+								if (money < 50) 
+									money <= money + 5;
+							end	
+						else if (buttonSelection == 0 && buttonSelectionPrev == 1)	
+							begin
+								case (selectionDrink)
+									0 :
+										begin
+											if (money >= 10)
+												stateCoffeeMachine <= Implementation;
+											else 
+												stateCoffeeMachine <= Unsuccessful;
+										end		
+									1 : 
+										begin
+											if (money >= 20)
+												stateCoffeeMachine <= Implementation;
+											else 
+												stateCoffeeMachine <= Unsuccessful;
+										end	
+									2 :
+										begin
+											if (money >= 35)
+												stateCoffeeMachine <= Implementation;
+											else 
+												stateCoffeeMachine <= Unsuccessful;
+										end
+									3 :
+										begin
+											if (money >= 50)
+												stateCoffeeMachine <= Implementation;
+											else 
+												stateCoffeeMachine <= Unsuccessful;
+										end
+									default : stateCoffeeMachine <= Waiting;
+								endcase	
+							end	
+						else if (buttonWaiting == 0 && buttonWaitingPrev == 1)
+							begin
+								stateCoffeeMachine <= Waiting;		
+							end
+					end	
+				Implementation :
+					begin
+						if (procent > 100)
+							stateCoffeeMachine <= Waiting;
+						else 
+							begin
+								if (procentCount < 20000000)
+									procentCount <= procentCount + 1;
+								else 
+									begin
+										procentCount <= 0;
+										procent <= procent + 1;
+									end
+							end
+					end
+				Unsuccessful :
+					begin
+						if (timeForUnsuccessfulMessage < 200000000)
+							timeForUnsuccessfulMessage <= timeForUnsuccessfulMessage + 1;
+						else 
+							stateCoffeeMachine <= Waiting;
+					end				
+				default : ;
+			endcase			
 	end
 	
 	// вывод информации на индикаторы в зависимости от состояния CoffeeMachine и других текущих настроек
