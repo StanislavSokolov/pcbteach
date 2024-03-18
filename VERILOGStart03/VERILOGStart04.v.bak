@@ -1,0 +1,43 @@
+module VERILOGStart04(clk, buttonWaiting, buttonLeft, buttonRight, buttonSelection, led1, led5, en);
+	output[3:0] led1, en;
+	output[7:0] led5;
+	input clk, buttonWaiting, buttonLeft, buttonRight, buttonSelection;
+	
+		clk : in STD_LOGIC;
+	buttonWaiting : in STD_LOGIC;
+	buttonLeft : in STD_LOGIC;
+	buttonRight : in STD_LOGIC;
+	buttonSelection : in STD_LOGIC;
+	led1 : out STD_LOGIC_VECTOR(3 downto 0) := b"1111";
+	led5 : out STD_LOGIC_VECTOR(6 downto 0) := b"1111111";
+	en : out STD_LOGIC_VECTOR(3 downto 0) := b"1111"
+	
+	reg[18:0] clkForIndication;
+	reg[1:0] indication;
+	
+	reg buttonPrev;
+	
+	// делитель частоты для динамической подсветки индикаторов
+	always@(posedge clk)
+	begin
+		if (clkForIndication < 18'd250000)
+			begin
+				clkForIndication <= clkForIndication + 1;
+			end	
+		else
+			begin
+				clkForIndication <= 0;
+				if (indicator < 2'd3)
+					begin
+						indicator <= indicator + 1;
+					end
+				else
+					begin
+						indicator <= 0;
+					end				
+			end
+	end
+
+
+	
+endmodule
