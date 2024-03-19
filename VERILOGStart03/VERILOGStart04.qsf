@@ -53,4 +53,45 @@ set_global_assignment -name VERILOG_FILE VERILOGStart04.v
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to en[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to clk
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to en[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to en[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to en[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to led1[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to led1[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to led1[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to led1[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to led5[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to led5[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to led5[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to led5[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to led5[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to led5[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to led5[6]
+set_location_assignment PIN_23 -to clk
+set_location_assignment PIN_137 -to en[3]
+set_location_assignment PIN_136 -to en[2]
+set_location_assignment PIN_135 -to en[1]
+set_location_assignment PIN_133 -to en[0]
+set_location_assignment PIN_128 -to led5[6]
+set_location_assignment PIN_121 -to led5[5]
+set_location_assignment PIN_125 -to led5[4]
+set_location_assignment PIN_129 -to led5[3]
+set_location_assignment PIN_132 -to led5[2]
+set_location_assignment PIN_126 -to led5[1]
+set_location_assignment PIN_124 -to led5[0]
+set_location_assignment PIN_87 -to led1[3]
+set_location_assignment PIN_86 -to led1[2]
+set_location_assignment PIN_85 -to led1[1]
+set_location_assignment PIN_84 -to led1[0]
+set_location_assignment PIN_89 -to buttonLeftIN
+set_location_assignment PIN_90 -to buttonRightIN
+set_location_assignment PIN_91 -to buttonSelectionIN
+set_location_assignment PIN_88 -to buttonWaitingIN
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to buttonLeftIN
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to buttonRightIN
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to buttonSelectionIN
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to buttonWaitingIN
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

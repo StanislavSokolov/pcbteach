@@ -1,7 +1,7 @@
 
 State Machine - |VERILOGStart04|stateCoffeeMachine
-Name stateCoffeeMachine.Implementation stateCoffeeMachine.Payment stateCoffeeMachine.Selection stateCoffeeMachine.000 stateCoffeeMachine.Unsuccessful 
-stateCoffeeMachine.000 0 0 0 0 0 
+Name stateCoffeeMachine.Implementation stateCoffeeMachine.Payment stateCoffeeMachine.Selection stateCoffeeMachine.Waiting stateCoffeeMachine.Unsuccessful 
+stateCoffeeMachine.Waiting 0 0 0 0 0 
 stateCoffeeMachine.Selection 0 0 1 1 0 
 stateCoffeeMachine.Payment 0 1 0 1 0 
 stateCoffeeMachine.Implementation 1 0 0 1 0 
