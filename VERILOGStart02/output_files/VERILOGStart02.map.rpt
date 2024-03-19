@@ -1,5 +1,5 @@
 Analysis & Synthesis report for VERILOGStart02
-Thu Mar 14 15:46:19 2024
+Tue Mar 19 14:36:01 2024
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Full Version
 
 
@@ -42,7 +42,7 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Mar 14 15:46:19 2024       ;
+; Analysis & Synthesis Status        ; Successful - Tue Mar 19 14:36:01 2024       ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Full Version ;
 ; Revision Name                      ; VERILOGStart02                              ;
 ; Top-level Entity Name              ; VERILOGStart02                              ;
@@ -163,16 +163,16 @@ applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                            ;
-+----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                  ; Library ;
-+----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------+---------+
-; VERILOGStart02.bdf               ; yes             ; User Block Diagram/Schematic File  ; D:/GITEA/GitHub/ES/pcbteach/VERILOGStart02/VERILOGStart02.bdf ;         ;
-; dc7.v                            ; yes             ; User Verilog HDL File              ; D:/GITEA/GitHub/ES/pcbteach/VERILOGStart02/dc7.v              ;         ;
-; countMod9.v                      ; yes             ; User Verilog HDL File              ; D:/GITEA/GitHub/ES/pcbteach/VERILOGStart02/countMod9.v        ;         ;
-; filter30.v                       ; yes             ; User Verilog HDL File              ; D:/GITEA/GitHub/ES/pcbteach/VERILOGStart02/filter30.v         ;         ;
-+----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                              ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                ; Library ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------------------+---------+
+; dc7.v                            ; yes             ; User Verilog HDL File  ; D:/GITEA/GitHub/ES/pcbteach/VERILOGStart02/dc7.v            ;         ;
+; countMod9.v                      ; yes             ; User Verilog HDL File  ; D:/GITEA/GitHub/ES/pcbteach/VERILOGStart02/countMod9.v      ;         ;
+; filter30.v                       ; yes             ; User Verilog HDL File  ; D:/GITEA/GitHub/ES/pcbteach/VERILOGStart02/filter30.v       ;         ;
+; VERILOGStart02.v                 ; yes             ; User Verilog HDL File  ; D:/GITEA/GitHub/ES/pcbteach/VERILOGStart02/VERILOGStart02.v ;         ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------------------+---------+
 
 
 +---------------------------------------------------------+
@@ -205,16 +205,16 @@ applicable agreement for further details.
 +---------------------------------------------+-----------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                     ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------+--------------+
-; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name             ; Library Name ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------+--------------+
-; |VERILOGStart02            ; 22 (0)            ; 12 (0)       ; 0           ; 0            ; 0       ; 0         ; 13   ; 0            ; |VERILOGStart02                 ; work         ;
-;    |countMod9:inst5|       ; 5 (5)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VERILOGStart02|countMod9:inst5 ; work         ;
-;    |dc7:inst|              ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VERILOGStart02|dc7:inst        ; work         ;
-;    |filter30:inst7|        ; 10 (10)           ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VERILOGStart02|filter30:inst7  ; work         ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------+--------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                 ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------+--------------+
+; |VERILOGStart02            ; 22 (0)            ; 12 (0)       ; 0           ; 0            ; 0       ; 0         ; 13   ; 0            ; |VERILOGStart02                     ; work         ;
+;    |countMod9:b2v_inst5|   ; 5 (5)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VERILOGStart02|countMod9:b2v_inst5 ; work         ;
+;    |dc7:b2v_inst|          ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VERILOGStart02|dc7:b2v_inst        ; work         ;
+;    |filter30:b2v_inst7|    ; 10 (10)           ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VERILOGStart02|filter30:b2v_inst7  ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -233,13 +233,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                        ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output              ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
-; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |VERILOGStart02|filter30:inst7|count[4] ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------+
+; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |VERILOGStart02|filter30:b2v_inst7|count[4] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------+
 
 
 +-------------------------------+
@@ -257,11 +257,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Full Version
-    Info: Processing started: Thu Mar 14 15:46:17 2024
+    Info: Processing started: Tue Mar 19 14:36:00 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off VERILOGStart02 -c VERILOGStart02
 Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
-Info (12021): Found 1 design units, including 1 entities, in source file verilogstart02.bdf
-    Info (12023): Found entity 1: VERILOGStart02
 Info (12021): Found 0 design units, including 0 entities, in source file verilog1.v
 Info (12021): Found 1 design units, including 1 entities, in source file dc7.v
     Info (12023): Found entity 1: dc7
@@ -272,18 +270,22 @@ Info (12021): Found 1 design units, including 1 entities, in source file countmo
 Warning (12019): Can't analyze file -- file filter16.v is missing
 Info (12021): Found 1 design units, including 1 entities, in source file filter30.v
     Info (12023): Found entity 1: filter30
+Info (12021): Found 1 design units, including 1 entities, in source file dc7cm.v
+    Info (12023): Found entity 1: dc7cm
+Info (12021): Found 1 design units, including 1 entities, in source file verilogstart02.v
+    Info (12023): Found entity 1: VERILOGStart02
 Info (12127): Elaborating entity "VERILOGStart02" for the top level hierarchy
-Info (12128): Elaborating entity "dc7" for hierarchy "dc7:inst"
-Info (12128): Elaborating entity "countMod9" for hierarchy "countMod9:inst5"
+Info (12128): Elaborating entity "dc7" for hierarchy "dc7:b2v_inst"
+Info (12128): Elaborating entity "countMod9" for hierarchy "countMod9:b2v_inst5"
 Warning (10230): Verilog HDL assignment warning at countMod9.v(14): truncated value with size 32 to match size of target (4)
-Info (12128): Elaborating entity "filter30" for hierarchy "filter30:inst7"
+Info (12128): Elaborating entity "filter30" for hierarchy "filter30:b2v_inst7"
 Warning (10230): Verilog HDL assignment warning at filter30.v(22): truncated value with size 32 to match size of target (5)
 Warning (10230): Verilog HDL assignment warning at filter30.v(41): truncated value with size 32 to match size of target (5)
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "en[3]" is stuck at VCC
-    Warning (13410): Pin "en[2]" is stuck at VCC
-    Warning (13410): Pin "en[1]" is stuck at VCC
     Warning (13410): Pin "en[0]" is stuck at GND
+    Warning (13410): Pin "en[1]" is stuck at VCC
+    Warning (13410): Pin "en[2]" is stuck at VCC
+    Warning (13410): Pin "en[3]" is stuck at VCC
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
@@ -292,9 +294,9 @@ Info (21057): Implemented 37 device resources after synthesis - the final resour
     Info (21059): Implemented 11 output pins
     Info (21061): Implemented 24 logic cells
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 9 warnings
-    Info: Peak virtual memory: 4651 megabytes
-    Info: Processing ended: Thu Mar 14 15:46:19 2024
-    Info: Elapsed time: 00:00:02
+    Info: Peak virtual memory: 4657 megabytes
+    Info: Processing ended: Tue Mar 19 14:36:01 2024
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
 
