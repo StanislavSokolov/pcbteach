@@ -1,0 +1,25 @@
+|VERILOGStart05
+led <= <GND>
+tx <= <GND>
+scl <= <GND>
+led1 <= <GND>
+indicator[0] <= <GND>
+indicator[1] <= <GND>
+indicator[2] <= <GND>
+indicator[3] <= <GND>
+segment[0] <= <GND>
+segment[1] <= <GND>
+segment[2] <= <GND>
+segment[3] <= <GND>
+segment[4] <= <GND>
+segment[5] <= <GND>
+segment[6] <= <GND>
+clk => ~NO_FANOUT~
+rx => ~NO_FANOUT~
+key1 => ~NO_FANOUT~
+key2 => ~NO_FANOUT~
+key3 => ~NO_FANOUT~
+key4 => ~NO_FANOUT~
+reset => ~NO_FANOUT~
+
+

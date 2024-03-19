@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus II 64-Bit"
 -- VERSION "Version 13.1.0 Build 162 10/23/2013 SJ Full Version"
 
--- DATE "02/29/2024 18:53:14"
+-- DATE "03/19/2024 21:09:38"
 
 -- 
 -- Device: Altera EP4CE10E22C8 Package TQFP144
@@ -503,26 +503,26 @@ SIGNAL \inst2|Mux9~0_combout\ : std_logic;
 SIGNAL \inst1|Mux6~0_combout\ : std_logic;
 SIGNAL \inst1|Mux13~0_combout\ : std_logic;
 SIGNAL \inst2|Mux10~0_combout\ : std_logic;
+SIGNAL \inst1|dataBuf\ : std_logic_vector(7 DOWNTO 0);
 SIGNAL \inst8|count\ : std_logic_vector(2 DOWNTO 0);
 SIGNAL \inst9|count\ : std_logic_vector(2 DOWNTO 0);
 SIGNAL \inst12|count\ : std_logic_vector(2 DOWNTO 0);
 SIGNAL \inst13|count\ : std_logic_vector(2 DOWNTO 0);
+SIGNAL \inst10|bitPosition\ : std_logic_vector(2 DOWNTO 0);
 SIGNAL \inst15|dataBuf\ : std_logic_vector(7 DOWNTO 0);
 SIGNAL \inst15|count\ : std_logic_vector(12 DOWNTO 0);
-SIGNAL \inst10|count\ : std_logic_vector(7 DOWNTO 0);
+SIGNAL \inst7|count\ : std_logic_vector(2 DOWNTO 0);
 SIGNAL \inst|clkCounter\ : std_logic_vector(16 DOWNTO 0);
-SIGNAL \inst14|dataBuf1\ : std_logic_vector(3 DOWNTO 0);
-SIGNAL \inst2|clkCounter\ : std_logic_vector(1 DOWNTO 0);
-SIGNAL \inst10|bitPosition\ : std_logic_vector(2 DOWNTO 0);
-SIGNAL \inst14|dataBuf\ : std_logic_vector(7 DOWNTO 0);
-SIGNAL \inst11|clkCounter\ : std_logic_vector(8 DOWNTO 0);
-SIGNAL \inst14|dataBuf0\ : std_logic_vector(3 DOWNTO 0);
-SIGNAL \inst1|dataBuf\ : std_logic_vector(7 DOWNTO 0);
 SIGNAL \inst2|indicator\ : std_logic_vector(3 DOWNTO 0);
+SIGNAL \inst14|dataBuf\ : std_logic_vector(7 DOWNTO 0);
+SIGNAL \inst2|segment\ : std_logic_vector(6 DOWNTO 0);
+SIGNAL \inst10|count\ : std_logic_vector(7 DOWNTO 0);
 SIGNAL \inst15|bitPosition\ : std_logic_vector(2 DOWNTO 0);
 SIGNAL \inst14|countUpdate\ : std_logic_vector(2 DOWNTO 0);
-SIGNAL \inst2|segment\ : std_logic_vector(6 DOWNTO 0);
-SIGNAL \inst7|count\ : std_logic_vector(2 DOWNTO 0);
+SIGNAL \inst2|clkCounter\ : std_logic_vector(1 DOWNTO 0);
+SIGNAL \inst14|dataBuf1\ : std_logic_vector(3 DOWNTO 0);
+SIGNAL \inst14|dataBuf0\ : std_logic_vector(3 DOWNTO 0);
+SIGNAL \inst11|clkCounter\ : std_logic_vector(8 DOWNTO 0);
 SIGNAL \inst15|ALT_INV_dataBuf[7]~0_combout\ : std_logic;
 SIGNAL \inst15|ALT_INV_count[0]~38_combout\ : std_logic;
 SIGNAL \inst10|ALT_INV_Selector43~3_combout\ : std_logic;
