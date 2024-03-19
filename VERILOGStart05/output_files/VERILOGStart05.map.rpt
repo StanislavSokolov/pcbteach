@@ -1,5 +1,5 @@
 Analysis & Synthesis report for VERILOGStart05
-Tue Mar 19 21:18:00 2024
+Tue Mar 19 21:45:04 2024
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Full Version
 
 
@@ -41,7 +41,7 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Mar 19 21:18:00 2024       ;
+; Analysis & Synthesis Status        ; Successful - Tue Mar 19 21:45:04 2024       ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Full Version ;
 ; Revision Name                      ; VERILOGStart05                              ;
 ; Top-level Entity Name              ; VERILOGStart05                              ;
@@ -170,6 +170,8 @@ applicable agreement for further details.
 ; VERILOGStart05.bdf               ; yes             ; User Block Diagram/Schematic File  ; D:/GITEA/GitHub/ES/pcbteach/VERILOGStart05/VERILOGStart05.bdf ;         ;
 ; filter30.v                       ; yes             ; User Verilog HDL File              ; D:/GITEA/GitHub/ES/pcbteach/VERILOGStart05/filter30.v         ;         ;
 ; filter8.v                        ; yes             ; User Verilog HDL File              ; D:/GITEA/GitHub/ES/pcbteach/VERILOGStart05/filter8.v          ;         ;
+; Count100000.v                    ; yes             ; User Verilog HDL File              ; D:/GITEA/GitHub/ES/pcbteach/VERILOGStart05/Count100000.v      ;         ;
+; Count250.v                       ; yes             ; User Verilog HDL File              ; D:/GITEA/GitHub/ES/pcbteach/VERILOGStart05/Count250.v         ;         ;
 +----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------+---------+
 
 
@@ -242,7 +244,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Full Version
-    Info: Processing started: Tue Mar 19 21:17:59 2024
+    Info: Processing started: Tue Mar 19 21:45:03 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off VERILOGStart05 -c VERILOGStart05
 Info (11104): Parallel Compilation has detected 12 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 6 of the 6 physical processors detected instead.
 Info (12021): Found 1 design units, including 1 entities, in source file verilogstart05.bdf
@@ -251,6 +253,10 @@ Info (12021): Found 1 design units, including 1 entities, in source file filter3
     Info (12023): Found entity 1: filter30
 Info (12021): Found 1 design units, including 1 entities, in source file filter8.v
     Info (12023): Found entity 1: filter8
+Info (12021): Found 1 design units, including 1 entities, in source file count100000.v
+    Info (12023): Found entity 1: Count100000
+Info (12021): Found 1 design units, including 1 entities, in source file count250.v
+    Info (12023): Found entity 1: Count250
 Info (12127): Elaborating entity "VERILOGStart05" for the top level hierarchy
 Warning (275043): Pin "led" is missing source
 Warning (275043): Pin "tx" is missing source
@@ -266,6 +272,10 @@ Warning (10230): Verilog HDL assignment warning at filter30.v(41): truncated val
 Info (12128): Elaborating entity "filter8" for hierarchy "filter8:inst7"
 Warning (10230): Verilog HDL assignment warning at filter8.v(22): truncated value with size 32 to match size of target (4)
 Warning (10230): Verilog HDL assignment warning at filter8.v(41): truncated value with size 32 to match size of target (4)
+Info (12128): Elaborating entity "Count100000" for hierarchy "Count100000:inst8"
+Warning (10230): Verilog HDL assignment warning at Count100000.v(11): truncated value with size 32 to match size of target (17)
+Info (12128): Elaborating entity "Count250" for hierarchy "Count250:inst9"
+Warning (10230): Verilog HDL assignment warning at Count250.v(11): truncated value with size 32 to match size of target (8)
 Warning (13039): The following bidir pins have no drivers
     Warning (13040): Bidir "sda" has no driver
 Warning (13024): Output pins are stuck at VCC or GND
@@ -298,9 +308,9 @@ Info (21057): Implemented 23 device resources after synthesis - the final resour
     Info (21058): Implemented 7 input pins
     Info (21059): Implemented 15 output pins
     Info (21060): Implemented 1 bidirectional pins
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 38 warnings
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 40 warnings
     Info: Peak virtual memory: 4631 megabytes
-    Info: Processing ended: Tue Mar 19 21:18:00 2024
+    Info: Processing ended: Tue Mar 19 21:45:04 2024
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 

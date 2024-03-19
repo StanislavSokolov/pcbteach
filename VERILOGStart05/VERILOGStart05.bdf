@@ -464,6 +464,50 @@ applicable agreement for further details.
 		(rectangle (rect 16 16 104 64))
 	)
 )
+(symbol
+	(rect 384 184 528 264)
+	(text "Count100000" (rect 5 0 69 12)(font "Arial" ))
+	(text "inst8" (rect 8 64 31 76)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "clkIn" (rect 0 0 23 12)(font "Arial" ))
+		(text "clkIn" (rect 21 27 44 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 144 32)
+		(output)
+		(text "clkOut" (rect 0 0 31 12)(font "Arial" ))
+		(text "clkOut" (rect 97 27 128 39)(font "Arial" ))
+		(line (pt 144 32)(pt 128 32))
+	)
+	(drawing
+		(rectangle (rect 16 16 128 64))
+	)
+)
+(symbol
+	(rect 632 88 776 168)
+	(text "Count250" (rect 5 0 52 12)(font "Arial" ))
+	(text "inst9" (rect 8 64 31 76)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "clkIn" (rect 0 0 23 12)(font "Arial" ))
+		(text "clkIn" (rect 21 27 44 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 144 32)
+		(output)
+		(text "clkOut" (rect 0 0 31 12)(font "Arial" ))
+		(text "clkOut" (rect 97 27 128 39)(font "Arial" ))
+		(line (pt 144 32)(pt 128 32))
+	)
+	(drawing
+		(rectangle (rect 16 16 128 64))
+	)
+)
 (connector
 	(pt 848 216)
 	(pt 952 216)

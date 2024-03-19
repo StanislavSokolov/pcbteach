@@ -1,5 +1,5 @@
 Fitter report for VERILOGStart05
-Tue Mar 19 21:18:04 2024
+Tue Mar 19 21:45:08 2024
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Full Version
 
 
@@ -59,7 +59,7 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Tue Mar 19 21:18:04 2024       ;
+; Fitter Status                      ; Successful - Tue Mar 19 21:45:08 2024       ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Full Version ;
 ; Revision Name                      ; VERILOGStart05                              ;
 ; Top-level Entity Name              ; VERILOGStart05                              ;
@@ -823,7 +823,7 @@ Info (170194): Fitter routing operations ending: elapsed time is 00:00:00
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
-Info (11888): Total time spent on timing analysis during the Fitter is 0.02 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.00 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
@@ -843,7 +843,7 @@ Warning (169064): Following 1 pins have no output enable or a GND or VCC output 
 Info (144001): Generated suppressed messages file D:/GITEA/GitHub/ES/pcbteach/VERILOGStart05/output_files/VERILOGStart05.fit.smsg
 Info: Quartus II 64-Bit Fitter was successful. 0 errors, 5 warnings
     Info: Peak virtual memory: 5464 megabytes
-    Info: Processing ended: Tue Mar 19 21:18:04 2024
+    Info: Processing ended: Tue Mar 19 21:45:08 2024
     Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:03
 

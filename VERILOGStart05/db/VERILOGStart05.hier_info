@@ -20,6 +20,7 @@ clk => filter30:inst2.d
 clk => filter30:inst5.d
 clk => filter30:inst6.d
 clk => filter8:inst7.d
+clk => Count100000:inst8.clkIn
 key1 => filter30:inst.clk
 key2 => filter30:inst1.clk
 key3 => filter30:inst2.clk
@@ -132,5 +133,40 @@ clk => count[0].CLK
 clk => count[1].CLK
 clk => count[2].CLK
 clk => count[3].CLK
+
+
+|VERILOGStart05|Count100000:inst8
+clkIn => clkOut~reg0.CLK
+clkIn => counter[0].CLK
+clkIn => counter[1].CLK
+clkIn => counter[2].CLK
+clkIn => counter[3].CLK
+clkIn => counter[4].CLK
+clkIn => counter[5].CLK
+clkIn => counter[6].CLK
+clkIn => counter[7].CLK
+clkIn => counter[8].CLK
+clkIn => counter[9].CLK
+clkIn => counter[10].CLK
+clkIn => counter[11].CLK
+clkIn => counter[12].CLK
+clkIn => counter[13].CLK
+clkIn => counter[14].CLK
+clkIn => counter[15].CLK
+clkIn => counter[16].CLK
+clkOut <= clkOut~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|VERILOGStart05|Count250:inst9
+clkIn => clkOut~reg0.CLK
+clkIn => counter[0].CLK
+clkIn => counter[1].CLK
+clkIn => counter[2].CLK
+clkIn => counter[3].CLK
+clkIn => counter[4].CLK
+clkIn => counter[5].CLK
+clkIn => counter[6].CLK
+clkIn => counter[7].CLK
+clkOut <= clkOut~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
