@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus II 64-Bit"
 -- VERSION "Version 13.1.0 Build 162 10/23/2013 SJ Full Version"
 
--- DATE "03/19/2024 21:10:15"
+-- DATE "03/19/2024 21:18:10"
 
 -- 
 -- Device: Altera EP4CE10E22C8 Package TQFP144
@@ -41,12 +41,12 @@ ENTITY 	VERILOGStart05 IS
 	indicator : OUT std_logic_vector(3 DOWNTO 0);
 	segment : OUT std_logic_vector(6 DOWNTO 0);
 	clk : IN std_logic;
-	rx : IN std_logic;
 	key1 : IN std_logic;
 	key2 : IN std_logic;
 	key3 : IN std_logic;
 	key4 : IN std_logic;
-	reset : IN std_logic
+	reset : IN std_logic;
+	rx : IN std_logic
 	);
 END VERILOGStart05;
 
@@ -67,12 +67,12 @@ END VERILOGStart05;
 -- segment[1]	=>  Location: PIN_121,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 8mA
 -- segment[0]	=>  Location: PIN_128,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 8mA
 -- clk	=>  Location: PIN_23,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
--- rx	=>  Location: PIN_115,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
 -- key1	=>  Location: PIN_88,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
 -- key2	=>  Location: PIN_89,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
 -- key3	=>  Location: PIN_90,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
 -- key4	=>  Location: PIN_91,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
 -- reset	=>  Location: PIN_25,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- rx	=>  Location: PIN_115,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
 -- sda	=>  Location: PIN_113,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 8mA
 
 
@@ -93,19 +93,19 @@ SIGNAL ww_led1 : std_logic;
 SIGNAL ww_indicator : std_logic_vector(3 DOWNTO 0);
 SIGNAL ww_segment : std_logic_vector(6 DOWNTO 0);
 SIGNAL ww_clk : std_logic;
-SIGNAL ww_rx : std_logic;
 SIGNAL ww_key1 : std_logic;
 SIGNAL ww_key2 : std_logic;
 SIGNAL ww_key3 : std_logic;
 SIGNAL ww_key4 : std_logic;
 SIGNAL ww_reset : std_logic;
+SIGNAL ww_rx : std_logic;
 SIGNAL \clk~input_o\ : std_logic;
-SIGNAL \rx~input_o\ : std_logic;
 SIGNAL \key1~input_o\ : std_logic;
 SIGNAL \key2~input_o\ : std_logic;
 SIGNAL \key3~input_o\ : std_logic;
 SIGNAL \key4~input_o\ : std_logic;
 SIGNAL \reset~input_o\ : std_logic;
+SIGNAL \rx~input_o\ : std_logic;
 SIGNAL \sda~input_o\ : std_logic;
 SIGNAL \sda~output_o\ : std_logic;
 SIGNAL \led~output_o\ : std_logic;
@@ -133,12 +133,12 @@ led1 <= ww_led1;
 indicator <= ww_indicator;
 segment <= ww_segment;
 ww_clk <= clk;
-ww_rx <= rx;
 ww_key1 <= key1;
 ww_key2 <= key2;
 ww_key3 <= key3;
 ww_key4 <= key4;
 ww_reset <= reset;
+ww_rx <= rx;
 ww_devoe <= devoe;
 ww_devclrn <= devclrn;
 ww_devpor <= devpor;
@@ -346,17 +346,6 @@ PORT MAP (
 	i => ww_clk,
 	o => \clk~input_o\);
 
--- Location: IOIBUF_X28_Y24_N22
-\rx~input\ : cycloneive_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => ww_rx,
-	o => \rx~input_o\);
-
 -- Location: IOIBUF_X34_Y12_N22
 \key1~input\ : cycloneive_io_ibuf
 -- pragma translate_off
@@ -411,6 +400,17 @@ GENERIC MAP (
 PORT MAP (
 	i => ww_reset,
 	o => \reset~input_o\);
+
+-- Location: IOIBUF_X28_Y24_N22
+\rx~input\ : cycloneive_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_rx,
+	o => \rx~input_o\);
 
 -- Location: IOIBUF_X28_Y24_N8
 \sda~input\ : cycloneive_io_ibuf

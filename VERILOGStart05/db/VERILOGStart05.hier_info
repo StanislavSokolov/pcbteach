@@ -14,12 +14,123 @@ segment[3] <= <GND>
 segment[4] <= <GND>
 segment[5] <= <GND>
 segment[6] <= <GND>
-clk => ~NO_FANOUT~
-rx => ~NO_FANOUT~
-key1 => ~NO_FANOUT~
-key2 => ~NO_FANOUT~
-key3 => ~NO_FANOUT~
-key4 => ~NO_FANOUT~
-reset => ~NO_FANOUT~
+clk => filter30:inst.d
+clk => filter30:inst1.d
+clk => filter30:inst2.d
+clk => filter30:inst5.d
+clk => filter30:inst6.d
+clk => filter8:inst7.d
+key1 => filter30:inst.clk
+key2 => filter30:inst1.clk
+key3 => filter30:inst2.clk
+key4 => filter30:inst5.clk
+reset => filter30:inst6.clk
+rx => filter8:inst7.clk
+
+
+|VERILOGStart05|filter30:inst
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+d => count.OUTPUTSELECT
+d => count.OUTPUTSELECT
+d => count.OUTPUTSELECT
+d => count.OUTPUTSELECT
+d => count.OUTPUTSELECT
+d => q.OUTPUTSELECT
+d => latch.DATAIN
+clk => q~reg0.CLK
+clk => latch.CLK
+clk => count[0].CLK
+clk => count[1].CLK
+clk => count[2].CLK
+clk => count[3].CLK
+clk => count[4].CLK
+
+
+|VERILOGStart05|filter30:inst1
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+d => count.OUTPUTSELECT
+d => count.OUTPUTSELECT
+d => count.OUTPUTSELECT
+d => count.OUTPUTSELECT
+d => count.OUTPUTSELECT
+d => q.OUTPUTSELECT
+d => latch.DATAIN
+clk => q~reg0.CLK
+clk => latch.CLK
+clk => count[0].CLK
+clk => count[1].CLK
+clk => count[2].CLK
+clk => count[3].CLK
+clk => count[4].CLK
+
+
+|VERILOGStart05|filter30:inst2
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+d => count.OUTPUTSELECT
+d => count.OUTPUTSELECT
+d => count.OUTPUTSELECT
+d => count.OUTPUTSELECT
+d => count.OUTPUTSELECT
+d => q.OUTPUTSELECT
+d => latch.DATAIN
+clk => q~reg0.CLK
+clk => latch.CLK
+clk => count[0].CLK
+clk => count[1].CLK
+clk => count[2].CLK
+clk => count[3].CLK
+clk => count[4].CLK
+
+
+|VERILOGStart05|filter30:inst5
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+d => count.OUTPUTSELECT
+d => count.OUTPUTSELECT
+d => count.OUTPUTSELECT
+d => count.OUTPUTSELECT
+d => count.OUTPUTSELECT
+d => q.OUTPUTSELECT
+d => latch.DATAIN
+clk => q~reg0.CLK
+clk => latch.CLK
+clk => count[0].CLK
+clk => count[1].CLK
+clk => count[2].CLK
+clk => count[3].CLK
+clk => count[4].CLK
+
+
+|VERILOGStart05|filter30:inst6
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+d => count.OUTPUTSELECT
+d => count.OUTPUTSELECT
+d => count.OUTPUTSELECT
+d => count.OUTPUTSELECT
+d => count.OUTPUTSELECT
+d => q.OUTPUTSELECT
+d => latch.DATAIN
+clk => q~reg0.CLK
+clk => latch.CLK
+clk => count[0].CLK
+clk => count[1].CLK
+clk => count[2].CLK
+clk => count[3].CLK
+clk => count[4].CLK
+
+
+|VERILOGStart05|filter8:inst7
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+d => count.OUTPUTSELECT
+d => count.OUTPUTSELECT
+d => count.OUTPUTSELECT
+d => count.OUTPUTSELECT
+d => q.OUTPUTSELECT
+d => latch.DATAIN
+clk => q~reg0.CLK
+clk => latch.CLK
+clk => count[0].CLK
+clk => count[1].CLK
+clk => count[2].CLK
+clk => count[3].CLK
 
 
