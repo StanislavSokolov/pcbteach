@@ -109,4 +109,5 @@ set_global_assignment -name VERILOG_FILE DataConversionUnit.v
 set_global_assignment -name VERILOG_FILE Setter.v
 set_global_assignment -name VERILOG_FILE ReceiverUART.v
 set_global_assignment -name VERILOG_FILE TransmitterUART.v
+set_global_assignment -name VERILOG_FILE TransceiverI2C.v
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

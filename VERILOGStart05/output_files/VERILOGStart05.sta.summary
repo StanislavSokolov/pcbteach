@@ -3,111 +3,111 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'clk'
-Slack : -3.181
-TNS   : -183.884
-
-Type  : Slow 1200mV 85C Model Setup 'DynamicIllumination4Indicators:inst10|counter[1]'
-Slack : -2.660
-TNS   : -17.417
+Slack : -4.166
+TNS   : -185.838
 
 Type  : Slow 1200mV 85C Model Setup 'Count100000:inst8|clkOut'
-Slack : -0.675
-TNS   : -0.675
+Slack : -1.559
+TNS   : -15.101
+
+Type  : Slow 1200mV 85C Model Setup 'DynamicIllumination4Indicators:inst10|counter[1]'
+Slack : -0.390
+TNS   : -0.756
 
 Type  : Slow 1200mV 85C Model Hold 'Count100000:inst8|clkOut'
-Slack : -0.343
-TNS   : -0.343
-
-Type  : Slow 1200mV 85C Model Hold 'DynamicIllumination4Indicators:inst10|counter[1]'
-Slack : 0.049
-TNS   : 0.000
+Slack : -0.505
+TNS   : -0.505
 
 Type  : Slow 1200mV 85C Model Hold 'clk'
-Slack : 0.435
+Slack : -0.020
+TNS   : -0.020
+
+Type  : Slow 1200mV 85C Model Hold 'DynamicIllumination4Indicators:inst10|counter[1]'
+Slack : 0.143
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -175.492
+TNS   : -92.220
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Count100000:inst8|clkOut'
 Slack : -1.487
-TNS   : -2.974
+TNS   : -16.357
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'DynamicIllumination4Indicators:inst10|counter[1]'
-Slack : 0.418
+Slack : 0.437
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Setup 'clk'
-Slack : -2.930
-TNS   : -164.366
-
-Type  : Slow 1200mV 0C Model Setup 'DynamicIllumination4Indicators:inst10|counter[1]'
-Slack : -2.350
-TNS   : -15.167
+Slack : -3.766
+TNS   : -168.149
 
 Type  : Slow 1200mV 0C Model Setup 'Count100000:inst8|clkOut'
-Slack : -0.529
-TNS   : -0.529
+Slack : -1.369
+TNS   : -13.271
+
+Type  : Slow 1200mV 0C Model Setup 'DynamicIllumination4Indicators:inst10|counter[1]'
+Slack : -0.210
+TNS   : -0.401
 
 Type  : Slow 1200mV 0C Model Hold 'Count100000:inst8|clkOut'
-Slack : -0.197
-TNS   : -0.197
-
-Type  : Slow 1200mV 0C Model Hold 'DynamicIllumination4Indicators:inst10|counter[1]'
-Slack : -0.086
-TNS   : -0.163
+Slack : -0.434
+TNS   : -0.434
 
 Type  : Slow 1200mV 0C Model Hold 'clk'
-Slack : 0.401
+Slack : 0.005
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'DynamicIllumination4Indicators:inst10|counter[1]'
+Slack : 0.038
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -175.492
+TNS   : -92.220
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Count100000:inst8|clkOut'
 Slack : -1.487
-TNS   : -2.974
+TNS   : -16.357
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'DynamicIllumination4Indicators:inst10|counter[1]'
-Slack : 0.222
+Slack : 0.296
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Setup 'clk'
-Slack : -0.752
-TNS   : -27.860
-
-Type  : Fast 1200mV 0C Model Setup 'DynamicIllumination4Indicators:inst10|counter[1]'
-Slack : -0.649
-TNS   : -2.865
+Slack : -1.194
+TNS   : -45.187
 
 Type  : Fast 1200mV 0C Model Setup 'Count100000:inst8|clkOut'
-Slack : 0.294
+Slack : -0.055
+TNS   : -0.443
+
+Type  : Fast 1200mV 0C Model Setup 'DynamicIllumination4Indicators:inst10|counter[1]'
+Slack : 0.375
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'Count100000:inst8|clkOut'
-Slack : -0.351
-TNS   : -0.351
-
-Type  : Fast 1200mV 0C Model Hold 'DynamicIllumination4Indicators:inst10|counter[1]'
-Slack : -0.021
-TNS   : -0.064
+Slack : -0.340
+TNS   : -0.340
 
 Type  : Fast 1200mV 0C Model Hold 'clk'
-Slack : 0.065
+Slack : -0.123
+TNS   : -0.123
+
+Type  : Fast 1200mV 0C Model Hold 'DynamicIllumination4Indicators:inst10|counter[1]'
+Slack : 0.026
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -153.712
+TNS   : -80.858
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Count100000:inst8|clkOut'
 Slack : -1.000
-TNS   : -2.000
+TNS   : -11.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'DynamicIllumination4Indicators:inst10|counter[1]'
-Slack : 0.319
+Slack : 0.338
 TNS   : 0.000
 
 ------------------------------------------------------------

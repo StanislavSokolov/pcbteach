@@ -34,7 +34,6 @@ applicable agreement for further details.
 		(line (pt 117 12)(pt 121 8))
 	)
 	(text "VCC" (rect 136 7 156 17)(font "Arial" (font_size 6)))
-	(annotation_block (location)(rect 96 224 144 240))
 )
 (pin
 	(input)
@@ -51,7 +50,6 @@ applicable agreement for further details.
 		(line (pt 117 12)(pt 121 8))
 	)
 	(text "VCC" (rect 136 7 156 17)(font "Arial" (font_size 6)))
-	(annotation_block (location)(rect 96 488 152 504))
 )
 (pin
 	(input)
@@ -68,7 +66,6 @@ applicable agreement for further details.
 		(line (pt 117 12)(pt 121 8))
 	)
 	(text "VCC" (rect 136 7 156 17)(font "Arial" (font_size 6)))
-	(annotation_block (location)(rect 104 576 152 592))
 )
 (pin
 	(input)
@@ -85,7 +82,6 @@ applicable agreement for further details.
 		(line (pt 117 12)(pt 121 8))
 	)
 	(text "VCC" (rect 136 7 156 17)(font "Arial" (font_size 6)))
-	(annotation_block (location)(rect 104 664 152 680))
 )
 (pin
 	(input)
@@ -102,7 +98,6 @@ applicable agreement for further details.
 		(line (pt 117 12)(pt 121 8))
 	)
 	(text "VCC" (rect 136 7 156 17)(font "Arial" (font_size 6)))
-	(annotation_block (location)(rect 104 752 152 768))
 )
 (pin
 	(input)
@@ -119,7 +114,6 @@ applicable agreement for further details.
 		(line (pt 117 12)(pt 121 8))
 	)
 	(text "VCC" (rect 136 7 156 17)(font "Arial" (font_size 6)))
-	(annotation_block (location)(rect 104 840 152 856))
 )
 (pin
 	(input)
@@ -136,7 +130,6 @@ applicable agreement for further details.
 		(line (pt 117 12)(pt 121 8))
 	)
 	(text "VCC" (rect 136 7 156 17)(font "Arial" (font_size 6)))
-	(annotation_block (location)(rect 104 928 152 944))
 )
 (pin
 	(output)
@@ -153,7 +146,6 @@ applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
-	(annotation_block (location)(rect 1128 224 1184 240))
 )
 (pin
 	(output)
@@ -170,11 +162,10 @@ applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
-	(annotation_block (location)(rect 1128 240 1184 256))
 )
 (pin
 	(output)
-	(rect 952 584 1128 600)
+	(rect 952 32 1128 48)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
 	(text "led" (rect 90 0 104 12)(font "Arial" ))
 	(pt 0 8)
@@ -187,7 +178,6 @@ applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
-	(annotation_block (location)(rect 1128 600 1176 616))
 )
 (pin
 	(output)
@@ -204,7 +194,6 @@ applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
-	(annotation_block (location)(rect 1128 584 1184 600))
 )
 (pin
 	(output)
@@ -221,7 +210,6 @@ applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
-	(annotation_block (location)(rect 1128 -32 1184 -16))
 )
 (pin
 	(output)
@@ -238,7 +226,6 @@ applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
-	(annotation_block (location)(rect 1128 32 1176 48))
 )
 (pin
 	(bidir)
@@ -256,7 +243,6 @@ applicable agreement for further details.
 		(line (pt 52 8)(pt 56 12))
 	)
 	(text "VCC" (rect 4 7 24 17)(font "Arial" (font_size 6)))
-	(annotation_block (location)(rect 1128 -16 1184 0))
 )
 (symbol
 	(rect 432 144 464 176)
@@ -812,6 +798,201 @@ applicable agreement for further details.
 		(rectangle (rect 16 16 144 128))
 	)
 )
+(symbol
+	(rect 632 -48 784 96)
+	(text "TransceiverI2C" (rect 5 0 80 12)(font "Arial" ))
+	(text "inst23" (rect 8 128 37 140)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "clk" (rect 0 0 14 12)(font "Arial" ))
+		(text "clk" (rect 21 27 35 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "start" (rect 0 0 22 12)(font "Arial" ))
+		(text "start" (rect 21 43 43 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 152 32)
+		(output)
+		(text "scl" (rect 0 0 14 12)(font "Arial" ))
+		(text "scl" (rect 120 27 131 39)(font "Arial" ))
+		(line (pt 152 32)(pt 136 32))
+	)
+	(port
+		(pt 152 64)
+		(output)
+		(text "data[7..0]" (rect 0 0 47 12)(font "Arial" ))
+		(text "data[7..0]" (rect 92 59 131 71)(font "Arial" ))
+		(line (pt 152 64)(pt 136 64)(line_width 3))
+	)
+	(port
+		(pt 152 80)
+		(output)
+		(text "update" (rect 0 0 33 12)(font "Arial" ))
+		(text "update" (rect 104 75 131 87)(font "Arial" ))
+		(line (pt 152 80)(pt 136 80))
+	)
+	(port
+		(pt 152 96)
+		(output)
+		(text "led" (rect 0 0 14 12)(font "Arial" ))
+		(text "led" (rect 120 91 131 103)(font "Arial" ))
+		(line (pt 152 96)(pt 136 96))
+	)
+	(port
+		(pt 152 112)
+		(output)
+		(text "ledError" (rect 0 0 37 12)(font "Arial" ))
+		(text "ledError" (rect 100 107 131 119)(font "Arial" ))
+		(line (pt 152 112)(pt 136 112))
+	)
+	(port
+		(pt 152 48)
+		(bidir)
+		(text "sda" (rect 0 0 17 12)(font "Arial" ))
+		(text "sda" (rect 117 43 134 55)(font "Arial" ))
+		(line (pt 152 48)(pt 136 48))
+	)
+	(parameter
+		"Waiting"
+		"0"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"Starting"
+		"1"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"DeviceAddressPreparing"
+		"2"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"DeviceAddressSending"
+		"3"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"WriteBitPreparing"
+		"4"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"WriteBitSending"
+		"5"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"ReadBitPreparing"
+		"6"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"ReadBitSending"
+		"7"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"AcknowledgeChecking1"
+		"8"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"AcknowledgeChecking2"
+		"9"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"AcknowledgeChecking3"
+		"10"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"AcknowledgeChecking4"
+		"11"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"AcknowledgeChecking5"
+		"12"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"AcknowledgeChecking6"
+		"13"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"AcknowledgeChecking7"
+		"14"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"AcknowledgeChecking8"
+		"15"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"AcknowledgeChecking9"
+		"16"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"AcknowledgeChecking10"
+		"17"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"PointerBytePreparing"
+		"17"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"PointerByteSending"
+		"18"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"MSByteFromDeviceReading"
+		"19"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"MSByteFromDevicePreparing"
+		"20"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"LSByteFromDeviceReading"
+		"21"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"LSByteFromDevicePreparing"
+		"22"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"PresetPointerStopping"
+		"23"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"Updating"
+		"24"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(drawing
+		(rectangle (rect 16 16 136 128))
+	)
+	(annotation_block (parameter)(rect 632 -440 920 -56))
+)
 (connector
 	(pt 848 216)
 	(pt 952 216)
@@ -887,10 +1068,6 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 760 576)
-	(pt 760 424)
-)
-(connector
 	(pt 616 216)
 	(pt 616 120)
 )
@@ -901,34 +1078,6 @@ applicable agreement for further details.
 (connector
 	(pt 792 120)
 	(pt 792 80)
-)
-(connector
-	(pt 792 80)
-	(pt 616 80)
-)
-(connector
-	(pt 616 80)
-	(pt 616 -24)
-)
-(connector
-	(pt 616 -24)
-	(pt 624 -24)
-)
-(connector
-	(pt 360 -40)
-	(pt 624 -40)
-)
-(connector
-	(pt 952 -24)
-	(pt 776 -24)
-)
-(connector
-	(pt 952 -40)
-	(pt 776 -40)
-)
-(connector
-	(pt 776 24)
-	(pt 952 24)
 )
 (connector
 	(pt 384 328)
@@ -983,28 +1132,12 @@ applicable agreement for further details.
 	(pt 448 144)
 )
 (connector
-	(pt 360 424)
-	(pt 544 424)
-)
-(connector
-	(pt 544 424)
-	(pt 760 424)
-)
-(connector
 	(pt 528 216)
 	(pt 616 216)
 )
 (connector
 	(pt 616 216)
 	(pt 632 216)
-)
-(connector
-	(pt 360 -40)
-	(pt 360 216)
-)
-(connector
-	(pt 360 216)
-	(pt 360 312)
 )
 (connector
 	(pt 360 312)
@@ -1029,11 +1162,6 @@ applicable agreement for further details.
 (connector
 	(pt 384 344)
 	(pt 344 344)
-	(bus)
-)
-(connector
-	(pt 744 400)
-	(pt 344 400)
 	(bus)
 )
 (connector
@@ -1084,15 +1212,6 @@ applicable agreement for further details.
 (connector
 	(pt 936 576)
 	(pt 952 576)
-)
-(connector
-	(pt 784 576)
-	(pt 760 576)
-)
-(connector
-	(pt 744 592)
-	(pt 784 592)
-	(bus)
 )
 (connector
 	(pt 536 832)
@@ -1199,6 +1318,97 @@ applicable agreement for further details.
 	(pt 560 464)
 )
 (connector
+	(pt 360 424)
+	(pt 544 424)
+)
+(connector
+	(pt 344 400)
+	(pt 864 400)
+	(bus)
+)
+(connector
+	(pt 616 80)
+	(pt 792 80)
+)
+(connector
+	(pt 616 80)
+	(pt 616 0)
+)
+(connector
+	(pt 616 0)
+	(pt 632 0)
+)
+(connector
+	(pt 360 -16)
+	(pt 632 -16)
+)
+(connector
+	(pt 792 -40)
+	(pt 792 -16)
+)
+(connector
+	(pt 952 -40)
+	(pt 792 -40)
+)
+(connector
+	(pt 792 -16)
+	(pt 784 -16)
+)
+(connector
+	(pt 800 -24)
+	(pt 800 0)
+)
+(connector
+	(pt 952 -24)
+	(pt 800 -24)
+)
+(connector
+	(pt 800 0)
+	(pt 784 0)
+)
+(connector
+	(pt 864 16)
+	(pt 784 16)
+	(bus)
+)
+(connector
+	(pt 864 400)
+	(pt 864 16)
+	(bus)
+)
+(connector
+	(pt 808 24)
+	(pt 808 48)
+)
+(connector
+	(pt 952 24)
+	(pt 808 24)
+)
+(connector
+	(pt 808 48)
+	(pt 784 48)
+)
+(connector
+	(pt 816 40)
+	(pt 816 64)
+)
+(connector
+	(pt 952 40)
+	(pt 816 40)
+)
+(connector
+	(pt 816 64)
+	(pt 784 64)
+)
+(connector
+	(pt 360 -16)
+	(pt 360 216)
+)
+(connector
+	(pt 360 216)
+	(pt 360 312)
+)
+(connector
 	(pt 312 216)
 	(pt 320 216)
 )
@@ -1210,43 +1420,11 @@ applicable agreement for further details.
 	(pt 360 216)
 	(pt 384 216)
 )
-(connector
-	(pt 760 712)
-	(pt 760 608)
-)
-(connector
-	(pt 760 608)
-	(pt 784 608)
-)
-(connector
-	(pt 728 696)
-	(pt 744 696)
-	(bus)
-)
-(connector
-	(pt 744 400)
-	(pt 744 592)
-	(bus)
-)
-(connector
-	(pt 744 592)
-	(pt 744 696)
-	(bus)
-)
-(connector
-	(pt 728 712)
-	(pt 760 712)
-)
-(connector
-	(pt 936 592)
-	(pt 952 592)
-)
 (junction (pt 448 88))
 (junction (pt 544 104))
 (junction (pt 544 120))
 (junction (pt 544 136))
 (junction (pt 448 136))
-(junction (pt 544 424))
 (junction (pt 360 424))
 (junction (pt 552 464))
 (junction (pt 616 216))
@@ -1259,4 +1437,3 @@ applicable agreement for further details.
 (junction (pt 360 760))
 (junction (pt 360 848))
 (junction (pt 320 216))
-(junction (pt 744 592))
