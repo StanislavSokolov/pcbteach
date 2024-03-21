@@ -1,18 +1,22 @@
 |VERILOGStart05
-led <= ReceiverUART:inst13.led
-clk => ReceiverUART:inst13.clk
-clk => filter8:inst17.clk
-clk => tx.DATAIN
+led <= TransmitterUART:inst18.led
+clk => TransmitterUART:inst18.clk
+clk => Setter:inst12.clk
+clk => filter8:inst.clk
+clk => filter8:inst19.clk
+clk => filter8:inst20.clk
+clk => filter8:inst21.clk
+clk => filter8:inst22.clk
 clk => Count100000:inst8.clkIn
 clk => DataConversionUnit:inst11.clk
-clk => filter30:inst.clk
-clk => filter30:inst1.clk
-clk => Setter:inst12.clk
-clk => filter30:inst2.clk
-clk => filter30:inst5.clk
-clk => filter30:inst6.clk
-rx => filter8:inst17.d
-tx <= clk.DB_MAX_OUTPUT_PORT_TYPE
+clk => ReceiverUART:inst13.clk
+clk => filter8:inst17.clk
+key1 => filter8:inst.d
+key2 => filter8:inst19.d
+key3 => filter8:inst20.d
+key4 => filter8:inst21.d
+reset => filter8:inst22.d
+tx <= TransmitterUART:inst18.tx
 scl <= <GND>
 led1 <= <GND>
 indicator[0] <= DynamicIllumination4Indicators:inst10.indicator0
@@ -26,36 +30,16 @@ segment[3] <= DynamicIllumination4Indicators:inst10.segment[3]
 segment[4] <= DynamicIllumination4Indicators:inst10.segment[4]
 segment[5] <= DynamicIllumination4Indicators:inst10.segment[5]
 segment[6] <= DynamicIllumination4Indicators:inst10.segment[6]
-key1 => filter30:inst.d
-key2 => filter30:inst1.d
-key3 => filter30:inst2.d
-key4 => filter30:inst5.d
-reset => filter30:inst6.d
+rx => filter8:inst17.d
 
 
-|VERILOGStart05|ReceiverUART:inst13
-clk => rxPrev.CLK
+|VERILOGStart05|TransmitterUART:inst18
+clk => updatePrev.CLK
 clk => led~reg0.CLK
-clk => data[0]~reg0.CLK
-clk => data[1]~reg0.CLK
-clk => data[2]~reg0.CLK
-clk => data[3]~reg0.CLK
-clk => data[4]~reg0.CLK
-clk => data[5]~reg0.CLK
-clk => data[6]~reg0.CLK
-clk => data[7]~reg0.CLK
 clk => bitPosition[0].CLK
 clk => bitPosition[1].CLK
 clk => bitPosition[2].CLK
-clk => dataBuf[0].CLK
-clk => dataBuf[1].CLK
-clk => dataBuf[2].CLK
-clk => dataBuf[3].CLK
-clk => dataBuf[4].CLK
-clk => dataBuf[5].CLK
-clk => dataBuf[6].CLK
-clk => dataBuf[7].CLK
-clk => update~reg0.CLK
+clk => tx~reg0.CLK
 clk => count[0].CLK
 clk => count[1].CLK
 clk => count[2].CLK
@@ -72,38 +56,65 @@ clk => count[12].CLK
 clk => count[13].CLK
 clk => count[14].CLK
 clk => count[15].CLK
-clk => stateUART~6.DATAIN
-rx => dataBuf.DATAB
-rx => dataBuf.DATAB
-rx => dataBuf.DATAB
-rx => dataBuf.DATAB
-rx => dataBuf.DATAB
-rx => dataBuf.DATAB
-rx => dataBuf.DATAB
-rx => dataBuf.DATAB
-rx => rxPrev.DATAIN
-rx => count.OUTPUTSELECT
-rx => count.OUTPUTSELECT
-rx => count.OUTPUTSELECT
-rx => count.OUTPUTSELECT
-rx => count.OUTPUTSELECT
-rx => count.OUTPUTSELECT
-rx => count.OUTPUTSELECT
-rx => count.OUTPUTSELECT
-rx => count.OUTPUTSELECT
-rx => count.OUTPUTSELECT
-rx => count.OUTPUTSELECT
-rx => count.OUTPUTSELECT
-rx => count.OUTPUTSELECT
-rx => count.OUTPUTSELECT
-rx => count.OUTPUTSELECT
-rx => count.OUTPUTSELECT
-rx => stateUART.OUTPUTSELECT
-rx => stateUART.OUTPUTSELECT
-rx => stateUART.OUTPUTSELECT
-rx => stateUART.OUTPUTSELECT
-rx => stateUART.OUTPUTSELECT
-rx => always0.IN1
+clk => dataBuf[0].CLK
+clk => dataBuf[1].CLK
+clk => dataBuf[2].CLK
+clk => dataBuf[3].CLK
+clk => dataBuf[4].CLK
+clk => dataBuf[5].CLK
+clk => dataBuf[6].CLK
+clk => dataBuf[7].CLK
+clk => stateUART~5.DATAIN
+tx <= tx~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[0] => dataBuf.DATAB
+data[1] => dataBuf.DATAB
+data[2] => dataBuf.DATAB
+data[3] => dataBuf.DATAB
+data[4] => dataBuf.DATAB
+data[5] => dataBuf.DATAB
+data[6] => dataBuf.DATAB
+data[7] => dataBuf.DATAB
+update => always0.IN1
+update => updatePrev.DATAIN
+led <= led~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|VERILOGStart05|Setter:inst12
+clk => key4Prev.CLK
+clk => key3Prev.CLK
+clk => dataBuf1[0].CLK
+clk => dataBuf1[1].CLK
+clk => dataBuf1[2].CLK
+clk => dataBuf1[3].CLK
+clk => key2Prev.CLK
+clk => key1Prev.CLK
+clk => dataBuf0[0].CLK
+clk => dataBuf0[1].CLK
+clk => dataBuf0[2].CLK
+clk => dataBuf0[3].CLK
+clk => resetPrev.CLK
+clk => countUpdate[0].CLK
+clk => countUpdate[1].CLK
+clk => countUpdate[2].CLK
+clk => update~reg0.CLK
+clk => data[0]~reg0.CLK
+clk => data[1]~reg0.CLK
+clk => data[2]~reg0.CLK
+clk => data[3]~reg0.CLK
+clk => data[4]~reg0.CLK
+clk => data[5]~reg0.CLK
+clk => data[6]~reg0.CLK
+clk => data[7]~reg0.CLK
+key1 => key1Prev.DATAIN
+key1 => always1.IN1
+key2 => key2Prev.DATAIN
+key2 => always1.IN1
+key3 => key3Prev.DATAIN
+key3 => always1.IN1
+key4 => key4Prev.DATAIN
+key4 => always1.IN1
+reset => resetPrev.DATAIN
+reset => always0.IN1
 data[0] <= data[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 data[1] <= data[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 data[2] <= data[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
@@ -113,10 +124,73 @@ data[5] <= data[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 data[6] <= data[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 data[7] <= data[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 update <= update~reg0.DB_MAX_OUTPUT_PORT_TYPE
-led <= led~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|VERILOGStart05|filter8:inst17
+|VERILOGStart05|filter8:inst
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+d => count.OUTPUTSELECT
+d => count.OUTPUTSELECT
+d => count.OUTPUTSELECT
+d => count.OUTPUTSELECT
+d => q.OUTPUTSELECT
+d => latch.DATAIN
+clk => q~reg0.CLK
+clk => latch.CLK
+clk => count[0].CLK
+clk => count[1].CLK
+clk => count[2].CLK
+clk => count[3].CLK
+
+
+|VERILOGStart05|filter8:inst19
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+d => count.OUTPUTSELECT
+d => count.OUTPUTSELECT
+d => count.OUTPUTSELECT
+d => count.OUTPUTSELECT
+d => q.OUTPUTSELECT
+d => latch.DATAIN
+clk => q~reg0.CLK
+clk => latch.CLK
+clk => count[0].CLK
+clk => count[1].CLK
+clk => count[2].CLK
+clk => count[3].CLK
+
+
+|VERILOGStart05|filter8:inst20
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+d => count.OUTPUTSELECT
+d => count.OUTPUTSELECT
+d => count.OUTPUTSELECT
+d => count.OUTPUTSELECT
+d => q.OUTPUTSELECT
+d => latch.DATAIN
+clk => q~reg0.CLK
+clk => latch.CLK
+clk => count[0].CLK
+clk => count[1].CLK
+clk => count[2].CLK
+clk => count[3].CLK
+
+
+|VERILOGStart05|filter8:inst21
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+d => count.OUTPUTSELECT
+d => count.OUTPUTSELECT
+d => count.OUTPUTSELECT
+d => count.OUTPUTSELECT
+d => q.OUTPUTSELECT
+d => latch.DATAIN
+clk => q~reg0.CLK
+clk => latch.CLK
+clk => count[0].CLK
+clk => count[1].CLK
+clk => count[2].CLK
+clk => count[3].CLK
+
+
+|VERILOGStart05|filter8:inst22
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 d => count.OUTPUTSELECT
 d => count.OUTPUTSELECT
@@ -244,68 +318,91 @@ indicator1[5] <= WideOr8.DB_MAX_OUTPUT_PORT_TYPE
 indicator1[6] <= WideOr7.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|VERILOGStart05|filter30:inst
-q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
-d => count.OUTPUTSELECT
-d => count.OUTPUTSELECT
-d => count.OUTPUTSELECT
-d => count.OUTPUTSELECT
-d => count.OUTPUTSELECT
-d => q.OUTPUTSELECT
-d => latch.DATAIN
-clk => q~reg0.CLK
-clk => latch.CLK
-clk => count[0].CLK
-clk => count[1].CLK
-clk => count[2].CLK
-clk => count[3].CLK
-clk => count[4].CLK
-
-
-|VERILOGStart05|filter30:inst1
-q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
-d => count.OUTPUTSELECT
-d => count.OUTPUTSELECT
-d => count.OUTPUTSELECT
-d => count.OUTPUTSELECT
-d => count.OUTPUTSELECT
-d => q.OUTPUTSELECT
-d => latch.DATAIN
-clk => q~reg0.CLK
-clk => latch.CLK
-clk => count[0].CLK
-clk => count[1].CLK
-clk => count[2].CLK
-clk => count[3].CLK
-clk => count[4].CLK
-
-
-|VERILOGStart05|Setter:inst12
-clk => resetPrev.CLK
-clk => countUpdate[0].CLK
-clk => countUpdate[1].CLK
-clk => countUpdate[2].CLK
+|VERILOGStart05|ReceiverUART:inst13
+clk => rxPrev.CLK
+clk => led~reg0.CLK
+clk => data[0]~reg0.CLK
+clk => data[1]~reg0.CLK
+clk => data[2]~reg0.CLK
+clk => data[3]~reg0.CLK
+clk => data[4]~reg0.CLK
+clk => data[5]~reg0.CLK
+clk => data[6]~reg0.CLK
+clk => data[7]~reg0.CLK
+clk => bitPosition[0].CLK
+clk => bitPosition[1].CLK
+clk => bitPosition[2].CLK
+clk => dataBuf[0].CLK
+clk => dataBuf[1].CLK
+clk => dataBuf[2].CLK
+clk => dataBuf[3].CLK
+clk => dataBuf[4].CLK
+clk => dataBuf[5].CLK
+clk => dataBuf[6].CLK
+clk => dataBuf[7].CLK
 clk => update~reg0.CLK
-key1 => ~NO_FANOUT~
-key2 => ~NO_FANOUT~
-key3 => ~NO_FANOUT~
-key4 => ~NO_FANOUT~
-reset => resetPrev.DATAIN
-reset => always0.IN1
-data[0] <= <GND>
-data[1] <= <GND>
-data[2] <= <GND>
-data[3] <= <GND>
-data[4] <= <GND>
-data[5] <= <GND>
-data[6] <= <GND>
-data[7] <= <GND>
+clk => count[0].CLK
+clk => count[1].CLK
+clk => count[2].CLK
+clk => count[3].CLK
+clk => count[4].CLK
+clk => count[5].CLK
+clk => count[6].CLK
+clk => count[7].CLK
+clk => count[8].CLK
+clk => count[9].CLK
+clk => count[10].CLK
+clk => count[11].CLK
+clk => count[12].CLK
+clk => count[13].CLK
+clk => count[14].CLK
+clk => count[15].CLK
+clk => stateUART~6.DATAIN
+rx => dataBuf.DATAB
+rx => dataBuf.DATAB
+rx => dataBuf.DATAB
+rx => dataBuf.DATAB
+rx => dataBuf.DATAB
+rx => dataBuf.DATAB
+rx => dataBuf.DATAB
+rx => dataBuf.DATAB
+rx => rxPrev.DATAIN
+rx => count.OUTPUTSELECT
+rx => count.OUTPUTSELECT
+rx => count.OUTPUTSELECT
+rx => count.OUTPUTSELECT
+rx => count.OUTPUTSELECT
+rx => count.OUTPUTSELECT
+rx => count.OUTPUTSELECT
+rx => count.OUTPUTSELECT
+rx => count.OUTPUTSELECT
+rx => count.OUTPUTSELECT
+rx => count.OUTPUTSELECT
+rx => count.OUTPUTSELECT
+rx => count.OUTPUTSELECT
+rx => count.OUTPUTSELECT
+rx => count.OUTPUTSELECT
+rx => count.OUTPUTSELECT
+rx => stateUART.OUTPUTSELECT
+rx => stateUART.OUTPUTSELECT
+rx => stateUART.OUTPUTSELECT
+rx => stateUART.OUTPUTSELECT
+rx => stateUART.OUTPUTSELECT
+rx => always0.IN1
+data[0] <= data[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[1] <= data[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[2] <= data[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[3] <= data[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[4] <= data[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[5] <= data[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[6] <= data[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[7] <= data[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 update <= update~reg0.DB_MAX_OUTPUT_PORT_TYPE
+led <= led~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|VERILOGStart05|filter30:inst2
+|VERILOGStart05|filter8:inst17
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
-d => count.OUTPUTSELECT
 d => count.OUTPUTSELECT
 d => count.OUTPUTSELECT
 d => count.OUTPUTSELECT
@@ -318,43 +415,6 @@ clk => count[0].CLK
 clk => count[1].CLK
 clk => count[2].CLK
 clk => count[3].CLK
-clk => count[4].CLK
-
-
-|VERILOGStart05|filter30:inst5
-q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
-d => count.OUTPUTSELECT
-d => count.OUTPUTSELECT
-d => count.OUTPUTSELECT
-d => count.OUTPUTSELECT
-d => count.OUTPUTSELECT
-d => q.OUTPUTSELECT
-d => latch.DATAIN
-clk => q~reg0.CLK
-clk => latch.CLK
-clk => count[0].CLK
-clk => count[1].CLK
-clk => count[2].CLK
-clk => count[3].CLK
-clk => count[4].CLK
-
-
-|VERILOGStart05|filter30:inst6
-q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
-d => count.OUTPUTSELECT
-d => count.OUTPUTSELECT
-d => count.OUTPUTSELECT
-d => count.OUTPUTSELECT
-d => count.OUTPUTSELECT
-d => q.OUTPUTSELECT
-d => latch.DATAIN
-clk => q~reg0.CLK
-clk => latch.CLK
-clk => count[0].CLK
-clk => count[1].CLK
-clk => count[2].CLK
-clk => count[3].CLK
-clk => count[4].CLK
 
 
 |VERILOGStart05|Count250:inst9

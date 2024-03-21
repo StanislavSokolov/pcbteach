@@ -8,12 +8,12 @@ module Setter(clk, key1, key2, key3, key4, reset, data, update);
 
 	reg[2:0] countUpdate = 0;
 	reg resetPrev = 1, key1Prev = 1, key2Prev = 1, key3Prev = 1, key4Prev = 1;
-	reg[7:0] dataBuf = 8'b11111111;
-	reg[3:0] dataBuf0 = 15, dataBuf1 = 15;
+	reg[3:0] dataBuf0 = 0, dataBuf1 = 0;
 
 	always@(posedge clk)
 	begin	
-		dataBuf <= dataBuf1 & dataBuf0;
+		data[7:4] <= dataBuf1;
+		data[3:0] <= dataBuf0;
 		if (reset == 0 && resetPrev == 1)
 			update <= 1;				
 		else
@@ -29,7 +29,7 @@ module Setter(clk, key1, key2, key3, key4, reset, data, update);
 							end
 					end
 			end
-			resetPrev <= reset;
+		resetPrev <= reset;
 	end
 	
 	always@(posedge clk)

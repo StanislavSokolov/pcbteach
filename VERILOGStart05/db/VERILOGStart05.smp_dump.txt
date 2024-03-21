@@ -6,3 +6,10 @@ stateUART.Starting 0 0 1 1 0
 stateUART.ReceivingData 0 1 0 1 0 
 stateUART.Stopping 1 0 0 1 0 
 stateUART.Updating 0 0 0 1 1 
+
+State Machine - |VERILOGStart05|TransmitterUART:inst18|stateUART
+Name stateUART.Stopping stateUART.ReceivingData stateUART.Starting stateUART.Waiting 
+stateUART.Waiting 0 0 0 0 
+stateUART.Starting 0 0 1 1 
+stateUART.ReceivingData 0 1 0 1 
+stateUART.Stopping 1 0 0 1 
