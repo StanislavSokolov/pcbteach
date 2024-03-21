@@ -20,28 +20,31 @@ module DynamicIllumination4Indicators(clk, enable, indicator0, indicator1, indic
 	always@(counter)
 	begin
 		case (counter)
-			0 : if (enable(0) == 1) 
+			0 : if (enable[0] == 1) 
 					begin
 						indicator <= 4'b1110;
 						segment <= indicator0;
 					end
-			1 : if (enable(1) == 1) 
+			1 : if (enable[1] == 1) 
 					begin
 						indicator <= 4'b1101;
 						segment <= indicator1;
 					end
-			2 : if (enable(2) == 1) 
+			2 : if (enable[2] == 1) 
 					begin
 						indicator <= 4'b1011;
 						segment <= indicator2;
 					end
-			3 : if (enable(3) == 1) 
+			3 : if (enable[3] == 1) 
 					begin	
 						indicator <= 4'b0111;
 						segment <= indicator3;
 					end
-			default : indicator <= 4'b0000; 
+			default : 
+					begin
+						indicator <= 4'b0000; 
 						segment <= 7'b0000000;
+					end	
 		endcase
 	end
 	

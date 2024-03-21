@@ -3,8 +3,8 @@ output q;
 input d, clk;
 
 reg q;
-reg latch;
-reg[4:0] count;
+reg latch = 0;
+reg[4:0] count = 0;
 
 always@(posedge clk)
 begin
@@ -23,7 +23,8 @@ begin
 						end
 					else 
 						begin
-							q <= 0;
+							q <= 1;
+							count <= 0;
 						end
 				end
 		end	
@@ -42,7 +43,8 @@ begin
 						end
 					else 
 						begin
-							q <= 1;
+							q <= 0;
+							count <= 0;
 						end
 				end
 		end

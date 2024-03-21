@@ -1,0 +1,8 @@
+
+State Machine - |VERILOGStart05|ReceiverUART:inst13|stateUART
+Name stateUART.Stopping stateUART.ReceivingData stateUART.Starting stateUART.Waiting stateUART.Updating 
+stateUART.Waiting 0 0 0 0 0 
+stateUART.Starting 0 0 1 1 0 
+stateUART.ReceivingData 0 1 0 1 0 
+stateUART.Stopping 1 0 0 1 0 
+stateUART.Updating 0 0 0 1 1 
