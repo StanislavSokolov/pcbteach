@@ -1,0 +1,57 @@
+vsim -gui work.TestBench03
+# vsim -gui work.TestBench03 
+# Start time: 17:01:19 on Mar 22,2024
+# Loading work.TestBench03
+# Loading work.dfftestmod
+add wave -position end  sim:/TestBench03/clk_tb
+add wave -position end  sim:/TestBench03/rst_tb
+add wave -position end  sim:/TestBench03/d_tb
+add wave -position end  sim:/TestBench03/q_exp
+add wave -position end  sim:/TestBench03/q_tb
+add wave -position end  sim:/TestBench03/qb_tb
+add wave -position end  sim:/TestBench03/test/clk
+add wave -position end  sim:/TestBench03/test/reset
+add wave -position end  sim:/TestBench03/test/d
+add wave -position end  sim:/TestBench03/test/q
+add wave -position end  sim:/TestBench03/test/qb
+run
+# ***** Mismatch q_tb and q_exp in time                   14 
+# ***** Mismatch q_tb and q_exp in time                   16 
+# ***** Mismatch q_tb and q_exp in time                   18 
+# ** Note: $finish    : D:/GITEA/GitHub/ES/pcbteach/TestBench03/TestBench03.v(22)
+#    Time: 500 ns  Iteration: 0  Instance: /TestBench03
+# 1
+# Break in Module TestBench03 at D:/GITEA/GitHub/ES/pcbteach/TestBench03/TestBench03.v line 22
+restart
+# Compile of dfftestmod.v was successful.
+# Compile of TestBench03.v was successful.
+# 2 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.TestBench03
+# Loading work.dfftestmod
+run
+# ** Note: $finish    : D:/GITEA/GitHub/ES/pcbteach/TestBench03/TestBench03.v(22)
+#    Time: 500 ns  Iteration: 0  Instance: /TestBench03
+# 1
+# Break in Module TestBench03 at D:/GITEA/GitHub/ES/pcbteach/TestBench03/TestBench03.v line 22
+# Compile of dfftestmod.v was successful.
+# Compile of TestBench03.v was successful.
+# 2 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.TestBench03
+# Loading work.dfftestmod
+run
+# ***** Mismatch q_tb and q_exp in time                   13 
+# Compile of dfftestmod.v was successful.
+# Compile of TestBench03.v was successful.
+# 2 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.TestBench03
+# Loading work.dfftestmod
+run
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf D:/GITEA/GitHub/ES/pcbteach/TestBench03/tb/work/wave.do
+# End time: 17:07:22 on Mar 22,2024, Elapsed time: 0:06:03
+# Errors: 0, Warnings: 1

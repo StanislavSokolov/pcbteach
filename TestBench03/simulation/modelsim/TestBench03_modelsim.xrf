@@ -1,0 +1,12 @@
+vendor_name = ModelSim
+source_file = 1, D:/GITEA/GitHub/ES/pcbteach/TestBench03/TestBench03.v
+source_file = 1, D:/GITEA/GitHub/ES/pcbteach/TestBench03/dfftestmod.v
+source_file = 1, D:/GITEA/GitHub/ES/pcbteach/TestBench03/db/TestBench03.cbx.xml
+design_name = dfftestmod
+instance = comp, \q~output\, q~output, dfftestmod, 1
+instance = comp, \qb~output\, qb~output, dfftestmod, 1
+instance = comp, \clk~input\, clk~input, dfftestmod, 1
+instance = comp, \d~input\, d~input, dfftestmod, 1
+instance = comp, \q~reg0feeder\, q~reg0feeder, dfftestmod, 1
+instance = comp, \reset~input\, reset~input, dfftestmod, 1
+instance = comp, \q~reg0\, q~reg0, dfftestmod, 1

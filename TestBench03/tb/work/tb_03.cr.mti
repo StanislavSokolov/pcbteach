@@ -1,0 +1,15 @@
+D:/GITEA/GitHub/ES/pcbteach/TestBench03/TestBench03.v {1 {vlog -work work -stats=none D:/GITEA/GitHub/ES/pcbteach/TestBench03/TestBench03.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module TestBench03
+
+Top level modules:
+	TestBench03
+
+} {} {}} D:/GITEA/GitHub/ES/pcbteach/TestBench03/dfftestmod.v {1 {vlog -work work -stats=none D:/GITEA/GitHub/ES/pcbteach/TestBench03/dfftestmod.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module dfftestmod
+
+Top level modules:
+	dfftestmod
+
+} {} {}}
