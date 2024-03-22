@@ -171,42 +171,42 @@ applicable agreement for further details.
 		(type "PARAMETER_SIGNED_DEC")	)
 	(parameter
 		"PointerBytePreparing"
-		"17"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(parameter
-		"PointerByteSending"
 		"18"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(parameter
-		"MSByteFromDeviceReading"
+		"PointerByteSending"
 		"19"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(parameter
-		"MSByteFromDevicePreparing"
+		"MSByteFromDeviceReading"
 		"20"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(parameter
-		"LSByteFromDeviceReading"
+		"MSByteFromDevicePreparing"
 		"21"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(parameter
-		"LSByteFromDevicePreparing"
+		"LSByteFromDeviceReading"
 		"22"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(parameter
-		"PresetPointerStopping"
+		"LSByteFromDevicePreparing"
 		"23"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(parameter
-		"Updating"
+		"PresetPointerStopping"
 		"24"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"Updating"
+		"25"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(drawing

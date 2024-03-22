@@ -1,6 +1,6 @@
 |VERILOGStart05
-led <= TransceiverI2C:inst23.ledError
-clk => TransceiverI2C:inst23.clk
+led <= TransceiverI2C:inst1.ledError
+clk => TransceiverI2C:inst1.clk
 clk => Count100000:inst8.clkIn
 clk => DataConversionUnit:inst11.clk
 clk => filter8:inst.clk
@@ -11,10 +11,10 @@ clk => filter8:inst21.clk
 clk => filter8:inst22.clk
 clk => ReceiverUART:inst13.clk
 clk => filter8:inst17.clk
-sda <> TransceiverI2C:inst23.sda
+sda <> TransceiverI2C:inst1.sda
 tx <= TransmitterUART:inst18.tx
-scl <= TransceiverI2C:inst23.scl
-led1 <= TransceiverI2C:inst23.led
+scl <= TransceiverI2C:inst1.scl
+led1 <= TransceiverI2C:inst1.led
 indicator[0] <= DynamicIllumination4Indicators:inst10.indicator0
 indicator[1] <= DynamicIllumination4Indicators:inst10.indicator1
 indicator[2] <= DynamicIllumination4Indicators:inst10.indicator2
@@ -34,7 +34,7 @@ reset => filter8:inst22.d
 rx => filter8:inst17.d
 
 
-|VERILOGStart05|TransceiverI2C:inst23
+|VERILOGStart05|TransceiverI2C:inst1
 clk => data[0]~reg0.CLK
 clk => data[1]~reg0.CLK
 clk => data[2]~reg0.CLK
@@ -43,6 +43,7 @@ clk => data[4]~reg0.CLK
 clk => data[5]~reg0.CLK
 clk => data[6]~reg0.CLK
 clk => data[7]~reg0.CLK
+clk => led~reg0.CLK
 clk => lSByteFromDevice[5].CLK
 clk => lSByteFromDevice[6].CLK
 clk => lSByteFromDevice[7].CLK
@@ -51,7 +52,7 @@ clk => mSByteFromDevice[1].CLK
 clk => mSByteFromDevice[2].CLK
 clk => mSByteFromDevice[3].CLK
 clk => mSByteFromDevice[4].CLK
-clk => led~reg0.CLK
+clk => ledError~reg0.CLK
 clk => rw.CLK
 clk => bitPosition[0].CLK
 clk => bitPosition[1].CLK
@@ -70,7 +71,7 @@ clk => count[5].CLK
 clk => count[6].CLK
 clk => count[7].CLK
 clk => startPrev.CLK
-clk => stateI2C~26.DATAIN
+clk => stateI2C~27.DATAIN
 start => startPrev.DATAIN
 start => always0.IN1
 scl <= scl.DB_MAX_OUTPUT_PORT_TYPE
@@ -85,7 +86,7 @@ data[6] <= data[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 data[7] <= data[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 update <= update~reg0.DB_MAX_OUTPUT_PORT_TYPE
 led <= led~reg0.DB_MAX_OUTPUT_PORT_TYPE
-ledError <= <GND>
+ledError <= ledError~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |VERILOGStart05|Count250:inst9

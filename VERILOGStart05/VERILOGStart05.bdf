@@ -34,6 +34,7 @@ applicable agreement for further details.
 		(line (pt 117 12)(pt 121 8))
 	)
 	(text "VCC" (rect 136 7 156 17)(font "Arial" (font_size 6)))
+	(annotation_block (location)(rect 96 224 144 240))
 )
 (pin
 	(input)
@@ -50,6 +51,7 @@ applicable agreement for further details.
 		(line (pt 117 12)(pt 121 8))
 	)
 	(text "VCC" (rect 136 7 156 17)(font "Arial" (font_size 6)))
+	(annotation_block (location)(rect 96 488 152 504))
 )
 (pin
 	(input)
@@ -66,6 +68,7 @@ applicable agreement for further details.
 		(line (pt 117 12)(pt 121 8))
 	)
 	(text "VCC" (rect 136 7 156 17)(font "Arial" (font_size 6)))
+	(annotation_block (location)(rect 104 576 152 592))
 )
 (pin
 	(input)
@@ -82,6 +85,7 @@ applicable agreement for further details.
 		(line (pt 117 12)(pt 121 8))
 	)
 	(text "VCC" (rect 136 7 156 17)(font "Arial" (font_size 6)))
+	(annotation_block (location)(rect 104 664 152 680))
 )
 (pin
 	(input)
@@ -98,6 +102,7 @@ applicable agreement for further details.
 		(line (pt 117 12)(pt 121 8))
 	)
 	(text "VCC" (rect 136 7 156 17)(font "Arial" (font_size 6)))
+	(annotation_block (location)(rect 104 752 152 768))
 )
 (pin
 	(input)
@@ -114,6 +119,7 @@ applicable agreement for further details.
 		(line (pt 117 12)(pt 121 8))
 	)
 	(text "VCC" (rect 136 7 156 17)(font "Arial" (font_size 6)))
+	(annotation_block (location)(rect 104 840 152 856))
 )
 (pin
 	(input)
@@ -130,6 +136,7 @@ applicable agreement for further details.
 		(line (pt 117 12)(pt 121 8))
 	)
 	(text "VCC" (rect 136 7 156 17)(font "Arial" (font_size 6)))
+	(annotation_block (location)(rect 104 928 152 944))
 )
 (pin
 	(output)
@@ -146,6 +153,7 @@ applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
+	(annotation_block (location)(rect 1128 224 1184 240))
 )
 (pin
 	(output)
@@ -162,6 +170,7 @@ applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
+	(annotation_block (location)(rect 1128 240 1184 256))
 )
 (pin
 	(output)
@@ -178,6 +187,7 @@ applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
+	(annotation_block (location)(rect 1128 48 1176 64))
 )
 (pin
 	(output)
@@ -194,6 +204,7 @@ applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
+	(annotation_block (location)(rect 1128 584 1184 600))
 )
 (pin
 	(output)
@@ -210,6 +221,7 @@ applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
+	(annotation_block (location)(rect 1128 -32 1184 -16))
 )
 (pin
 	(output)
@@ -226,6 +238,7 @@ applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
+	(annotation_block (location)(rect 1128 32 1176 48))
 )
 (pin
 	(bidir)
@@ -243,6 +256,7 @@ applicable agreement for further details.
 		(line (pt 52 8)(pt 56 12))
 	)
 	(text "VCC" (rect 4 7 24 17)(font "Arial" (font_size 6)))
+	(annotation_block (location)(rect 1128 -16 1184 0))
 )
 (symbol
 	(rect 432 144 464 176)
@@ -801,7 +815,7 @@ applicable agreement for further details.
 (symbol
 	(rect 632 -48 784 96)
 	(text "TransceiverI2C" (rect 5 0 80 12)(font "Arial" ))
-	(text "inst23" (rect 8 128 37 140)(font "Arial" ))
+	(text "inst1" (rect 8 128 31 140)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -820,35 +834,35 @@ applicable agreement for further details.
 		(pt 152 32)
 		(output)
 		(text "scl" (rect 0 0 14 12)(font "Arial" ))
-		(text "scl" (rect 120 27 131 39)(font "Arial" ))
+		(text "scl" (rect 120 27 134 39)(font "Arial" ))
 		(line (pt 152 32)(pt 136 32))
 	)
 	(port
 		(pt 152 64)
 		(output)
 		(text "data[7..0]" (rect 0 0 47 12)(font "Arial" ))
-		(text "data[7..0]" (rect 92 59 131 71)(font "Arial" ))
+		(text "data[7..0]" (rect 92 59 139 71)(font "Arial" ))
 		(line (pt 152 64)(pt 136 64)(line_width 3))
 	)
 	(port
 		(pt 152 80)
 		(output)
 		(text "update" (rect 0 0 33 12)(font "Arial" ))
-		(text "update" (rect 104 75 131 87)(font "Arial" ))
+		(text "update" (rect 104 75 137 87)(font "Arial" ))
 		(line (pt 152 80)(pt 136 80))
 	)
 	(port
 		(pt 152 96)
 		(output)
 		(text "led" (rect 0 0 14 12)(font "Arial" ))
-		(text "led" (rect 120 91 131 103)(font "Arial" ))
+		(text "led" (rect 120 91 134 103)(font "Arial" ))
 		(line (pt 152 96)(pt 136 96))
 	)
 	(port
 		(pt 152 112)
 		(output)
 		(text "ledError" (rect 0 0 37 12)(font "Arial" ))
-		(text "ledError" (rect 100 107 131 119)(font "Arial" ))
+		(text "ledError" (rect 100 107 137 119)(font "Arial" ))
 		(line (pt 152 112)(pt 136 112))
 	)
 	(port
@@ -950,48 +964,48 @@ applicable agreement for further details.
 		(type "PARAMETER_SIGNED_DEC")	)
 	(parameter
 		"PointerBytePreparing"
-		"17"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(parameter
-		"PointerByteSending"
 		"18"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(parameter
-		"MSByteFromDeviceReading"
+		"PointerByteSending"
 		"19"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(parameter
-		"MSByteFromDevicePreparing"
+		"MSByteFromDeviceReading"
 		"20"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(parameter
-		"LSByteFromDeviceReading"
+		"MSByteFromDevicePreparing"
 		"21"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(parameter
-		"LSByteFromDevicePreparing"
+		"LSByteFromDeviceReading"
 		"22"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(parameter
-		"PresetPointerStopping"
+		"LSByteFromDevicePreparing"
 		"23"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(parameter
-		"Updating"
+		"PresetPointerStopping"
 		"24"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"Updating"
+		"25"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(drawing
 		(rectangle (rect 16 16 136 128))
 	)
-	(annotation_block (parameter)(rect 632 -440 920 -56))
+	(annotation_block (parameter)(rect 784 -432 1072 -48))
 )
 (connector
 	(pt 848 216)

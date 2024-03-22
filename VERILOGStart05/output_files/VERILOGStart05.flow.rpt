@@ -1,5 +1,5 @@
 Flow report for VERILOGStart05
-Thu Mar 21 18:59:03 2024
+Fri Mar 22 13:57:45 2024
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Full Version
 
 
@@ -40,17 +40,17 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Thu Mar 21 18:59:03 2024       ;
+; Flow Status                        ; Successful - Fri Mar 22 13:57:45 2024       ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Full Version ;
 ; Revision Name                      ; VERILOGStart05                              ;
 ; Top-level Entity Name              ; VERILOGStart05                              ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE10E22C8                                ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 133 / 10,320 ( 1 % )                        ;
-;     Total combinational functions  ; 128 / 10,320 ( 1 % )                        ;
-;     Dedicated logic registers      ; 71 / 10,320 ( < 1 % )                       ;
-; Total registers                    ; 71                                          ;
+; Total logic elements               ; 182 / 10,320 ( 2 % )                        ;
+;     Total combinational functions  ; 169 / 10,320 ( 2 % )                        ;
+;     Dedicated logic registers      ; 99 / 10,320 ( < 1 % )                       ;
+; Total registers                    ; 99                                          ;
 ; Total pins                         ; 23 / 92 ( 25 % )                            ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0 / 423,936 ( 0 % )                         ;
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 03/21/2024 18:58:48 ;
+; Start date & time ; 03/22/2024 13:57:30 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; VERILOGStart05      ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +-------------------------------------+--------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                          ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+--------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 30902508249626.171103672814912 ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 30902508249626.171110505010544 ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                           ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)         ; <None>        ; --          ; --             ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                             ; --            ; --          ; --             ;
@@ -93,12 +93,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:02     ; 1.0                     ; 4651 MB             ; 00:00:02                           ;
-; Fitter                    ; 00:00:05     ; 1.8                     ; 5377 MB             ; 00:00:06                           ;
+; Analysis & Synthesis      ; 00:00:02     ; 1.0                     ; 4651 MB             ; 00:00:01                           ;
+; Fitter                    ; 00:00:05     ; 2.2                     ; 5390 MB             ; 00:00:06                           ;
 ; Assembler                 ; 00:00:01     ; 1.0                     ; 4589 MB             ; 00:00:01                           ;
-; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 4672 MB             ; 00:00:02                           ;
-; EDA Netlist Writer        ; 00:00:00     ; 1.0                     ; 4551 MB             ; 00:00:01                           ;
-; Total                     ; 00:00:10     ; --                      ; --                  ; 00:00:12                           ;
+; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 4677 MB             ; 00:00:02                           ;
+; EDA Netlist Writer        ; 00:00:00     ; 1.0                     ; 4566 MB             ; 00:00:01                           ;
+; Total                     ; 00:00:10     ; --                      ; --                  ; 00:00:11                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for VERILOGStart05
-Thu Mar 21 18:58:50 2024
+Fri Mar 22 13:57:32 2024
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Full Version
 
 
@@ -15,14 +15,14 @@ Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Full Version
   7. Analysis & Synthesis Resource Utilization by Entity
   8. State Machine - |VERILOGStart05|ReceiverUART:inst13|stateUART
   9. State Machine - |VERILOGStart05|TransmitterUART:inst18|stateUART
- 10. State Machine - |VERILOGStart05|TransceiverI2C:inst23|stateI2C
+ 10. State Machine - |VERILOGStart05|TransceiverI2C:inst1|stateI2C
  11. User-Specified and Inferred Latches
  12. Registers Removed During Synthesis
  13. Removed Registers Triggering Further Register Optimizations
  14. General Register Statistics
  15. Inverted Register Statistics
  16. Multiplexer Restructuring Statistics (Restructuring Performed)
- 17. Parameter Settings for User Entity Instance: TransceiverI2C:inst23
+ 17. Parameter Settings for User Entity Instance: TransceiverI2C:inst1
  18. Parameter Settings for User Entity Instance: TransmitterUART:inst18
  19. Parameter Settings for User Entity Instance: ReceiverUART:inst13
  20. Elapsed Time Per Partition
@@ -52,15 +52,15 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Mar 21 18:58:50 2024       ;
+; Analysis & Synthesis Status        ; Successful - Fri Mar 22 13:57:32 2024       ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Full Version ;
 ; Revision Name                      ; VERILOGStart05                              ;
 ; Top-level Entity Name              ; VERILOGStart05                              ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 137                                         ;
-;     Total combinational functions  ; 128                                         ;
-;     Dedicated logic registers      ; 71                                          ;
-; Total registers                    ; 71                                          ;
+; Total logic elements               ; 196                                         ;
+;     Total combinational functions  ; 169                                         ;
+;     Dedicated logic registers      ; 99                                          ;
+; Total registers                    ; 99                                          ;
 ; Total pins                         ; 23                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -196,28 +196,28 @@ applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 137       ;
+; Estimated Total logic elements              ; 196       ;
 ;                                             ;           ;
-; Total combinational functions               ; 128       ;
+; Total combinational functions               ; 169       ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 70        ;
-;     -- 3 input functions                    ; 15        ;
-;     -- <=2 input functions                  ; 43        ;
+;     -- 4 input functions                    ; 77        ;
+;     -- 3 input functions                    ; 42        ;
+;     -- <=2 input functions                  ; 50        ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 98        ;
+;     -- normal mode                          ; 139       ;
 ;     -- arithmetic mode                      ; 30        ;
 ;                                             ;           ;
-; Total registers                             ; 71        ;
-;     -- Dedicated logic registers            ; 71        ;
+; Total registers                             ; 99        ;
+;     -- Dedicated logic registers            ; 99        ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
 ; I/O pins                                    ; 23        ;
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 60        ;
-; Total fan-out                               ; 626       ;
-; Average fan-out                             ; 2.54      ;
+; Maximum fan-out                             ; 88        ;
+; Total fan-out                               ; 830       ;
+; Average fan-out                             ; 2.63      ;
 +---------------------------------------------+-----------+
 
 
@@ -226,11 +226,12 @@ applicable agreement for further details.
 +--------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                 ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                   ; Library Name ;
 +--------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------+--------------+
-; |VERILOGStart05                            ; 128 (0)           ; 71 (0)       ; 0           ; 0            ; 0       ; 0         ; 23   ; 0            ; |VERILOGStart05                                       ; work         ;
+; |VERILOGStart05                            ; 169 (0)           ; 99 (0)       ; 0           ; 0            ; 0       ; 0         ; 23   ; 0            ; |VERILOGStart05                                       ; work         ;
 ;    |Count100000:inst8|                     ; 22 (22)           ; 18 (18)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VERILOGStart05|Count100000:inst8                     ; work         ;
 ;    |Count250:inst9|                        ; 11 (11)           ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VERILOGStart05|Count250:inst9                        ; work         ;
-;    |DynamicIllumination4Indicators:inst10| ; 4 (4)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VERILOGStart05|DynamicIllumination4Indicators:inst10 ; work         ;
-;    |TransceiverI2C:inst23|                 ; 91 (91)           ; 42 (42)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VERILOGStart05|TransceiverI2C:inst23                 ; work         ;
+;    |DataConversionUnit:inst11|             ; 15 (15)           ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VERILOGStart05|DataConversionUnit:inst11             ; work         ;
+;    |DynamicIllumination4Indicators:inst10| ; 18 (18)           ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VERILOGStart05|DynamicIllumination4Indicators:inst10 ; work         ;
+;    |TransceiverI2C:inst1|                  ; 103 (103)         ; 61 (61)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VERILOGStart05|TransceiverI2C:inst1                  ; work         ;
 +--------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -263,146 +264,118 @@ Encoding Type:  One-Hot
 
 
 Encoding Type:  One-Hot
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |VERILOGStart05|TransceiverI2C:inst23|stateI2C                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               ;
-+------------------------------------+-------------------+--------------------------------+------------------------------------+----------------------------------+------------------------------------+----------------------------------+-----------------------------+-------------------------------+-------------------------------+-------------------------------+-------------------------------+-------------------------------+-------------------------------+-------------------------------+-------------------------------+-------------------------------+-------------------------------+-------------------------+---------------------------+--------------------------+----------------------------+-------------------------------+---------------------------------+-------------------+------------------+
-; Name                               ; stateI2C.Updating ; stateI2C.PresetPointerStopping ; stateI2C.LSByteFromDevicePreparing ; stateI2C.LSByteFromDeviceReading ; stateI2C.MSByteFromDevicePreparing ; stateI2C.MSByteFromDeviceReading ; stateI2C.PointerByteSending ; stateI2C.PointerBytePreparing ; stateI2C.AcknowledgeChecking9 ; stateI2C.AcknowledgeChecking8 ; stateI2C.AcknowledgeChecking7 ; stateI2C.AcknowledgeChecking6 ; stateI2C.AcknowledgeChecking5 ; stateI2C.AcknowledgeChecking4 ; stateI2C.AcknowledgeChecking3 ; stateI2C.AcknowledgeChecking2 ; stateI2C.AcknowledgeChecking1 ; stateI2C.ReadBitSending ; stateI2C.ReadBitPreparing ; stateI2C.WriteBitSending ; stateI2C.WriteBitPreparing ; stateI2C.DeviceAddressSending ; stateI2C.DeviceAddressPreparing ; stateI2C.Starting ; stateI2C.Waiting ;
-+------------------------------------+-------------------+--------------------------------+------------------------------------+----------------------------------+------------------------------------+----------------------------------+-----------------------------+-------------------------------+-------------------------------+-------------------------------+-------------------------------+-------------------------------+-------------------------------+-------------------------------+-------------------------------+-------------------------------+-------------------------------+-------------------------+---------------------------+--------------------------+----------------------------+-------------------------------+---------------------------------+-------------------+------------------+
-; stateI2C.Waiting                   ; 0                 ; 0                              ; 0                                  ; 0                                ; 0                                  ; 0                                ; 0                           ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                       ; 0                         ; 0                        ; 0                          ; 0                             ; 0                               ; 0                 ; 0                ;
-; stateI2C.Starting                  ; 0                 ; 0                              ; 0                                  ; 0                                ; 0                                  ; 0                                ; 0                           ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                       ; 0                         ; 0                        ; 0                          ; 0                             ; 0                               ; 1                 ; 1                ;
-; stateI2C.DeviceAddressPreparing    ; 0                 ; 0                              ; 0                                  ; 0                                ; 0                                  ; 0                                ; 0                           ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                       ; 0                         ; 0                        ; 0                          ; 0                             ; 1                               ; 0                 ; 1                ;
-; stateI2C.DeviceAddressSending      ; 0                 ; 0                              ; 0                                  ; 0                                ; 0                                  ; 0                                ; 0                           ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                       ; 0                         ; 0                        ; 0                          ; 1                             ; 0                               ; 0                 ; 1                ;
-; stateI2C.WriteBitPreparing         ; 0                 ; 0                              ; 0                                  ; 0                                ; 0                                  ; 0                                ; 0                           ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                       ; 0                         ; 0                        ; 1                          ; 0                             ; 0                               ; 0                 ; 1                ;
-; stateI2C.WriteBitSending           ; 0                 ; 0                              ; 0                                  ; 0                                ; 0                                  ; 0                                ; 0                           ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                       ; 0                         ; 1                        ; 0                          ; 0                             ; 0                               ; 0                 ; 1                ;
-; stateI2C.ReadBitPreparing          ; 0                 ; 0                              ; 0                                  ; 0                                ; 0                                  ; 0                                ; 0                           ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                       ; 1                         ; 0                        ; 0                          ; 0                             ; 0                               ; 0                 ; 1                ;
-; stateI2C.ReadBitSending            ; 0                 ; 0                              ; 0                                  ; 0                                ; 0                                  ; 0                                ; 0                           ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 1                       ; 0                         ; 0                        ; 0                          ; 0                             ; 0                               ; 0                 ; 1                ;
-; stateI2C.AcknowledgeChecking1      ; 0                 ; 0                              ; 0                                  ; 0                                ; 0                                  ; 0                                ; 0                           ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 1                             ; 0                       ; 0                         ; 0                        ; 0                          ; 0                             ; 0                               ; 0                 ; 1                ;
-; stateI2C.AcknowledgeChecking2      ; 0                 ; 0                              ; 0                                  ; 0                                ; 0                                  ; 0                                ; 0                           ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 1                             ; 0                             ; 0                       ; 0                         ; 0                        ; 0                          ; 0                             ; 0                               ; 0                 ; 1                ;
-; stateI2C.AcknowledgeChecking3      ; 0                 ; 0                              ; 0                                  ; 0                                ; 0                                  ; 0                                ; 0                           ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 1                             ; 0                             ; 0                             ; 0                       ; 0                         ; 0                        ; 0                          ; 0                             ; 0                               ; 0                 ; 1                ;
-; stateI2C.AcknowledgeChecking4      ; 0                 ; 0                              ; 0                                  ; 0                                ; 0                                  ; 0                                ; 0                           ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 1                             ; 0                             ; 0                             ; 0                             ; 0                       ; 0                         ; 0                        ; 0                          ; 0                             ; 0                               ; 0                 ; 1                ;
-; stateI2C.AcknowledgeChecking5      ; 0                 ; 0                              ; 0                                  ; 0                                ; 0                                  ; 0                                ; 0                           ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 1                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                       ; 0                         ; 0                        ; 0                          ; 0                             ; 0                               ; 0                 ; 1                ;
-; stateI2C.AcknowledgeChecking6      ; 0                 ; 0                              ; 0                                  ; 0                                ; 0                                  ; 0                                ; 0                           ; 0                             ; 0                             ; 0                             ; 0                             ; 1                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                       ; 0                         ; 0                        ; 0                          ; 0                             ; 0                               ; 0                 ; 1                ;
-; stateI2C.AcknowledgeChecking7      ; 0                 ; 0                              ; 0                                  ; 0                                ; 0                                  ; 0                                ; 0                           ; 0                             ; 0                             ; 0                             ; 1                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                       ; 0                         ; 0                        ; 0                          ; 0                             ; 0                               ; 0                 ; 1                ;
-; stateI2C.AcknowledgeChecking8      ; 0                 ; 0                              ; 0                                  ; 0                                ; 0                                  ; 0                                ; 0                           ; 0                             ; 0                             ; 1                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                       ; 0                         ; 0                        ; 0                          ; 0                             ; 0                               ; 0                 ; 1                ;
-; stateI2C.AcknowledgeChecking9      ; 0                 ; 0                              ; 0                                  ; 0                                ; 0                                  ; 0                                ; 0                           ; 0                             ; 1                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                       ; 0                         ; 0                        ; 0                          ; 0                             ; 0                               ; 0                 ; 1                ;
-; stateI2C.PointerBytePreparing      ; 0                 ; 0                              ; 0                                  ; 0                                ; 0                                  ; 0                                ; 0                           ; 1                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                       ; 0                         ; 0                        ; 0                          ; 0                             ; 0                               ; 0                 ; 1                ;
-; stateI2C.PointerByteSending        ; 0                 ; 0                              ; 0                                  ; 0                                ; 0                                  ; 0                                ; 1                           ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                       ; 0                         ; 0                        ; 0                          ; 0                             ; 0                               ; 0                 ; 1                ;
-; stateI2C.MSByteFromDeviceReading   ; 0                 ; 0                              ; 0                                  ; 0                                ; 0                                  ; 1                                ; 0                           ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                       ; 0                         ; 0                        ; 0                          ; 0                             ; 0                               ; 0                 ; 1                ;
-; stateI2C.MSByteFromDevicePreparing ; 0                 ; 0                              ; 0                                  ; 0                                ; 1                                  ; 0                                ; 0                           ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                       ; 0                         ; 0                        ; 0                          ; 0                             ; 0                               ; 0                 ; 1                ;
-; stateI2C.LSByteFromDeviceReading   ; 0                 ; 0                              ; 0                                  ; 1                                ; 0                                  ; 0                                ; 0                           ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                       ; 0                         ; 0                        ; 0                          ; 0                             ; 0                               ; 0                 ; 1                ;
-; stateI2C.LSByteFromDevicePreparing ; 0                 ; 0                              ; 1                                  ; 0                                ; 0                                  ; 0                                ; 0                           ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                       ; 0                         ; 0                        ; 0                          ; 0                             ; 0                               ; 0                 ; 1                ;
-; stateI2C.PresetPointerStopping     ; 0                 ; 1                              ; 0                                  ; 0                                ; 0                                  ; 0                                ; 0                           ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                       ; 0                         ; 0                        ; 0                          ; 0                             ; 0                               ; 0                 ; 1                ;
-; stateI2C.Updating                  ; 1                 ; 0                              ; 0                                  ; 0                                ; 0                                  ; 0                                ; 0                           ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                       ; 0                         ; 0                        ; 0                          ; 0                             ; 0                               ; 0                 ; 1                ;
-+------------------------------------+-------------------+--------------------------------+------------------------------------+----------------------------------+------------------------------------+----------------------------------+-----------------------------+-------------------------------+-------------------------------+-------------------------------+-------------------------------+-------------------------------+-------------------------------+-------------------------------+-------------------------------+-------------------------------+-------------------------------+-------------------------+---------------------------+--------------------------+----------------------------+-------------------------------+---------------------------------+-------------------+------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |VERILOGStart05|TransceiverI2C:inst1|stateI2C                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 ;
++------------------------------------+-------------------+--------------------------------+------------------------------------+----------------------------------+------------------------------------+----------------------------------+-----------------------------+-------------------------------+--------------------------------+-------------------------------+-------------------------------+-------------------------------+-------------------------------+-------------------------------+-------------------------------+-------------------------------+-------------------------------+-------------------------------+-------------------------+---------------------------+--------------------------+----------------------------+-------------------------------+---------------------------------+-------------------+------------------+
+; Name                               ; stateI2C.Updating ; stateI2C.PresetPointerStopping ; stateI2C.LSByteFromDevicePreparing ; stateI2C.LSByteFromDeviceReading ; stateI2C.MSByteFromDevicePreparing ; stateI2C.MSByteFromDeviceReading ; stateI2C.PointerByteSending ; stateI2C.PointerBytePreparing ; stateI2C.AcknowledgeChecking10 ; stateI2C.AcknowledgeChecking9 ; stateI2C.AcknowledgeChecking8 ; stateI2C.AcknowledgeChecking7 ; stateI2C.AcknowledgeChecking6 ; stateI2C.AcknowledgeChecking5 ; stateI2C.AcknowledgeChecking4 ; stateI2C.AcknowledgeChecking3 ; stateI2C.AcknowledgeChecking2 ; stateI2C.AcknowledgeChecking1 ; stateI2C.ReadBitSending ; stateI2C.ReadBitPreparing ; stateI2C.WriteBitSending ; stateI2C.WriteBitPreparing ; stateI2C.DeviceAddressSending ; stateI2C.DeviceAddressPreparing ; stateI2C.Starting ; stateI2C.Waiting ;
++------------------------------------+-------------------+--------------------------------+------------------------------------+----------------------------------+------------------------------------+----------------------------------+-----------------------------+-------------------------------+--------------------------------+-------------------------------+-------------------------------+-------------------------------+-------------------------------+-------------------------------+-------------------------------+-------------------------------+-------------------------------+-------------------------------+-------------------------+---------------------------+--------------------------+----------------------------+-------------------------------+---------------------------------+-------------------+------------------+
+; stateI2C.Waiting                   ; 0                 ; 0                              ; 0                                  ; 0                                ; 0                                  ; 0                                ; 0                           ; 0                             ; 0                              ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                       ; 0                         ; 0                        ; 0                          ; 0                             ; 0                               ; 0                 ; 0                ;
+; stateI2C.Starting                  ; 0                 ; 0                              ; 0                                  ; 0                                ; 0                                  ; 0                                ; 0                           ; 0                             ; 0                              ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                       ; 0                         ; 0                        ; 0                          ; 0                             ; 0                               ; 1                 ; 1                ;
+; stateI2C.DeviceAddressPreparing    ; 0                 ; 0                              ; 0                                  ; 0                                ; 0                                  ; 0                                ; 0                           ; 0                             ; 0                              ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                       ; 0                         ; 0                        ; 0                          ; 0                             ; 1                               ; 0                 ; 1                ;
+; stateI2C.DeviceAddressSending      ; 0                 ; 0                              ; 0                                  ; 0                                ; 0                                  ; 0                                ; 0                           ; 0                             ; 0                              ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                       ; 0                         ; 0                        ; 0                          ; 1                             ; 0                               ; 0                 ; 1                ;
+; stateI2C.WriteBitPreparing         ; 0                 ; 0                              ; 0                                  ; 0                                ; 0                                  ; 0                                ; 0                           ; 0                             ; 0                              ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                       ; 0                         ; 0                        ; 1                          ; 0                             ; 0                               ; 0                 ; 1                ;
+; stateI2C.WriteBitSending           ; 0                 ; 0                              ; 0                                  ; 0                                ; 0                                  ; 0                                ; 0                           ; 0                             ; 0                              ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                       ; 0                         ; 1                        ; 0                          ; 0                             ; 0                               ; 0                 ; 1                ;
+; stateI2C.ReadBitPreparing          ; 0                 ; 0                              ; 0                                  ; 0                                ; 0                                  ; 0                                ; 0                           ; 0                             ; 0                              ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                       ; 1                         ; 0                        ; 0                          ; 0                             ; 0                               ; 0                 ; 1                ;
+; stateI2C.ReadBitSending            ; 0                 ; 0                              ; 0                                  ; 0                                ; 0                                  ; 0                                ; 0                           ; 0                             ; 0                              ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 1                       ; 0                         ; 0                        ; 0                          ; 0                             ; 0                               ; 0                 ; 1                ;
+; stateI2C.AcknowledgeChecking1      ; 0                 ; 0                              ; 0                                  ; 0                                ; 0                                  ; 0                                ; 0                           ; 0                             ; 0                              ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 1                             ; 0                       ; 0                         ; 0                        ; 0                          ; 0                             ; 0                               ; 0                 ; 1                ;
+; stateI2C.AcknowledgeChecking2      ; 0                 ; 0                              ; 0                                  ; 0                                ; 0                                  ; 0                                ; 0                           ; 0                             ; 0                              ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 1                             ; 0                             ; 0                       ; 0                         ; 0                        ; 0                          ; 0                             ; 0                               ; 0                 ; 1                ;
+; stateI2C.AcknowledgeChecking3      ; 0                 ; 0                              ; 0                                  ; 0                                ; 0                                  ; 0                                ; 0                           ; 0                             ; 0                              ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 1                             ; 0                             ; 0                             ; 0                       ; 0                         ; 0                        ; 0                          ; 0                             ; 0                               ; 0                 ; 1                ;
+; stateI2C.AcknowledgeChecking4      ; 0                 ; 0                              ; 0                                  ; 0                                ; 0                                  ; 0                                ; 0                           ; 0                             ; 0                              ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 1                             ; 0                             ; 0                             ; 0                             ; 0                       ; 0                         ; 0                        ; 0                          ; 0                             ; 0                               ; 0                 ; 1                ;
+; stateI2C.AcknowledgeChecking5      ; 0                 ; 0                              ; 0                                  ; 0                                ; 0                                  ; 0                                ; 0                           ; 0                             ; 0                              ; 0                             ; 0                             ; 0                             ; 0                             ; 1                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                       ; 0                         ; 0                        ; 0                          ; 0                             ; 0                               ; 0                 ; 1                ;
+; stateI2C.AcknowledgeChecking6      ; 0                 ; 0                              ; 0                                  ; 0                                ; 0                                  ; 0                                ; 0                           ; 0                             ; 0                              ; 0                             ; 0                             ; 0                             ; 1                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                       ; 0                         ; 0                        ; 0                          ; 0                             ; 0                               ; 0                 ; 1                ;
+; stateI2C.AcknowledgeChecking7      ; 0                 ; 0                              ; 0                                  ; 0                                ; 0                                  ; 0                                ; 0                           ; 0                             ; 0                              ; 0                             ; 0                             ; 1                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                       ; 0                         ; 0                        ; 0                          ; 0                             ; 0                               ; 0                 ; 1                ;
+; stateI2C.AcknowledgeChecking8      ; 0                 ; 0                              ; 0                                  ; 0                                ; 0                                  ; 0                                ; 0                           ; 0                             ; 0                              ; 0                             ; 1                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                       ; 0                         ; 0                        ; 0                          ; 0                             ; 0                               ; 0                 ; 1                ;
+; stateI2C.AcknowledgeChecking9      ; 0                 ; 0                              ; 0                                  ; 0                                ; 0                                  ; 0                                ; 0                           ; 0                             ; 0                              ; 1                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                       ; 0                         ; 0                        ; 0                          ; 0                             ; 0                               ; 0                 ; 1                ;
+; stateI2C.AcknowledgeChecking10     ; 0                 ; 0                              ; 0                                  ; 0                                ; 0                                  ; 0                                ; 0                           ; 0                             ; 1                              ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                       ; 0                         ; 0                        ; 0                          ; 0                             ; 0                               ; 0                 ; 1                ;
+; stateI2C.PointerBytePreparing      ; 0                 ; 0                              ; 0                                  ; 0                                ; 0                                  ; 0                                ; 0                           ; 1                             ; 0                              ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                       ; 0                         ; 0                        ; 0                          ; 0                             ; 0                               ; 0                 ; 1                ;
+; stateI2C.PointerByteSending        ; 0                 ; 0                              ; 0                                  ; 0                                ; 0                                  ; 0                                ; 1                           ; 0                             ; 0                              ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                       ; 0                         ; 0                        ; 0                          ; 0                             ; 0                               ; 0                 ; 1                ;
+; stateI2C.MSByteFromDeviceReading   ; 0                 ; 0                              ; 0                                  ; 0                                ; 0                                  ; 1                                ; 0                           ; 0                             ; 0                              ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                       ; 0                         ; 0                        ; 0                          ; 0                             ; 0                               ; 0                 ; 1                ;
+; stateI2C.MSByteFromDevicePreparing ; 0                 ; 0                              ; 0                                  ; 0                                ; 1                                  ; 0                                ; 0                           ; 0                             ; 0                              ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                       ; 0                         ; 0                        ; 0                          ; 0                             ; 0                               ; 0                 ; 1                ;
+; stateI2C.LSByteFromDeviceReading   ; 0                 ; 0                              ; 0                                  ; 1                                ; 0                                  ; 0                                ; 0                           ; 0                             ; 0                              ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                       ; 0                         ; 0                        ; 0                          ; 0                             ; 0                               ; 0                 ; 1                ;
+; stateI2C.LSByteFromDevicePreparing ; 0                 ; 0                              ; 1                                  ; 0                                ; 0                                  ; 0                                ; 0                           ; 0                             ; 0                              ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                       ; 0                         ; 0                        ; 0                          ; 0                             ; 0                               ; 0                 ; 1                ;
+; stateI2C.PresetPointerStopping     ; 0                 ; 1                              ; 0                                  ; 0                                ; 0                                  ; 0                                ; 0                           ; 0                             ; 0                              ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                       ; 0                         ; 0                        ; 0                          ; 0                             ; 0                               ; 0                 ; 1                ;
+; stateI2C.Updating                  ; 1                 ; 0                              ; 0                                  ; 0                                ; 0                                  ; 0                                ; 0                           ; 0                             ; 0                              ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                       ; 0                         ; 0                        ; 0                          ; 0                             ; 0                               ; 0                 ; 1                ;
++------------------------------------+-------------------+--------------------------------+------------------------------------+----------------------------------+------------------------------------+----------------------------------+-----------------------------+-------------------------------+--------------------------------+-------------------------------+-------------------------------+-------------------------------+-------------------------------+-------------------------------+-------------------------------+-------------------------------+-------------------------------+-------------------------------+-------------------------+---------------------------+--------------------------+----------------------------+-------------------------------+---------------------------------+-------------------+------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                                                       ;
-+----------------------------------------------------+---------------------------------------------+------------------------+
-; Latch Name                                         ; Latch Enable Signal                         ; Free of Timing Hazards ;
-+----------------------------------------------------+---------------------------------------------+------------------------+
-; DynamicIllumination4Indicators:inst10|indicator[3] ; DynamicIllumination4Indicators:inst10|Mux12 ; yes                    ;
-; DynamicIllumination4Indicators:inst10|indicator[2] ; DynamicIllumination4Indicators:inst10|Mux12 ; yes                    ;
-; DynamicIllumination4Indicators:inst10|indicator[1] ; DynamicIllumination4Indicators:inst10|Mux12 ; yes                    ;
-; DynamicIllumination4Indicators:inst10|indicator[0] ; DynamicIllumination4Indicators:inst10|Mux12 ; yes                    ;
-; DynamicIllumination4Indicators:inst10|segment[6]   ; DynamicIllumination4Indicators:inst10|Mux12 ; yes                    ;
-; Number of user-specified and inferred latches = 5  ;                                             ;                        ;
-+----------------------------------------------------+---------------------------------------------+------------------------+
++----------------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                        ;
++-----------------------------------------------------+---------------------------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal                         ; Free of Timing Hazards ;
++-----------------------------------------------------+---------------------------------------------+------------------------+
+; DynamicIllumination4Indicators:inst10|indicator[3]  ; DynamicIllumination4Indicators:inst10|Mux12 ; yes                    ;
+; DynamicIllumination4Indicators:inst10|indicator[2]  ; DynamicIllumination4Indicators:inst10|Mux12 ; yes                    ;
+; DynamicIllumination4Indicators:inst10|indicator[1]  ; DynamicIllumination4Indicators:inst10|Mux12 ; yes                    ;
+; DynamicIllumination4Indicators:inst10|indicator[0]  ; DynamicIllumination4Indicators:inst10|Mux12 ; yes                    ;
+; DynamicIllumination4Indicators:inst10|segment[6]    ; DynamicIllumination4Indicators:inst10|Mux12 ; yes                    ;
+; DynamicIllumination4Indicators:inst10|segment[5]    ; DynamicIllumination4Indicators:inst10|Mux12 ; yes                    ;
+; DynamicIllumination4Indicators:inst10|segment[4]    ; DynamicIllumination4Indicators:inst10|Mux12 ; yes                    ;
+; DynamicIllumination4Indicators:inst10|segment[3]    ; DynamicIllumination4Indicators:inst10|Mux12 ; yes                    ;
+; DynamicIllumination4Indicators:inst10|segment[2]    ; DynamicIllumination4Indicators:inst10|Mux12 ; yes                    ;
+; DynamicIllumination4Indicators:inst10|segment[1]    ; DynamicIllumination4Indicators:inst10|Mux12 ; yes                    ;
+; DynamicIllumination4Indicators:inst10|segment[0]    ; DynamicIllumination4Indicators:inst10|Mux12 ; yes                    ;
+; Number of user-specified and inferred latches = 11  ;                                             ;                        ;
++-----------------------------------------------------+---------------------------------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
-+--------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                               ;
-+----------------------------------------------------+---------------------------------------------+
-; Register name                                      ; Reason for Removal                          ;
-+----------------------------------------------------+---------------------------------------------+
-; TransmitterUART:inst18|updatePrev                  ; Lost fanout                                 ;
-; TransmitterUART:inst18|bitPosition[0..2]           ; Stuck at GND due to stuck port clock        ;
-; TransmitterUART:inst18|tx                          ; Stuck at GND due to stuck port clock        ;
-; TransmitterUART:inst18|count[0..15]                ; Stuck at GND due to stuck port clock        ;
-; TransmitterUART:inst18|dataBuf[0..7]               ; Stuck at GND due to stuck port clock        ;
-; ReceiverUART:inst13|stateUART~7                    ; Lost fanout                                 ;
-; ReceiverUART:inst13|stateUART~8                    ; Lost fanout                                 ;
-; TransmitterUART:inst18|stateUART~6                 ; Lost fanout                                 ;
-; TransmitterUART:inst18|stateUART~7                 ; Lost fanout                                 ;
-; TransmitterUART:inst18|stateUART.Waiting           ; Stuck at GND due to stuck port clock        ;
-; TransmitterUART:inst18|stateUART.Starting          ; Stuck at GND due to stuck port clock        ;
-; TransmitterUART:inst18|stateUART.ReceivingData     ; Stuck at GND due to stuck port clock        ;
-; TransmitterUART:inst18|stateUART.Stopping          ; Stuck at GND due to stuck port clock        ;
-; TransceiverI2C:inst23|stateI2C~27                  ; Lost fanout                                 ;
-; TransceiverI2C:inst23|stateI2C~28                  ; Lost fanout                                 ;
-; TransceiverI2C:inst23|stateI2C~29                  ; Lost fanout                                 ;
-; TransceiverI2C:inst23|stateI2C~30                  ; Lost fanout                                 ;
-; TransceiverI2C:inst23|stateI2C~31                  ; Lost fanout                                 ;
-; TransceiverI2C:inst23|data[0]                      ; Stuck at GND due to stuck port clock_enable ;
-; TransceiverI2C:inst23|lSByteFromDevice[5]          ; Lost fanout                                 ;
-; TransceiverI2C:inst23|data[1]                      ; Stuck at GND due to stuck port clock_enable ;
-; TransceiverI2C:inst23|lSByteFromDevice[6]          ; Lost fanout                                 ;
-; TransceiverI2C:inst23|data[2]                      ; Stuck at GND due to stuck port clock_enable ;
-; TransceiverI2C:inst23|lSByteFromDevice[7]          ; Lost fanout                                 ;
-; TransceiverI2C:inst23|data[3]                      ; Stuck at GND due to stuck port clock_enable ;
-; TransceiverI2C:inst23|mSByteFromDevice[0]          ; Lost fanout                                 ;
-; TransceiverI2C:inst23|data[4]                      ; Stuck at GND due to stuck port clock_enable ;
-; TransceiverI2C:inst23|mSByteFromDevice[1]          ; Lost fanout                                 ;
-; TransceiverI2C:inst23|data[5]                      ; Stuck at GND due to stuck port clock_enable ;
-; TransceiverI2C:inst23|mSByteFromDevice[2]          ; Lost fanout                                 ;
-; TransceiverI2C:inst23|data[6]                      ; Stuck at GND due to stuck port clock_enable ;
-; TransceiverI2C:inst23|mSByteFromDevice[3]          ; Lost fanout                                 ;
-; TransceiverI2C:inst23|data[7]                      ; Stuck at GND due to stuck port clock_enable ;
-; TransceiverI2C:inst23|mSByteFromDevice[4]          ; Lost fanout                                 ;
-; DataConversionUnit:inst11|dataBuf[0..7]            ; Stuck at GND due to stuck port data_in      ;
-; DataConversionUnit:inst11|updatePrev               ; Lost fanout                                 ;
-; filter8:inst17|q                                   ; Lost fanout                                 ;
-; ReceiverUART:inst13|rxPrev                         ; Lost fanout                                 ;
-; ReceiverUART:inst13|count[3..15]                   ; Lost fanout                                 ;
-; ReceiverUART:inst13|bitPosition[0..2]              ; Lost fanout                                 ;
-; filter8:inst17|latch                               ; Lost fanout                                 ;
-; filter8:inst17|count[3]                            ; Lost fanout                                 ;
-; ReceiverUART:inst13|count[0..2]                    ; Lost fanout                                 ;
-; filter8:inst17|count[0..2]                         ; Lost fanout                                 ;
-; ReceiverUART:inst13|stateUART.Updating             ; Lost fanout                                 ;
-; ReceiverUART:inst13|stateUART.Waiting              ; Lost fanout                                 ;
-; ReceiverUART:inst13|stateUART.Starting             ; Lost fanout                                 ;
-; ReceiverUART:inst13|stateUART.ReceivingData        ; Lost fanout                                 ;
-; ReceiverUART:inst13|stateUART.Stopping             ; Lost fanout                                 ;
-; TransceiverI2C:inst23|stateI2C.Updating            ; Stuck at GND due to stuck port data_in      ;
-; DynamicIllumination4Indicators:inst10|counter[2,3] ; Stuck at GND due to stuck port data_in      ;
-; Total Number of Removed Registers = 101            ;                                             ;
-+----------------------------------------------------+---------------------------------------------+
++---------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                          ;
++----------------------------------------------------+----------------------------------------+
+; Register name                                      ; Reason for Removal                     ;
++----------------------------------------------------+----------------------------------------+
+; TransmitterUART:inst18|updatePrev                  ; Lost fanout                            ;
+; TransmitterUART:inst18|bitPosition[0..2]           ; Stuck at GND due to stuck port clock   ;
+; TransmitterUART:inst18|tx                          ; Stuck at GND due to stuck port clock   ;
+; TransmitterUART:inst18|count[0..15]                ; Stuck at GND due to stuck port clock   ;
+; TransmitterUART:inst18|dataBuf[0..7]               ; Stuck at GND due to stuck port clock   ;
+; ReceiverUART:inst13|stateUART~7                    ; Lost fanout                            ;
+; ReceiverUART:inst13|stateUART~8                    ; Lost fanout                            ;
+; TransmitterUART:inst18|stateUART~6                 ; Lost fanout                            ;
+; TransmitterUART:inst18|stateUART~7                 ; Lost fanout                            ;
+; TransmitterUART:inst18|stateUART.Waiting           ; Stuck at GND due to stuck port clock   ;
+; TransmitterUART:inst18|stateUART.Starting          ; Stuck at GND due to stuck port clock   ;
+; TransmitterUART:inst18|stateUART.ReceivingData     ; Stuck at GND due to stuck port clock   ;
+; TransmitterUART:inst18|stateUART.Stopping          ; Stuck at GND due to stuck port clock   ;
+; TransceiverI2C:inst1|stateI2C~28                   ; Lost fanout                            ;
+; TransceiverI2C:inst1|stateI2C~29                   ; Lost fanout                            ;
+; TransceiverI2C:inst1|stateI2C~30                   ; Lost fanout                            ;
+; TransceiverI2C:inst1|stateI2C~31                   ; Lost fanout                            ;
+; TransceiverI2C:inst1|stateI2C~32                   ; Lost fanout                            ;
+; filter8:inst17|q                                   ; Lost fanout                            ;
+; ReceiverUART:inst13|rxPrev                         ; Lost fanout                            ;
+; ReceiverUART:inst13|count[3..15]                   ; Lost fanout                            ;
+; ReceiverUART:inst13|bitPosition[0..2]              ; Lost fanout                            ;
+; filter8:inst17|latch                               ; Lost fanout                            ;
+; filter8:inst17|count[3]                            ; Lost fanout                            ;
+; ReceiverUART:inst13|count[0..2]                    ; Lost fanout                            ;
+; filter8:inst17|count[0..2]                         ; Lost fanout                            ;
+; ReceiverUART:inst13|stateUART.Updating             ; Lost fanout                            ;
+; ReceiverUART:inst13|stateUART.Waiting              ; Lost fanout                            ;
+; ReceiverUART:inst13|stateUART.Starting             ; Lost fanout                            ;
+; ReceiverUART:inst13|stateUART.ReceivingData        ; Lost fanout                            ;
+; ReceiverUART:inst13|stateUART.Stopping             ; Lost fanout                            ;
+; DynamicIllumination4Indicators:inst10|counter[2,3] ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 75             ;                                        ;
++----------------------------------------------------+----------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                               ;
-+---------------------------------------+--------------------------------+----------------------------------------------------------------------------------+
-; Register name                         ; Reason for Removal             ; Registers Removed due to This Register                                           ;
-+---------------------------------------+--------------------------------+----------------------------------------------------------------------------------+
-; filter8:inst17|q                      ; Lost Fanouts                   ; filter8:inst17|latch, filter8:inst17|count[3], filter8:inst17|count[1],          ;
-;                                       ;                                ; filter8:inst17|count[0], filter8:inst17|count[2]                                 ;
-; ReceiverUART:inst13|count[15]         ; Lost Fanouts                   ; ReceiverUART:inst13|count[14], ReceiverUART:inst13|count[13],                    ;
-;                                       ;                                ; ReceiverUART:inst13|stateUART.Updating, ReceiverUART:inst13|stateUART.Waiting,   ;
-;                                       ;                                ; ReceiverUART:inst13|stateUART.Stopping                                           ;
-; ReceiverUART:inst13|stateUART~7       ; Lost Fanouts                   ; ReceiverUART:inst13|bitPosition[2], ReceiverUART:inst13|bitPosition[0],          ;
-;                                       ;                                ; ReceiverUART:inst13|bitPosition[1], ReceiverUART:inst13|stateUART.Starting       ;
-; TransceiverI2C:inst23|data[0]         ; Stuck at GND                   ; TransceiverI2C:inst23|lSByteFromDevice[5], DataConversionUnit:inst11|dataBuf[0], ;
-;                                       ; due to stuck port clock_enable ; DataConversionUnit:inst11|updatePrev                                             ;
-; TransceiverI2C:inst23|data[1]         ; Stuck at GND                   ; TransceiverI2C:inst23|lSByteFromDevice[6], DataConversionUnit:inst11|dataBuf[1]  ;
-;                                       ; due to stuck port clock_enable ;                                                                                  ;
-; TransceiverI2C:inst23|data[2]         ; Stuck at GND                   ; TransceiverI2C:inst23|lSByteFromDevice[7], DataConversionUnit:inst11|dataBuf[2]  ;
-;                                       ; due to stuck port clock_enable ;                                                                                  ;
-; TransceiverI2C:inst23|data[3]         ; Stuck at GND                   ; TransceiverI2C:inst23|mSByteFromDevice[0], DataConversionUnit:inst11|dataBuf[3]  ;
-;                                       ; due to stuck port clock_enable ;                                                                                  ;
-; TransceiverI2C:inst23|data[4]         ; Stuck at GND                   ; TransceiverI2C:inst23|mSByteFromDevice[1], DataConversionUnit:inst11|dataBuf[4]  ;
-;                                       ; due to stuck port clock_enable ;                                                                                  ;
-; TransceiverI2C:inst23|data[5]         ; Stuck at GND                   ; TransceiverI2C:inst23|mSByteFromDevice[2], DataConversionUnit:inst11|dataBuf[5]  ;
-;                                       ; due to stuck port clock_enable ;                                                                                  ;
-; TransceiverI2C:inst23|data[6]         ; Stuck at GND                   ; TransceiverI2C:inst23|mSByteFromDevice[3], DataConversionUnit:inst11|dataBuf[6]  ;
-;                                       ; due to stuck port clock_enable ;                                                                                  ;
-; TransceiverI2C:inst23|data[7]         ; Stuck at GND                   ; TransceiverI2C:inst23|mSByteFromDevice[4], DataConversionUnit:inst11|dataBuf[7]  ;
-;                                       ; due to stuck port clock_enable ;                                                                                  ;
-; TransmitterUART:inst18|bitPosition[0] ; Stuck at GND                   ; TransmitterUART:inst18|tx                                                        ;
-;                                       ; due to stuck port clock        ;                                                                                  ;
-; ReceiverUART:inst13|stateUART~8       ; Lost Fanouts                   ; ReceiverUART:inst13|stateUART.ReceivingData                                      ;
-+---------------------------------------+--------------------------------+----------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                      ;
++---------------------------------------+-------------------------+--------------------------------------------------------------------------------+
+; Register name                         ; Reason for Removal      ; Registers Removed due to This Register                                         ;
++---------------------------------------+-------------------------+--------------------------------------------------------------------------------+
+; filter8:inst17|q                      ; Lost Fanouts            ; filter8:inst17|latch, filter8:inst17|count[3], filter8:inst17|count[1],        ;
+;                                       ;                         ; filter8:inst17|count[0], filter8:inst17|count[2]                               ;
+; ReceiverUART:inst13|count[15]         ; Lost Fanouts            ; ReceiverUART:inst13|count[14], ReceiverUART:inst13|count[13],                  ;
+;                                       ;                         ; ReceiverUART:inst13|stateUART.Updating, ReceiverUART:inst13|stateUART.Waiting, ;
+;                                       ;                         ; ReceiverUART:inst13|stateUART.Stopping                                         ;
+; ReceiverUART:inst13|stateUART~7       ; Lost Fanouts            ; ReceiverUART:inst13|bitPosition[2], ReceiverUART:inst13|bitPosition[0],        ;
+;                                       ;                         ; ReceiverUART:inst13|bitPosition[1], ReceiverUART:inst13|stateUART.Starting     ;
+; TransmitterUART:inst18|bitPosition[0] ; Stuck at GND            ; TransmitterUART:inst18|tx                                                      ;
+;                                       ; due to stuck port clock ;                                                                                ;
+; ReceiverUART:inst13|stateUART~8       ; Lost Fanouts            ; ReceiverUART:inst13|stateUART.ReceivingData                                    ;
++---------------------------------------+-------------------------+--------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -410,12 +383,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 71    ;
+; Total registers                              ; 99    ;
 ; Number of registers using Synchronous Clear  ; 33    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 14    ;
+; Number of registers using Clock Enable       ; 32    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -425,7 +398,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------+---------+
 ; Inverted Register                      ; Fan out ;
 +----------------------------------------+---------+
-; TransceiverI2C:inst23|startPrev        ; 3       ;
+; TransceiverI2C:inst1|startPrev         ; 3       ;
 ; Total number of inverted registers = 1 ;         ;
 +----------------------------------------+---------+
 
@@ -436,48 +409,48 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                 ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------+
 ; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |VERILOGStart05|filter8:inst17|count[0]                    ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 16 LEs               ; 64 LEs                 ; Yes        ; |VERILOGStart05|ReceiverUART:inst13|count[0]               ;
-; 10:1               ; 2 bits    ; 12 LEs        ; 2 LEs                ; 10 LEs                 ; Yes        ; |VERILOGStart05|TransceiverI2C:inst23|bitPosition[2]       ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |VERILOGStart05|TransceiverI2C:inst23|count[7]             ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 16 LEs               ; 64 LEs                 ; Yes        ; |VERILOGStart05|ReceiverUART:inst13|count[1]               ;
+; 10:1               ; 2 bits    ; 12 LEs        ; 2 LEs                ; 10 LEs                 ; Yes        ; |VERILOGStart05|TransceiverI2C:inst1|bitPosition[2]        ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |VERILOGStart05|TransceiverI2C:inst1|count[6]              ;
 ; 16:1               ; 7 bits    ; 70 LEs        ; 14 LEs               ; 56 LEs                 ; No         ; |VERILOGStart05|DynamicIllumination4Indicators:inst10|Mux0 ;
 ; 9:1                ; 3 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; No         ; |VERILOGStart05|ReceiverUART:inst13|Selector1              ;
 ; 10:1               ; 2 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |VERILOGStart05|ReceiverUART:inst13|Selector0              ;
-; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; No         ; |VERILOGStart05|TransceiverI2C:inst23|Selector6            ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; No         ; |VERILOGStart05|TransceiverI2C:inst1|Selector6             ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------+
 
 
-+--------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: TransceiverI2C:inst23 ;
-+---------------------------+-------+--------------------------------+
-; Parameter Name            ; Value ; Type                           ;
-+---------------------------+-------+--------------------------------+
-; Waiting                   ; 0     ; Signed Integer                 ;
-; Starting                  ; 1     ; Signed Integer                 ;
-; DeviceAddressPreparing    ; 2     ; Signed Integer                 ;
-; DeviceAddressSending      ; 3     ; Signed Integer                 ;
-; WriteBitPreparing         ; 4     ; Signed Integer                 ;
-; WriteBitSending           ; 5     ; Signed Integer                 ;
-; ReadBitPreparing          ; 6     ; Signed Integer                 ;
-; ReadBitSending            ; 7     ; Signed Integer                 ;
-; AcknowledgeChecking1      ; 8     ; Signed Integer                 ;
-; AcknowledgeChecking2      ; 9     ; Signed Integer                 ;
-; AcknowledgeChecking3      ; 10    ; Signed Integer                 ;
-; AcknowledgeChecking4      ; 11    ; Signed Integer                 ;
-; AcknowledgeChecking5      ; 12    ; Signed Integer                 ;
-; AcknowledgeChecking6      ; 13    ; Signed Integer                 ;
-; AcknowledgeChecking7      ; 14    ; Signed Integer                 ;
-; AcknowledgeChecking8      ; 15    ; Signed Integer                 ;
-; AcknowledgeChecking9      ; 16    ; Signed Integer                 ;
-; AcknowledgeChecking10     ; 17    ; Signed Integer                 ;
-; PointerBytePreparing      ; 17    ; Signed Integer                 ;
-; PointerByteSending        ; 18    ; Signed Integer                 ;
-; MSByteFromDeviceReading   ; 19    ; Signed Integer                 ;
-; MSByteFromDevicePreparing ; 20    ; Signed Integer                 ;
-; LSByteFromDeviceReading   ; 21    ; Signed Integer                 ;
-; LSByteFromDevicePreparing ; 22    ; Signed Integer                 ;
-; PresetPointerStopping     ; 23    ; Signed Integer                 ;
-; Updating                  ; 24    ; Signed Integer                 ;
-+---------------------------+-------+--------------------------------+
++-------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: TransceiverI2C:inst1 ;
++---------------------------+-------+-------------------------------+
+; Parameter Name            ; Value ; Type                          ;
++---------------------------+-------+-------------------------------+
+; Waiting                   ; 0     ; Signed Integer                ;
+; Starting                  ; 1     ; Signed Integer                ;
+; DeviceAddressPreparing    ; 2     ; Signed Integer                ;
+; DeviceAddressSending      ; 3     ; Signed Integer                ;
+; WriteBitPreparing         ; 4     ; Signed Integer                ;
+; WriteBitSending           ; 5     ; Signed Integer                ;
+; ReadBitPreparing          ; 6     ; Signed Integer                ;
+; ReadBitSending            ; 7     ; Signed Integer                ;
+; AcknowledgeChecking1      ; 8     ; Signed Integer                ;
+; AcknowledgeChecking2      ; 9     ; Signed Integer                ;
+; AcknowledgeChecking3      ; 10    ; Signed Integer                ;
+; AcknowledgeChecking4      ; 11    ; Signed Integer                ;
+; AcknowledgeChecking5      ; 12    ; Signed Integer                ;
+; AcknowledgeChecking6      ; 13    ; Signed Integer                ;
+; AcknowledgeChecking7      ; 14    ; Signed Integer                ;
+; AcknowledgeChecking8      ; 15    ; Signed Integer                ;
+; AcknowledgeChecking9      ; 16    ; Signed Integer                ;
+; AcknowledgeChecking10     ; 17    ; Signed Integer                ;
+; PointerBytePreparing      ; 18    ; Signed Integer                ;
+; PointerByteSending        ; 19    ; Signed Integer                ;
+; MSByteFromDeviceReading   ; 20    ; Signed Integer                ;
+; MSByteFromDevicePreparing ; 21    ; Signed Integer                ;
+; LSByteFromDeviceReading   ; 22    ; Signed Integer                ;
+; LSByteFromDevicePreparing ; 23    ; Signed Integer                ;
+; PresetPointerStopping     ; 24    ; Signed Integer                ;
+; Updating                  ; 25    ; Signed Integer                ;
++---------------------------+-------+-------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -513,7 +486,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -523,7 +496,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Full Version
-    Info: Processing started: Thu Mar 21 18:58:48 2024
+    Info: Processing started: Fri Mar 22 13:57:30 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off VERILOGStart05 -c VERILOGStart05
 Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
 Info (12021): Found 1 design units, including 1 entities, in source file verilogstart05.bdf
@@ -561,47 +534,45 @@ Warning (275080): Converted elements in bus name "indicator3" using legacy namin
     Warning (275081): Converted element name(s) from "indicator3[6..0]" to "indicator36..0"
 Warning (275011): Block or symbol "Count250" of instance "inst9" overlaps another block or symbol
 Warning (275013): Port "clk" of type TransmitterUART and instance "inst18" is missing source signal
-Info (12128): Elaborating entity "TransceiverI2C" for hierarchy "TransceiverI2C:inst23"
+Info (12128): Elaborating entity "TransceiverI2C" for hierarchy "TransceiverI2C:inst1"
 Warning (10036): Verilog HDL or VHDL warning at TransceiverI2C.v(14): object "dataBuf" assigned a value but never read
-Warning (10230): Verilog HDL assignment warning at TransceiverI2C.v(46): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at TransceiverI2C.v(49): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at TransceiverI2C.v(62): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at TransceiverI2C.v(65): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at TransceiverI2C.v(78): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at TransceiverI2C.v(85): truncated value with size 32 to match size of target (3)
+Warning (10230): Verilog HDL assignment warning at TransceiverI2C.v(69): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at TransceiverI2C.v(72): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at TransceiverI2C.v(85): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at TransceiverI2C.v(88): truncated value with size 32 to match size of target (8)
 Warning (10230): Verilog HDL assignment warning at TransceiverI2C.v(101): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at TransceiverI2C.v(104): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at TransceiverI2C.v(117): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at TransceiverI2C.v(129): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at TransceiverI2C.v(108): truncated value with size 32 to match size of target (3)
+Warning (10230): Verilog HDL assignment warning at TransceiverI2C.v(124): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at TransceiverI2C.v(127): truncated value with size 32 to match size of target (8)
 Warning (10230): Verilog HDL assignment warning at TransceiverI2C.v(140): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at TransceiverI2C.v(160): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at TransceiverI2C.v(152): truncated value with size 32 to match size of target (8)
 Warning (10230): Verilog HDL assignment warning at TransceiverI2C.v(163): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at TransceiverI2C.v(176): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at TransceiverI2C.v(183): truncated value with size 32 to match size of target (3)
-Warning (10230): Verilog HDL assignment warning at TransceiverI2C.v(197): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at TransceiverI2C.v(208): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at TransceiverI2C.v(228): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at TransceiverI2C.v(231): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at TransceiverI2C.v(245): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at TransceiverI2C.v(248): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at TransceiverI2C.v(261): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at TransceiverI2C.v(273): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at TransceiverI2C.v(284): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at TransceiverI2C.v(304): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at TransceiverI2C.v(316): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at TransceiverI2C.v(323): truncated value with size 32 to match size of target (3)
+Warning (10230): Verilog HDL assignment warning at TransceiverI2C.v(182): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at TransceiverI2C.v(185): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at TransceiverI2C.v(198): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at TransceiverI2C.v(205): truncated value with size 32 to match size of target (3)
+Warning (10230): Verilog HDL assignment warning at TransceiverI2C.v(219): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at TransceiverI2C.v(230): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at TransceiverI2C.v(249): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at TransceiverI2C.v(252): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at TransceiverI2C.v(266): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at TransceiverI2C.v(269): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at TransceiverI2C.v(282): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at TransceiverI2C.v(294): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at TransceiverI2C.v(305): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at TransceiverI2C.v(325): truncated value with size 32 to match size of target (8)
 Warning (10230): Verilog HDL assignment warning at TransceiverI2C.v(337): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at TransceiverI2C.v(348): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at TransceiverI2C.v(359): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at TransceiverI2C.v(371): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at TransceiverI2C.v(378): truncated value with size 32 to match size of target (3)
-Warning (10230): Verilog HDL assignment warning at TransceiverI2C.v(391): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at TransceiverI2C.v(394): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at TransceiverI2C.v(407): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at TransceiverI2C.v(423): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at TransceiverI2C.v(426): truncated value with size 32 to match size of target (8)
-Warning (10272): Verilog HDL Case Statement warning at TransceiverI2C.v(404): case item expression covers a value already covered by a previous case item
-Warning (10034): Output port "ledError" at TransceiverI2C.v(3) has no driver
+Warning (10230): Verilog HDL assignment warning at TransceiverI2C.v(344): truncated value with size 32 to match size of target (3)
+Warning (10230): Verilog HDL assignment warning at TransceiverI2C.v(358): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at TransceiverI2C.v(369): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at TransceiverI2C.v(380): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at TransceiverI2C.v(392): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at TransceiverI2C.v(399): truncated value with size 32 to match size of target (3)
+Warning (10230): Verilog HDL assignment warning at TransceiverI2C.v(412): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at TransceiverI2C.v(415): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at TransceiverI2C.v(428): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at TransceiverI2C.v(444): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at TransceiverI2C.v(447): truncated value with size 32 to match size of target (8)
 Info (12128): Elaborating entity "Count250" for hierarchy "Count250:inst9"
 Warning (10230): Verilog HDL assignment warning at Count250.v(11): truncated value with size 32 to match size of target (8)
 Info (12128): Elaborating entity "Count100000" for hierarchy "Count100000:inst8"
@@ -660,20 +631,24 @@ Warning (13012): Latch DynamicIllumination4Indicators:inst10|indicator[0] has un
     Warning (13013): Ports D and ENA on the latch are fed by the same signal DynamicIllumination4Indicators:inst10|counter[1]
 Warning (13012): Latch DynamicIllumination4Indicators:inst10|segment[6] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal DynamicIllumination4Indicators:inst10|counter[1]
+Warning (13012): Latch DynamicIllumination4Indicators:inst10|segment[5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal DynamicIllumination4Indicators:inst10|counter[1]
+Warning (13012): Latch DynamicIllumination4Indicators:inst10|segment[4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal DynamicIllumination4Indicators:inst10|counter[1]
+Warning (13012): Latch DynamicIllumination4Indicators:inst10|segment[3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal DynamicIllumination4Indicators:inst10|counter[1]
+Warning (13012): Latch DynamicIllumination4Indicators:inst10|segment[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal DynamicIllumination4Indicators:inst10|counter[1]
+Warning (13012): Latch DynamicIllumination4Indicators:inst10|segment[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal DynamicIllumination4Indicators:inst10|counter[1]
+Warning (13012): Latch DynamicIllumination4Indicators:inst10|segment[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal DynamicIllumination4Indicators:inst10|counter[1]
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "led" is stuck at GND
     Warning (13410): Pin "tx" is stuck at GND
     Warning (13410): Pin "indicator[3]" is stuck at VCC
     Warning (13410): Pin "indicator[2]" is stuck at VCC
-    Warning (13410): Pin "segment[6]" is stuck at VCC
-    Warning (13410): Pin "segment[5]" is stuck at GND
-    Warning (13410): Pin "segment[4]" is stuck at GND
-    Warning (13410): Pin "segment[3]" is stuck at GND
-    Warning (13410): Pin "segment[2]" is stuck at GND
-    Warning (13410): Pin "segment[1]" is stuck at GND
-    Warning (13410): Pin "segment[0]" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 50 registers lost all their fanouts during netlist optimizations.
+Info (17049): 41 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 6 input pin(s) that do not drive logic
@@ -683,14 +658,14 @@ Warning (21074): Design contains 6 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "key4"
     Warning (15610): No output dependent on input pin "reset"
     Warning (15610): No output dependent on input pin "rx"
-Info (21057): Implemented 160 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 220 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 7 input pins
     Info (21059): Implemented 15 output pins
     Info (21060): Implemented 1 bidirectional pins
-    Info (21061): Implemented 137 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 110 warnings
+    Info (21061): Implemented 197 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 112 warnings
     Info: Peak virtual memory: 4651 megabytes
-    Info: Processing ended: Thu Mar 21 18:58:50 2024
+    Info: Processing ended: Fri Mar 22 13:57:32 2024
     Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 

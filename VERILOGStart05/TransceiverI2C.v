@@ -20,9 +20,32 @@ module TransceiverI2C(clk, start, scl, sda, data, update, led, ledError);
 	reg[7:0] mSByteFromDevice = 8'b00000000;
 	reg[7:0] lSByteFromDevice = 8'b00000000;
 	
-	reg error = 1;
-	
-	parameter Waiting = 0, Starting = 1, DeviceAddressPreparing = 2, DeviceAddressSending = 3, WriteBitPreparing = 4, WriteBitSending = 5, ReadBitPreparing = 6, ReadBitSending = 7, AcknowledgeChecking1 = 8, AcknowledgeChecking2 = 9, AcknowledgeChecking3 = 10, AcknowledgeChecking4 = 11, AcknowledgeChecking5 = 12, AcknowledgeChecking6 = 13, AcknowledgeChecking7 = 14, AcknowledgeChecking8 = 15, AcknowledgeChecking9 = 16, AcknowledgeChecking10 = 17, PointerBytePreparing = 17, PointerByteSending = 18, MSByteFromDeviceReading = 19, MSByteFromDevicePreparing = 20, LSByteFromDeviceReading = 21, LSByteFromDevicePreparing = 22, PresetPointerStopping = 23, Updating = 24;
+	parameter Waiting = 0, 
+				Starting = 1,
+				DeviceAddressPreparing = 2,
+				DeviceAddressSending = 3,
+				WriteBitPreparing = 4,
+				WriteBitSending = 5,
+				ReadBitPreparing = 6,
+				ReadBitSending = 7,
+				AcknowledgeChecking1 = 8,
+				AcknowledgeChecking2 = 9,
+				AcknowledgeChecking3 = 10,
+				AcknowledgeChecking4 = 11,
+				AcknowledgeChecking5 = 12,
+				AcknowledgeChecking6 = 13,
+				AcknowledgeChecking7 = 14,
+				AcknowledgeChecking8 = 15,
+				AcknowledgeChecking9 = 16,
+				AcknowledgeChecking10 = 17,
+				PointerBytePreparing = 18,
+				PointerByteSending = 19,
+				MSByteFromDeviceReading = 20,
+				MSByteFromDevicePreparing = 21,
+				LSByteFromDeviceReading = 22,
+				LSByteFromDevicePreparing = 23,
+				PresetPointerStopping = 24,
+				Updating = 25;
 	reg[4:0] stateI2C = Waiting;
 	
 	always@(posedge clk)
@@ -145,12 +168,11 @@ module TransceiverI2C(clk, start, scl, sda, data, update, led, ledError);
 							if (sda == 0)	
 								begin
 									stateI2C <= PointerBytePreparing;
-									//led <= ~ led;
 								end	
 							else 
 								begin
 									stateI2C <= Waiting;
-									error <= ~error;
+									ledError <= ~ledError;
 								end						
 						end
 				end		
@@ -211,14 +233,13 @@ module TransceiverI2C(clk, start, scl, sda, data, update, led, ledError);
 							count <= 0;
 							scl <= 0;
 							if (sda == 0)	
-								begin 
-									led <= ~ led;
+								begin									
 									stateI2C <= PresetPointerStopping;
 								end	
 							else 
 								begin
 									stateI2C <= Waiting;
-									error <= ~ error;
+									ledError <= ~ ledError;
 								end	
 						end	
 				end
@@ -260,7 +281,7 @@ module TransceiverI2C(clk, start, scl, sda, data, update, led, ledError);
 					if (count < 125)
 						count <= count + 1;
 					else
-						begin
+						begin							
 							count <= 0;
 							scl <= 0;
 							sda <= 1'bz;
@@ -287,14 +308,14 @@ module TransceiverI2C(clk, start, scl, sda, data, update, led, ledError);
 							count <= 0;
 							scl <= 0;
 							if (sda == 0)
-								begin
+								begin									
 									stateI2C <= MSByteFromDeviceReading;
 									bitPosition <= 7;
 								end	
 							else 	
 								begin
 									stateI2C <= Waiting;
-									error <= ~error;
+									//ledError <= ~ledError;
 								end	
 						end
 				end		
@@ -347,7 +368,7 @@ module TransceiverI2C(clk, start, scl, sda, data, update, led, ledError);
 					if (count < 125)
 						count <= count + 1;
 					else	
-						begin
+						begin							
 							count <= 0;
 							scl <= 0;
 							stateI2C <= LSByteFromDeviceReading;							
@@ -410,7 +431,7 @@ module TransceiverI2C(clk, start, scl, sda, data, update, led, ledError);
 							count <= 0;
 							scl <= 0;
 							stateI2C <= Updating;
-							//led <= ~ led;
+							led <= ~ led;
 							bitPosition <= 6;
 							data[7:3] <= mSByteFromDevice[4:0];
 							//data[7:3] <= 5'b10101;
