@@ -1,0 +1,11 @@
+// memory data file (do not edit the following line - required for mem load use)
+// instance=/tb_03/array
+// format=hex addressradix=h dataradix=h version=1.0 wordsperline=1 noaddress
+abcd
+ef01
+2345
+6789
+1011
+1213
+1415
+1617

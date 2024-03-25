@@ -1,0 +1,76 @@
+`timescale 10ns / 100ps
+module tb_03;
+	parameter D_WIDTH = 16;
+	parameter A_WIDTH = 4;
+	parameter A_MAX = 16; // 2^A_WIDTH
+	
+	reg clk_tb, en_write_tb, write_enable_tb, en_read_tb;
+
+	reg[A_WIDTH-1:0] address_write_tb;
+	reg[D_WIDTH-1:0] data_write_tb;
+	reg[A_WIDTH-1:0] address_read_tb;
+	reg[D_WIDTH-1:0] data_read_tb;
+	reg[D_WIDTH-1:0] memory_tb [A_MAX-1:0];
+	
+	reg[D_WIDTH - 1:0] array[0:1023];
+	integer inLog;
+	integer outLog;
+	
+	clk, en_write, address_write, data_write, write_enable, en_read, address_read, data_read
+	TestBench03 test(
+		.clk(clk_tb),
+		.en_write(en_write_tb),
+		.address_write(address_write_tb),
+		.data_write(data_write_tb),
+		.write_enable(write_enable_tb),
+		.en_read(en_read_tb),
+		.address_read(address_read_tb),
+		.data_read(data_read_tb)
+	);
+	
+initial
+begin
+inLog = $fopen("file1.dat", "r");
+outLog = $fopen("file2.dat", "w");
+clk_tb <= 1'b0;
+rst_tb <= 1'b1;
+d_tb <= 1'b0;
+q_exp <= 1'b0;
+#5000;
+$fclose(inLog);
+$fclose(outLog);
+$finish;
+end
+
+initial
+begin
+#10; rst_tb <= 1'b0;
+end
+
+always #1 clk_tb <= ~clk_tb;
+
+always
+begin
+#3; d_tb <= 1'b1;
+#3; d_tb <= 1'b0;
+#6; d_tb <= 1'b1;
+#3; d_tb <= 1'b0;
+#100;
+end
+
+always
+begin
+#13; q_exp <= 1'b1;
+#2; q_exp <= 1'b0;
+#100;
+end
+
+always
+begin
+	#1;
+	if(q_tb != q_exp) 
+		begin
+			$display("***** Mismatch q_tb and q_exp in time %d ", $time);
+		end
+end
+endmodule
