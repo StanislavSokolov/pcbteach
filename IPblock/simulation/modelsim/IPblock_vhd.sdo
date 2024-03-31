@@ -29,7 +29,7 @@
 (DELAYFILE
   (SDFVERSION "2.1")
   (DESIGN "IPblock")
-  (DATE "03/31/2024 13:53:11")
+  (DATE "03/31/2024 13:59:52")
   (VENDOR "Altera")
   (PROGRAM "Quartus II 64-Bit")
   (VERSION "Version 13.1.0 Build 162 10/23/2013 SJ Full Version")
@@ -87,7 +87,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_pll")
-    (INSTANCE \\inst\|altpll_component\|auto_generated\|pll1\\)
+    (INSTANCE \\b2v_inst\|altpll_component\|auto_generated\|pll1\\)
     (DELAY
       (ABSOLUTE
         (PORT inclk[0] (2336:2336:2336) (2336:2336:2336))
@@ -96,7 +96,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_clkctrl")
-    (INSTANCE \\inst\|altpll_component\|auto_generated\|wire_pll1_clk\[0\]\~clkctrl\\)
+    (INSTANCE \\b2v_inst\|altpll_component\|auto_generated\|wire_pll1_clk\[0\]\~clkctrl\\)
     (DELAY
       (ABSOLUTE
         (PORT inclk[0] (2340:2340:2340) (2307:2307:2307))
@@ -105,7 +105,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\inst3\|LPM_COUNTER_component\|auto_generated\|counter_comb_bita0\\)
+    (INSTANCE \\b2v_inst3\|LPM_COUNTER_component\|auto_generated\|counter_comb_bita0\\)
     (DELAY
       (ABSOLUTE
         (PORT datab (337:337:337) (418:418:418))
@@ -117,7 +117,7 @@
   )
   (CELL
     (CELLTYPE "dffeas")
-    (INSTANCE \\inst3\|LPM_COUNTER_component\|auto_generated\|counter_reg_bit\[0\]\\)
+    (INSTANCE \\b2v_inst3\|LPM_COUNTER_component\|auto_generated\|counter_reg_bit\[0\]\\)
     (DELAY
       (ABSOLUTE
         (PORT clk (1610:1610:1610) (1646:1646:1646))
@@ -135,7 +135,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\inst3\|LPM_COUNTER_component\|auto_generated\|counter_comb_bita1\\)
+    (INSTANCE \\b2v_inst3\|LPM_COUNTER_component\|auto_generated\|counter_comb_bita1\\)
     (DELAY
       (ABSOLUTE
         (PORT datab (337:337:337) (416:416:416))
@@ -149,7 +149,7 @@
   )
   (CELL
     (CELLTYPE "dffeas")
-    (INSTANCE \\inst3\|LPM_COUNTER_component\|auto_generated\|counter_reg_bit\[1\]\\)
+    (INSTANCE \\b2v_inst3\|LPM_COUNTER_component\|auto_generated\|counter_reg_bit\[1\]\\)
     (DELAY
       (ABSOLUTE
         (PORT clk (1610:1610:1610) (1646:1646:1646))
@@ -167,7 +167,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\inst3\|LPM_COUNTER_component\|auto_generated\|counter_comb_bita2\\)
+    (INSTANCE \\b2v_inst3\|LPM_COUNTER_component\|auto_generated\|counter_comb_bita2\\)
     (DELAY
       (ABSOLUTE
         (PORT datab (337:337:337) (417:417:417))
@@ -181,7 +181,7 @@
   )
   (CELL
     (CELLTYPE "dffeas")
-    (INSTANCE \\inst3\|LPM_COUNTER_component\|auto_generated\|counter_reg_bit\[2\]\\)
+    (INSTANCE \\b2v_inst3\|LPM_COUNTER_component\|auto_generated\|counter_reg_bit\[2\]\\)
     (DELAY
       (ABSOLUTE
         (PORT clk (1610:1610:1610) (1646:1646:1646))
@@ -199,7 +199,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\inst3\|LPM_COUNTER_component\|auto_generated\|counter_comb_bita3\\)
+    (INSTANCE \\b2v_inst3\|LPM_COUNTER_component\|auto_generated\|counter_comb_bita3\\)
     (DELAY
       (ABSOLUTE
         (PORT dataa (341:341:341) (429:429:429))
@@ -213,7 +213,7 @@
   )
   (CELL
     (CELLTYPE "dffeas")
-    (INSTANCE \\inst3\|LPM_COUNTER_component\|auto_generated\|counter_reg_bit\[3\]\\)
+    (INSTANCE \\b2v_inst3\|LPM_COUNTER_component\|auto_generated\|counter_reg_bit\[3\]\\)
     (DELAY
       (ABSOLUTE
         (PORT clk (1610:1610:1610) (1646:1646:1646))
@@ -231,7 +231,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\inst3\|LPM_COUNTER_component\|auto_generated\|cmpr1\|aneb_result_wire\[0\]\~1\\)
+    (INSTANCE \\b2v_inst3\|LPM_COUNTER_component\|auto_generated\|cmpr1\|aneb_result_wire\[0\]\~1\\)
     (DELAY
       (ABSOLUTE
         (PORT dataa (343:343:343) (432:432:432))
@@ -247,7 +247,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\inst3\|LPM_COUNTER_component\|auto_generated\|counter_comb_bita4\\)
+    (INSTANCE \\b2v_inst3\|LPM_COUNTER_component\|auto_generated\|counter_comb_bita4\\)
     (DELAY
       (ABSOLUTE
         (PORT datab (338:338:338) (418:418:418))
@@ -261,7 +261,7 @@
   )
   (CELL
     (CELLTYPE "dffeas")
-    (INSTANCE \\inst3\|LPM_COUNTER_component\|auto_generated\|counter_reg_bit\[4\]\\)
+    (INSTANCE \\b2v_inst3\|LPM_COUNTER_component\|auto_generated\|counter_reg_bit\[4\]\\)
     (DELAY
       (ABSOLUTE
         (PORT clk (1610:1610:1610) (1646:1646:1646))
@@ -279,7 +279,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\inst3\|LPM_COUNTER_component\|auto_generated\|counter_comb_bita5\\)
+    (INSTANCE \\b2v_inst3\|LPM_COUNTER_component\|auto_generated\|counter_comb_bita5\\)
     (DELAY
       (ABSOLUTE
         (PORT dataa (342:342:342) (427:427:427))
@@ -293,7 +293,7 @@
   )
   (CELL
     (CELLTYPE "dffeas")
-    (INSTANCE \\inst3\|LPM_COUNTER_component\|auto_generated\|counter_reg_bit\[5\]\\)
+    (INSTANCE \\b2v_inst3\|LPM_COUNTER_component\|auto_generated\|counter_reg_bit\[5\]\\)
     (DELAY
       (ABSOLUTE
         (PORT clk (1610:1610:1610) (1646:1646:1646))
@@ -311,7 +311,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\inst3\|LPM_COUNTER_component\|auto_generated\|counter_comb_bita6\\)
+    (INSTANCE \\b2v_inst3\|LPM_COUNTER_component\|auto_generated\|counter_comb_bita6\\)
     (DELAY
       (ABSOLUTE
         (PORT dataa (342:342:342) (431:431:431))
@@ -325,7 +325,7 @@
   )
   (CELL
     (CELLTYPE "dffeas")
-    (INSTANCE \\inst3\|LPM_COUNTER_component\|auto_generated\|counter_reg_bit\[6\]\\)
+    (INSTANCE \\b2v_inst3\|LPM_COUNTER_component\|auto_generated\|counter_reg_bit\[6\]\\)
     (DELAY
       (ABSOLUTE
         (PORT clk (1610:1610:1610) (1646:1646:1646))
@@ -343,7 +343,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\inst3\|LPM_COUNTER_component\|auto_generated\|counter_comb_bita7\\)
+    (INSTANCE \\b2v_inst3\|LPM_COUNTER_component\|auto_generated\|counter_comb_bita7\\)
     (DELAY
       (ABSOLUTE
         (PORT datab (339:339:339) (421:421:421))
@@ -357,7 +357,7 @@
   )
   (CELL
     (CELLTYPE "dffeas")
-    (INSTANCE \\inst3\|LPM_COUNTER_component\|auto_generated\|counter_reg_bit\[7\]\\)
+    (INSTANCE \\b2v_inst3\|LPM_COUNTER_component\|auto_generated\|counter_reg_bit\[7\]\\)
     (DELAY
       (ABSOLUTE
         (PORT clk (1610:1610:1610) (1646:1646:1646))
@@ -375,7 +375,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\inst3\|LPM_COUNTER_component\|auto_generated\|cmpr1\|aneb_result_wire\[0\]\~0\\)
+    (INSTANCE \\b2v_inst3\|LPM_COUNTER_component\|auto_generated\|cmpr1\|aneb_result_wire\[0\]\~0\\)
     (DELAY
       (ABSOLUTE
         (PORT dataa (344:344:344) (433:433:433))
@@ -391,7 +391,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\inst3\|LPM_COUNTER_component\|auto_generated\|counter_comb_bita7\~0\\)
+    (INSTANCE \\b2v_inst3\|LPM_COUNTER_component\|auto_generated\|counter_comb_bita7\~0\\)
     (DELAY
       (ABSOLUTE
         (IOPATH cin combout (607:607:607) (577:577:577))
@@ -400,7 +400,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\inst3\|LPM_COUNTER_component\|auto_generated\|cout_actual\\)
+    (INSTANCE \\b2v_inst3\|LPM_COUNTER_component\|auto_generated\|cout_actual\\)
     (DELAY
       (ABSOLUTE
         (PORT datab (276:276:276) (301:301:301))
@@ -414,7 +414,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\inst4\|LPM_COUNTER_component\|auto_generated\|counter_comb_bita0\\)
+    (INSTANCE \\b2v_inst4\|LPM_COUNTER_component\|auto_generated\|counter_comb_bita0\\)
     (DELAY
       (ABSOLUTE
         (PORT dataa (345:345:345) (433:433:433))
@@ -426,7 +426,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\inst4\|LPM_COUNTER_component\|auto_generated\|counter_reg_bit\[0\]\~feeder\\)
+    (INSTANCE \\b2v_inst4\|LPM_COUNTER_component\|auto_generated\|counter_reg_bit\[0\]\~feeder\\)
     (DELAY
       (ABSOLUTE
         (PORT datab (1844:1844:1844) (1706:1706:1706))
@@ -436,7 +436,7 @@
   )
   (CELL
     (CELLTYPE "dffeas")
-    (INSTANCE \\inst4\|LPM_COUNTER_component\|auto_generated\|counter_reg_bit\[0\]\\)
+    (INSTANCE \\b2v_inst4\|LPM_COUNTER_component\|auto_generated\|counter_reg_bit\[0\]\\)
     (DELAY
       (ABSOLUTE
         (PORT clk (1172:1172:1172) (1154:1154:1154))
@@ -454,7 +454,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\inst4\|LPM_COUNTER_component\|auto_generated\|counter_comb_bita1\\)
+    (INSTANCE \\b2v_inst4\|LPM_COUNTER_component\|auto_generated\|counter_comb_bita1\\)
     (DELAY
       (ABSOLUTE
         (PORT dataa (343:343:343) (431:431:431))
@@ -468,7 +468,7 @@
   )
   (CELL
     (CELLTYPE "dffeas")
-    (INSTANCE \\inst4\|LPM_COUNTER_component\|auto_generated\|counter_reg_bit\[1\]\\)
+    (INSTANCE \\b2v_inst4\|LPM_COUNTER_component\|auto_generated\|counter_reg_bit\[1\]\\)
     (DELAY
       (ABSOLUTE
         (PORT clk (1172:1172:1172) (1154:1154:1154))
@@ -486,7 +486,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\inst4\|LPM_COUNTER_component\|auto_generated\|counter_comb_bita2\\)
+    (INSTANCE \\b2v_inst4\|LPM_COUNTER_component\|auto_generated\|counter_comb_bita2\\)
     (DELAY
       (ABSOLUTE
         (PORT datab (340:340:340) (422:422:422))
@@ -500,7 +500,7 @@
   )
   (CELL
     (CELLTYPE "dffeas")
-    (INSTANCE \\inst4\|LPM_COUNTER_component\|auto_generated\|counter_reg_bit\[2\]\\)
+    (INSTANCE \\b2v_inst4\|LPM_COUNTER_component\|auto_generated\|counter_reg_bit\[2\]\\)
     (DELAY
       (ABSOLUTE
         (PORT clk (1172:1172:1172) (1154:1154:1154))
@@ -518,7 +518,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\inst4\|LPM_COUNTER_component\|auto_generated\|counter_comb_bita3\\)
+    (INSTANCE \\b2v_inst4\|LPM_COUNTER_component\|auto_generated\|counter_comb_bita3\\)
     (DELAY
       (ABSOLUTE
         (PORT dataa (343:343:343) (429:429:429))
@@ -532,7 +532,7 @@
   )
   (CELL
     (CELLTYPE "dffeas")
-    (INSTANCE \\inst4\|LPM_COUNTER_component\|auto_generated\|counter_reg_bit\[3\]\\)
+    (INSTANCE \\b2v_inst4\|LPM_COUNTER_component\|auto_generated\|counter_reg_bit\[3\]\\)
     (DELAY
       (ABSOLUTE
         (PORT clk (1172:1172:1172) (1154:1154:1154))
@@ -550,7 +550,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\inst4\|LPM_COUNTER_component\|auto_generated\|counter_comb_bita4\\)
+    (INSTANCE \\b2v_inst4\|LPM_COUNTER_component\|auto_generated\|counter_comb_bita4\\)
     (DELAY
       (ABSOLUTE
         (PORT dataa (344:344:344) (434:434:434))
@@ -564,7 +564,7 @@
   )
   (CELL
     (CELLTYPE "dffeas")
-    (INSTANCE \\inst4\|LPM_COUNTER_component\|auto_generated\|counter_reg_bit\[4\]\\)
+    (INSTANCE \\b2v_inst4\|LPM_COUNTER_component\|auto_generated\|counter_reg_bit\[4\]\\)
     (DELAY
       (ABSOLUTE
         (PORT clk (1172:1172:1172) (1154:1154:1154))
@@ -582,7 +582,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\inst4\|LPM_COUNTER_component\|auto_generated\|counter_comb_bita5\\)
+    (INSTANCE \\b2v_inst4\|LPM_COUNTER_component\|auto_generated\|counter_comb_bita5\\)
     (DELAY
       (ABSOLUTE
         (PORT datab (342:342:342) (423:423:423))
@@ -596,7 +596,7 @@
   )
   (CELL
     (CELLTYPE "dffeas")
-    (INSTANCE \\inst4\|LPM_COUNTER_component\|auto_generated\|counter_reg_bit\[5\]\\)
+    (INSTANCE \\b2v_inst4\|LPM_COUNTER_component\|auto_generated\|counter_reg_bit\[5\]\\)
     (DELAY
       (ABSOLUTE
         (PORT clk (1172:1172:1172) (1154:1154:1154))
@@ -614,7 +614,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\inst4\|LPM_COUNTER_component\|auto_generated\|counter_comb_bita6\\)
+    (INSTANCE \\b2v_inst4\|LPM_COUNTER_component\|auto_generated\|counter_comb_bita6\\)
     (DELAY
       (ABSOLUTE
         (PORT datab (342:342:342) (421:421:421))
@@ -628,7 +628,7 @@
   )
   (CELL
     (CELLTYPE "dffeas")
-    (INSTANCE \\inst4\|LPM_COUNTER_component\|auto_generated\|counter_reg_bit\[6\]\\)
+    (INSTANCE \\b2v_inst4\|LPM_COUNTER_component\|auto_generated\|counter_reg_bit\[6\]\\)
     (DELAY
       (ABSOLUTE
         (PORT clk (1172:1172:1172) (1154:1154:1154))
@@ -646,7 +646,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\inst4\|LPM_COUNTER_component\|auto_generated\|counter_comb_bita7\\)
+    (INSTANCE \\b2v_inst4\|LPM_COUNTER_component\|auto_generated\|counter_comb_bita7\\)
     (DELAY
       (ABSOLUTE
         (PORT datab (341:341:341) (424:424:424))
@@ -660,7 +660,7 @@
   )
   (CELL
     (CELLTYPE "dffeas")
-    (INSTANCE \\inst4\|LPM_COUNTER_component\|auto_generated\|counter_reg_bit\[7\]\\)
+    (INSTANCE \\b2v_inst4\|LPM_COUNTER_component\|auto_generated\|counter_reg_bit\[7\]\\)
     (DELAY
       (ABSOLUTE
         (PORT clk (1172:1172:1172) (1154:1154:1154))
@@ -678,7 +678,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\inst4\|LPM_COUNTER_component\|auto_generated\|cmpr1\|aneb_result_wire\[0\]\~0\\)
+    (INSTANCE \\b2v_inst4\|LPM_COUNTER_component\|auto_generated\|cmpr1\|aneb_result_wire\[0\]\~0\\)
     (DELAY
       (ABSOLUTE
         (PORT dataa (345:345:345) (435:435:435))
@@ -694,7 +694,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\inst4\|LPM_COUNTER_component\|auto_generated\|cmpr1\|aneb_result_wire\[0\]\~1\\)
+    (INSTANCE \\b2v_inst4\|LPM_COUNTER_component\|auto_generated\|cmpr1\|aneb_result_wire\[0\]\~1\\)
     (DELAY
       (ABSOLUTE
         (PORT dataa (346:346:346) (436:436:436))
@@ -710,7 +710,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\inst4\|LPM_COUNTER_component\|auto_generated\|counter_comb_bita7\~0\\)
+    (INSTANCE \\b2v_inst4\|LPM_COUNTER_component\|auto_generated\|counter_comb_bita7\~0\\)
     (DELAY
       (ABSOLUTE
         (IOPATH cin combout (607:607:607) (577:577:577))
@@ -719,7 +719,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\inst4\|LPM_COUNTER_component\|auto_generated\|cout_actual\\)
+    (INSTANCE \\b2v_inst4\|LPM_COUNTER_component\|auto_generated\|cout_actual\\)
     (DELAY
       (ABSOLUTE
         (PORT datab (281:281:281) (307:307:307))
@@ -733,7 +733,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\inst5\|LPM_COUNTER_component\|auto_generated\|counter_comb_bita0\\)
+    (INSTANCE \\b2v_inst5\|LPM_COUNTER_component\|auto_generated\|counter_comb_bita0\\)
     (DELAY
       (ABSOLUTE
         (PORT dataa (344:344:344) (432:432:432))
@@ -745,7 +745,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\inst5\|LPM_COUNTER_component\|auto_generated\|counter_reg_bit\[0\]\~feeder\\)
+    (INSTANCE \\b2v_inst5\|LPM_COUNTER_component\|auto_generated\|counter_reg_bit\[0\]\~feeder\\)
     (DELAY
       (ABSOLUTE
         (PORT datab (2004:2004:2004) (1839:1839:1839))
@@ -755,7 +755,7 @@
   )
   (CELL
     (CELLTYPE "dffeas")
-    (INSTANCE \\inst5\|LPM_COUNTER_component\|auto_generated\|counter_reg_bit\[0\]\\)
+    (INSTANCE \\b2v_inst5\|LPM_COUNTER_component\|auto_generated\|counter_reg_bit\[0\]\\)
     (DELAY
       (ABSOLUTE
         (PORT clk (1164:1164:1164) (1142:1142:1142))
@@ -773,7 +773,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\inst5\|LPM_COUNTER_component\|auto_generated\|counter_comb_bita1\\)
+    (INSTANCE \\b2v_inst5\|LPM_COUNTER_component\|auto_generated\|counter_comb_bita1\\)
     (DELAY
       (ABSOLUTE
         (PORT datab (339:339:339) (421:421:421))
@@ -787,7 +787,7 @@
   )
   (CELL
     (CELLTYPE "dffeas")
-    (INSTANCE \\inst5\|LPM_COUNTER_component\|auto_generated\|counter_reg_bit\[1\]\\)
+    (INSTANCE \\b2v_inst5\|LPM_COUNTER_component\|auto_generated\|counter_reg_bit\[1\]\\)
     (DELAY
       (ABSOLUTE
         (PORT clk (1164:1164:1164) (1142:1142:1142))
@@ -805,7 +805,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\inst5\|LPM_COUNTER_component\|auto_generated\|counter_comb_bita2\\)
+    (INSTANCE \\b2v_inst5\|LPM_COUNTER_component\|auto_generated\|counter_comb_bita2\\)
     (DELAY
       (ABSOLUTE
         (PORT dataa (343:343:343) (428:428:428))
@@ -819,7 +819,7 @@
   )
   (CELL
     (CELLTYPE "dffeas")
-    (INSTANCE \\inst5\|LPM_COUNTER_component\|auto_generated\|counter_reg_bit\[2\]\\)
+    (INSTANCE \\b2v_inst5\|LPM_COUNTER_component\|auto_generated\|counter_reg_bit\[2\]\\)
     (DELAY
       (ABSOLUTE
         (PORT clk (1164:1164:1164) (1142:1142:1142))
@@ -837,7 +837,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\inst5\|LPM_COUNTER_component\|auto_generated\|counter_comb_bita3\\)
+    (INSTANCE \\b2v_inst5\|LPM_COUNTER_component\|auto_generated\|counter_comb_bita3\\)
     (DELAY
       (ABSOLUTE
         (PORT dataa (342:342:342) (431:431:431))
@@ -851,7 +851,7 @@
   )
   (CELL
     (CELLTYPE "dffeas")
-    (INSTANCE \\inst5\|LPM_COUNTER_component\|auto_generated\|counter_reg_bit\[3\]\\)
+    (INSTANCE \\b2v_inst5\|LPM_COUNTER_component\|auto_generated\|counter_reg_bit\[3\]\\)
     (DELAY
       (ABSOLUTE
         (PORT clk (1164:1164:1164) (1142:1142:1142))
@@ -869,7 +869,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\inst5\|LPM_COUNTER_component\|auto_generated\|counter_comb_bita4\\)
+    (INSTANCE \\b2v_inst5\|LPM_COUNTER_component\|auto_generated\|counter_comb_bita4\\)
     (DELAY
       (ABSOLUTE
         (PORT datab (340:340:340) (420:420:420))
@@ -883,7 +883,7 @@
   )
   (CELL
     (CELLTYPE "dffeas")
-    (INSTANCE \\inst5\|LPM_COUNTER_component\|auto_generated\|counter_reg_bit\[4\]\\)
+    (INSTANCE \\b2v_inst5\|LPM_COUNTER_component\|auto_generated\|counter_reg_bit\[4\]\\)
     (DELAY
       (ABSOLUTE
         (PORT clk (1164:1164:1164) (1142:1142:1142))
@@ -901,7 +901,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\inst5\|LPM_COUNTER_component\|auto_generated\|counter_comb_bita5\\)
+    (INSTANCE \\b2v_inst5\|LPM_COUNTER_component\|auto_generated\|counter_comb_bita5\\)
     (DELAY
       (ABSOLUTE
         (PORT datab (340:340:340) (419:419:419))
@@ -915,7 +915,7 @@
   )
   (CELL
     (CELLTYPE "dffeas")
-    (INSTANCE \\inst5\|LPM_COUNTER_component\|auto_generated\|counter_reg_bit\[5\]\\)
+    (INSTANCE \\b2v_inst5\|LPM_COUNTER_component\|auto_generated\|counter_reg_bit\[5\]\\)
     (DELAY
       (ABSOLUTE
         (PORT clk (1164:1164:1164) (1142:1142:1142))
@@ -933,7 +933,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\inst5\|LPM_COUNTER_component\|auto_generated\|counter_comb_bita6\\)
+    (INSTANCE \\b2v_inst5\|LPM_COUNTER_component\|auto_generated\|counter_comb_bita6\\)
     (DELAY
       (ABSOLUTE
         (PORT datab (339:339:339) (421:421:421))
@@ -947,7 +947,7 @@
   )
   (CELL
     (CELLTYPE "dffeas")
-    (INSTANCE \\inst5\|LPM_COUNTER_component\|auto_generated\|counter_reg_bit\[6\]\\)
+    (INSTANCE \\b2v_inst5\|LPM_COUNTER_component\|auto_generated\|counter_reg_bit\[6\]\\)
     (DELAY
       (ABSOLUTE
         (PORT clk (1164:1164:1164) (1142:1142:1142))
@@ -965,7 +965,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\inst5\|LPM_COUNTER_component\|auto_generated\|counter_comb_bita7\\)
+    (INSTANCE \\b2v_inst5\|LPM_COUNTER_component\|auto_generated\|counter_comb_bita7\\)
     (DELAY
       (ABSOLUTE
         (PORT datab (357:357:357) (433:433:433))
@@ -979,7 +979,7 @@
   )
   (CELL
     (CELLTYPE "dffeas")
-    (INSTANCE \\inst5\|LPM_COUNTER_component\|auto_generated\|counter_reg_bit\[7\]\\)
+    (INSTANCE \\b2v_inst5\|LPM_COUNTER_component\|auto_generated\|counter_reg_bit\[7\]\\)
     (DELAY
       (ABSOLUTE
         (PORT clk (1164:1164:1164) (1142:1142:1142))
@@ -997,7 +997,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\inst5\|LPM_COUNTER_component\|auto_generated\|cmpr1\|aneb_result_wire\[0\]\~0\\)
+    (INSTANCE \\b2v_inst5\|LPM_COUNTER_component\|auto_generated\|cmpr1\|aneb_result_wire\[0\]\~0\\)
     (DELAY
       (ABSOLUTE
         (PORT dataa (571:571:571) (598:598:598))
@@ -1013,7 +1013,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\inst5\|LPM_COUNTER_component\|auto_generated\|counter_comb_bita7\~0\\)
+    (INSTANCE \\b2v_inst5\|LPM_COUNTER_component\|auto_generated\|counter_comb_bita7\~0\\)
     (DELAY
       (ABSOLUTE
         (IOPATH cin combout (607:607:607) (577:577:577))
@@ -1022,7 +1022,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\inst5\|LPM_COUNTER_component\|auto_generated\|cmpr1\|aneb_result_wire\[0\]\~1\\)
+    (INSTANCE \\b2v_inst5\|LPM_COUNTER_component\|auto_generated\|cmpr1\|aneb_result_wire\[0\]\~1\\)
     (DELAY
       (ABSOLUTE
         (PORT dataa (343:343:343) (432:432:432))
@@ -1038,7 +1038,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\inst5\|LPM_COUNTER_component\|auto_generated\|cout_actual\\)
+    (INSTANCE \\b2v_inst5\|LPM_COUNTER_component\|auto_generated\|cout_actual\\)
     (DELAY
       (ABSOLUTE
         (PORT dataa (281:281:281) (314:314:314))
@@ -1052,7 +1052,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_clkctrl")
-    (INSTANCE \\inst5\|LPM_COUNTER_component\|auto_generated\|cout_actual\~clkctrl\\)
+    (INSTANCE \\b2v_inst5\|LPM_COUNTER_component\|auto_generated\|cout_actual\~clkctrl\\)
     (DELAY
       (ABSOLUTE
         (PORT inclk[0] (1422:1422:1422) (1302:1302:1302))
@@ -1061,7 +1061,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\inst8\|LPM_COUNTER_component\|auto_generated\|counter_comb_bita0\\)
+    (INSTANCE \\b2v_inst8\|LPM_COUNTER_component\|auto_generated\|counter_comb_bita0\\)
     (DELAY
       (ABSOLUTE
         (PORT datab (339:339:339) (422:422:422))
@@ -1073,7 +1073,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\inst8\|LPM_COUNTER_component\|auto_generated\|counter_comb_bita2\\)
+    (INSTANCE \\b2v_inst8\|LPM_COUNTER_component\|auto_generated\|counter_comb_bita2\\)
     (DELAY
       (ABSOLUTE
         (PORT datab (558:558:558) (590:590:590))
@@ -1087,7 +1087,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\inst8\|LPM_COUNTER_component\|auto_generated\|counter_comb_bita3\\)
+    (INSTANCE \\b2v_inst8\|LPM_COUNTER_component\|auto_generated\|counter_comb_bita3\\)
     (DELAY
       (ABSOLUTE
         (PORT dataa (571:571:571) (598:598:598))
@@ -1101,7 +1101,7 @@
   )
   (CELL
     (CELLTYPE "dffeas")
-    (INSTANCE \\inst8\|LPM_COUNTER_component\|auto_generated\|counter_reg_bit\[3\]\\)
+    (INSTANCE \\b2v_inst8\|LPM_COUNTER_component\|auto_generated\|counter_reg_bit\[3\]\\)
     (DELAY
       (ABSOLUTE
         (PORT clk (1605:1605:1605) (1641:1641:1641))
@@ -1119,7 +1119,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\inst8\|LPM_COUNTER_component\|auto_generated\|counter_comb_bita3\~0\\)
+    (INSTANCE \\b2v_inst8\|LPM_COUNTER_component\|auto_generated\|counter_comb_bita3\~0\\)
     (DELAY
       (ABSOLUTE
         (IOPATH cin combout (607:607:607) (577:577:577))
@@ -1128,7 +1128,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\inst8\|LPM_COUNTER_component\|auto_generated\|cout_actual\\)
+    (INSTANCE \\b2v_inst8\|LPM_COUNTER_component\|auto_generated\|cout_actual\\)
     (DELAY
       (ABSOLUTE
         (PORT datac (266:266:266) (292:292:292))
@@ -1140,7 +1140,7 @@
   )
   (CELL
     (CELLTYPE "dffeas")
-    (INSTANCE \\inst8\|LPM_COUNTER_component\|auto_generated\|counter_reg_bit\[0\]\\)
+    (INSTANCE \\b2v_inst8\|LPM_COUNTER_component\|auto_generated\|counter_reg_bit\[0\]\\)
     (DELAY
       (ABSOLUTE
         (PORT clk (1605:1605:1605) (1641:1641:1641))
@@ -1158,7 +1158,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\inst8\|LPM_COUNTER_component\|auto_generated\|counter_comb_bita1\\)
+    (INSTANCE \\b2v_inst8\|LPM_COUNTER_component\|auto_generated\|counter_comb_bita1\\)
     (DELAY
       (ABSOLUTE
         (PORT datab (357:357:357) (433:433:433))
@@ -1172,7 +1172,7 @@
   )
   (CELL
     (CELLTYPE "dffeas")
-    (INSTANCE \\inst8\|LPM_COUNTER_component\|auto_generated\|counter_reg_bit\[1\]\\)
+    (INSTANCE \\b2v_inst8\|LPM_COUNTER_component\|auto_generated\|counter_reg_bit\[1\]\\)
     (DELAY
       (ABSOLUTE
         (PORT clk (1605:1605:1605) (1641:1641:1641))
@@ -1190,7 +1190,7 @@
   )
   (CELL
     (CELLTYPE "dffeas")
-    (INSTANCE \\inst8\|LPM_COUNTER_component\|auto_generated\|counter_reg_bit\[2\]\\)
+    (INSTANCE \\b2v_inst8\|LPM_COUNTER_component\|auto_generated\|counter_reg_bit\[2\]\\)
     (DELAY
       (ABSOLUTE
         (PORT clk (1605:1605:1605) (1641:1641:1641))
@@ -1208,7 +1208,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\inst8\|LPM_COUNTER_component\|auto_generated\|cmpr1\|aneb_result_wire\[0\]\~0\\)
+    (INSTANCE \\b2v_inst8\|LPM_COUNTER_component\|auto_generated\|cmpr1\|aneb_result_wire\[0\]\~0\\)
     (DELAY
       (ABSOLUTE
         (PORT dataa (361:361:361) (445:445:445))
@@ -1224,7 +1224,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\inst7\|inst\|inst20\~1\\)
+    (INSTANCE \\b2v_inst7\|inst\|inst20\~1\\)
     (DELAY
       (ABSOLUTE
         (PORT dataa (304:304:304) (351:351:351))
@@ -1240,7 +1240,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\inst7\|inst1\|inst21\~1\\)
+    (INSTANCE \\b2v_inst7\|inst1\|inst21\~1\\)
     (DELAY
       (ABSOLUTE
         (PORT dataa (306:306:306) (354:354:354))
@@ -1256,7 +1256,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\inst7\|inst1\|inst20\\)
+    (INSTANCE \\b2v_inst7\|inst1\|inst20\\)
     (DELAY
       (ABSOLUTE
         (PORT dataa (306:306:306) (354:354:354))
@@ -1272,7 +1272,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\inst10\|LPM_COUNTER_component\|auto_generated\|counter_reg_bit\[0\]\~0\\)
+    (INSTANCE \\b2v_inst10\|LPM_COUNTER_component\|auto_generated\|counter_reg_bit\[0\]\~0\\)
     (DELAY
       (ABSOLUTE
         (PORT datac (1448:1448:1448) (1385:1385:1385))
@@ -1282,7 +1282,7 @@
   )
   (CELL
     (CELLTYPE "dffeas")
-    (INSTANCE \\inst10\|LPM_COUNTER_component\|auto_generated\|counter_reg_bit\[0\]\\)
+    (INSTANCE \\b2v_inst10\|LPM_COUNTER_component\|auto_generated\|counter_reg_bit\[0\]\\)
     (DELAY
       (ABSOLUTE
         (PORT clk (1602:1602:1602) (1638:1638:1638))
@@ -1296,7 +1296,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\inst9\|inst1\|inst21\~1\\)
+    (INSTANCE \\b2v_inst9\|inst1\|inst21\~1\\)
     (DELAY
       (ABSOLUTE
         (PORT dataa (529:529:529) (509:509:509))
@@ -1310,7 +1310,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\inst9\|inst\|inst20\~1\\)
+    (INSTANCE \\b2v_inst9\|inst\|inst20\~1\\)
     (DELAY
       (ABSOLUTE
         (PORT dataa (578:578:578) (547:547:547))
@@ -1324,7 +1324,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\inst9\|inst1\|inst20\\)
+    (INSTANCE \\b2v_inst9\|inst1\|inst20\\)
     (DELAY
       (ABSOLUTE
         (PORT dataa (584:584:584) (554:554:554))
@@ -1337,7 +1337,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\inst11\|inst1\|inst21\~1\\)
+    (INSTANCE \\b2v_inst11\|inst1\|inst21\~1\\)
     (DELAY
       (ABSOLUTE
         (PORT dataa (578:578:578) (544:544:544))
@@ -1351,7 +1351,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\inst11\|inst\|inst20\~1\\)
+    (INSTANCE \\b2v_inst11\|inst\|inst20\~1\\)
     (DELAY
       (ABSOLUTE
         (PORT dataa (531:531:531) (513:513:513))
@@ -1365,7 +1365,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\inst11\|inst1\|inst20\\)
+    (INSTANCE \\b2v_inst11\|inst1\|inst20\\)
     (DELAY
       (ABSOLUTE
         (PORT dataa (524:524:524) (506:506:506))
@@ -1388,7 +1388,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\inst14\|inst\|inst20\~1\\)
+    (INSTANCE \\b2v_inst14\|inst\|inst20\~1\\)
     (DELAY
       (ABSOLUTE
         (PORT datab (520:520:520) (501:501:501))
@@ -1402,7 +1402,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\inst14\|inst1\|inst21\~1\\)
+    (INSTANCE \\b2v_inst14\|inst1\|inst21\~1\\)
     (DELAY
       (ABSOLUTE
         (PORT datab (751:751:751) (696:696:696))
@@ -1425,7 +1425,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\inst14\|inst1\|inst20\\)
+    (INSTANCE \\b2v_inst14\|inst1\|inst20\\)
     (DELAY
       (ABSOLUTE
         (PORT dataa (691:691:691) (798:798:798))
@@ -1439,7 +1439,7 @@
   )
   (CELL
     (CELLTYPE "dffeas")
-    (INSTANCE \\inst6\|input0Buf\\)
+    (INSTANCE \\b2v_inst6\|input0Buf\\)
     (DELAY
       (ABSOLUTE
         (PORT clk (1615:1615:1615) (1648:1648:1648))
@@ -1453,7 +1453,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\inst6\|process_1\~0\\)
+    (INSTANCE \\b2v_inst6\|process_1\~0\\)
     (DELAY
       (ABSOLUTE
         (PORT dataa (447:447:447) (486:486:486))
@@ -1477,7 +1477,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\inst15\|inst\|inst20\~1\\)
+    (INSTANCE \\b2v_inst15\|inst\|inst20\~1\\)
     (DELAY
       (ABSOLUTE
         (PORT datab (522:522:522) (494:494:494))
@@ -1491,7 +1491,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\inst15\|inst1\|inst21\~1\\)
+    (INSTANCE \\b2v_inst15\|inst1\|inst21\~1\\)
     (DELAY
       (ABSOLUTE
         (PORT dataa (792:792:792) (729:729:729))
@@ -1505,7 +1505,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\inst15\|inst1\|inst20\\)
+    (INSTANCE \\b2v_inst15\|inst1\|inst20\\)
     (DELAY
       (ABSOLUTE
         (PORT datab (649:649:649) (734:734:734))
@@ -1519,7 +1519,7 @@
   )
   (CELL
     (CELLTYPE "dffeas")
-    (INSTANCE \\inst6\|input1Buf\\)
+    (INSTANCE \\b2v_inst6\|input1Buf\\)
     (DELAY
       (ABSOLUTE
         (PORT clk (1615:1615:1615) (1648:1648:1648))
@@ -1533,7 +1533,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\inst6\|comb\~0\\)
+    (INSTANCE \\b2v_inst6\|comb\~0\\)
     (DELAY
       (ABSOLUTE
         (PORT dataa (560:560:560) (527:527:527))
@@ -1546,7 +1546,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\inst6\|output\\)
+    (INSTANCE \\b2v_inst6\|output\\)
     (DELAY
       (ABSOLUTE
         (PORT datab (284:284:284) (312:312:312))
@@ -1560,7 +1560,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\inst1\|inst\|inst20\~1\\)
+    (INSTANCE \\b2v_inst1\|inst\|inst20\~1\\)
     (DELAY
       (ABSOLUTE
         (PORT dataa (835:835:835) (782:782:782))
@@ -1574,7 +1574,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\inst1\|inst1\|inst21\~1\\)
+    (INSTANCE \\b2v_inst1\|inst1\|inst21\~1\\)
     (DELAY
       (ABSOLUTE
         (PORT datab (817:817:817) (772:772:772))
@@ -1588,7 +1588,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\inst12\~0\\)
+    (INSTANCE \\buzz\~0\\)
     (DELAY
       (ABSOLUTE
         (PORT dataa (1203:1203:1203) (1101:1101:1101))

@@ -2,19 +2,19 @@
 TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1200mV 85C Model Setup 'CountM9:inst5|lpm_counter:LPM_COUNTER_component|cntr_gij:auto_generated|counter_reg_bit[0]'
+Type  : Slow 1200mV 85C Model Setup 'CountM9:b2v_inst5|lpm_counter:LPM_COUNTER_component|cntr_gij:auto_generated|counter_reg_bit[0]'
 Slack : -4.558
 TNS   : -22.781
 
-Type  : Slow 1200mV 85C Model Setup 'CountM9:inst4|lpm_counter:LPM_COUNTER_component|cntr_gij:auto_generated|counter_reg_bit[0]'
+Type  : Slow 1200mV 85C Model Setup 'CountM9:b2v_inst4|lpm_counter:LPM_COUNTER_component|cntr_gij:auto_generated|counter_reg_bit[0]'
 Slack : -4.515
 TNS   : -36.115
 
-Type  : Slow 1200mV 85C Model Setup 'CountM9:inst3|lpm_counter:LPM_COUNTER_component|cntr_gij:auto_generated|counter_reg_bit[0]'
+Type  : Slow 1200mV 85C Model Setup 'CountM9:b2v_inst3|lpm_counter:LPM_COUNTER_component|cntr_gij:auto_generated|counter_reg_bit[0]'
 Slack : -3.893
 TNS   : -35.559
 
-Type  : Slow 1200mV 85C Model Setup 'inst|altpll_component|auto_generated|pll1|clk[0]'
+Type  : Slow 1200mV 85C Model Setup 'b2v_inst|altpll_component|auto_generated|pll1|clk[0]'
 Slack : -3.073
 TNS   : -24.584
 
@@ -26,7 +26,7 @@ Type  : Slow 1200mV 85C Model Setup 'key1'
 Slack : -1.704
 TNS   : -2.821
 
-Type  : Slow 1200mV 85C Model Setup 'CountM1:inst10|lpm_counter:LPM_COUNTER_component|cntr_3ij:auto_generated|counter_reg_bit[0]'
+Type  : Slow 1200mV 85C Model Setup 'CountM1:b2v_inst10|lpm_counter:LPM_COUNTER_component|cntr_3ij:auto_generated|counter_reg_bit[0]'
 Slack : -1.387
 TNS   : -2.635
 
@@ -34,15 +34,15 @@ Type  : Slow 1200mV 85C Model Setup 'clk'
 Slack : -0.112
 TNS   : -0.181
 
-Type  : Slow 1200mV 85C Model Hold 'CountM9:inst4|lpm_counter:LPM_COUNTER_component|cntr_gij:auto_generated|counter_reg_bit[0]'
+Type  : Slow 1200mV 85C Model Hold 'CountM9:b2v_inst4|lpm_counter:LPM_COUNTER_component|cntr_gij:auto_generated|counter_reg_bit[0]'
 Slack : -2.495
 TNS   : -17.796
 
-Type  : Slow 1200mV 85C Model Hold 'CountM9:inst3|lpm_counter:LPM_COUNTER_component|cntr_gij:auto_generated|counter_reg_bit[0]'
+Type  : Slow 1200mV 85C Model Hold 'CountM9:b2v_inst3|lpm_counter:LPM_COUNTER_component|cntr_gij:auto_generated|counter_reg_bit[0]'
 Slack : -2.489
 TNS   : -17.652
 
-Type  : Slow 1200mV 85C Model Hold 'CountM9:inst5|lpm_counter:LPM_COUNTER_component|cntr_gij:auto_generated|counter_reg_bit[0]'
+Type  : Slow 1200mV 85C Model Hold 'CountM9:b2v_inst5|lpm_counter:LPM_COUNTER_component|cntr_gij:auto_generated|counter_reg_bit[0]'
 Slack : -2.212
 TNS   : -4.439
 
@@ -50,7 +50,7 @@ Type  : Slow 1200mV 85C Model Hold 'clk'
 Slack : -0.097
 TNS   : -0.187
 
-Type  : Slow 1200mV 85C Model Hold 'inst|altpll_component|auto_generated|pll1|clk[0]'
+Type  : Slow 1200mV 85C Model Hold 'b2v_inst|altpll_component|auto_generated|pll1|clk[0]'
 Slack : 0.177
 TNS   : 0.000
 
@@ -62,7 +62,7 @@ Type  : Slow 1200mV 85C Model Hold 'key1'
 Slack : 0.701
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Hold 'CountM1:inst10|lpm_counter:LPM_COUNTER_component|cntr_3ij:auto_generated|counter_reg_bit[0]'
+Type  : Slow 1200mV 85C Model Hold 'CountM1:b2v_inst10|lpm_counter:LPM_COUNTER_component|cntr_3ij:auto_generated|counter_reg_bit[0]'
 Slack : 0.781
 TNS   : 0.000
 
@@ -74,19 +74,19 @@ Type  : Slow 1200mV 85C Model Minimum Pulse Width 'key2'
 Slack : -3.000
 TNS   : -3.000
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CountM9:inst3|lpm_counter:LPM_COUNTER_component|cntr_gij:auto_generated|counter_reg_bit[0]'
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CountM9:b2v_inst3|lpm_counter:LPM_COUNTER_component|cntr_gij:auto_generated|counter_reg_bit[0]'
 Slack : -1.487
 TNS   : -23.792
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CountM9:inst4|lpm_counter:LPM_COUNTER_component|cntr_gij:auto_generated|counter_reg_bit[0]'
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CountM9:b2v_inst4|lpm_counter:LPM_COUNTER_component|cntr_gij:auto_generated|counter_reg_bit[0]'
 Slack : -1.487
 TNS   : -23.792
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CountM9:inst5|lpm_counter:LPM_COUNTER_component|cntr_gij:auto_generated|counter_reg_bit[0]'
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CountM9:b2v_inst5|lpm_counter:LPM_COUNTER_component|cntr_gij:auto_generated|counter_reg_bit[0]'
 Slack : -1.487
 TNS   : -14.870
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CountM1:inst10|lpm_counter:LPM_COUNTER_component|cntr_3ij:auto_generated|counter_reg_bit[0]'
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CountM1:b2v_inst10|lpm_counter:LPM_COUNTER_component|cntr_3ij:auto_generated|counter_reg_bit[0]'
 Slack : 0.417
 TNS   : 0.000
 
@@ -94,23 +94,23 @@ Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
 Slack : 9.745
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'inst|altpll_component|auto_generated|pll1|clk[0]'
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'b2v_inst|altpll_component|auto_generated|pll1|clk[0]'
 Slack : 99999.721
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Setup 'CountM9:inst5|lpm_counter:LPM_COUNTER_component|cntr_gij:auto_generated|counter_reg_bit[0]'
+Type  : Slow 1200mV 0C Model Setup 'CountM9:b2v_inst5|lpm_counter:LPM_COUNTER_component|cntr_gij:auto_generated|counter_reg_bit[0]'
 Slack : -4.068
 TNS   : -20.279
 
-Type  : Slow 1200mV 0C Model Setup 'CountM9:inst4|lpm_counter:LPM_COUNTER_component|cntr_gij:auto_generated|counter_reg_bit[0]'
+Type  : Slow 1200mV 0C Model Setup 'CountM9:b2v_inst4|lpm_counter:LPM_COUNTER_component|cntr_gij:auto_generated|counter_reg_bit[0]'
 Slack : -4.010
 TNS   : -32.074
 
-Type  : Slow 1200mV 0C Model Setup 'CountM9:inst3|lpm_counter:LPM_COUNTER_component|cntr_gij:auto_generated|counter_reg_bit[0]'
+Type  : Slow 1200mV 0C Model Setup 'CountM9:b2v_inst3|lpm_counter:LPM_COUNTER_component|cntr_gij:auto_generated|counter_reg_bit[0]'
 Slack : -3.452
 TNS   : -31.618
 
-Type  : Slow 1200mV 0C Model Setup 'inst|altpll_component|auto_generated|pll1|clk[0]'
+Type  : Slow 1200mV 0C Model Setup 'b2v_inst|altpll_component|auto_generated|pll1|clk[0]'
 Slack : -2.585
 TNS   : -20.680
 
@@ -122,7 +122,7 @@ Type  : Slow 1200mV 0C Model Setup 'key1'
 Slack : -1.619
 TNS   : -2.616
 
-Type  : Slow 1200mV 0C Model Setup 'CountM1:inst10|lpm_counter:LPM_COUNTER_component|cntr_3ij:auto_generated|counter_reg_bit[0]'
+Type  : Slow 1200mV 0C Model Setup 'CountM1:b2v_inst10|lpm_counter:LPM_COUNTER_component|cntr_3ij:auto_generated|counter_reg_bit[0]'
 Slack : -1.250
 TNS   : -2.430
 
@@ -130,15 +130,15 @@ Type  : Slow 1200mV 0C Model Setup 'clk'
 Slack : -0.159
 TNS   : -0.293
 
-Type  : Slow 1200mV 0C Model Hold 'CountM9:inst4|lpm_counter:LPM_COUNTER_component|cntr_gij:auto_generated|counter_reg_bit[0]'
+Type  : Slow 1200mV 0C Model Hold 'CountM9:b2v_inst4|lpm_counter:LPM_COUNTER_component|cntr_gij:auto_generated|counter_reg_bit[0]'
 Slack : -2.300
 TNS   : -16.449
 
-Type  : Slow 1200mV 0C Model Hold 'CountM9:inst3|lpm_counter:LPM_COUNTER_component|cntr_gij:auto_generated|counter_reg_bit[0]'
+Type  : Slow 1200mV 0C Model Hold 'CountM9:b2v_inst3|lpm_counter:LPM_COUNTER_component|cntr_gij:auto_generated|counter_reg_bit[0]'
 Slack : -2.294
 TNS   : -16.312
 
-Type  : Slow 1200mV 0C Model Hold 'CountM9:inst5|lpm_counter:LPM_COUNTER_component|cntr_gij:auto_generated|counter_reg_bit[0]'
+Type  : Slow 1200mV 0C Model Hold 'CountM9:b2v_inst5|lpm_counter:LPM_COUNTER_component|cntr_gij:auto_generated|counter_reg_bit[0]'
 Slack : -1.975
 TNS   : -3.816
 
@@ -146,7 +146,7 @@ Type  : Slow 1200mV 0C Model Hold 'clk'
 Slack : -0.085
 TNS   : -0.163
 
-Type  : Slow 1200mV 0C Model Hold 'inst|altpll_component|auto_generated|pll1|clk[0]'
+Type  : Slow 1200mV 0C Model Hold 'b2v_inst|altpll_component|auto_generated|pll1|clk[0]'
 Slack : 0.050
 TNS   : 0.000
 
@@ -158,7 +158,7 @@ Type  : Slow 1200mV 0C Model Hold 'key1'
 Slack : 0.638
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Hold 'CountM1:inst10|lpm_counter:LPM_COUNTER_component|cntr_3ij:auto_generated|counter_reg_bit[0]'
+Type  : Slow 1200mV 0C Model Hold 'CountM1:b2v_inst10|lpm_counter:LPM_COUNTER_component|cntr_3ij:auto_generated|counter_reg_bit[0]'
 Slack : 0.767
 TNS   : 0.000
 
@@ -170,19 +170,19 @@ Type  : Slow 1200mV 0C Model Minimum Pulse Width 'key2'
 Slack : -3.000
 TNS   : -3.000
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CountM9:inst3|lpm_counter:LPM_COUNTER_component|cntr_gij:auto_generated|counter_reg_bit[0]'
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CountM9:b2v_inst3|lpm_counter:LPM_COUNTER_component|cntr_gij:auto_generated|counter_reg_bit[0]'
 Slack : -1.487
 TNS   : -23.792
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CountM9:inst4|lpm_counter:LPM_COUNTER_component|cntr_gij:auto_generated|counter_reg_bit[0]'
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CountM9:b2v_inst4|lpm_counter:LPM_COUNTER_component|cntr_gij:auto_generated|counter_reg_bit[0]'
 Slack : -1.487
 TNS   : -23.792
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CountM9:inst5|lpm_counter:LPM_COUNTER_component|cntr_gij:auto_generated|counter_reg_bit[0]'
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CountM9:b2v_inst5|lpm_counter:LPM_COUNTER_component|cntr_gij:auto_generated|counter_reg_bit[0]'
 Slack : -1.487
 TNS   : -14.920
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CountM1:inst10|lpm_counter:LPM_COUNTER_component|cntr_3ij:auto_generated|counter_reg_bit[0]'
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CountM1:b2v_inst10|lpm_counter:LPM_COUNTER_component|cntr_3ij:auto_generated|counter_reg_bit[0]'
 Slack : 0.434
 TNS   : 0.000
 
@@ -190,23 +190,23 @@ Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : 9.753
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'inst|altpll_component|auto_generated|pll1|clk[0]'
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'b2v_inst|altpll_component|auto_generated|pll1|clk[0]'
 Slack : 99999.719
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Setup 'CountM9:inst5|lpm_counter:LPM_COUNTER_component|cntr_gij:auto_generated|counter_reg_bit[0]'
+Type  : Fast 1200mV 0C Model Setup 'CountM9:b2v_inst5|lpm_counter:LPM_COUNTER_component|cntr_gij:auto_generated|counter_reg_bit[0]'
 Slack : -1.673
 TNS   : -7.536
 
-Type  : Fast 1200mV 0C Model Setup 'CountM9:inst4|lpm_counter:LPM_COUNTER_component|cntr_gij:auto_generated|counter_reg_bit[0]'
+Type  : Fast 1200mV 0C Model Setup 'CountM9:b2v_inst4|lpm_counter:LPM_COUNTER_component|cntr_gij:auto_generated|counter_reg_bit[0]'
 Slack : -1.662
 TNS   : -13.294
 
-Type  : Fast 1200mV 0C Model Setup 'CountM9:inst3|lpm_counter:LPM_COUNTER_component|cntr_gij:auto_generated|counter_reg_bit[0]'
+Type  : Fast 1200mV 0C Model Setup 'CountM9:b2v_inst3|lpm_counter:LPM_COUNTER_component|cntr_gij:auto_generated|counter_reg_bit[0]'
 Slack : -1.369
 TNS   : -12.180
 
-Type  : Fast 1200mV 0C Model Setup 'inst|altpll_component|auto_generated|pll1|clk[0]'
+Type  : Fast 1200mV 0C Model Setup 'b2v_inst|altpll_component|auto_generated|pll1|clk[0]'
 Slack : -1.278
 TNS   : -10.224
 
@@ -218,7 +218,7 @@ Type  : Fast 1200mV 0C Model Setup 'key1'
 Slack : -0.905
 TNS   : -0.905
 
-Type  : Fast 1200mV 0C Model Setup 'CountM1:inst10|lpm_counter:LPM_COUNTER_component|cntr_3ij:auto_generated|counter_reg_bit[0]'
+Type  : Fast 1200mV 0C Model Setup 'CountM1:b2v_inst10|lpm_counter:LPM_COUNTER_component|cntr_3ij:auto_generated|counter_reg_bit[0]'
 Slack : -0.321
 TNS   : -0.544
 
@@ -226,15 +226,15 @@ Type  : Fast 1200mV 0C Model Setup 'clk'
 Slack : -0.144
 TNS   : -0.266
 
-Type  : Fast 1200mV 0C Model Hold 'CountM9:inst4|lpm_counter:LPM_COUNTER_component|cntr_gij:auto_generated|counter_reg_bit[0]'
+Type  : Fast 1200mV 0C Model Hold 'CountM9:b2v_inst4|lpm_counter:LPM_COUNTER_component|cntr_gij:auto_generated|counter_reg_bit[0]'
 Slack : -1.047
 TNS   : -7.398
 
-Type  : Fast 1200mV 0C Model Hold 'CountM9:inst3|lpm_counter:LPM_COUNTER_component|cntr_gij:auto_generated|counter_reg_bit[0]'
+Type  : Fast 1200mV 0C Model Hold 'CountM9:b2v_inst3|lpm_counter:LPM_COUNTER_component|cntr_gij:auto_generated|counter_reg_bit[0]'
 Slack : -1.034
 TNS   : -7.255
 
-Type  : Fast 1200mV 0C Model Hold 'CountM9:inst5|lpm_counter:LPM_COUNTER_component|cntr_gij:auto_generated|counter_reg_bit[0]'
+Type  : Fast 1200mV 0C Model Hold 'CountM9:b2v_inst5|lpm_counter:LPM_COUNTER_component|cntr_gij:auto_generated|counter_reg_bit[0]'
 Slack : -0.935
 TNS   : -1.884
 
@@ -250,11 +250,11 @@ Type  : Fast 1200mV 0C Model Hold 'key1'
 Slack : 0.109
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Hold 'inst|altpll_component|auto_generated|pll1|clk[0]'
+Type  : Fast 1200mV 0C Model Hold 'b2v_inst|altpll_component|auto_generated|pll1|clk[0]'
 Slack : 0.201
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Hold 'CountM1:inst10|lpm_counter:LPM_COUNTER_component|cntr_3ij:auto_generated|counter_reg_bit[0]'
+Type  : Fast 1200mV 0C Model Hold 'CountM1:b2v_inst10|lpm_counter:LPM_COUNTER_component|cntr_3ij:auto_generated|counter_reg_bit[0]'
 Slack : 0.598
 TNS   : 0.000
 
@@ -266,19 +266,19 @@ Type  : Fast 1200mV 0C Model Minimum Pulse Width 'key2'
 Slack : -3.000
 TNS   : -3.183
 
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CountM9:inst3|lpm_counter:LPM_COUNTER_component|cntr_gij:auto_generated|counter_reg_bit[0]'
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CountM9:b2v_inst3|lpm_counter:LPM_COUNTER_component|cntr_gij:auto_generated|counter_reg_bit[0]'
 Slack : -1.000
 TNS   : -16.000
 
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CountM9:inst4|lpm_counter:LPM_COUNTER_component|cntr_gij:auto_generated|counter_reg_bit[0]'
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CountM9:b2v_inst4|lpm_counter:LPM_COUNTER_component|cntr_gij:auto_generated|counter_reg_bit[0]'
 Slack : -1.000
 TNS   : -16.000
 
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CountM9:inst5|lpm_counter:LPM_COUNTER_component|cntr_gij:auto_generated|counter_reg_bit[0]'
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CountM9:b2v_inst5|lpm_counter:LPM_COUNTER_component|cntr_gij:auto_generated|counter_reg_bit[0]'
 Slack : -1.000
 TNS   : -10.000
 
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CountM1:inst10|lpm_counter:LPM_COUNTER_component|cntr_3ij:auto_generated|counter_reg_bit[0]'
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CountM1:b2v_inst10|lpm_counter:LPM_COUNTER_component|cntr_3ij:auto_generated|counter_reg_bit[0]'
 Slack : 0.453
 TNS   : 0.000
 
@@ -286,7 +286,7 @@ Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : 9.263
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'inst|altpll_component|auto_generated|pll1|clk[0]'
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'b2v_inst|altpll_component|auto_generated|pll1|clk[0]'
 Slack : 99999.797
 TNS   : 0.000
 

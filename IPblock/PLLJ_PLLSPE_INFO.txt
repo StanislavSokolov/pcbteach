@@ -1,4 +1,4 @@
-PLL_Name	AltPLL01:inst|altpll:altpll_component|AltPLL01_altpll:auto_generated|pll1
+PLL_Name	AltPLL01:b2v_inst|altpll:altpll_component|AltPLL01_altpll:auto_generated|pll1
 PLLJITTER	30
 PLLSPEmax	84
 PLLSPEmin	-53
