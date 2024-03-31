@@ -1,0 +1,26 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity LogBlock is
+
+Port ( 
+	input0 : in STD_LOGIC;
+	input1 : in STD_LOGIC;
+	output : out STD_LOGIC
+	);
+end LogBlock;
+
+architecture Behavioral of LogBlock is
+
+begin	
+	
+	process(input0, input1)
+	begin
+		if rising_edge(input0) then
+			output <= '1';
+		end if;
+		if rising_edge(input1) then
+			output <= '0';
+		end if;	
+	end process;	
+end Behavioral;

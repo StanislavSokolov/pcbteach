@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="IPblock">
+		<CBX_INST_ENTRY INSTANCE_NAME="|IPblock|AltPLL01:inst|altpll:altpll_component" CBX_FILE_NAME="AltPLL01_altpll.v"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|IPblock|CountM1:inst10|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_3ij.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|IPblock|CountM2:inst8|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_7ij.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|IPblock|CountM9:inst3|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_gij.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|IPblock|CountM9:inst5|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_gij.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|IPblock|CountM9:inst4|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_gij.tdf"/>
+	</PROJECT>
+</LOG_ROOT>
