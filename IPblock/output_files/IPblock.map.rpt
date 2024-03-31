@@ -1,5 +1,5 @@
 Analysis & Synthesis report for IPblock
-Sun Mar 31 13:59:38 2024
+Sun Mar 31 14:04:29 2024
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Full Version
 
 
@@ -58,7 +58,7 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Mar 31 13:59:38 2024       ;
+; Analysis & Synthesis Status        ; Successful - Sun Mar 31 14:04:29 2024       ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Full Version ;
 ; Revision Name                      ; IPblock                                     ;
 ; Top-level Entity Name              ; IPblock                                     ;
@@ -191,7 +191,7 @@ applicable agreement for further details.
 ; CountM2.vhd                      ; yes             ; User Wizard-Generated File         ; D:/GITEA/GitHub/ES/pcbteach/IPblock/CountM2.vhd                                 ;         ;
 ; CountM1.vhd                      ; yes             ; User Wizard-Generated File         ; D:/GITEA/GitHub/ES/pcbteach/IPblock/CountM1.vhd                                 ;         ;
 ; LogBlock.vhd                     ; yes             ; User VHDL File                     ; D:/GITEA/GitHub/ES/pcbteach/IPblock/LogBlock.vhd                                ;         ;
-; IPblock.vhd                      ; yes             ; User VHDL File                     ; D:/GITEA/GitHub/ES/pcbteach/IPblock/IPblock.vhd                                 ;         ;
+; IPblock.v                        ; yes             ; User Verilog HDL File              ; D:/GITEA/GitHub/ES/pcbteach/IPblock/IPblock.v                                   ;         ;
 ; altpll.tdf                       ; yes             ; Megafunction                       ; d:/altera/quartus ii 13/quartus/libraries/megafunctions/altpll.tdf              ;         ;
 ; aglobal131.inc                   ; yes             ; Megafunction                       ; d:/altera/quartus ii 13/quartus/libraries/megafunctions/aglobal131.inc          ;         ;
 ; stratix_pll.inc                  ; yes             ; Megafunction                       ; d:/altera/quartus ii 13/quartus/libraries/megafunctions/stratix_pll.inc         ;         ;
@@ -319,7 +319,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------------+---------------------+------------------------+
 ; Latch Name                                         ; Latch Enable Signal ; Free of Timing Hazards ;
 +----------------------------------------------------+---------------------+------------------------+
-; LogBlock:b2v_inst6|output                          ; GND                 ; yes                    ;
+; LogBlock:b2v_inst6|output0                         ; GND                 ; yes                    ;
 ; Number of user-specified and inferred latches = 1  ;                     ;                        ;
 +----------------------------------------------------+---------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
@@ -898,59 +898,59 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------+-------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "CountM2:b2v_inst8"                                                                  ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; q    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "CountM2:b2v_inst8"                                                                                       ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                  ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; q    ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "CountM9:b2v_inst5"                                                                  ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; q    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "CountM9:b2v_inst5"                                                                                       ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                  ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; q    ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "CountM9:b2v_inst4"                                                                  ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; q    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "CountM9:b2v_inst4"                                                                                       ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                  ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; q    ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "CountM9:b2v_inst3"                                                                  ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; q    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "CountM9:b2v_inst3"                                                                                       ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                  ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; q    ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "CountM1:b2v_inst10"                                                                 ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; q    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "CountM1:b2v_inst10"                                                                                      ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                  ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; q    ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "AltPLL01:b2v_inst"                                                                    ;
-+--------+--------+----------+-------------------------------------------------------------------------------------+
-; Port   ; Type   ; Severity ; Details                                                                             ;
-+--------+--------+----------+-------------------------------------------------------------------------------------+
-; areset ; Input  ; Info     ; Stuck at GND                                                                        ;
-; locked ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+--------+--------+----------+-------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "AltPLL01:b2v_inst"                                                                                         ;
++--------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                                                  ;
++--------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; areset ; Input  ; Info     ; Stuck at GND                                                                                             ;
+; locked ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+----------------------------------------------------------------------------------------------------------+
 
 
 +-------------------------------+
@@ -968,7 +968,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Full Version
-    Info: Processing started: Sun Mar 31 13:59:37 2024
+    Info: Processing started: Sun Mar 31 14:04:27 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off IPblock -c IPblock
 Info (11104): Parallel Compilation has detected 12 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 6 of the 6 physical processors detected instead.
 Info (12021): Found 2 design units, including 1 entities, in source file altpll01.vhd
@@ -993,8 +993,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file countm1
 Info (12021): Found 2 design units, including 1 entities, in source file logblock.vhd
     Info (12022): Found design unit 1: LogBlock-Behavioral
     Info (12023): Found entity 1: LogBlock
-Info (12021): Found 2 design units, including 1 entities, in source file ipblock.vhd
-    Info (12022): Found design unit 1: IPblock-bdf_type
+Info (12021): Found 1 design units, including 1 entities, in source file ipblock.v
     Info (12023): Found entity 1: IPblock
 Info (12127): Elaborating entity "IPblock" for the top level hierarchy
 Info (12128): Elaborating entity "AltPLL01" for hierarchy "AltPLL01:b2v_inst"
@@ -1096,8 +1095,8 @@ Warning (10492): VHDL Process Statement warning at LogBlock.vhd(31): signal "inp
 Warning (10492): VHDL Process Statement warning at LogBlock.vhd(31): signal "input0Buf" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10492): VHDL Process Statement warning at LogBlock.vhd(33): signal "input1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10492): VHDL Process Statement warning at LogBlock.vhd(33): signal "input1Buf" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10631): VHDL Process Statement warning at LogBlock.vhd(29): inferring latch(es) for signal or variable "output", which holds its previous value in one or more paths through the process
-Info (10041): Inferred latch for "output" at LogBlock.vhd(29)
+Warning (10631): VHDL Process Statement warning at LogBlock.vhd(29): inferring latch(es) for signal or variable "output0", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "output0" at LogBlock.vhd(29)
 Info (12128): Elaborating entity "CountM2" for hierarchy "CountM2:b2v_inst8"
 Info (12128): Elaborating entity "lpm_counter" for hierarchy "CountM2:b2v_inst8|lpm_counter:LPM_COUNTER_component"
 Info (12130): Elaborated megafunction instantiation "CountM2:b2v_inst8|lpm_counter:LPM_COUNTER_component"
@@ -1113,6 +1112,7 @@ Info (12128): Elaborating entity "cntr_7ij" for hierarchy "CountM2:b2v_inst8|lpm
 Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_qgc.tdf
     Info (12023): Found entity 1: cmpr_qgc
 Info (12128): Elaborating entity "cmpr_qgc" for hierarchy "CountM2:b2v_inst8|lpm_counter:LPM_COUNTER_component|cntr_7ij:auto_generated|cmpr_qgc:cmpr1"
+Warning (12241): 6 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 1 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
@@ -1122,10 +1122,10 @@ Info (21057): Implemented 75 device resources after synthesis - the final resour
     Info (21059): Implemented 4 output pins
     Info (21061): Implemented 67 logic cells
     Info (21065): Implemented 1 PLLs
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 5 warnings
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 6 warnings
     Info: Peak virtual memory: 4713 megabytes
-    Info: Processing ended: Sun Mar 31 13:59:38 2024
-    Info: Elapsed time: 00:00:01
+    Info: Processing ended: Sun Mar 31 14:04:29 2024
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 
 

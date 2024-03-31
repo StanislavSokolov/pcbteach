@@ -1,11 +1,10 @@
 |IPblock
-clk => altpll01:b2v_inst.inclk0
-clk => logblock:b2v_inst6.clk
-key1 => dtrigwre:b2v_inst14.C
-key2 => dtrigwre:b2v_inst15.C
-led1 <= dtrigwre:b2v_inst7.Q
-led2 <= dtrigwre:b2v_inst9.Q
-led3 <= dtrigwre:b2v_inst11.Q
+clk => clk.IN2
+key1 => key1.IN1
+key2 => key2.IN1
+led1 <= DTrigWRE:b2v_inst7.Q
+led2 <= DTrigWRE:b2v_inst9.Q
+led3 <= DTrigWRE:b2v_inst11.Q
 buzz <= buzz.DB_MAX_OUTPUT_PORT_TYPE
 
 
@@ -558,7 +557,7 @@ input0 => process_1.IN1
 input0 => input0Buf.DATAIN
 input1 => process_1.IN1
 input1 => input1Buf.DATAIN
-output <= output$latch.DB_MAX_OUTPUT_PORT_TYPE
+output0 <= output0$latch.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |IPblock|DTrigWRE:b2v_inst7

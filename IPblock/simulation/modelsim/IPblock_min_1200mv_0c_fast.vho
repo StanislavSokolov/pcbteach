@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus II 64-Bit"
 -- VERSION "Version 13.1.0 Build 162 10/23/2013 SJ Full Version"
 
--- DATE "03/31/2024 13:59:52"
+-- DATE "03/31/2024 14:04:42"
 
 -- 
 -- Device: Altera EP4CE10E22C8 Package TQFP144
@@ -178,7 +178,7 @@ SIGNAL \b2v_inst15|inst1|inst21~1_combout\ : std_logic;
 SIGNAL \b2v_inst15|inst1|inst20~combout\ : std_logic;
 SIGNAL \b2v_inst6|input1Buf~q\ : std_logic;
 SIGNAL \b2v_inst6|comb~0_combout\ : std_logic;
-SIGNAL \b2v_inst6|output~combout\ : std_logic;
+SIGNAL \b2v_inst6|output0~combout\ : std_logic;
 SIGNAL \b2v_inst1|inst|inst20~1_combout\ : std_logic;
 SIGNAL \b2v_inst1|inst1|inst21~1_combout\ : std_logic;
 SIGNAL \buzz~0_combout\ : std_logic;
@@ -2033,9 +2033,9 @@ PORT MAP (
 	combout => \b2v_inst6|comb~0_combout\);
 
 -- Location: LCCOMB_X33_Y12_N16
-\b2v_inst6|output\ : cycloneive_lcell_comb
+\b2v_inst6|output0\ : cycloneive_lcell_comb
 -- Equation(s):
--- \b2v_inst6|output~combout\ = (!\b2v_inst6|comb~0_combout\ & ((\b2v_inst6|output~combout\) # (!\b2v_inst6|process_1~0_combout\)))
+-- \b2v_inst6|output0~combout\ = (!\b2v_inst6|comb~0_combout\ & ((\b2v_inst6|output0~combout\) # (!\b2v_inst6|process_1~0_combout\)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -2045,8 +2045,8 @@ GENERIC MAP (
 PORT MAP (
 	datab => \b2v_inst6|process_1~0_combout\,
 	datac => \b2v_inst6|comb~0_combout\,
-	datad => \b2v_inst6|output~combout\,
-	combout => \b2v_inst6|output~combout\);
+	datad => \b2v_inst6|output0~combout\,
+	combout => \b2v_inst6|output0~combout\);
 
 -- Location: LCCOMB_X29_Y10_N20
 \b2v_inst1|inst|inst20~1\ : cycloneive_lcell_comb
@@ -2085,7 +2085,7 @@ PORT MAP (
 -- Location: LCCOMB_X30_Y10_N2
 \buzz~0\ : cycloneive_lcell_comb
 -- Equation(s):
--- \buzz~0_combout\ = (\b2v_inst6|output~combout\ & ((\b2v_inst1|inst1|inst21~1_combout\) # ((!\b2v_inst1|inst|inst20~1_combout\ & !\b2v_inst3|LPM_COUNTER_component|auto_generated|cout_actual~combout\))))
+-- \buzz~0_combout\ = (\b2v_inst6|output0~combout\ & ((\b2v_inst1|inst1|inst21~1_combout\) # ((!\b2v_inst1|inst|inst20~1_combout\ & !\b2v_inst3|LPM_COUNTER_component|auto_generated|cout_actual~combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -2093,7 +2093,7 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \b2v_inst6|output~combout\,
+	dataa => \b2v_inst6|output0~combout\,
 	datab => \b2v_inst1|inst1|inst21~1_combout\,
 	datac => \b2v_inst1|inst|inst20~1_combout\,
 	datad => \b2v_inst3|LPM_COUNTER_component|auto_generated|cout_actual~combout\,

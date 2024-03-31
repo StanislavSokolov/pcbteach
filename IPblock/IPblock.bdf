@@ -34,7 +34,6 @@ applicable agreement for further details.
 		(line (pt 117 12)(pt 121 8))
 	)
 	(text "VCC" (rect 136 7 156 17)(font "Arial" (font_size 6)))
-	(annotation_block (location)(rect 240 168 288 184))
 )
 (pin
 	(input)
@@ -51,7 +50,6 @@ applicable agreement for further details.
 		(line (pt 117 12)(pt 121 8))
 	)
 	(text "VCC" (rect 136 7 156 17)(font "Arial" (font_size 6)))
-	(annotation_block (location)(rect 240 352 288 368))
 )
 (pin
 	(input)
@@ -68,7 +66,6 @@ applicable agreement for further details.
 		(line (pt 117 12)(pt 121 8))
 	)
 	(text "VCC" (rect 136 7 156 17)(font "Arial" (font_size 6)))
-	(annotation_block (location)(rect 240 480 288 496))
 )
 (pin
 	(output)
@@ -85,7 +82,6 @@ applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
-	(annotation_block (location)(rect 1600 128 1648 144))
 )
 (pin
 	(output)
@@ -102,7 +98,6 @@ applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
-	(annotation_block (location)(rect 1600 240 1648 256))
 )
 (pin
 	(output)
@@ -119,7 +114,6 @@ applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
-	(annotation_block (location)(rect 1608 352 1656 368))
 )
 (pin
 	(output)
@@ -136,7 +130,6 @@ applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
-	(annotation_block (location)(rect 1608 528 1664 544))
 )
 (symbol
 	(rect 520 88 840 264)
@@ -686,7 +679,7 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 792 392 936 504)
+	(rect 792 392 944 504)
 	(text "LogBlock" (rect 5 0 49 12)(font "Arial" ))
 	(text "inst6" (rect 8 96 31 108)(font "Arial" ))
 	(port
@@ -711,14 +704,14 @@ applicable agreement for further details.
 		(line (pt 0 64)(pt 16 64))
 	)
 	(port
-		(pt 144 32)
+		(pt 152 32)
 		(output)
-		(text "output" (rect 0 0 30 12)(font "Arial" ))
-		(text "output" (rect 98 27 123 39)(font "Arial" ))
-		(line (pt 144 32)(pt 128 32))
+		(text "output0" (rect 0 0 36 12)(font "Arial" ))
+		(text "output0" (rect 101 27 131 39)(font "Arial" ))
+		(line (pt 152 32)(pt 136 32))
 	)
 	(drawing
-		(rectangle (rect 16 16 128 96))
+		(rectangle (rect 16 16 136 96))
 	)
 )
 (connector
@@ -974,10 +967,6 @@ applicable agreement for further details.
 	(pt 1296 424)
 )
 (connector
-	(pt 1296 424)
-	(pt 936 424)
-)
-(connector
 	(pt 616 456)
 	(pt 792 456)
 )
@@ -1017,7 +1006,16 @@ applicable agreement for further details.
 	(pt 776 424)
 	(pt 776 528)
 )
+(connector
+	(pt 1296 424)
+	(pt 944 424)
+)
+(connector
+	(pt 944 424)
+	(pt 936 424)
+)
 (junction (pt 1016 192))
 (junction (pt 1032 104))
 (junction (pt 1032 216))
 (junction (pt 496 160))
+(junction (pt 944 424))

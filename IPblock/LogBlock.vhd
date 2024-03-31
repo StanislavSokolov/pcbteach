@@ -7,7 +7,7 @@ Port (
 	clk : in STD_LOGIC;
 	input0 : in STD_LOGIC;
 	input1 : in STD_LOGIC;
-	output : out STD_LOGIC
+	output0 : out STD_LOGIC
 	);
 end LogBlock;
 
@@ -29,9 +29,9 @@ begin
 	process(clk)
 	begin
 		if input0 = '1' and input0Buf = '0' then
-			output <= '1';
+			output0 <= '1';
 		elsif input1 = '1' and input1Buf = '0' then
-			output <= '0';
+			output0 <= '0';
 		end if;	
 	end process;
 
