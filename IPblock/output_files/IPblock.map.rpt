@@ -1,5 +1,5 @@
 Analysis & Synthesis report for IPblock
-Sun Mar 31 14:04:29 2024
+Mon Apr 01 21:01:53 2024
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Full Version
 
 
@@ -16,23 +16,17 @@ Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Full Version
   8. Analysis & Synthesis IP Cores Summary
   9. User-Specified and Inferred Latches
  10. Logic Cells Representing Combinational Loops
- 11. Registers Removed During Synthesis
- 12. General Register Statistics
- 13. Parameter Settings for User Entity Instance: AltPLL01:b2v_inst|altpll:altpll_component
- 14. Parameter Settings for User Entity Instance: CountM1:b2v_inst10|lpm_counter:LPM_COUNTER_component
- 15. Parameter Settings for User Entity Instance: CountM9:b2v_inst3|lpm_counter:LPM_COUNTER_component
- 16. Parameter Settings for User Entity Instance: CountM9:b2v_inst4|lpm_counter:LPM_COUNTER_component
- 17. Parameter Settings for User Entity Instance: CountM9:b2v_inst5|lpm_counter:LPM_COUNTER_component
- 18. Parameter Settings for User Entity Instance: CountM2:b2v_inst8|lpm_counter:LPM_COUNTER_component
+ 11. General Register Statistics
+ 12. Parameter Settings for User Entity Instance: CountM5:inst8|lpm_counter:LPM_COUNTER_component
+ 13. Parameter Settings for User Entity Instance: CountM10:inst5|lpm_counter:LPM_COUNTER_component
+ 14. Parameter Settings for User Entity Instance: CountM10:inst4|lpm_counter:LPM_COUNTER_component
+ 15. Parameter Settings for User Entity Instance: CountM5:inst3|lpm_counter:LPM_COUNTER_component
+ 16. Parameter Settings for User Entity Instance: AltPLL01:inst|altpll:altpll_component
+ 17. Parameter Settings for User Entity Instance: CountM25:inst16|lpm_counter:LPM_COUNTER_component
+ 18. Parameter Settings for User Entity Instance: CountM17:inst18|lpm_counter:LPM_COUNTER_component
  19. altpll Parameter Settings by Entity Instance
- 20. Port Connectivity Checks: "CountM2:b2v_inst8"
- 21. Port Connectivity Checks: "CountM9:b2v_inst5"
- 22. Port Connectivity Checks: "CountM9:b2v_inst4"
- 23. Port Connectivity Checks: "CountM9:b2v_inst3"
- 24. Port Connectivity Checks: "CountM1:b2v_inst10"
- 25. Port Connectivity Checks: "AltPLL01:b2v_inst"
- 26. Elapsed Time Per Partition
- 27. Analysis & Synthesis Messages
+ 20. Elapsed Time Per Partition
+ 21. Analysis & Synthesis Messages
 
 
 
@@ -58,15 +52,15 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Mar 31 14:04:29 2024       ;
+; Analysis & Synthesis Status        ; Successful - Mon Apr 01 21:01:53 2024       ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Full Version ;
 ; Revision Name                      ; IPblock                                     ;
 ; Top-level Entity Name              ; IPblock                                     ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 66                                          ;
-;     Total combinational functions  ; 66                                          ;
-;     Dedicated logic registers      ; 31                                          ;
-; Total registers                    ; 31                                          ;
+; Total logic elements               ; 94                                          ;
+;     Total combinational functions  ; 94                                          ;
+;     Dedicated logic registers      ; 50                                          ;
+; Total registers                    ; 50                                          ;
 ; Total pins                         ; 7                                           ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -185,19 +179,14 @@ applicable agreement for further details.
 ; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                    ; Library ;
 +----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------+---------+
 ; AltPLL01.vhd                     ; yes             ; User Wizard-Generated File         ; D:/GITEA/GitHub/ES/pcbteach/IPblock/AltPLL01.vhd                                ;         ;
-; CountM9.vhd                      ; yes             ; User Wizard-Generated File         ; D:/GITEA/GitHub/ES/pcbteach/IPblock/CountM9.vhd                                 ;         ;
 ; DTrig.bdf                        ; yes             ; User Block Diagram/Schematic File  ; D:/GITEA/GitHub/ES/pcbteach/IPblock/DTrig.bdf                                   ;         ;
 ; DTrigWRE.bdf                     ; yes             ; User Block Diagram/Schematic File  ; D:/GITEA/GitHub/ES/pcbteach/IPblock/DTrigWRE.bdf                                ;         ;
-; CountM2.vhd                      ; yes             ; User Wizard-Generated File         ; D:/GITEA/GitHub/ES/pcbteach/IPblock/CountM2.vhd                                 ;         ;
-; CountM1.vhd                      ; yes             ; User Wizard-Generated File         ; D:/GITEA/GitHub/ES/pcbteach/IPblock/CountM1.vhd                                 ;         ;
 ; LogBlock.vhd                     ; yes             ; User VHDL File                     ; D:/GITEA/GitHub/ES/pcbteach/IPblock/LogBlock.vhd                                ;         ;
-; IPblock.v                        ; yes             ; User Verilog HDL File              ; D:/GITEA/GitHub/ES/pcbteach/IPblock/IPblock.v                                   ;         ;
-; altpll.tdf                       ; yes             ; Megafunction                       ; d:/altera/quartus ii 13/quartus/libraries/megafunctions/altpll.tdf              ;         ;
-; aglobal131.inc                   ; yes             ; Megafunction                       ; d:/altera/quartus ii 13/quartus/libraries/megafunctions/aglobal131.inc          ;         ;
-; stratix_pll.inc                  ; yes             ; Megafunction                       ; d:/altera/quartus ii 13/quartus/libraries/megafunctions/stratix_pll.inc         ;         ;
-; stratixii_pll.inc                ; yes             ; Megafunction                       ; d:/altera/quartus ii 13/quartus/libraries/megafunctions/stratixii_pll.inc       ;         ;
-; cycloneii_pll.inc                ; yes             ; Megafunction                       ; d:/altera/quartus ii 13/quartus/libraries/megafunctions/cycloneii_pll.inc       ;         ;
-; db/altpll01_altpll.v             ; yes             ; Auto-Generated Megafunction        ; D:/GITEA/GitHub/ES/pcbteach/IPblock/db/altpll01_altpll.v                        ;         ;
+; IPblock.bdf                      ; yes             ; User Block Diagram/Schematic File  ; D:/GITEA/GitHub/ES/pcbteach/IPblock/IPblock.bdf                                 ;         ;
+; CountM5.vhd                      ; yes             ; User Wizard-Generated File         ; D:/GITEA/GitHub/ES/pcbteach/IPblock/CountM5.vhd                                 ;         ;
+; CountM10.vhd                     ; yes             ; User Wizard-Generated File         ; D:/GITEA/GitHub/ES/pcbteach/IPblock/CountM10.vhd                                ;         ;
+; CountM25.vhd                     ; yes             ; User Wizard-Generated File         ; D:/GITEA/GitHub/ES/pcbteach/IPblock/CountM25.vhd                                ;         ;
+; CountM17.vhd                     ; yes             ; User Wizard-Generated File         ; D:/GITEA/GitHub/ES/pcbteach/IPblock/CountM17.vhd                                ;         ;
 ; lpm_counter.tdf                  ; yes             ; Megafunction                       ; d:/altera/quartus ii 13/quartus/libraries/megafunctions/lpm_counter.tdf         ;         ;
 ; lpm_constant.inc                 ; yes             ; Megafunction                       ; d:/altera/quartus ii 13/quartus/libraries/megafunctions/lpm_constant.inc        ;         ;
 ; lpm_decode.inc                   ; yes             ; Megafunction                       ; d:/altera/quartus ii 13/quartus/libraries/megafunctions/lpm_decode.inc          ;         ;
@@ -207,12 +196,17 @@ applicable agreement for further details.
 ; lpm_counter.inc                  ; yes             ; Megafunction                       ; d:/altera/quartus ii 13/quartus/libraries/megafunctions/lpm_counter.inc         ;         ;
 ; dffeea.inc                       ; yes             ; Megafunction                       ; d:/altera/quartus ii 13/quartus/libraries/megafunctions/dffeea.inc              ;         ;
 ; alt_counter_stratix.inc          ; yes             ; Megafunction                       ; d:/altera/quartus ii 13/quartus/libraries/megafunctions/alt_counter_stratix.inc ;         ;
-; db/cntr_3ij.tdf                  ; yes             ; Auto-Generated Megafunction        ; D:/GITEA/GitHub/ES/pcbteach/IPblock/db/cntr_3ij.tdf                             ;         ;
-; db/cmpr_ogc.tdf                  ; yes             ; Auto-Generated Megafunction        ; D:/GITEA/GitHub/ES/pcbteach/IPblock/db/cmpr_ogc.tdf                             ;         ;
-; db/cntr_gij.tdf                  ; yes             ; Auto-Generated Megafunction        ; D:/GITEA/GitHub/ES/pcbteach/IPblock/db/cntr_gij.tdf                             ;         ;
+; aglobal131.inc                   ; yes             ; Megafunction                       ; d:/altera/quartus ii 13/quartus/libraries/megafunctions/aglobal131.inc          ;         ;
+; db/cntr_cij.tdf                  ; yes             ; Auto-Generated Megafunction        ; D:/GITEA/GitHub/ES/pcbteach/IPblock/db/cntr_cij.tdf                             ;         ;
 ; db/cmpr_ugc.tdf                  ; yes             ; Auto-Generated Megafunction        ; D:/GITEA/GitHub/ES/pcbteach/IPblock/db/cmpr_ugc.tdf                             ;         ;
-; db/cntr_7ij.tdf                  ; yes             ; Auto-Generated Megafunction        ; D:/GITEA/GitHub/ES/pcbteach/IPblock/db/cntr_7ij.tdf                             ;         ;
-; db/cmpr_qgc.tdf                  ; yes             ; Auto-Generated Megafunction        ; D:/GITEA/GitHub/ES/pcbteach/IPblock/db/cmpr_qgc.tdf                             ;         ;
+; db/cntr_ojj.tdf                  ; yes             ; Auto-Generated Megafunction        ; D:/GITEA/GitHub/ES/pcbteach/IPblock/db/cntr_ojj.tdf                             ;         ;
+; altpll.tdf                       ; yes             ; Megafunction                       ; d:/altera/quartus ii 13/quartus/libraries/megafunctions/altpll.tdf              ;         ;
+; stratix_pll.inc                  ; yes             ; Megafunction                       ; d:/altera/quartus ii 13/quartus/libraries/megafunctions/stratix_pll.inc         ;         ;
+; stratixii_pll.inc                ; yes             ; Megafunction                       ; d:/altera/quartus ii 13/quartus/libraries/megafunctions/stratixii_pll.inc       ;         ;
+; cycloneii_pll.inc                ; yes             ; Megafunction                       ; d:/altera/quartus ii 13/quartus/libraries/megafunctions/cycloneii_pll.inc       ;         ;
+; db/altpll01_altpll.v             ; yes             ; Auto-Generated Megafunction        ; D:/GITEA/GitHub/ES/pcbteach/IPblock/db/altpll01_altpll.v                        ;         ;
+; db/cntr_ujj.tdf                  ; yes             ; Auto-Generated Megafunction        ; D:/GITEA/GitHub/ES/pcbteach/IPblock/db/cntr_ujj.tdf                             ;         ;
+; db/cntr_vjj.tdf                  ; yes             ; Auto-Generated Megafunction        ; D:/GITEA/GitHub/ES/pcbteach/IPblock/db/cntr_vjj.tdf                             ;         ;
 +----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------+---------+
 
 
@@ -221,20 +215,20 @@ applicable agreement for further details.
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Estimated Total logic elements              ; 66    ;
+; Estimated Total logic elements              ; 94    ;
 ;                                             ;       ;
-; Total combinational functions               ; 66    ;
+; Total combinational functions               ; 94    ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 12    ;
-;     -- 3 input functions                    ; 19    ;
-;     -- <=2 input functions                  ; 35    ;
+;     -- 4 input functions                    ; 14    ;
+;     -- 3 input functions                    ; 25    ;
+;     -- <=2 input functions                  ; 55    ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 38    ;
-;     -- arithmetic mode                      ; 28    ;
+;     -- normal mode                          ; 46    ;
+;     -- arithmetic mode                      ; 48    ;
 ;                                             ;       ;
-; Total registers                             ; 31    ;
-;     -- Dedicated logic registers            ; 31    ;
+; Total registers                             ; 50    ;
+;     -- Dedicated logic registers            ; 50    ;
 ;     -- I/O registers                        ; 0     ;
 ;                                             ;       ;
 ; I/O pins                                    ; 7     ;
@@ -243,75 +237,81 @@ applicable agreement for further details.
 ;     -- PLLs                                 ; 1     ;
 ;                                             ;       ;
 ; Maximum fan-out node                        ; ~GND  ;
-; Maximum fan-out                             ; 28    ;
-; Total fan-out                               ; 295   ;
-; Average fan-out                             ; 2.63  ;
+; Maximum fan-out                             ; 48    ;
+; Total fan-out                               ; 436   ;
+; Average fan-out                             ; 2.74  ;
 +---------------------------------------------+-------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                        ;
-+-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------+--------------+
-; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                 ; Library Name ;
-+-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------+--------------+
-; |IPblock                                  ; 66 (2)            ; 31 (0)       ; 0           ; 0            ; 0       ; 0         ; 7    ; 0            ; |IPblock                                                                                            ; work         ;
-;    |AltPLL01:b2v_inst|                    ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|AltPLL01:b2v_inst                                                                          ; work         ;
-;       |altpll:altpll_component|           ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|AltPLL01:b2v_inst|altpll:altpll_component                                                  ; work         ;
-;          |AltPLL01_altpll:auto_generated| ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|AltPLL01:b2v_inst|altpll:altpll_component|AltPLL01_altpll:auto_generated                   ; work         ;
-;    |CountM1:b2v_inst10|                   ; 1 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|CountM1:b2v_inst10                                                                         ; work         ;
-;       |lpm_counter:LPM_COUNTER_component| ; 1 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|CountM1:b2v_inst10|lpm_counter:LPM_COUNTER_component                                       ; work         ;
-;          |cntr_3ij:auto_generated|        ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|CountM1:b2v_inst10|lpm_counter:LPM_COUNTER_component|cntr_3ij:auto_generated               ; work         ;
-;    |CountM2:b2v_inst8|                    ; 7 (0)             ; 4 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|CountM2:b2v_inst8                                                                          ; work         ;
-;       |lpm_counter:LPM_COUNTER_component| ; 7 (0)             ; 4 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|CountM2:b2v_inst8|lpm_counter:LPM_COUNTER_component                                        ; work         ;
-;          |cntr_7ij:auto_generated|        ; 7 (6)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|CountM2:b2v_inst8|lpm_counter:LPM_COUNTER_component|cntr_7ij:auto_generated                ; work         ;
-;             |cmpr_qgc:cmpr1|              ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|CountM2:b2v_inst8|lpm_counter:LPM_COUNTER_component|cntr_7ij:auto_generated|cmpr_qgc:cmpr1 ; work         ;
-;    |CountM9:b2v_inst3|                    ; 12 (0)            ; 8 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|CountM9:b2v_inst3                                                                          ; work         ;
-;       |lpm_counter:LPM_COUNTER_component| ; 12 (0)            ; 8 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|CountM9:b2v_inst3|lpm_counter:LPM_COUNTER_component                                        ; work         ;
-;          |cntr_gij:auto_generated|        ; 12 (10)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|CountM9:b2v_inst3|lpm_counter:LPM_COUNTER_component|cntr_gij:auto_generated                ; work         ;
-;             |cmpr_ugc:cmpr1|              ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|CountM9:b2v_inst3|lpm_counter:LPM_COUNTER_component|cntr_gij:auto_generated|cmpr_ugc:cmpr1 ; work         ;
-;    |CountM9:b2v_inst4|                    ; 12 (0)            ; 8 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|CountM9:b2v_inst4                                                                          ; work         ;
-;       |lpm_counter:LPM_COUNTER_component| ; 12 (0)            ; 8 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|CountM9:b2v_inst4|lpm_counter:LPM_COUNTER_component                                        ; work         ;
-;          |cntr_gij:auto_generated|        ; 12 (10)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|CountM9:b2v_inst4|lpm_counter:LPM_COUNTER_component|cntr_gij:auto_generated                ; work         ;
-;             |cmpr_ugc:cmpr1|              ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|CountM9:b2v_inst4|lpm_counter:LPM_COUNTER_component|cntr_gij:auto_generated|cmpr_ugc:cmpr1 ; work         ;
-;    |CountM9:b2v_inst5|                    ; 12 (0)            ; 8 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|CountM9:b2v_inst5                                                                          ; work         ;
-;       |lpm_counter:LPM_COUNTER_component| ; 12 (0)            ; 8 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|CountM9:b2v_inst5|lpm_counter:LPM_COUNTER_component                                        ; work         ;
-;          |cntr_gij:auto_generated|        ; 12 (10)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|CountM9:b2v_inst5|lpm_counter:LPM_COUNTER_component|cntr_gij:auto_generated                ; work         ;
-;             |cmpr_ugc:cmpr1|              ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|CountM9:b2v_inst5|lpm_counter:LPM_COUNTER_component|cntr_gij:auto_generated|cmpr_ugc:cmpr1 ; work         ;
-;    |DTrigWRE:b2v_inst11|                  ; 3 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|DTrigWRE:b2v_inst11                                                                        ; work         ;
-;       |DTrig:inst1|                       ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|DTrigWRE:b2v_inst11|DTrig:inst1                                                            ; work         ;
-;       |DTrig:inst|                        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|DTrigWRE:b2v_inst11|DTrig:inst                                                             ; work         ;
-;    |DTrigWRE:b2v_inst14|                  ; 3 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|DTrigWRE:b2v_inst14                                                                        ; work         ;
-;       |DTrig:inst1|                       ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|DTrigWRE:b2v_inst14|DTrig:inst1                                                            ; work         ;
-;       |DTrig:inst|                        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|DTrigWRE:b2v_inst14|DTrig:inst                                                             ; work         ;
-;    |DTrigWRE:b2v_inst15|                  ; 3 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|DTrigWRE:b2v_inst15                                                                        ; work         ;
-;       |DTrig:inst1|                       ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|DTrigWRE:b2v_inst15|DTrig:inst1                                                            ; work         ;
-;       |DTrig:inst|                        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|DTrigWRE:b2v_inst15|DTrig:inst                                                             ; work         ;
-;    |DTrigWRE:b2v_inst1|                   ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|DTrigWRE:b2v_inst1                                                                         ; work         ;
-;       |DTrig:inst1|                       ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|DTrigWRE:b2v_inst1|DTrig:inst1                                                             ; work         ;
-;       |DTrig:inst|                        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|DTrigWRE:b2v_inst1|DTrig:inst                                                              ; work         ;
-;    |DTrigWRE:b2v_inst7|                   ; 3 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|DTrigWRE:b2v_inst7                                                                         ; work         ;
-;       |DTrig:inst1|                       ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|DTrigWRE:b2v_inst7|DTrig:inst1                                                             ; work         ;
-;       |DTrig:inst|                        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|DTrigWRE:b2v_inst7|DTrig:inst                                                              ; work         ;
-;    |DTrigWRE:b2v_inst9|                   ; 3 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|DTrigWRE:b2v_inst9                                                                         ; work         ;
-;       |DTrig:inst1|                       ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|DTrigWRE:b2v_inst9|DTrig:inst1                                                             ; work         ;
-;       |DTrig:inst|                        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|DTrigWRE:b2v_inst9|DTrig:inst                                                              ; work         ;
-;    |LogBlock:b2v_inst6|                   ; 3 (3)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|LogBlock:b2v_inst6                                                                         ; work         ;
-+-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------+--------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                      ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                               ; Library Name ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------+--------------+
+; |IPblock                                  ; 94 (2)            ; 50 (0)       ; 0           ; 0            ; 0       ; 0         ; 7    ; 0            ; |IPblock                                                                                          ; work         ;
+;    |AltPLL01:inst|                        ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|AltPLL01:inst                                                                            ; work         ;
+;       |altpll:altpll_component|           ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|AltPLL01:inst|altpll:altpll_component                                                    ; work         ;
+;          |AltPLL01_altpll:auto_generated| ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|AltPLL01:inst|altpll:altpll_component|AltPLL01_altpll:auto_generated                     ; work         ;
+;    |CountM10:inst4|                       ; 12 (0)            ; 8 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|CountM10:inst4                                                                           ; work         ;
+;       |lpm_counter:LPM_COUNTER_component| ; 12 (0)            ; 8 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|CountM10:inst4|lpm_counter:LPM_COUNTER_component                                         ; work         ;
+;          |cntr_ojj:auto_generated|        ; 12 (10)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|CountM10:inst4|lpm_counter:LPM_COUNTER_component|cntr_ojj:auto_generated                 ; work         ;
+;             |cmpr_ugc:cmpr1|              ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|CountM10:inst4|lpm_counter:LPM_COUNTER_component|cntr_ojj:auto_generated|cmpr_ugc:cmpr1  ; work         ;
+;    |CountM10:inst5|                       ; 12 (0)            ; 8 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|CountM10:inst5                                                                           ; work         ;
+;       |lpm_counter:LPM_COUNTER_component| ; 12 (0)            ; 8 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|CountM10:inst5|lpm_counter:LPM_COUNTER_component                                         ; work         ;
+;          |cntr_ojj:auto_generated|        ; 12 (10)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|CountM10:inst5|lpm_counter:LPM_COUNTER_component|cntr_ojj:auto_generated                 ; work         ;
+;             |cmpr_ugc:cmpr1|              ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|CountM10:inst5|lpm_counter:LPM_COUNTER_component|cntr_ojj:auto_generated|cmpr_ugc:cmpr1  ; work         ;
+;    |CountM17:inst18|                      ; 12 (0)            ; 8 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|CountM17:inst18                                                                          ; work         ;
+;       |lpm_counter:LPM_COUNTER_component| ; 12 (0)            ; 8 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|CountM17:inst18|lpm_counter:LPM_COUNTER_component                                        ; work         ;
+;          |cntr_vjj:auto_generated|        ; 12 (10)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|CountM17:inst18|lpm_counter:LPM_COUNTER_component|cntr_vjj:auto_generated                ; work         ;
+;             |cmpr_ugc:cmpr1|              ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|CountM17:inst18|lpm_counter:LPM_COUNTER_component|cntr_vjj:auto_generated|cmpr_ugc:cmpr1 ; work         ;
+;    |CountM25:inst16|                      ; 12 (0)            ; 8 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|CountM25:inst16                                                                          ; work         ;
+;       |lpm_counter:LPM_COUNTER_component| ; 12 (0)            ; 8 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|CountM25:inst16|lpm_counter:LPM_COUNTER_component                                        ; work         ;
+;          |cntr_ujj:auto_generated|        ; 12 (10)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|CountM25:inst16|lpm_counter:LPM_COUNTER_component|cntr_ujj:auto_generated                ; work         ;
+;             |cmpr_ugc:cmpr1|              ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|CountM25:inst16|lpm_counter:LPM_COUNTER_component|cntr_ujj:auto_generated|cmpr_ugc:cmpr1 ; work         ;
+;    |CountM5:inst3|                        ; 12 (0)            ; 8 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|CountM5:inst3                                                                            ; work         ;
+;       |lpm_counter:LPM_COUNTER_component| ; 12 (0)            ; 8 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|CountM5:inst3|lpm_counter:LPM_COUNTER_component                                          ; work         ;
+;          |cntr_cij:auto_generated|        ; 12 (10)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|CountM5:inst3|lpm_counter:LPM_COUNTER_component|cntr_cij:auto_generated                  ; work         ;
+;             |cmpr_ugc:cmpr1|              ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|CountM5:inst3|lpm_counter:LPM_COUNTER_component|cntr_cij:auto_generated|cmpr_ugc:cmpr1   ; work         ;
+;    |CountM5:inst8|                        ; 12 (0)            ; 8 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|CountM5:inst8                                                                            ; work         ;
+;       |lpm_counter:LPM_COUNTER_component| ; 12 (0)            ; 8 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|CountM5:inst8|lpm_counter:LPM_COUNTER_component                                          ; work         ;
+;          |cntr_cij:auto_generated|        ; 12 (10)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|CountM5:inst8|lpm_counter:LPM_COUNTER_component|cntr_cij:auto_generated                  ; work         ;
+;             |cmpr_ugc:cmpr1|              ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|CountM5:inst8|lpm_counter:LPM_COUNTER_component|cntr_cij:auto_generated|cmpr_ugc:cmpr1   ; work         ;
+;    |DTrigWRE:inst10|                      ; 3 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|DTrigWRE:inst10                                                                          ; work         ;
+;       |DTrig:inst1|                       ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|DTrigWRE:inst10|DTrig:inst1                                                              ; work         ;
+;       |DTrig:inst|                        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|DTrigWRE:inst10|DTrig:inst                                                               ; work         ;
+;    |DTrigWRE:inst14|                      ; 3 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|DTrigWRE:inst14                                                                          ; work         ;
+;       |DTrig:inst1|                       ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|DTrigWRE:inst14|DTrig:inst1                                                              ; work         ;
+;       |DTrig:inst|                        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|DTrigWRE:inst14|DTrig:inst                                                               ; work         ;
+;    |DTrigWRE:inst15|                      ; 3 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|DTrigWRE:inst15                                                                          ; work         ;
+;       |DTrig:inst1|                       ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|DTrigWRE:inst15|DTrig:inst1                                                              ; work         ;
+;       |DTrig:inst|                        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|DTrigWRE:inst15|DTrig:inst                                                               ; work         ;
+;    |DTrigWRE:inst1|                       ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|DTrigWRE:inst1                                                                           ; work         ;
+;       |DTrig:inst1|                       ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|DTrigWRE:inst1|DTrig:inst1                                                               ; work         ;
+;       |DTrig:inst|                        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|DTrigWRE:inst1|DTrig:inst                                                                ; work         ;
+;    |DTrigWRE:inst7|                       ; 3 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|DTrigWRE:inst7                                                                           ; work         ;
+;       |DTrig:inst1|                       ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|DTrigWRE:inst7|DTrig:inst1                                                               ; work         ;
+;       |DTrig:inst|                        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|DTrigWRE:inst7|DTrig:inst                                                                ; work         ;
+;    |DTrigWRE:inst9|                       ; 3 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|DTrigWRE:inst9                                                                           ; work         ;
+;       |DTrig:inst1|                       ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|DTrigWRE:inst9|DTrig:inst1                                                               ; work         ;
+;       |DTrig:inst|                        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|DTrigWRE:inst9|DTrig:inst                                                                ; work         ;
+;    |LogBlock:inst6|                       ; 3 (3)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IPblock|LogBlock:inst6                                                                           ; work         ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis IP Cores Summary                                                                                                          ;
-+--------+--------------+---------+--------------+--------------+-----------------------------+--------------------------------------------------+
-; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance             ; IP Include File                                  ;
-+--------+--------------+---------+--------------+--------------+-----------------------------+--------------------------------------------------+
-; Altera ; ALTPLL       ; 13.1    ; N/A          ; N/A          ; |IPblock|AltPLL01:b2v_inst  ; D:/GITEA/GitHub/ES/pcbteach/IPblock/AltPLL01.vhd ;
-; Altera ; LPM_COUNTER  ; 13.1    ; N/A          ; N/A          ; |IPblock|CountM9:b2v_inst3  ; D:/GITEA/GitHub/ES/pcbteach/IPblock/CountM9.vhd  ;
-; Altera ; LPM_COUNTER  ; 13.1    ; N/A          ; N/A          ; |IPblock|CountM9:b2v_inst4  ; D:/GITEA/GitHub/ES/pcbteach/IPblock/CountM9.vhd  ;
-; Altera ; LPM_COUNTER  ; 13.1    ; N/A          ; N/A          ; |IPblock|CountM9:b2v_inst5  ; D:/GITEA/GitHub/ES/pcbteach/IPblock/CountM9.vhd  ;
-; Altera ; LPM_COUNTER  ; 13.1    ; N/A          ; N/A          ; |IPblock|CountM2:b2v_inst8  ; D:/GITEA/GitHub/ES/pcbteach/IPblock/CountM2.vhd  ;
-; Altera ; LPM_COUNTER  ; 13.1    ; N/A          ; N/A          ; |IPblock|CountM1:b2v_inst10 ; D:/GITEA/GitHub/ES/pcbteach/IPblock/CountM1.vhd  ;
-+--------+--------------+---------+--------------+--------------+-----------------------------+--------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                                       ;
++--------+--------------+---------+--------------+--------------+--------------------------+--------------------------------------------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance          ; IP Include File                                  ;
++--------+--------------+---------+--------------+--------------+--------------------------+--------------------------------------------------+
+; Altera ; ALTPLL       ; 13.1    ; N/A          ; N/A          ; |IPblock|AltPLL01:inst   ; D:/GITEA/GitHub/ES/pcbteach/IPblock/AltPLL01.vhd ;
+; Altera ; LPM_COUNTER  ; 13.1    ; N/A          ; N/A          ; |IPblock|CountM5:inst3   ; D:/GITEA/GitHub/ES/pcbteach/IPblock/CountM5.vhd  ;
+; Altera ; LPM_COUNTER  ; 13.1    ; N/A          ; N/A          ; |IPblock|CountM10:inst4  ; D:/GITEA/GitHub/ES/pcbteach/IPblock/CountM10.vhd ;
+; Altera ; LPM_COUNTER  ; 13.1    ; N/A          ; N/A          ; |IPblock|CountM10:inst5  ; D:/GITEA/GitHub/ES/pcbteach/IPblock/CountM10.vhd ;
+; Altera ; LPM_COUNTER  ; 13.1    ; N/A          ; N/A          ; |IPblock|CountM5:inst8   ; D:/GITEA/GitHub/ES/pcbteach/IPblock/CountM5.vhd  ;
+; Altera ; LPM_COUNTER  ; 13.1    ; N/A          ; N/A          ; |IPblock|CountM25:inst16 ; D:/GITEA/GitHub/ES/pcbteach/IPblock/CountM25.vhd ;
+; Altera ; LPM_COUNTER  ; 13.1    ; N/A          ; N/A          ; |IPblock|CountM17:inst18 ; D:/GITEA/GitHub/ES/pcbteach/IPblock/CountM17.vhd ;
++--------+--------------+---------+--------------+--------------+--------------------------+--------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------+
@@ -319,7 +319,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------------+---------------------+------------------------+
 ; Latch Name                                         ; Latch Enable Signal ; Free of Timing Hazards ;
 +----------------------------------------------------+---------------------+------------------------+
-; LogBlock:b2v_inst6|output0                         ; GND                 ; yes                    ;
+; LogBlock:inst6|output0                             ; GND                 ; yes                    ;
 ; Number of user-specified and inferred latches = 1  ;                     ;                        ;
 +----------------------------------------------------+---------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
@@ -330,31 +330,21 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------------------------------------------+----+
 ; Logic Cell Name                                        ;    ;
 +--------------------------------------------------------+----+
-; DTrigWRE:b2v_inst7|DTrig:inst|inst20~0                 ;    ;
-; DTrigWRE:b2v_inst7|DTrig:inst1|inst21~0                ;    ;
-; DTrigWRE:b2v_inst9|DTrig:inst|inst20~0                 ;    ;
-; DTrigWRE:b2v_inst9|DTrig:inst1|inst21~0                ;    ;
-; DTrigWRE:b2v_inst11|DTrig:inst|inst20~0                ;    ;
-; DTrigWRE:b2v_inst11|DTrig:inst1|inst21~0               ;    ;
-; DTrigWRE:b2v_inst1|DTrig:inst|inst20~0                 ;    ;
-; DTrigWRE:b2v_inst1|DTrig:inst1|inst21~0                ;    ;
-; DTrigWRE:b2v_inst15|DTrig:inst|inst20~0                ;    ;
-; DTrigWRE:b2v_inst15|DTrig:inst1|inst21~0               ;    ;
-; DTrigWRE:b2v_inst14|DTrig:inst|inst20~0                ;    ;
-; DTrigWRE:b2v_inst14|DTrig:inst1|inst21~0               ;    ;
+; DTrigWRE:inst7|DTrig:inst|inst20~0                     ;    ;
+; DTrigWRE:inst7|DTrig:inst1|inst21~0                    ;    ;
+; DTrigWRE:inst9|DTrig:inst|inst20~0                     ;    ;
+; DTrigWRE:inst9|DTrig:inst1|inst21~0                    ;    ;
+; DTrigWRE:inst10|DTrig:inst|inst20~0                    ;    ;
+; DTrigWRE:inst10|DTrig:inst1|inst21~0                   ;    ;
+; DTrigWRE:inst1|DTrig:inst|inst20~0                     ;    ;
+; DTrigWRE:inst1|DTrig:inst1|inst21~0                    ;    ;
+; DTrigWRE:inst14|DTrig:inst|inst20~0                    ;    ;
+; DTrigWRE:inst14|DTrig:inst1|inst21~0                   ;    ;
+; DTrigWRE:inst15|DTrig:inst|inst20~0                    ;    ;
+; DTrigWRE:inst15|DTrig:inst1|inst21~0                   ;    ;
 ; Number of logic cells representing combinational loops ; 12 ;
 +--------------------------------------------------------+----+
 Note: All cells listed above may not be present at the end of synthesis due to various synthesis optimizations.
-
-
-+----------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                                   ;
-+-------------------------------------------------------------------------------------------------+--------------------+
-; Register name                                                                                   ; Reason for Removal ;
-+-------------------------------------------------------------------------------------------------+--------------------+
-; CountM1:b2v_inst10|lpm_counter:LPM_COUNTER_component|cntr_3ij:auto_generated|counter_reg_bit[1] ; Lost fanout        ;
-; Total Number of Removed Registers = 1                                                           ;                    ;
-+-------------------------------------------------------------------------------------------------+--------------------+
 
 
 +------------------------------------------------------+
@@ -362,9 +352,9 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 31    ;
+; Total registers                              ; 50    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 28    ;
+; Number of registers using Synchronous Load   ; 48    ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 0     ;
@@ -372,585 +362,557 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 +----------------------------------------------+-------+
 
 
-+----------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: AltPLL01:b2v_inst|altpll:altpll_component ;
-+-------------------------------+----------------------------+---------------------------+
-; Parameter Name                ; Value                      ; Type                      ;
-+-------------------------------+----------------------------+---------------------------+
-; OPERATION_MODE                ; NORMAL                     ; Untyped                   ;
-; PLL_TYPE                      ; AUTO                       ; Untyped                   ;
-; LPM_HINT                      ; CBX_MODULE_PREFIX=AltPLL01 ; Untyped                   ;
-; QUALIFY_CONF_DONE             ; OFF                        ; Untyped                   ;
-; COMPENSATE_CLOCK              ; CLK0                       ; Untyped                   ;
-; SCAN_CHAIN                    ; LONG                       ; Untyped                   ;
-; PRIMARY_CLOCK                 ; INCLK0                     ; Untyped                   ;
-; INCLK0_INPUT_FREQUENCY        ; 20000                      ; Signed Integer            ;
-; INCLK1_INPUT_FREQUENCY        ; 0                          ; Untyped                   ;
-; GATE_LOCK_SIGNAL              ; NO                         ; Untyped                   ;
-; GATE_LOCK_COUNTER             ; 0                          ; Untyped                   ;
-; LOCK_HIGH                     ; 1                          ; Untyped                   ;
-; LOCK_LOW                      ; 1                          ; Untyped                   ;
-; VALID_LOCK_MULTIPLIER         ; 1                          ; Untyped                   ;
-; INVALID_LOCK_MULTIPLIER       ; 5                          ; Untyped                   ;
-; SWITCH_OVER_ON_LOSSCLK        ; OFF                        ; Untyped                   ;
-; SWITCH_OVER_ON_GATED_LOCK     ; OFF                        ; Untyped                   ;
-; ENABLE_SWITCH_OVER_COUNTER    ; OFF                        ; Untyped                   ;
-; SKIP_VCO                      ; OFF                        ; Untyped                   ;
-; SWITCH_OVER_COUNTER           ; 0                          ; Untyped                   ;
-; SWITCH_OVER_TYPE              ; AUTO                       ; Untyped                   ;
-; FEEDBACK_SOURCE               ; EXTCLK0                    ; Untyped                   ;
-; BANDWIDTH                     ; 0                          ; Untyped                   ;
-; BANDWIDTH_TYPE                ; AUTO                       ; Untyped                   ;
-; SPREAD_FREQUENCY              ; 0                          ; Untyped                   ;
-; DOWN_SPREAD                   ; 0                          ; Untyped                   ;
-; SELF_RESET_ON_GATED_LOSS_LOCK ; OFF                        ; Untyped                   ;
-; SELF_RESET_ON_LOSS_LOCK       ; OFF                        ; Untyped                   ;
-; CLK9_MULTIPLY_BY              ; 0                          ; Untyped                   ;
-; CLK8_MULTIPLY_BY              ; 0                          ; Untyped                   ;
-; CLK7_MULTIPLY_BY              ; 0                          ; Untyped                   ;
-; CLK6_MULTIPLY_BY              ; 0                          ; Untyped                   ;
-; CLK5_MULTIPLY_BY              ; 1                          ; Untyped                   ;
-; CLK4_MULTIPLY_BY              ; 1                          ; Untyped                   ;
-; CLK3_MULTIPLY_BY              ; 1                          ; Untyped                   ;
-; CLK2_MULTIPLY_BY              ; 1                          ; Untyped                   ;
-; CLK1_MULTIPLY_BY              ; 1                          ; Untyped                   ;
-; CLK0_MULTIPLY_BY              ; 1                          ; Signed Integer            ;
-; CLK9_DIVIDE_BY                ; 0                          ; Untyped                   ;
-; CLK8_DIVIDE_BY                ; 0                          ; Untyped                   ;
-; CLK7_DIVIDE_BY                ; 0                          ; Untyped                   ;
-; CLK6_DIVIDE_BY                ; 0                          ; Untyped                   ;
-; CLK5_DIVIDE_BY                ; 1                          ; Untyped                   ;
-; CLK4_DIVIDE_BY                ; 1                          ; Untyped                   ;
-; CLK3_DIVIDE_BY                ; 1                          ; Untyped                   ;
-; CLK2_DIVIDE_BY                ; 1                          ; Untyped                   ;
-; CLK1_DIVIDE_BY                ; 1                          ; Untyped                   ;
-; CLK0_DIVIDE_BY                ; 10000                      ; Signed Integer            ;
-; CLK9_PHASE_SHIFT              ; 0                          ; Untyped                   ;
-; CLK8_PHASE_SHIFT              ; 0                          ; Untyped                   ;
-; CLK7_PHASE_SHIFT              ; 0                          ; Untyped                   ;
-; CLK6_PHASE_SHIFT              ; 0                          ; Untyped                   ;
-; CLK5_PHASE_SHIFT              ; 0                          ; Untyped                   ;
-; CLK4_PHASE_SHIFT              ; 0                          ; Untyped                   ;
-; CLK3_PHASE_SHIFT              ; 0                          ; Untyped                   ;
-; CLK2_PHASE_SHIFT              ; 0                          ; Untyped                   ;
-; CLK1_PHASE_SHIFT              ; 0                          ; Untyped                   ;
-; CLK0_PHASE_SHIFT              ; 0                          ; Untyped                   ;
-; CLK5_TIME_DELAY               ; 0                          ; Untyped                   ;
-; CLK4_TIME_DELAY               ; 0                          ; Untyped                   ;
-; CLK3_TIME_DELAY               ; 0                          ; Untyped                   ;
-; CLK2_TIME_DELAY               ; 0                          ; Untyped                   ;
-; CLK1_TIME_DELAY               ; 0                          ; Untyped                   ;
-; CLK0_TIME_DELAY               ; 0                          ; Untyped                   ;
-; CLK9_DUTY_CYCLE               ; 50                         ; Untyped                   ;
-; CLK8_DUTY_CYCLE               ; 50                         ; Untyped                   ;
-; CLK7_DUTY_CYCLE               ; 50                         ; Untyped                   ;
-; CLK6_DUTY_CYCLE               ; 50                         ; Untyped                   ;
-; CLK5_DUTY_CYCLE               ; 50                         ; Untyped                   ;
-; CLK4_DUTY_CYCLE               ; 50                         ; Untyped                   ;
-; CLK3_DUTY_CYCLE               ; 50                         ; Untyped                   ;
-; CLK2_DUTY_CYCLE               ; 50                         ; Untyped                   ;
-; CLK1_DUTY_CYCLE               ; 50                         ; Untyped                   ;
-; CLK0_DUTY_CYCLE               ; 50                         ; Signed Integer            ;
-; CLK9_USE_EVEN_COUNTER_MODE    ; OFF                        ; Untyped                   ;
-; CLK8_USE_EVEN_COUNTER_MODE    ; OFF                        ; Untyped                   ;
-; CLK7_USE_EVEN_COUNTER_MODE    ; OFF                        ; Untyped                   ;
-; CLK6_USE_EVEN_COUNTER_MODE    ; OFF                        ; Untyped                   ;
-; CLK5_USE_EVEN_COUNTER_MODE    ; OFF                        ; Untyped                   ;
-; CLK4_USE_EVEN_COUNTER_MODE    ; OFF                        ; Untyped                   ;
-; CLK3_USE_EVEN_COUNTER_MODE    ; OFF                        ; Untyped                   ;
-; CLK2_USE_EVEN_COUNTER_MODE    ; OFF                        ; Untyped                   ;
-; CLK1_USE_EVEN_COUNTER_MODE    ; OFF                        ; Untyped                   ;
-; CLK0_USE_EVEN_COUNTER_MODE    ; OFF                        ; Untyped                   ;
-; CLK9_USE_EVEN_COUNTER_VALUE   ; OFF                        ; Untyped                   ;
-; CLK8_USE_EVEN_COUNTER_VALUE   ; OFF                        ; Untyped                   ;
-; CLK7_USE_EVEN_COUNTER_VALUE   ; OFF                        ; Untyped                   ;
-; CLK6_USE_EVEN_COUNTER_VALUE   ; OFF                        ; Untyped                   ;
-; CLK5_USE_EVEN_COUNTER_VALUE   ; OFF                        ; Untyped                   ;
-; CLK4_USE_EVEN_COUNTER_VALUE   ; OFF                        ; Untyped                   ;
-; CLK3_USE_EVEN_COUNTER_VALUE   ; OFF                        ; Untyped                   ;
-; CLK2_USE_EVEN_COUNTER_VALUE   ; OFF                        ; Untyped                   ;
-; CLK1_USE_EVEN_COUNTER_VALUE   ; OFF                        ; Untyped                   ;
-; CLK0_USE_EVEN_COUNTER_VALUE   ; OFF                        ; Untyped                   ;
-; LOCK_WINDOW_UI                ;  0.05                      ; Untyped                   ;
-; LOCK_WINDOW_UI_BITS           ; UNUSED                     ; Untyped                   ;
-; VCO_RANGE_DETECTOR_LOW_BITS   ; UNUSED                     ; Untyped                   ;
-; VCO_RANGE_DETECTOR_HIGH_BITS  ; UNUSED                     ; Untyped                   ;
-; DPA_MULTIPLY_BY               ; 0                          ; Untyped                   ;
-; DPA_DIVIDE_BY                 ; 1                          ; Untyped                   ;
-; DPA_DIVIDER                   ; 0                          ; Untyped                   ;
-; EXTCLK3_MULTIPLY_BY           ; 1                          ; Untyped                   ;
-; EXTCLK2_MULTIPLY_BY           ; 1                          ; Untyped                   ;
-; EXTCLK1_MULTIPLY_BY           ; 1                          ; Untyped                   ;
-; EXTCLK0_MULTIPLY_BY           ; 1                          ; Untyped                   ;
-; EXTCLK3_DIVIDE_BY             ; 1                          ; Untyped                   ;
-; EXTCLK2_DIVIDE_BY             ; 1                          ; Untyped                   ;
-; EXTCLK1_DIVIDE_BY             ; 1                          ; Untyped                   ;
-; EXTCLK0_DIVIDE_BY             ; 1                          ; Untyped                   ;
-; EXTCLK3_PHASE_SHIFT           ; 0                          ; Untyped                   ;
-; EXTCLK2_PHASE_SHIFT           ; 0                          ; Untyped                   ;
-; EXTCLK1_PHASE_SHIFT           ; 0                          ; Untyped                   ;
-; EXTCLK0_PHASE_SHIFT           ; 0                          ; Untyped                   ;
-; EXTCLK3_TIME_DELAY            ; 0                          ; Untyped                   ;
-; EXTCLK2_TIME_DELAY            ; 0                          ; Untyped                   ;
-; EXTCLK1_TIME_DELAY            ; 0                          ; Untyped                   ;
-; EXTCLK0_TIME_DELAY            ; 0                          ; Untyped                   ;
-; EXTCLK3_DUTY_CYCLE            ; 50                         ; Untyped                   ;
-; EXTCLK2_DUTY_CYCLE            ; 50                         ; Untyped                   ;
-; EXTCLK1_DUTY_CYCLE            ; 50                         ; Untyped                   ;
-; EXTCLK0_DUTY_CYCLE            ; 50                         ; Untyped                   ;
-; VCO_MULTIPLY_BY               ; 0                          ; Untyped                   ;
-; VCO_DIVIDE_BY                 ; 0                          ; Untyped                   ;
-; SCLKOUT0_PHASE_SHIFT          ; 0                          ; Untyped                   ;
-; SCLKOUT1_PHASE_SHIFT          ; 0                          ; Untyped                   ;
-; VCO_MIN                       ; 0                          ; Untyped                   ;
-; VCO_MAX                       ; 0                          ; Untyped                   ;
-; VCO_CENTER                    ; 0                          ; Untyped                   ;
-; PFD_MIN                       ; 0                          ; Untyped                   ;
-; PFD_MAX                       ; 0                          ; Untyped                   ;
-; M_INITIAL                     ; 0                          ; Untyped                   ;
-; M                             ; 0                          ; Untyped                   ;
-; N                             ; 1                          ; Untyped                   ;
-; M2                            ; 1                          ; Untyped                   ;
-; N2                            ; 1                          ; Untyped                   ;
-; SS                            ; 1                          ; Untyped                   ;
-; C0_HIGH                       ; 0                          ; Untyped                   ;
-; C1_HIGH                       ; 0                          ; Untyped                   ;
-; C2_HIGH                       ; 0                          ; Untyped                   ;
-; C3_HIGH                       ; 0                          ; Untyped                   ;
-; C4_HIGH                       ; 0                          ; Untyped                   ;
-; C5_HIGH                       ; 0                          ; Untyped                   ;
-; C6_HIGH                       ; 0                          ; Untyped                   ;
-; C7_HIGH                       ; 0                          ; Untyped                   ;
-; C8_HIGH                       ; 0                          ; Untyped                   ;
-; C9_HIGH                       ; 0                          ; Untyped                   ;
-; C0_LOW                        ; 0                          ; Untyped                   ;
-; C1_LOW                        ; 0                          ; Untyped                   ;
-; C2_LOW                        ; 0                          ; Untyped                   ;
-; C3_LOW                        ; 0                          ; Untyped                   ;
-; C4_LOW                        ; 0                          ; Untyped                   ;
-; C5_LOW                        ; 0                          ; Untyped                   ;
-; C6_LOW                        ; 0                          ; Untyped                   ;
-; C7_LOW                        ; 0                          ; Untyped                   ;
-; C8_LOW                        ; 0                          ; Untyped                   ;
-; C9_LOW                        ; 0                          ; Untyped                   ;
-; C0_INITIAL                    ; 0                          ; Untyped                   ;
-; C1_INITIAL                    ; 0                          ; Untyped                   ;
-; C2_INITIAL                    ; 0                          ; Untyped                   ;
-; C3_INITIAL                    ; 0                          ; Untyped                   ;
-; C4_INITIAL                    ; 0                          ; Untyped                   ;
-; C5_INITIAL                    ; 0                          ; Untyped                   ;
-; C6_INITIAL                    ; 0                          ; Untyped                   ;
-; C7_INITIAL                    ; 0                          ; Untyped                   ;
-; C8_INITIAL                    ; 0                          ; Untyped                   ;
-; C9_INITIAL                    ; 0                          ; Untyped                   ;
-; C0_MODE                       ; BYPASS                     ; Untyped                   ;
-; C1_MODE                       ; BYPASS                     ; Untyped                   ;
-; C2_MODE                       ; BYPASS                     ; Untyped                   ;
-; C3_MODE                       ; BYPASS                     ; Untyped                   ;
-; C4_MODE                       ; BYPASS                     ; Untyped                   ;
-; C5_MODE                       ; BYPASS                     ; Untyped                   ;
-; C6_MODE                       ; BYPASS                     ; Untyped                   ;
-; C7_MODE                       ; BYPASS                     ; Untyped                   ;
-; C8_MODE                       ; BYPASS                     ; Untyped                   ;
-; C9_MODE                       ; BYPASS                     ; Untyped                   ;
-; C0_PH                         ; 0                          ; Untyped                   ;
-; C1_PH                         ; 0                          ; Untyped                   ;
-; C2_PH                         ; 0                          ; Untyped                   ;
-; C3_PH                         ; 0                          ; Untyped                   ;
-; C4_PH                         ; 0                          ; Untyped                   ;
-; C5_PH                         ; 0                          ; Untyped                   ;
-; C6_PH                         ; 0                          ; Untyped                   ;
-; C7_PH                         ; 0                          ; Untyped                   ;
-; C8_PH                         ; 0                          ; Untyped                   ;
-; C9_PH                         ; 0                          ; Untyped                   ;
-; L0_HIGH                       ; 1                          ; Untyped                   ;
-; L1_HIGH                       ; 1                          ; Untyped                   ;
-; G0_HIGH                       ; 1                          ; Untyped                   ;
-; G1_HIGH                       ; 1                          ; Untyped                   ;
-; G2_HIGH                       ; 1                          ; Untyped                   ;
-; G3_HIGH                       ; 1                          ; Untyped                   ;
-; E0_HIGH                       ; 1                          ; Untyped                   ;
-; E1_HIGH                       ; 1                          ; Untyped                   ;
-; E2_HIGH                       ; 1                          ; Untyped                   ;
-; E3_HIGH                       ; 1                          ; Untyped                   ;
-; L0_LOW                        ; 1                          ; Untyped                   ;
-; L1_LOW                        ; 1                          ; Untyped                   ;
-; G0_LOW                        ; 1                          ; Untyped                   ;
-; G1_LOW                        ; 1                          ; Untyped                   ;
-; G2_LOW                        ; 1                          ; Untyped                   ;
-; G3_LOW                        ; 1                          ; Untyped                   ;
-; E0_LOW                        ; 1                          ; Untyped                   ;
-; E1_LOW                        ; 1                          ; Untyped                   ;
-; E2_LOW                        ; 1                          ; Untyped                   ;
-; E3_LOW                        ; 1                          ; Untyped                   ;
-; L0_INITIAL                    ; 1                          ; Untyped                   ;
-; L1_INITIAL                    ; 1                          ; Untyped                   ;
-; G0_INITIAL                    ; 1                          ; Untyped                   ;
-; G1_INITIAL                    ; 1                          ; Untyped                   ;
-; G2_INITIAL                    ; 1                          ; Untyped                   ;
-; G3_INITIAL                    ; 1                          ; Untyped                   ;
-; E0_INITIAL                    ; 1                          ; Untyped                   ;
-; E1_INITIAL                    ; 1                          ; Untyped                   ;
-; E2_INITIAL                    ; 1                          ; Untyped                   ;
-; E3_INITIAL                    ; 1                          ; Untyped                   ;
-; L0_MODE                       ; BYPASS                     ; Untyped                   ;
-; L1_MODE                       ; BYPASS                     ; Untyped                   ;
-; G0_MODE                       ; BYPASS                     ; Untyped                   ;
-; G1_MODE                       ; BYPASS                     ; Untyped                   ;
-; G2_MODE                       ; BYPASS                     ; Untyped                   ;
-; G3_MODE                       ; BYPASS                     ; Untyped                   ;
-; E0_MODE                       ; BYPASS                     ; Untyped                   ;
-; E1_MODE                       ; BYPASS                     ; Untyped                   ;
-; E2_MODE                       ; BYPASS                     ; Untyped                   ;
-; E3_MODE                       ; BYPASS                     ; Untyped                   ;
-; L0_PH                         ; 0                          ; Untyped                   ;
-; L1_PH                         ; 0                          ; Untyped                   ;
-; G0_PH                         ; 0                          ; Untyped                   ;
-; G1_PH                         ; 0                          ; Untyped                   ;
-; G2_PH                         ; 0                          ; Untyped                   ;
-; G3_PH                         ; 0                          ; Untyped                   ;
-; E0_PH                         ; 0                          ; Untyped                   ;
-; E1_PH                         ; 0                          ; Untyped                   ;
-; E2_PH                         ; 0                          ; Untyped                   ;
-; E3_PH                         ; 0                          ; Untyped                   ;
-; M_PH                          ; 0                          ; Untyped                   ;
-; C1_USE_CASC_IN                ; OFF                        ; Untyped                   ;
-; C2_USE_CASC_IN                ; OFF                        ; Untyped                   ;
-; C3_USE_CASC_IN                ; OFF                        ; Untyped                   ;
-; C4_USE_CASC_IN                ; OFF                        ; Untyped                   ;
-; C5_USE_CASC_IN                ; OFF                        ; Untyped                   ;
-; C6_USE_CASC_IN                ; OFF                        ; Untyped                   ;
-; C7_USE_CASC_IN                ; OFF                        ; Untyped                   ;
-; C8_USE_CASC_IN                ; OFF                        ; Untyped                   ;
-; C9_USE_CASC_IN                ; OFF                        ; Untyped                   ;
-; CLK0_COUNTER                  ; G0                         ; Untyped                   ;
-; CLK1_COUNTER                  ; G0                         ; Untyped                   ;
-; CLK2_COUNTER                  ; G0                         ; Untyped                   ;
-; CLK3_COUNTER                  ; G0                         ; Untyped                   ;
-; CLK4_COUNTER                  ; G0                         ; Untyped                   ;
-; CLK5_COUNTER                  ; G0                         ; Untyped                   ;
-; CLK6_COUNTER                  ; E0                         ; Untyped                   ;
-; CLK7_COUNTER                  ; E1                         ; Untyped                   ;
-; CLK8_COUNTER                  ; E2                         ; Untyped                   ;
-; CLK9_COUNTER                  ; E3                         ; Untyped                   ;
-; L0_TIME_DELAY                 ; 0                          ; Untyped                   ;
-; L1_TIME_DELAY                 ; 0                          ; Untyped                   ;
-; G0_TIME_DELAY                 ; 0                          ; Untyped                   ;
-; G1_TIME_DELAY                 ; 0                          ; Untyped                   ;
-; G2_TIME_DELAY                 ; 0                          ; Untyped                   ;
-; G3_TIME_DELAY                 ; 0                          ; Untyped                   ;
-; E0_TIME_DELAY                 ; 0                          ; Untyped                   ;
-; E1_TIME_DELAY                 ; 0                          ; Untyped                   ;
-; E2_TIME_DELAY                 ; 0                          ; Untyped                   ;
-; E3_TIME_DELAY                 ; 0                          ; Untyped                   ;
-; M_TIME_DELAY                  ; 0                          ; Untyped                   ;
-; N_TIME_DELAY                  ; 0                          ; Untyped                   ;
-; EXTCLK3_COUNTER               ; E3                         ; Untyped                   ;
-; EXTCLK2_COUNTER               ; E2                         ; Untyped                   ;
-; EXTCLK1_COUNTER               ; E1                         ; Untyped                   ;
-; EXTCLK0_COUNTER               ; E0                         ; Untyped                   ;
-; ENABLE0_COUNTER               ; L0                         ; Untyped                   ;
-; ENABLE1_COUNTER               ; L0                         ; Untyped                   ;
-; CHARGE_PUMP_CURRENT           ; 2                          ; Untyped                   ;
-; LOOP_FILTER_R                 ;  1.000000                  ; Untyped                   ;
-; LOOP_FILTER_C                 ; 5                          ; Untyped                   ;
-; CHARGE_PUMP_CURRENT_BITS      ; 9999                       ; Untyped                   ;
-; LOOP_FILTER_R_BITS            ; 9999                       ; Untyped                   ;
-; LOOP_FILTER_C_BITS            ; 9999                       ; Untyped                   ;
-; VCO_POST_SCALE                ; 0                          ; Untyped                   ;
-; CLK2_OUTPUT_FREQUENCY         ; 0                          ; Untyped                   ;
-; CLK1_OUTPUT_FREQUENCY         ; 0                          ; Untyped                   ;
-; CLK0_OUTPUT_FREQUENCY         ; 0                          ; Untyped                   ;
-; INTENDED_DEVICE_FAMILY        ; Cyclone IV E               ; Untyped                   ;
-; PORT_CLKENA0                  ; PORT_UNUSED                ; Untyped                   ;
-; PORT_CLKENA1                  ; PORT_UNUSED                ; Untyped                   ;
-; PORT_CLKENA2                  ; PORT_UNUSED                ; Untyped                   ;
-; PORT_CLKENA3                  ; PORT_UNUSED                ; Untyped                   ;
-; PORT_CLKENA4                  ; PORT_UNUSED                ; Untyped                   ;
-; PORT_CLKENA5                  ; PORT_UNUSED                ; Untyped                   ;
-; PORT_EXTCLKENA0               ; PORT_CONNECTIVITY          ; Untyped                   ;
-; PORT_EXTCLKENA1               ; PORT_CONNECTIVITY          ; Untyped                   ;
-; PORT_EXTCLKENA2               ; PORT_CONNECTIVITY          ; Untyped                   ;
-; PORT_EXTCLKENA3               ; PORT_CONNECTIVITY          ; Untyped                   ;
-; PORT_EXTCLK0                  ; PORT_UNUSED                ; Untyped                   ;
-; PORT_EXTCLK1                  ; PORT_UNUSED                ; Untyped                   ;
-; PORT_EXTCLK2                  ; PORT_UNUSED                ; Untyped                   ;
-; PORT_EXTCLK3                  ; PORT_UNUSED                ; Untyped                   ;
-; PORT_CLKBAD0                  ; PORT_UNUSED                ; Untyped                   ;
-; PORT_CLKBAD1                  ; PORT_UNUSED                ; Untyped                   ;
-; PORT_CLK0                     ; PORT_USED                  ; Untyped                   ;
-; PORT_CLK1                     ; PORT_UNUSED                ; Untyped                   ;
-; PORT_CLK2                     ; PORT_UNUSED                ; Untyped                   ;
-; PORT_CLK3                     ; PORT_UNUSED                ; Untyped                   ;
-; PORT_CLK4                     ; PORT_UNUSED                ; Untyped                   ;
-; PORT_CLK5                     ; PORT_UNUSED                ; Untyped                   ;
-; PORT_CLK6                     ; PORT_UNUSED                ; Untyped                   ;
-; PORT_CLK7                     ; PORT_UNUSED                ; Untyped                   ;
-; PORT_CLK8                     ; PORT_UNUSED                ; Untyped                   ;
-; PORT_CLK9                     ; PORT_UNUSED                ; Untyped                   ;
-; PORT_SCANDATA                 ; PORT_UNUSED                ; Untyped                   ;
-; PORT_SCANDATAOUT              ; PORT_UNUSED                ; Untyped                   ;
-; PORT_SCANDONE                 ; PORT_UNUSED                ; Untyped                   ;
-; PORT_SCLKOUT1                 ; PORT_CONNECTIVITY          ; Untyped                   ;
-; PORT_SCLKOUT0                 ; PORT_CONNECTIVITY          ; Untyped                   ;
-; PORT_ACTIVECLOCK              ; PORT_UNUSED                ; Untyped                   ;
-; PORT_CLKLOSS                  ; PORT_UNUSED                ; Untyped                   ;
-; PORT_INCLK1                   ; PORT_UNUSED                ; Untyped                   ;
-; PORT_INCLK0                   ; PORT_USED                  ; Untyped                   ;
-; PORT_FBIN                     ; PORT_UNUSED                ; Untyped                   ;
-; PORT_PLLENA                   ; PORT_UNUSED                ; Untyped                   ;
-; PORT_CLKSWITCH                ; PORT_UNUSED                ; Untyped                   ;
-; PORT_ARESET                   ; PORT_USED                  ; Untyped                   ;
-; PORT_PFDENA                   ; PORT_UNUSED                ; Untyped                   ;
-; PORT_SCANCLK                  ; PORT_UNUSED                ; Untyped                   ;
-; PORT_SCANACLR                 ; PORT_UNUSED                ; Untyped                   ;
-; PORT_SCANREAD                 ; PORT_UNUSED                ; Untyped                   ;
-; PORT_SCANWRITE                ; PORT_UNUSED                ; Untyped                   ;
-; PORT_ENABLE0                  ; PORT_CONNECTIVITY          ; Untyped                   ;
-; PORT_ENABLE1                  ; PORT_CONNECTIVITY          ; Untyped                   ;
-; PORT_LOCKED                   ; PORT_USED                  ; Untyped                   ;
-; PORT_CONFIGUPDATE             ; PORT_UNUSED                ; Untyped                   ;
-; PORT_FBOUT                    ; PORT_CONNECTIVITY          ; Untyped                   ;
-; PORT_PHASEDONE                ; PORT_UNUSED                ; Untyped                   ;
-; PORT_PHASESTEP                ; PORT_UNUSED                ; Untyped                   ;
-; PORT_PHASEUPDOWN              ; PORT_UNUSED                ; Untyped                   ;
-; PORT_SCANCLKENA               ; PORT_UNUSED                ; Untyped                   ;
-; PORT_PHASECOUNTERSELECT       ; PORT_UNUSED                ; Untyped                   ;
-; PORT_VCOOVERRANGE             ; PORT_CONNECTIVITY          ; Untyped                   ;
-; PORT_VCOUNDERRANGE            ; PORT_CONNECTIVITY          ; Untyped                   ;
-; M_TEST_SOURCE                 ; 5                          ; Untyped                   ;
-; C0_TEST_SOURCE                ; 5                          ; Untyped                   ;
-; C1_TEST_SOURCE                ; 5                          ; Untyped                   ;
-; C2_TEST_SOURCE                ; 5                          ; Untyped                   ;
-; C3_TEST_SOURCE                ; 5                          ; Untyped                   ;
-; C4_TEST_SOURCE                ; 5                          ; Untyped                   ;
-; C5_TEST_SOURCE                ; 5                          ; Untyped                   ;
-; C6_TEST_SOURCE                ; 5                          ; Untyped                   ;
-; C7_TEST_SOURCE                ; 5                          ; Untyped                   ;
-; C8_TEST_SOURCE                ; 5                          ; Untyped                   ;
-; C9_TEST_SOURCE                ; 5                          ; Untyped                   ;
-; CBXI_PARAMETER                ; AltPLL01_altpll            ; Untyped                   ;
-; VCO_FREQUENCY_CONTROL         ; AUTO                       ; Untyped                   ;
-; VCO_PHASE_SHIFT_STEP          ; 0                          ; Untyped                   ;
-; WIDTH_CLOCK                   ; 5                          ; Signed Integer            ;
-; WIDTH_PHASECOUNTERSELECT      ; 4                          ; Untyped                   ;
-; USING_FBMIMICBIDIR_PORT       ; OFF                        ; Untyped                   ;
-; DEVICE_FAMILY                 ; Cyclone IV E               ; Untyped                   ;
-; SCAN_CHAIN_MIF_FILE           ; UNUSED                     ; Untyped                   ;
-; SIM_GATE_LOCK_DEVICE_BEHAVIOR ; OFF                        ; Untyped                   ;
-; AUTO_CARRY_CHAINS             ; ON                         ; AUTO_CARRY                ;
-; IGNORE_CARRY_BUFFERS          ; OFF                        ; IGNORE_CARRY              ;
-; AUTO_CASCADE_CHAINS           ; ON                         ; AUTO_CASCADE              ;
-; IGNORE_CASCADE_BUFFERS        ; OFF                        ; IGNORE_CASCADE            ;
-+-------------------------------+----------------------------+---------------------------+
++----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CountM5:inst8|lpm_counter:LPM_COUNTER_component ;
++------------------------+--------------+------------------------------------------------------+
+; Parameter Name         ; Value        ; Type                                                 ;
++------------------------+--------------+------------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY                                           ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY                                         ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE                                         ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE                                       ;
+; LPM_WIDTH              ; 8            ; Signed Integer                                       ;
+; LPM_DIRECTION          ; UP           ; Untyped                                              ;
+; LPM_MODULUS            ; 5            ; Signed Integer                                       ;
+; LPM_AVALUE             ; UNUSED       ; Untyped                                              ;
+; LPM_SVALUE             ; UNUSED       ; Untyped                                              ;
+; LPM_PORT_UPDOWN        ; PORT_UNUSED  ; Untyped                                              ;
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped                                              ;
+; CARRY_CHAIN            ; MANUAL       ; Untyped                                              ;
+; CARRY_CHAIN_LENGTH     ; 48           ; CARRY_CHAIN_LENGTH                                   ;
+; NOT_GATE_PUSH_BACK     ; ON           ; NOT_GATE_PUSH_BACK                                   ;
+; CARRY_CNT_EN           ; SMART        ; Untyped                                              ;
+; LABWIDE_SCLR           ; ON           ; Untyped                                              ;
+; USE_NEW_VERSION        ; TRUE         ; Untyped                                              ;
+; CBXI_PARAMETER         ; cntr_cij     ; Untyped                                              ;
++------------------------+--------------+------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+---------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: CountM1:b2v_inst10|lpm_counter:LPM_COUNTER_component ;
-+------------------------+--------------+-----------------------------------------------------------+
-; Parameter Name         ; Value        ; Type                                                      ;
-+------------------------+--------------+-----------------------------------------------------------+
-; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY                                                ;
-; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY                                              ;
-; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE                                              ;
-; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE                                            ;
-; LPM_WIDTH              ; 2            ; Signed Integer                                            ;
-; LPM_DIRECTION          ; UP           ; Untyped                                                   ;
-; LPM_MODULUS            ; 2            ; Signed Integer                                            ;
-; LPM_AVALUE             ; UNUSED       ; Untyped                                                   ;
-; LPM_SVALUE             ; UNUSED       ; Untyped                                                   ;
-; LPM_PORT_UPDOWN        ; PORT_UNUSED  ; Untyped                                                   ;
-; DEVICE_FAMILY          ; Cyclone IV E ; Untyped                                                   ;
-; CARRY_CHAIN            ; MANUAL       ; Untyped                                                   ;
-; CARRY_CHAIN_LENGTH     ; 48           ; CARRY_CHAIN_LENGTH                                        ;
-; NOT_GATE_PUSH_BACK     ; ON           ; NOT_GATE_PUSH_BACK                                        ;
-; CARRY_CNT_EN           ; SMART        ; Untyped                                                   ;
-; LABWIDE_SCLR           ; ON           ; Untyped                                                   ;
-; USE_NEW_VERSION        ; TRUE         ; Untyped                                                   ;
-; CBXI_PARAMETER         ; cntr_3ij     ; Untyped                                                   ;
-+------------------------+--------------+-----------------------------------------------------------+
++-----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CountM10:inst5|lpm_counter:LPM_COUNTER_component ;
++------------------------+--------------+-------------------------------------------------------+
+; Parameter Name         ; Value        ; Type                                                  ;
++------------------------+--------------+-------------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY                                            ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY                                          ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE                                          ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE                                        ;
+; LPM_WIDTH              ; 8            ; Signed Integer                                        ;
+; LPM_DIRECTION          ; UP           ; Untyped                                               ;
+; LPM_MODULUS            ; 10           ; Signed Integer                                        ;
+; LPM_AVALUE             ; UNUSED       ; Untyped                                               ;
+; LPM_SVALUE             ; UNUSED       ; Untyped                                               ;
+; LPM_PORT_UPDOWN        ; PORT_UNUSED  ; Untyped                                               ;
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped                                               ;
+; CARRY_CHAIN            ; MANUAL       ; Untyped                                               ;
+; CARRY_CHAIN_LENGTH     ; 48           ; CARRY_CHAIN_LENGTH                                    ;
+; NOT_GATE_PUSH_BACK     ; ON           ; NOT_GATE_PUSH_BACK                                    ;
+; CARRY_CNT_EN           ; SMART        ; Untyped                                               ;
+; LABWIDE_SCLR           ; ON           ; Untyped                                               ;
+; USE_NEW_VERSION        ; TRUE         ; Untyped                                               ;
+; CBXI_PARAMETER         ; cntr_ojj     ; Untyped                                               ;
++------------------------+--------------+-------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+--------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: CountM9:b2v_inst3|lpm_counter:LPM_COUNTER_component ;
-+------------------------+--------------+----------------------------------------------------------+
-; Parameter Name         ; Value        ; Type                                                     ;
-+------------------------+--------------+----------------------------------------------------------+
-; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY                                               ;
-; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY                                             ;
-; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE                                             ;
-; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE                                           ;
-; LPM_WIDTH              ; 8            ; Signed Integer                                           ;
-; LPM_DIRECTION          ; UP           ; Untyped                                                  ;
-; LPM_MODULUS            ; 9            ; Signed Integer                                           ;
-; LPM_AVALUE             ; UNUSED       ; Untyped                                                  ;
-; LPM_SVALUE             ; UNUSED       ; Untyped                                                  ;
-; LPM_PORT_UPDOWN        ; PORT_UNUSED  ; Untyped                                                  ;
-; DEVICE_FAMILY          ; Cyclone IV E ; Untyped                                                  ;
-; CARRY_CHAIN            ; MANUAL       ; Untyped                                                  ;
-; CARRY_CHAIN_LENGTH     ; 48           ; CARRY_CHAIN_LENGTH                                       ;
-; NOT_GATE_PUSH_BACK     ; ON           ; NOT_GATE_PUSH_BACK                                       ;
-; CARRY_CNT_EN           ; SMART        ; Untyped                                                  ;
-; LABWIDE_SCLR           ; ON           ; Untyped                                                  ;
-; USE_NEW_VERSION        ; TRUE         ; Untyped                                                  ;
-; CBXI_PARAMETER         ; cntr_gij     ; Untyped                                                  ;
-+------------------------+--------------+----------------------------------------------------------+
++-----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CountM10:inst4|lpm_counter:LPM_COUNTER_component ;
++------------------------+--------------+-------------------------------------------------------+
+; Parameter Name         ; Value        ; Type                                                  ;
++------------------------+--------------+-------------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY                                            ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY                                          ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE                                          ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE                                        ;
+; LPM_WIDTH              ; 8            ; Signed Integer                                        ;
+; LPM_DIRECTION          ; UP           ; Untyped                                               ;
+; LPM_MODULUS            ; 10           ; Signed Integer                                        ;
+; LPM_AVALUE             ; UNUSED       ; Untyped                                               ;
+; LPM_SVALUE             ; UNUSED       ; Untyped                                               ;
+; LPM_PORT_UPDOWN        ; PORT_UNUSED  ; Untyped                                               ;
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped                                               ;
+; CARRY_CHAIN            ; MANUAL       ; Untyped                                               ;
+; CARRY_CHAIN_LENGTH     ; 48           ; CARRY_CHAIN_LENGTH                                    ;
+; NOT_GATE_PUSH_BACK     ; ON           ; NOT_GATE_PUSH_BACK                                    ;
+; CARRY_CNT_EN           ; SMART        ; Untyped                                               ;
+; LABWIDE_SCLR           ; ON           ; Untyped                                               ;
+; USE_NEW_VERSION        ; TRUE         ; Untyped                                               ;
+; CBXI_PARAMETER         ; cntr_ojj     ; Untyped                                               ;
++------------------------+--------------+-------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+--------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: CountM9:b2v_inst4|lpm_counter:LPM_COUNTER_component ;
-+------------------------+--------------+----------------------------------------------------------+
-; Parameter Name         ; Value        ; Type                                                     ;
-+------------------------+--------------+----------------------------------------------------------+
-; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY                                               ;
-; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY                                             ;
-; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE                                             ;
-; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE                                           ;
-; LPM_WIDTH              ; 8            ; Signed Integer                                           ;
-; LPM_DIRECTION          ; UP           ; Untyped                                                  ;
-; LPM_MODULUS            ; 9            ; Signed Integer                                           ;
-; LPM_AVALUE             ; UNUSED       ; Untyped                                                  ;
-; LPM_SVALUE             ; UNUSED       ; Untyped                                                  ;
-; LPM_PORT_UPDOWN        ; PORT_UNUSED  ; Untyped                                                  ;
-; DEVICE_FAMILY          ; Cyclone IV E ; Untyped                                                  ;
-; CARRY_CHAIN            ; MANUAL       ; Untyped                                                  ;
-; CARRY_CHAIN_LENGTH     ; 48           ; CARRY_CHAIN_LENGTH                                       ;
-; NOT_GATE_PUSH_BACK     ; ON           ; NOT_GATE_PUSH_BACK                                       ;
-; CARRY_CNT_EN           ; SMART        ; Untyped                                                  ;
-; LABWIDE_SCLR           ; ON           ; Untyped                                                  ;
-; USE_NEW_VERSION        ; TRUE         ; Untyped                                                  ;
-; CBXI_PARAMETER         ; cntr_gij     ; Untyped                                                  ;
-+------------------------+--------------+----------------------------------------------------------+
++----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CountM5:inst3|lpm_counter:LPM_COUNTER_component ;
++------------------------+--------------+------------------------------------------------------+
+; Parameter Name         ; Value        ; Type                                                 ;
++------------------------+--------------+------------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY                                           ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY                                         ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE                                         ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE                                       ;
+; LPM_WIDTH              ; 8            ; Signed Integer                                       ;
+; LPM_DIRECTION          ; UP           ; Untyped                                              ;
+; LPM_MODULUS            ; 5            ; Signed Integer                                       ;
+; LPM_AVALUE             ; UNUSED       ; Untyped                                              ;
+; LPM_SVALUE             ; UNUSED       ; Untyped                                              ;
+; LPM_PORT_UPDOWN        ; PORT_UNUSED  ; Untyped                                              ;
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped                                              ;
+; CARRY_CHAIN            ; MANUAL       ; Untyped                                              ;
+; CARRY_CHAIN_LENGTH     ; 48           ; CARRY_CHAIN_LENGTH                                   ;
+; NOT_GATE_PUSH_BACK     ; ON           ; NOT_GATE_PUSH_BACK                                   ;
+; CARRY_CNT_EN           ; SMART        ; Untyped                                              ;
+; LABWIDE_SCLR           ; ON           ; Untyped                                              ;
+; USE_NEW_VERSION        ; TRUE         ; Untyped                                              ;
+; CBXI_PARAMETER         ; cntr_cij     ; Untyped                                              ;
++------------------------+--------------+------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+--------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: CountM9:b2v_inst5|lpm_counter:LPM_COUNTER_component ;
-+------------------------+--------------+----------------------------------------------------------+
-; Parameter Name         ; Value        ; Type                                                     ;
-+------------------------+--------------+----------------------------------------------------------+
-; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY                                               ;
-; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY                                             ;
-; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE                                             ;
-; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE                                           ;
-; LPM_WIDTH              ; 8            ; Signed Integer                                           ;
-; LPM_DIRECTION          ; UP           ; Untyped                                                  ;
-; LPM_MODULUS            ; 9            ; Signed Integer                                           ;
-; LPM_AVALUE             ; UNUSED       ; Untyped                                                  ;
-; LPM_SVALUE             ; UNUSED       ; Untyped                                                  ;
-; LPM_PORT_UPDOWN        ; PORT_UNUSED  ; Untyped                                                  ;
-; DEVICE_FAMILY          ; Cyclone IV E ; Untyped                                                  ;
-; CARRY_CHAIN            ; MANUAL       ; Untyped                                                  ;
-; CARRY_CHAIN_LENGTH     ; 48           ; CARRY_CHAIN_LENGTH                                       ;
-; NOT_GATE_PUSH_BACK     ; ON           ; NOT_GATE_PUSH_BACK                                       ;
-; CARRY_CNT_EN           ; SMART        ; Untyped                                                  ;
-; LABWIDE_SCLR           ; ON           ; Untyped                                                  ;
-; USE_NEW_VERSION        ; TRUE         ; Untyped                                                  ;
-; CBXI_PARAMETER         ; cntr_gij     ; Untyped                                                  ;
-+------------------------+--------------+----------------------------------------------------------+
++------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: AltPLL01:inst|altpll:altpll_component ;
++-------------------------------+----------------------------+-----------------------+
+; Parameter Name                ; Value                      ; Type                  ;
++-------------------------------+----------------------------+-----------------------+
+; OPERATION_MODE                ; NORMAL                     ; Untyped               ;
+; PLL_TYPE                      ; AUTO                       ; Untyped               ;
+; LPM_HINT                      ; CBX_MODULE_PREFIX=AltPLL01 ; Untyped               ;
+; QUALIFY_CONF_DONE             ; OFF                        ; Untyped               ;
+; COMPENSATE_CLOCK              ; CLK0                       ; Untyped               ;
+; SCAN_CHAIN                    ; LONG                       ; Untyped               ;
+; PRIMARY_CLOCK                 ; INCLK0                     ; Untyped               ;
+; INCLK0_INPUT_FREQUENCY        ; 20000                      ; Signed Integer        ;
+; INCLK1_INPUT_FREQUENCY        ; 0                          ; Untyped               ;
+; GATE_LOCK_SIGNAL              ; NO                         ; Untyped               ;
+; GATE_LOCK_COUNTER             ; 0                          ; Untyped               ;
+; LOCK_HIGH                     ; 1                          ; Untyped               ;
+; LOCK_LOW                      ; 1                          ; Untyped               ;
+; VALID_LOCK_MULTIPLIER         ; 1                          ; Untyped               ;
+; INVALID_LOCK_MULTIPLIER       ; 5                          ; Untyped               ;
+; SWITCH_OVER_ON_LOSSCLK        ; OFF                        ; Untyped               ;
+; SWITCH_OVER_ON_GATED_LOCK     ; OFF                        ; Untyped               ;
+; ENABLE_SWITCH_OVER_COUNTER    ; OFF                        ; Untyped               ;
+; SKIP_VCO                      ; OFF                        ; Untyped               ;
+; SWITCH_OVER_COUNTER           ; 0                          ; Untyped               ;
+; SWITCH_OVER_TYPE              ; AUTO                       ; Untyped               ;
+; FEEDBACK_SOURCE               ; EXTCLK0                    ; Untyped               ;
+; BANDWIDTH                     ; 0                          ; Untyped               ;
+; BANDWIDTH_TYPE                ; AUTO                       ; Untyped               ;
+; SPREAD_FREQUENCY              ; 0                          ; Untyped               ;
+; DOWN_SPREAD                   ; 0                          ; Untyped               ;
+; SELF_RESET_ON_GATED_LOSS_LOCK ; OFF                        ; Untyped               ;
+; SELF_RESET_ON_LOSS_LOCK       ; OFF                        ; Untyped               ;
+; CLK9_MULTIPLY_BY              ; 0                          ; Untyped               ;
+; CLK8_MULTIPLY_BY              ; 0                          ; Untyped               ;
+; CLK7_MULTIPLY_BY              ; 0                          ; Untyped               ;
+; CLK6_MULTIPLY_BY              ; 0                          ; Untyped               ;
+; CLK5_MULTIPLY_BY              ; 1                          ; Untyped               ;
+; CLK4_MULTIPLY_BY              ; 1                          ; Untyped               ;
+; CLK3_MULTIPLY_BY              ; 1                          ; Untyped               ;
+; CLK2_MULTIPLY_BY              ; 1                          ; Untyped               ;
+; CLK1_MULTIPLY_BY              ; 1                          ; Untyped               ;
+; CLK0_MULTIPLY_BY              ; 1                          ; Signed Integer        ;
+; CLK9_DIVIDE_BY                ; 0                          ; Untyped               ;
+; CLK8_DIVIDE_BY                ; 0                          ; Untyped               ;
+; CLK7_DIVIDE_BY                ; 0                          ; Untyped               ;
+; CLK6_DIVIDE_BY                ; 0                          ; Untyped               ;
+; CLK5_DIVIDE_BY                ; 1                          ; Untyped               ;
+; CLK4_DIVIDE_BY                ; 1                          ; Untyped               ;
+; CLK3_DIVIDE_BY                ; 1                          ; Untyped               ;
+; CLK2_DIVIDE_BY                ; 1                          ; Untyped               ;
+; CLK1_DIVIDE_BY                ; 1                          ; Untyped               ;
+; CLK0_DIVIDE_BY                ; 10000                      ; Signed Integer        ;
+; CLK9_PHASE_SHIFT              ; 0                          ; Untyped               ;
+; CLK8_PHASE_SHIFT              ; 0                          ; Untyped               ;
+; CLK7_PHASE_SHIFT              ; 0                          ; Untyped               ;
+; CLK6_PHASE_SHIFT              ; 0                          ; Untyped               ;
+; CLK5_PHASE_SHIFT              ; 0                          ; Untyped               ;
+; CLK4_PHASE_SHIFT              ; 0                          ; Untyped               ;
+; CLK3_PHASE_SHIFT              ; 0                          ; Untyped               ;
+; CLK2_PHASE_SHIFT              ; 0                          ; Untyped               ;
+; CLK1_PHASE_SHIFT              ; 0                          ; Untyped               ;
+; CLK0_PHASE_SHIFT              ; 0                          ; Untyped               ;
+; CLK5_TIME_DELAY               ; 0                          ; Untyped               ;
+; CLK4_TIME_DELAY               ; 0                          ; Untyped               ;
+; CLK3_TIME_DELAY               ; 0                          ; Untyped               ;
+; CLK2_TIME_DELAY               ; 0                          ; Untyped               ;
+; CLK1_TIME_DELAY               ; 0                          ; Untyped               ;
+; CLK0_TIME_DELAY               ; 0                          ; Untyped               ;
+; CLK9_DUTY_CYCLE               ; 50                         ; Untyped               ;
+; CLK8_DUTY_CYCLE               ; 50                         ; Untyped               ;
+; CLK7_DUTY_CYCLE               ; 50                         ; Untyped               ;
+; CLK6_DUTY_CYCLE               ; 50                         ; Untyped               ;
+; CLK5_DUTY_CYCLE               ; 50                         ; Untyped               ;
+; CLK4_DUTY_CYCLE               ; 50                         ; Untyped               ;
+; CLK3_DUTY_CYCLE               ; 50                         ; Untyped               ;
+; CLK2_DUTY_CYCLE               ; 50                         ; Untyped               ;
+; CLK1_DUTY_CYCLE               ; 50                         ; Untyped               ;
+; CLK0_DUTY_CYCLE               ; 50                         ; Signed Integer        ;
+; CLK9_USE_EVEN_COUNTER_MODE    ; OFF                        ; Untyped               ;
+; CLK8_USE_EVEN_COUNTER_MODE    ; OFF                        ; Untyped               ;
+; CLK7_USE_EVEN_COUNTER_MODE    ; OFF                        ; Untyped               ;
+; CLK6_USE_EVEN_COUNTER_MODE    ; OFF                        ; Untyped               ;
+; CLK5_USE_EVEN_COUNTER_MODE    ; OFF                        ; Untyped               ;
+; CLK4_USE_EVEN_COUNTER_MODE    ; OFF                        ; Untyped               ;
+; CLK3_USE_EVEN_COUNTER_MODE    ; OFF                        ; Untyped               ;
+; CLK2_USE_EVEN_COUNTER_MODE    ; OFF                        ; Untyped               ;
+; CLK1_USE_EVEN_COUNTER_MODE    ; OFF                        ; Untyped               ;
+; CLK0_USE_EVEN_COUNTER_MODE    ; OFF                        ; Untyped               ;
+; CLK9_USE_EVEN_COUNTER_VALUE   ; OFF                        ; Untyped               ;
+; CLK8_USE_EVEN_COUNTER_VALUE   ; OFF                        ; Untyped               ;
+; CLK7_USE_EVEN_COUNTER_VALUE   ; OFF                        ; Untyped               ;
+; CLK6_USE_EVEN_COUNTER_VALUE   ; OFF                        ; Untyped               ;
+; CLK5_USE_EVEN_COUNTER_VALUE   ; OFF                        ; Untyped               ;
+; CLK4_USE_EVEN_COUNTER_VALUE   ; OFF                        ; Untyped               ;
+; CLK3_USE_EVEN_COUNTER_VALUE   ; OFF                        ; Untyped               ;
+; CLK2_USE_EVEN_COUNTER_VALUE   ; OFF                        ; Untyped               ;
+; CLK1_USE_EVEN_COUNTER_VALUE   ; OFF                        ; Untyped               ;
+; CLK0_USE_EVEN_COUNTER_VALUE   ; OFF                        ; Untyped               ;
+; LOCK_WINDOW_UI                ;  0.05                      ; Untyped               ;
+; LOCK_WINDOW_UI_BITS           ; UNUSED                     ; Untyped               ;
+; VCO_RANGE_DETECTOR_LOW_BITS   ; UNUSED                     ; Untyped               ;
+; VCO_RANGE_DETECTOR_HIGH_BITS  ; UNUSED                     ; Untyped               ;
+; DPA_MULTIPLY_BY               ; 0                          ; Untyped               ;
+; DPA_DIVIDE_BY                 ; 1                          ; Untyped               ;
+; DPA_DIVIDER                   ; 0                          ; Untyped               ;
+; EXTCLK3_MULTIPLY_BY           ; 1                          ; Untyped               ;
+; EXTCLK2_MULTIPLY_BY           ; 1                          ; Untyped               ;
+; EXTCLK1_MULTIPLY_BY           ; 1                          ; Untyped               ;
+; EXTCLK0_MULTIPLY_BY           ; 1                          ; Untyped               ;
+; EXTCLK3_DIVIDE_BY             ; 1                          ; Untyped               ;
+; EXTCLK2_DIVIDE_BY             ; 1                          ; Untyped               ;
+; EXTCLK1_DIVIDE_BY             ; 1                          ; Untyped               ;
+; EXTCLK0_DIVIDE_BY             ; 1                          ; Untyped               ;
+; EXTCLK3_PHASE_SHIFT           ; 0                          ; Untyped               ;
+; EXTCLK2_PHASE_SHIFT           ; 0                          ; Untyped               ;
+; EXTCLK1_PHASE_SHIFT           ; 0                          ; Untyped               ;
+; EXTCLK0_PHASE_SHIFT           ; 0                          ; Untyped               ;
+; EXTCLK3_TIME_DELAY            ; 0                          ; Untyped               ;
+; EXTCLK2_TIME_DELAY            ; 0                          ; Untyped               ;
+; EXTCLK1_TIME_DELAY            ; 0                          ; Untyped               ;
+; EXTCLK0_TIME_DELAY            ; 0                          ; Untyped               ;
+; EXTCLK3_DUTY_CYCLE            ; 50                         ; Untyped               ;
+; EXTCLK2_DUTY_CYCLE            ; 50                         ; Untyped               ;
+; EXTCLK1_DUTY_CYCLE            ; 50                         ; Untyped               ;
+; EXTCLK0_DUTY_CYCLE            ; 50                         ; Untyped               ;
+; VCO_MULTIPLY_BY               ; 0                          ; Untyped               ;
+; VCO_DIVIDE_BY                 ; 0                          ; Untyped               ;
+; SCLKOUT0_PHASE_SHIFT          ; 0                          ; Untyped               ;
+; SCLKOUT1_PHASE_SHIFT          ; 0                          ; Untyped               ;
+; VCO_MIN                       ; 0                          ; Untyped               ;
+; VCO_MAX                       ; 0                          ; Untyped               ;
+; VCO_CENTER                    ; 0                          ; Untyped               ;
+; PFD_MIN                       ; 0                          ; Untyped               ;
+; PFD_MAX                       ; 0                          ; Untyped               ;
+; M_INITIAL                     ; 0                          ; Untyped               ;
+; M                             ; 0                          ; Untyped               ;
+; N                             ; 1                          ; Untyped               ;
+; M2                            ; 1                          ; Untyped               ;
+; N2                            ; 1                          ; Untyped               ;
+; SS                            ; 1                          ; Untyped               ;
+; C0_HIGH                       ; 0                          ; Untyped               ;
+; C1_HIGH                       ; 0                          ; Untyped               ;
+; C2_HIGH                       ; 0                          ; Untyped               ;
+; C3_HIGH                       ; 0                          ; Untyped               ;
+; C4_HIGH                       ; 0                          ; Untyped               ;
+; C5_HIGH                       ; 0                          ; Untyped               ;
+; C6_HIGH                       ; 0                          ; Untyped               ;
+; C7_HIGH                       ; 0                          ; Untyped               ;
+; C8_HIGH                       ; 0                          ; Untyped               ;
+; C9_HIGH                       ; 0                          ; Untyped               ;
+; C0_LOW                        ; 0                          ; Untyped               ;
+; C1_LOW                        ; 0                          ; Untyped               ;
+; C2_LOW                        ; 0                          ; Untyped               ;
+; C3_LOW                        ; 0                          ; Untyped               ;
+; C4_LOW                        ; 0                          ; Untyped               ;
+; C5_LOW                        ; 0                          ; Untyped               ;
+; C6_LOW                        ; 0                          ; Untyped               ;
+; C7_LOW                        ; 0                          ; Untyped               ;
+; C8_LOW                        ; 0                          ; Untyped               ;
+; C9_LOW                        ; 0                          ; Untyped               ;
+; C0_INITIAL                    ; 0                          ; Untyped               ;
+; C1_INITIAL                    ; 0                          ; Untyped               ;
+; C2_INITIAL                    ; 0                          ; Untyped               ;
+; C3_INITIAL                    ; 0                          ; Untyped               ;
+; C4_INITIAL                    ; 0                          ; Untyped               ;
+; C5_INITIAL                    ; 0                          ; Untyped               ;
+; C6_INITIAL                    ; 0                          ; Untyped               ;
+; C7_INITIAL                    ; 0                          ; Untyped               ;
+; C8_INITIAL                    ; 0                          ; Untyped               ;
+; C9_INITIAL                    ; 0                          ; Untyped               ;
+; C0_MODE                       ; BYPASS                     ; Untyped               ;
+; C1_MODE                       ; BYPASS                     ; Untyped               ;
+; C2_MODE                       ; BYPASS                     ; Untyped               ;
+; C3_MODE                       ; BYPASS                     ; Untyped               ;
+; C4_MODE                       ; BYPASS                     ; Untyped               ;
+; C5_MODE                       ; BYPASS                     ; Untyped               ;
+; C6_MODE                       ; BYPASS                     ; Untyped               ;
+; C7_MODE                       ; BYPASS                     ; Untyped               ;
+; C8_MODE                       ; BYPASS                     ; Untyped               ;
+; C9_MODE                       ; BYPASS                     ; Untyped               ;
+; C0_PH                         ; 0                          ; Untyped               ;
+; C1_PH                         ; 0                          ; Untyped               ;
+; C2_PH                         ; 0                          ; Untyped               ;
+; C3_PH                         ; 0                          ; Untyped               ;
+; C4_PH                         ; 0                          ; Untyped               ;
+; C5_PH                         ; 0                          ; Untyped               ;
+; C6_PH                         ; 0                          ; Untyped               ;
+; C7_PH                         ; 0                          ; Untyped               ;
+; C8_PH                         ; 0                          ; Untyped               ;
+; C9_PH                         ; 0                          ; Untyped               ;
+; L0_HIGH                       ; 1                          ; Untyped               ;
+; L1_HIGH                       ; 1                          ; Untyped               ;
+; G0_HIGH                       ; 1                          ; Untyped               ;
+; G1_HIGH                       ; 1                          ; Untyped               ;
+; G2_HIGH                       ; 1                          ; Untyped               ;
+; G3_HIGH                       ; 1                          ; Untyped               ;
+; E0_HIGH                       ; 1                          ; Untyped               ;
+; E1_HIGH                       ; 1                          ; Untyped               ;
+; E2_HIGH                       ; 1                          ; Untyped               ;
+; E3_HIGH                       ; 1                          ; Untyped               ;
+; L0_LOW                        ; 1                          ; Untyped               ;
+; L1_LOW                        ; 1                          ; Untyped               ;
+; G0_LOW                        ; 1                          ; Untyped               ;
+; G1_LOW                        ; 1                          ; Untyped               ;
+; G2_LOW                        ; 1                          ; Untyped               ;
+; G3_LOW                        ; 1                          ; Untyped               ;
+; E0_LOW                        ; 1                          ; Untyped               ;
+; E1_LOW                        ; 1                          ; Untyped               ;
+; E2_LOW                        ; 1                          ; Untyped               ;
+; E3_LOW                        ; 1                          ; Untyped               ;
+; L0_INITIAL                    ; 1                          ; Untyped               ;
+; L1_INITIAL                    ; 1                          ; Untyped               ;
+; G0_INITIAL                    ; 1                          ; Untyped               ;
+; G1_INITIAL                    ; 1                          ; Untyped               ;
+; G2_INITIAL                    ; 1                          ; Untyped               ;
+; G3_INITIAL                    ; 1                          ; Untyped               ;
+; E0_INITIAL                    ; 1                          ; Untyped               ;
+; E1_INITIAL                    ; 1                          ; Untyped               ;
+; E2_INITIAL                    ; 1                          ; Untyped               ;
+; E3_INITIAL                    ; 1                          ; Untyped               ;
+; L0_MODE                       ; BYPASS                     ; Untyped               ;
+; L1_MODE                       ; BYPASS                     ; Untyped               ;
+; G0_MODE                       ; BYPASS                     ; Untyped               ;
+; G1_MODE                       ; BYPASS                     ; Untyped               ;
+; G2_MODE                       ; BYPASS                     ; Untyped               ;
+; G3_MODE                       ; BYPASS                     ; Untyped               ;
+; E0_MODE                       ; BYPASS                     ; Untyped               ;
+; E1_MODE                       ; BYPASS                     ; Untyped               ;
+; E2_MODE                       ; BYPASS                     ; Untyped               ;
+; E3_MODE                       ; BYPASS                     ; Untyped               ;
+; L0_PH                         ; 0                          ; Untyped               ;
+; L1_PH                         ; 0                          ; Untyped               ;
+; G0_PH                         ; 0                          ; Untyped               ;
+; G1_PH                         ; 0                          ; Untyped               ;
+; G2_PH                         ; 0                          ; Untyped               ;
+; G3_PH                         ; 0                          ; Untyped               ;
+; E0_PH                         ; 0                          ; Untyped               ;
+; E1_PH                         ; 0                          ; Untyped               ;
+; E2_PH                         ; 0                          ; Untyped               ;
+; E3_PH                         ; 0                          ; Untyped               ;
+; M_PH                          ; 0                          ; Untyped               ;
+; C1_USE_CASC_IN                ; OFF                        ; Untyped               ;
+; C2_USE_CASC_IN                ; OFF                        ; Untyped               ;
+; C3_USE_CASC_IN                ; OFF                        ; Untyped               ;
+; C4_USE_CASC_IN                ; OFF                        ; Untyped               ;
+; C5_USE_CASC_IN                ; OFF                        ; Untyped               ;
+; C6_USE_CASC_IN                ; OFF                        ; Untyped               ;
+; C7_USE_CASC_IN                ; OFF                        ; Untyped               ;
+; C8_USE_CASC_IN                ; OFF                        ; Untyped               ;
+; C9_USE_CASC_IN                ; OFF                        ; Untyped               ;
+; CLK0_COUNTER                  ; G0                         ; Untyped               ;
+; CLK1_COUNTER                  ; G0                         ; Untyped               ;
+; CLK2_COUNTER                  ; G0                         ; Untyped               ;
+; CLK3_COUNTER                  ; G0                         ; Untyped               ;
+; CLK4_COUNTER                  ; G0                         ; Untyped               ;
+; CLK5_COUNTER                  ; G0                         ; Untyped               ;
+; CLK6_COUNTER                  ; E0                         ; Untyped               ;
+; CLK7_COUNTER                  ; E1                         ; Untyped               ;
+; CLK8_COUNTER                  ; E2                         ; Untyped               ;
+; CLK9_COUNTER                  ; E3                         ; Untyped               ;
+; L0_TIME_DELAY                 ; 0                          ; Untyped               ;
+; L1_TIME_DELAY                 ; 0                          ; Untyped               ;
+; G0_TIME_DELAY                 ; 0                          ; Untyped               ;
+; G1_TIME_DELAY                 ; 0                          ; Untyped               ;
+; G2_TIME_DELAY                 ; 0                          ; Untyped               ;
+; G3_TIME_DELAY                 ; 0                          ; Untyped               ;
+; E0_TIME_DELAY                 ; 0                          ; Untyped               ;
+; E1_TIME_DELAY                 ; 0                          ; Untyped               ;
+; E2_TIME_DELAY                 ; 0                          ; Untyped               ;
+; E3_TIME_DELAY                 ; 0                          ; Untyped               ;
+; M_TIME_DELAY                  ; 0                          ; Untyped               ;
+; N_TIME_DELAY                  ; 0                          ; Untyped               ;
+; EXTCLK3_COUNTER               ; E3                         ; Untyped               ;
+; EXTCLK2_COUNTER               ; E2                         ; Untyped               ;
+; EXTCLK1_COUNTER               ; E1                         ; Untyped               ;
+; EXTCLK0_COUNTER               ; E0                         ; Untyped               ;
+; ENABLE0_COUNTER               ; L0                         ; Untyped               ;
+; ENABLE1_COUNTER               ; L0                         ; Untyped               ;
+; CHARGE_PUMP_CURRENT           ; 2                          ; Untyped               ;
+; LOOP_FILTER_R                 ;  1.000000                  ; Untyped               ;
+; LOOP_FILTER_C                 ; 5                          ; Untyped               ;
+; CHARGE_PUMP_CURRENT_BITS      ; 9999                       ; Untyped               ;
+; LOOP_FILTER_R_BITS            ; 9999                       ; Untyped               ;
+; LOOP_FILTER_C_BITS            ; 9999                       ; Untyped               ;
+; VCO_POST_SCALE                ; 0                          ; Untyped               ;
+; CLK2_OUTPUT_FREQUENCY         ; 0                          ; Untyped               ;
+; CLK1_OUTPUT_FREQUENCY         ; 0                          ; Untyped               ;
+; CLK0_OUTPUT_FREQUENCY         ; 0                          ; Untyped               ;
+; INTENDED_DEVICE_FAMILY        ; Cyclone IV E               ; Untyped               ;
+; PORT_CLKENA0                  ; PORT_UNUSED                ; Untyped               ;
+; PORT_CLKENA1                  ; PORT_UNUSED                ; Untyped               ;
+; PORT_CLKENA2                  ; PORT_UNUSED                ; Untyped               ;
+; PORT_CLKENA3                  ; PORT_UNUSED                ; Untyped               ;
+; PORT_CLKENA4                  ; PORT_UNUSED                ; Untyped               ;
+; PORT_CLKENA5                  ; PORT_UNUSED                ; Untyped               ;
+; PORT_EXTCLKENA0               ; PORT_CONNECTIVITY          ; Untyped               ;
+; PORT_EXTCLKENA1               ; PORT_CONNECTIVITY          ; Untyped               ;
+; PORT_EXTCLKENA2               ; PORT_CONNECTIVITY          ; Untyped               ;
+; PORT_EXTCLKENA3               ; PORT_CONNECTIVITY          ; Untyped               ;
+; PORT_EXTCLK0                  ; PORT_UNUSED                ; Untyped               ;
+; PORT_EXTCLK1                  ; PORT_UNUSED                ; Untyped               ;
+; PORT_EXTCLK2                  ; PORT_UNUSED                ; Untyped               ;
+; PORT_EXTCLK3                  ; PORT_UNUSED                ; Untyped               ;
+; PORT_CLKBAD0                  ; PORT_UNUSED                ; Untyped               ;
+; PORT_CLKBAD1                  ; PORT_UNUSED                ; Untyped               ;
+; PORT_CLK0                     ; PORT_USED                  ; Untyped               ;
+; PORT_CLK1                     ; PORT_UNUSED                ; Untyped               ;
+; PORT_CLK2                     ; PORT_UNUSED                ; Untyped               ;
+; PORT_CLK3                     ; PORT_UNUSED                ; Untyped               ;
+; PORT_CLK4                     ; PORT_UNUSED                ; Untyped               ;
+; PORT_CLK5                     ; PORT_UNUSED                ; Untyped               ;
+; PORT_CLK6                     ; PORT_UNUSED                ; Untyped               ;
+; PORT_CLK7                     ; PORT_UNUSED                ; Untyped               ;
+; PORT_CLK8                     ; PORT_UNUSED                ; Untyped               ;
+; PORT_CLK9                     ; PORT_UNUSED                ; Untyped               ;
+; PORT_SCANDATA                 ; PORT_UNUSED                ; Untyped               ;
+; PORT_SCANDATAOUT              ; PORT_UNUSED                ; Untyped               ;
+; PORT_SCANDONE                 ; PORT_UNUSED                ; Untyped               ;
+; PORT_SCLKOUT1                 ; PORT_CONNECTIVITY          ; Untyped               ;
+; PORT_SCLKOUT0                 ; PORT_CONNECTIVITY          ; Untyped               ;
+; PORT_ACTIVECLOCK              ; PORT_UNUSED                ; Untyped               ;
+; PORT_CLKLOSS                  ; PORT_UNUSED                ; Untyped               ;
+; PORT_INCLK1                   ; PORT_UNUSED                ; Untyped               ;
+; PORT_INCLK0                   ; PORT_USED                  ; Untyped               ;
+; PORT_FBIN                     ; PORT_UNUSED                ; Untyped               ;
+; PORT_PLLENA                   ; PORT_UNUSED                ; Untyped               ;
+; PORT_CLKSWITCH                ; PORT_UNUSED                ; Untyped               ;
+; PORT_ARESET                   ; PORT_USED                  ; Untyped               ;
+; PORT_PFDENA                   ; PORT_UNUSED                ; Untyped               ;
+; PORT_SCANCLK                  ; PORT_UNUSED                ; Untyped               ;
+; PORT_SCANACLR                 ; PORT_UNUSED                ; Untyped               ;
+; PORT_SCANREAD                 ; PORT_UNUSED                ; Untyped               ;
+; PORT_SCANWRITE                ; PORT_UNUSED                ; Untyped               ;
+; PORT_ENABLE0                  ; PORT_CONNECTIVITY          ; Untyped               ;
+; PORT_ENABLE1                  ; PORT_CONNECTIVITY          ; Untyped               ;
+; PORT_LOCKED                   ; PORT_USED                  ; Untyped               ;
+; PORT_CONFIGUPDATE             ; PORT_UNUSED                ; Untyped               ;
+; PORT_FBOUT                    ; PORT_CONNECTIVITY          ; Untyped               ;
+; PORT_PHASEDONE                ; PORT_UNUSED                ; Untyped               ;
+; PORT_PHASESTEP                ; PORT_UNUSED                ; Untyped               ;
+; PORT_PHASEUPDOWN              ; PORT_UNUSED                ; Untyped               ;
+; PORT_SCANCLKENA               ; PORT_UNUSED                ; Untyped               ;
+; PORT_PHASECOUNTERSELECT       ; PORT_UNUSED                ; Untyped               ;
+; PORT_VCOOVERRANGE             ; PORT_CONNECTIVITY          ; Untyped               ;
+; PORT_VCOUNDERRANGE            ; PORT_CONNECTIVITY          ; Untyped               ;
+; M_TEST_SOURCE                 ; 5                          ; Untyped               ;
+; C0_TEST_SOURCE                ; 5                          ; Untyped               ;
+; C1_TEST_SOURCE                ; 5                          ; Untyped               ;
+; C2_TEST_SOURCE                ; 5                          ; Untyped               ;
+; C3_TEST_SOURCE                ; 5                          ; Untyped               ;
+; C4_TEST_SOURCE                ; 5                          ; Untyped               ;
+; C5_TEST_SOURCE                ; 5                          ; Untyped               ;
+; C6_TEST_SOURCE                ; 5                          ; Untyped               ;
+; C7_TEST_SOURCE                ; 5                          ; Untyped               ;
+; C8_TEST_SOURCE                ; 5                          ; Untyped               ;
+; C9_TEST_SOURCE                ; 5                          ; Untyped               ;
+; CBXI_PARAMETER                ; AltPLL01_altpll            ; Untyped               ;
+; VCO_FREQUENCY_CONTROL         ; AUTO                       ; Untyped               ;
+; VCO_PHASE_SHIFT_STEP          ; 0                          ; Untyped               ;
+; WIDTH_CLOCK                   ; 5                          ; Signed Integer        ;
+; WIDTH_PHASECOUNTERSELECT      ; 4                          ; Untyped               ;
+; USING_FBMIMICBIDIR_PORT       ; OFF                        ; Untyped               ;
+; DEVICE_FAMILY                 ; Cyclone IV E               ; Untyped               ;
+; SCAN_CHAIN_MIF_FILE           ; UNUSED                     ; Untyped               ;
+; SIM_GATE_LOCK_DEVICE_BEHAVIOR ; OFF                        ; Untyped               ;
+; AUTO_CARRY_CHAINS             ; ON                         ; AUTO_CARRY            ;
+; IGNORE_CARRY_BUFFERS          ; OFF                        ; IGNORE_CARRY          ;
+; AUTO_CASCADE_CHAINS           ; ON                         ; AUTO_CASCADE          ;
+; IGNORE_CASCADE_BUFFERS        ; OFF                        ; IGNORE_CASCADE        ;
++-------------------------------+----------------------------+-----------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+--------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: CountM2:b2v_inst8|lpm_counter:LPM_COUNTER_component ;
-+------------------------+--------------+----------------------------------------------------------+
-; Parameter Name         ; Value        ; Type                                                     ;
-+------------------------+--------------+----------------------------------------------------------+
-; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY                                               ;
-; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY                                             ;
-; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE                                             ;
-; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE                                           ;
-; LPM_WIDTH              ; 4            ; Signed Integer                                           ;
-; LPM_DIRECTION          ; UP           ; Untyped                                                  ;
-; LPM_MODULUS            ; 4            ; Signed Integer                                           ;
-; LPM_AVALUE             ; UNUSED       ; Untyped                                                  ;
-; LPM_SVALUE             ; UNUSED       ; Untyped                                                  ;
-; LPM_PORT_UPDOWN        ; PORT_UNUSED  ; Untyped                                                  ;
-; DEVICE_FAMILY          ; Cyclone IV E ; Untyped                                                  ;
-; CARRY_CHAIN            ; MANUAL       ; Untyped                                                  ;
-; CARRY_CHAIN_LENGTH     ; 48           ; CARRY_CHAIN_LENGTH                                       ;
-; NOT_GATE_PUSH_BACK     ; ON           ; NOT_GATE_PUSH_BACK                                       ;
-; CARRY_CNT_EN           ; SMART        ; Untyped                                                  ;
-; LABWIDE_SCLR           ; ON           ; Untyped                                                  ;
-; USE_NEW_VERSION        ; TRUE         ; Untyped                                                  ;
-; CBXI_PARAMETER         ; cntr_7ij     ; Untyped                                                  ;
-+------------------------+--------------+----------------------------------------------------------+
++------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CountM25:inst16|lpm_counter:LPM_COUNTER_component ;
++------------------------+--------------+--------------------------------------------------------+
+; Parameter Name         ; Value        ; Type                                                   ;
++------------------------+--------------+--------------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY                                             ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY                                           ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE                                           ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE                                         ;
+; LPM_WIDTH              ; 8            ; Signed Integer                                         ;
+; LPM_DIRECTION          ; UP           ; Untyped                                                ;
+; LPM_MODULUS            ; 25           ; Signed Integer                                         ;
+; LPM_AVALUE             ; UNUSED       ; Untyped                                                ;
+; LPM_SVALUE             ; UNUSED       ; Untyped                                                ;
+; LPM_PORT_UPDOWN        ; PORT_UNUSED  ; Untyped                                                ;
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped                                                ;
+; CARRY_CHAIN            ; MANUAL       ; Untyped                                                ;
+; CARRY_CHAIN_LENGTH     ; 48           ; CARRY_CHAIN_LENGTH                                     ;
+; NOT_GATE_PUSH_BACK     ; ON           ; NOT_GATE_PUSH_BACK                                     ;
+; CARRY_CNT_EN           ; SMART        ; Untyped                                                ;
+; LABWIDE_SCLR           ; ON           ; Untyped                                                ;
+; USE_NEW_VERSION        ; TRUE         ; Untyped                                                ;
+; CBXI_PARAMETER         ; cntr_ujj     ; Untyped                                                ;
++------------------------+--------------+--------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+---------------------------------------------------------------------------+
-; altpll Parameter Settings by Entity Instance                              ;
-+-------------------------------+-------------------------------------------+
-; Name                          ; Value                                     ;
-+-------------------------------+-------------------------------------------+
-; Number of entity instances    ; 1                                         ;
-; Entity Instance               ; AltPLL01:b2v_inst|altpll:altpll_component ;
-;     -- OPERATION_MODE         ; NORMAL                                    ;
-;     -- PLL_TYPE               ; AUTO                                      ;
-;     -- PRIMARY_CLOCK          ; INCLK0                                    ;
-;     -- INCLK0_INPUT_FREQUENCY ; 20000                                     ;
-;     -- INCLK1_INPUT_FREQUENCY ; 0                                         ;
-;     -- VCO_MULTIPLY_BY        ; 0                                         ;
-;     -- VCO_DIVIDE_BY          ; 0                                         ;
-+-------------------------------+-------------------------------------------+
++------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CountM17:inst18|lpm_counter:LPM_COUNTER_component ;
++------------------------+--------------+--------------------------------------------------------+
+; Parameter Name         ; Value        ; Type                                                   ;
++------------------------+--------------+--------------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY                                             ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY                                           ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE                                           ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE                                         ;
+; LPM_WIDTH              ; 8            ; Signed Integer                                         ;
+; LPM_DIRECTION          ; UP           ; Untyped                                                ;
+; LPM_MODULUS            ; 17           ; Signed Integer                                         ;
+; LPM_AVALUE             ; UNUSED       ; Untyped                                                ;
+; LPM_SVALUE             ; UNUSED       ; Untyped                                                ;
+; LPM_PORT_UPDOWN        ; PORT_UNUSED  ; Untyped                                                ;
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped                                                ;
+; CARRY_CHAIN            ; MANUAL       ; Untyped                                                ;
+; CARRY_CHAIN_LENGTH     ; 48           ; CARRY_CHAIN_LENGTH                                     ;
+; NOT_GATE_PUSH_BACK     ; ON           ; NOT_GATE_PUSH_BACK                                     ;
+; CARRY_CNT_EN           ; SMART        ; Untyped                                                ;
+; LABWIDE_SCLR           ; ON           ; Untyped                                                ;
+; USE_NEW_VERSION        ; TRUE         ; Untyped                                                ;
+; CBXI_PARAMETER         ; cntr_vjj     ; Untyped                                                ;
++------------------------+--------------+--------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "CountM2:b2v_inst8"                                                                                       ;
-+------+--------+----------+----------------------------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                                                  ;
-+------+--------+----------+----------------------------------------------------------------------------------------------------------+
-; q    ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+----------------------------------------------------------------------------------------------------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "CountM9:b2v_inst5"                                                                                       ;
-+------+--------+----------+----------------------------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                                                  ;
-+------+--------+----------+----------------------------------------------------------------------------------------------------------+
-; q    ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+----------------------------------------------------------------------------------------------------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "CountM9:b2v_inst4"                                                                                       ;
-+------+--------+----------+----------------------------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                                                  ;
-+------+--------+----------+----------------------------------------------------------------------------------------------------------+
-; q    ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+----------------------------------------------------------------------------------------------------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "CountM9:b2v_inst3"                                                                                       ;
-+------+--------+----------+----------------------------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                                                  ;
-+------+--------+----------+----------------------------------------------------------------------------------------------------------+
-; q    ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+----------------------------------------------------------------------------------------------------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "CountM1:b2v_inst10"                                                                                      ;
-+------+--------+----------+----------------------------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                                                  ;
-+------+--------+----------+----------------------------------------------------------------------------------------------------------+
-; q    ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+----------------------------------------------------------------------------------------------------------+
-
-
-+---------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "AltPLL01:b2v_inst"                                                                                         ;
-+--------+--------+----------+----------------------------------------------------------------------------------------------------------+
-; Port   ; Type   ; Severity ; Details                                                                                                  ;
-+--------+--------+----------+----------------------------------------------------------------------------------------------------------+
-; areset ; Input  ; Info     ; Stuck at GND                                                                                             ;
-; locked ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
-+--------+--------+----------+----------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------+
+; altpll Parameter Settings by Entity Instance                          ;
++-------------------------------+---------------------------------------+
+; Name                          ; Value                                 ;
++-------------------------------+---------------------------------------+
+; Number of entity instances    ; 1                                     ;
+; Entity Instance               ; AltPLL01:inst|altpll:altpll_component ;
+;     -- OPERATION_MODE         ; NORMAL                                ;
+;     -- PLL_TYPE               ; AUTO                                  ;
+;     -- PRIMARY_CLOCK          ; INCLK0                                ;
+;     -- INCLK0_INPUT_FREQUENCY ; 20000                                 ;
+;     -- INCLK1_INPUT_FREQUENCY ; 0                                     ;
+;     -- VCO_MULTIPLY_BY        ; 0                                     ;
+;     -- VCO_DIVIDE_BY          ; 0                                     ;
++-------------------------------+---------------------------------------+
 
 
 +-------------------------------+
@@ -968,7 +930,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Full Version
-    Info: Processing started: Sun Mar 31 14:04:27 2024
+    Info: Processing started: Mon Apr 01 21:01:51 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off IPblock -c IPblock
 Info (11104): Parallel Compilation has detected 12 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 6 of the 6 physical processors detected instead.
 Info (12021): Found 2 design units, including 1 entities, in source file altpll01.vhd
@@ -993,13 +955,57 @@ Info (12021): Found 2 design units, including 1 entities, in source file countm1
 Info (12021): Found 2 design units, including 1 entities, in source file logblock.vhd
     Info (12022): Found design unit 1: LogBlock-Behavioral
     Info (12023): Found entity 1: LogBlock
-Info (12021): Found 1 design units, including 1 entities, in source file ipblock.v
+Info (12021): Found 1 design units, including 1 entities, in source file ipblock.bdf
     Info (12023): Found entity 1: IPblock
+Info (12021): Found 2 design units, including 1 entities, in source file countm5.vhd
+    Info (12022): Found design unit 1: countm5-SYN
+    Info (12023): Found entity 1: CountM5
+Info (12021): Found 2 design units, including 1 entities, in source file countm10.vhd
+    Info (12022): Found design unit 1: countm10-SYN
+    Info (12023): Found entity 1: CountM10
+Info (12021): Found 2 design units, including 1 entities, in source file countm25.vhd
+    Info (12022): Found design unit 1: countm25-SYN
+    Info (12023): Found entity 1: CountM25
+Info (12021): Found 2 design units, including 1 entities, in source file countm33.vhd
+    Info (12022): Found design unit 1: countm33-SYN
+    Info (12023): Found entity 1: CountM33
+Info (12021): Found 2 design units, including 1 entities, in source file countm17.vhd
+    Info (12022): Found design unit 1: countm17-SYN
+    Info (12023): Found entity 1: CountM17
 Info (12127): Elaborating entity "IPblock" for the top level hierarchy
-Info (12128): Elaborating entity "AltPLL01" for hierarchy "AltPLL01:b2v_inst"
-Info (12128): Elaborating entity "altpll" for hierarchy "AltPLL01:b2v_inst|altpll:altpll_component"
-Info (12130): Elaborated megafunction instantiation "AltPLL01:b2v_inst|altpll:altpll_component"
-Info (12133): Instantiated megafunction "AltPLL01:b2v_inst|altpll:altpll_component" with the following parameter:
+Info (12128): Elaborating entity "DTrigWRE" for hierarchy "DTrigWRE:inst7"
+Info (12128): Elaborating entity "DTrig" for hierarchy "DTrigWRE:inst7|DTrig:inst1"
+Info (12128): Elaborating entity "CountM5" for hierarchy "CountM5:inst8"
+Info (12128): Elaborating entity "lpm_counter" for hierarchy "CountM5:inst8|lpm_counter:LPM_COUNTER_component"
+Info (12130): Elaborated megafunction instantiation "CountM5:inst8|lpm_counter:LPM_COUNTER_component"
+Info (12133): Instantiated megafunction "CountM5:inst8|lpm_counter:LPM_COUNTER_component" with the following parameter:
+    Info (12134): Parameter "lpm_direction" = "UP"
+    Info (12134): Parameter "lpm_modulus" = "5"
+    Info (12134): Parameter "lpm_port_updown" = "PORT_UNUSED"
+    Info (12134): Parameter "lpm_type" = "LPM_COUNTER"
+    Info (12134): Parameter "lpm_width" = "8"
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_cij.tdf
+    Info (12023): Found entity 1: cntr_cij
+Info (12128): Elaborating entity "cntr_cij" for hierarchy "CountM5:inst8|lpm_counter:LPM_COUNTER_component|cntr_cij:auto_generated"
+Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_ugc.tdf
+    Info (12023): Found entity 1: cmpr_ugc
+Info (12128): Elaborating entity "cmpr_ugc" for hierarchy "CountM5:inst8|lpm_counter:LPM_COUNTER_component|cntr_cij:auto_generated|cmpr_ugc:cmpr1"
+Info (12128): Elaborating entity "CountM10" for hierarchy "CountM10:inst5"
+Info (12128): Elaborating entity "lpm_counter" for hierarchy "CountM10:inst5|lpm_counter:LPM_COUNTER_component"
+Info (12130): Elaborated megafunction instantiation "CountM10:inst5|lpm_counter:LPM_COUNTER_component"
+Info (12133): Instantiated megafunction "CountM10:inst5|lpm_counter:LPM_COUNTER_component" with the following parameter:
+    Info (12134): Parameter "lpm_direction" = "UP"
+    Info (12134): Parameter "lpm_modulus" = "10"
+    Info (12134): Parameter "lpm_port_updown" = "PORT_UNUSED"
+    Info (12134): Parameter "lpm_type" = "LPM_COUNTER"
+    Info (12134): Parameter "lpm_width" = "8"
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_ojj.tdf
+    Info (12023): Found entity 1: cntr_ojj
+Info (12128): Elaborating entity "cntr_ojj" for hierarchy "CountM10:inst5|lpm_counter:LPM_COUNTER_component|cntr_ojj:auto_generated"
+Info (12128): Elaborating entity "AltPLL01" for hierarchy "AltPLL01:inst"
+Info (12128): Elaborating entity "altpll" for hierarchy "AltPLL01:inst|altpll:altpll_component"
+Info (12130): Elaborated megafunction instantiation "AltPLL01:inst|altpll:altpll_component"
+Info (12133): Instantiated megafunction "AltPLL01:inst|altpll:altpll_component" with the following parameter:
     Info (12134): Parameter "bandwidth_type" = "AUTO"
     Info (12134): Parameter "clk0_divide_by" = "10000"
     Info (12134): Parameter "clk0_duty_cycle" = "50"
@@ -1057,74 +1063,49 @@ Info (12133): Instantiated megafunction "AltPLL01:b2v_inst|altpll:altpll_compone
     Info (12134): Parameter "width_clock" = "5"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altpll01_altpll.v
     Info (12023): Found entity 1: AltPLL01_altpll
-Info (12128): Elaborating entity "AltPLL01_altpll" for hierarchy "AltPLL01:b2v_inst|altpll:altpll_component|AltPLL01_altpll:auto_generated"
-Info (12128): Elaborating entity "DTrigWRE" for hierarchy "DTrigWRE:b2v_inst1"
-Info (12128): Elaborating entity "DTrig" for hierarchy "DTrigWRE:b2v_inst1|DTrig:inst1"
-Info (12128): Elaborating entity "CountM1" for hierarchy "CountM1:b2v_inst10"
-Info (12128): Elaborating entity "lpm_counter" for hierarchy "CountM1:b2v_inst10|lpm_counter:LPM_COUNTER_component"
-Info (12130): Elaborated megafunction instantiation "CountM1:b2v_inst10|lpm_counter:LPM_COUNTER_component"
-Info (12133): Instantiated megafunction "CountM1:b2v_inst10|lpm_counter:LPM_COUNTER_component" with the following parameter:
+Info (12128): Elaborating entity "AltPLL01_altpll" for hierarchy "AltPLL01:inst|altpll:altpll_component|AltPLL01_altpll:auto_generated"
+Info (12128): Elaborating entity "CountM25" for hierarchy "CountM25:inst16"
+Info (12128): Elaborating entity "lpm_counter" for hierarchy "CountM25:inst16|lpm_counter:LPM_COUNTER_component"
+Info (12130): Elaborated megafunction instantiation "CountM25:inst16|lpm_counter:LPM_COUNTER_component"
+Info (12133): Instantiated megafunction "CountM25:inst16|lpm_counter:LPM_COUNTER_component" with the following parameter:
     Info (12134): Parameter "lpm_direction" = "UP"
-    Info (12134): Parameter "lpm_modulus" = "2"
-    Info (12134): Parameter "lpm_port_updown" = "PORT_UNUSED"
-    Info (12134): Parameter "lpm_type" = "LPM_COUNTER"
-    Info (12134): Parameter "lpm_width" = "2"
-Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_3ij.tdf
-    Info (12023): Found entity 1: cntr_3ij
-Info (12128): Elaborating entity "cntr_3ij" for hierarchy "CountM1:b2v_inst10|lpm_counter:LPM_COUNTER_component|cntr_3ij:auto_generated"
-Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_ogc.tdf
-    Info (12023): Found entity 1: cmpr_ogc
-Info (12128): Elaborating entity "cmpr_ogc" for hierarchy "CountM1:b2v_inst10|lpm_counter:LPM_COUNTER_component|cntr_3ij:auto_generated|cmpr_ogc:cmpr2"
-Info (12128): Elaborating entity "CountM9" for hierarchy "CountM9:b2v_inst3"
-Info (12128): Elaborating entity "lpm_counter" for hierarchy "CountM9:b2v_inst3|lpm_counter:LPM_COUNTER_component"
-Info (12130): Elaborated megafunction instantiation "CountM9:b2v_inst3|lpm_counter:LPM_COUNTER_component"
-Info (12133): Instantiated megafunction "CountM9:b2v_inst3|lpm_counter:LPM_COUNTER_component" with the following parameter:
-    Info (12134): Parameter "lpm_direction" = "UP"
-    Info (12134): Parameter "lpm_modulus" = "9"
+    Info (12134): Parameter "lpm_modulus" = "25"
     Info (12134): Parameter "lpm_port_updown" = "PORT_UNUSED"
     Info (12134): Parameter "lpm_type" = "LPM_COUNTER"
     Info (12134): Parameter "lpm_width" = "8"
-Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_gij.tdf
-    Info (12023): Found entity 1: cntr_gij
-Info (12128): Elaborating entity "cntr_gij" for hierarchy "CountM9:b2v_inst3|lpm_counter:LPM_COUNTER_component|cntr_gij:auto_generated"
-Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_ugc.tdf
-    Info (12023): Found entity 1: cmpr_ugc
-Info (12128): Elaborating entity "cmpr_ugc" for hierarchy "CountM9:b2v_inst3|lpm_counter:LPM_COUNTER_component|cntr_gij:auto_generated|cmpr_ugc:cmpr1"
-Info (12128): Elaborating entity "LogBlock" for hierarchy "LogBlock:b2v_inst6"
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_ujj.tdf
+    Info (12023): Found entity 1: cntr_ujj
+Info (12128): Elaborating entity "cntr_ujj" for hierarchy "CountM25:inst16|lpm_counter:LPM_COUNTER_component|cntr_ujj:auto_generated"
+Info (12128): Elaborating entity "CountM17" for hierarchy "CountM17:inst18"
+Info (12128): Elaborating entity "lpm_counter" for hierarchy "CountM17:inst18|lpm_counter:LPM_COUNTER_component"
+Info (12130): Elaborated megafunction instantiation "CountM17:inst18|lpm_counter:LPM_COUNTER_component"
+Info (12133): Instantiated megafunction "CountM17:inst18|lpm_counter:LPM_COUNTER_component" with the following parameter:
+    Info (12134): Parameter "lpm_direction" = "UP"
+    Info (12134): Parameter "lpm_modulus" = "17"
+    Info (12134): Parameter "lpm_port_updown" = "PORT_UNUSED"
+    Info (12134): Parameter "lpm_type" = "LPM_COUNTER"
+    Info (12134): Parameter "lpm_width" = "8"
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_vjj.tdf
+    Info (12023): Found entity 1: cntr_vjj
+Info (12128): Elaborating entity "cntr_vjj" for hierarchy "CountM17:inst18|lpm_counter:LPM_COUNTER_component|cntr_vjj:auto_generated"
+Info (12128): Elaborating entity "LogBlock" for hierarchy "LogBlock:inst6"
 Warning (10492): VHDL Process Statement warning at LogBlock.vhd(31): signal "input0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10492): VHDL Process Statement warning at LogBlock.vhd(31): signal "input0Buf" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10492): VHDL Process Statement warning at LogBlock.vhd(33): signal "input1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10492): VHDL Process Statement warning at LogBlock.vhd(33): signal "input1Buf" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10631): VHDL Process Statement warning at LogBlock.vhd(29): inferring latch(es) for signal or variable "output0", which holds its previous value in one or more paths through the process
 Info (10041): Inferred latch for "output0" at LogBlock.vhd(29)
-Info (12128): Elaborating entity "CountM2" for hierarchy "CountM2:b2v_inst8"
-Info (12128): Elaborating entity "lpm_counter" for hierarchy "CountM2:b2v_inst8|lpm_counter:LPM_COUNTER_component"
-Info (12130): Elaborated megafunction instantiation "CountM2:b2v_inst8|lpm_counter:LPM_COUNTER_component"
-Info (12133): Instantiated megafunction "CountM2:b2v_inst8|lpm_counter:LPM_COUNTER_component" with the following parameter:
-    Info (12134): Parameter "lpm_direction" = "UP"
-    Info (12134): Parameter "lpm_modulus" = "4"
-    Info (12134): Parameter "lpm_port_updown" = "PORT_UNUSED"
-    Info (12134): Parameter "lpm_type" = "LPM_COUNTER"
-    Info (12134): Parameter "lpm_width" = "4"
-Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_7ij.tdf
-    Info (12023): Found entity 1: cntr_7ij
-Info (12128): Elaborating entity "cntr_7ij" for hierarchy "CountM2:b2v_inst8|lpm_counter:LPM_COUNTER_component|cntr_7ij:auto_generated"
-Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_qgc.tdf
-    Info (12023): Found entity 1: cmpr_qgc
-Info (12128): Elaborating entity "cmpr_qgc" for hierarchy "CountM2:b2v_inst8|lpm_counter:LPM_COUNTER_component|cntr_7ij:auto_generated|cmpr_qgc:cmpr1"
-Warning (12241): 6 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 1 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 75 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 103 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 3 input pins
     Info (21059): Implemented 4 output pins
-    Info (21061): Implemented 67 logic cells
+    Info (21061): Implemented 95 logic cells
     Info (21065): Implemented 1 PLLs
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 6 warnings
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 5 warnings
     Info: Peak virtual memory: 4713 megabytes
-    Info: Processing ended: Sun Mar 31 14:04:29 2024
+    Info: Processing ended: Mon Apr 01 21:01:53 2024
     Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 

@@ -1,11 +1,12 @@
 <?xml version="1.0" ?>
 <LOG_ROOT>
 	<PROJECT NAME="IPblock">
-		<CBX_INST_ENTRY INSTANCE_NAME="|IPblock|CountM9:b2v_inst4|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_gij.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|IPblock|AltPLL01:b2v_inst|altpll:altpll_component" CBX_FILE_NAME="AltPLL01_altpll.v"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|IPblock|CountM1:b2v_inst10|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_3ij.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|IPblock|CountM2:b2v_inst8|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_7ij.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|IPblock|CountM9:b2v_inst3|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_gij.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|IPblock|CountM9:b2v_inst5|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_gij.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|IPblock|AltPLL01:inst|altpll:altpll_component" CBX_FILE_NAME="AltPLL01_altpll.v"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|IPblock|CountM10:inst5|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_ojj.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|IPblock|CountM25:inst16|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_ujj.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|IPblock|CountM5:inst3|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_cij.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|IPblock|CountM10:inst4|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_ojj.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|IPblock|CountM17:inst18|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_vjj.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|IPblock|CountM5:inst8|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_cij.tdf"/>
 	</PROJECT>
 </LOG_ROOT>

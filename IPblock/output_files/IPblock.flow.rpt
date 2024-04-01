@@ -1,5 +1,5 @@
 Flow report for IPblock
-Sun Mar 31 14:04:42 2024
+Mon Apr 01 21:02:06 2024
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Full Version
 
 
@@ -40,17 +40,17 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Sun Mar 31 14:04:42 2024       ;
+; Flow Status                        ; Successful - Mon Apr 01 21:02:06 2024       ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Full Version ;
 ; Revision Name                      ; IPblock                                     ;
 ; Top-level Entity Name              ; IPblock                                     ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE10E22C8                                ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 68 / 10,320 ( < 1 % )                       ;
-;     Total combinational functions  ; 66 / 10,320 ( < 1 % )                       ;
-;     Dedicated logic registers      ; 31 / 10,320 ( < 1 % )                       ;
-; Total registers                    ; 31                                          ;
+; Total logic elements               ; 99 / 10,320 ( < 1 % )                       ;
+;     Total combinational functions  ; 94 / 10,320 ( < 1 % )                       ;
+;     Dedicated logic registers      ; 50 / 10,320 ( < 1 % )                       ;
+; Total registers                    ; 50                                          ;
 ; Total pins                         ; 7 / 92 ( 8 % )                              ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0 / 423,936 ( 0 % )                         ;
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 03/31/2024 14:04:28 ;
+; Start date & time ; 04/01/2024 21:01:51 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; IPblock             ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +-------------------------------------+--------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                          ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+--------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 66160494706865.171188306706140 ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 66160494706865.171199451109200 ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                           ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)         ; <None>        ; --          ; --             ;
 ; IP_TOOL_NAME                        ; ALTPLL                         ; --            ; --          ; --             ;
@@ -83,6 +83,16 @@ applicable agreement for further details.
 ; IP_TOOL_NAME                        ; LPM_COUNTER                    ; --            ; --          ; --             ;
 ; IP_TOOL_NAME                        ; LPM_COUNTER                    ; --            ; --          ; --             ;
 ; IP_TOOL_NAME                        ; LPM_COUNTER                    ; --            ; --          ; --             ;
+; IP_TOOL_NAME                        ; LPM_COUNTER                    ; --            ; --          ; --             ;
+; IP_TOOL_NAME                        ; LPM_COUNTER                    ; --            ; --          ; --             ;
+; IP_TOOL_NAME                        ; LPM_COUNTER                    ; --            ; --          ; --             ;
+; IP_TOOL_NAME                        ; LPM_COUNTER                    ; --            ; --          ; --             ;
+; IP_TOOL_NAME                        ; LPM_COUNTER                    ; --            ; --          ; --             ;
+; IP_TOOL_VERSION                     ; 13.1                           ; --            ; --          ; --             ;
+; IP_TOOL_VERSION                     ; 13.1                           ; --            ; --          ; --             ;
+; IP_TOOL_VERSION                     ; 13.1                           ; --            ; --          ; --             ;
+; IP_TOOL_VERSION                     ; 13.1                           ; --            ; --          ; --             ;
+; IP_TOOL_VERSION                     ; 13.1                           ; --            ; --          ; --             ;
 ; IP_TOOL_VERSION                     ; 13.1                           ; --            ; --          ; --             ;
 ; IP_TOOL_VERSION                     ; 13.1                           ; --            ; --          ; --             ;
 ; IP_TOOL_VERSION                     ; 13.1                           ; --            ; --          ; --             ;
@@ -101,6 +111,16 @@ applicable agreement for further details.
 ; MISC_FILE                           ; CountM2.cmp                    ; --            ; --          ; --             ;
 ; MISC_FILE                           ; CountM1.bsf                    ; --            ; --          ; --             ;
 ; MISC_FILE                           ; CountM1.cmp                    ; --            ; --          ; --             ;
+; MISC_FILE                           ; CountM5.bsf                    ; --            ; --          ; --             ;
+; MISC_FILE                           ; CountM5.cmp                    ; --            ; --          ; --             ;
+; MISC_FILE                           ; CountM10.bsf                   ; --            ; --          ; --             ;
+; MISC_FILE                           ; CountM10.cmp                   ; --            ; --          ; --             ;
+; MISC_FILE                           ; CountM25.bsf                   ; --            ; --          ; --             ;
+; MISC_FILE                           ; CountM25.cmp                   ; --            ; --          ; --             ;
+; MISC_FILE                           ; CountM33.bsf                   ; --            ; --          ; --             ;
+; MISC_FILE                           ; CountM33.cmp                   ; --            ; --          ; --             ;
+; MISC_FILE                           ; CountM17.bsf                   ; --            ; --          ; --             ;
+; MISC_FILE                           ; CountM17.cmp                   ; --            ; --          ; --             ;
 ; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                           ; --            ; --          ; --             ;
 ; PARTITION_COLOR                     ; 16764057                       ; --            ; --          ; Top            ;
 ; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING          ; --            ; --          ; Top            ;
@@ -115,11 +135,11 @@ applicable agreement for further details.
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Analysis & Synthesis      ; 00:00:02     ; 1.0                     ; 4713 MB             ; 00:00:02                           ;
-; Fitter                    ; 00:00:04     ; 1.0                     ; 5534 MB             ; 00:00:05                           ;
-; Assembler                 ; 00:00:01     ; 1.0                     ; 4576 MB             ; 00:00:01                           ;
-; TimeQuest Timing Analyzer ; 00:00:03     ; 2.0                     ; 4693 MB             ; 00:00:02                           ;
+; Fitter                    ; 00:00:04     ; 1.8                     ; 5538 MB             ; 00:00:05                           ;
+; Assembler                 ; 00:00:01     ; 1.0                     ; 4583 MB             ; 00:00:01                           ;
+; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 4697 MB             ; 00:00:02                           ;
 ; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 4544 MB             ; 00:00:01                           ;
-; Total                     ; 00:00:11     ; --                      ; --                  ; 00:00:11                           ;
+; Total                     ; 00:00:10     ; --                      ; --                  ; 00:00:11                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

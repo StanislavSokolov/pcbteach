@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus II 64-Bit"
 -- VERSION "Version 13.1.0 Build 162 10/23/2013 SJ Full Version"
 
--- DATE "03/31/2024 14:04:42"
+-- DATE "04/01/2024 21:02:06"
 
 -- 
 -- Device: Altera EP4CE10E22C8 Package TQFP144
@@ -35,13 +35,13 @@ USE IEEE.STD_LOGIC_1164.ALL;
 
 ENTITY 	IPblock IS
     PORT (
-	clk : IN std_logic;
-	key1 : IN std_logic;
-	key2 : IN std_logic;
 	led1 : OUT std_logic;
+	clk : IN std_logic;
 	led2 : OUT std_logic;
 	led3 : OUT std_logic;
-	buzz : OUT std_logic
+	buzz : OUT std_logic;
+	key1 : IN std_logic;
+	key2 : IN std_logic
 	);
 END IPblock;
 
@@ -65,154 +65,206 @@ SIGNAL devpor : std_logic := '1';
 SIGNAL ww_devoe : std_logic;
 SIGNAL ww_devclrn : std_logic;
 SIGNAL ww_devpor : std_logic;
-SIGNAL ww_clk : std_logic;
-SIGNAL ww_key1 : std_logic;
-SIGNAL ww_key2 : std_logic;
 SIGNAL ww_led1 : std_logic;
+SIGNAL ww_clk : std_logic;
 SIGNAL ww_led2 : std_logic;
 SIGNAL ww_led3 : std_logic;
 SIGNAL ww_buzz : std_logic;
-SIGNAL \b2v_inst|altpll_component|auto_generated|pll1_INCLK_bus\ : std_logic_vector(1 DOWNTO 0);
-SIGNAL \b2v_inst|altpll_component|auto_generated|pll1_CLK_bus\ : std_logic_vector(4 DOWNTO 0);
-SIGNAL \b2v_inst5|LPM_COUNTER_component|auto_generated|cout_actual~clkctrl_INCLK_bus\ : std_logic_vector(3 DOWNTO 0);
-SIGNAL \b2v_inst|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_INCLK_bus\ : std_logic_vector(3 DOWNTO 0);
+SIGNAL ww_key1 : std_logic;
+SIGNAL ww_key2 : std_logic;
+SIGNAL \inst|altpll_component|auto_generated|pll1_INCLK_bus\ : std_logic_vector(1 DOWNTO 0);
+SIGNAL \inst|altpll_component|auto_generated|pll1_CLK_bus\ : std_logic_vector(4 DOWNTO 0);
+SIGNAL \inst4|LPM_COUNTER_component|auto_generated|cout_actual~clkctrl_INCLK_bus\ : std_logic_vector(3 DOWNTO 0);
+SIGNAL \inst|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_INCLK_bus\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \clk~inputclkctrl_INCLK_bus\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \clk~input_o\ : std_logic;
-SIGNAL \b2v_inst|altpll_component|auto_generated|wire_pll1_fbout\ : std_logic;
-SIGNAL \b2v_inst|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\ : std_logic;
-SIGNAL \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita0~combout\ : std_logic;
+SIGNAL \inst|altpll_component|auto_generated|wire_pll1_fbout\ : std_logic;
+SIGNAL \inst|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\ : std_logic;
+SIGNAL \inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita0~combout\ : std_logic;
 SIGNAL \~GND~combout\ : std_logic;
-SIGNAL \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita0~COUT\ : std_logic;
-SIGNAL \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita1~combout\ : std_logic;
-SIGNAL \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita1~COUT\ : std_logic;
-SIGNAL \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita2~combout\ : std_logic;
-SIGNAL \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita2~COUT\ : std_logic;
-SIGNAL \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita3~combout\ : std_logic;
-SIGNAL \b2v_inst3|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~1_combout\ : std_logic;
-SIGNAL \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita3~COUT\ : std_logic;
-SIGNAL \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita4~combout\ : std_logic;
-SIGNAL \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita4~COUT\ : std_logic;
-SIGNAL \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita5~combout\ : std_logic;
-SIGNAL \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita5~COUT\ : std_logic;
-SIGNAL \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita6~combout\ : std_logic;
-SIGNAL \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita6~COUT\ : std_logic;
-SIGNAL \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita7~combout\ : std_logic;
-SIGNAL \b2v_inst3|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~0_combout\ : std_logic;
-SIGNAL \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita7~COUT\ : std_logic;
-SIGNAL \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita7~0_combout\ : std_logic;
-SIGNAL \b2v_inst3|LPM_COUNTER_component|auto_generated|cout_actual~combout\ : std_logic;
-SIGNAL \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita0~combout\ : std_logic;
-SIGNAL \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit[0]~feeder_combout\ : std_logic;
-SIGNAL \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita0~COUT\ : std_logic;
-SIGNAL \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita1~combout\ : std_logic;
-SIGNAL \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita1~COUT\ : std_logic;
-SIGNAL \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita2~combout\ : std_logic;
-SIGNAL \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita2~COUT\ : std_logic;
-SIGNAL \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita3~combout\ : std_logic;
-SIGNAL \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita3~COUT\ : std_logic;
-SIGNAL \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita4~combout\ : std_logic;
-SIGNAL \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita4~COUT\ : std_logic;
-SIGNAL \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita5~combout\ : std_logic;
-SIGNAL \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita5~COUT\ : std_logic;
-SIGNAL \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita6~combout\ : std_logic;
-SIGNAL \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita6~COUT\ : std_logic;
-SIGNAL \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita7~combout\ : std_logic;
-SIGNAL \b2v_inst4|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~0_combout\ : std_logic;
-SIGNAL \b2v_inst4|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~1_combout\ : std_logic;
-SIGNAL \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita7~COUT\ : std_logic;
-SIGNAL \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita7~0_combout\ : std_logic;
-SIGNAL \b2v_inst4|LPM_COUNTER_component|auto_generated|cout_actual~combout\ : std_logic;
-SIGNAL \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita0~combout\ : std_logic;
-SIGNAL \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit[0]~feeder_combout\ : std_logic;
-SIGNAL \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita0~COUT\ : std_logic;
-SIGNAL \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita1~combout\ : std_logic;
-SIGNAL \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita1~COUT\ : std_logic;
-SIGNAL \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita2~combout\ : std_logic;
-SIGNAL \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita2~COUT\ : std_logic;
-SIGNAL \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita3~combout\ : std_logic;
-SIGNAL \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita3~COUT\ : std_logic;
-SIGNAL \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita4~combout\ : std_logic;
-SIGNAL \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita4~COUT\ : std_logic;
-SIGNAL \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita5~combout\ : std_logic;
-SIGNAL \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita5~COUT\ : std_logic;
-SIGNAL \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita6~combout\ : std_logic;
-SIGNAL \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita6~COUT\ : std_logic;
-SIGNAL \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita7~combout\ : std_logic;
-SIGNAL \b2v_inst5|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~0_combout\ : std_logic;
-SIGNAL \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita7~COUT\ : std_logic;
-SIGNAL \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita7~0_combout\ : std_logic;
-SIGNAL \b2v_inst5|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~1_combout\ : std_logic;
-SIGNAL \b2v_inst5|LPM_COUNTER_component|auto_generated|cout_actual~combout\ : std_logic;
-SIGNAL \b2v_inst5|LPM_COUNTER_component|auto_generated|cout_actual~clkctrl_outclk\ : std_logic;
-SIGNAL \b2v_inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita0~combout\ : std_logic;
-SIGNAL \b2v_inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita2~COUT\ : std_logic;
-SIGNAL \b2v_inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita3~combout\ : std_logic;
-SIGNAL \b2v_inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita3~COUT\ : std_logic;
-SIGNAL \b2v_inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita3~0_combout\ : std_logic;
-SIGNAL \b2v_inst8|LPM_COUNTER_component|auto_generated|cout_actual~combout\ : std_logic;
-SIGNAL \b2v_inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita0~COUT\ : std_logic;
-SIGNAL \b2v_inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita1~combout\ : std_logic;
-SIGNAL \b2v_inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita1~COUT\ : std_logic;
-SIGNAL \b2v_inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita2~combout\ : std_logic;
-SIGNAL \b2v_inst8|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~0_combout\ : std_logic;
-SIGNAL \b2v_inst7|inst|inst20~1_combout\ : std_logic;
-SIGNAL \b2v_inst7|inst1|inst21~1_combout\ : std_logic;
-SIGNAL \b2v_inst7|inst1|inst20~combout\ : std_logic;
-SIGNAL \b2v_inst10|LPM_COUNTER_component|auto_generated|counter_reg_bit[0]~0_combout\ : std_logic;
-SIGNAL \b2v_inst9|inst1|inst21~1_combout\ : std_logic;
-SIGNAL \b2v_inst9|inst|inst20~1_combout\ : std_logic;
-SIGNAL \b2v_inst9|inst1|inst20~combout\ : std_logic;
-SIGNAL \b2v_inst11|inst1|inst21~1_combout\ : std_logic;
-SIGNAL \b2v_inst11|inst|inst20~1_combout\ : std_logic;
-SIGNAL \b2v_inst11|inst1|inst20~combout\ : std_logic;
+SIGNAL \inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita0~COUT\ : std_logic;
+SIGNAL \inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita1~combout\ : std_logic;
+SIGNAL \inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita1~COUT\ : std_logic;
+SIGNAL \inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita2~combout\ : std_logic;
+SIGNAL \inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita2~COUT\ : std_logic;
+SIGNAL \inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita3~combout\ : std_logic;
+SIGNAL \inst3|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~1_combout\ : std_logic;
+SIGNAL \inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita3~COUT\ : std_logic;
+SIGNAL \inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita4~combout\ : std_logic;
+SIGNAL \inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita4~COUT\ : std_logic;
+SIGNAL \inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita5~combout\ : std_logic;
+SIGNAL \inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita5~COUT\ : std_logic;
+SIGNAL \inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita6~combout\ : std_logic;
+SIGNAL \inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita6~COUT\ : std_logic;
+SIGNAL \inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita7~combout\ : std_logic;
+SIGNAL \inst3|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~0_combout\ : std_logic;
+SIGNAL \inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita7~COUT\ : std_logic;
+SIGNAL \inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita7~0_combout\ : std_logic;
+SIGNAL \inst3|LPM_COUNTER_component|auto_generated|cout_actual~combout\ : std_logic;
+SIGNAL \inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita0~combout\ : std_logic;
+SIGNAL \inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit[0]~feeder_combout\ : std_logic;
+SIGNAL \inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita0~COUT\ : std_logic;
+SIGNAL \inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita1~combout\ : std_logic;
+SIGNAL \inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita1~COUT\ : std_logic;
+SIGNAL \inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita2~combout\ : std_logic;
+SIGNAL \inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita2~COUT\ : std_logic;
+SIGNAL \inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita3~combout\ : std_logic;
+SIGNAL \inst4|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~1_combout\ : std_logic;
+SIGNAL \inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita3~COUT\ : std_logic;
+SIGNAL \inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita4~combout\ : std_logic;
+SIGNAL \inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita4~COUT\ : std_logic;
+SIGNAL \inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita5~combout\ : std_logic;
+SIGNAL \inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita5~COUT\ : std_logic;
+SIGNAL \inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita6~combout\ : std_logic;
+SIGNAL \inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita6~COUT\ : std_logic;
+SIGNAL \inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita7~combout\ : std_logic;
+SIGNAL \inst4|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~0_combout\ : std_logic;
+SIGNAL \inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita7~COUT\ : std_logic;
+SIGNAL \inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita7~0_combout\ : std_logic;
+SIGNAL \inst4|LPM_COUNTER_component|auto_generated|cout_actual~combout\ : std_logic;
+SIGNAL \inst4|LPM_COUNTER_component|auto_generated|cout_actual~clkctrl_outclk\ : std_logic;
+SIGNAL \inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita0~combout\ : std_logic;
+SIGNAL \inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit[0]~feeder_combout\ : std_logic;
+SIGNAL \inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita0~COUT\ : std_logic;
+SIGNAL \inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita1~combout\ : std_logic;
+SIGNAL \inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita1~COUT\ : std_logic;
+SIGNAL \inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita2~combout\ : std_logic;
+SIGNAL \inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita2~COUT\ : std_logic;
+SIGNAL \inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita3~combout\ : std_logic;
+SIGNAL \inst5|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~1_combout\ : std_logic;
+SIGNAL \inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita3~COUT\ : std_logic;
+SIGNAL \inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita4~combout\ : std_logic;
+SIGNAL \inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita4~COUT\ : std_logic;
+SIGNAL \inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita5~combout\ : std_logic;
+SIGNAL \inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita5~COUT\ : std_logic;
+SIGNAL \inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita6~combout\ : std_logic;
+SIGNAL \inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita6~COUT\ : std_logic;
+SIGNAL \inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita7~combout\ : std_logic;
+SIGNAL \inst5|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~0_combout\ : std_logic;
+SIGNAL \inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita7~COUT\ : std_logic;
+SIGNAL \inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita7~0_combout\ : std_logic;
+SIGNAL \inst5|LPM_COUNTER_component|auto_generated|cout_actual~combout\ : std_logic;
+SIGNAL \inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita0~combout\ : std_logic;
+SIGNAL \inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit[0]~feeder_combout\ : std_logic;
+SIGNAL \inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita0~COUT\ : std_logic;
+SIGNAL \inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita1~combout\ : std_logic;
+SIGNAL \inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita1~COUT\ : std_logic;
+SIGNAL \inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita2~combout\ : std_logic;
+SIGNAL \inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita2~COUT\ : std_logic;
+SIGNAL \inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita3~combout\ : std_logic;
+SIGNAL \inst8|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~1_combout\ : std_logic;
+SIGNAL \inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita3~COUT\ : std_logic;
+SIGNAL \inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita4~combout\ : std_logic;
+SIGNAL \inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita4~COUT\ : std_logic;
+SIGNAL \inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita5~combout\ : std_logic;
+SIGNAL \inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita5~COUT\ : std_logic;
+SIGNAL \inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita6~combout\ : std_logic;
+SIGNAL \inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita6~COUT\ : std_logic;
+SIGNAL \inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita7~combout\ : std_logic;
+SIGNAL \inst8|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~0_combout\ : std_logic;
+SIGNAL \inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita7~COUT\ : std_logic;
+SIGNAL \inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita7~0_combout\ : std_logic;
+SIGNAL \inst8|LPM_COUNTER_component|auto_generated|cout_actual~combout\ : std_logic;
+SIGNAL \inst7|inst1|inst21~1_combout\ : std_logic;
+SIGNAL \inst7|inst|inst20~1_combout\ : std_logic;
+SIGNAL \inst7|inst1|inst20~combout\ : std_logic;
+SIGNAL \inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita0~combout\ : std_logic;
+SIGNAL \inst16|LPM_COUNTER_component|auto_generated|counter_reg_bit[0]~feeder_combout\ : std_logic;
+SIGNAL \inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita0~COUT\ : std_logic;
+SIGNAL \inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita1~combout\ : std_logic;
+SIGNAL \inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita1~COUT\ : std_logic;
+SIGNAL \inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita2~combout\ : std_logic;
+SIGNAL \inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita2~COUT\ : std_logic;
+SIGNAL \inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita3~combout\ : std_logic;
+SIGNAL \inst16|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~1_combout\ : std_logic;
+SIGNAL \inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita3~COUT\ : std_logic;
+SIGNAL \inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita4~combout\ : std_logic;
+SIGNAL \inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita4~COUT\ : std_logic;
+SIGNAL \inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita5~combout\ : std_logic;
+SIGNAL \inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita5~COUT\ : std_logic;
+SIGNAL \inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita6~combout\ : std_logic;
+SIGNAL \inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita6~COUT\ : std_logic;
+SIGNAL \inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita7~combout\ : std_logic;
+SIGNAL \inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita7~COUT\ : std_logic;
+SIGNAL \inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita7~0_combout\ : std_logic;
+SIGNAL \inst16|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~0_combout\ : std_logic;
+SIGNAL \inst16|LPM_COUNTER_component|auto_generated|cout_actual~combout\ : std_logic;
+SIGNAL \inst9|inst|inst20~1_combout\ : std_logic;
+SIGNAL \inst9|inst1|inst21~1_combout\ : std_logic;
+SIGNAL \inst9|inst1|inst20~combout\ : std_logic;
+SIGNAL \inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita0~combout\ : std_logic;
+SIGNAL \inst18|LPM_COUNTER_component|auto_generated|counter_reg_bit[0]~feeder_combout\ : std_logic;
+SIGNAL \inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita0~COUT\ : std_logic;
+SIGNAL \inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita1~combout\ : std_logic;
+SIGNAL \inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita1~COUT\ : std_logic;
+SIGNAL \inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita2~combout\ : std_logic;
+SIGNAL \inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita2~COUT\ : std_logic;
+SIGNAL \inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita3~combout\ : std_logic;
+SIGNAL \inst18|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~1_combout\ : std_logic;
+SIGNAL \inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita3~COUT\ : std_logic;
+SIGNAL \inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita4~combout\ : std_logic;
+SIGNAL \inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita4~COUT\ : std_logic;
+SIGNAL \inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita5~combout\ : std_logic;
+SIGNAL \inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita5~COUT\ : std_logic;
+SIGNAL \inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita6~combout\ : std_logic;
+SIGNAL \inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita6~COUT\ : std_logic;
+SIGNAL \inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita7~combout\ : std_logic;
+SIGNAL \inst18|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~0_combout\ : std_logic;
+SIGNAL \inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita7~COUT\ : std_logic;
+SIGNAL \inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita7~0_combout\ : std_logic;
+SIGNAL \inst18|LPM_COUNTER_component|auto_generated|cout_actual~combout\ : std_logic;
+SIGNAL \inst10|inst1|inst21~1_combout\ : std_logic;
+SIGNAL \inst10|inst|inst20~1_combout\ : std_logic;
+SIGNAL \inst10|inst1|inst20~combout\ : std_logic;
+SIGNAL \inst1|inst|inst20~1_combout\ : std_logic;
+SIGNAL \inst1|inst1|inst21~1_combout\ : std_logic;
 SIGNAL \key1~input_o\ : std_logic;
-SIGNAL \b2v_inst14|inst|inst20~1_combout\ : std_logic;
-SIGNAL \b2v_inst14|inst1|inst21~1_combout\ : std_logic;
+SIGNAL \inst14|inst|inst20~1_combout\ : std_logic;
+SIGNAL \inst14|inst1|inst21~1_combout\ : std_logic;
 SIGNAL \clk~inputclkctrl_outclk\ : std_logic;
-SIGNAL \b2v_inst14|inst1|inst20~combout\ : std_logic;
-SIGNAL \b2v_inst6|input0Buf~q\ : std_logic;
-SIGNAL \b2v_inst6|process_1~0_combout\ : std_logic;
+SIGNAL \inst14|inst1|inst20~combout\ : std_logic;
+SIGNAL \inst6|input0Buf~q\ : std_logic;
+SIGNAL \inst6|process_1~0_combout\ : std_logic;
 SIGNAL \key2~input_o\ : std_logic;
-SIGNAL \b2v_inst15|inst|inst20~1_combout\ : std_logic;
-SIGNAL \b2v_inst15|inst1|inst21~1_combout\ : std_logic;
-SIGNAL \b2v_inst15|inst1|inst20~combout\ : std_logic;
-SIGNAL \b2v_inst6|input1Buf~q\ : std_logic;
-SIGNAL \b2v_inst6|comb~0_combout\ : std_logic;
-SIGNAL \b2v_inst6|output0~combout\ : std_logic;
-SIGNAL \b2v_inst1|inst|inst20~1_combout\ : std_logic;
-SIGNAL \b2v_inst1|inst1|inst21~1_combout\ : std_logic;
-SIGNAL \buzz~0_combout\ : std_logic;
-SIGNAL \b2v_inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\ : std_logic_vector(3 DOWNTO 0);
-SIGNAL \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\ : std_logic_vector(7 DOWNTO 0);
-SIGNAL \b2v_inst10|LPM_COUNTER_component|auto_generated|counter_reg_bit\ : std_logic_vector(1 DOWNTO 0);
-SIGNAL \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\ : std_logic_vector(7 DOWNTO 0);
-SIGNAL \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\ : std_logic_vector(7 DOWNTO 0);
-SIGNAL \b2v_inst|altpll_component|auto_generated|wire_pll1_clk\ : std_logic_vector(4 DOWNTO 0);
+SIGNAL \inst15|inst|inst20~1_combout\ : std_logic;
+SIGNAL \inst15|inst1|inst21~1_combout\ : std_logic;
+SIGNAL \inst15|inst1|inst20~combout\ : std_logic;
+SIGNAL \inst6|input1Buf~q\ : std_logic;
+SIGNAL \inst6|comb~0_combout\ : std_logic;
+SIGNAL \inst6|output0~combout\ : std_logic;
+SIGNAL \inst12~0_combout\ : std_logic;
+SIGNAL \inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\ : std_logic_vector(7 DOWNTO 0);
+SIGNAL \inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\ : std_logic_vector(7 DOWNTO 0);
+SIGNAL \inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\ : std_logic_vector(7 DOWNTO 0);
+SIGNAL \inst|altpll_component|auto_generated|wire_pll1_clk\ : std_logic_vector(4 DOWNTO 0);
+SIGNAL \inst18|LPM_COUNTER_component|auto_generated|counter_reg_bit\ : std_logic_vector(7 DOWNTO 0);
+SIGNAL \inst16|LPM_COUNTER_component|auto_generated|counter_reg_bit\ : std_logic_vector(7 DOWNTO 0);
+SIGNAL \inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\ : std_logic_vector(7 DOWNTO 0);
 
 BEGIN
 
-ww_clk <= clk;
-ww_key1 <= key1;
-ww_key2 <= key2;
 led1 <= ww_led1;
+ww_clk <= clk;
 led2 <= ww_led2;
 led3 <= ww_led3;
 buzz <= ww_buzz;
+ww_key1 <= key1;
+ww_key2 <= key2;
 ww_devoe <= devoe;
 ww_devclrn <= devclrn;
 ww_devpor <= devpor;
 
-\b2v_inst|altpll_component|auto_generated|pll1_INCLK_bus\ <= (gnd & \clk~input_o\);
+\inst|altpll_component|auto_generated|pll1_INCLK_bus\ <= (gnd & \clk~input_o\);
 
-\b2v_inst|altpll_component|auto_generated|wire_pll1_clk\(0) <= \b2v_inst|altpll_component|auto_generated|pll1_CLK_bus\(0);
-\b2v_inst|altpll_component|auto_generated|wire_pll1_clk\(1) <= \b2v_inst|altpll_component|auto_generated|pll1_CLK_bus\(1);
-\b2v_inst|altpll_component|auto_generated|wire_pll1_clk\(2) <= \b2v_inst|altpll_component|auto_generated|pll1_CLK_bus\(2);
-\b2v_inst|altpll_component|auto_generated|wire_pll1_clk\(3) <= \b2v_inst|altpll_component|auto_generated|pll1_CLK_bus\(3);
-\b2v_inst|altpll_component|auto_generated|wire_pll1_clk\(4) <= \b2v_inst|altpll_component|auto_generated|pll1_CLK_bus\(4);
+\inst|altpll_component|auto_generated|wire_pll1_clk\(0) <= \inst|altpll_component|auto_generated|pll1_CLK_bus\(0);
+\inst|altpll_component|auto_generated|wire_pll1_clk\(1) <= \inst|altpll_component|auto_generated|pll1_CLK_bus\(1);
+\inst|altpll_component|auto_generated|wire_pll1_clk\(2) <= \inst|altpll_component|auto_generated|pll1_CLK_bus\(2);
+\inst|altpll_component|auto_generated|wire_pll1_clk\(3) <= \inst|altpll_component|auto_generated|pll1_CLK_bus\(3);
+\inst|altpll_component|auto_generated|wire_pll1_clk\(4) <= \inst|altpll_component|auto_generated|pll1_CLK_bus\(4);
 
-\b2v_inst5|LPM_COUNTER_component|auto_generated|cout_actual~clkctrl_INCLK_bus\ <= (vcc & vcc & vcc & \b2v_inst5|LPM_COUNTER_component|auto_generated|cout_actual~combout\);
+\inst4|LPM_COUNTER_component|auto_generated|cout_actual~clkctrl_INCLK_bus\ <= (vcc & vcc & vcc & \inst4|LPM_COUNTER_component|auto_generated|cout_actual~combout\);
 
-\b2v_inst|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_INCLK_bus\ <= (vcc & vcc & vcc & \b2v_inst|altpll_component|auto_generated|wire_pll1_clk\(0));
+\inst|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_INCLK_bus\ <= (vcc & vcc & vcc & \inst|altpll_component|auto_generated|wire_pll1_clk\(0));
 
 \clk~inputclkctrl_INCLK_bus\ <= (vcc & vcc & vcc & \clk~input_o\);
 
@@ -224,7 +276,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \b2v_inst7|inst1|inst20~combout\,
+	i => \inst7|inst1|inst20~combout\,
 	devoe => ww_devoe,
 	o => ww_led1);
 
@@ -236,7 +288,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \b2v_inst9|inst1|inst20~combout\,
+	i => \inst9|inst1|inst20~combout\,
 	devoe => ww_devoe,
 	o => ww_led2);
 
@@ -248,7 +300,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \b2v_inst11|inst1|inst20~combout\,
+	i => \inst10|inst1|inst20~combout\,
 	devoe => ww_devoe,
 	o => ww_led3);
 
@@ -260,7 +312,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \buzz~0_combout\,
+	i => \inst12~0_combout\,
 	devoe => ww_devoe,
 	o => ww_buzz);
 
@@ -276,7 +328,7 @@ PORT MAP (
 	o => \clk~input_o\);
 
 -- Location: PLL_1
-\b2v_inst|altpll_component|auto_generated|pll1\ : cycloneive_pll
+\inst|altpll_component|auto_generated|pll1\ : cycloneive_pll
 -- pragma translate_off
 GENERIC MAP (
 	auto_settings => "false",
@@ -363,29 +415,29 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	areset => GND,
-	fbin => \b2v_inst|altpll_component|auto_generated|wire_pll1_fbout\,
-	inclk => \b2v_inst|altpll_component|auto_generated|pll1_INCLK_bus\,
-	fbout => \b2v_inst|altpll_component|auto_generated|wire_pll1_fbout\,
-	clk => \b2v_inst|altpll_component|auto_generated|pll1_CLK_bus\);
+	fbin => \inst|altpll_component|auto_generated|wire_pll1_fbout\,
+	inclk => \inst|altpll_component|auto_generated|pll1_INCLK_bus\,
+	fbout => \inst|altpll_component|auto_generated|wire_pll1_fbout\,
+	clk => \inst|altpll_component|auto_generated|pll1_CLK_bus\);
 
 -- Location: CLKCTRL_G4
-\b2v_inst|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl\ : cycloneive_clkctrl
+\inst|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl\ : cycloneive_clkctrl
 -- pragma translate_off
 GENERIC MAP (
 	clock_type => "global clock",
 	ena_register_mode => "none")
 -- pragma translate_on
 PORT MAP (
-	inclk => \b2v_inst|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_INCLK_bus\,
+	inclk => \inst|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_INCLK_bus\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	outclk => \b2v_inst|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\);
+	outclk => \inst|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\);
 
--- Location: LCCOMB_X29_Y10_N0
-\b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita0\ : cycloneive_lcell_comb
+-- Location: LCCOMB_X32_Y12_N4
+\inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita0\ : cycloneive_lcell_comb
 -- Equation(s):
--- \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita0~combout\ = \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(0) $ (VCC)
--- \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita0~COUT\ = CARRY(\b2v_inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(0))
+-- \inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita0~combout\ = \inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(0) $ (VCC)
+-- \inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita0~COUT\ = CARRY(\inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(0))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -393,12 +445,12 @@ GENERIC MAP (
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	datab => \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(0),
+	datab => \inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(0),
 	datad => VCC,
-	combout => \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita0~combout\,
-	cout => \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita0~COUT\);
+	combout => \inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita0~combout\,
+	cout => \inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita0~COUT\);
 
--- Location: LCCOMB_X29_Y10_N24
+-- Location: LCCOMB_X32_Y13_N4
 \~GND\ : cycloneive_lcell_comb
 -- Equation(s):
 -- \~GND~combout\ = GND
@@ -411,98 +463,28 @@ GENERIC MAP (
 PORT MAP (
 	combout => \~GND~combout\);
 
--- Location: FF_X29_Y10_N1
-\b2v_inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit[0]\ : dffeas
+-- Location: FF_X32_Y12_N5
+\inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit[0]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \b2v_inst|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\,
-	d => \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita0~combout\,
+	clk => \inst|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\,
+	d => \inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita0~combout\,
 	asdata => \~GND~combout\,
-	sload => \b2v_inst3|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	sload => \inst3|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(0));
+	q => \inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(0));
 
--- Location: LCCOMB_X29_Y10_N2
-\b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita1\ : cycloneive_lcell_comb
+-- Location: LCCOMB_X32_Y12_N6
+\inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita1\ : cycloneive_lcell_comb
 -- Equation(s):
--- \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita1~combout\ = (\b2v_inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(1) & (!\b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita0~COUT\)) # 
--- (!\b2v_inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(1) & ((\b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita0~COUT\) # (GND)))
--- \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita1~COUT\ = CARRY((!\b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita0~COUT\) # (!\b2v_inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(1)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0011110000111111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(1),
-	datad => VCC,
-	cin => \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita0~COUT\,
-	combout => \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita1~combout\,
-	cout => \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita1~COUT\);
-
--- Location: FF_X29_Y10_N3
-\b2v_inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit[1]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \b2v_inst|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\,
-	d => \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita1~combout\,
-	asdata => \~GND~combout\,
-	sload => \b2v_inst3|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(1));
-
--- Location: LCCOMB_X29_Y10_N4
-\b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita2\ : cycloneive_lcell_comb
--- Equation(s):
--- \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita2~combout\ = (\b2v_inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(2) & (\b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita1~COUT\ $ (GND))) # 
--- (!\b2v_inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(2) & (!\b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita1~COUT\ & VCC))
--- \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita2~COUT\ = CARRY((\b2v_inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(2) & !\b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita1~COUT\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100001100001100",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(2),
-	datad => VCC,
-	cin => \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita1~COUT\,
-	combout => \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita2~combout\,
-	cout => \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita2~COUT\);
-
--- Location: FF_X29_Y10_N5
-\b2v_inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit[2]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \b2v_inst|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\,
-	d => \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita2~combout\,
-	asdata => \~GND~combout\,
-	sload => \b2v_inst3|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(2));
-
--- Location: LCCOMB_X29_Y10_N6
-\b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita3\ : cycloneive_lcell_comb
--- Equation(s):
--- \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita3~combout\ = (\b2v_inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(3) & (!\b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita2~COUT\)) # 
--- (!\b2v_inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(3) & ((\b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita2~COUT\) # (GND)))
--- \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita3~COUT\ = CARRY((!\b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita2~COUT\) # (!\b2v_inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(3)))
+-- \inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita1~combout\ = (\inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(1) & (!\inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita0~COUT\)) # 
+-- (!\inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(1) & ((\inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita0~COUT\) # (GND)))
+-- \inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita1~COUT\ = CARRY((!\inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita0~COUT\) # (!\inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(1)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -510,122 +492,122 @@ GENERIC MAP (
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	dataa => \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(3),
+	dataa => \inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(1),
 	datad => VCC,
-	cin => \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita2~COUT\,
-	combout => \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita3~combout\,
-	cout => \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita3~COUT\);
+	cin => \inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita0~COUT\,
+	combout => \inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita1~combout\,
+	cout => \inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita1~COUT\);
 
--- Location: FF_X29_Y10_N7
-\b2v_inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit[3]\ : dffeas
+-- Location: FF_X32_Y12_N7
+\inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit[1]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \b2v_inst|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\,
-	d => \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita3~combout\,
+	clk => \inst|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\,
+	d => \inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita1~combout\,
 	asdata => \~GND~combout\,
-	sload => \b2v_inst3|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	sload => \inst3|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(3));
+	q => \inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(1));
 
--- Location: LCCOMB_X29_Y10_N18
-\b2v_inst3|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~1\ : cycloneive_lcell_comb
+-- Location: LCCOMB_X32_Y12_N8
+\inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita2\ : cycloneive_lcell_comb
 -- Equation(s):
--- \b2v_inst3|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~1_combout\ = (\b2v_inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(3) & (!\b2v_inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(0) & 
--- (!\b2v_inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(2) & !\b2v_inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(1))))
+-- \inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita2~combout\ = (\inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(2) & (\inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita1~COUT\ $ (GND))) # 
+-- (!\inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(2) & (!\inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita1~COUT\ & VCC))
+-- \inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita2~COUT\ = CARRY((\inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(2) & !\inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita1~COUT\))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0000000000000010",
+	lut_mask => "1100001100001100",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(2),
+	datad => VCC,
+	cin => \inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita1~COUT\,
+	combout => \inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita2~combout\,
+	cout => \inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita2~COUT\);
+
+-- Location: FF_X32_Y12_N9
+\inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit[2]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \inst|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\,
+	d => \inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita2~combout\,
+	asdata => \~GND~combout\,
+	sload => \inst3|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(2));
+
+-- Location: LCCOMB_X32_Y12_N10
+\inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita3\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita3~combout\ = (\inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(3) & (!\inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita2~COUT\)) # 
+-- (!\inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(3) & ((\inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita2~COUT\) # (GND)))
+-- \inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita3~COUT\ = CARRY((!\inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita2~COUT\) # (!\inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(3)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101101001011111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(3),
+	datad => VCC,
+	cin => \inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita2~COUT\,
+	combout => \inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita3~combout\,
+	cout => \inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita3~COUT\);
+
+-- Location: FF_X32_Y12_N11
+\inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit[3]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \inst|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\,
+	d => \inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita3~combout\,
+	asdata => \~GND~combout\,
+	sload => \inst3|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(3));
+
+-- Location: LCCOMB_X32_Y12_N30
+\inst3|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~1\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \inst3|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~1_combout\ = (!\inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(1) & (!\inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(0) & 
+-- (\inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(2) & !\inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(3))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000010000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(3),
-	datab => \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(0),
-	datac => \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(2),
-	datad => \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(1),
-	combout => \b2v_inst3|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~1_combout\);
+	dataa => \inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(1),
+	datab => \inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(0),
+	datac => \inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(2),
+	datad => \inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(3),
+	combout => \inst3|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~1_combout\);
 
--- Location: LCCOMB_X29_Y10_N8
-\b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita4\ : cycloneive_lcell_comb
+-- Location: LCCOMB_X32_Y12_N12
+\inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita4\ : cycloneive_lcell_comb
 -- Equation(s):
--- \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita4~combout\ = (\b2v_inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(4) & (\b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita3~COUT\ $ (GND))) # 
--- (!\b2v_inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(4) & (!\b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita3~COUT\ & VCC))
--- \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita4~COUT\ = CARRY((\b2v_inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(4) & !\b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita3~COUT\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100001100001100",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(4),
-	datad => VCC,
-	cin => \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita3~COUT\,
-	combout => \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita4~combout\,
-	cout => \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita4~COUT\);
-
--- Location: FF_X29_Y10_N9
-\b2v_inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit[4]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \b2v_inst|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\,
-	d => \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita4~combout\,
-	asdata => \~GND~combout\,
-	sload => \b2v_inst3|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(4));
-
--- Location: LCCOMB_X29_Y10_N10
-\b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita5\ : cycloneive_lcell_comb
--- Equation(s):
--- \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita5~combout\ = (\b2v_inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(5) & (!\b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita4~COUT\)) # 
--- (!\b2v_inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(5) & ((\b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita4~COUT\) # (GND)))
--- \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita5~COUT\ = CARRY((!\b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita4~COUT\) # (!\b2v_inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(5)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0101101001011111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(5),
-	datad => VCC,
-	cin => \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita4~COUT\,
-	combout => \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita5~combout\,
-	cout => \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita5~COUT\);
-
--- Location: FF_X29_Y10_N11
-\b2v_inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit[5]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \b2v_inst|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\,
-	d => \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita5~combout\,
-	asdata => \~GND~combout\,
-	sload => \b2v_inst3|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(5));
-
--- Location: LCCOMB_X29_Y10_N12
-\b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita6\ : cycloneive_lcell_comb
--- Equation(s):
--- \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita6~combout\ = (\b2v_inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(6) & (\b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita5~COUT\ $ (GND))) # 
--- (!\b2v_inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(6) & (!\b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita5~COUT\ & VCC))
--- \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita6~COUT\ = CARRY((\b2v_inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(6) & !\b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita5~COUT\))
+-- \inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita4~combout\ = (\inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(4) & (\inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita3~COUT\ $ (GND))) # 
+-- (!\inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(4) & (!\inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita3~COUT\ & VCC))
+-- \inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita4~COUT\ = CARRY((\inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(4) & !\inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita3~COUT\))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -633,34 +615,34 @@ GENERIC MAP (
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	dataa => \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(6),
+	dataa => \inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(4),
 	datad => VCC,
-	cin => \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita5~COUT\,
-	combout => \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita6~combout\,
-	cout => \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita6~COUT\);
+	cin => \inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita3~COUT\,
+	combout => \inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita4~combout\,
+	cout => \inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita4~COUT\);
 
--- Location: FF_X29_Y10_N13
-\b2v_inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit[6]\ : dffeas
+-- Location: FF_X32_Y12_N13
+\inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit[4]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \b2v_inst|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\,
-	d => \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita6~combout\,
+	clk => \inst|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\,
+	d => \inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita4~combout\,
 	asdata => \~GND~combout\,
-	sload => \b2v_inst3|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	sload => \inst3|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(6));
+	q => \inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(4));
 
--- Location: LCCOMB_X29_Y10_N14
-\b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita7\ : cycloneive_lcell_comb
+-- Location: LCCOMB_X32_Y12_N14
+\inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita5\ : cycloneive_lcell_comb
 -- Equation(s):
--- \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita7~combout\ = (\b2v_inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(7) & (!\b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita6~COUT\)) # 
--- (!\b2v_inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(7) & ((\b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita6~COUT\) # (GND)))
--- \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita7~COUT\ = CARRY((!\b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita6~COUT\) # (!\b2v_inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(7)))
+-- \inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita5~combout\ = (\inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(5) & (!\inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita4~COUT\)) # 
+-- (!\inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(5) & ((\inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita4~COUT\) # (GND)))
+-- \inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita5~COUT\ = CARRY((!\inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita4~COUT\) # (!\inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(5)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -668,33 +650,103 @@ GENERIC MAP (
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	datab => \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(7),
+	datab => \inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(5),
 	datad => VCC,
-	cin => \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita6~COUT\,
-	combout => \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita7~combout\,
-	cout => \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita7~COUT\);
+	cin => \inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita4~COUT\,
+	combout => \inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita5~combout\,
+	cout => \inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita5~COUT\);
 
--- Location: FF_X29_Y10_N15
-\b2v_inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit[7]\ : dffeas
+-- Location: FF_X32_Y12_N15
+\inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit[5]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \b2v_inst|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\,
-	d => \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita7~combout\,
+	clk => \inst|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\,
+	d => \inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita5~combout\,
 	asdata => \~GND~combout\,
-	sload => \b2v_inst3|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	sload => \inst3|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(7));
+	q => \inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(5));
 
--- Location: LCCOMB_X29_Y10_N30
-\b2v_inst3|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~0\ : cycloneive_lcell_comb
+-- Location: LCCOMB_X32_Y12_N16
+\inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita6\ : cycloneive_lcell_comb
 -- Equation(s):
--- \b2v_inst3|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~0_combout\ = (!\b2v_inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(6) & (!\b2v_inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(7) & 
--- (!\b2v_inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(4) & !\b2v_inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(5))))
+-- \inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita6~combout\ = (\inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(6) & (\inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita5~COUT\ $ (GND))) # 
+-- (!\inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(6) & (!\inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita5~COUT\ & VCC))
+-- \inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita6~COUT\ = CARRY((\inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(6) & !\inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita5~COUT\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100001100001100",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(6),
+	datad => VCC,
+	cin => \inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita5~COUT\,
+	combout => \inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita6~combout\,
+	cout => \inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita6~COUT\);
+
+-- Location: FF_X32_Y12_N17
+\inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit[6]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \inst|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\,
+	d => \inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita6~combout\,
+	asdata => \~GND~combout\,
+	sload => \inst3|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(6));
+
+-- Location: LCCOMB_X32_Y12_N18
+\inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita7\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita7~combout\ = (\inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(7) & (!\inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita6~COUT\)) # 
+-- (!\inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(7) & ((\inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita6~COUT\) # (GND)))
+-- \inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita7~COUT\ = CARRY((!\inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita6~COUT\) # (!\inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(7)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011110000111111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(7),
+	datad => VCC,
+	cin => \inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita6~COUT\,
+	combout => \inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita7~combout\,
+	cout => \inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita7~COUT\);
+
+-- Location: FF_X32_Y12_N19
+\inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit[7]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \inst|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\,
+	d => \inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita7~combout\,
+	asdata => \~GND~combout\,
+	sload => \inst3|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(7));
+
+-- Location: LCCOMB_X32_Y12_N22
+\inst3|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~0\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \inst3|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~0_combout\ = (!\inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(4) & (!\inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(7) & 
+-- (!\inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(5) & !\inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(6))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -702,16 +754,16 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(6),
-	datab => \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(7),
-	datac => \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(4),
-	datad => \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(5),
-	combout => \b2v_inst3|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~0_combout\);
+	dataa => \inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(4),
+	datab => \inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(7),
+	datac => \inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(5),
+	datad => \inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit\(6),
+	combout => \inst3|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~0_combout\);
 
--- Location: LCCOMB_X29_Y10_N16
-\b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita7~0\ : cycloneive_lcell_comb
+-- Location: LCCOMB_X32_Y12_N20
+\inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita7~0\ : cycloneive_lcell_comb
 -- Equation(s):
--- \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita7~0_combout\ = !\b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita7~COUT\
+-- \inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita7~0_combout\ = !\inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita7~COUT\
 
 -- pragma translate_off
 GENERIC MAP (
@@ -719,31 +771,31 @@ GENERIC MAP (
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	cin => \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita7~COUT\,
-	combout => \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita7~0_combout\);
+	cin => \inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita7~COUT\,
+	combout => \inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita7~0_combout\);
 
--- Location: LCCOMB_X29_Y10_N28
-\b2v_inst3|LPM_COUNTER_component|auto_generated|cout_actual\ : cycloneive_lcell_comb
+-- Location: LCCOMB_X32_Y12_N26
+\inst3|LPM_COUNTER_component|auto_generated|cout_actual\ : cycloneive_lcell_comb
 -- Equation(s):
--- \b2v_inst3|LPM_COUNTER_component|auto_generated|cout_actual~combout\ = LCELL((\b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita7~0_combout\) # ((\b2v_inst3|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~1_combout\ & 
--- \b2v_inst3|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~0_combout\)))
+-- \inst3|LPM_COUNTER_component|auto_generated|cout_actual~combout\ = LCELL((\inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita7~0_combout\) # ((\inst3|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~1_combout\ & 
+-- \inst3|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~0_combout\)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111111111000000",
+	lut_mask => "1111111110100000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datab => \b2v_inst3|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~1_combout\,
-	datac => \b2v_inst3|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~0_combout\,
-	datad => \b2v_inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita7~0_combout\,
-	combout => \b2v_inst3|LPM_COUNTER_component|auto_generated|cout_actual~combout\);
+	dataa => \inst3|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~1_combout\,
+	datac => \inst3|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~0_combout\,
+	datad => \inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita7~0_combout\,
+	combout => \inst3|LPM_COUNTER_component|auto_generated|cout_actual~combout\);
 
--- Location: LCCOMB_X30_Y10_N4
-\b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita0\ : cycloneive_lcell_comb
+-- Location: LCCOMB_X31_Y12_N12
+\inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita0\ : cycloneive_lcell_comb
 -- Equation(s):
--- \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita0~combout\ = \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(0) $ (VCC)
--- \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita0~COUT\ = CARRY(\b2v_inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(0))
+-- \inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita0~combout\ = \inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(0) $ (VCC)
+-- \inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita0~COUT\ = CARRY(\inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(0))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -751,187 +803,47 @@ GENERIC MAP (
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	dataa => \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(0),
+	dataa => \inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(0),
 	datad => VCC,
-	combout => \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita0~combout\,
-	cout => \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita0~COUT\);
+	combout => \inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita0~combout\,
+	cout => \inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita0~COUT\);
 
--- Location: LCCOMB_X30_Y10_N26
-\b2v_inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit[0]~feeder\ : cycloneive_lcell_comb
+-- Location: LCCOMB_X31_Y12_N10
+\inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit[0]~feeder\ : cycloneive_lcell_comb
 -- Equation(s):
--- \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit[0]~feeder_combout\ = \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita0~combout\
+-- \inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit[0]~feeder_combout\ = \inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita0~combout\
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1100110011001100",
+	lut_mask => "1010101010101010",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datab => \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita0~combout\,
-	combout => \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit[0]~feeder_combout\);
+	dataa => \inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita0~combout\,
+	combout => \inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit[0]~feeder_combout\);
 
--- Location: FF_X30_Y10_N27
-\b2v_inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit[0]\ : dffeas
+-- Location: FF_X31_Y12_N11
+\inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit[0]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \b2v_inst3|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
-	d => \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit[0]~feeder_combout\,
+	clk => \inst3|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	d => \inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit[0]~feeder_combout\,
 	asdata => \~GND~combout\,
-	sload => \b2v_inst4|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	sload => \inst4|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(0));
+	q => \inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(0));
 
--- Location: LCCOMB_X30_Y10_N6
-\b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita1\ : cycloneive_lcell_comb
+-- Location: LCCOMB_X31_Y12_N14
+\inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita1\ : cycloneive_lcell_comb
 -- Equation(s):
--- \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita1~combout\ = (\b2v_inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(1) & (!\b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita0~COUT\)) # 
--- (!\b2v_inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(1) & ((\b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita0~COUT\) # (GND)))
--- \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita1~COUT\ = CARRY((!\b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita0~COUT\) # (!\b2v_inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(1)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0101101001011111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(1),
-	datad => VCC,
-	cin => \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita0~COUT\,
-	combout => \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita1~combout\,
-	cout => \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita1~COUT\);
-
--- Location: FF_X30_Y10_N7
-\b2v_inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit[1]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \b2v_inst3|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
-	d => \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita1~combout\,
-	asdata => \~GND~combout\,
-	sload => \b2v_inst4|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(1));
-
--- Location: LCCOMB_X30_Y10_N8
-\b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita2\ : cycloneive_lcell_comb
--- Equation(s):
--- \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita2~combout\ = (\b2v_inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(2) & (\b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita1~COUT\ $ (GND))) # 
--- (!\b2v_inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(2) & (!\b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita1~COUT\ & VCC))
--- \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita2~COUT\ = CARRY((\b2v_inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(2) & !\b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita1~COUT\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100001100001100",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(2),
-	datad => VCC,
-	cin => \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita1~COUT\,
-	combout => \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita2~combout\,
-	cout => \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita2~COUT\);
-
--- Location: FF_X30_Y10_N9
-\b2v_inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit[2]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \b2v_inst3|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
-	d => \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita2~combout\,
-	asdata => \~GND~combout\,
-	sload => \b2v_inst4|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(2));
-
--- Location: LCCOMB_X30_Y10_N10
-\b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita3\ : cycloneive_lcell_comb
--- Equation(s):
--- \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita3~combout\ = (\b2v_inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(3) & (!\b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita2~COUT\)) # 
--- (!\b2v_inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(3) & ((\b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita2~COUT\) # (GND)))
--- \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita3~COUT\ = CARRY((!\b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita2~COUT\) # (!\b2v_inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(3)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0101101001011111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(3),
-	datad => VCC,
-	cin => \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita2~COUT\,
-	combout => \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita3~combout\,
-	cout => \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita3~COUT\);
-
--- Location: FF_X30_Y10_N11
-\b2v_inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit[3]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \b2v_inst3|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
-	d => \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita3~combout\,
-	asdata => \~GND~combout\,
-	sload => \b2v_inst4|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(3));
-
--- Location: LCCOMB_X30_Y10_N12
-\b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita4\ : cycloneive_lcell_comb
--- Equation(s):
--- \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita4~combout\ = (\b2v_inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(4) & (\b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita3~COUT\ $ (GND))) # 
--- (!\b2v_inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(4) & (!\b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita3~COUT\ & VCC))
--- \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita4~COUT\ = CARRY((\b2v_inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(4) & !\b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita3~COUT\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1010010100001010",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(4),
-	datad => VCC,
-	cin => \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita3~COUT\,
-	combout => \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita4~combout\,
-	cout => \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita4~COUT\);
-
--- Location: FF_X30_Y10_N13
-\b2v_inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit[4]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \b2v_inst3|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
-	d => \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita4~combout\,
-	asdata => \~GND~combout\,
-	sload => \b2v_inst4|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(4));
-
--- Location: LCCOMB_X30_Y10_N14
-\b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita5\ : cycloneive_lcell_comb
--- Equation(s):
--- \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita5~combout\ = (\b2v_inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(5) & (!\b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita4~COUT\)) # 
--- (!\b2v_inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(5) & ((\b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita4~COUT\) # (GND)))
--- \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita5~COUT\ = CARRY((!\b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita4~COUT\) # (!\b2v_inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(5)))
+-- \inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita1~combout\ = (\inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(1) & (!\inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita0~COUT\)) # 
+-- (!\inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(1) & ((\inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita0~COUT\) # (GND)))
+-- \inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita1~COUT\ = CARRY((!\inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita0~COUT\) # (!\inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(1)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -939,34 +851,34 @@ GENERIC MAP (
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	datab => \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(5),
+	datab => \inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(1),
 	datad => VCC,
-	cin => \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita4~COUT\,
-	combout => \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita5~combout\,
-	cout => \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita5~COUT\);
+	cin => \inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita0~COUT\,
+	combout => \inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita1~combout\,
+	cout => \inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita1~COUT\);
 
--- Location: FF_X30_Y10_N15
-\b2v_inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit[5]\ : dffeas
+-- Location: FF_X31_Y12_N15
+\inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit[1]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \b2v_inst3|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
-	d => \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita5~combout\,
+	clk => \inst3|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	d => \inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita1~combout\,
 	asdata => \~GND~combout\,
-	sload => \b2v_inst4|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	sload => \inst4|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(5));
+	q => \inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(1));
 
--- Location: LCCOMB_X30_Y10_N16
-\b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita6\ : cycloneive_lcell_comb
+-- Location: LCCOMB_X31_Y12_N16
+\inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita2\ : cycloneive_lcell_comb
 -- Equation(s):
--- \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita6~combout\ = (\b2v_inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(6) & (\b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita5~COUT\ $ (GND))) # 
--- (!\b2v_inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(6) & (!\b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita5~COUT\ & VCC))
--- \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita6~COUT\ = CARRY((\b2v_inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(6) & !\b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita5~COUT\))
+-- \inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita2~combout\ = (\inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(2) & (\inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita1~COUT\ $ (GND))) # 
+-- (!\inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(2) & (!\inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita1~COUT\ & VCC))
+-- \inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita2~COUT\ = CARRY((\inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(2) & !\inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita1~COUT\))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -974,34 +886,34 @@ GENERIC MAP (
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	datab => \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(6),
+	datab => \inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(2),
 	datad => VCC,
-	cin => \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita5~COUT\,
-	combout => \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita6~combout\,
-	cout => \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita6~COUT\);
+	cin => \inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita1~COUT\,
+	combout => \inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita2~combout\,
+	cout => \inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita2~COUT\);
 
--- Location: FF_X30_Y10_N17
-\b2v_inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit[6]\ : dffeas
+-- Location: FF_X31_Y12_N17
+\inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit[2]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \b2v_inst3|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
-	d => \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita6~combout\,
+	clk => \inst3|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	d => \inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita2~combout\,
 	asdata => \~GND~combout\,
-	sload => \b2v_inst4|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	sload => \inst4|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(6));
+	q => \inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(2));
 
--- Location: LCCOMB_X30_Y10_N18
-\b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita7\ : cycloneive_lcell_comb
+-- Location: LCCOMB_X31_Y12_N18
+\inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita3\ : cycloneive_lcell_comb
 -- Equation(s):
--- \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita7~combout\ = (\b2v_inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(7) & (!\b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita6~COUT\)) # 
--- (!\b2v_inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(7) & ((\b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita6~COUT\) # (GND)))
--- \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita7~COUT\ = CARRY((!\b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita6~COUT\) # (!\b2v_inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(7)))
+-- \inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita3~combout\ = (\inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(3) & (!\inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita2~COUT\)) # 
+-- (!\inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(3) & ((\inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita2~COUT\) # (GND)))
+-- \inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita3~COUT\ = CARRY((!\inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita2~COUT\) # (!\inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(3)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -1009,33 +921,191 @@ GENERIC MAP (
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	datab => \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(7),
+	datab => \inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(3),
 	datad => VCC,
-	cin => \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita6~COUT\,
-	combout => \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita7~combout\,
-	cout => \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita7~COUT\);
+	cin => \inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita2~COUT\,
+	combout => \inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita3~combout\,
+	cout => \inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita3~COUT\);
 
--- Location: FF_X30_Y10_N19
-\b2v_inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit[7]\ : dffeas
+-- Location: FF_X31_Y12_N19
+\inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit[3]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \b2v_inst3|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
-	d => \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita7~combout\,
+	clk => \inst3|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	d => \inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita3~combout\,
 	asdata => \~GND~combout\,
-	sload => \b2v_inst4|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	sload => \inst4|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(7));
+	q => \inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(3));
 
--- Location: LCCOMB_X30_Y10_N0
-\b2v_inst4|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~0\ : cycloneive_lcell_comb
+-- Location: LCCOMB_X31_Y12_N30
+\inst4|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~1\ : cycloneive_lcell_comb
 -- Equation(s):
--- \b2v_inst4|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~0_combout\ = (!\b2v_inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(4) & (!\b2v_inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(7) & 
--- (!\b2v_inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(5) & !\b2v_inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(6))))
+-- \inst4|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~1_combout\ = (\inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(0) & (\inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(3) & 
+-- (!\inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(1) & !\inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(2))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000001000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(0),
+	datab => \inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(3),
+	datac => \inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(1),
+	datad => \inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(2),
+	combout => \inst4|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~1_combout\);
+
+-- Location: LCCOMB_X31_Y12_N20
+\inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita4\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita4~combout\ = (\inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(4) & (\inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita3~COUT\ $ (GND))) # 
+-- (!\inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(4) & (!\inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita3~COUT\ & VCC))
+-- \inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita4~COUT\ = CARRY((\inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(4) & !\inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita3~COUT\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100001100001100",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(4),
+	datad => VCC,
+	cin => \inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita3~COUT\,
+	combout => \inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita4~combout\,
+	cout => \inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita4~COUT\);
+
+-- Location: FF_X31_Y12_N21
+\inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit[4]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \inst3|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	d => \inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita4~combout\,
+	asdata => \~GND~combout\,
+	sload => \inst4|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(4));
+
+-- Location: LCCOMB_X31_Y12_N22
+\inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita5\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita5~combout\ = (\inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(5) & (!\inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita4~COUT\)) # 
+-- (!\inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(5) & ((\inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita4~COUT\) # (GND)))
+-- \inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita5~COUT\ = CARRY((!\inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita4~COUT\) # (!\inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(5)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101101001011111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(5),
+	datad => VCC,
+	cin => \inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita4~COUT\,
+	combout => \inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita5~combout\,
+	cout => \inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita5~COUT\);
+
+-- Location: FF_X31_Y12_N23
+\inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit[5]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \inst3|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	d => \inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita5~combout\,
+	asdata => \~GND~combout\,
+	sload => \inst4|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(5));
+
+-- Location: LCCOMB_X31_Y12_N24
+\inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita6\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita6~combout\ = (\inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(6) & (\inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita5~COUT\ $ (GND))) # 
+-- (!\inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(6) & (!\inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita5~COUT\ & VCC))
+-- \inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita6~COUT\ = CARRY((\inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(6) & !\inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita5~COUT\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100001100001100",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(6),
+	datad => VCC,
+	cin => \inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita5~COUT\,
+	combout => \inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita6~combout\,
+	cout => \inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita6~COUT\);
+
+-- Location: FF_X31_Y12_N25
+\inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit[6]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \inst3|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	d => \inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita6~combout\,
+	asdata => \~GND~combout\,
+	sload => \inst4|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(6));
+
+-- Location: LCCOMB_X31_Y12_N26
+\inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita7\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita7~combout\ = (\inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(7) & (!\inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita6~COUT\)) # 
+-- (!\inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(7) & ((\inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita6~COUT\) # (GND)))
+-- \inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita7~COUT\ = CARRY((!\inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita6~COUT\) # (!\inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(7)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101101001011111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(7),
+	datad => VCC,
+	cin => \inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita6~COUT\,
+	combout => \inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita7~combout\,
+	cout => \inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita7~COUT\);
+
+-- Location: FF_X31_Y12_N27
+\inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit[7]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \inst3|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	d => \inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita7~combout\,
+	asdata => \~GND~combout\,
+	sload => \inst4|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(7));
+
+-- Location: LCCOMB_X31_Y12_N4
+\inst4|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~0\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \inst4|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~0_combout\ = (!\inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(5) & (!\inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(4) & 
+-- (!\inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(7) & !\inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(6))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -1043,34 +1113,16 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(4),
-	datab => \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(7),
-	datac => \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(5),
-	datad => \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(6),
-	combout => \b2v_inst4|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~0_combout\);
+	dataa => \inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(5),
+	datab => \inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(4),
+	datac => \inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(7),
+	datad => \inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(6),
+	combout => \inst4|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~0_combout\);
 
--- Location: LCCOMB_X30_Y10_N22
-\b2v_inst4|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~1\ : cycloneive_lcell_comb
+-- Location: LCCOMB_X31_Y12_N28
+\inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita7~0\ : cycloneive_lcell_comb
 -- Equation(s):
--- \b2v_inst4|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~1_combout\ = (!\b2v_inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(1) & (!\b2v_inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(2) & 
--- (!\b2v_inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(0) & \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(3))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000100000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(1),
-	datab => \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(2),
-	datac => \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(0),
-	datad => \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_reg_bit\(3),
-	combout => \b2v_inst4|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~1_combout\);
-
--- Location: LCCOMB_X30_Y10_N20
-\b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita7~0\ : cycloneive_lcell_comb
--- Equation(s):
--- \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita7~0_combout\ = !\b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita7~COUT\
+-- \inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita7~0_combout\ = !\inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita7~COUT\
 
 -- pragma translate_off
 GENERIC MAP (
@@ -1078,440 +1130,92 @@ GENERIC MAP (
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	cin => \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita7~COUT\,
-	combout => \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita7~0_combout\);
+	cin => \inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita7~COUT\,
+	combout => \inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita7~0_combout\);
 
--- Location: LCCOMB_X30_Y10_N28
-\b2v_inst4|LPM_COUNTER_component|auto_generated|cout_actual\ : cycloneive_lcell_comb
+-- Location: LCCOMB_X31_Y12_N0
+\inst4|LPM_COUNTER_component|auto_generated|cout_actual\ : cycloneive_lcell_comb
 -- Equation(s):
--- \b2v_inst4|LPM_COUNTER_component|auto_generated|cout_actual~combout\ = LCELL((\b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita7~0_combout\) # ((\b2v_inst4|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~0_combout\ & 
--- \b2v_inst4|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~1_combout\)))
+-- \inst4|LPM_COUNTER_component|auto_generated|cout_actual~combout\ = LCELL((\inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita7~0_combout\) # ((\inst4|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~1_combout\ & 
+-- \inst4|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~0_combout\)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111111111000000",
+	lut_mask => "1111111110100000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datab => \b2v_inst4|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~0_combout\,
-	datac => \b2v_inst4|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~1_combout\,
-	datad => \b2v_inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita7~0_combout\,
-	combout => \b2v_inst4|LPM_COUNTER_component|auto_generated|cout_actual~combout\);
+	dataa => \inst4|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~1_combout\,
+	datac => \inst4|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~0_combout\,
+	datad => \inst4|LPM_COUNTER_component|auto_generated|counter_comb_bita7~0_combout\,
+	combout => \inst4|LPM_COUNTER_component|auto_generated|cout_actual~combout\);
 
--- Location: LCCOMB_X31_Y10_N6
-\b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita0\ : cycloneive_lcell_comb
--- Equation(s):
--- \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita0~combout\ = \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(0) $ (VCC)
--- \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita0~COUT\ = CARRY(\b2v_inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(0))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0101010110101010",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(0),
-	datad => VCC,
-	combout => \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita0~combout\,
-	cout => \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita0~COUT\);
-
--- Location: LCCOMB_X31_Y10_N26
-\b2v_inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit[0]~feeder\ : cycloneive_lcell_comb
--- Equation(s):
--- \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit[0]~feeder_combout\ = \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita0~combout\
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100110011001100",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita0~combout\,
-	combout => \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit[0]~feeder_combout\);
-
--- Location: FF_X31_Y10_N27
-\b2v_inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit[0]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \b2v_inst4|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
-	d => \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit[0]~feeder_combout\,
-	asdata => \~GND~combout\,
-	sload => \b2v_inst5|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(0));
-
--- Location: LCCOMB_X31_Y10_N8
-\b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita1\ : cycloneive_lcell_comb
--- Equation(s):
--- \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita1~combout\ = (\b2v_inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(1) & (!\b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita0~COUT\)) # 
--- (!\b2v_inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(1) & ((\b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita0~COUT\) # (GND)))
--- \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita1~COUT\ = CARRY((!\b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita0~COUT\) # (!\b2v_inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(1)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0011110000111111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(1),
-	datad => VCC,
-	cin => \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita0~COUT\,
-	combout => \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita1~combout\,
-	cout => \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita1~COUT\);
-
--- Location: FF_X31_Y10_N9
-\b2v_inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit[1]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \b2v_inst4|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
-	d => \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita1~combout\,
-	asdata => \~GND~combout\,
-	sload => \b2v_inst5|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(1));
-
--- Location: LCCOMB_X31_Y10_N10
-\b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita2\ : cycloneive_lcell_comb
--- Equation(s):
--- \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita2~combout\ = (\b2v_inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(2) & (\b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita1~COUT\ $ (GND))) # 
--- (!\b2v_inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(2) & (!\b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita1~COUT\ & VCC))
--- \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita2~COUT\ = CARRY((\b2v_inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(2) & !\b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita1~COUT\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1010010100001010",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(2),
-	datad => VCC,
-	cin => \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita1~COUT\,
-	combout => \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita2~combout\,
-	cout => \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita2~COUT\);
-
--- Location: FF_X31_Y10_N11
-\b2v_inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit[2]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \b2v_inst4|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
-	d => \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita2~combout\,
-	asdata => \~GND~combout\,
-	sload => \b2v_inst5|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(2));
-
--- Location: LCCOMB_X31_Y10_N12
-\b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita3\ : cycloneive_lcell_comb
--- Equation(s):
--- \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita3~combout\ = (\b2v_inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(3) & (!\b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita2~COUT\)) # 
--- (!\b2v_inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(3) & ((\b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita2~COUT\) # (GND)))
--- \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita3~COUT\ = CARRY((!\b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita2~COUT\) # (!\b2v_inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(3)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0101101001011111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(3),
-	datad => VCC,
-	cin => \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita2~COUT\,
-	combout => \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita3~combout\,
-	cout => \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita3~COUT\);
-
--- Location: FF_X31_Y10_N13
-\b2v_inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit[3]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \b2v_inst4|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
-	d => \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita3~combout\,
-	asdata => \~GND~combout\,
-	sload => \b2v_inst5|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(3));
-
--- Location: LCCOMB_X31_Y10_N14
-\b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita4\ : cycloneive_lcell_comb
--- Equation(s):
--- \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita4~combout\ = (\b2v_inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(4) & (\b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita3~COUT\ $ (GND))) # 
--- (!\b2v_inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(4) & (!\b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita3~COUT\ & VCC))
--- \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita4~COUT\ = CARRY((\b2v_inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(4) & !\b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita3~COUT\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100001100001100",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(4),
-	datad => VCC,
-	cin => \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita3~COUT\,
-	combout => \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita4~combout\,
-	cout => \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita4~COUT\);
-
--- Location: FF_X31_Y10_N15
-\b2v_inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit[4]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \b2v_inst4|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
-	d => \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita4~combout\,
-	asdata => \~GND~combout\,
-	sload => \b2v_inst5|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(4));
-
--- Location: LCCOMB_X31_Y10_N16
-\b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita5\ : cycloneive_lcell_comb
--- Equation(s):
--- \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita5~combout\ = (\b2v_inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(5) & (!\b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita4~COUT\)) # 
--- (!\b2v_inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(5) & ((\b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita4~COUT\) # (GND)))
--- \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita5~COUT\ = CARRY((!\b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita4~COUT\) # (!\b2v_inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(5)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0011110000111111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(5),
-	datad => VCC,
-	cin => \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita4~COUT\,
-	combout => \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita5~combout\,
-	cout => \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita5~COUT\);
-
--- Location: FF_X31_Y10_N17
-\b2v_inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit[5]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \b2v_inst4|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
-	d => \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita5~combout\,
-	asdata => \~GND~combout\,
-	sload => \b2v_inst5|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(5));
-
--- Location: LCCOMB_X31_Y10_N18
-\b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita6\ : cycloneive_lcell_comb
--- Equation(s):
--- \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita6~combout\ = (\b2v_inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(6) & (\b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita5~COUT\ $ (GND))) # 
--- (!\b2v_inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(6) & (!\b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita5~COUT\ & VCC))
--- \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita6~COUT\ = CARRY((\b2v_inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(6) & !\b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita5~COUT\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100001100001100",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(6),
-	datad => VCC,
-	cin => \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita5~COUT\,
-	combout => \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita6~combout\,
-	cout => \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita6~COUT\);
-
--- Location: FF_X31_Y10_N19
-\b2v_inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit[6]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \b2v_inst4|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
-	d => \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita6~combout\,
-	asdata => \~GND~combout\,
-	sload => \b2v_inst5|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(6));
-
--- Location: LCCOMB_X31_Y10_N20
-\b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita7\ : cycloneive_lcell_comb
--- Equation(s):
--- \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita7~combout\ = (\b2v_inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(7) & (!\b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita6~COUT\)) # 
--- (!\b2v_inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(7) & ((\b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita6~COUT\) # (GND)))
--- \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita7~COUT\ = CARRY((!\b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita6~COUT\) # (!\b2v_inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(7)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0011110000111111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(7),
-	datad => VCC,
-	cin => \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita6~COUT\,
-	combout => \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita7~combout\,
-	cout => \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita7~COUT\);
-
--- Location: FF_X31_Y10_N21
-\b2v_inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit[7]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \b2v_inst4|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
-	d => \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita7~combout\,
-	asdata => \~GND~combout\,
-	sload => \b2v_inst5|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(7));
-
--- Location: LCCOMB_X31_Y10_N30
-\b2v_inst5|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~0\ : cycloneive_lcell_comb
--- Equation(s):
--- \b2v_inst5|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~0_combout\ = (!\b2v_inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(7) & (!\b2v_inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(6) & 
--- (!\b2v_inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(4) & !\b2v_inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(5))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000000000001",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(7),
-	datab => \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(6),
-	datac => \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(4),
-	datad => \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(5),
-	combout => \b2v_inst5|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~0_combout\);
-
--- Location: LCCOMB_X31_Y10_N22
-\b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita7~0\ : cycloneive_lcell_comb
--- Equation(s):
--- \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita7~0_combout\ = !\b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita7~COUT\
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000111100001111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	cin => \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita7~COUT\,
-	combout => \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita7~0_combout\);
-
--- Location: LCCOMB_X31_Y10_N2
-\b2v_inst5|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~1\ : cycloneive_lcell_comb
--- Equation(s):
--- \b2v_inst5|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~1_combout\ = (\b2v_inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(3) & (!\b2v_inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(1) & 
--- (!\b2v_inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(0) & !\b2v_inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(2))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000000000010",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(3),
-	datab => \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(1),
-	datac => \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(0),
-	datad => \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(2),
-	combout => \b2v_inst5|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~1_combout\);
-
--- Location: LCCOMB_X31_Y10_N4
-\b2v_inst5|LPM_COUNTER_component|auto_generated|cout_actual\ : cycloneive_lcell_comb
--- Equation(s):
--- \b2v_inst5|LPM_COUNTER_component|auto_generated|cout_actual~combout\ = LCELL((\b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita7~0_combout\) # ((\b2v_inst5|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~0_combout\ & 
--- \b2v_inst5|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~1_combout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111101011110000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \b2v_inst5|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~0_combout\,
-	datac => \b2v_inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita7~0_combout\,
-	datad => \b2v_inst5|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~1_combout\,
-	combout => \b2v_inst5|LPM_COUNTER_component|auto_generated|cout_actual~combout\);
-
--- Location: CLKCTRL_G7
-\b2v_inst5|LPM_COUNTER_component|auto_generated|cout_actual~clkctrl\ : cycloneive_clkctrl
+-- Location: CLKCTRL_G9
+\inst4|LPM_COUNTER_component|auto_generated|cout_actual~clkctrl\ : cycloneive_clkctrl
 -- pragma translate_off
 GENERIC MAP (
 	clock_type => "global clock",
 	ena_register_mode => "none")
 -- pragma translate_on
 PORT MAP (
-	inclk => \b2v_inst5|LPM_COUNTER_component|auto_generated|cout_actual~clkctrl_INCLK_bus\,
+	inclk => \inst4|LPM_COUNTER_component|auto_generated|cout_actual~clkctrl_INCLK_bus\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	outclk => \b2v_inst5|LPM_COUNTER_component|auto_generated|cout_actual~clkctrl_outclk\);
+	outclk => \inst4|LPM_COUNTER_component|auto_generated|cout_actual~clkctrl_outclk\);
 
--- Location: LCCOMB_X33_Y10_N18
-\b2v_inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita0\ : cycloneive_lcell_comb
+-- Location: LCCOMB_X32_Y13_N8
+\inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita0\ : cycloneive_lcell_comb
 -- Equation(s):
--- \b2v_inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita0~combout\ = \b2v_inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(0) $ (VCC)
--- \b2v_inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita0~COUT\ = CARRY(\b2v_inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(0))
+-- \inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita0~combout\ = \inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(0) $ (VCC)
+-- \inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita0~COUT\ = CARRY(\inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(0))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0011001111001100",
+	lut_mask => "0101010110101010",
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	datab => \b2v_inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(0),
+	dataa => \inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(0),
 	datad => VCC,
-	combout => \b2v_inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita0~combout\,
-	cout => \b2v_inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita0~COUT\);
+	combout => \inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita0~combout\,
+	cout => \inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita0~COUT\);
 
--- Location: LCCOMB_X33_Y10_N22
-\b2v_inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita2\ : cycloneive_lcell_comb
+-- Location: LCCOMB_X32_Y13_N26
+\inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit[0]~feeder\ : cycloneive_lcell_comb
 -- Equation(s):
--- \b2v_inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita2~combout\ = (\b2v_inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(2) & (\b2v_inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita1~COUT\ $ (GND))) # 
--- (!\b2v_inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(2) & (!\b2v_inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita1~COUT\ & VCC))
--- \b2v_inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita2~COUT\ = CARRY((\b2v_inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(2) & !\b2v_inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita1~COUT\))
+-- \inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit[0]~feeder_combout\ = \inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita0~combout\
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1100001100001100",
-	sum_lutc_input => "cin")
+	lut_mask => "1111111100000000",
+	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datab => \b2v_inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(2),
-	datad => VCC,
-	cin => \b2v_inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita1~COUT\,
-	combout => \b2v_inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita2~combout\,
-	cout => \b2v_inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita2~COUT\);
+	datad => \inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita0~combout\,
+	combout => \inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit[0]~feeder_combout\);
 
--- Location: LCCOMB_X33_Y10_N24
-\b2v_inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita3\ : cycloneive_lcell_comb
+-- Location: FF_X32_Y13_N27
+\inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit[0]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \inst4|LPM_COUNTER_component|auto_generated|cout_actual~clkctrl_outclk\,
+	d => \inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit[0]~feeder_combout\,
+	asdata => \~GND~combout\,
+	sload => \inst5|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(0));
+
+-- Location: LCCOMB_X32_Y13_N10
+\inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita1\ : cycloneive_lcell_comb
 -- Equation(s):
--- \b2v_inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita3~combout\ = (\b2v_inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(3) & (!\b2v_inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita2~COUT\)) # 
--- (!\b2v_inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(3) & ((\b2v_inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita2~COUT\) # (GND)))
--- \b2v_inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita3~COUT\ = CARRY((!\b2v_inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita2~COUT\) # (!\b2v_inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(3)))
+-- \inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita1~combout\ = (\inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(1) & (!\inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita0~COUT\)) # 
+-- (!\inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(1) & ((\inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita0~COUT\) # (GND)))
+-- \inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita1~COUT\ = CARRY((!\inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita0~COUT\) # (!\inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(1)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -1519,79 +1223,69 @@ GENERIC MAP (
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	dataa => \b2v_inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(3),
+	dataa => \inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(1),
 	datad => VCC,
-	cin => \b2v_inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita2~COUT\,
-	combout => \b2v_inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita3~combout\,
-	cout => \b2v_inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita3~COUT\);
+	cin => \inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita0~COUT\,
+	combout => \inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita1~combout\,
+	cout => \inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita1~COUT\);
 
--- Location: FF_X33_Y10_N25
-\b2v_inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit[3]\ : dffeas
+-- Location: FF_X32_Y13_N11
+\inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit[1]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \b2v_inst5|LPM_COUNTER_component|auto_generated|cout_actual~clkctrl_outclk\,
-	d => \b2v_inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita3~combout\,
+	clk => \inst4|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	d => \inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita1~combout\,
 	asdata => \~GND~combout\,
-	sload => \b2v_inst8|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	sload => \inst5|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \b2v_inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(3));
+	q => \inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(1));
 
--- Location: LCCOMB_X33_Y10_N26
-\b2v_inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita3~0\ : cycloneive_lcell_comb
+-- Location: LCCOMB_X32_Y13_N12
+\inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita2\ : cycloneive_lcell_comb
 -- Equation(s):
--- \b2v_inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita3~0_combout\ = !\b2v_inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita3~COUT\
+-- \inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita2~combout\ = (\inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(2) & (\inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita1~COUT\ $ (GND))) # 
+-- (!\inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(2) & (!\inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita1~COUT\ & VCC))
+-- \inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita2~COUT\ = CARRY((\inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(2) & !\inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita1~COUT\))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0000111100001111",
+	lut_mask => "1010010100001010",
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	cin => \b2v_inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita3~COUT\,
-	combout => \b2v_inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita3~0_combout\);
+	dataa => \inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(2),
+	datad => VCC,
+	cin => \inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita1~COUT\,
+	combout => \inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita2~combout\,
+	cout => \inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita2~COUT\);
 
--- Location: LCCOMB_X33_Y10_N2
-\b2v_inst8|LPM_COUNTER_component|auto_generated|cout_actual\ : cycloneive_lcell_comb
--- Equation(s):
--- \b2v_inst8|LPM_COUNTER_component|auto_generated|cout_actual~combout\ = (\b2v_inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita3~0_combout\) # (\b2v_inst8|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~0_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111111111110000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datac => \b2v_inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita3~0_combout\,
-	datad => \b2v_inst8|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~0_combout\,
-	combout => \b2v_inst8|LPM_COUNTER_component|auto_generated|cout_actual~combout\);
-
--- Location: FF_X33_Y10_N19
-\b2v_inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit[0]\ : dffeas
+-- Location: FF_X32_Y13_N13
+\inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit[2]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \b2v_inst5|LPM_COUNTER_component|auto_generated|cout_actual~clkctrl_outclk\,
-	d => \b2v_inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita0~combout\,
+	clk => \inst4|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	d => \inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita2~combout\,
 	asdata => \~GND~combout\,
-	sload => \b2v_inst8|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	sload => \inst5|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \b2v_inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(0));
+	q => \inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(2));
 
--- Location: LCCOMB_X33_Y10_N20
-\b2v_inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita1\ : cycloneive_lcell_comb
+-- Location: LCCOMB_X32_Y13_N14
+\inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita3\ : cycloneive_lcell_comb
 -- Equation(s):
--- \b2v_inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita1~combout\ = (\b2v_inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(1) & (!\b2v_inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita0~COUT\)) # 
--- (!\b2v_inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(1) & ((\b2v_inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita0~COUT\) # (GND)))
--- \b2v_inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita1~COUT\ = CARRY((!\b2v_inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita0~COUT\) # (!\b2v_inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(1)))
+-- \inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita3~combout\ = (\inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(3) & (!\inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita2~COUT\)) # 
+-- (!\inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(3) & ((\inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita2~COUT\) # (GND)))
+-- \inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita3~COUT\ = CARRY((!\inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita2~COUT\) # (!\inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(3)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -1599,49 +1293,33 @@ GENERIC MAP (
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	datab => \b2v_inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(1),
+	datab => \inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(3),
 	datad => VCC,
-	cin => \b2v_inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita0~COUT\,
-	combout => \b2v_inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita1~combout\,
-	cout => \b2v_inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita1~COUT\);
+	cin => \inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita2~COUT\,
+	combout => \inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita3~combout\,
+	cout => \inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita3~COUT\);
 
--- Location: FF_X33_Y10_N21
-\b2v_inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit[1]\ : dffeas
+-- Location: FF_X32_Y13_N15
+\inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit[3]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \b2v_inst5|LPM_COUNTER_component|auto_generated|cout_actual~clkctrl_outclk\,
-	d => \b2v_inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita1~combout\,
+	clk => \inst4|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	d => \inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita3~combout\,
 	asdata => \~GND~combout\,
-	sload => \b2v_inst8|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	sload => \inst5|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \b2v_inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(1));
+	q => \inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(3));
 
--- Location: FF_X33_Y10_N23
-\b2v_inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit[2]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \b2v_inst5|LPM_COUNTER_component|auto_generated|cout_actual~clkctrl_outclk\,
-	d => \b2v_inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita2~combout\,
-	asdata => \~GND~combout\,
-	sload => \b2v_inst8|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \b2v_inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(2));
-
--- Location: LCCOMB_X33_Y10_N12
-\b2v_inst8|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~0\ : cycloneive_lcell_comb
+-- Location: LCCOMB_X32_Y13_N6
+\inst5|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~1\ : cycloneive_lcell_comb
 -- Equation(s):
--- \b2v_inst8|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~0_combout\ = (!\b2v_inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(2) & (\b2v_inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(0) & 
--- (\b2v_inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(1) & !\b2v_inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(3))))
+-- \inst5|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~1_combout\ = (!\inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(1) & (\inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(3) & 
+-- (\inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(0) & !\inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(2))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -1649,117 +1327,971 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \b2v_inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(2),
-	datab => \b2v_inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(0),
-	datac => \b2v_inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(1),
-	datad => \b2v_inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(3),
-	combout => \b2v_inst8|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~0_combout\);
+	dataa => \inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(1),
+	datab => \inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(3),
+	datac => \inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(0),
+	datad => \inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(2),
+	combout => \inst5|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~1_combout\);
 
--- Location: LCCOMB_X33_Y10_N4
-\b2v_inst7|inst|inst20~1\ : cycloneive_lcell_comb
+-- Location: LCCOMB_X32_Y13_N16
+\inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita4\ : cycloneive_lcell_comb
 -- Equation(s):
--- \b2v_inst7|inst|inst20~1_combout\ = (\b2v_inst8|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~0_combout\ & (\b2v_inst7|inst1|inst21~1_combout\)) # (!\b2v_inst8|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~0_combout\ & 
--- ((\b2v_inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita3~0_combout\ & (\b2v_inst7|inst1|inst21~1_combout\)) # (!\b2v_inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita3~0_combout\ & ((\b2v_inst7|inst|inst20~1_combout\)))))
+-- \inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita4~combout\ = (\inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(4) & (\inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita3~COUT\ $ (GND))) # 
+-- (!\inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(4) & (!\inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita3~COUT\ & VCC))
+-- \inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita4~COUT\ = CARRY((\inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(4) & !\inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita3~COUT\))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1100110011011000",
-	sum_lutc_input => "datac")
+	lut_mask => "1100001100001100",
+	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	dataa => \b2v_inst8|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~0_combout\,
-	datab => \b2v_inst7|inst1|inst21~1_combout\,
-	datac => \b2v_inst7|inst|inst20~1_combout\,
-	datad => \b2v_inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita3~0_combout\,
-	combout => \b2v_inst7|inst|inst20~1_combout\);
+	datab => \inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(4),
+	datad => VCC,
+	cin => \inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita3~COUT\,
+	combout => \inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita4~combout\,
+	cout => \inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita4~COUT\);
 
--- Location: LCCOMB_X33_Y10_N28
-\b2v_inst7|inst1|inst21~1\ : cycloneive_lcell_comb
--- Equation(s):
--- \b2v_inst7|inst1|inst21~1_combout\ = (\b2v_inst8|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~0_combout\ & (\b2v_inst7|inst1|inst21~1_combout\)) # (!\b2v_inst8|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~0_combout\ & 
--- ((\b2v_inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita3~0_combout\ & (\b2v_inst7|inst1|inst21~1_combout\)) # (!\b2v_inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita3~0_combout\ & ((!\b2v_inst7|inst|inst20~1_combout\)))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100110010001101",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \b2v_inst8|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~0_combout\,
-	datab => \b2v_inst7|inst1|inst21~1_combout\,
-	datac => \b2v_inst7|inst|inst20~1_combout\,
-	datad => \b2v_inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita3~0_combout\,
-	combout => \b2v_inst7|inst1|inst21~1_combout\);
-
--- Location: LCCOMB_X33_Y10_N30
-\b2v_inst7|inst1|inst20\ : cycloneive_lcell_comb
--- Equation(s):
--- \b2v_inst7|inst1|inst20~combout\ = (\b2v_inst7|inst1|inst21~1_combout\) # ((!\b2v_inst8|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~0_combout\ & (!\b2v_inst7|inst|inst20~1_combout\ & 
--- !\b2v_inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita3~0_combout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100110011001101",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \b2v_inst8|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~0_combout\,
-	datab => \b2v_inst7|inst1|inst21~1_combout\,
-	datac => \b2v_inst7|inst|inst20~1_combout\,
-	datad => \b2v_inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita3~0_combout\,
-	combout => \b2v_inst7|inst1|inst20~combout\);
-
--- Location: LCCOMB_X33_Y9_N18
-\b2v_inst10|LPM_COUNTER_component|auto_generated|counter_reg_bit[0]~0\ : cycloneive_lcell_comb
--- Equation(s):
--- \b2v_inst10|LPM_COUNTER_component|auto_generated|counter_reg_bit[0]~0_combout\ = !\b2v_inst10|LPM_COUNTER_component|auto_generated|counter_reg_bit\(0)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000111100001111",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datac => \b2v_inst10|LPM_COUNTER_component|auto_generated|counter_reg_bit\(0),
-	combout => \b2v_inst10|LPM_COUNTER_component|auto_generated|counter_reg_bit[0]~0_combout\);
-
--- Location: FF_X33_Y9_N31
-\b2v_inst10|LPM_COUNTER_component|auto_generated|counter_reg_bit[0]\ : dffeas
+-- Location: FF_X32_Y13_N17
+\inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit[4]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \b2v_inst5|LPM_COUNTER_component|auto_generated|cout_actual~clkctrl_outclk\,
-	asdata => \b2v_inst10|LPM_COUNTER_component|auto_generated|counter_reg_bit[0]~0_combout\,
-	sload => VCC,
+	clk => \inst4|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	d => \inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita4~combout\,
+	asdata => \~GND~combout\,
+	sload => \inst5|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \b2v_inst10|LPM_COUNTER_component|auto_generated|counter_reg_bit\(0));
+	q => \inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(4));
 
--- Location: LCCOMB_X33_Y9_N28
-\b2v_inst9|inst1|inst21~1\ : cycloneive_lcell_comb
+-- Location: LCCOMB_X32_Y13_N18
+\inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita5\ : cycloneive_lcell_comb
 -- Equation(s):
--- \b2v_inst9|inst1|inst21~1_combout\ = (\b2v_inst10|LPM_COUNTER_component|auto_generated|counter_reg_bit\(0) & (\b2v_inst9|inst1|inst21~1_combout\)) # (!\b2v_inst10|LPM_COUNTER_component|auto_generated|counter_reg_bit\(0) & 
--- ((!\b2v_inst9|inst|inst20~1_combout\)))
+-- \inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita5~combout\ = (\inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(5) & (!\inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita4~COUT\)) # 
+-- (!\inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(5) & ((\inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita4~COUT\) # (GND)))
+-- \inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita5~COUT\ = CARRY((!\inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita4~COUT\) # (!\inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(5)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1010000010101111",
+	lut_mask => "0011110000111111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(5),
+	datad => VCC,
+	cin => \inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita4~COUT\,
+	combout => \inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita5~combout\,
+	cout => \inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita5~COUT\);
+
+-- Location: FF_X32_Y13_N19
+\inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit[5]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \inst4|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	d => \inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita5~combout\,
+	asdata => \~GND~combout\,
+	sload => \inst5|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(5));
+
+-- Location: LCCOMB_X32_Y13_N20
+\inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita6\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita6~combout\ = (\inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(6) & (\inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita5~COUT\ $ (GND))) # 
+-- (!\inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(6) & (!\inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita5~COUT\ & VCC))
+-- \inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita6~COUT\ = CARRY((\inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(6) & !\inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita5~COUT\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100001100001100",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(6),
+	datad => VCC,
+	cin => \inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita5~COUT\,
+	combout => \inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita6~combout\,
+	cout => \inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita6~COUT\);
+
+-- Location: FF_X32_Y13_N21
+\inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit[6]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \inst4|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	d => \inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita6~combout\,
+	asdata => \~GND~combout\,
+	sload => \inst5|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(6));
+
+-- Location: LCCOMB_X32_Y13_N22
+\inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita7\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita7~combout\ = (\inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(7) & (!\inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita6~COUT\)) # 
+-- (!\inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(7) & ((\inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita6~COUT\) # (GND)))
+-- \inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita7~COUT\ = CARRY((!\inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita6~COUT\) # (!\inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(7)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101101001011111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(7),
+	datad => VCC,
+	cin => \inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita6~COUT\,
+	combout => \inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita7~combout\,
+	cout => \inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita7~COUT\);
+
+-- Location: FF_X32_Y13_N23
+\inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit[7]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \inst4|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	d => \inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita7~combout\,
+	asdata => \~GND~combout\,
+	sload => \inst5|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(7));
+
+-- Location: LCCOMB_X32_Y13_N30
+\inst5|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~0\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \inst5|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~0_combout\ = (!\inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(7) & (!\inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(4) & 
+-- (!\inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(5) & !\inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(6))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000000001",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \b2v_inst9|inst1|inst21~1_combout\,
-	datac => \b2v_inst10|LPM_COUNTER_component|auto_generated|counter_reg_bit\(0),
-	datad => \b2v_inst9|inst|inst20~1_combout\,
-	combout => \b2v_inst9|inst1|inst21~1_combout\);
+	dataa => \inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(7),
+	datab => \inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(4),
+	datac => \inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(5),
+	datad => \inst5|LPM_COUNTER_component|auto_generated|counter_reg_bit\(6),
+	combout => \inst5|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~0_combout\);
 
--- Location: LCCOMB_X33_Y9_N0
-\b2v_inst9|inst|inst20~1\ : cycloneive_lcell_comb
+-- Location: LCCOMB_X32_Y13_N24
+\inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita7~0\ : cycloneive_lcell_comb
 -- Equation(s):
--- \b2v_inst9|inst|inst20~1_combout\ = (\b2v_inst10|LPM_COUNTER_component|auto_generated|counter_reg_bit\(0) & ((\b2v_inst9|inst1|inst21~1_combout\))) # (!\b2v_inst10|LPM_COUNTER_component|auto_generated|counter_reg_bit\(0) & 
--- (\b2v_inst9|inst|inst20~1_combout\))
+-- \inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita7~0_combout\ = !\inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita7~COUT\
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000111100001111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	cin => \inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita7~COUT\,
+	combout => \inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita7~0_combout\);
+
+-- Location: LCCOMB_X32_Y13_N28
+\inst5|LPM_COUNTER_component|auto_generated|cout_actual\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \inst5|LPM_COUNTER_component|auto_generated|cout_actual~combout\ = LCELL((\inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita7~0_combout\) # ((\inst5|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~1_combout\ & 
+-- \inst5|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~0_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111110100000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst5|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~1_combout\,
+	datac => \inst5|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~0_combout\,
+	datad => \inst5|LPM_COUNTER_component|auto_generated|counter_comb_bita7~0_combout\,
+	combout => \inst5|LPM_COUNTER_component|auto_generated|cout_actual~combout\);
+
+-- Location: LCCOMB_X33_Y13_N12
+\inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita0\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita0~combout\ = \inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(0) $ (VCC)
+-- \inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita0~COUT\ = CARRY(\inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(0))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101010110101010",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(0),
+	datad => VCC,
+	combout => \inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita0~combout\,
+	cout => \inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita0~COUT\);
+
+-- Location: LCCOMB_X33_Y13_N30
+\inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit[0]~feeder\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit[0]~feeder_combout\ = \inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita0~combout\
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100110011001100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita0~combout\,
+	combout => \inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit[0]~feeder_combout\);
+
+-- Location: FF_X33_Y13_N31
+\inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit[0]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \inst5|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	d => \inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit[0]~feeder_combout\,
+	asdata => \~GND~combout\,
+	sload => \inst8|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(0));
+
+-- Location: LCCOMB_X33_Y13_N14
+\inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita1\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita1~combout\ = (\inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(1) & (!\inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita0~COUT\)) # 
+-- (!\inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(1) & ((\inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita0~COUT\) # (GND)))
+-- \inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita1~COUT\ = CARRY((!\inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita0~COUT\) # (!\inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(1)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011110000111111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(1),
+	datad => VCC,
+	cin => \inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita0~COUT\,
+	combout => \inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita1~combout\,
+	cout => \inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita1~COUT\);
+
+-- Location: FF_X33_Y13_N15
+\inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit[1]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \inst5|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	d => \inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita1~combout\,
+	asdata => \~GND~combout\,
+	sload => \inst8|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(1));
+
+-- Location: LCCOMB_X33_Y13_N16
+\inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita2\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita2~combout\ = (\inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(2) & (\inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita1~COUT\ $ (GND))) # 
+-- (!\inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(2) & (!\inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita1~COUT\ & VCC))
+-- \inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita2~COUT\ = CARRY((\inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(2) & !\inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita1~COUT\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100001100001100",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(2),
+	datad => VCC,
+	cin => \inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita1~COUT\,
+	combout => \inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita2~combout\,
+	cout => \inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita2~COUT\);
+
+-- Location: FF_X33_Y13_N17
+\inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit[2]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \inst5|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	d => \inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita2~combout\,
+	asdata => \~GND~combout\,
+	sload => \inst8|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(2));
+
+-- Location: LCCOMB_X33_Y13_N18
+\inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita3\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita3~combout\ = (\inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(3) & (!\inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita2~COUT\)) # 
+-- (!\inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(3) & ((\inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita2~COUT\) # (GND)))
+-- \inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita3~COUT\ = CARRY((!\inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita2~COUT\) # (!\inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(3)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011110000111111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(3),
+	datad => VCC,
+	cin => \inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita2~COUT\,
+	combout => \inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita3~combout\,
+	cout => \inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita3~COUT\);
+
+-- Location: FF_X33_Y13_N19
+\inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit[3]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \inst5|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	d => \inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita3~combout\,
+	asdata => \~GND~combout\,
+	sload => \inst8|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(3));
+
+-- Location: LCCOMB_X33_Y13_N4
+\inst8|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~1\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \inst8|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~1_combout\ = (!\inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(0) & (!\inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(3) & 
+-- (!\inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(1) & \inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(2))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000100000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(0),
+	datab => \inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(3),
+	datac => \inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(1),
+	datad => \inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(2),
+	combout => \inst8|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~1_combout\);
+
+-- Location: LCCOMB_X33_Y13_N20
+\inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita4\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita4~combout\ = (\inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(4) & (\inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita3~COUT\ $ (GND))) # 
+-- (!\inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(4) & (!\inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita3~COUT\ & VCC))
+-- \inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita4~COUT\ = CARRY((\inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(4) & !\inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita3~COUT\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100001100001100",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(4),
+	datad => VCC,
+	cin => \inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita3~COUT\,
+	combout => \inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita4~combout\,
+	cout => \inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita4~COUT\);
+
+-- Location: FF_X33_Y13_N21
+\inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit[4]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \inst5|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	d => \inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita4~combout\,
+	asdata => \~GND~combout\,
+	sload => \inst8|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(4));
+
+-- Location: LCCOMB_X33_Y13_N22
+\inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita5\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita5~combout\ = (\inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(5) & (!\inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita4~COUT\)) # 
+-- (!\inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(5) & ((\inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita4~COUT\) # (GND)))
+-- \inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita5~COUT\ = CARRY((!\inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita4~COUT\) # (!\inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(5)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101101001011111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(5),
+	datad => VCC,
+	cin => \inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita4~COUT\,
+	combout => \inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita5~combout\,
+	cout => \inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita5~COUT\);
+
+-- Location: FF_X33_Y13_N23
+\inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit[5]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \inst5|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	d => \inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita5~combout\,
+	asdata => \~GND~combout\,
+	sload => \inst8|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(5));
+
+-- Location: LCCOMB_X33_Y13_N24
+\inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita6\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita6~combout\ = (\inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(6) & (\inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita5~COUT\ $ (GND))) # 
+-- (!\inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(6) & (!\inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita5~COUT\ & VCC))
+-- \inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita6~COUT\ = CARRY((\inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(6) & !\inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita5~COUT\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100001100001100",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(6),
+	datad => VCC,
+	cin => \inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita5~COUT\,
+	combout => \inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita6~combout\,
+	cout => \inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita6~COUT\);
+
+-- Location: FF_X33_Y13_N25
+\inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit[6]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \inst5|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	d => \inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita6~combout\,
+	asdata => \~GND~combout\,
+	sload => \inst8|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(6));
+
+-- Location: LCCOMB_X33_Y13_N26
+\inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita7\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita7~combout\ = (\inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(7) & (!\inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita6~COUT\)) # 
+-- (!\inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(7) & ((\inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita6~COUT\) # (GND)))
+-- \inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita7~COUT\ = CARRY((!\inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita6~COUT\) # (!\inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(7)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101101001011111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(7),
+	datad => VCC,
+	cin => \inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita6~COUT\,
+	combout => \inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita7~combout\,
+	cout => \inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita7~COUT\);
+
+-- Location: FF_X33_Y13_N27
+\inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit[7]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \inst5|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	d => \inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita7~combout\,
+	asdata => \~GND~combout\,
+	sload => \inst8|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(7));
+
+-- Location: LCCOMB_X33_Y13_N8
+\inst8|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~0\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \inst8|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~0_combout\ = (!\inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(5) & (!\inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(4) & 
+-- (!\inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(7) & !\inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(6))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000000001",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(5),
+	datab => \inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(4),
+	datac => \inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(7),
+	datad => \inst8|LPM_COUNTER_component|auto_generated|counter_reg_bit\(6),
+	combout => \inst8|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~0_combout\);
+
+-- Location: LCCOMB_X33_Y13_N28
+\inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita7~0\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita7~0_combout\ = !\inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita7~COUT\
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000111100001111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	cin => \inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita7~COUT\,
+	combout => \inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita7~0_combout\);
+
+-- Location: LCCOMB_X33_Y13_N2
+\inst8|LPM_COUNTER_component|auto_generated|cout_actual\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \inst8|LPM_COUNTER_component|auto_generated|cout_actual~combout\ = (\inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita7~0_combout\) # ((\inst8|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~1_combout\ & 
+-- \inst8|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~0_combout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111111000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \inst8|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~1_combout\,
+	datac => \inst8|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~0_combout\,
+	datad => \inst8|LPM_COUNTER_component|auto_generated|counter_comb_bita7~0_combout\,
+	combout => \inst8|LPM_COUNTER_component|auto_generated|cout_actual~combout\);
+
+-- Location: LCCOMB_X33_Y13_N10
+\inst7|inst1|inst21~1\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \inst7|inst1|inst21~1_combout\ = (\inst8|LPM_COUNTER_component|auto_generated|cout_actual~combout\ & (\inst7|inst1|inst21~1_combout\)) # (!\inst8|LPM_COUNTER_component|auto_generated|cout_actual~combout\ & ((!\inst7|inst|inst20~1_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100000011001111",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \inst7|inst1|inst21~1_combout\,
+	datac => \inst8|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	datad => \inst7|inst|inst20~1_combout\,
+	combout => \inst7|inst1|inst21~1_combout\);
+
+-- Location: LCCOMB_X33_Y13_N6
+\inst7|inst|inst20~1\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \inst7|inst|inst20~1_combout\ = (\inst8|LPM_COUNTER_component|auto_generated|cout_actual~combout\ & ((\inst7|inst1|inst21~1_combout\))) # (!\inst8|LPM_COUNTER_component|auto_generated|cout_actual~combout\ & (\inst7|inst|inst20~1_combout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111110000001100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \inst7|inst|inst20~1_combout\,
+	datac => \inst8|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	datad => \inst7|inst1|inst21~1_combout\,
+	combout => \inst7|inst|inst20~1_combout\);
+
+-- Location: LCCOMB_X33_Y13_N0
+\inst7|inst1|inst20\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \inst7|inst1|inst20~combout\ = (\inst7|inst1|inst21~1_combout\) # ((!\inst7|inst|inst20~1_combout\ & !\inst8|LPM_COUNTER_component|auto_generated|cout_actual~combout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111000011110011",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \inst7|inst|inst20~1_combout\,
+	datac => \inst7|inst1|inst21~1_combout\,
+	datad => \inst8|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	combout => \inst7|inst1|inst20~combout\);
+
+-- Location: LCCOMB_X30_Y12_N6
+\inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita0\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita0~combout\ = \inst16|LPM_COUNTER_component|auto_generated|counter_reg_bit\(0) $ (VCC)
+-- \inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita0~COUT\ = CARRY(\inst16|LPM_COUNTER_component|auto_generated|counter_reg_bit\(0))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101010110101010",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst16|LPM_COUNTER_component|auto_generated|counter_reg_bit\(0),
+	datad => VCC,
+	combout => \inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita0~combout\,
+	cout => \inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita0~COUT\);
+
+-- Location: LCCOMB_X30_Y12_N26
+\inst16|LPM_COUNTER_component|auto_generated|counter_reg_bit[0]~feeder\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \inst16|LPM_COUNTER_component|auto_generated|counter_reg_bit[0]~feeder_combout\ = \inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita0~combout\
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010101010101010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita0~combout\,
+	combout => \inst16|LPM_COUNTER_component|auto_generated|counter_reg_bit[0]~feeder_combout\);
+
+-- Location: FF_X30_Y12_N27
+\inst16|LPM_COUNTER_component|auto_generated|counter_reg_bit[0]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \inst4|LPM_COUNTER_component|auto_generated|cout_actual~clkctrl_outclk\,
+	d => \inst16|LPM_COUNTER_component|auto_generated|counter_reg_bit[0]~feeder_combout\,
+	asdata => \~GND~combout\,
+	sload => \inst16|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst16|LPM_COUNTER_component|auto_generated|counter_reg_bit\(0));
+
+-- Location: LCCOMB_X30_Y12_N8
+\inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita1\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita1~combout\ = (\inst16|LPM_COUNTER_component|auto_generated|counter_reg_bit\(1) & (!\inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita0~COUT\)) # 
+-- (!\inst16|LPM_COUNTER_component|auto_generated|counter_reg_bit\(1) & ((\inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita0~COUT\) # (GND)))
+-- \inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita1~COUT\ = CARRY((!\inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita0~COUT\) # (!\inst16|LPM_COUNTER_component|auto_generated|counter_reg_bit\(1)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011110000111111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \inst16|LPM_COUNTER_component|auto_generated|counter_reg_bit\(1),
+	datad => VCC,
+	cin => \inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita0~COUT\,
+	combout => \inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita1~combout\,
+	cout => \inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita1~COUT\);
+
+-- Location: FF_X30_Y12_N9
+\inst16|LPM_COUNTER_component|auto_generated|counter_reg_bit[1]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \inst4|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	d => \inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita1~combout\,
+	asdata => \~GND~combout\,
+	sload => \inst16|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst16|LPM_COUNTER_component|auto_generated|counter_reg_bit\(1));
+
+-- Location: LCCOMB_X30_Y12_N10
+\inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita2\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita2~combout\ = (\inst16|LPM_COUNTER_component|auto_generated|counter_reg_bit\(2) & (\inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita1~COUT\ $ (GND))) # 
+-- (!\inst16|LPM_COUNTER_component|auto_generated|counter_reg_bit\(2) & (!\inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita1~COUT\ & VCC))
+-- \inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita2~COUT\ = CARRY((\inst16|LPM_COUNTER_component|auto_generated|counter_reg_bit\(2) & !\inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita1~COUT\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010010100001010",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst16|LPM_COUNTER_component|auto_generated|counter_reg_bit\(2),
+	datad => VCC,
+	cin => \inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita1~COUT\,
+	combout => \inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita2~combout\,
+	cout => \inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita2~COUT\);
+
+-- Location: FF_X30_Y12_N11
+\inst16|LPM_COUNTER_component|auto_generated|counter_reg_bit[2]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \inst4|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	d => \inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita2~combout\,
+	asdata => \~GND~combout\,
+	sload => \inst16|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst16|LPM_COUNTER_component|auto_generated|counter_reg_bit\(2));
+
+-- Location: LCCOMB_X30_Y12_N12
+\inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita3\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita3~combout\ = (\inst16|LPM_COUNTER_component|auto_generated|counter_reg_bit\(3) & (!\inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita2~COUT\)) # 
+-- (!\inst16|LPM_COUNTER_component|auto_generated|counter_reg_bit\(3) & ((\inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita2~COUT\) # (GND)))
+-- \inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita3~COUT\ = CARRY((!\inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita2~COUT\) # (!\inst16|LPM_COUNTER_component|auto_generated|counter_reg_bit\(3)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101101001011111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst16|LPM_COUNTER_component|auto_generated|counter_reg_bit\(3),
+	datad => VCC,
+	cin => \inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita2~COUT\,
+	combout => \inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita3~combout\,
+	cout => \inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita3~COUT\);
+
+-- Location: FF_X30_Y12_N13
+\inst16|LPM_COUNTER_component|auto_generated|counter_reg_bit[3]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \inst4|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	d => \inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita3~combout\,
+	asdata => \~GND~combout\,
+	sload => \inst16|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst16|LPM_COUNTER_component|auto_generated|counter_reg_bit\(3));
+
+-- Location: LCCOMB_X30_Y12_N30
+\inst16|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~1\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \inst16|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~1_combout\ = (\inst16|LPM_COUNTER_component|auto_generated|counter_reg_bit\(3) & (!\inst16|LPM_COUNTER_component|auto_generated|counter_reg_bit\(1) & 
+-- (!\inst16|LPM_COUNTER_component|auto_generated|counter_reg_bit\(0) & !\inst16|LPM_COUNTER_component|auto_generated|counter_reg_bit\(2))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000000010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst16|LPM_COUNTER_component|auto_generated|counter_reg_bit\(3),
+	datab => \inst16|LPM_COUNTER_component|auto_generated|counter_reg_bit\(1),
+	datac => \inst16|LPM_COUNTER_component|auto_generated|counter_reg_bit\(0),
+	datad => \inst16|LPM_COUNTER_component|auto_generated|counter_reg_bit\(2),
+	combout => \inst16|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~1_combout\);
+
+-- Location: LCCOMB_X30_Y12_N14
+\inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita4\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita4~combout\ = (\inst16|LPM_COUNTER_component|auto_generated|counter_reg_bit\(4) & (\inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita3~COUT\ $ (GND))) # 
+-- (!\inst16|LPM_COUNTER_component|auto_generated|counter_reg_bit\(4) & (!\inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita3~COUT\ & VCC))
+-- \inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita4~COUT\ = CARRY((\inst16|LPM_COUNTER_component|auto_generated|counter_reg_bit\(4) & !\inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita3~COUT\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100001100001100",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \inst16|LPM_COUNTER_component|auto_generated|counter_reg_bit\(4),
+	datad => VCC,
+	cin => \inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita3~COUT\,
+	combout => \inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita4~combout\,
+	cout => \inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita4~COUT\);
+
+-- Location: FF_X30_Y12_N15
+\inst16|LPM_COUNTER_component|auto_generated|counter_reg_bit[4]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \inst4|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	d => \inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita4~combout\,
+	asdata => \~GND~combout\,
+	sload => \inst16|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst16|LPM_COUNTER_component|auto_generated|counter_reg_bit\(4));
+
+-- Location: LCCOMB_X30_Y12_N16
+\inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita5\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita5~combout\ = (\inst16|LPM_COUNTER_component|auto_generated|counter_reg_bit\(5) & (!\inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita4~COUT\)) # 
+-- (!\inst16|LPM_COUNTER_component|auto_generated|counter_reg_bit\(5) & ((\inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita4~COUT\) # (GND)))
+-- \inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita5~COUT\ = CARRY((!\inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita4~COUT\) # (!\inst16|LPM_COUNTER_component|auto_generated|counter_reg_bit\(5)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011110000111111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \inst16|LPM_COUNTER_component|auto_generated|counter_reg_bit\(5),
+	datad => VCC,
+	cin => \inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita4~COUT\,
+	combout => \inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita5~combout\,
+	cout => \inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita5~COUT\);
+
+-- Location: FF_X30_Y12_N17
+\inst16|LPM_COUNTER_component|auto_generated|counter_reg_bit[5]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \inst4|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	d => \inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita5~combout\,
+	asdata => \~GND~combout\,
+	sload => \inst16|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst16|LPM_COUNTER_component|auto_generated|counter_reg_bit\(5));
+
+-- Location: LCCOMB_X30_Y12_N18
+\inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita6\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita6~combout\ = (\inst16|LPM_COUNTER_component|auto_generated|counter_reg_bit\(6) & (\inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita5~COUT\ $ (GND))) # 
+-- (!\inst16|LPM_COUNTER_component|auto_generated|counter_reg_bit\(6) & (!\inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita5~COUT\ & VCC))
+-- \inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita6~COUT\ = CARRY((\inst16|LPM_COUNTER_component|auto_generated|counter_reg_bit\(6) & !\inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita5~COUT\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100001100001100",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \inst16|LPM_COUNTER_component|auto_generated|counter_reg_bit\(6),
+	datad => VCC,
+	cin => \inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita5~COUT\,
+	combout => \inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita6~combout\,
+	cout => \inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita6~COUT\);
+
+-- Location: FF_X30_Y12_N19
+\inst16|LPM_COUNTER_component|auto_generated|counter_reg_bit[6]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \inst4|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	d => \inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita6~combout\,
+	asdata => \~GND~combout\,
+	sload => \inst16|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst16|LPM_COUNTER_component|auto_generated|counter_reg_bit\(6));
+
+-- Location: LCCOMB_X30_Y12_N20
+\inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita7\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita7~combout\ = (\inst16|LPM_COUNTER_component|auto_generated|counter_reg_bit\(7) & (!\inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita6~COUT\)) # 
+-- (!\inst16|LPM_COUNTER_component|auto_generated|counter_reg_bit\(7) & ((\inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita6~COUT\) # (GND)))
+-- \inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita7~COUT\ = CARRY((!\inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita6~COUT\) # (!\inst16|LPM_COUNTER_component|auto_generated|counter_reg_bit\(7)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011110000111111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \inst16|LPM_COUNTER_component|auto_generated|counter_reg_bit\(7),
+	datad => VCC,
+	cin => \inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita6~COUT\,
+	combout => \inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita7~combout\,
+	cout => \inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita7~COUT\);
+
+-- Location: FF_X30_Y12_N21
+\inst16|LPM_COUNTER_component|auto_generated|counter_reg_bit[7]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \inst4|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	d => \inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita7~combout\,
+	asdata => \~GND~combout\,
+	sload => \inst16|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst16|LPM_COUNTER_component|auto_generated|counter_reg_bit\(7));
+
+-- Location: LCCOMB_X30_Y12_N22
+\inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita7~0\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita7~0_combout\ = !\inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita7~COUT\
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000111100001111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	cin => \inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita7~COUT\,
+	combout => \inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita7~0_combout\);
+
+-- Location: LCCOMB_X30_Y12_N0
+\inst16|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~0\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \inst16|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~0_combout\ = (!\inst16|LPM_COUNTER_component|auto_generated|counter_reg_bit\(7) & (!\inst16|LPM_COUNTER_component|auto_generated|counter_reg_bit\(5) & 
+-- (\inst16|LPM_COUNTER_component|auto_generated|counter_reg_bit\(4) & !\inst16|LPM_COUNTER_component|auto_generated|counter_reg_bit\(6))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000010000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst16|LPM_COUNTER_component|auto_generated|counter_reg_bit\(7),
+	datab => \inst16|LPM_COUNTER_component|auto_generated|counter_reg_bit\(5),
+	datac => \inst16|LPM_COUNTER_component|auto_generated|counter_reg_bit\(4),
+	datad => \inst16|LPM_COUNTER_component|auto_generated|counter_reg_bit\(6),
+	combout => \inst16|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~0_combout\);
+
+-- Location: LCCOMB_X30_Y12_N4
+\inst16|LPM_COUNTER_component|auto_generated|cout_actual\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \inst16|LPM_COUNTER_component|auto_generated|cout_actual~combout\ = (\inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita7~0_combout\) # ((\inst16|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~1_combout\ & 
+-- \inst16|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~0_combout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111101011110000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst16|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~1_combout\,
+	datac => \inst16|LPM_COUNTER_component|auto_generated|counter_comb_bita7~0_combout\,
+	datad => \inst16|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~0_combout\,
+	combout => \inst16|LPM_COUNTER_component|auto_generated|cout_actual~combout\);
+
+-- Location: LCCOMB_X30_Y12_N24
+\inst9|inst|inst20~1\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \inst9|inst|inst20~1_combout\ = (\inst16|LPM_COUNTER_component|auto_generated|cout_actual~combout\ & ((\inst9|inst1|inst21~1_combout\))) # (!\inst16|LPM_COUNTER_component|auto_generated|cout_actual~combout\ & (\inst9|inst|inst20~1_combout\))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -1767,32 +2299,15 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \b2v_inst9|inst|inst20~1_combout\,
-	datac => \b2v_inst10|LPM_COUNTER_component|auto_generated|counter_reg_bit\(0),
-	datad => \b2v_inst9|inst1|inst21~1_combout\,
-	combout => \b2v_inst9|inst|inst20~1_combout\);
+	dataa => \inst9|inst|inst20~1_combout\,
+	datac => \inst16|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	datad => \inst9|inst1|inst21~1_combout\,
+	combout => \inst9|inst|inst20~1_combout\);
 
--- Location: LCCOMB_X33_Y9_N30
-\b2v_inst9|inst1|inst20\ : cycloneive_lcell_comb
+-- Location: LCCOMB_X30_Y12_N28
+\inst9|inst1|inst21~1\ : cycloneive_lcell_comb
 -- Equation(s):
--- \b2v_inst9|inst1|inst20~combout\ = (\b2v_inst9|inst1|inst21~1_combout\) # ((!\b2v_inst9|inst|inst20~1_combout\ & !\b2v_inst10|LPM_COUNTER_component|auto_generated|counter_reg_bit\(0)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111111100000101",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \b2v_inst9|inst|inst20~1_combout\,
-	datac => \b2v_inst10|LPM_COUNTER_component|auto_generated|counter_reg_bit\(0),
-	datad => \b2v_inst9|inst1|inst21~1_combout\,
-	combout => \b2v_inst9|inst1|inst20~combout\);
-
--- Location: LCCOMB_X31_Y10_N0
-\b2v_inst11|inst1|inst21~1\ : cycloneive_lcell_comb
--- Equation(s):
--- \b2v_inst11|inst1|inst21~1_combout\ = (\b2v_inst5|LPM_COUNTER_component|auto_generated|cout_actual~combout\ & (\b2v_inst11|inst1|inst21~1_combout\)) # (!\b2v_inst5|LPM_COUNTER_component|auto_generated|cout_actual~combout\ & 
--- ((!\b2v_inst11|inst|inst20~1_combout\)))
+-- \inst9|inst1|inst21~1_combout\ = (\inst16|LPM_COUNTER_component|auto_generated|cout_actual~combout\ & (\inst9|inst1|inst21~1_combout\)) # (!\inst16|LPM_COUNTER_component|auto_generated|cout_actual~combout\ & ((!\inst9|inst|inst20~1_combout\)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -1800,43 +2315,465 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \b2v_inst11|inst1|inst21~1_combout\,
-	datac => \b2v_inst5|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
-	datad => \b2v_inst11|inst|inst20~1_combout\,
-	combout => \b2v_inst11|inst1|inst21~1_combout\);
+	dataa => \inst9|inst1|inst21~1_combout\,
+	datac => \inst16|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	datad => \inst9|inst|inst20~1_combout\,
+	combout => \inst9|inst1|inst21~1_combout\);
 
--- Location: LCCOMB_X31_Y10_N24
-\b2v_inst11|inst|inst20~1\ : cycloneive_lcell_comb
+-- Location: LCCOMB_X30_Y12_N2
+\inst9|inst1|inst20\ : cycloneive_lcell_comb
 -- Equation(s):
--- \b2v_inst11|inst|inst20~1_combout\ = (\b2v_inst5|LPM_COUNTER_component|auto_generated|cout_actual~combout\ & ((\b2v_inst11|inst1|inst21~1_combout\))) # (!\b2v_inst5|LPM_COUNTER_component|auto_generated|cout_actual~combout\ & 
--- (\b2v_inst11|inst|inst20~1_combout\))
+-- \inst9|inst1|inst20~combout\ = (\inst9|inst1|inst21~1_combout\) # ((!\inst9|inst|inst20~1_combout\ & !\inst16|LPM_COUNTER_component|auto_generated|cout_actual~combout\))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111101000001010",
+	lut_mask => "1010101010101111",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \b2v_inst11|inst|inst20~1_combout\,
-	datac => \b2v_inst5|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
-	datad => \b2v_inst11|inst1|inst21~1_combout\,
-	combout => \b2v_inst11|inst|inst20~1_combout\);
+	dataa => \inst9|inst1|inst21~1_combout\,
+	datac => \inst9|inst|inst20~1_combout\,
+	datad => \inst16|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	combout => \inst9|inst1|inst20~combout\);
 
--- Location: LCCOMB_X31_Y10_N28
-\b2v_inst11|inst1|inst20\ : cycloneive_lcell_comb
+-- Location: LCCOMB_X30_Y13_N0
+\inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita0\ : cycloneive_lcell_comb
 -- Equation(s):
--- \b2v_inst11|inst1|inst20~combout\ = (\b2v_inst11|inst1|inst21~1_combout\) # ((!\b2v_inst11|inst|inst20~1_combout\ & !\b2v_inst5|LPM_COUNTER_component|auto_generated|cout_actual~combout\))
+-- \inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita0~combout\ = \inst18|LPM_COUNTER_component|auto_generated|counter_reg_bit\(0) $ (VCC)
+-- \inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita0~COUT\ = CARRY(\inst18|LPM_COUNTER_component|auto_generated|counter_reg_bit\(0))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111000011110101",
+	lut_mask => "0101010110101010",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst18|LPM_COUNTER_component|auto_generated|counter_reg_bit\(0),
+	datad => VCC,
+	combout => \inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita0~combout\,
+	cout => \inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita0~COUT\);
+
+-- Location: LCCOMB_X30_Y13_N30
+\inst18|LPM_COUNTER_component|auto_generated|counter_reg_bit[0]~feeder\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \inst18|LPM_COUNTER_component|auto_generated|counter_reg_bit[0]~feeder_combout\ = \inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita0~combout\
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111100000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \b2v_inst11|inst|inst20~1_combout\,
-	datac => \b2v_inst11|inst1|inst21~1_combout\,
-	datad => \b2v_inst5|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
-	combout => \b2v_inst11|inst1|inst20~combout\);
+	datad => \inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita0~combout\,
+	combout => \inst18|LPM_COUNTER_component|auto_generated|counter_reg_bit[0]~feeder_combout\);
+
+-- Location: FF_X30_Y13_N31
+\inst18|LPM_COUNTER_component|auto_generated|counter_reg_bit[0]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \inst4|LPM_COUNTER_component|auto_generated|cout_actual~clkctrl_outclk\,
+	d => \inst18|LPM_COUNTER_component|auto_generated|counter_reg_bit[0]~feeder_combout\,
+	asdata => \~GND~combout\,
+	sload => \inst18|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst18|LPM_COUNTER_component|auto_generated|counter_reg_bit\(0));
+
+-- Location: LCCOMB_X30_Y13_N2
+\inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita1\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita1~combout\ = (\inst18|LPM_COUNTER_component|auto_generated|counter_reg_bit\(1) & (!\inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita0~COUT\)) # 
+-- (!\inst18|LPM_COUNTER_component|auto_generated|counter_reg_bit\(1) & ((\inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita0~COUT\) # (GND)))
+-- \inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita1~COUT\ = CARRY((!\inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita0~COUT\) # (!\inst18|LPM_COUNTER_component|auto_generated|counter_reg_bit\(1)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011110000111111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \inst18|LPM_COUNTER_component|auto_generated|counter_reg_bit\(1),
+	datad => VCC,
+	cin => \inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita0~COUT\,
+	combout => \inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita1~combout\,
+	cout => \inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita1~COUT\);
+
+-- Location: FF_X30_Y13_N3
+\inst18|LPM_COUNTER_component|auto_generated|counter_reg_bit[1]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \inst4|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	d => \inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita1~combout\,
+	asdata => \~GND~combout\,
+	sload => \inst18|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst18|LPM_COUNTER_component|auto_generated|counter_reg_bit\(1));
+
+-- Location: LCCOMB_X30_Y13_N4
+\inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita2\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita2~combout\ = (\inst18|LPM_COUNTER_component|auto_generated|counter_reg_bit\(2) & (\inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita1~COUT\ $ (GND))) # 
+-- (!\inst18|LPM_COUNTER_component|auto_generated|counter_reg_bit\(2) & (!\inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita1~COUT\ & VCC))
+-- \inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita2~COUT\ = CARRY((\inst18|LPM_COUNTER_component|auto_generated|counter_reg_bit\(2) & !\inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita1~COUT\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100001100001100",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \inst18|LPM_COUNTER_component|auto_generated|counter_reg_bit\(2),
+	datad => VCC,
+	cin => \inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita1~COUT\,
+	combout => \inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita2~combout\,
+	cout => \inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita2~COUT\);
+
+-- Location: FF_X30_Y13_N5
+\inst18|LPM_COUNTER_component|auto_generated|counter_reg_bit[2]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \inst4|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	d => \inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita2~combout\,
+	asdata => \~GND~combout\,
+	sload => \inst18|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst18|LPM_COUNTER_component|auto_generated|counter_reg_bit\(2));
+
+-- Location: LCCOMB_X30_Y13_N6
+\inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita3\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita3~combout\ = (\inst18|LPM_COUNTER_component|auto_generated|counter_reg_bit\(3) & (!\inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita2~COUT\)) # 
+-- (!\inst18|LPM_COUNTER_component|auto_generated|counter_reg_bit\(3) & ((\inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita2~COUT\) # (GND)))
+-- \inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita3~COUT\ = CARRY((!\inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita2~COUT\) # (!\inst18|LPM_COUNTER_component|auto_generated|counter_reg_bit\(3)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101101001011111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst18|LPM_COUNTER_component|auto_generated|counter_reg_bit\(3),
+	datad => VCC,
+	cin => \inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita2~COUT\,
+	combout => \inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita3~combout\,
+	cout => \inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita3~COUT\);
+
+-- Location: FF_X30_Y13_N7
+\inst18|LPM_COUNTER_component|auto_generated|counter_reg_bit[3]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \inst4|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	d => \inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita3~combout\,
+	asdata => \~GND~combout\,
+	sload => \inst18|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst18|LPM_COUNTER_component|auto_generated|counter_reg_bit\(3));
+
+-- Location: LCCOMB_X30_Y13_N26
+\inst18|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~1\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \inst18|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~1_combout\ = (!\inst18|LPM_COUNTER_component|auto_generated|counter_reg_bit\(3) & (!\inst18|LPM_COUNTER_component|auto_generated|counter_reg_bit\(2) & 
+-- (!\inst18|LPM_COUNTER_component|auto_generated|counter_reg_bit\(0) & !\inst18|LPM_COUNTER_component|auto_generated|counter_reg_bit\(1))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000000001",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst18|LPM_COUNTER_component|auto_generated|counter_reg_bit\(3),
+	datab => \inst18|LPM_COUNTER_component|auto_generated|counter_reg_bit\(2),
+	datac => \inst18|LPM_COUNTER_component|auto_generated|counter_reg_bit\(0),
+	datad => \inst18|LPM_COUNTER_component|auto_generated|counter_reg_bit\(1),
+	combout => \inst18|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~1_combout\);
+
+-- Location: LCCOMB_X30_Y13_N8
+\inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita4\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita4~combout\ = (\inst18|LPM_COUNTER_component|auto_generated|counter_reg_bit\(4) & (\inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita3~COUT\ $ (GND))) # 
+-- (!\inst18|LPM_COUNTER_component|auto_generated|counter_reg_bit\(4) & (!\inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita3~COUT\ & VCC))
+-- \inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita4~COUT\ = CARRY((\inst18|LPM_COUNTER_component|auto_generated|counter_reg_bit\(4) & !\inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita3~COUT\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100001100001100",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \inst18|LPM_COUNTER_component|auto_generated|counter_reg_bit\(4),
+	datad => VCC,
+	cin => \inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita3~COUT\,
+	combout => \inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita4~combout\,
+	cout => \inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita4~COUT\);
+
+-- Location: FF_X30_Y13_N9
+\inst18|LPM_COUNTER_component|auto_generated|counter_reg_bit[4]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \inst4|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	d => \inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita4~combout\,
+	asdata => \~GND~combout\,
+	sload => \inst18|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst18|LPM_COUNTER_component|auto_generated|counter_reg_bit\(4));
+
+-- Location: LCCOMB_X30_Y13_N10
+\inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita5\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita5~combout\ = (\inst18|LPM_COUNTER_component|auto_generated|counter_reg_bit\(5) & (!\inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita4~COUT\)) # 
+-- (!\inst18|LPM_COUNTER_component|auto_generated|counter_reg_bit\(5) & ((\inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita4~COUT\) # (GND)))
+-- \inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita5~COUT\ = CARRY((!\inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita4~COUT\) # (!\inst18|LPM_COUNTER_component|auto_generated|counter_reg_bit\(5)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101101001011111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst18|LPM_COUNTER_component|auto_generated|counter_reg_bit\(5),
+	datad => VCC,
+	cin => \inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita4~COUT\,
+	combout => \inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita5~combout\,
+	cout => \inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita5~COUT\);
+
+-- Location: FF_X30_Y13_N11
+\inst18|LPM_COUNTER_component|auto_generated|counter_reg_bit[5]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \inst4|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	d => \inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita5~combout\,
+	asdata => \~GND~combout\,
+	sload => \inst18|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst18|LPM_COUNTER_component|auto_generated|counter_reg_bit\(5));
+
+-- Location: LCCOMB_X30_Y13_N12
+\inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita6\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita6~combout\ = (\inst18|LPM_COUNTER_component|auto_generated|counter_reg_bit\(6) & (\inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita5~COUT\ $ (GND))) # 
+-- (!\inst18|LPM_COUNTER_component|auto_generated|counter_reg_bit\(6) & (!\inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita5~COUT\ & VCC))
+-- \inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita6~COUT\ = CARRY((\inst18|LPM_COUNTER_component|auto_generated|counter_reg_bit\(6) & !\inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita5~COUT\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010010100001010",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst18|LPM_COUNTER_component|auto_generated|counter_reg_bit\(6),
+	datad => VCC,
+	cin => \inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita5~COUT\,
+	combout => \inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita6~combout\,
+	cout => \inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita6~COUT\);
+
+-- Location: FF_X30_Y13_N13
+\inst18|LPM_COUNTER_component|auto_generated|counter_reg_bit[6]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \inst4|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	d => \inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita6~combout\,
+	asdata => \~GND~combout\,
+	sload => \inst18|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst18|LPM_COUNTER_component|auto_generated|counter_reg_bit\(6));
+
+-- Location: LCCOMB_X30_Y13_N14
+\inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita7\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita7~combout\ = (\inst18|LPM_COUNTER_component|auto_generated|counter_reg_bit\(7) & (!\inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita6~COUT\)) # 
+-- (!\inst18|LPM_COUNTER_component|auto_generated|counter_reg_bit\(7) & ((\inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita6~COUT\) # (GND)))
+-- \inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita7~COUT\ = CARRY((!\inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita6~COUT\) # (!\inst18|LPM_COUNTER_component|auto_generated|counter_reg_bit\(7)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011110000111111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \inst18|LPM_COUNTER_component|auto_generated|counter_reg_bit\(7),
+	datad => VCC,
+	cin => \inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita6~COUT\,
+	combout => \inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita7~combout\,
+	cout => \inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita7~COUT\);
+
+-- Location: FF_X30_Y13_N15
+\inst18|LPM_COUNTER_component|auto_generated|counter_reg_bit[7]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \inst4|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	d => \inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita7~combout\,
+	asdata => \~GND~combout\,
+	sload => \inst18|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst18|LPM_COUNTER_component|auto_generated|counter_reg_bit\(7));
+
+-- Location: LCCOMB_X30_Y13_N22
+\inst18|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~0\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \inst18|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~0_combout\ = (!\inst18|LPM_COUNTER_component|auto_generated|counter_reg_bit\(5) & (\inst18|LPM_COUNTER_component|auto_generated|counter_reg_bit\(4) & 
+-- (!\inst18|LPM_COUNTER_component|auto_generated|counter_reg_bit\(7) & !\inst18|LPM_COUNTER_component|auto_generated|counter_reg_bit\(6))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000000100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst18|LPM_COUNTER_component|auto_generated|counter_reg_bit\(5),
+	datab => \inst18|LPM_COUNTER_component|auto_generated|counter_reg_bit\(4),
+	datac => \inst18|LPM_COUNTER_component|auto_generated|counter_reg_bit\(7),
+	datad => \inst18|LPM_COUNTER_component|auto_generated|counter_reg_bit\(6),
+	combout => \inst18|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~0_combout\);
+
+-- Location: LCCOMB_X30_Y13_N16
+\inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita7~0\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita7~0_combout\ = !\inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita7~COUT\
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000111100001111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	cin => \inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita7~COUT\,
+	combout => \inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita7~0_combout\);
+
+-- Location: LCCOMB_X30_Y13_N18
+\inst18|LPM_COUNTER_component|auto_generated|cout_actual\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \inst18|LPM_COUNTER_component|auto_generated|cout_actual~combout\ = (\inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita7~0_combout\) # ((\inst18|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~1_combout\ & 
+-- \inst18|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~0_combout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111110100000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst18|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~1_combout\,
+	datac => \inst18|LPM_COUNTER_component|auto_generated|cmpr1|aneb_result_wire[0]~0_combout\,
+	datad => \inst18|LPM_COUNTER_component|auto_generated|counter_comb_bita7~0_combout\,
+	combout => \inst18|LPM_COUNTER_component|auto_generated|cout_actual~combout\);
+
+-- Location: LCCOMB_X30_Y13_N24
+\inst10|inst1|inst21~1\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \inst10|inst1|inst21~1_combout\ = (\inst18|LPM_COUNTER_component|auto_generated|cout_actual~combout\ & (\inst10|inst1|inst21~1_combout\)) # (!\inst18|LPM_COUNTER_component|auto_generated|cout_actual~combout\ & ((!\inst10|inst|inst20~1_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1000100010111011",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst10|inst1|inst21~1_combout\,
+	datab => \inst18|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	datad => \inst10|inst|inst20~1_combout\,
+	combout => \inst10|inst1|inst21~1_combout\);
+
+-- Location: LCCOMB_X30_Y13_N20
+\inst10|inst|inst20~1\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \inst10|inst|inst20~1_combout\ = (\inst18|LPM_COUNTER_component|auto_generated|cout_actual~combout\ & ((\inst10|inst1|inst21~1_combout\))) # (!\inst18|LPM_COUNTER_component|auto_generated|cout_actual~combout\ & (\inst10|inst|inst20~1_combout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111110000110000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \inst18|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	datac => \inst10|inst|inst20~1_combout\,
+	datad => \inst10|inst1|inst21~1_combout\,
+	combout => \inst10|inst|inst20~1_combout\);
+
+-- Location: LCCOMB_X30_Y13_N28
+\inst10|inst1|inst20\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \inst10|inst1|inst20~combout\ = (\inst10|inst1|inst21~1_combout\) # ((!\inst18|LPM_COUNTER_component|auto_generated|cout_actual~combout\ & !\inst10|inst|inst20~1_combout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111000111110001",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst18|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	datab => \inst10|inst|inst20~1_combout\,
+	datac => \inst10|inst1|inst21~1_combout\,
+	combout => \inst10|inst1|inst20~combout\);
+
+-- Location: LCCOMB_X32_Y12_N24
+\inst1|inst|inst20~1\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \inst1|inst|inst20~1_combout\ = (\inst3|LPM_COUNTER_component|auto_generated|cout_actual~combout\ & ((\inst1|inst1|inst21~1_combout\))) # (!\inst3|LPM_COUNTER_component|auto_generated|cout_actual~combout\ & (\inst1|inst|inst20~1_combout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111000010101010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst1|inst|inst20~1_combout\,
+	datac => \inst1|inst1|inst21~1_combout\,
+	datad => \inst3|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	combout => \inst1|inst|inst20~1_combout\);
+
+-- Location: LCCOMB_X32_Y12_N0
+\inst1|inst1|inst21~1\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \inst1|inst1|inst21~1_combout\ = (\inst3|LPM_COUNTER_component|auto_generated|cout_actual~combout\ & (\inst1|inst1|inst21~1_combout\)) # (!\inst3|LPM_COUNTER_component|auto_generated|cout_actual~combout\ & ((!\inst1|inst|inst20~1_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010000010101111",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst1|inst1|inst21~1_combout\,
+	datac => \inst3|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	datad => \inst1|inst|inst20~1_combout\,
+	combout => \inst1|inst1|inst21~1_combout\);
 
 -- Location: IOIBUF_X34_Y12_N22
 \key1~input\ : cycloneive_io_ibuf
@@ -1849,10 +2786,10 @@ PORT MAP (
 	i => ww_key1,
 	o => \key1~input_o\);
 
--- Location: LCCOMB_X33_Y12_N28
-\b2v_inst14|inst|inst20~1\ : cycloneive_lcell_comb
+-- Location: LCCOMB_X33_Y12_N0
+\inst14|inst|inst20~1\ : cycloneive_lcell_comb
 -- Equation(s):
--- \b2v_inst14|inst|inst20~1_combout\ = (\key1~input_o\ & ((\b2v_inst14|inst1|inst21~1_combout\))) # (!\key1~input_o\ & (\b2v_inst14|inst|inst20~1_combout\))
+-- \inst14|inst|inst20~1_combout\ = (\key1~input_o\ & ((\inst14|inst1|inst21~1_combout\))) # (!\key1~input_o\ & (\inst14|inst|inst20~1_combout\))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -1860,15 +2797,15 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datab => \b2v_inst14|inst|inst20~1_combout\,
+	datab => \inst14|inst|inst20~1_combout\,
 	datac => \key1~input_o\,
-	datad => \b2v_inst14|inst1|inst21~1_combout\,
-	combout => \b2v_inst14|inst|inst20~1_combout\);
+	datad => \inst14|inst1|inst21~1_combout\,
+	combout => \inst14|inst|inst20~1_combout\);
 
 -- Location: LCCOMB_X33_Y12_N6
-\b2v_inst14|inst1|inst21~1\ : cycloneive_lcell_comb
+\inst14|inst1|inst21~1\ : cycloneive_lcell_comb
 -- Equation(s):
--- \b2v_inst14|inst1|inst21~1_combout\ = (\key1~input_o\ & (\b2v_inst14|inst1|inst21~1_combout\)) # (!\key1~input_o\ & ((!\b2v_inst14|inst|inst20~1_combout\)))
+-- \inst14|inst1|inst21~1_combout\ = (\key1~input_o\ & (\inst14|inst1|inst21~1_combout\)) # (!\key1~input_o\ & ((!\inst14|inst|inst20~1_combout\)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -1876,10 +2813,10 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datab => \b2v_inst14|inst1|inst21~1_combout\,
+	datab => \inst14|inst1|inst21~1_combout\,
 	datac => \key1~input_o\,
-	datad => \b2v_inst14|inst|inst20~1_combout\,
-	combout => \b2v_inst14|inst1|inst21~1_combout\);
+	datad => \inst14|inst|inst20~1_combout\,
+	combout => \inst14|inst1|inst21~1_combout\);
 
 -- Location: CLKCTRL_G2
 \clk~inputclkctrl\ : cycloneive_clkctrl
@@ -1895,9 +2832,9 @@ PORT MAP (
 	outclk => \clk~inputclkctrl_outclk\);
 
 -- Location: LCCOMB_X33_Y12_N18
-\b2v_inst14|inst1|inst20\ : cycloneive_lcell_comb
+\inst14|inst1|inst20\ : cycloneive_lcell_comb
 -- Equation(s):
--- \b2v_inst14|inst1|inst20~combout\ = (\b2v_inst14|inst1|inst21~1_combout\) # ((!\key1~input_o\ & !\b2v_inst14|inst|inst20~1_combout\))
+-- \inst14|inst1|inst20~combout\ = (\inst14|inst1|inst21~1_combout\) # ((!\key1~input_o\ & !\inst14|inst|inst20~1_combout\))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -1906,12 +2843,12 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	dataa => \key1~input_o\,
-	datac => \b2v_inst14|inst1|inst21~1_combout\,
-	datad => \b2v_inst14|inst|inst20~1_combout\,
-	combout => \b2v_inst14|inst1|inst20~combout\);
+	datac => \inst14|inst1|inst21~1_combout\,
+	datad => \inst14|inst|inst20~1_combout\,
+	combout => \inst14|inst1|inst20~combout\);
 
--- Location: FF_X33_Y12_N25
-\b2v_inst6|input0Buf\ : dffeas
+-- Location: FF_X33_Y12_N17
+\inst6|input0Buf\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
@@ -1919,16 +2856,16 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
-	asdata => \b2v_inst14|inst1|inst20~combout\,
+	asdata => \inst14|inst1|inst20~combout\,
 	sload => VCC,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \b2v_inst6|input0Buf~q\);
+	q => \inst6|input0Buf~q\);
 
--- Location: LCCOMB_X33_Y12_N24
-\b2v_inst6|process_1~0\ : cycloneive_lcell_comb
+-- Location: LCCOMB_X33_Y12_N16
+\inst6|process_1~0\ : cycloneive_lcell_comb
 -- Equation(s):
--- \b2v_inst6|process_1~0_combout\ = (\b2v_inst6|input0Buf~q\) # ((!\b2v_inst14|inst1|inst21~1_combout\ & ((\key1~input_o\) # (\b2v_inst14|inst|inst20~1_combout\))))
+-- \inst6|process_1~0_combout\ = (\inst6|input0Buf~q\) # ((!\inst14|inst1|inst21~1_combout\ & ((\key1~input_o\) # (\inst14|inst|inst20~1_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -1937,10 +2874,10 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	dataa => \key1~input_o\,
-	datab => \b2v_inst14|inst1|inst21~1_combout\,
-	datac => \b2v_inst6|input0Buf~q\,
-	datad => \b2v_inst14|inst|inst20~1_combout\,
-	combout => \b2v_inst6|process_1~0_combout\);
+	datab => \inst14|inst1|inst21~1_combout\,
+	datac => \inst6|input0Buf~q\,
+	datad => \inst14|inst|inst20~1_combout\,
+	combout => \inst6|process_1~0_combout\);
 
 -- Location: IOIBUF_X34_Y12_N15
 \key2~input\ : cycloneive_io_ibuf
@@ -1954,9 +2891,9 @@ PORT MAP (
 	o => \key2~input_o\);
 
 -- Location: LCCOMB_X33_Y12_N10
-\b2v_inst15|inst|inst20~1\ : cycloneive_lcell_comb
+\inst15|inst|inst20~1\ : cycloneive_lcell_comb
 -- Equation(s):
--- \b2v_inst15|inst|inst20~1_combout\ = (\key2~input_o\ & ((\b2v_inst15|inst1|inst21~1_combout\))) # (!\key2~input_o\ & (\b2v_inst15|inst|inst20~1_combout\))
+-- \inst15|inst|inst20~1_combout\ = (\key2~input_o\ & ((\inst15|inst1|inst21~1_combout\))) # (!\key2~input_o\ & (\inst15|inst|inst20~1_combout\))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -1964,15 +2901,15 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datab => \b2v_inst15|inst|inst20~1_combout\,
+	datab => \inst15|inst|inst20~1_combout\,
 	datac => \key2~input_o\,
-	datad => \b2v_inst15|inst1|inst21~1_combout\,
-	combout => \b2v_inst15|inst|inst20~1_combout\);
+	datad => \inst15|inst1|inst21~1_combout\,
+	combout => \inst15|inst|inst20~1_combout\);
 
--- Location: LCCOMB_X33_Y12_N20
-\b2v_inst15|inst1|inst21~1\ : cycloneive_lcell_comb
+-- Location: LCCOMB_X33_Y12_N24
+\inst15|inst1|inst21~1\ : cycloneive_lcell_comb
 -- Equation(s):
--- \b2v_inst15|inst1|inst21~1_combout\ = (\key2~input_o\ & (\b2v_inst15|inst1|inst21~1_combout\)) # (!\key2~input_o\ & ((!\b2v_inst15|inst|inst20~1_combout\)))
+-- \inst15|inst1|inst21~1_combout\ = (\key2~input_o\ & (\inst15|inst1|inst21~1_combout\)) # (!\key2~input_o\ & ((!\inst15|inst|inst20~1_combout\)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -1980,15 +2917,15 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \b2v_inst15|inst1|inst21~1_combout\,
+	dataa => \inst15|inst1|inst21~1_combout\,
 	datac => \key2~input_o\,
-	datad => \b2v_inst15|inst|inst20~1_combout\,
-	combout => \b2v_inst15|inst1|inst21~1_combout\);
+	datad => \inst15|inst|inst20~1_combout\,
+	combout => \inst15|inst1|inst21~1_combout\);
 
 -- Location: LCCOMB_X33_Y12_N2
-\b2v_inst15|inst1|inst20\ : cycloneive_lcell_comb
+\inst15|inst1|inst20\ : cycloneive_lcell_comb
 -- Equation(s):
--- \b2v_inst15|inst1|inst20~combout\ = (\b2v_inst15|inst1|inst21~1_combout\) # ((!\key2~input_o\ & !\b2v_inst15|inst|inst20~1_combout\))
+-- \inst15|inst1|inst20~combout\ = (\inst15|inst1|inst21~1_combout\) # ((!\key2~input_o\ & !\inst15|inst|inst20~1_combout\))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -1997,12 +2934,12 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	datab => \key2~input_o\,
-	datac => \b2v_inst15|inst1|inst21~1_combout\,
-	datad => \b2v_inst15|inst|inst20~1_combout\,
-	combout => \b2v_inst15|inst1|inst20~combout\);
+	datac => \inst15|inst1|inst21~1_combout\,
+	datad => \inst15|inst|inst20~1_combout\,
+	combout => \inst15|inst1|inst20~combout\);
 
--- Location: FF_X33_Y12_N9
-\b2v_inst6|input1Buf\ : dffeas
+-- Location: FF_X33_Y12_N29
+\inst6|input1Buf\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
@@ -2010,16 +2947,16 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
-	asdata => \b2v_inst15|inst1|inst20~combout\,
+	asdata => \inst15|inst1|inst20~combout\,
 	sload => VCC,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \b2v_inst6|input1Buf~q\);
+	q => \inst6|input1Buf~q\);
 
--- Location: LCCOMB_X33_Y12_N8
-\b2v_inst6|comb~0\ : cycloneive_lcell_comb
+-- Location: LCCOMB_X33_Y12_N28
+\inst6|comb~0\ : cycloneive_lcell_comb
 -- Equation(s):
--- \b2v_inst6|comb~0_combout\ = (\b2v_inst15|inst1|inst20~combout\ & (!\b2v_inst6|input1Buf~q\ & \b2v_inst6|process_1~0_combout\))
+-- \inst6|comb~0_combout\ = (\inst15|inst1|inst20~combout\ & (!\inst6|input1Buf~q\ & \inst6|process_1~0_combout\))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -2027,15 +2964,15 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \b2v_inst15|inst1|inst20~combout\,
-	datac => \b2v_inst6|input1Buf~q\,
-	datad => \b2v_inst6|process_1~0_combout\,
-	combout => \b2v_inst6|comb~0_combout\);
+	dataa => \inst15|inst1|inst20~combout\,
+	datac => \inst6|input1Buf~q\,
+	datad => \inst6|process_1~0_combout\,
+	combout => \inst6|comb~0_combout\);
 
--- Location: LCCOMB_X33_Y12_N16
-\b2v_inst6|output0\ : cycloneive_lcell_comb
+-- Location: LCCOMB_X33_Y12_N20
+\inst6|output0\ : cycloneive_lcell_comb
 -- Equation(s):
--- \b2v_inst6|output0~combout\ = (!\b2v_inst6|comb~0_combout\ & ((\b2v_inst6|output0~combout\) # (!\b2v_inst6|process_1~0_combout\)))
+-- \inst6|output0~combout\ = (!\inst6|comb~0_combout\ & ((\inst6|output0~combout\) # (!\inst6|process_1~0_combout\)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -2043,61 +2980,27 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datab => \b2v_inst6|process_1~0_combout\,
-	datac => \b2v_inst6|comb~0_combout\,
-	datad => \b2v_inst6|output0~combout\,
-	combout => \b2v_inst6|output0~combout\);
+	datab => \inst6|process_1~0_combout\,
+	datac => \inst6|comb~0_combout\,
+	datad => \inst6|output0~combout\,
+	combout => \inst6|output0~combout\);
 
--- Location: LCCOMB_X29_Y10_N20
-\b2v_inst1|inst|inst20~1\ : cycloneive_lcell_comb
+-- Location: LCCOMB_X32_Y12_N28
+\inst12~0\ : cycloneive_lcell_comb
 -- Equation(s):
--- \b2v_inst1|inst|inst20~1_combout\ = (\b2v_inst3|LPM_COUNTER_component|auto_generated|cout_actual~combout\ & ((\b2v_inst1|inst1|inst21~1_combout\))) # (!\b2v_inst3|LPM_COUNTER_component|auto_generated|cout_actual~combout\ & 
--- (\b2v_inst1|inst|inst20~1_combout\))
+-- \inst12~0_combout\ = (\inst6|output0~combout\ & ((\inst1|inst1|inst21~1_combout\) # ((!\inst3|LPM_COUNTER_component|auto_generated|cout_actual~combout\ & !\inst1|inst|inst20~1_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1100110010101010",
+	lut_mask => "1010101100000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \b2v_inst1|inst|inst20~1_combout\,
-	datab => \b2v_inst1|inst1|inst21~1_combout\,
-	datad => \b2v_inst3|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
-	combout => \b2v_inst1|inst|inst20~1_combout\);
-
--- Location: LCCOMB_X29_Y10_N22
-\b2v_inst1|inst1|inst21~1\ : cycloneive_lcell_comb
--- Equation(s):
--- \b2v_inst1|inst1|inst21~1_combout\ = (\b2v_inst3|LPM_COUNTER_component|auto_generated|cout_actual~combout\ & (\b2v_inst1|inst1|inst21~1_combout\)) # (!\b2v_inst3|LPM_COUNTER_component|auto_generated|cout_actual~combout\ & 
--- ((!\b2v_inst1|inst|inst20~1_combout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100110000001111",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \b2v_inst1|inst1|inst21~1_combout\,
-	datac => \b2v_inst1|inst|inst20~1_combout\,
-	datad => \b2v_inst3|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
-	combout => \b2v_inst1|inst1|inst21~1_combout\);
-
--- Location: LCCOMB_X30_Y10_N2
-\buzz~0\ : cycloneive_lcell_comb
--- Equation(s):
--- \buzz~0_combout\ = (\b2v_inst6|output0~combout\ & ((\b2v_inst1|inst1|inst21~1_combout\) # ((!\b2v_inst1|inst|inst20~1_combout\ & !\b2v_inst3|LPM_COUNTER_component|auto_generated|cout_actual~combout\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1000100010001010",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \b2v_inst6|output0~combout\,
-	datab => \b2v_inst1|inst1|inst21~1_combout\,
-	datac => \b2v_inst1|inst|inst20~1_combout\,
-	datad => \b2v_inst3|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
-	combout => \buzz~0_combout\);
+	dataa => \inst1|inst1|inst21~1_combout\,
+	datab => \inst3|LPM_COUNTER_component|auto_generated|cout_actual~combout\,
+	datac => \inst1|inst|inst20~1_combout\,
+	datad => \inst6|output0~combout\,
+	combout => \inst12~0_combout\);
 END structure;
 
 
