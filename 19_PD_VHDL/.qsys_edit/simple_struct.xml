@@ -878,7 +878,7 @@
 												</leaf>
 											</node>
 											<node nodeId="1372710005725" orientation="VERTICAL" divider="0.75">
-												<node nodeId="1372710005727" orientation="HORIZONTAL" divider="0.6183193900785428">
+												<node nodeId="1372710005727" orientation="HORIZONTAL" divider="0.7042456801008184">
 													<node nodeId="1372710005733" orientation="VERTICAL" divider="0.75">
 														<leaf id="3" nodeId="1372710005735">
 															<placeholders>
@@ -1213,7 +1213,7 @@
 								</child>
 								<child>
 									<layout factory="delegate_StackDockStationFactory">
-										<selected>0</selected>
+										<selected>2</selected>
 										<placeholders>
 											<version>0</version>
 											<format>dock.PlaceholderList</format>

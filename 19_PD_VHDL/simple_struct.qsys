@@ -9,11 +9,35 @@
    categories="System" />
  <parameter name="bonusData"><![CDATA[bonusData 
 {
+   element Count250000_0
+   {
+      datum _sortIndex
+      {
+         value = "5";
+         type = "int";
+      }
+   }
+   element DataConversionUnit_0
+   {
+      datum _sortIndex
+      {
+         value = "6";
+         type = "int";
+      }
+   }
    element DigitalFilter_0
    {
       datum _sortIndex
       {
          value = "4";
+         type = "int";
+      }
+   }
+   element DynamicIllumination4Indicators_0
+   {
+      datum _sortIndex
+      {
+         value = "7";
          type = "int";
       }
    }
@@ -50,7 +74,23 @@
    {
       datum _originalDeviceFamily
       {
-         value = "Cyclone V";
+         value = "Cyclone IV E";
+         type = "String";
+      }
+   }
+   element simple_struct
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone IV E";
+         type = "String";
+      }
+   }
+   element simple_struct
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone IV E";
          type = "String";
       }
    }
@@ -66,7 +106,7 @@
    {
       datum _originalDeviceFamily
       {
-         value = "Cyclone V";
+         value = "Cyclone IV E";
          type = "String";
       }
    }
@@ -122,14 +162,6 @@
    {
       datum _originalDeviceFamily
       {
-         value = "Cyclone IV E";
-         type = "String";
-      }
-   }
-   element simple_struct
-   {
-      datum _originalDeviceFamily
-      {
          value = "Cyclone V";
          type = "String";
       }
@@ -155,6 +187,54 @@
       datum _originalDeviceFamily
       {
          value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element simple_struct
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone IV E";
+         type = "String";
+      }
+   }
+   element simple_struct
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone IV E";
+         type = "String";
+      }
+   }
+   element simple_struct
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone IV E";
+         type = "String";
+      }
+   }
+   element simple_struct
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element simple_struct
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element simple_struct
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone IV E";
          type = "String";
       }
    }
@@ -190,6 +270,26 @@
  <interface name="clk" internal="clk_0.clk_in" type="clock" dir="end" />
  <interface name="digitalfilter_0_filter" internal="DigitalFilter_0.Filter" />
  <interface
+   name="enable"
+   internal="DynamicIllumination4Indicators_0.enable"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="indicator"
+   internal="DynamicIllumination4Indicators_0.indicator"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="indicator2"
+   internal="DynamicIllumination4Indicators_0.indicator2"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="indicator3"
+   internal="DynamicIllumination4Indicators_0.indicator3"
+   type="conduit"
+   dir="end" />
+ <interface
    name="input0"
    internal="DigitalFilter_0.input0"
    type="conduit"
@@ -200,10 +300,26 @@
  <interface name="scl" internal="i2c_transcever_0.SCL" type="conduit" dir="end" />
  <interface name="sda" internal="i2c_transcever_0.SDA" type="conduit" dir="end" />
  <interface name="seg7" internal="controller_0.seg7" />
+ <interface
+   name="segment"
+   internal="DynamicIllumination4Indicators_0.segment"
+   type="conduit"
+   dir="end" />
  <interface name="usart" internal="usart_0.ser" type="conduit" dir="end" />
+ <module name="Count250000_0" kind="Count250000" version="1.0" enabled="1" />
+ <module
+   name="DataConversionUnit_0"
+   kind="DataConversionUnit"
+   version="1.0"
+   enabled="1" />
  <module name="DigitalFilter_0" kind="DigitalFilter" version="1.0" enabled="1">
   <parameter name="PHASE_SHIFT" value="200" />
  </module>
+ <module
+   name="DynamicIllumination4Indicators_0"
+   kind="DynamicIllumination4Indicators"
+   version="1.0"
+   enabled="1" />
  <module name="clk_0" kind="clock_source" version="22.1" enabled="1">
   <parameter name="clockFrequency" value="50000000" />
   <parameter name="clockFrequencyKnown" value="true" />
@@ -226,6 +342,11 @@
   <parameter name="PARITY" value="0" />
   <parameter name="STOP_BITS" value="1" />
  </module>
+ <connection
+   kind="clock"
+   version="22.1"
+   start="clk_0.clk"
+   end="Count250000_0.clkIn" />
  <connection kind="clock" version="22.1" start="clk_0.clk" end="usart_0.clock" />
  <connection
    kind="clock"
@@ -242,6 +363,59 @@
    version="22.1"
    start="clk_0.clk"
    end="DigitalFilter_0.clock" />
+ <connection
+   kind="clock"
+   version="22.1"
+   start="clk_0.clk"
+   end="DynamicIllumination4Indicators_0.clock" />
+ <connection
+   kind="clock"
+   version="22.1"
+   start="clk_0.clk"
+   end="DataConversionUnit_0.clock" />
+ <connection
+   kind="clock"
+   version="22.1"
+   start="Count250000_0.clkOut"
+   end="DynamicIllumination4Indicators_0.clk" />
+ <connection
+   kind="clock"
+   version="22.1"
+   start="Count250000_0.clkOut"
+   end="DataConversionUnit_0.update" />
+ <connection
+   kind="conduit"
+   version="22.1"
+   start="DataConversionUnit_0.data"
+   end="controller_0.dataToUpdate">
+  <parameter name="endPort" value="" />
+  <parameter name="endPortLSB" value="0" />
+  <parameter name="startPort" value="" />
+  <parameter name="startPortLSB" value="0" />
+  <parameter name="width" value="0" />
+ </connection>
+ <connection
+   kind="conduit"
+   version="22.1"
+   start="DynamicIllumination4Indicators_0.indicator0"
+   end="DataConversionUnit_0.indic0">
+  <parameter name="endPort" value="" />
+  <parameter name="endPortLSB" value="0" />
+  <parameter name="startPort" value="" />
+  <parameter name="startPortLSB" value="0" />
+  <parameter name="width" value="0" />
+ </connection>
+ <connection
+   kind="conduit"
+   version="22.1"
+   start="DynamicIllumination4Indicators_0.indicator1"
+   end="DataConversionUnit_0.indic1">
+  <parameter name="endPort" value="" />
+  <parameter name="endPortLSB" value="0" />
+  <parameter name="startPort" value="" />
+  <parameter name="startPortLSB" value="0" />
+  <parameter name="width" value="0" />
+ </connection>
  <connection
    kind="conduit"
    version="22.1"

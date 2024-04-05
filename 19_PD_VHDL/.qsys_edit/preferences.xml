@@ -3,7 +3,7 @@
  <debug showDebugMenu="0" />
  <systemtable>
   <columns>
-   <connections preferredWidth="111" />
+   <connections preferredWidth="175" />
    <irq preferredWidth="34" />
   </columns>
  </systemtable>
@@ -15,6 +15,6 @@
   </columns>
  </clocktable>
  <window width="1936" height="1056" x="1912" y="-8" />
- <library expandedCategories="Library,Project" />
+ <library expandedCategories="Project,Library" />
  <generation synthesis="VHDL" />
 </preferences>

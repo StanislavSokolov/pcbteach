@@ -27,7 +27,9 @@ entity controller is
 		i2c_data_rd   : in    	STD_LOGIC_VECTOR(7 DOWNTO 0); --data read from slave
 		i2c_ack_error : inout	STD_LOGIC;                    --flag if improper acknowledge from slave
 		
-		key1 : in STD_LOGIC
+		key1 : in STD_LOGIC;
+		
+		dataToUpdate : out STD_LOGIC_VECTOR(7 DOWNTO 0)
 		
 	);
 end controller;
@@ -78,7 +80,7 @@ architecture behave of controller is
 	
 	
 	
-	type FSM_State	is 	( IDLE, READ_TEMPER, SEND_TEMPER );
+	type FSM_State	is 	( IDLE, READ_TEMPER, UPDATE_IND, SEND_TEMPER );
 	signal PresState : FSM_State;
 	
 	signal reset_n   :   STD_LOGIC;                    --active low reset
@@ -223,11 +225,15 @@ begin
 				elsif I2C_Err = '0' then
 					Temper 		<= I2C_RxArray(0);	-- use MSB of readed temper value. It's in integer temper value
 					RegRdDone 	<= '0';
-					PresState 	<= SEND_TEMPER;
+					PresState 	<= UPDATE_IND;
 				else
 					PresState <= IDLE;
 					
 				end if;
+				
+			when UPDATE_IND =>
+				dataToUpdate <= Temper;
+				PresState 	<= SEND_TEMPER;
 			
 			when SEND_TEMPER =>
 				if show_cnt < 2 then
