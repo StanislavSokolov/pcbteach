@@ -1,0 +1,16 @@
+Fitter Status : Successful - Fri Apr  5 13:02:54 2024
+Quartus Prime Version : 22.1std.0 Build 915 10/25/2022 SC Standard Edition
+Revision Name : 19_PD_VHDL
+Top-level Entity Name : top_level
+Family : Cyclone IV E
+Device : EP4CE6E22C8
+Timing Models : Final
+Total logic elements : 231 / 6,272 ( 4 % )
+    Total combinational functions : 192 / 6,272 ( 3 % )
+    Dedicated logic registers : 143 / 6,272 ( 2 % )
+Total registers : 143
+Total pins : 10 / 92 ( 11 % )
+Total virtual pins : 0
+Total memory bits : 0 / 276,480 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 30 ( 0 % )
+Total PLLs : 0 / 2 ( 0 % )
