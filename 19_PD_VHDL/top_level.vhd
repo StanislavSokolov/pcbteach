@@ -11,7 +11,8 @@ entity top_level is
 		TXD			: out	std_logic;
 		RXD			: in	std_logic;
 		SDA			: inout std_logic;
-		SCL			: inout	std_Logic
+		SCL			: inout	std_Logic;
+		keys_in : in std_logic_vector( 3 downto 0 )
 	);
 	
 end top_level;
@@ -33,7 +34,8 @@ architecture arch of top_level is
             sda_in        : in  std_logic                    := 'X';             -- in
             sda_oe        : out std_logic;                                       -- oe
             usart_rxd     : in  std_logic                    := 'X';             -- rxd
-            usart_txd     : out std_logic                                        -- txd
+            usart_txd     : out std_logic;                                       -- txd
+				input0_input0 : in  std_logic                    := 'X'
         );
     end component simple_struct;
 
@@ -49,7 +51,8 @@ begin
             sda_in        =>  top_sda_in,		--   sda.in
             sda_oe        =>  top_sda_oe,		--      .oe
             usart_rxd     =>  RXD,				-- usart.rxd
-            usart_txd     =>  TXD				--      .txd
+            usart_txd     =>  TXD,				--      .txd
+				input0_input0    =>  keys_in(0)
         );
 	
 	

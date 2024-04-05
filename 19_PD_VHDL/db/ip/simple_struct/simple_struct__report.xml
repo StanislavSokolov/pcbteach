@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deploy
- date="2024.04.05.13:02:29"
+ date="2024.04.05.15:06:21"
  outputDirectory="D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/">
  <perimeter>
   <parameter
@@ -57,6 +57,11 @@
    <property name="ptfSchematicName" value="" />
    <port name="clk_clk" direction="input" role="clk" width="1" />
   </interface>
+  <interface name="input0" kind="conduit" start="0">
+   <property name="associatedClock" value="clk" />
+   <property name="associatedReset" value="" />
+   <port name="input0_input0" direction="input" role="input0" width="1" />
+  </interface>
   <interface name="leds" kind="conduit" start="0">
    <property name="associatedClock" value="clk" />
    <property name="associatedReset" value="reset" />
@@ -88,13 +93,13 @@
  </perimeter>
  <entity
    path=""
-   parameterizationKey="simple_struct:1.0:AUTO_CLK_CLOCK_DOMAIN=-1,AUTO_CLK_CLOCK_RATE=-1,AUTO_CLK_RESET_DOMAIN=-1,AUTO_DEVICE=EP4CE6E22C8,AUTO_DEVICE_FAMILY=Cyclone IV E,AUTO_DEVICE_SPEEDGRADE=8,AUTO_GENERATION_ID=1712311347,AUTO_UNIQUE_ID=(clock_source:22.1:clockFrequency=50000000,clockFrequencyKnown=true,inputClockFrequency=0,resetSynchronousEdges=NONE)(controller:1.0:)(i2c_transcever:1.0:bus_clk=100000,input_clk=50000000)(usart:1.0:BAUD_RATE=9600,CLK_FREQ_HZ=50000000,DATA_BITS=8,PARITY=0,STOP_BITS=1)(clock:22.1:)(clock:22.1:)(clock:22.1:)(conduit:22.1:endPort=,endPortLSB=0,startPort=,startPortLSB=0,width=0)(conduit:22.1:endPort=,endPortLSB=0,startPort=,startPortLSB=0,width=0)(reset:22.1:)(reset:22.1:)(reset:22.1:)"
+   parameterizationKey="simple_struct:1.0:AUTO_CLK_CLOCK_DOMAIN=-1,AUTO_CLK_CLOCK_RATE=-1,AUTO_CLK_RESET_DOMAIN=-1,AUTO_DEVICE=EP4CE6E22C8,AUTO_DEVICE_FAMILY=Cyclone IV E,AUTO_DEVICE_SPEEDGRADE=8,AUTO_GENERATION_ID=1712318780,AUTO_UNIQUE_ID=(DigitalFilter:1.0:PHASE_SHIFT=200)(clock_source:22.1:clockFrequency=50000000,clockFrequencyKnown=true,inputClockFrequency=0,resetSynchronousEdges=NONE)(controller:1.0:)(i2c_transcever:1.0:bus_clk=100000,input_clk=50000000)(usart:1.0:BAUD_RATE=9600,CLK_FREQ_HZ=50000000,DATA_BITS=8,PARITY=0,STOP_BITS=1)(clock:22.1:)(clock:22.1:)(clock:22.1:)(clock:22.1:)(conduit:22.1:endPort=,endPortLSB=0,startPort=,startPortLSB=0,width=0)(conduit:22.1:endPort=,endPortLSB=0,startPort=,startPortLSB=0,width=0)(conduit:22.1:endPort=,endPortLSB=0,startPort=,startPortLSB=0,width=0)(reset:22.1:)(reset:22.1:)(reset:22.1:)"
    instancePathKey="simple_struct"
    kind="simple_struct"
    version="1.0"
    name="simple_struct">
   <parameter name="AUTO_CLK_CLOCK_RATE" value="-1" />
-  <parameter name="AUTO_GENERATION_ID" value="1712311347" />
+  <parameter name="AUTO_GENERATION_ID" value="1712318780" />
   <parameter name="AUTO_DEVICE" value="EP4CE6E22C8" />
   <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone IV E" />
   <parameter name="AUTO_CLK_RESET_DOMAIN" value="-1" />
@@ -107,6 +112,10 @@
        type="VERILOG" />
   </generatedFiles>
   <childGeneratedFiles>
+   <file
+       path="D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/DigitalFilter.vhd"
+       type="VHDL"
+       attributes="CONTAINS_INLINE_CONFIGURATION TOP_LEVEL_FILE" />
    <file
        path="D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/controller.vhd"
        type="VHDL"
@@ -140,6 +149,7 @@
    <file path="D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/simple_struct.qsys" />
   </sourceFiles>
   <childSourceFiles>
+   <file path="D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/DigitalFilter_hw.tcl" />
    <file path="D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/controller_hw.tcl" />
    <file path="D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/i2c_transcever_hw.tcl" />
    <file path="D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/usart_hw.tcl" />
@@ -153,7 +163,7 @@
    <message level="Progress" culprit="current"></message>
    <message level="Debug">Transform: CustomInstructionTransform</message>
    <message level="Debug">No custom instruction connections, skipping transform </message>
-   <message level="Debug" culprit="merlin_custom_instruction_transform"><![CDATA[After transform: <b>4</b> modules, <b>8</b> connections]]></message>
+   <message level="Debug" culprit="merlin_custom_instruction_transform"><![CDATA[After transform: <b>5</b> modules, <b>10</b> connections]]></message>
    <message level="Debug">Transform: MMTransform</message>
    <message level="Debug">Transform: InterruptMapperTransform</message>
    <message level="Debug">Transform: InterruptSyncTransform</message>
@@ -163,11 +173,14 @@
    <message level="Progress" culprit="min"></message>
    <message level="Progress" culprit="max"></message>
    <message level="Progress" culprit="current"></message>
-   <message level="Debug" culprit="reset_adaptation_transform"><![CDATA[After transform: <b>5</b> modules, <b>10</b> connections]]></message>
+   <message level="Debug" culprit="reset_adaptation_transform"><![CDATA[After transform: <b>6</b> modules, <b>12</b> connections]]></message>
+   <message level="Debug" culprit="simple_struct"><![CDATA["<b>simple_struct</b>" reuses <b>DigitalFilter</b> "<b>submodules/DigitalFilter</b>"]]></message>
    <message level="Debug" culprit="simple_struct"><![CDATA["<b>simple_struct</b>" reuses <b>controller</b> "<b>submodules/controller</b>"]]></message>
    <message level="Debug" culprit="simple_struct"><![CDATA["<b>simple_struct</b>" reuses <b>i2c_transcever</b> "<b>submodules/i2c_master</b>"]]></message>
    <message level="Debug" culprit="simple_struct"><![CDATA["<b>simple_struct</b>" reuses <b>usart</b> "<b>submodules/usart</b>"]]></message>
    <message level="Debug" culprit="simple_struct"><![CDATA["<b>simple_struct</b>" reuses <b>altera_reset_controller</b> "<b>submodules/altera_reset_controller</b>"]]></message>
+   <message level="Debug" culprit="simple_struct">queue size: 4 starting:DigitalFilter "submodules/DigitalFilter"</message>
+   <message level="Info" culprit="DigitalFilter_0"><![CDATA["<b>simple_struct</b>" instantiated <b>DigitalFilter</b> "<b>DigitalFilter_0</b>"]]></message>
    <message level="Debug" culprit="simple_struct">queue size: 3 starting:controller "submodules/controller"</message>
    <message level="Info" culprit="controller_0"><![CDATA["<b>simple_struct</b>" instantiated <b>controller</b> "<b>controller_0</b>"]]></message>
    <message level="Debug" culprit="simple_struct">queue size: 2 starting:i2c_transcever "submodules/i2c_master"</message>
@@ -176,6 +189,31 @@
    <message level="Info" culprit="usart_0"><![CDATA["<b>simple_struct</b>" instantiated <b>usart</b> "<b>usart_0</b>"]]></message>
    <message level="Debug" culprit="simple_struct">queue size: 0 starting:altera_reset_controller "submodules/altera_reset_controller"</message>
    <message level="Info" culprit="rst_controller"><![CDATA["<b>simple_struct</b>" instantiated <b>altera_reset_controller</b> "<b>rst_controller</b>"]]></message>
+  </messages>
+ </entity>
+ <entity
+   path="submodules/"
+   parameterizationKey="DigitalFilter:1.0:PHASE_SHIFT=200"
+   instancePathKey="simple_struct:.:DigitalFilter_0"
+   kind="DigitalFilter"
+   version="1.0"
+   name="DigitalFilter">
+  <parameter name="PHASE_SHIFT" value="200" />
+  <generatedFiles>
+   <file
+       path="D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/DigitalFilter.vhd"
+       type="VHDL"
+       attributes="CONTAINS_INLINE_CONFIGURATION TOP_LEVEL_FILE" />
+  </generatedFiles>
+  <childGeneratedFiles/>
+  <sourceFiles>
+   <file path="D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/DigitalFilter_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator instantiator="simple_struct" as="DigitalFilter_0" />
+  <messages>
+   <message level="Debug" culprit="simple_struct">queue size: 4 starting:DigitalFilter "submodules/DigitalFilter"</message>
+   <message level="Info" culprit="DigitalFilter_0"><![CDATA["<b>simple_struct</b>" instantiated <b>DigitalFilter</b> "<b>DigitalFilter_0</b>"]]></message>
   </messages>
  </entity>
  <entity

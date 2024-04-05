@@ -8,19 +8,31 @@ use IEEE.numeric_std.all;
 
 entity simple_struct is
 	port (
-		clk_clk       : in  std_logic                    := '0'; --   clk.clk
-		leds_leds     : out std_logic_vector(3 downto 0);        --  leds.leds
-		reset_reset_n : in  std_logic                    := '0'; -- reset.reset_n
-		scl_in        : in  std_logic                    := '0'; --   scl.in
-		scl_oe        : out std_logic;                           --      .oe
-		sda_in        : in  std_logic                    := '0'; --   sda.in
-		sda_oe        : out std_logic;                           --      .oe
-		usart_rxd     : in  std_logic                    := '0'; -- usart.rxd
-		usart_txd     : out std_logic                            --      .txd
+		clk_clk       : in  std_logic                    := '0'; --    clk.clk
+		input0_input0 : in  std_logic                    := '0'; -- input0.input0
+		leds_leds     : out std_logic_vector(3 downto 0);        --   leds.leds
+		reset_reset_n : in  std_logic                    := '0'; --  reset.reset_n
+		scl_in        : in  std_logic                    := '0'; --    scl.in
+		scl_oe        : out std_logic;                           --       .oe
+		sda_in        : in  std_logic                    := '0'; --    sda.in
+		sda_oe        : out std_logic;                           --       .oe
+		usart_rxd     : in  std_logic                    := '0'; --  usart.rxd
+		usart_txd     : out std_logic                            --       .txd
 	);
 end entity simple_struct;
 
 architecture rtl of simple_struct is
+	component DigitalFilter is
+		generic (
+			PHASE_SHIFT : integer := 2000
+		);
+		port (
+			clk     : in  std_logic := 'X'; -- clk
+			output0 : out std_logic;        -- key1
+			input0  : in  std_logic := 'X'  -- input0
+		);
+	end component DigitalFilter;
+
 	component controller is
 		port (
 			clk           : in    std_logic                     := 'X';             -- clk
@@ -38,7 +50,8 @@ architecture rtl of simple_struct is
 			i2c_data_wr   : out   std_logic_vector(7 downto 0);                     -- data_wr
 			i2c_ena       : out   std_logic;                                        -- ena
 			i2c_rw        : out   std_logic;                                        -- rw
-			leds          : out   std_logic_vector(3 downto 0)                      -- leds
+			leds          : out   std_logic_vector(3 downto 0);                     -- leds
+			key1          : in    std_logic                     := 'X'              -- key1
 		);
 	end component controller;
 
@@ -152,6 +165,7 @@ architecture rtl of simple_struct is
 		);
 	end component altera_reset_controller;
 
+	signal digitalfilter_0_output0_key1             : std_logic;                     -- DigitalFilter_0:output0 -> controller_0:key1
 	signal i2c_transcever_0_port_data_rd            : std_logic_vector(7 downto 0);  -- i2c_transcever_0:data_rd -> controller_0:i2c_data_rd
 	signal controller_0_i2c_port_rw                 : std_logic;                     -- controller_0:i2c_rw -> i2c_transcever_0:rw
 	signal controller_0_i2c_port_data_wr            : std_logic_vector(7 downto 0);  -- controller_0:i2c_data_wr -> i2c_transcever_0:data_wr
@@ -171,6 +185,16 @@ architecture rtl of simple_struct is
 
 begin
 
+	digitalfilter_0 : component DigitalFilter
+		generic map (
+			PHASE_SHIFT => 200
+		)
+		port map (
+			clk     => clk_clk,                      --   clock.clk
+			output0 => digitalfilter_0_output0_key1, -- output0.key1
+			input0  => input0_input0                 --  input0.input0
+		);
+
 	controller_0 : component controller
 		port map (
 			clk           => clk_clk,                                  --     clock.clk
@@ -188,7 +212,8 @@ begin
 			i2c_data_wr   => controller_0_i2c_port_data_wr,            --          .data_wr
 			i2c_ena       => controller_0_i2c_port_ena,                --          .ena
 			i2c_rw        => controller_0_i2c_port_rw,                 --          .rw
-			leds          => leds_leds                                 --      leds.leds
+			leds          => leds_leds,                                --      leds.leds
+			key1          => digitalfilter_0_output0_key1              --       key.key1
 		);
 
 	i2c_transcever_0 : component i2c_master

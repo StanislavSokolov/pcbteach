@@ -26,6 +26,10 @@
 				{
 					"name" : "en",
 					"strict" : false
+				},
+				{
+					"name" : "keys_in[0]",
+					"strict" : false
 				}
 			]
 		}

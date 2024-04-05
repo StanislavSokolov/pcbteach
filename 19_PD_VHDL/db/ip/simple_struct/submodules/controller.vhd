@@ -25,7 +25,9 @@ entity controller is
 		i2c_data_wr   : out     STD_LOGIC_VECTOR(7 DOWNTO 0); --data to write to slave
 		i2c_busy      : in    	STD_LOGIC;                    --indicates transaction in progress
 		i2c_data_rd   : in    	STD_LOGIC_VECTOR(7 DOWNTO 0); --data read from slave
-		i2c_ack_error : inout	STD_LOGIC                    --flag if improper acknowledge from slave
+		i2c_ack_error : inout	STD_LOGIC;                    --flag if improper acknowledge from slave
+		
+		key1 : in STD_LOGIC
 		
 	);
 end controller;
@@ -109,6 +111,8 @@ architecture behave of controller is
 	
 	SIGNAL Temper  		: STD_LOGIC_VECTOR( 7 DOWNTO 0 );
 	
+	SIGNAL StartPulsePrev : STD_LOGIC := '0';
+	
 	
 	
 	
@@ -124,7 +128,7 @@ begin
 	PORT MAP(
 		Enable 	=>	reset_n	,
 		Clk    	=>	clk		,
-		Input  	=>	clk_1Hz		,
+		Input  	=>	key1		,
 		Output 	=>	StartPulse		-- generate start pulse 1 cicle clk width every second 
 	);
 	
@@ -151,13 +155,10 @@ begin
 			count_1Hz 	<= 0;
 			clk_1Hz		<= '0';
 		elsif rising_edge( clk ) then
-			if count_1Hz < wait_500ms then
-				count_1Hz <= count_1Hz + 1;
-			else	
-				count_1Hz <= 0;
+			if StartPulse = '1' and StartPulsePrev = '0'then
 				clk_1Hz <= NOT clk_1Hz;
 			end if;
-		
+			StartPulsePrev <= StartPulse;
 		end if;
 	end process;
 	

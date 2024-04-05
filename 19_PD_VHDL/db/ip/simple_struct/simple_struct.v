@@ -4,17 +4,19 @@
 
 `timescale 1 ps / 1 ps
 module simple_struct (
-		input  wire       clk_clk,       //   clk.clk
-		output wire [3:0] leds_leds,     //  leds.leds
-		input  wire       reset_reset_n, // reset.reset_n
-		input  wire       scl_in,        //   scl.in
-		output wire       scl_oe,        //      .oe
-		input  wire       sda_in,        //   sda.in
-		output wire       sda_oe,        //      .oe
-		input  wire       usart_rxd,     // usart.rxd
-		output wire       usart_txd      //      .txd
+		input  wire       clk_clk,       //    clk.clk
+		input  wire       input0_input0, // input0.input0
+		output wire [3:0] leds_leds,     //   leds.leds
+		input  wire       reset_reset_n, //  reset.reset_n
+		input  wire       scl_in,        //    scl.in
+		output wire       scl_oe,        //       .oe
+		input  wire       sda_in,        //    sda.in
+		output wire       sda_oe,        //       .oe
+		input  wire       usart_rxd,     //  usart.rxd
+		output wire       usart_txd      //       .txd
 	);
 
+	wire         digitalfilter_0_output0_key1;    // DigitalFilter_0:output0 -> controller_0:key1
 	wire   [7:0] i2c_transcever_0_port_data_rd;   // i2c_transcever_0:data_rd -> controller_0:i2c_data_rd
 	wire         controller_0_i2c_port_rw;        // controller_0:i2c_rw -> i2c_transcever_0:rw
 	wire   [7:0] controller_0_i2c_port_data_wr;   // controller_0:i2c_data_wr -> i2c_transcever_0:data_wr
@@ -29,6 +31,14 @@ module simple_struct (
 	wire         usart_0_usart_port_rx_ready;     // usart_0:rx_dv -> controller_0:uart_rx_ready
 	wire         usart_0_usart_port_tx_ready;     // usart_0:tx_ready -> controller_0:uart_tx_ready
 	wire         rst_controller_reset_out_reset;  // rst_controller:reset_out -> [controller_0:en, i2c_transcever_0:reset_n, usart_0:en]
+
+	DigitalFilter #(
+		.PHASE_SHIFT (200)
+	) digitalfilter_0 (
+		.clk     (clk_clk),                      //   clock.clk
+		.output0 (digitalfilter_0_output0_key1), // output0.key1
+		.input0  (input0_input0)                 //  input0.input0
+	);
 
 	controller controller_0 (
 		.clk           (clk_clk),                         //     clock.clk
@@ -46,7 +56,8 @@ module simple_struct (
 		.i2c_data_wr   (controller_0_i2c_port_data_wr),   //          .data_wr
 		.i2c_ena       (controller_0_i2c_port_ena),       //          .ena
 		.i2c_rw        (controller_0_i2c_port_rw),        //          .rw
-		.leds          (leds_leds)                        //      leds.leds
+		.leds          (leds_leds),                       //      leds.leds
+		.key1          (digitalfilter_0_output0_key1)     //       key.key1
 	);
 
 	i2c_master #(

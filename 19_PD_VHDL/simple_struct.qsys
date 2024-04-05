@@ -9,6 +9,14 @@
    categories="System" />
  <parameter name="bonusData"><![CDATA[bonusData 
 {
+   element DigitalFilter_0
+   {
+      datum _sortIndex
+      {
+         value = "4";
+         type = "int";
+      }
+   }
    element clk_0
    {
       datum _sortIndex
@@ -74,7 +82,23 @@
    {
       datum _originalDeviceFamily
       {
+         value = "Cyclone IV E";
+         type = "String";
+      }
+   }
+   element simple_struct
+   {
+      datum _originalDeviceFamily
+      {
          value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element simple_struct
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone IV E";
          type = "String";
       }
    }
@@ -98,7 +122,31 @@
    {
       datum _originalDeviceFamily
       {
+         value = "Cyclone IV E";
+         type = "String";
+      }
+   }
+   element simple_struct
+   {
+      datum _originalDeviceFamily
+      {
          value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element simple_struct
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone IV E";
+         type = "String";
+      }
+   }
+   element simple_struct
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone IV E";
          type = "String";
       }
    }
@@ -140,6 +188,12 @@
  <parameter name="useTestBenchNamingPattern" value="false" />
  <instanceScript></instanceScript>
  <interface name="clk" internal="clk_0.clk_in" type="clock" dir="end" />
+ <interface name="digitalfilter_0_filter" internal="DigitalFilter_0.Filter" />
+ <interface
+   name="input0"
+   internal="DigitalFilter_0.input0"
+   type="conduit"
+   dir="end" />
  <interface name="io" internal="controller_0.io" />
  <interface name="leds" internal="controller_0.leds" type="conduit" dir="end" />
  <interface name="reset" internal="clk_0.clk_in_reset" type="reset" dir="end" />
@@ -147,6 +201,9 @@
  <interface name="sda" internal="i2c_transcever_0.SDA" type="conduit" dir="end" />
  <interface name="seg7" internal="controller_0.seg7" />
  <interface name="usart" internal="usart_0.ser" type="conduit" dir="end" />
+ <module name="DigitalFilter_0" kind="DigitalFilter" version="1.0" enabled="1">
+  <parameter name="PHASE_SHIFT" value="200" />
+ </module>
  <module name="clk_0" kind="clock_source" version="22.1" enabled="1">
   <parameter name="clockFrequency" value="50000000" />
   <parameter name="clockFrequencyKnown" value="true" />
@@ -180,6 +237,22 @@
    version="22.1"
    start="clk_0.clk"
    end="controller_0.clock" />
+ <connection
+   kind="clock"
+   version="22.1"
+   start="clk_0.clk"
+   end="DigitalFilter_0.clock" />
+ <connection
+   kind="conduit"
+   version="22.1"
+   start="controller_0.key"
+   end="DigitalFilter_0.output0">
+  <parameter name="endPort" value="" />
+  <parameter name="endPortLSB" value="0" />
+  <parameter name="startPort" value="" />
+  <parameter name="startPortLSB" value="0" />
+  <parameter name="width" value="0" />
+ </connection>
  <connection
    kind="conduit"
    version="22.1"
