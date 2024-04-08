@@ -157,7 +157,7 @@ https://fpgasoftware.intel.com/eula.
 		(text "usart" (rect 115 515 260 1043)(font "Arial" (color 128 0 0)(font_size 9)))
 		(text "rxd" (rect 149 539 316 1088)(font "Arial" (color 0 0 0)))
 		(text "txd" (rect 149 555 316 1120)(font "Arial" (color 0 0 0)))
-		(text " system " (rect 317 576 682 1162)(font "Arial" ))
+		(text " simple_struct " (rect 291 576 672 1162)(font "Arial" ))
 		(line (pt 144 32)(pt 208 32)(line_width 1))
 		(line (pt 208 32)(pt 208 576)(line_width 1))
 		(line (pt 144 576)(pt 208 576)(line_width 1))

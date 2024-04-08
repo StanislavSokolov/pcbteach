@@ -4,33 +4,49 @@
 
 `timescale 1 ps / 1 ps
 module simple_struct (
-		input  wire       clk_clk,       //    clk.clk
-		input  wire       input0_input0, // input0.input0
-		output wire [3:0] leds_leds,     //   leds.leds
-		input  wire       reset_reset_n, //  reset.reset_n
-		input  wire       scl_in,        //    scl.in
-		output wire       scl_oe,        //       .oe
-		input  wire       sda_in,        //    sda.in
-		output wire       sda_oe,        //       .oe
-		input  wire       usart_rxd,     //  usart.rxd
-		output wire       usart_txd      //       .txd
+		input  wire       clk_clk,               //        clk.clk
+		input  wire [3:0] enable_enable,         //     enable.enable
+		output wire [3:0] indicator_indicator,   //  indicator.indicator
+		input  wire [6:0] indicator2_indicator2, // indicator2.indicator2
+		input  wire [6:0] indicator3_indicator3, // indicator3.indicator3
+		input  wire       input0_input0,         //     input0.input0
+		output wire [3:0] leds_leds,             //       leds.leds
+		input  wire       reset_reset_n,         //      reset.reset_n
+		input  wire       scl_in,                //        scl.in
+		output wire       scl_oe,                //           .oe
+		input  wire       sda_in,                //        sda.in
+		output wire       sda_oe,                //           .oe
+		output wire [6:0] segment_segment,       //    segment.segment
+		input  wire       usart_rxd,             //      usart.rxd
+		output wire       usart_txd              //           .txd
 	);
 
-	wire         digitalfilter_0_output0_key1;    // DigitalFilter_0:output0 -> controller_0:key1
-	wire   [7:0] i2c_transcever_0_port_data_rd;   // i2c_transcever_0:data_rd -> controller_0:i2c_data_rd
-	wire         controller_0_i2c_port_rw;        // controller_0:i2c_rw -> i2c_transcever_0:rw
-	wire   [7:0] controller_0_i2c_port_data_wr;   // controller_0:i2c_data_wr -> i2c_transcever_0:data_wr
-	wire         i2c_transcever_0_port_busy;      // i2c_transcever_0:busy -> controller_0:i2c_busy
-	wire         controller_0_i2c_port_ena;       // controller_0:i2c_ena -> i2c_transcever_0:ena
-	wire   [6:0] controller_0_i2c_port_addr;      // controller_0:i2c_addr -> i2c_transcever_0:addr
-	wire         controller_0_i2c_port_ack_error; // [] -> [controller_0:i2c_ack_error, i2c_transcever_0:ack_error]
-	wire  [15:0] usart_0_usart_port_rx_data;      // usart_0:rx_data -> controller_0:uart_rx_data
-	wire         usart_0_usart_port_rx_busy;      // usart_0:rx_busy -> controller_0:uart_rx_busy
-	wire  [15:0] controller_0_uart_port_tx_data;  // controller_0:uart_tx_data -> usart_0:tx_data
-	wire         controller_0_uart_port_tx_dv;    // controller_0:uart_tx_dv -> usart_0:tx_dv
-	wire         usart_0_usart_port_rx_ready;     // usart_0:rx_dv -> controller_0:uart_rx_ready
-	wire         usart_0_usart_port_tx_ready;     // usart_0:tx_ready -> controller_0:uart_tx_ready
-	wire         rst_controller_reset_out_reset;  // rst_controller:reset_out -> [controller_0:en, i2c_transcever_0:reset_n, usart_0:en]
+	wire   [7:0] controller_0_datatoupdate_data;     // controller_0:dataToUpdate -> DataConversionUnit_0:data
+	wire   [6:0] dataconversionunit_0_indic0_indic0; // DataConversionUnit_0:indicator0 -> DynamicIllumination4Indicators_0:indicator0
+	wire   [6:0] dataconversionunit_0_indic1_indic1; // DataConversionUnit_0:indicator1 -> DynamicIllumination4Indicators_0:indicator1
+	wire         digitalfilter_0_output0_key1;       // DigitalFilter_0:output0 -> controller_0:key1
+	wire   [7:0] i2c_transcever_0_port_data_rd;      // i2c_transcever_0:data_rd -> controller_0:i2c_data_rd
+	wire         controller_0_i2c_port_rw;           // controller_0:i2c_rw -> i2c_transcever_0:rw
+	wire   [7:0] controller_0_i2c_port_data_wr;      // controller_0:i2c_data_wr -> i2c_transcever_0:data_wr
+	wire         i2c_transcever_0_port_busy;         // i2c_transcever_0:busy -> controller_0:i2c_busy
+	wire         controller_0_i2c_port_ena;          // controller_0:i2c_ena -> i2c_transcever_0:ena
+	wire   [6:0] controller_0_i2c_port_addr;         // controller_0:i2c_addr -> i2c_transcever_0:addr
+	wire         controller_0_i2c_port_ack_error;    // [] -> [controller_0:i2c_ack_error, i2c_transcever_0:ack_error]
+	wire  [15:0] usart_0_usart_port_rx_data;         // usart_0:rx_data -> controller_0:uart_rx_data
+	wire         usart_0_usart_port_rx_busy;         // usart_0:rx_busy -> controller_0:uart_rx_busy
+	wire  [15:0] controller_0_uart_port_tx_data;     // controller_0:uart_tx_data -> usart_0:tx_data
+	wire         controller_0_uart_port_tx_dv;       // controller_0:uart_tx_dv -> usart_0:tx_dv
+	wire         usart_0_usart_port_rx_ready;        // usart_0:rx_dv -> controller_0:uart_rx_ready
+	wire         usart_0_usart_port_tx_ready;        // usart_0:tx_ready -> controller_0:uart_tx_ready
+	wire         rst_controller_reset_out_reset;     // rst_controller:reset_out -> [controller_0:en, i2c_transcever_0:reset_n, usart_0:en]
+
+	DataConversionUnit dataconversionunit_0 (
+		.clk        (clk_clk),                            //  clock.clk
+		.data       (controller_0_datatoupdate_data),     //   data.data
+		.indicator0 (dataconversionunit_0_indic0_indic0), // indic0.indic0
+		.indicator1 (dataconversionunit_0_indic1_indic1), // indic1.indic1
+		.update     (clk_clk)                             // update.clk
+	);
 
 	DigitalFilter #(
 		.PHASE_SHIFT (200)
@@ -40,24 +56,36 @@ module simple_struct (
 		.input0  (input0_input0)                 //  input0.input0
 	);
 
+	DynamicIllumination4Indicators dynamicillumination4indicators_0 (
+		.indicator  (indicator_indicator),                //  indicator.indicator
+		.enable     (enable_enable),                      //     enable.enable
+		.indicator0 (dataconversionunit_0_indic0_indic0), // indicator0.indic0
+		.indicator1 (dataconversionunit_0_indic1_indic1), // indicator1.indic1
+		.indicator2 (indicator2_indicator2),              // indicator2.indicator2
+		.indicator3 (indicator3_indicator3),              // indicator3.indicator3
+		.segment    (segment_segment),                    //    segment.segment
+		.clk        (clk_clk)                             //        clk.clk
+	);
+
 	controller controller_0 (
-		.clk           (clk_clk),                         //     clock.clk
-		.en            (~rst_controller_reset_out_reset), //   reset_n.reset_n
-		.uart_rx_busy  (usart_0_usart_port_rx_busy),      // uart_port.rx_busy
-		.uart_rx_data  (usart_0_usart_port_rx_data),      //          .rx_data
-		.uart_rx_ready (usart_0_usart_port_rx_ready),     //          .rx_ready
-		.uart_tx_data  (controller_0_uart_port_tx_data),  //          .tx_data
-		.uart_tx_dv    (controller_0_uart_port_tx_dv),    //          .tx_dv
-		.uart_tx_ready (usart_0_usart_port_tx_ready),     //          .tx_ready
-		.i2c_ack_error (controller_0_i2c_port_ack_error), //  i2c_port.ack_error
-		.i2c_addr      (controller_0_i2c_port_addr),      //          .addr
-		.i2c_busy      (i2c_transcever_0_port_busy),      //          .busy
-		.i2c_data_rd   (i2c_transcever_0_port_data_rd),   //          .data_rd
-		.i2c_data_wr   (controller_0_i2c_port_data_wr),   //          .data_wr
-		.i2c_ena       (controller_0_i2c_port_ena),       //          .ena
-		.i2c_rw        (controller_0_i2c_port_rw),        //          .rw
-		.leds          (leds_leds),                       //      leds.leds
-		.key1          (digitalfilter_0_output0_key1)     //       key.key1
+		.clk           (clk_clk),                         //        clock.clk
+		.en            (~rst_controller_reset_out_reset), //      reset_n.reset_n
+		.uart_rx_busy  (usart_0_usart_port_rx_busy),      //    uart_port.rx_busy
+		.uart_rx_data  (usart_0_usart_port_rx_data),      //             .rx_data
+		.uart_rx_ready (usart_0_usart_port_rx_ready),     //             .rx_ready
+		.uart_tx_data  (controller_0_uart_port_tx_data),  //             .tx_data
+		.uart_tx_dv    (controller_0_uart_port_tx_dv),    //             .tx_dv
+		.uart_tx_ready (usart_0_usart_port_tx_ready),     //             .tx_ready
+		.i2c_ack_error (controller_0_i2c_port_ack_error), //     i2c_port.ack_error
+		.i2c_addr      (controller_0_i2c_port_addr),      //             .addr
+		.i2c_busy      (i2c_transcever_0_port_busy),      //             .busy
+		.i2c_data_rd   (i2c_transcever_0_port_data_rd),   //             .data_rd
+		.i2c_data_wr   (controller_0_i2c_port_data_wr),   //             .data_wr
+		.i2c_ena       (controller_0_i2c_port_ena),       //             .ena
+		.i2c_rw        (controller_0_i2c_port_rw),        //             .rw
+		.leds          (leds_leds),                       //         leds.leds
+		.key1          (digitalfilter_0_output0_key1),    //          key.key1
+		.dataToUpdate  (controller_0_datatoupdate_data)   // dataToUpdate.data
 	);
 
 	i2c_master #(

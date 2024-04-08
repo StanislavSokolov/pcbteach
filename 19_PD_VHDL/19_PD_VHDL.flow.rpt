@@ -1,5 +1,5 @@
 Flow report for 19_PD_VHDL
-Fri Apr  5 15:06:34 2024
+Mon Apr  8 15:58:30 2024
 Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Standard Edition
 
 
@@ -41,18 +41,18 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------------------------------------------------------------------+
 ; Flow Summary                                                                            ;
 +------------------------------------+----------------------------------------------------+
-; Flow Status                        ; Successful - Fri Apr  5 15:06:31 2024              ;
+; Flow Status                        ; Successful - Mon Apr  8 15:58:27 2024              ;
 ; Quartus Prime Version              ; 22.1std.0 Build 915 10/25/2022 SC Standard Edition ;
 ; Revision Name                      ; 19_PD_VHDL                                         ;
 ; Top-level Entity Name              ; top_level                                          ;
 ; Family                             ; Cyclone IV E                                       ;
 ; Device                             ; EP4CE6E22C8                                        ;
 ; Timing Models                      ; Final                                              ;
-; Total logic elements               ; 210 / 6,272 ( 3 % )                                ;
-;     Total combinational functions  ; 173 / 6,272 ( 3 % )                                ;
-;     Dedicated logic registers      ; 129 / 6,272 ( 2 % )                                ;
-; Total registers                    ; 129                                                ;
-; Total pins                         ; 14 / 92 ( 15 % )                                   ;
+; Total logic elements               ; 472 / 6,272 ( 8 % )                                ;
+;     Total combinational functions  ; 416 / 6,272 ( 7 % )                                ;
+;     Dedicated logic registers      ; 165 / 6,272 ( 3 % )                                ;
+; Total registers                    ; 165                                                ;
+; Total pins                         ; 26 / 92 ( 28 % )                                   ;
 ; Total virtual pins                 ; 0                                                  ;
 ; Total memory bits                  ; 0 / 276,480 ( 0 % )                                ;
 ; Embedded Multiplier 9-bit elements ; 0 / 30 ( 0 % )                                     ;
@@ -65,7 +65,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 04/05/2024 15:06:07 ;
+; Start date & time ; 04/08/2024 15:58:01 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; 19_PD_VHDL          ;
 +-------------------+---------------------+
@@ -76,7 +76,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 10995770589189.171231876709036         ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 10995770589189.171258108101988         ; --            ; --          ; --         ;
 ; ENABLE_SIGNALTAP                    ; On                                     ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
@@ -95,11 +95,11 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:16     ; 1.0                     ; 4846 MB             ; 00:00:44                           ;
-; Fitter               ; 00:00:04     ; 1.0                     ; 5547 MB             ; 00:00:06                           ;
-; Assembler            ; 00:00:01     ; 1.0                     ; 4717 MB             ; 00:00:01                           ;
-; Timing Analyzer      ; 00:00:02     ; 1.0                     ; 4782 MB             ; 00:00:02                           ;
-; Total                ; 00:00:23     ; --                      ; --                  ; 00:00:53                           ;
+; Analysis & Synthesis ; 00:00:18     ; 1.0                     ; 4865 MB             ; 00:00:44                           ;
+; Fitter               ; 00:00:05     ; 1.1                     ; 5555 MB             ; 00:00:07                           ;
+; Assembler            ; 00:00:01     ; 1.0                     ; 4723 MB             ; 00:00:01                           ;
+; Timing Analyzer      ; 00:00:02     ; 1.0                     ; 4784 MB             ; 00:00:02                           ;
+; Total                ; 00:00:26     ; --                      ; --                  ; 00:00:54                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

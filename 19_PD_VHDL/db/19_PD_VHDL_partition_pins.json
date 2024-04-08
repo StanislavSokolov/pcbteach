@@ -12,6 +12,42 @@
 					"strict" : false
 				},
 				{
+					"name" : "dig_sel[0]",
+					"strict" : false
+				},
+				{
+					"name" : "dig_sel[1]",
+					"strict" : false
+				},
+				{
+					"name" : "seg7_code[0]",
+					"strict" : false
+				},
+				{
+					"name" : "seg7_code[1]",
+					"strict" : false
+				},
+				{
+					"name" : "seg7_code[2]",
+					"strict" : false
+				},
+				{
+					"name" : "seg7_code[3]",
+					"strict" : false
+				},
+				{
+					"name" : "seg7_code[4]",
+					"strict" : false
+				},
+				{
+					"name" : "seg7_code[5]",
+					"strict" : false
+				},
+				{
+					"name" : "seg7_code[6]",
+					"strict" : false
+				},
+				{
 					"name" : "SDA",
 					"strict" : false
 				},

@@ -1,21 +1,24 @@
 # # File gsaved with Nlview version 6.3.8  2013-12-19 bk=1.2992 VDI=34 GEI=35
 # 
-preplace inst simple_struct.usart_0 -pg 1 -lvl 2 -y 160
-preplace inst simple_struct.i2c_transcever_0 -pg 1 -lvl 2 -y 270
+preplace inst simple_struct.usart_0 -pg 1 -lvl 2 -y 190
+preplace inst simple_struct.i2c_transcever_0 -pg 1 -lvl 2 -y 390
+preplace inst simple_struct.DataConversionUnit_0 -pg 1 -lvl 3 -y 650
 preplace inst simple_struct.controller_0 -pg 1 -lvl 2 -y 30
-preplace inst simple_struct.clk_0 -pg 1 -lvl 1 -y 90
-preplace inst simple_struct.DigitalFilter_0 -pg 1 -lvl 1 -y 210
+preplace inst simple_struct.clk_0 -pg 1 -lvl 1 -y 70
+preplace inst simple_struct.DigitalFilter_0 -pg 1 -lvl 1 -y 190
 preplace inst simple_struct -pg 1 -lvl 1 -y 40 -regy -20
-preplace netloc POINT_TO_POINT<net_container>simple_struct</net_container>(SLAVE)usart_0.usart_port,(SLAVE)controller_0.uart_port) 1 1 1 440
-preplace netloc POINT_TO_POINT<net_container>simple_struct</net_container>(SLAVE)i2c_transcever_0.port,(SLAVE)controller_0.i2c_port) 1 1 1 420
-preplace netloc EXPORT<net_container>simple_struct</net_container>(SLAVE)usart_0.ser,(SLAVE)simple_struct.usart) 1 0 2 NJ 200 NJ
-preplace netloc EXPORT<net_container>simple_struct</net_container>(SLAVE)simple_struct.clk,(SLAVE)clk_0.clk_in) 1 0 1 NJ
+preplace netloc POINT_TO_POINT<net_container>simple_struct</net_container>(SLAVE)usart_0.usart_port,(SLAVE)controller_0.uart_port) 1 1 1 480
+preplace netloc POINT_TO_POINT<net_container>simple_struct</net_container>(SLAVE)DigitalFilter_0.output0,(SLAVE)controller_0.key) 1 0 2 100 180 400
+preplace netloc EXPORT<net_container>simple_struct</net_container>(SLAVE)simple_struct.usart,(SLAVE)usart_0.ser) 1 0 2 NJ 160 NJ
 preplace netloc EXPORT<net_container>simple_struct</net_container>(SLAVE)clk_0.clk_in_reset,(SLAVE)simple_struct.reset) 1 0 1 NJ
-preplace netloc FAN_OUT<net_container>simple_struct</net_container>(SLAVE)controller_0.reset_n,(MASTER)clk_0.clk_reset,(SLAVE)i2c_transcever_0.reset,(SLAVE)usart_0.reset) 1 1 1 400
-preplace netloc EXPORT<net_container>simple_struct</net_container>(SLAVE)simple_struct.digitalfilter_0_conduit_end,(SLAVE)DigitalFilter_0.conduit_end) 1 0 1 NJ
-preplace netloc EXPORT<net_container>simple_struct</net_container>(SLAVE)simple_struct.sda,(SLAVE)i2c_transcever_0.SDA) 1 0 2 NJ 300 NJ
-preplace netloc EXPORT<net_container>simple_struct</net_container>(SLAVE)simple_struct.leds,(SLAVE)controller_0.leds) 1 0 2 NJ 80 NJ
-preplace netloc EXPORT<net_container>simple_struct</net_container>(SLAVE)i2c_transcever_0.SCL,(SLAVE)simple_struct.scl) 1 0 2 NJ 280 NJ
-preplace netloc FAN_OUT<net_container>simple_struct</net_container>(SLAVE)i2c_transcever_0.clock,(SLAVE)controller_0.clock,(MASTER)clk_0.clk,(SLAVE)usart_0.clock) 1 1 1 380
-levelinfo -pg 1 0 160 610
-levelinfo -hier simple_struct 170 200 490 600
+preplace netloc FAN_OUT<net_container>simple_struct</net_container>(MASTER)clk_0.clk,(SLAVE)i2c_transcever_0.clock,(SLAVE)DataConversionUnit_0.update,(SLAVE)controller_0.clock,(SLAVE)DataConversionUnit_0.clock,(SLAVE)DigitalFilter_0.clock,(SLAVE)usart_0.clock) 1 0 3 80 140 340 380 640
+preplace netloc EXPORT<net_container>simple_struct</net_container>(SLAVE)simple_struct.sda,(SLAVE)i2c_transcever_0.SDA) 1 0 2 NJ 420 NJ
+preplace netloc EXPORT<net_container>simple_struct</net_container>(SLAVE)DigitalFilter_0.input0,(SLAVE)simple_struct.input0) 1 0 1 NJ
+preplace netloc EXPORT<net_container>simple_struct</net_container>(SLAVE)clk_0.clk_in,(SLAVE)simple_struct.clk) 1 0 1 NJ
+preplace netloc FAN_OUT<net_container>simple_struct</net_container>(SLAVE)i2c_transcever_0.reset,(SLAVE)controller_0.reset_n,(MASTER)clk_0.clk_reset,(SLAVE)usart_0.reset) 1 1 1 360
+preplace netloc POINT_TO_POINT<net_container>simple_struct</net_container>(SLAVE)controller_0.i2c_port,(SLAVE)i2c_transcever_0.port) 1 1 1 460
+preplace netloc EXPORT<net_container>simple_struct</net_container>(SLAVE)controller_0.leds,(SLAVE)simple_struct.leds) 1 0 2 NJ 60 NJ
+preplace netloc POINT_TO_POINT<net_container>simple_struct</net_container>(SLAVE)controller_0.dataToUpdate,(SLAVE)DataConversionUnit_0.data) 1 1 2 440 680 N
+preplace netloc EXPORT<net_container>simple_struct</net_container>(SLAVE)simple_struct.scl,(SLAVE)i2c_transcever_0.SCL) 1 0 2 NJ 370 NJ
+levelinfo -pg 1 0 50 950
+levelinfo -hier simple_struct 60 150 530 810 940

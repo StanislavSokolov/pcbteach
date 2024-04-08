@@ -9,19 +9,11 @@
    categories="System" />
  <parameter name="bonusData"><![CDATA[bonusData 
 {
-   element Count250000_0
-   {
-      datum _sortIndex
-      {
-         value = "5";
-         type = "int";
-      }
-   }
    element DataConversionUnit_0
    {
       datum _sortIndex
       {
-         value = "6";
+         value = "5";
          type = "int";
       }
    }
@@ -37,7 +29,7 @@
    {
       datum _sortIndex
       {
-         value = "7";
+         value = "6";
          type = "int";
       }
    }
@@ -90,14 +82,6 @@
    {
       datum _originalDeviceFamily
       {
-         value = "Cyclone IV E";
-         type = "String";
-      }
-   }
-   element simple_struct
-   {
-      datum _originalDeviceFamily
-      {
          value = "Cyclone V";
          type = "String";
       }
@@ -106,7 +90,7 @@
    {
       datum _originalDeviceFamily
       {
-         value = "Cyclone IV E";
+         value = "Cyclone V";
          type = "String";
       }
    }
@@ -123,46 +107,6 @@
       datum _originalDeviceFamily
       {
          value = "Cyclone IV E";
-         type = "String";
-      }
-   }
-   element simple_struct
-   {
-      datum _originalDeviceFamily
-      {
-         value = "Cyclone V";
-         type = "String";
-      }
-   }
-   element simple_struct
-   {
-      datum _originalDeviceFamily
-      {
-         value = "Cyclone IV E";
-         type = "String";
-      }
-   }
-   element simple_struct
-   {
-      datum _originalDeviceFamily
-      {
-         value = "Cyclone V";
-         type = "String";
-      }
-   }
-   element simple_struct
-   {
-      datum _originalDeviceFamily
-      {
-         value = "Cyclone V";
-         type = "String";
-      }
-   }
-   element simple_struct
-   {
-      datum _originalDeviceFamily
-      {
-         value = "Cyclone V";
          type = "String";
       }
    }
@@ -218,6 +162,22 @@
    {
       datum _originalDeviceFamily
       {
+         value = "Cyclone IV E";
+         type = "String";
+      }
+   }
+   element simple_struct
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone IV E";
+         type = "String";
+      }
+   }
+   element simple_struct
+   {
+      datum _originalDeviceFamily
+      {
          value = "Cyclone V";
          type = "String";
       }
@@ -235,6 +195,86 @@
       datum _originalDeviceFamily
       {
          value = "Cyclone IV E";
+         type = "String";
+      }
+   }
+   element simple_struct
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone IV E";
+         type = "String";
+      }
+   }
+   element simple_struct
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element simple_struct
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone IV E";
+         type = "String";
+      }
+   }
+   element simple_struct
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone IV E";
+         type = "String";
+      }
+   }
+   element simple_struct
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element simple_struct
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone IV E";
+         type = "String";
+      }
+   }
+   element simple_struct
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone IV E";
+         type = "String";
+      }
+   }
+   element simple_struct
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone IV E";
+         type = "String";
+      }
+   }
+   element simple_struct
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone IV E";
+         type = "String";
+      }
+   }
+   element simple_struct
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
          type = "String";
       }
    }
@@ -306,7 +346,6 @@
    type="conduit"
    dir="end" />
  <interface name="usart" internal="usart_0.ser" type="conduit" dir="end" />
- <module name="Count250000_0" kind="Count250000" version="1.0" enabled="1" />
  <module
    name="DataConversionUnit_0"
    kind="DataConversionUnit"
@@ -346,7 +385,7 @@
    kind="clock"
    version="22.1"
    start="clk_0.clk"
-   end="Count250000_0.clkIn" />
+   end="DynamicIllumination4Indicators_0.clk" />
  <connection kind="clock" version="22.1" start="clk_0.clk" end="usart_0.clock" />
  <connection
    kind="clock"
@@ -367,21 +406,11 @@
    kind="clock"
    version="22.1"
    start="clk_0.clk"
-   end="DynamicIllumination4Indicators_0.clock" />
- <connection
-   kind="clock"
-   version="22.1"
-   start="clk_0.clk"
    end="DataConversionUnit_0.clock" />
  <connection
    kind="clock"
    version="22.1"
-   start="Count250000_0.clkOut"
-   end="DynamicIllumination4Indicators_0.clk" />
- <connection
-   kind="clock"
-   version="22.1"
-   start="Count250000_0.clkOut"
+   start="clk_0.clk"
    end="DataConversionUnit_0.update" />
  <connection
    kind="conduit"
@@ -397,8 +426,8 @@
  <connection
    kind="conduit"
    version="22.1"
-   start="DynamicIllumination4Indicators_0.indicator0"
-   end="DataConversionUnit_0.indic0">
+   start="DataConversionUnit_0.indic0"
+   end="DynamicIllumination4Indicators_0.indicator0">
   <parameter name="endPort" value="" />
   <parameter name="endPortLSB" value="0" />
   <parameter name="startPort" value="" />
@@ -408,8 +437,8 @@
  <connection
    kind="conduit"
    version="22.1"
-   start="DynamicIllumination4Indicators_0.indicator1"
-   end="DataConversionUnit_0.indic1">
+   start="DataConversionUnit_0.indic1"
+   end="DynamicIllumination4Indicators_0.indicator1">
   <parameter name="endPort" value="" />
   <parameter name="endPortLSB" value="0" />
   <parameter name="startPort" value="" />

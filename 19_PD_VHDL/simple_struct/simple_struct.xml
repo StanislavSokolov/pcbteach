@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deploy
- date="2024.04.05.15:04:57"
+ date="2024.04.08.15:57:51"
  outputDirectory="D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/simple_struct/">
  <perimeter>
   <parameter
@@ -57,6 +57,38 @@
    <property name="ptfSchematicName" value="" />
    <port name="clk_clk" direction="input" role="clk" width="1" />
   </interface>
+  <interface name="enable" kind="conduit" start="0">
+   <property name="associatedClock" value="clk" />
+   <property name="associatedReset" value="" />
+   <port name="enable_enable" direction="input" role="enable" width="4" />
+  </interface>
+  <interface name="indicator" kind="conduit" start="0">
+   <property name="associatedClock" value="clk" />
+   <property name="associatedReset" value="" />
+   <port
+       name="indicator_indicator"
+       direction="output"
+       role="indicator"
+       width="4" />
+  </interface>
+  <interface name="indicator2" kind="conduit" start="0">
+   <property name="associatedClock" value="clk" />
+   <property name="associatedReset" value="" />
+   <port
+       name="indicator2_indicator2"
+       direction="input"
+       role="indicator2"
+       width="7" />
+  </interface>
+  <interface name="indicator3" kind="conduit" start="0">
+   <property name="associatedClock" value="clk" />
+   <property name="associatedReset" value="" />
+   <port
+       name="indicator3_indicator3"
+       direction="input"
+       role="indicator3"
+       width="7" />
+  </interface>
   <interface name="input0" kind="conduit" start="0">
    <property name="associatedClock" value="clk" />
    <property name="associatedReset" value="" />
@@ -84,6 +116,11 @@
    <port name="sda_in" direction="input" role="in" width="1" />
    <port name="sda_oe" direction="output" role="oe" width="1" />
   </interface>
+  <interface name="segment" kind="conduit" start="0">
+   <property name="associatedClock" value="clk" />
+   <property name="associatedReset" value="" />
+   <port name="segment_segment" direction="output" role="segment" width="7" />
+  </interface>
   <interface name="usart" kind="conduit" start="0">
    <property name="associatedClock" value="clk" />
    <property name="associatedReset" value="reset" />
@@ -93,13 +130,13 @@
  </perimeter>
  <entity
    path=""
-   parameterizationKey="simple_struct:1.0:AUTO_CLK_CLOCK_DOMAIN=-1,AUTO_CLK_CLOCK_RATE=-1,AUTO_CLK_RESET_DOMAIN=-1,AUTO_DEVICE=EP4CE6E22C8,AUTO_DEVICE_FAMILY=Cyclone IV E,AUTO_DEVICE_SPEEDGRADE=8,AUTO_GENERATION_ID=1712318696,AUTO_UNIQUE_ID=(DigitalFilter:1.0:PHASE_SHIFT=200)(clock_source:22.1:clockFrequency=50000000,clockFrequencyKnown=true,inputClockFrequency=0,resetSynchronousEdges=NONE)(controller:1.0:)(i2c_transcever:1.0:bus_clk=100000,input_clk=50000000)(usart:1.0:BAUD_RATE=9600,CLK_FREQ_HZ=50000000,DATA_BITS=8,PARITY=0,STOP_BITS=1)(clock:22.1:)(clock:22.1:)(clock:22.1:)(clock:22.1:)(conduit:22.1:endPort=,endPortLSB=0,startPort=,startPortLSB=0,width=0)(conduit:22.1:endPort=,endPortLSB=0,startPort=,startPortLSB=0,width=0)(conduit:22.1:endPort=,endPortLSB=0,startPort=,startPortLSB=0,width=0)(reset:22.1:)(reset:22.1:)(reset:22.1:)"
+   parameterizationKey="simple_struct:1.0:AUTO_CLK_CLOCK_DOMAIN=-1,AUTO_CLK_CLOCK_RATE=-1,AUTO_CLK_RESET_DOMAIN=-1,AUTO_DEVICE=EP4CE6E22C8,AUTO_DEVICE_FAMILY=Cyclone IV E,AUTO_DEVICE_SPEEDGRADE=8,AUTO_GENERATION_ID=1712581070,AUTO_UNIQUE_ID=(DataConversionUnit:1.0:)(DigitalFilter:1.0:PHASE_SHIFT=200)(DynamicIllumination4Indicators:1.0:)(clock_source:22.1:clockFrequency=50000000,clockFrequencyKnown=true,inputClockFrequency=0,resetSynchronousEdges=NONE)(controller:1.0:)(i2c_transcever:1.0:bus_clk=100000,input_clk=50000000)(usart:1.0:BAUD_RATE=9600,CLK_FREQ_HZ=50000000,DATA_BITS=8,PARITY=0,STOP_BITS=1)(clock:22.1:)(clock:22.1:)(clock:22.1:)(clock:22.1:)(clock:22.1:)(clock:22.1:)(clock:22.1:)(conduit:22.1:endPort=,endPortLSB=0,startPort=,startPortLSB=0,width=0)(conduit:22.1:endPort=,endPortLSB=0,startPort=,startPortLSB=0,width=0)(conduit:22.1:endPort=,endPortLSB=0,startPort=,startPortLSB=0,width=0)(conduit:22.1:endPort=,endPortLSB=0,startPort=,startPortLSB=0,width=0)(conduit:22.1:endPort=,endPortLSB=0,startPort=,startPortLSB=0,width=0)(conduit:22.1:endPort=,endPortLSB=0,startPort=,startPortLSB=0,width=0)(reset:22.1:)(reset:22.1:)(reset:22.1:)"
    instancePathKey="simple_struct"
    kind="simple_struct"
    version="1.0"
    name="simple_struct">
   <parameter name="AUTO_CLK_CLOCK_RATE" value="-1" />
-  <parameter name="AUTO_GENERATION_ID" value="1712318696" />
+  <parameter name="AUTO_GENERATION_ID" value="1712581070" />
   <parameter name="AUTO_DEVICE" value="EP4CE6E22C8" />
   <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone IV E" />
   <parameter name="AUTO_CLK_RESET_DOMAIN" value="-1" />
@@ -113,9 +150,17 @@
   </generatedFiles>
   <childGeneratedFiles>
    <file
+       path="D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/simple_struct/synthesis/submodules/DataConversionUnit.vhd"
+       type="VHDL"
+       attributes="TOP_LEVEL_FILE" />
+   <file
        path="D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/simple_struct/synthesis/submodules/DigitalFilter.vhd"
        type="VHDL"
        attributes="CONTAINS_INLINE_CONFIGURATION TOP_LEVEL_FILE" />
+   <file
+       path="D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/simple_struct/synthesis/submodules/DynamicIllumination4Indicators.vhd"
+       type="VHDL"
+       attributes="TOP_LEVEL_FILE" />
    <file
        path="D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/simple_struct/synthesis/submodules/controller.vhd"
        type="VHDL"
@@ -149,7 +194,11 @@
    <file path="D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/simple_struct.qsys" />
   </sourceFiles>
   <childSourceFiles>
+   <file
+       path="D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/DataConversionUnit_hw.tcl" />
    <file path="D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/DigitalFilter_hw.tcl" />
+   <file
+       path="D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/DynamicIllumination4Indicators_hw.tcl" />
    <file path="D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/controller_hw.tcl" />
    <file path="D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/i2c_transcever_hw.tcl" />
    <file path="D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/usart_hw.tcl" />
@@ -163,7 +212,7 @@
    <message level="Progress" culprit="current"></message>
    <message level="Debug">Transform: CustomInstructionTransform</message>
    <message level="Debug">No custom instruction connections, skipping transform </message>
-   <message level="Debug" culprit="merlin_custom_instruction_transform"><![CDATA[After transform: <b>5</b> modules, <b>10</b> connections]]></message>
+   <message level="Debug" culprit="merlin_custom_instruction_transform"><![CDATA[After transform: <b>7</b> modules, <b>16</b> connections]]></message>
    <message level="Debug">Transform: MMTransform</message>
    <message level="Debug">Transform: InterruptMapperTransform</message>
    <message level="Debug">Transform: InterruptSyncTransform</message>
@@ -173,14 +222,20 @@
    <message level="Progress" culprit="min"></message>
    <message level="Progress" culprit="max"></message>
    <message level="Progress" culprit="current"></message>
-   <message level="Debug" culprit="reset_adaptation_transform"><![CDATA[After transform: <b>6</b> modules, <b>12</b> connections]]></message>
+   <message level="Debug" culprit="reset_adaptation_transform"><![CDATA[After transform: <b>8</b> modules, <b>18</b> connections]]></message>
+   <message level="Debug" culprit="simple_struct"><![CDATA["<b>simple_struct</b>" reuses <b>DataConversionUnit</b> "<b>submodules/DataConversionUnit</b>"]]></message>
    <message level="Debug" culprit="simple_struct"><![CDATA["<b>simple_struct</b>" reuses <b>DigitalFilter</b> "<b>submodules/DigitalFilter</b>"]]></message>
+   <message level="Debug" culprit="simple_struct"><![CDATA["<b>simple_struct</b>" reuses <b>DynamicIllumination4Indicators</b> "<b>submodules/DynamicIllumination4Indicators</b>"]]></message>
    <message level="Debug" culprit="simple_struct"><![CDATA["<b>simple_struct</b>" reuses <b>controller</b> "<b>submodules/controller</b>"]]></message>
    <message level="Debug" culprit="simple_struct"><![CDATA["<b>simple_struct</b>" reuses <b>i2c_transcever</b> "<b>submodules/i2c_master</b>"]]></message>
    <message level="Debug" culprit="simple_struct"><![CDATA["<b>simple_struct</b>" reuses <b>usart</b> "<b>submodules/usart</b>"]]></message>
    <message level="Debug" culprit="simple_struct"><![CDATA["<b>simple_struct</b>" reuses <b>altera_reset_controller</b> "<b>submodules/altera_reset_controller</b>"]]></message>
-   <message level="Debug" culprit="simple_struct">queue size: 4 starting:DigitalFilter "submodules/DigitalFilter"</message>
+   <message level="Debug" culprit="simple_struct">queue size: 6 starting:DataConversionUnit "submodules/DataConversionUnit"</message>
+   <message level="Info" culprit="DataConversionUnit_0"><![CDATA["<b>simple_struct</b>" instantiated <b>DataConversionUnit</b> "<b>DataConversionUnit_0</b>"]]></message>
+   <message level="Debug" culprit="simple_struct">queue size: 5 starting:DigitalFilter "submodules/DigitalFilter"</message>
    <message level="Info" culprit="DigitalFilter_0"><![CDATA["<b>simple_struct</b>" instantiated <b>DigitalFilter</b> "<b>DigitalFilter_0</b>"]]></message>
+   <message level="Debug" culprit="simple_struct">queue size: 4 starting:DynamicIllumination4Indicators "submodules/DynamicIllumination4Indicators"</message>
+   <message level="Info" culprit="DynamicIllumination4Indicators_0"><![CDATA["<b>simple_struct</b>" instantiated <b>DynamicIllumination4Indicators</b> "<b>DynamicIllumination4Indicators_0</b>"]]></message>
    <message level="Debug" culprit="simple_struct">queue size: 3 starting:controller "submodules/controller"</message>
    <message level="Info" culprit="controller_0"><![CDATA["<b>simple_struct</b>" instantiated <b>controller</b> "<b>controller_0</b>"]]></message>
    <message level="Debug" culprit="simple_struct">queue size: 2 starting:i2c_transcever "submodules/i2c_master"</message>
@@ -189,6 +244,31 @@
    <message level="Info" culprit="usart_0"><![CDATA["<b>simple_struct</b>" instantiated <b>usart</b> "<b>usart_0</b>"]]></message>
    <message level="Debug" culprit="simple_struct">queue size: 0 starting:altera_reset_controller "submodules/altera_reset_controller"</message>
    <message level="Info" culprit="rst_controller"><![CDATA["<b>simple_struct</b>" instantiated <b>altera_reset_controller</b> "<b>rst_controller</b>"]]></message>
+  </messages>
+ </entity>
+ <entity
+   path="submodules/"
+   parameterizationKey="DataConversionUnit:1.0:"
+   instancePathKey="simple_struct:.:DataConversionUnit_0"
+   kind="DataConversionUnit"
+   version="1.0"
+   name="DataConversionUnit">
+  <generatedFiles>
+   <file
+       path="D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/simple_struct/synthesis/submodules/DataConversionUnit.vhd"
+       type="VHDL"
+       attributes="TOP_LEVEL_FILE" />
+  </generatedFiles>
+  <childGeneratedFiles/>
+  <sourceFiles>
+   <file
+       path="D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/DataConversionUnit_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator instantiator="simple_struct" as="DataConversionUnit_0" />
+  <messages>
+   <message level="Debug" culprit="simple_struct">queue size: 6 starting:DataConversionUnit "submodules/DataConversionUnit"</message>
+   <message level="Info" culprit="DataConversionUnit_0"><![CDATA["<b>simple_struct</b>" instantiated <b>DataConversionUnit</b> "<b>DataConversionUnit_0</b>"]]></message>
   </messages>
  </entity>
  <entity
@@ -212,8 +292,33 @@
   <childSourceFiles/>
   <instantiator instantiator="simple_struct" as="DigitalFilter_0" />
   <messages>
-   <message level="Debug" culprit="simple_struct">queue size: 4 starting:DigitalFilter "submodules/DigitalFilter"</message>
+   <message level="Debug" culprit="simple_struct">queue size: 5 starting:DigitalFilter "submodules/DigitalFilter"</message>
    <message level="Info" culprit="DigitalFilter_0"><![CDATA["<b>simple_struct</b>" instantiated <b>DigitalFilter</b> "<b>DigitalFilter_0</b>"]]></message>
+  </messages>
+ </entity>
+ <entity
+   path="submodules/"
+   parameterizationKey="DynamicIllumination4Indicators:1.0:"
+   instancePathKey="simple_struct:.:DynamicIllumination4Indicators_0"
+   kind="DynamicIllumination4Indicators"
+   version="1.0"
+   name="DynamicIllumination4Indicators">
+  <generatedFiles>
+   <file
+       path="D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/simple_struct/synthesis/submodules/DynamicIllumination4Indicators.vhd"
+       type="VHDL"
+       attributes="TOP_LEVEL_FILE" />
+  </generatedFiles>
+  <childGeneratedFiles/>
+  <sourceFiles>
+   <file
+       path="D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/DynamicIllumination4Indicators_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator instantiator="simple_struct" as="DynamicIllumination4Indicators_0" />
+  <messages>
+   <message level="Debug" culprit="simple_struct">queue size: 4 starting:DynamicIllumination4Indicators "submodules/DynamicIllumination4Indicators"</message>
+   <message level="Info" culprit="DynamicIllumination4Indicators_0"><![CDATA["<b>simple_struct</b>" instantiated <b>DynamicIllumination4Indicators</b> "<b>DynamicIllumination4Indicators_0</b>"]]></message>
   </messages>
  </entity>
  <entity

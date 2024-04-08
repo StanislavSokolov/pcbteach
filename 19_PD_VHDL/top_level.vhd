@@ -12,7 +12,9 @@ entity top_level is
 		RXD			: in	std_logic;
 		SDA			: inout std_logic;
 		SCL			: inout	std_Logic;
-		keys_in : in std_logic_vector( 3 downto 0 )
+		keys_in : in std_logic_vector( 3 downto 0 );
+		dig_sel : out std_logic_vector( 3 downto 0 );
+		seg7_code : out std_logic_vector( 7 downto 0 )
 	);
 	
 end top_level;
@@ -35,7 +37,12 @@ architecture arch of top_level is
             sda_oe        : out std_logic;                                       -- oe
             usart_rxd     : in  std_logic                    := 'X';             -- rxd
             usart_txd     : out std_logic;                                       -- txd
-				input0_input0 : in  std_logic                    := 'X'
+				input0_input0 : in  std_logic;                    
+				enable_enable : in std_logic_vector(3 downto 0);
+				indicator_indicator : out std_logic_vector(3 downto 0);
+				indicator2_indicator2  : in std_logic_vector(6 downto 0);
+				indicator3_indicator3  : in std_logic_vector(6 downto 0);
+				segment_segment : out std_logic_vector(6 downto 0)
         );
     end component simple_struct;
 
@@ -52,7 +59,12 @@ begin
             sda_oe        =>  top_sda_oe,		--      .oe
             usart_rxd     =>  RXD,				-- usart.rxd
             usart_txd     =>  TXD,				--      .txd
-				input0_input0    =>  keys_in(0)
+				input0_input0    =>  keys_in(0),
+				segment_segment => seg7_code(6 downto 0),
+				indicator_indicator => dig_sel,
+				enable_enable => x"3",
+				indicator2_indicator2 => (others => '0'),
+				indicator3_indicator3 => (others => '0')
         );
 	
 	
@@ -62,5 +74,6 @@ begin
 	SCL <= '0' when top_scl_oe = '1' else 'Z';
 	top_scl_in <= SCL;
 
+	seg7_code(7) <= '1';
 
 end arch;
