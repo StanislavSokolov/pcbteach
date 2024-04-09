@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deploy
- date="2024.04.08.15:58:15"
+ date="2024.04.09.18:43:50"
  outputDirectory="D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/">
  <perimeter>
   <parameter
@@ -130,13 +130,13 @@
  </perimeter>
  <entity
    path=""
-   parameterizationKey="simple_struct:1.0:AUTO_CLK_CLOCK_DOMAIN=-1,AUTO_CLK_CLOCK_RATE=-1,AUTO_CLK_RESET_DOMAIN=-1,AUTO_DEVICE=EP4CE6E22C8,AUTO_DEVICE_FAMILY=Cyclone IV E,AUTO_DEVICE_SPEEDGRADE=8,AUTO_GENERATION_ID=1712581094,AUTO_UNIQUE_ID=(DataConversionUnit:1.0:)(DigitalFilter:1.0:PHASE_SHIFT=200)(DynamicIllumination4Indicators:1.0:)(clock_source:22.1:clockFrequency=50000000,clockFrequencyKnown=true,inputClockFrequency=0,resetSynchronousEdges=NONE)(controller:1.0:)(i2c_transcever:1.0:bus_clk=100000,input_clk=50000000)(usart:1.0:BAUD_RATE=9600,CLK_FREQ_HZ=50000000,DATA_BITS=8,PARITY=0,STOP_BITS=1)(clock:22.1:)(clock:22.1:)(clock:22.1:)(clock:22.1:)(clock:22.1:)(clock:22.1:)(clock:22.1:)(conduit:22.1:endPort=,endPortLSB=0,startPort=,startPortLSB=0,width=0)(conduit:22.1:endPort=,endPortLSB=0,startPort=,startPortLSB=0,width=0)(conduit:22.1:endPort=,endPortLSB=0,startPort=,startPortLSB=0,width=0)(conduit:22.1:endPort=,endPortLSB=0,startPort=,startPortLSB=0,width=0)(conduit:22.1:endPort=,endPortLSB=0,startPort=,startPortLSB=0,width=0)(conduit:22.1:endPort=,endPortLSB=0,startPort=,startPortLSB=0,width=0)(reset:22.1:)(reset:22.1:)(reset:22.1:)"
+   parameterizationKey="simple_struct:1.0:AUTO_CLK_CLOCK_DOMAIN=-1,AUTO_CLK_CLOCK_RATE=-1,AUTO_CLK_RESET_DOMAIN=-1,AUTO_DEVICE=EP4CE6E22C8,AUTO_DEVICE_FAMILY=Cyclone IV E,AUTO_DEVICE_SPEEDGRADE=8,AUTO_GENERATION_ID=1712677429,AUTO_UNIQUE_ID=(DataConversionUnit:1.0:)(DigitalFilter:1.0:PHASE_SHIFT=200)(DynamicIllumination4Indicators:1.0:)(clock_source:22.1:clockFrequency=50000000,clockFrequencyKnown=true,inputClockFrequency=0,resetSynchronousEdges=NONE)(controller:1.0:)(i2c_transcever:1.0:bus_clk=100000,input_clk=50000000)(usart:1.0:BAUD_RATE=9600,CLK_FREQ_HZ=50000000,DATA_BITS=8,PARITY=0,STOP_BITS=1)(clock:22.1:)(clock:22.1:)(clock:22.1:)(clock:22.1:)(clock:22.1:)(clock:22.1:)(clock:22.1:)(conduit:22.1:endPort=,endPortLSB=0,startPort=,startPortLSB=0,width=0)(conduit:22.1:endPort=,endPortLSB=0,startPort=,startPortLSB=0,width=0)(conduit:22.1:endPort=,endPortLSB=0,startPort=,startPortLSB=0,width=0)(conduit:22.1:endPort=,endPortLSB=0,startPort=,startPortLSB=0,width=0)(conduit:22.1:endPort=,endPortLSB=0,startPort=,startPortLSB=0,width=0)(conduit:22.1:endPort=,endPortLSB=0,startPort=,startPortLSB=0,width=0)(reset:22.1:)(reset:22.1:)(reset:22.1:)"
    instancePathKey="simple_struct"
    kind="simple_struct"
    version="1.0"
    name="simple_struct">
   <parameter name="AUTO_CLK_CLOCK_RATE" value="-1" />
-  <parameter name="AUTO_GENERATION_ID" value="1712581094" />
+  <parameter name="AUTO_GENERATION_ID" value="1712677429" />
   <parameter name="AUTO_DEVICE" value="EP4CE6E22C8" />
   <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone IV E" />
   <parameter name="AUTO_CLK_RESET_DOMAIN" value="-1" />
@@ -164,7 +164,7 @@
    <file
        path="D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/controller.vhd"
        type="VHDL"
-       attributes="TOP_LEVEL_FILE" />
+       attributes="" />
    <file
        path="D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/i2c_pkg.vhd"
        type="VHDL"
@@ -332,7 +332,7 @@
    <file
        path="D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/controller.vhd"
        type="VHDL"
-       attributes="TOP_LEVEL_FILE" />
+       attributes="" />
    <file
        path="D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/i2c_pkg.vhd"
        type="VHDL"

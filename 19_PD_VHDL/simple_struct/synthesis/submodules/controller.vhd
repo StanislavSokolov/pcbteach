@@ -113,8 +113,6 @@ architecture behave of controller is
 	
 	SIGNAL Temper  		: STD_LOGIC_VECTOR( 7 DOWNTO 0 );
 	
-	SIGNAL StartPulsePrev : STD_LOGIC := '0';
-	
 	
 	
 	
@@ -130,7 +128,7 @@ begin
 	PORT MAP(
 		Enable 	=>	reset_n	,
 		Clk    	=>	clk		,
-		Input  	=>	key1		,
+		Input  	=>	clk_1Hz		,
 		Output 	=>	StartPulse		-- generate start pulse 1 cicle clk width every second 
 	);
 	
@@ -157,10 +155,12 @@ begin
 			count_1Hz 	<= 0;
 			clk_1Hz		<= '0';
 		elsif rising_edge( clk ) then
-			if StartPulse = '1' and StartPulsePrev = '0'then
+			if count_1Hz < wait_500ms then
+				count_1Hz <= count_1Hz + 1;
+			else	
+				count_1Hz <= 0;
 				clk_1Hz <= NOT clk_1Hz;
 			end if;
-			StartPulsePrev <= StartPulse;
 		end if;
 	end process;
 	

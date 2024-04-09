@@ -1,14 +1,14 @@
-Fitter Status : Successful - Mon Apr  8 15:58:25 2024
+Fitter Status : Successful - Tue Apr  9 18:44:00 2024
 Quartus Prime Version : 22.1std.0 Build 915 10/25/2022 SC Standard Edition
 Revision Name : 19_PD_VHDL
 Top-level Entity Name : top_level
 Family : Cyclone IV E
 Device : EP4CE6E22C8
 Timing Models : Final
-Total logic elements : 472 / 6,272 ( 8 % )
-    Total combinational functions : 416 / 6,272 ( 7 % )
-    Dedicated logic registers : 165 / 6,272 ( 3 % )
-Total registers : 165
+Total logic elements : 485 / 6,272 ( 8 % )
+    Total combinational functions : 435 / 6,272 ( 7 % )
+    Dedicated logic registers : 179 / 6,272 ( 3 % )
+Total registers : 179
 Total pins : 26 / 92 ( 28 % )
 Total virtual pins : 0
 Total memory bits : 0 / 276,480 ( 0 % )
