@@ -12,6 +12,14 @@
 					"strict" : false
 				},
 				{
+					"name" : "leds_out[2]",
+					"strict" : false
+				},
+				{
+					"name" : "leds_out[3]",
+					"strict" : false
+				},
+				{
 					"name" : "TXD",
 					"strict" : false
 				},
@@ -65,6 +73,10 @@
 				},
 				{
 					"name" : "en",
+					"strict" : false
+				},
+				{
+					"name" : "RXD",
 					"strict" : false
 				},
 				{

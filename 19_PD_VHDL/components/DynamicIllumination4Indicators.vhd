@@ -17,13 +17,13 @@ end DynamicIllumination4Indicators;
 
 architecture Behavioral of DynamicIllumination4Indicators is
 	signal clkCounter : natural range 0 to 3 := 0;
-	signal clkCount : natural range 0 to 50000 := 0;
+	signal clkCount : natural range 0 to 100000 := 0;
 begin	
 	
 	process(clk)
 	begin
 		if rising_edge(clk) then
-			if clkCount < 50000 then
+			if clkCount < 100000 then
 				clkCount <= clkCount + 1;
 			else
 				clkCount <= 0;

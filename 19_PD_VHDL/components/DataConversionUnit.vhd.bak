@@ -32,8 +32,8 @@ begin
 	
 	process(dataBuf)
 	begin
-		indicator0Buf <= dataBuf rem 16;
-		indicator1Buf <= (dataBuf - (dataBuf rem 16))/16;
+		indicator0Buf <= dataBuf rem 10;
+		indicator1Buf <= (dataBuf - (dataBuf rem 10))/10;
 	end process;
 	
 	process(indicator0Buf)
