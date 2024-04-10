@@ -6,6 +6,8 @@ Progress: Adding DataConversionUnit_0 [DataConversionUnit 1.0]
 Progress: Parameterizing module DataConversionUnit_0
 Progress: Adding DigitalFilter_0 [DigitalFilter 1.0]
 Progress: Parameterizing module DigitalFilter_0
+Progress: Adding DigitalFilter_1 [DigitalFilter 1.0]
+Progress: Parameterizing module DigitalFilter_1
 Progress: Adding DynamicIllumination4Indicators_0 [DynamicIllumination4Indicators 1.0]
 Progress: Parameterizing module DynamicIllumination4Indicators_0
 Progress: Adding clk_0 [clock_source 22.1]
@@ -31,6 +33,8 @@ Progress: Adding DataConversionUnit_0 [DataConversionUnit 1.0]
 Progress: Parameterizing module DataConversionUnit_0
 Progress: Adding DigitalFilter_0 [DigitalFilter 1.0]
 Progress: Parameterizing module DigitalFilter_0
+Progress: Adding DigitalFilter_1 [DigitalFilter 1.0]
+Progress: Parameterizing module DigitalFilter_1
 Progress: Adding DynamicIllumination4Indicators_0 [DynamicIllumination4Indicators 1.0]
 Progress: Parameterizing module DynamicIllumination4Indicators_0
 Progress: Adding clk_0 [clock_source 22.1]

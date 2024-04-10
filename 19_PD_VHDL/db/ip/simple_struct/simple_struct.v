@@ -10,6 +10,7 @@ module simple_struct (
 		input  wire [6:0] indicator2_indicator2, // indicator2.indicator2
 		input  wire [6:0] indicator3_indicator3, // indicator3.indicator3
 		input  wire       input0_input0,         //     input0.input0
+		input  wire       input0_1_input0,       //   input0_1.input0
 		output wire [3:0] leds_leds,             //       leds.leds
 		input  wire       reset_reset_n,         //      reset.reset_n
 		input  wire       scl_in,                //        scl.in
@@ -21,10 +22,12 @@ module simple_struct (
 		output wire       usart_txd              //           .txd
 	);
 
+	wire         count250000_0_clkout_clk;           // Count250000_0:clkOut -> DataConversionUnit_0:update
 	wire   [7:0] controller_0_datatoupdate_data;     // controller_0:dataToUpdate -> DataConversionUnit_0:data
 	wire   [6:0] dataconversionunit_0_indic0_indic0; // DataConversionUnit_0:indicator0 -> DynamicIllumination4Indicators_0:indicator0
 	wire   [6:0] dataconversionunit_0_indic1_indic1; // DataConversionUnit_0:indicator1 -> DynamicIllumination4Indicators_0:indicator1
-	wire         digitalfilter_0_output0_key1;       // DigitalFilter_0:output0 -> controller_0:key1
+	wire         digitalfilter_0_output0_key;        // DigitalFilter_0:output0 -> controller_0:key1
+	wire         digitalfilter_1_output0_key;        // DigitalFilter_1:output0 -> controller_0:key2
 	wire   [7:0] i2c_transcever_0_port_data_rd;      // i2c_transcever_0:data_rd -> controller_0:i2c_data_rd
 	wire         controller_0_i2c_port_rw;           // controller_0:i2c_rw -> i2c_transcever_0:rw
 	wire   [7:0] controller_0_i2c_port_data_wr;      // controller_0:i2c_data_wr -> i2c_transcever_0:data_wr
@@ -40,20 +43,33 @@ module simple_struct (
 	wire         usart_0_usart_port_tx_ready;        // usart_0:tx_ready -> controller_0:uart_tx_ready
 	wire         rst_controller_reset_out_reset;     // rst_controller:reset_out -> [controller_0:en, i2c_transcever_0:reset_n, usart_0:en]
 
+	Count250000 count250000_0 (
+		.clkIn  (clk_clk),                  //  clkIn.clk
+		.clkOut (count250000_0_clkout_clk)  // clkOut.clk
+	);
+
 	DataConversionUnit dataconversionunit_0 (
 		.clk        (clk_clk),                            //  clock.clk
 		.data       (controller_0_datatoupdate_data),     //   data.data
 		.indicator0 (dataconversionunit_0_indic0_indic0), // indic0.indic0
 		.indicator1 (dataconversionunit_0_indic1_indic1), // indic1.indic1
-		.update     (clk_clk)                             // update.clk
+		.update     (count250000_0_clkout_clk)            // update.clk
 	);
 
 	DigitalFilter #(
 		.PHASE_SHIFT (200)
 	) digitalfilter_0 (
-		.clk     (clk_clk),                      //   clock.clk
-		.output0 (digitalfilter_0_output0_key1), // output0.key1
-		.input0  (input0_input0)                 //  input0.input0
+		.clk     (clk_clk),                     //   clock.clk
+		.output0 (digitalfilter_0_output0_key), // output0.key
+		.input0  (input0_input0)                //  input0.input0
+	);
+
+	DigitalFilter #(
+		.PHASE_SHIFT (2000)
+	) digitalfilter_1 (
+		.clk     (clk_clk),                     //   clock.clk
+		.output0 (digitalfilter_1_output0_key), // output0.key
+		.input0  (input0_1_input0)              //  input0.input0
 	);
 
 	DynamicIllumination4Indicators dynamicillumination4indicators_0 (
@@ -84,8 +100,9 @@ module simple_struct (
 		.i2c_ena       (controller_0_i2c_port_ena),       //             .ena
 		.i2c_rw        (controller_0_i2c_port_rw),        //             .rw
 		.leds          (leds_leds),                       //         leds.leds
-		.key1          (digitalfilter_0_output0_key1),    //          key.key1
-		.dataToUpdate  (controller_0_datatoupdate_data)   // dataToUpdate.data
+		.dataToUpdate  (controller_0_datatoupdate_data),  // dataToUpdate.data
+		.key1          (digitalfilter_0_output0_key),     //         key1.key
+		.key2          (digitalfilter_1_output0_key)      //         key2.key
 	);
 
 	i2c_master #(

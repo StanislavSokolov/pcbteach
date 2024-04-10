@@ -28,8 +28,9 @@ state.mstr_ack 0 1 0 0 0 0 0 0 1
 state.stop 1 0 0 0 0 0 0 0 1 
 
 State Machine - |top_level|simple_struct:u0|controller:controller_0|PresState
-Name PresState.SEND_TEMPER PresState.UPDATE_IND PresState.READ_TEMPER PresState.IDLE 
-PresState.IDLE 0 0 0 0 
-PresState.READ_TEMPER 0 0 1 1 
-PresState.UPDATE_IND 0 1 0 1 
-PresState.SEND_TEMPER 1 0 0 1 
+Name PresState.SEND_LIMIT PresState.SEND_TEMPER PresState.UPDATE_IND PresState.READ_TEMPER PresState.IDLE 
+PresState.IDLE 0 0 0 0 0 
+PresState.READ_TEMPER 0 0 0 1 1 
+PresState.UPDATE_IND 0 0 1 0 1 
+PresState.SEND_TEMPER 0 1 0 0 1 
+PresState.SEND_LIMIT 1 0 0 0 1 

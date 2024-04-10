@@ -8,6 +8,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "leds_out[1]",
+					"strict" : false
+				},
+				{
 					"name" : "TXD",
 					"strict" : false
 				},
@@ -61,6 +65,14 @@
 				},
 				{
 					"name" : "en",
+					"strict" : false
+				},
+				{
+					"name" : "keys_in[0]",
+					"strict" : false
+				},
+				{
+					"name" : "keys_in[1]",
 					"strict" : false
 				}
 			]

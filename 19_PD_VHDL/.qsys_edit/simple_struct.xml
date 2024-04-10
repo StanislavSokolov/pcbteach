@@ -846,64 +846,64 @@
 									<root>true</root>
 									<content delegate="SplitDockStationFactory">
 										<fullscreen-action>false</fullscreen-action>
-										<node nodeId="1372710005721" orientation="HORIZONTAL" divider="0.22181146025878004">
+										<node nodeId="1372710005721" orientation="HORIZONTAL" divider="0.24392819429778248">
 											<node nodeId="1375985011088" orientation="VERTICAL" divider="0.504054054054054">
-												<node nodeId="1712577179593" orientation="VERTICAL" divider="0.6481673224270036">
-													<leaf id="0" nodeId="1375985003630">
-														<placeholders>
-															<placeholder>dock.single.Clock\ Domains\ \-\ Beta</placeholder>
-															<placeholder>dock.single.IP\ Catalog</placeholder>
-															<placeholder>dock.single.Reset\ Domains\ \-\ Beta</placeholder>
-														</placeholders>
-														<placeholder-map>
-															<version>0</version>
-															<format>dock.PlaceholderList</format>
-															<entry>
-																<key shared="false">
-																	<placeholder>dock.single.IP\ Catalog</placeholder>
-																</key>
-															</entry>
-															<entry>
-																<key shared="false">
-																	<placeholder>dock.single.Clock\ Domains\ \-\ Beta</placeholder>
-																</key>
-															</entry>
-															<entry>
-																<key shared="false">
-																	<placeholder>dock.single.Reset\ Domains\ \-\ Beta</placeholder>
-																</key>
-															</entry>
-														</placeholder-map>
-													</leaf>
-													<leaf id="4" nodeId="1712577179591">
-														<placeholders>
-															<placeholder>dock.single.Messages</placeholder>
-														</placeholders>
-													</leaf>
-												</node>
-												<leaf id="1" nodeId="1375985011087">
+												<leaf id="4" nodeId="1375985003630">
 													<placeholders>
-														<placeholder>dock.single.Hierarchy</placeholder>
+														<placeholder>dock.single.Clock\ Domains\ \-\ Beta</placeholder>
+														<placeholder>dock.single.IP\ Catalog</placeholder>
+														<placeholder>dock.single.Reset\ Domains\ \-\ Beta</placeholder>
 													</placeholders>
 													<placeholder-map>
 														<version>0</version>
 														<format>dock.PlaceholderList</format>
 														<entry>
 															<key shared="false">
-																<placeholder>dock.single.Hierarchy</placeholder>
+																<placeholder>dock.single.IP\ Catalog</placeholder>
 															</key>
-															<item key="convert" type="b">true</item>
-															<item key="convert-keys" type="a"/>
 														</entry>
 														<entry>
 															<key shared="false">
-																<placeholder>dock.single.Device\ Family</placeholder>
+																<placeholder>dock.single.Clock\ Domains\ \-\ Beta</placeholder>
 															</key>
-															<item key="convert" type="b">true</item>
-															<item key="convert-keys" type="a"/>
+														</entry>
+														<entry>
+															<key shared="false">
+																<placeholder>dock.single.Reset\ Domains\ \-\ Beta</placeholder>
+															</key>
 														</entry>
 													</placeholder-map>
 												</leaf>
+												<node nodeId="1712747173181" orientation="VERTICAL" divider="0.35668789808917195">
+													<leaf id="0" nodeId="1712577179591">
+														<placeholders>
+															<placeholder>dock.single.Messages</placeholder>
+														</placeholders>
+													</leaf>
+													<leaf id="1" nodeId="1375985011087">
+														<placeholders>
+															<placeholder>dock.single.Hierarchy</placeholder>
+														</placeholders>
+														<placeholder-map>
+															<version>0</version>
+															<format>dock.PlaceholderList</format>
+															<entry>
+																<key shared="false">
+																	<placeholder>dock.single.Hierarchy</placeholder>
+																</key>
+																<item key="convert" type="b">true</item>
+																<item key="convert-keys" type="a"/>
+															</entry>
+															<entry>
+																<key shared="false">
+																	<placeholder>dock.single.Device\ Family</placeholder>
+																</key>
+																<item key="convert" type="b">true</item>
+																<item key="convert-keys" type="a"/>
+															</entry>
+														</placeholder-map>
+													</leaf>
+												</node>
 											</node>
 											<node nodeId="1372710005725" orientation="VERTICAL" divider="0.75">
 												<node nodeId="1372710005727" orientation="HORIZONTAL" divider="0.7042456801008184">
@@ -1028,10 +1028,10 @@
 							</adjacent>
 							<children ignore="false">
 								<child>
-									<layout factory="predefined" placeholder="dock.single.IP\ Catalog">
-										<replacement id="dockablesingle IP Catalog"/>
+									<layout factory="predefined" placeholder="dock.single.Messages">
+										<replacement id="dockablesingle Messages"/>
 										<delegate id="delegate_ccontrol backup factory id">
-											<id>IP Catalog</id>
+											<id>Messages</id>
 											<area/>
 										</delegate>
 									</layout>
@@ -1312,10 +1312,10 @@
 									</children>
 								</child>
 								<child>
-									<layout factory="predefined" placeholder="dock.single.Messages">
-										<replacement id="dockablesingle Messages"/>
+									<layout factory="predefined" placeholder="dock.single.IP\ Catalog">
+										<replacement id="dockablesingle IP Catalog"/>
 										<delegate id="delegate_ccontrol backup factory id">
-											<id>Messages</id>
+											<id>IP Catalog</id>
 											<area/>
 										</delegate>
 									</layout>
@@ -1786,7 +1786,7 @@
 											<backup-path>
 												<node location="LEFT" size="0.22181146025878004" id="1372710005721"/>
 												<node location="TOP" size="0.504054054054054" id="1375985011088"/>
-												<node location="BOTTOM" size="0.7183681921722923" id="1712577179593"/>
+												<node location="BOTTOM" size="0.3518326775729964" id="1712577179593"/>
 												<leaf id="1712577179591"/>
 											</backup-path>
 										</property>

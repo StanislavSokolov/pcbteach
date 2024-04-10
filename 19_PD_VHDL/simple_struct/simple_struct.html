@@ -67,7 +67,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
   </table>
   <table class="blueBar">
    <tr>
-    <td class="l">2024.04.09.18:43:27</td>
+    <td class="l">2024.04.10.15:20:43</td>
     <td class="r">Datasheet</td>
    </tr>
   </table>
@@ -96,6 +96,64 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     <td class="empty" rowspan="2"></td>
    </tr>
   </table>
+  <a name="module_Count250000_0"> </a>
+  <div>
+   <hr/>
+   <h2>Count250000_0</h2>Count250000 v1.0
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_clk_0">clk_0</a>
+      </td>
+      <td class="from">clk&#160;&#160;</td>
+      <td class="main" rowspan="4">Count250000_0</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clkIn</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">clkOut&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_DataConversionUnit_0">DataConversionUnit_0</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;update</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">deviceFamily</td>
+        <td class="parametervalue">UNKNOWN</td>
+       </tr>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
   <a name="module_DataConversionUnit_0"> </a>
   <div>
    <hr/>
@@ -104,17 +162,23 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    <div class="greydiv">
     <table class="connectionboxes">
      <tr>
-      <td class="neighbor" rowspan="4">
+      <td class="neighbor" rowspan="2">
        <a href="#module_clk_0">clk_0</a>
       </td>
       <td class="from">clk&#160;&#160;</td>
-      <td class="main" rowspan="11">DataConversionUnit_0</td>
+      <td class="main" rowspan="12">DataConversionUnit_0</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;clock</td>
      </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
      <tr>
-      <td class="from">clk&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_Count250000_0">Count250000_0</a>
+      </td>
+      <td class="from">clkOut&#160;&#160;</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;update</td>
@@ -210,7 +274,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td class="neighbor" rowspan="2">
        <a href="#module_controller_0">controller_0</a>
       </td>
-      <td class="from">key&#160;&#160;</td>
+      <td class="from">key1&#160;&#160;</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;output0</td>
@@ -227,6 +291,67 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        <tr>
         <td class="parametername">PHASE_SHIFT</td>
         <td class="parametervalue">200</td>
+       </tr>
+       <tr>
+        <td class="parametername">deviceFamily</td>
+        <td class="parametervalue">UNKNOWN</td>
+       </tr>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_DigitalFilter_1"> </a>
+  <div>
+   <hr/>
+   <h2>DigitalFilter_1</h2>DigitalFilter v1.0
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_clk_0">clk_0</a>
+      </td>
+      <td class="from">clk&#160;&#160;</td>
+      <td class="main" rowspan="5">DigitalFilter_1</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clock</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_controller_0">controller_0</a>
+      </td>
+      <td class="from">key2&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;output0</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">PHASE_SHIFT</td>
+        <td class="parametervalue">2000</td>
        </tr>
        <tr>
         <td class="parametername">deviceFamily</td>
@@ -369,7 +494,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        <a href="#module_clk_0">clk_0</a>
       </td>
       <td class="from">clk&#160;&#160;</td>
-      <td class="main" rowspan="15">controller_0</td>
+      <td class="main" rowspan="18">controller_0</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;clock</td>
@@ -419,9 +544,25 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      <tr>
       <td></td>
       <td></td>
-      <td class="from">key&#160;&#160;</td>
+      <td class="from">key1&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
        <a href="#module_DigitalFilter_0">DigitalFilter_0</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;output0</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">key2&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_DigitalFilter_1">DigitalFilter_1</a>
       </td>
      </tr>
      <tr>
@@ -616,7 +757,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
   <table class="blueBar">
    <tr>
     <td class="l">generation took 0,00 seconds</td>
-    <td class="r">rendering took 0,00 seconds</td>
+    <td class="r">rendering took 0,02 seconds</td>
    </tr>
   </table>
  </body>

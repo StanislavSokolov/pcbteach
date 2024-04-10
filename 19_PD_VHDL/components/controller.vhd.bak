@@ -27,7 +27,8 @@ entity controller is
 		i2c_data_rd   : in    	STD_LOGIC_VECTOR(7 DOWNTO 0); --data read from slave
 		i2c_ack_error : inout	STD_LOGIC;                    --flag if improper acknowledge from slave
 		
-		key1 : in STD_LOGIC;
+		key1 : in STD_LOGIC;									--start
+		key2 : in STD_LOGIC;									--stop
 		
 		dataToUpdate : out STD_LOGIC_VECTOR(7 DOWNTO 0)
 		
@@ -80,7 +81,7 @@ architecture behave of controller is
 	
 	
 	
-	type FSM_State	is 	( IDLE, READ_TEMPER, UPDATE_IND, SEND_TEMPER );
+	type FSM_State	is 	( IDLE, READ_TEMPER, UPDATE_IND, SEND_TEMPER, SEND_LIMIT );
 	signal PresState : FSM_State;
 	
 	signal reset_n   :   STD_LOGIC;                    --active low reset
@@ -112,9 +113,15 @@ architecture behave of controller is
 	signal I2C_Err      : STD_LOGIC;	
 	
 	SIGNAL Temper  		: STD_LOGIC_VECTOR( 7 DOWNTO 0 );
+	SIGNAL Temper_Limit_Low  		: STD_LOGIC_VECTOR( 7 DOWNTO 0 ) := x"14"; -- 20 градусов
+	SIGNAL Temper_Limit_High  		: STD_LOGIC_VECTOR( 7 DOWNTO 0 ) := x"1E"; -- 30 градусов
+	SIGNAL CMD : STD_LOGIC_VECTOR( 7 DOWNTO 0 ) := x"F0";
+	SIGNAL send_limit_en : STD_LOGIC := '0';
 	
-	SIGNAL StartPulsePrev : STD_LOGIC := '0';
-	
+	SIGNAL key1Prev : STD_LOGIC := '0';
+	SIGNAL key2Prev : STD_LOGIC := '0';
+	SIGNAL start_stop : STD_LOGIC := '1';
+	SIGNAL led : STD_LOGIC := '1';
 	
 	
 	
@@ -130,7 +137,7 @@ begin
 	PORT MAP(
 		Enable 	=>	reset_n	,
 		Clk    	=>	clk		,
-		Input  	=>	key1		,
+		Input  	=>	clk_1Hz		,
 		Output 	=>	StartPulse		-- generate start pulse 1 cicle clk width every second 
 	);
 	
@@ -148,7 +155,22 @@ begin
 	
 	
 	
-	leds(0) 	<= clk_1Hz;
+	leds(0) 	<= led;
+
+	gen_start_stop: process( reset_n, clk )
+	begin
+		if reset_n = '0' then
+			start_stop <= '0';
+		elsif rising_edge( clk ) then
+			if key1 = '0' and key1Prev = '1' then
+				start_stop <= '1';
+			elsif key2 = '0' and key2Prev = '1' then
+				start_stop <= '0';
+			end if;
+			key1Prev <= key1;
+			key2Prev <= key2;				
+		end if;
+	end process;
 	
 	
 	gen_1Hz: process( reset_n, clk )
@@ -157,19 +179,21 @@ begin
 			count_1Hz 	<= 0;
 			clk_1Hz		<= '0';
 		elsif rising_edge( clk ) then
-			if StartPulse = '1' and StartPulsePrev = '0'then
+			if count_1Hz < wait_500ms then
+				count_1Hz <= count_1Hz + 1;
+			else	
+				count_1Hz <= 0;
 				clk_1Hz <= NOT clk_1Hz;
 			end if;
-			StartPulsePrev <= StartPulse;
 		end if;
 	end process;
 	
 
 	FSM: process( reset_n, clk )
-		variable show_cnt : integer range 0 to 4;
+		variable show_cnt : integer range 0 to 25;
 		
 	begin
-		if reset_n = '0' then
+		if reset_n = '0' or start_stop = '0' then
 			PresState <= IDLE;
 			show_cnt 	:= 0;
 			Temper		 <= ( others => '0' );
@@ -192,15 +216,35 @@ begin
 				
 				I2C_RxDataLen <= 2;
 				
-				uart_tx_dv 		<= '0';
-			
-				IF I2C_Busy = '0' THEN
-					IF StartPulse = '1' THEN
-						PresState <= READ_TEMPER; 
-					END IF;
-				ELSE
-					PresState <= IDLE;
-				
+				uart_tx_dv 		<= '0';			
+
+				IF uart_tx_ready = '1' THEN
+					IF send_limit_en = '1' THEN
+						send_limit_en <= '0';
+						IF Temper_Limit_Low <= Temper_Limit_High THEN
+							IF Temper < Temper_Limit_Low THEN
+								CMD <= x"F1";							-- превышен нижний порог
+								--leds <= b"1110";
+							ELSE 
+								IF Temper >	Temper_Limit_High THEN
+									CMD <= x"F2";						-- превышен верхний порог
+									--leds <= b"0111";
+								ELSE
+									CMD <= x"F0";						-- темпреатура в норме
+									--leds <= b"1001";
+								END IF;
+							END IF;
+						ELSE
+							CMD <= x"F3";								-- неверно заданы пределы температуры
+						END IF;									
+						PresState <= SEND_LIMIT;
+					ELSE	
+						IF I2C_Busy = '0' THEN
+							IF StartPulse = '1' THEN
+								PresState <= READ_TEMPER; 
+							END IF;
+						END IF;
+					END IF;		
 				END IF;
 			
 			when READ_TEMPER =>
@@ -236,7 +280,7 @@ begin
 				PresState 	<= SEND_TEMPER;
 			
 			when SEND_TEMPER =>
-				if show_cnt < 2 then
+				if show_cnt < 25 then
 					show_cnt := show_cnt + 1;
 					
 					uart_tx_dv 		<= '1';
@@ -246,7 +290,22 @@ begin
 					uart_tx_dv 		<= '0';
 					show_cnt := 0;
 					PresState <= IDLE;
+					send_limit_en <= '1';
+					led <= not led;
 				end if;
+				
+			when SEND_LIMIT =>
+				if show_cnt < 25 then
+					show_cnt := show_cnt + 1;
+					
+					uart_tx_dv 		<= '1';
+					uart_tx_data( 7 downto 0 ) 	<= CMD;
+					PresState 		<= SEND_LIMIT;
+				else
+					uart_tx_dv 		<= '0';
+					show_cnt := 0;
+					PresState <= IDLE;
+				end if;	
 			
 			when OTHERS => 
 				PresState <= IDLE;

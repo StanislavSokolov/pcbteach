@@ -14,6 +14,7 @@ entity simple_struct is
 		indicator2_indicator2 : in  std_logic_vector(6 downto 0) := (others => '0'); -- indicator2.indicator2
 		indicator3_indicator3 : in  std_logic_vector(6 downto 0) := (others => '0'); -- indicator3.indicator3
 		input0_input0         : in  std_logic                    := '0';             --     input0.input0
+		input0_1_input0       : in  std_logic                    := '0';             --   input0_1.input0
 		leds_leds             : out std_logic_vector(3 downto 0);                    --       leds.leds
 		reset_reset_n         : in  std_logic                    := '0';             --      reset.reset_n
 		scl_in                : in  std_logic                    := '0';             --        scl.in
@@ -27,6 +28,13 @@ entity simple_struct is
 end entity simple_struct;
 
 architecture rtl of simple_struct is
+	component Count250000 is
+		port (
+			clkIn  : in  std_logic := 'X'; -- clk
+			clkOut : out std_logic         -- clk
+		);
+	end component Count250000;
+
 	component DataConversionUnit is
 		port (
 			clk        : in  std_logic                    := 'X';             -- clk
@@ -43,7 +51,7 @@ architecture rtl of simple_struct is
 		);
 		port (
 			clk     : in  std_logic := 'X'; -- clk
-			output0 : out std_logic;        -- key1
+			output0 : out std_logic;        -- key
 			input0  : in  std_logic := 'X'  -- input0
 		);
 	end component DigitalFilter;
@@ -79,8 +87,9 @@ architecture rtl of simple_struct is
 			i2c_ena       : out   std_logic;                                        -- ena
 			i2c_rw        : out   std_logic;                                        -- rw
 			leds          : out   std_logic_vector(3 downto 0);                     -- leds
-			key1          : in    std_logic                     := 'X';             -- key1
-			dataToUpdate  : out   std_logic_vector(7 downto 0)                      -- data
+			dataToUpdate  : out   std_logic_vector(7 downto 0);                     -- data
+			key1          : in    std_logic                     := 'X';             -- key
+			key2          : in    std_logic                     := 'X'              -- key
 		);
 	end component controller;
 
@@ -194,10 +203,12 @@ architecture rtl of simple_struct is
 		);
 	end component altera_reset_controller;
 
+	signal count250000_0_clkout_clk                 : std_logic;                     -- Count250000_0:clkOut -> DataConversionUnit_0:update
 	signal controller_0_datatoupdate_data           : std_logic_vector(7 downto 0);  -- controller_0:dataToUpdate -> DataConversionUnit_0:data
 	signal dataconversionunit_0_indic0_indic0       : std_logic_vector(6 downto 0);  -- DataConversionUnit_0:indicator0 -> DynamicIllumination4Indicators_0:indicator0
 	signal dataconversionunit_0_indic1_indic1       : std_logic_vector(6 downto 0);  -- DataConversionUnit_0:indicator1 -> DynamicIllumination4Indicators_0:indicator1
-	signal digitalfilter_0_output0_key1             : std_logic;                     -- DigitalFilter_0:output0 -> controller_0:key1
+	signal digitalfilter_0_output0_key              : std_logic;                     -- DigitalFilter_0:output0 -> controller_0:key1
+	signal digitalfilter_1_output0_key              : std_logic;                     -- DigitalFilter_1:output0 -> controller_0:key2
 	signal i2c_transcever_0_port_data_rd            : std_logic_vector(7 downto 0);  -- i2c_transcever_0:data_rd -> controller_0:i2c_data_rd
 	signal controller_0_i2c_port_rw                 : std_logic;                     -- controller_0:i2c_rw -> i2c_transcever_0:rw
 	signal controller_0_i2c_port_data_wr            : std_logic_vector(7 downto 0);  -- controller_0:i2c_data_wr -> i2c_transcever_0:data_wr
@@ -217,13 +228,19 @@ architecture rtl of simple_struct is
 
 begin
 
+	count250000_0 : component Count250000
+		port map (
+			clkIn  => clk_clk,                  --  clkIn.clk
+			clkOut => count250000_0_clkout_clk  -- clkOut.clk
+		);
+
 	dataconversionunit_0 : component DataConversionUnit
 		port map (
 			clk        => clk_clk,                            --  clock.clk
 			data       => controller_0_datatoupdate_data,     --   data.data
 			indicator0 => dataconversionunit_0_indic0_indic0, -- indic0.indic0
 			indicator1 => dataconversionunit_0_indic1_indic1, -- indic1.indic1
-			update     => clk_clk                             -- update.clk
+			update     => count250000_0_clkout_clk            -- update.clk
 		);
 
 	digitalfilter_0 : component DigitalFilter
@@ -231,9 +248,19 @@ begin
 			PHASE_SHIFT => 200
 		)
 		port map (
-			clk     => clk_clk,                      --   clock.clk
-			output0 => digitalfilter_0_output0_key1, -- output0.key1
-			input0  => input0_input0                 --  input0.input0
+			clk     => clk_clk,                     --   clock.clk
+			output0 => digitalfilter_0_output0_key, -- output0.key
+			input0  => input0_input0                --  input0.input0
+		);
+
+	digitalfilter_1 : component DigitalFilter
+		generic map (
+			PHASE_SHIFT => 2000
+		)
+		port map (
+			clk     => clk_clk,                     --   clock.clk
+			output0 => digitalfilter_1_output0_key, -- output0.key
+			input0  => input0_1_input0              --  input0.input0
 		);
 
 	dynamicillumination4indicators_0 : component DynamicIllumination4Indicators
@@ -266,8 +293,9 @@ begin
 			i2c_ena       => controller_0_i2c_port_ena,                --             .ena
 			i2c_rw        => controller_0_i2c_port_rw,                 --             .rw
 			leds          => leds_leds,                                --         leds.leds
-			key1          => digitalfilter_0_output0_key1,             --          key.key1
-			dataToUpdate  => controller_0_datatoupdate_data            -- dataToUpdate.data
+			dataToUpdate  => controller_0_datatoupdate_data,           -- dataToUpdate.data
+			key1          => digitalfilter_0_output0_key,              --         key1.key
+			key2          => digitalfilter_1_output0_key               --         key2.key
 		);
 
 	i2c_transcever_0 : component i2c_master

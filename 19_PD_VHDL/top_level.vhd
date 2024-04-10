@@ -37,7 +37,8 @@ architecture arch of top_level is
             sda_oe        : out std_logic;                                       -- oe
             usart_rxd     : in  std_logic                    := 'X';             -- rxd
             usart_txd     : out std_logic;                                       -- txd
-				input0_input0 : in  std_logic;                    
+				input0_input0 : in  std_logic;
+				input0_1_input0 : in  std_logic;				
 				enable_enable : in std_logic_vector(3 downto 0);
 				indicator_indicator : out std_logic_vector(3 downto 0);
 				indicator2_indicator2  : in std_logic_vector(6 downto 0);
@@ -60,6 +61,7 @@ begin
             usart_rxd     =>  RXD,				-- usart.rxd
             usart_txd     =>  TXD,				--      .txd
 				input0_input0    =>  keys_in(0),
+				input0_1_input0    =>  keys_in(1),
 				segment_segment => seg7_code(6 downto 0),
 				indicator_indicator => dig_sel,
 				enable_enable => x"3",

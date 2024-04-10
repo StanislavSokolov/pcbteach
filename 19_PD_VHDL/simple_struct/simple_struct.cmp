@@ -6,6 +6,7 @@
 			indicator2_indicator2 : in  std_logic_vector(6 downto 0) := (others => 'X'); -- indicator2
 			indicator3_indicator3 : in  std_logic_vector(6 downto 0) := (others => 'X'); -- indicator3
 			input0_input0         : in  std_logic                    := 'X';             -- input0
+			input0_1_input0       : in  std_logic                    := 'X';             -- input0
 			leds_leds             : out std_logic_vector(3 downto 0);                    -- leds
 			reset_reset_n         : in  std_logic                    := 'X';             -- reset_n
 			scl_in                : in  std_logic                    := 'X';             -- in
