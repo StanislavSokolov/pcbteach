@@ -3,159 +3,159 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'clk'
-Slack : -34.117
-TNS   : -1302.685
+Slack : -33.772
+TNS   : -1219.099
+
+Type  : Slow 1200mV 85C Model Setup 'simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|clkCounter[0]'
+Slack : -4.084
+TNS   : -35.323
 
 Type  : Slow 1200mV 85C Model Setup 'simple_struct:u0|usart:usart_0|bit_clk'
-Slack : -2.847
-TNS   : -9.762
-
-Type  : Slow 1200mV 85C Model Setup 'simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|clkCounter[1]'
-Slack : -1.957
-TNS   : -16.583
+Slack : -1.621
+TNS   : -8.116
 
 Type  : Slow 1200mV 85C Model Hold 'clk'
-Slack : 0.433
+Slack : 0.432
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'simple_struct:u0|usart:usart_0|bit_clk'
 Slack : 0.453
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Hold 'simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|clkCounter[1]'
-Slack : 1.032
+Type  : Slow 1200mV 85C Model Hold 'simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|clkCounter[0]'
+Slack : 0.869
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Recovery 'clk'
-Slack : -2.332
-TNS   : -388.704
+Slack : -2.092
+TNS   : -343.708
 
 Type  : Slow 1200mV 85C Model Recovery 'simple_struct:u0|usart:usart_0|bit_clk'
-Slack : -0.815
-TNS   : -4.890
-
-Type  : Slow 1200mV 85C Model Removal 'simple_struct:u0|usart:usart_0|bit_clk'
-Slack : 1.075
-TNS   : 0.000
+Slack : -2.044
+TNS   : -12.264
 
 Type  : Slow 1200mV 85C Model Removal 'clk'
-Slack : 1.483
+Slack : 1.829
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Removal 'simple_struct:u0|usart:usart_0|bit_clk'
+Slack : 2.394
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -524.937
+TNS   : -526.424
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'simple_struct:u0|usart:usart_0|bit_clk'
 Slack : -1.487
 TNS   : -8.922
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|clkCounter[1]'
-Slack : 0.332
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|clkCounter[0]'
+Slack : 0.403
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Setup 'clk'
-Slack : -31.011
-TNS   : -1194.041
+Slack : -30.784
+TNS   : -1118.133
+
+Type  : Slow 1200mV 0C Model Setup 'simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|clkCounter[0]'
+Slack : -3.902
+TNS   : -33.510
 
 Type  : Slow 1200mV 0C Model Setup 'simple_struct:u0|usart:usart_0|bit_clk'
-Slack : -2.668
-TNS   : -8.893
-
-Type  : Slow 1200mV 0C Model Setup 'simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|clkCounter[1]'
-Slack : -1.751
-TNS   : -14.778
+Slack : -1.399
+TNS   : -6.884
 
 Type  : Slow 1200mV 0C Model Hold 'clk'
 Slack : 0.382
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'simple_struct:u0|usart:usart_0|bit_clk'
-Slack : 0.402
+Slack : 0.403
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Hold 'simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|clkCounter[1]'
-Slack : 0.815
+Type  : Slow 1200mV 0C Model Hold 'simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|clkCounter[0]'
+Slack : 0.862
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Recovery 'clk'
-Slack : -2.052
-TNS   : -339.732
+Slack : -1.797
+TNS   : -292.750
 
 Type  : Slow 1200mV 0C Model Recovery 'simple_struct:u0|usart:usart_0|bit_clk'
-Slack : -0.608
-TNS   : -3.648
-
-Type  : Slow 1200mV 0C Model Removal 'simple_struct:u0|usart:usart_0|bit_clk'
-Slack : 0.877
-TNS   : 0.000
+Slack : -1.745
+TNS   : -10.470
 
 Type  : Slow 1200mV 0C Model Removal 'clk'
-Slack : 1.345
+Slack : 1.638
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Removal 'simple_struct:u0|usart:usart_0|bit_clk'
+Slack : 2.150
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -524.937
+TNS   : -526.424
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'simple_struct:u0|usart:usart_0|bit_clk'
 Slack : -1.487
 TNS   : -8.922
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|clkCounter[1]'
-Slack : 0.182
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|clkCounter[0]'
+Slack : 0.338
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Setup 'clk'
-Slack : -13.921
-TNS   : -361.873
+Slack : -13.997
+TNS   : -326.714
+
+Type  : Fast 1200mV 0C Model Setup 'simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|clkCounter[0]'
+Slack : -1.422
+TNS   : -13.694
 
 Type  : Fast 1200mV 0C Model Setup 'simple_struct:u0|usart:usart_0|bit_clk'
-Slack : -0.650
-TNS   : -0.730
-
-Type  : Fast 1200mV 0C Model Setup 'simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|clkCounter[1]'
-Slack : -0.331
-TNS   : -2.368
-
-Type  : Fast 1200mV 0C Model Hold 'simple_struct:u0|usart:usart_0|bit_clk'
-Slack : 0.169
-TNS   : 0.000
+Slack : -0.136
+TNS   : -0.136
 
 Type  : Fast 1200mV 0C Model Hold 'clk'
 Slack : 0.178
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Hold 'simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|clkCounter[1]'
-Slack : 0.396
+Type  : Fast 1200mV 0C Model Hold 'simple_struct:u0|usart:usart_0|bit_clk'
+Slack : 0.187
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|clkCounter[0]'
+Slack : 0.441
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Recovery 'clk'
-Slack : -0.536
-TNS   : -78.605
+Slack : -0.439
+TNS   : -61.643
 
 Type  : Fast 1200mV 0C Model Recovery 'simple_struct:u0|usart:usart_0|bit_clk'
-Slack : 0.184
+Slack : -0.386
+TNS   : -2.316
+
+Type  : Fast 1200mV 0C Model Removal 'clk'
+Slack : 0.754
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Removal 'simple_struct:u0|usart:usart_0|bit_clk'
-Slack : 0.402
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Removal 'clk'
-Slack : 0.649
+Slack : 1.011
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -461.420
+TNS   : -463.208
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'simple_struct:u0|usart:usart_0|bit_clk'
 Slack : -1.000
 TNS   : -6.000
 
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|clkCounter[1]'
-Slack : 0.363
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|clkCounter[0]'
+Slack : 0.393
 TNS   : 0.000
 
 ------------------------------------------------------------

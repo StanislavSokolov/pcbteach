@@ -42,9 +42,8 @@ architecture arch of top_level is
 				input0_1_input0 : in  std_logic;				
 				enable_enable : in std_logic_vector(3 downto 0);
 				indicator_indicator : out std_logic_vector(3 downto 0);
-				indicator2_indicator2  : in std_logic_vector(6 downto 0);
-				indicator3_indicator3  : in std_logic_vector(6 downto 0);
-				segment_segment : out std_logic_vector(6 downto 0);
+				indicator3_indicator3  : in std_logic_vector(7 downto 0);
+				segment_segment : out std_logic_vector(7 downto 0);
 				buzz_buzz : out std_logic
         );
     end component simple_struct;
@@ -64,10 +63,9 @@ begin
             usart_txd     =>  TXD,				--      .txd
 				input0_input0    =>  keys_in(0),
 				input0_1_input0    =>  keys_in(1),
-				segment_segment => seg7_code(6 downto 0),
+				segment_segment => seg7_code,
 				indicator_indicator => dig_sel,
-				enable_enable => x"3",
-				indicator2_indicator2 => (others => '0'),
+				enable_enable => x"7",
 				indicator3_indicator3 => (others => '0'),
 				buzz_buzz => buzz
         );
@@ -78,7 +76,5 @@ begin
 	
 	SCL <= '0' when top_scl_oe = '1' else 'Z';
 	top_scl_in <= SCL;
-
-	seg7_code(7) <= '1';
 
 end arch;

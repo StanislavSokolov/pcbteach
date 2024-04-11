@@ -98,46 +98,6 @@
    {
       datum _originalDeviceFamily
       {
-         value = "Cyclone V";
-         type = "String";
-      }
-   }
-   element simple_struct
-   {
-      datum _originalDeviceFamily
-      {
-         value = "Cyclone IV E";
-         type = "String";
-      }
-   }
-   element simple_struct
-   {
-      datum _originalDeviceFamily
-      {
-         value = "Cyclone IV E";
-         type = "String";
-      }
-   }
-   element simple_struct
-   {
-      datum _originalDeviceFamily
-      {
-         value = "Cyclone V";
-         type = "String";
-      }
-   }
-   element simple_struct
-   {
-      datum _originalDeviceFamily
-      {
-         value = "Cyclone V";
-         type = "String";
-      }
-   }
-   element simple_struct
-   {
-      datum _originalDeviceFamily
-      {
          value = "Cyclone IV E";
          type = "String";
       }
@@ -178,7 +138,7 @@
    {
       datum _originalDeviceFamily
       {
-         value = "Cyclone IV E";
+         value = "Cyclone V";
          type = "String";
       }
    }
@@ -186,47 +146,7 @@
    {
       datum _originalDeviceFamily
       {
-         value = "Cyclone IV E";
-         type = "String";
-      }
-   }
-   element simple_struct
-   {
-      datum _originalDeviceFamily
-      {
-         value = "Cyclone IV E";
-         type = "String";
-      }
-   }
-   element simple_struct
-   {
-      datum _originalDeviceFamily
-      {
-         value = "Cyclone IV E";
-         type = "String";
-      }
-   }
-   element simple_struct
-   {
-      datum _originalDeviceFamily
-      {
-         value = "Cyclone IV E";
-         type = "String";
-      }
-   }
-   element simple_struct
-   {
-      datum _originalDeviceFamily
-      {
-         value = "Cyclone IV E";
-         type = "String";
-      }
-   }
-   element simple_struct
-   {
-      datum _originalDeviceFamily
-      {
-         value = "Cyclone IV E";
+         value = "Cyclone V";
          type = "String";
       }
    }
@@ -266,6 +186,14 @@
    {
       datum _originalDeviceFamily
       {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element simple_struct
+   {
+      datum _originalDeviceFamily
+      {
          value = "Cyclone IV E";
          type = "String";
       }
@@ -274,7 +202,23 @@
    {
       datum _originalDeviceFamily
       {
-         value = "Cyclone V";
+         value = "Cyclone IV E";
+         type = "String";
+      }
+   }
+   element simple_struct
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone IV E";
+         type = "String";
+      }
+   }
+   element simple_struct
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone IV E";
          type = "String";
       }
    }
@@ -346,6 +290,110 @@
    {
       datum _originalDeviceFamily
       {
+         value = "Cyclone IV E";
+         type = "String";
+      }
+   }
+   element simple_struct
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone IV E";
+         type = "String";
+      }
+   }
+   element simple_struct
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone IV E";
+         type = "String";
+      }
+   }
+   element simple_struct
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone IV E";
+         type = "String";
+      }
+   }
+   element simple_struct
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone IV E";
+         type = "String";
+      }
+   }
+   element simple_struct
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone IV E";
+         type = "String";
+      }
+   }
+   element simple_struct
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone IV E";
+         type = "String";
+      }
+   }
+   element simple_struct
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone IV E";
+         type = "String";
+      }
+   }
+   element simple_struct
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone IV E";
+         type = "String";
+      }
+   }
+   element simple_struct
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone IV E";
+         type = "String";
+      }
+   }
+   element simple_struct
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone IV E";
+         type = "String";
+      }
+   }
+   element simple_struct
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone IV E";
+         type = "String";
+      }
+   }
+   element simple_struct
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone IV E";
+         type = "String";
+      }
+   }
+   element simple_struct
+   {
+      datum _originalDeviceFamily
+      {
          value = "Cyclone V";
          type = "String";
       }
@@ -379,6 +427,14 @@
       datum _originalDeviceFamily
       {
          value = "Cyclone IV E";
+         type = "String";
+      }
+   }
+   element simple_struct
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
          type = "String";
       }
    }
@@ -446,11 +502,6 @@
  <interface
    name="indicator"
    internal="DynamicIllumination4Indicators_0.indicator"
-   type="conduit"
-   dir="end" />
- <interface
-   name="indicator2"
-   internal="DynamicIllumination4Indicators_0.indicator2"
    type="conduit"
    dir="end" />
  <interface
@@ -587,6 +638,17 @@
    version="22.1"
    start="DataConversionUnit_0.indic1"
    end="DynamicIllumination4Indicators_0.indicator1">
+  <parameter name="endPort" value="" />
+  <parameter name="endPortLSB" value="0" />
+  <parameter name="startPort" value="" />
+  <parameter name="startPortLSB" value="0" />
+  <parameter name="width" value="0" />
+ </connection>
+ <connection
+   kind="conduit"
+   version="22.1"
+   start="DataConversionUnit_0.indic2"
+   end="DynamicIllumination4Indicators_0.indicator2">
   <parameter name="endPort" value="" />
   <parameter name="endPortLSB" value="0" />
   <parameter name="startPort" value="" />

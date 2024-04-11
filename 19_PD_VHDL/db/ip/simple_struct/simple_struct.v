@@ -8,8 +8,7 @@ module simple_struct (
 		input  wire       clk_clk,               //        clk.clk
 		input  wire [3:0] enable_enable,         //     enable.enable
 		output wire [3:0] indicator_indicator,   //  indicator.indicator
-		input  wire [6:0] indicator2_indicator2, // indicator2.indicator2
-		input  wire [6:0] indicator3_indicator3, // indicator3.indicator3
+		input  wire [7:0] indicator3_indicator3, // indicator3.indicator3
 		input  wire       input0_input0,         //     input0.input0
 		input  wire       input0_1_input0,       //   input0_1.input0
 		output wire [3:0] leds_leds,             //       leds.leds
@@ -18,15 +17,16 @@ module simple_struct (
 		output wire       scl_oe,                //           .oe
 		input  wire       sda_in,                //        sda.in
 		output wire       sda_oe,                //           .oe
-		output wire [6:0] segment_segment,       //    segment.segment
+		output wire [7:0] segment_segment,       //    segment.segment
 		input  wire       usart_rxd,             //      usart.rxd
 		output wire       usart_txd              //           .txd
 	);
 
 	wire         count250000_0_clkout_clk;           // Count250000_0:clkOut -> DataConversionUnit_0:update
 	wire   [7:0] controller_0_datatoupdate_data;     // controller_0:dataToUpdate -> DataConversionUnit_0:data
-	wire   [6:0] dataconversionunit_0_indic0_indic0; // DataConversionUnit_0:indicator0 -> DynamicIllumination4Indicators_0:indicator0
-	wire   [6:0] dataconversionunit_0_indic1_indic1; // DataConversionUnit_0:indicator1 -> DynamicIllumination4Indicators_0:indicator1
+	wire   [7:0] dataconversionunit_0_indic0_indic0; // DataConversionUnit_0:indicator0 -> DynamicIllumination4Indicators_0:indicator0
+	wire   [7:0] dataconversionunit_0_indic1_indic1; // DataConversionUnit_0:indicator1 -> DynamicIllumination4Indicators_0:indicator1
+	wire   [7:0] dataconversionunit_0_indic2_indic2; // DataConversionUnit_0:indicator2 -> DynamicIllumination4Indicators_0:indicator2
 	wire         digitalfilter_0_output0_key;        // DigitalFilter_0:output0 -> controller_0:key1
 	wire         digitalfilter_1_output0_key;        // DigitalFilter_1:output0 -> controller_0:key2
 	wire   [7:0] i2c_transcever_0_port_data_rd;      // i2c_transcever_0:data_rd -> controller_0:i2c_data_rd
@@ -54,7 +54,8 @@ module simple_struct (
 		.data       (controller_0_datatoupdate_data),     //   data.data
 		.indicator0 (dataconversionunit_0_indic0_indic0), // indic0.indic0
 		.indicator1 (dataconversionunit_0_indic1_indic1), // indic1.indic1
-		.update     (count250000_0_clkout_clk)            // update.clk
+		.update     (count250000_0_clkout_clk),           // update.clk
+		.indicator2 (dataconversionunit_0_indic2_indic2)  // indic2.indic2
 	);
 
 	DigitalFilter #(
@@ -78,7 +79,7 @@ module simple_struct (
 		.enable     (enable_enable),                      //     enable.enable
 		.indicator0 (dataconversionunit_0_indic0_indic0), // indicator0.indic0
 		.indicator1 (dataconversionunit_0_indic1_indic1), // indicator1.indic1
-		.indicator2 (indicator2_indicator2),              // indicator2.indicator2
+		.indicator2 (dataconversionunit_0_indic2_indic2), // indicator2.indic2
 		.indicator3 (indicator3_indicator3),              // indicator3.indicator3
 		.segment    (segment_segment),                    //    segment.segment
 		.clk        (clk_clk)                             //        clk.clk

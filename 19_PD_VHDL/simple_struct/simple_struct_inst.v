@@ -1,8 +1,8 @@
 	simple_struct u0 (
+		.buzz_buzz             (<connected-to-buzz_buzz>),             //       buzz.buzz
 		.clk_clk               (<connected-to-clk_clk>),               //        clk.clk
 		.enable_enable         (<connected-to-enable_enable>),         //     enable.enable
 		.indicator_indicator   (<connected-to-indicator_indicator>),   //  indicator.indicator
-		.indicator2_indicator2 (<connected-to-indicator2_indicator2>), // indicator2.indicator2
 		.indicator3_indicator3 (<connected-to-indicator3_indicator3>), // indicator3.indicator3
 		.input0_input0         (<connected-to-input0_input0>),         //     input0.input0
 		.input0_1_input0       (<connected-to-input0_1_input0>),       //   input0_1.input0
@@ -14,7 +14,6 @@
 		.sda_oe                (<connected-to-sda_oe>),                //           .oe
 		.segment_segment       (<connected-to-segment_segment>),       //    segment.segment
 		.usart_rxd             (<connected-to-usart_rxd>),             //      usart.rxd
-		.usart_txd             (<connected-to-usart_txd>),             //           .txd
-		.buzz_buzz             (<connected-to-buzz_buzz>)              //       buzz.buzz
+		.usart_txd             (<connected-to-usart_txd>)              //           .txd
 	);
 

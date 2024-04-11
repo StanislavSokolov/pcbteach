@@ -6,11 +6,11 @@ entity DynamicIllumination4Indicators is
 Port ( 
 	clk : in STD_LOGIC;
 	enable : in STD_LOGIC_VECTOR(3 downto 0);
-	indicator0 : in STD_LOGIC_VECTOR(6 downto 0);
-	indicator1 : in STD_LOGIC_VECTOR(6 downto 0);
-	indicator2 : in STD_LOGIC_VECTOR(6 downto 0);
-	indicator3 : in STD_LOGIC_VECTOR(6 downto 0);
-	segment : out STD_LOGIC_VECTOR(6 downto 0);
+	indicator0 : in STD_LOGIC_VECTOR(7 downto 0);
+	indicator1 : in STD_LOGIC_VECTOR(7 downto 0);
+	indicator2 : in STD_LOGIC_VECTOR(7 downto 0);
+	indicator3 : in STD_LOGIC_VECTOR(7 downto 0);
+	segment : out STD_LOGIC_VECTOR(7 downto 0);
 	indicator : out STD_LOGIC_VECTOR(3 downto 0)
 	);
 end DynamicIllumination4Indicators;
@@ -43,7 +43,7 @@ begin
 			when 1 => if enable(1) = '1' then indicator <= b"1101"; segment <= indicator1; end if;
 			when 2 => if enable(2) = '1' then indicator <= b"1011"; segment <= indicator2; end if;
 			when 3 => if enable(3) = '1' then indicator <= b"0111"; segment <= indicator3; end if;
-			when others => indicator <= b"0000"; segment <= b"0000000";
+			when others => indicator <= b"0000"; segment <= b"00000000";
 		end case;	
 	end process;
 	

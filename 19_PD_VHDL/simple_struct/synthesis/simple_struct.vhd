@@ -12,8 +12,7 @@ entity simple_struct is
 		clk_clk               : in  std_logic                    := '0';             --        clk.clk
 		enable_enable         : in  std_logic_vector(3 downto 0) := (others => '0'); --     enable.enable
 		indicator_indicator   : out std_logic_vector(3 downto 0);                    --  indicator.indicator
-		indicator2_indicator2 : in  std_logic_vector(6 downto 0) := (others => '0'); -- indicator2.indicator2
-		indicator3_indicator3 : in  std_logic_vector(6 downto 0) := (others => '0'); -- indicator3.indicator3
+		indicator3_indicator3 : in  std_logic_vector(7 downto 0) := (others => '0'); -- indicator3.indicator3
 		input0_input0         : in  std_logic                    := '0';             --     input0.input0
 		input0_1_input0       : in  std_logic                    := '0';             --   input0_1.input0
 		leds_leds             : out std_logic_vector(3 downto 0);                    --       leds.leds
@@ -22,7 +21,7 @@ entity simple_struct is
 		scl_oe                : out std_logic;                                       --           .oe
 		sda_in                : in  std_logic                    := '0';             --        sda.in
 		sda_oe                : out std_logic;                                       --           .oe
-		segment_segment       : out std_logic_vector(6 downto 0);                    --    segment.segment
+		segment_segment       : out std_logic_vector(7 downto 0);                    --    segment.segment
 		usart_rxd             : in  std_logic                    := '0';             --      usart.rxd
 		usart_txd             : out std_logic                                        --           .txd
 	);
@@ -40,9 +39,10 @@ architecture rtl of simple_struct is
 		port (
 			clk        : in  std_logic                    := 'X';             -- clk
 			data       : in  std_logic_vector(7 downto 0) := (others => 'X'); -- data
-			indicator0 : out std_logic_vector(6 downto 0);                    -- indic0
-			indicator1 : out std_logic_vector(6 downto 0);                    -- indic1
-			update     : in  std_logic                    := 'X'              -- clk
+			indicator0 : out std_logic_vector(7 downto 0);                    -- indic0
+			indicator1 : out std_logic_vector(7 downto 0);                    -- indic1
+			update     : in  std_logic                    := 'X';             -- clk
+			indicator2 : out std_logic_vector(7 downto 0)                     -- indic2
 		);
 	end component DataConversionUnit;
 
@@ -61,11 +61,11 @@ architecture rtl of simple_struct is
 		port (
 			indicator  : out std_logic_vector(3 downto 0);                    -- indicator
 			enable     : in  std_logic_vector(3 downto 0) := (others => 'X'); -- enable
-			indicator0 : in  std_logic_vector(6 downto 0) := (others => 'X'); -- indic0
-			indicator1 : in  std_logic_vector(6 downto 0) := (others => 'X'); -- indic1
-			indicator2 : in  std_logic_vector(6 downto 0) := (others => 'X'); -- indicator2
-			indicator3 : in  std_logic_vector(6 downto 0) := (others => 'X'); -- indicator3
-			segment    : out std_logic_vector(6 downto 0);                    -- segment
+			indicator0 : in  std_logic_vector(7 downto 0) := (others => 'X'); -- indic0
+			indicator1 : in  std_logic_vector(7 downto 0) := (others => 'X'); -- indic1
+			indicator2 : in  std_logic_vector(7 downto 0) := (others => 'X'); -- indic2
+			indicator3 : in  std_logic_vector(7 downto 0) := (others => 'X'); -- indicator3
+			segment    : out std_logic_vector(7 downto 0);                    -- segment
 			clk        : in  std_logic                    := 'X'              -- clk
 		);
 	end component DynamicIllumination4Indicators;
@@ -207,8 +207,9 @@ architecture rtl of simple_struct is
 
 	signal count250000_0_clkout_clk                 : std_logic;                     -- Count250000_0:clkOut -> DataConversionUnit_0:update
 	signal controller_0_datatoupdate_data           : std_logic_vector(7 downto 0);  -- controller_0:dataToUpdate -> DataConversionUnit_0:data
-	signal dataconversionunit_0_indic0_indic0       : std_logic_vector(6 downto 0);  -- DataConversionUnit_0:indicator0 -> DynamicIllumination4Indicators_0:indicator0
-	signal dataconversionunit_0_indic1_indic1       : std_logic_vector(6 downto 0);  -- DataConversionUnit_0:indicator1 -> DynamicIllumination4Indicators_0:indicator1
+	signal dataconversionunit_0_indic0_indic0       : std_logic_vector(7 downto 0);  -- DataConversionUnit_0:indicator0 -> DynamicIllumination4Indicators_0:indicator0
+	signal dataconversionunit_0_indic1_indic1       : std_logic_vector(7 downto 0);  -- DataConversionUnit_0:indicator1 -> DynamicIllumination4Indicators_0:indicator1
+	signal dataconversionunit_0_indic2_indic2       : std_logic_vector(7 downto 0);  -- DataConversionUnit_0:indicator2 -> DynamicIllumination4Indicators_0:indicator2
 	signal digitalfilter_0_output0_key              : std_logic;                     -- DigitalFilter_0:output0 -> controller_0:key1
 	signal digitalfilter_1_output0_key              : std_logic;                     -- DigitalFilter_1:output0 -> controller_0:key2
 	signal i2c_transcever_0_port_data_rd            : std_logic_vector(7 downto 0);  -- i2c_transcever_0:data_rd -> controller_0:i2c_data_rd
@@ -242,7 +243,8 @@ begin
 			data       => controller_0_datatoupdate_data,     --   data.data
 			indicator0 => dataconversionunit_0_indic0_indic0, -- indic0.indic0
 			indicator1 => dataconversionunit_0_indic1_indic1, -- indic1.indic1
-			update     => count250000_0_clkout_clk            -- update.clk
+			update     => count250000_0_clkout_clk,           -- update.clk
+			indicator2 => dataconversionunit_0_indic2_indic2  -- indic2.indic2
 		);
 
 	digitalfilter_0 : component DigitalFilter
@@ -271,7 +273,7 @@ begin
 			enable     => enable_enable,                      --     enable.enable
 			indicator0 => dataconversionunit_0_indic0_indic0, -- indicator0.indic0
 			indicator1 => dataconversionunit_0_indic1_indic1, -- indicator1.indic1
-			indicator2 => indicator2_indicator2,              -- indicator2.indicator2
+			indicator2 => dataconversionunit_0_indic2_indic2, -- indicator2.indic2
 			indicator3 => indicator3_indicator3,              -- indicator3.indicator3
 			segment    => segment_segment,                    --    segment.segment
 			clk        => clk_clk                             --        clk.clk

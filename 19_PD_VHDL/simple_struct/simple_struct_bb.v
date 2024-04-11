@@ -1,9 +1,9 @@
 
 module simple_struct (
+	buzz_buzz,
 	clk_clk,
 	enable_enable,
 	indicator_indicator,
-	indicator2_indicator2,
 	indicator3_indicator3,
 	input0_input0,
 	input0_1_input0,
@@ -15,14 +15,13 @@ module simple_struct (
 	sda_oe,
 	segment_segment,
 	usart_rxd,
-	usart_txd,
-	buzz_buzz);	
+	usart_txd);	
 
+	output		buzz_buzz;
 	input		clk_clk;
 	input	[3:0]	enable_enable;
 	output	[3:0]	indicator_indicator;
-	input	[6:0]	indicator2_indicator2;
-	input	[6:0]	indicator3_indicator3;
+	input	[7:0]	indicator3_indicator3;
 	input		input0_input0;
 	input		input0_1_input0;
 	output	[3:0]	leds_leds;
@@ -31,8 +30,7 @@ module simple_struct (
 	output		scl_oe;
 	input		sda_in;
 	output		sda_oe;
-	output	[6:0]	segment_segment;
+	output	[7:0]	segment_segment;
 	input		usart_rxd;
 	output		usart_txd;
-	output		buzz_buzz;
 endmodule

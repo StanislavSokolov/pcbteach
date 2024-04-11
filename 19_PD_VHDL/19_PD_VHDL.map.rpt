@@ -1,5 +1,5 @@
 Analysis & Synthesis report for 19_PD_VHDL
-Thu Apr 11 11:17:09 2024
+Thu Apr 11 12:09:07 2024
 Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Standard Edition
 
 
@@ -70,15 +70,15 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                            ;
 +------------------------------------+----------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Apr 11 11:17:09 2024              ;
+; Analysis & Synthesis Status        ; Successful - Thu Apr 11 12:09:07 2024              ;
 ; Quartus Prime Version              ; 22.1std.0 Build 915 10/25/2022 SC Standard Edition ;
 ; Revision Name                      ; 19_PD_VHDL                                         ;
 ; Top-level Entity Name              ; top_level                                          ;
 ; Family                             ; Cyclone IV E                                       ;
-; Total logic elements               ; 754                                                ;
-;     Total combinational functions  ; 669                                                ;
-;     Dedicated logic registers      ; 357                                                ;
-; Total registers                    ; 357                                                ;
+; Total logic elements               ; 748                                                ;
+;     Total combinational functions  ; 662                                                ;
+;     Dedicated logic registers      ; 358                                                ;
+; Total registers                    ; 358                                                ;
 ; Total pins                         ; 27                                                 ;
 ; Total virtual pins                 ; 0                                                  ;
 ; Total memory bits                  ; 0                                                  ;
@@ -232,20 +232,20 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 754       ;
+; Estimated Total logic elements              ; 748       ;
 ;                                             ;           ;
-; Total combinational functions               ; 669       ;
+; Total combinational functions               ; 662       ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 214       ;
-;     -- 3 input functions                    ; 159       ;
-;     -- <=2 input functions                  ; 296       ;
+;     -- 4 input functions                    ; 219       ;
+;     -- 3 input functions                    ; 146       ;
+;     -- <=2 input functions                  ; 297       ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 447       ;
-;     -- arithmetic mode                      ; 222       ;
+;     -- normal mode                          ; 444       ;
+;     -- arithmetic mode                      ; 218       ;
 ;                                             ;           ;
-; Total registers                             ; 357       ;
-;     -- Dedicated logic registers            ; 357       ;
+; Total registers                             ; 358       ;
+;     -- Dedicated logic registers            ; 358       ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
 ; I/O pins                                    ; 27        ;
@@ -253,8 +253,8 @@ https://fpgasoftware.intel.com/eula.
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 351       ;
-; Total fan-out                               ; 3125      ;
+; Maximum fan-out                             ; 352       ;
+; Total fan-out                               ; 3112      ;
 ; Average fan-out                             ; 2.89      ;
 +---------------------------------------------+-----------+
 
@@ -264,25 +264,25 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------+---------------+
 ; Compilation Hierarchy Node                                              ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                 ; Entity Name                    ; Library Name  ;
 +-------------------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------+---------------+
-; |top_level                                                              ; 669 (0)             ; 357 (0)                   ; 0           ; 0            ; 0       ; 0         ; 27   ; 0            ; |top_level                                                                                                                                                          ; top_level                      ; work          ;
-;    |simple_struct:u0|                                                   ; 669 (0)             ; 357 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|simple_struct:u0                                                                                                                                         ; simple_struct                  ; simple_struct ;
+; |top_level                                                              ; 662 (0)             ; 358 (0)                   ; 0           ; 0            ; 0       ; 0         ; 27   ; 0            ; |top_level                                                                                                                                                          ; top_level                      ; work          ;
+;    |simple_struct:u0|                                                   ; 662 (0)             ; 358 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|simple_struct:u0                                                                                                                                         ; simple_struct                  ; simple_struct ;
 ;       |Count250000:count250000_0|                                       ; 17 (17)             ; 17 (17)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|simple_struct:u0|Count250000:count250000_0                                                                                                               ; Count250000                    ; simple_struct ;
-;       |DataConversionUnit:dataconversionunit_0|                         ; 206 (24)            ; 31 (31)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|simple_struct:u0|DataConversionUnit:dataconversionunit_0                                                                                                 ; DataConversionUnit             ; simple_struct ;
+;       |DataConversionUnit:dataconversionunit_0|                         ; 193 (24)            ; 33 (33)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|simple_struct:u0|DataConversionUnit:dataconversionunit_0                                                                                                 ; DataConversionUnit             ; simple_struct ;
 ;          |lpm_divide:Div0|                                              ; 101 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|simple_struct:u0|DataConversionUnit:dataconversionunit_0|lpm_divide:Div0                                                                                 ; lpm_divide                     ; work          ;
 ;             |lpm_divide_l0p:auto_generated|                             ; 101 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|simple_struct:u0|DataConversionUnit:dataconversionunit_0|lpm_divide:Div0|lpm_divide_l0p:auto_generated                                                   ; lpm_divide_l0p                 ; work          ;
 ;                |abs_divider_gbg:divider|                                ; 101 (8)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|simple_struct:u0|DataConversionUnit:dataconversionunit_0|lpm_divide:Div0|lpm_divide_l0p:auto_generated|abs_divider_gbg:divider                           ; abs_divider_gbg                ; work          ;
 ;                   |alt_u_div_u6f:divider|                               ; 84 (84)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|simple_struct:u0|DataConversionUnit:dataconversionunit_0|lpm_divide:Div0|lpm_divide_l0p:auto_generated|abs_divider_gbg:divider|alt_u_div_u6f:divider     ; alt_u_div_u6f                  ; work          ;
 ;                   |lpm_abs_e0a:my_abs_num|                              ; 9 (9)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|simple_struct:u0|DataConversionUnit:dataconversionunit_0|lpm_divide:Div0|lpm_divide_l0p:auto_generated|abs_divider_gbg:divider|lpm_abs_e0a:my_abs_num    ; lpm_abs_e0a                    ; work          ;
-;          |lpm_divide:Mod0|                                              ; 81 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|simple_struct:u0|DataConversionUnit:dataconversionunit_0|lpm_divide:Mod0                                                                                 ; lpm_divide                     ; work          ;
-;             |lpm_divide_q9m:auto_generated|                             ; 81 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|simple_struct:u0|DataConversionUnit:dataconversionunit_0|lpm_divide:Mod0|lpm_divide_q9m:auto_generated                                                   ; lpm_divide_q9m                 ; work          ;
-;                |sign_div_unsign_fkh:divider|                            ; 81 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|simple_struct:u0|DataConversionUnit:dataconversionunit_0|lpm_divide:Mod0|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider                       ; sign_div_unsign_fkh            ; work          ;
-;                   |alt_u_div_i4f:divider|                               ; 81 (81)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|simple_struct:u0|DataConversionUnit:dataconversionunit_0|lpm_divide:Mod0|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider|alt_u_div_i4f:divider ; alt_u_div_i4f                  ; work          ;
+;          |lpm_divide:Mod0|                                              ; 68 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|simple_struct:u0|DataConversionUnit:dataconversionunit_0|lpm_divide:Mod0                                                                                 ; lpm_divide                     ; work          ;
+;             |lpm_divide_q9m:auto_generated|                             ; 68 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|simple_struct:u0|DataConversionUnit:dataconversionunit_0|lpm_divide:Mod0|lpm_divide_q9m:auto_generated                                                   ; lpm_divide_q9m                 ; work          ;
+;                |sign_div_unsign_fkh:divider|                            ; 68 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|simple_struct:u0|DataConversionUnit:dataconversionunit_0|lpm_divide:Mod0|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider                       ; sign_div_unsign_fkh            ; work          ;
+;                   |alt_u_div_i4f:divider|                               ; 68 (68)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|simple_struct:u0|DataConversionUnit:dataconversionunit_0|lpm_divide:Mod0|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider|alt_u_div_i4f:divider ; alt_u_div_i4f                  ; work          ;
 ;       |DigitalFilter:digitalfilter_0|                                   ; 12 (12)             ; 10 (10)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|simple_struct:u0|DigitalFilter:digitalfilter_0                                                                                                           ; DigitalFilter                  ; simple_struct ;
 ;       |DigitalFilter:digitalfilter_1|                                   ; 15 (15)             ; 13 (13)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|simple_struct:u0|DigitalFilter:digitalfilter_1                                                                                                           ; DigitalFilter                  ; simple_struct ;
-;       |DynamicIllumination4Indicators:dynamicillumination4indicators_0| ; 22 (22)             ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0                                                                         ; DynamicIllumination4Indicators ; simple_struct ;
+;       |DynamicIllumination4Indicators:dynamicillumination4indicators_0| ; 31 (31)             ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0                                                                         ; DynamicIllumination4Indicators ; simple_struct ;
 ;       |altera_reset_controller:rst_controller|                          ; 0 (0)               ; 3 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|simple_struct:u0|altera_reset_controller:rst_controller                                                                                                  ; altera_reset_controller        ; simple_struct ;
 ;          |altera_reset_synchronizer:alt_rst_sync_uq1|                   ; 0 (0)               ; 3 (3)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|simple_struct:u0|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1                                                       ; altera_reset_synchronizer      ; simple_struct ;
-;       |controller:controller_0|                                         ; 208 (207)           ; 164 (161)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|simple_struct:u0|controller:controller_0                                                                                                                 ; controller                     ; simple_struct ;
+;       |controller:controller_0|                                         ; 205 (204)           ; 163 (160)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|simple_struct:u0|controller:controller_0                                                                                                                 ; controller                     ; simple_struct ;
 ;          |pgen:start_gen|                                               ; 1 (1)               ; 3 (3)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|simple_struct:u0|controller:controller_0|pgen:start_gen                                                                                                  ; pgen                           ; work          ;
 ;       |i2c_master:i2c_transcever_0|                                     ; 94 (94)             ; 46 (46)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|simple_struct:u0|i2c_master:i2c_transcever_0                                                                                                             ; i2c_master                     ; simple_struct ;
 ;       |usart:usart_0|                                                   ; 95 (95)             ; 71 (71)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|simple_struct:u0|usart:usart_0                                                                                                                           ; usart                          ; simple_struct ;
@@ -371,23 +371,24 @@ Encoding Type:  One-Hot
 +-------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+--------------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                                                                                                                                                     ;
-+-----------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+------------------------+
-; Latch Name                                                                                    ; Latch Enable Signal                                                                            ; Free of Timing Hazards ;
-+-----------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+------------------------+
-; simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|indicator[0] ; simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|clkCounter[1] ; yes                    ;
-; simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|indicator[1] ; simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|clkCounter[1] ; yes                    ;
-; simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|indicator[2] ; simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|clkCounter[1] ; yes                    ;
-; simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|segment[0]   ; simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|clkCounter[1] ; yes                    ;
-; simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|segment[1]   ; simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|clkCounter[1] ; yes                    ;
-; simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|segment[2]   ; simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|clkCounter[1] ; yes                    ;
-; simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|segment[3]   ; simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|clkCounter[1] ; yes                    ;
-; simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|segment[4]   ; simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|clkCounter[1] ; yes                    ;
-; simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|segment[5]   ; simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|clkCounter[1] ; yes                    ;
-; simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|segment[6]   ; simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|clkCounter[1] ; yes                    ;
-; Number of user-specified and inferred latches = 10                                            ;                                                                                                ;                        ;
-+-----------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                                                                                                             ;
++-----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+------------------------+
+; Latch Name                                                                                    ; Latch Enable Signal                                                                    ; Free of Timing Hazards ;
++-----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+------------------------+
+; simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|indicator[0] ; simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|Mux12 ; yes                    ;
+; simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|indicator[1] ; simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|Mux12 ; yes                    ;
+; simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|indicator[2] ; simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|Mux12 ; yes                    ;
+; simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|segment[0]   ; simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|Mux12 ; yes                    ;
+; simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|segment[1]   ; simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|Mux12 ; yes                    ;
+; simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|segment[2]   ; simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|Mux12 ; yes                    ;
+; simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|segment[3]   ; simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|Mux12 ; yes                    ;
+; simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|segment[4]   ; simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|Mux12 ; yes                    ;
+; simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|segment[5]   ; simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|Mux12 ; yes                    ;
+; simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|segment[6]   ; simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|Mux12 ; yes                    ;
+; simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|segment[7]   ; simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|Mux12 ; yes                    ;
+; Number of user-specified and inferred latches = 11                                            ;                                                                                        ;                        ;
++-----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
@@ -396,6 +397,10 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +-----------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
 ; Register name                                                                                 ; Reason for Removal                                                                                         ;
 +-----------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+; simple_struct:u0|DataConversionUnit:dataconversionunit_0|indicator2[7]                        ; Stuck at VCC due to stuck port data_in                                                                     ;
+; simple_struct:u0|DataConversionUnit:dataconversionunit_0|indicator1[7]                        ; Stuck at GND due to stuck port data_in                                                                     ;
+; simple_struct:u0|DataConversionUnit:dataconversionunit_0|indicator0[7]                        ; Stuck at VCC due to stuck port data_in                                                                     ;
+; simple_struct:u0|DataConversionUnit:dataconversionunit_0|dataBuf[7]                           ; Stuck at GND due to stuck port data_in                                                                     ;
 ; simple_struct:u0|usart:usart_0|send_data[10..15]                                              ; Stuck at GND due to stuck port data_in                                                                     ;
 ; simple_struct:u0|usart:usart_0|send_data[9]                                                   ; Stuck at VCC due to stuck port data_in                                                                     ;
 ; simple_struct:u0|usart:usart_0|send_data[0]                                                   ; Stuck at GND due to stuck port data_in                                                                     ;
@@ -407,6 +412,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; simple_struct:u0|controller:controller_0|I2C_DevAddr[3]                                       ; Stuck at VCC due to stuck port data_in                                                                     ;
 ; simple_struct:u0|controller:controller_0|I2C_DevAddr[0..2]                                    ; Stuck at GND due to stuck port data_in                                                                     ;
 ; simple_struct:u0|controller:controller_0|I2C_WrData[0..7]                                     ; Stuck at GND due to stuck port data_in                                                                     ;
+; simple_struct:u0|DataConversionUnit:dataconversionunit_0|indicator0Buf[1,3]                   ; Stuck at GND due to stuck port data_in                                                                     ;
 ; simple_struct:u0|i2c_master:i2c_transcever_0|addr_rw[7]                                       ; Merged with simple_struct:u0|i2c_master:i2c_transcever_0|addr_rw[4]                                        ;
 ; simple_struct:u0|i2c_master:i2c_transcever_0|addr_rw[2,3,5,6]                                 ; Merged with simple_struct:u0|i2c_master:i2c_transcever_0|addr_rw[1]                                        ;
 ; simple_struct:u0|i2c_master:i2c_transcever_0|data_tx[0..7]                                    ; Merged with simple_struct:u0|i2c_master:i2c_transcever_0|addr_rw[1]                                        ;
@@ -428,25 +434,32 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|clkCount[2]  ; Merged with simple_struct:u0|Count250000:count250000_0|clkCounter[2]                                       ;
 ; simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|clkCount[1]  ; Merged with simple_struct:u0|Count250000:count250000_0|clkCounter[1]                                       ;
 ; simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|clkCount[0]  ; Merged with simple_struct:u0|Count250000:count250000_0|clkCounter[0]                                       ;
+; simple_struct:u0|DataConversionUnit:dataconversionunit_0|indicator0Buf[2]                     ; Merged with simple_struct:u0|DataConversionUnit:dataconversionunit_0|indicator0Buf[0]                      ;
+; simple_struct:u0|DataConversionUnit:dataconversionunit_0|indicator0[0,2,3,5]                  ; Stuck at GND due to stuck port data_in                                                                     ;
+; simple_struct:u0|DataConversionUnit:dataconversionunit_0|indicator0[4,6]                      ; Merged with simple_struct:u0|DataConversionUnit:dataconversionunit_0|indicator0[1]                         ;
 ; simple_struct:u0|i2c_master:i2c_transcever_0|addr_rw[1]                                       ; Stuck at GND due to stuck port data_in                                                                     ;
 ; simple_struct:u0|Count250000:count250000_0|clkOutBuf                                          ; Merged with simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|clkCounter[0] ;
 ; simple_struct:u0|i2c_master:i2c_transcever_0|addr_rw[4]                                       ; Stuck at VCC due to stuck port data_in                                                                     ;
 ; simple_struct:u0|usart:usart_0|next_state.PARITY_CHECK                                        ; Stuck at GND due to stuck port data_in                                                                     ;
 ; simple_struct:u0|usart:usart_0|pr_state.PARITY_CHECK                                          ; Stuck at GND due to stuck port data_in                                                                     ;
-; Total Number of Removed Registers = 68                                                        ;                                                                                                            ;
+; Total Number of Removed Registers = 81                                                        ;                                                                                                            ;
 +-----------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                   ;
-+---------------------------------------------------------+---------------------------+---------------------------------------------------------+
-; Register name                                           ; Reason for Removal        ; Registers Removed due to This Register                  ;
-+---------------------------------------------------------+---------------------------+---------------------------------------------------------+
-; simple_struct:u0|controller:controller_0|I2C_DevAddr[3] ; Stuck at VCC              ; simple_struct:u0|i2c_master:i2c_transcever_0|addr_rw[4] ;
-;                                                         ; due to stuck port data_in ;                                                         ;
-; simple_struct:u0|controller:controller_0|I2C_DevAddr[0] ; Stuck at GND              ; simple_struct:u0|i2c_master:i2c_transcever_0|addr_rw[1] ;
-;                                                         ; due to stuck port data_in ;                                                         ;
-+---------------------------------------------------------+---------------------------+---------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                                     ;
++---------------------------------------------------------------------------+---------------------------+-------------------------------------------------------------------------+
+; Register name                                                             ; Reason for Removal        ; Registers Removed due to This Register                                  ;
++---------------------------------------------------------------------------+---------------------------+-------------------------------------------------------------------------+
+; simple_struct:u0|DataConversionUnit:dataconversionunit_0|indicator0Buf[1] ; Stuck at GND              ; simple_struct:u0|DataConversionUnit:dataconversionunit_0|indicator0[0], ;
+;                                                                           ; due to stuck port data_in ; simple_struct:u0|DataConversionUnit:dataconversionunit_0|indicator0[2], ;
+;                                                                           ;                           ; simple_struct:u0|DataConversionUnit:dataconversionunit_0|indicator0[3], ;
+;                                                                           ;                           ; simple_struct:u0|DataConversionUnit:dataconversionunit_0|indicator0[5]  ;
+; simple_struct:u0|controller:controller_0|I2C_DevAddr[3]                   ; Stuck at VCC              ; simple_struct:u0|i2c_master:i2c_transcever_0|addr_rw[4]                 ;
+;                                                                           ; due to stuck port data_in ;                                                                         ;
+; simple_struct:u0|controller:controller_0|I2C_DevAddr[0]                   ; Stuck at GND              ; simple_struct:u0|i2c_master:i2c_transcever_0|addr_rw[1]                 ;
+;                                                                           ; due to stuck port data_in ;                                                                         ;
++---------------------------------------------------------------------------+---------------------------+-------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -454,12 +467,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 357   ;
-; Number of registers using Synchronous Clear  ; 139   ;
+; Total registers                              ; 358   ;
+; Number of registers using Synchronous Clear  ; 138   ;
 ; Number of registers using Synchronous Load   ; 8     ;
-; Number of registers using Asynchronous Clear ; 196   ;
+; Number of registers using Asynchronous Clear ; 195   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 136   ;
+; Number of registers using Clock Enable       ; 138   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -470,13 +483,13 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Inverted Register                                                                                                                          ; Fan out ;
 +--------------------------------------------------------------------------------------------------------------------------------------------+---------+
 ; simple_struct:u0|usart:usart_0|tx_out                                                                                                      ; 1       ;
-; simple_struct:u0|controller:controller_0|Temper_Limit_Low[4]                                                                               ; 2       ;
-; simple_struct:u0|controller:controller_0|Temper_Limit_Low[2]                                                                               ; 2       ;
-; simple_struct:u0|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1|altera_reset_synchronizer_int_chain_out ; 188     ;
+; simple_struct:u0|controller:controller_0|Temper_Limit_Low[5]                                                                               ; 2       ;
+; simple_struct:u0|controller:controller_0|Temper_Limit_Low[3]                                                                               ; 2       ;
+; simple_struct:u0|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1|altera_reset_synchronizer_int_chain_out ; 187     ;
+; simple_struct:u0|controller:controller_0|Temper_Limit_High[5]                                                                              ; 2       ;
 ; simple_struct:u0|controller:controller_0|Temper_Limit_High[4]                                                                              ; 2       ;
 ; simple_struct:u0|controller:controller_0|Temper_Limit_High[3]                                                                              ; 2       ;
 ; simple_struct:u0|controller:controller_0|Temper_Limit_High[2]                                                                              ; 2       ;
-; simple_struct:u0|controller:controller_0|Temper_Limit_High[1]                                                                              ; 2       ;
 ; simple_struct:u0|controller:controller_0|buzz_mode[1]                                                                                      ; 1       ;
 ; simple_struct:u0|controller:controller_0|buzz_mode[0]                                                                                      ; 1       ;
 ; simple_struct:u0|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1|altera_reset_synchronizer_int_chain[0]  ; 1       ;
@@ -489,26 +502,27 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------------------------------------------------------------------------------------------------------------------------------+---------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                 ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                       ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------+
-; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |top_level|simple_struct:u0|controller:controller_0|I2C_RxArray[0][5]                            ;
-; 3:1                ; 11 bits   ; 22 LEs        ; 11 LEs               ; 11 LEs                 ; Yes        ; |top_level|simple_struct:u0|DigitalFilter:digitalfilter_1|count[0]                               ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_level|simple_struct:u0|DigitalFilter:digitalfilter_0|count[0]                               ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |top_level|simple_struct:u0|controller:controller_0|\FSM:show_cnt[0]                             ;
-; 5:1                ; 6 bits    ; 18 LEs        ; 6 LEs                ; 12 LEs                 ; Yes        ; |top_level|simple_struct:u0|controller:controller_0|uart_tx_data[7]                              ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; Yes        ; |top_level|simple_struct:u0|controller:controller_0|uart_tx_data[0]                              ;
-; 6:1                ; 13 bits   ; 52 LEs        ; 13 LEs               ; 39 LEs                 ; Yes        ; |top_level|simple_struct:u0|usart:usart_0|rx_counter[2]                                          ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |top_level|simple_struct:u0|i2c_master:i2c_transcever_0|bit_cnt[2]                               ;
-; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |top_level|simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|Mux9 ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |top_level|simple_struct:u0|usart:usart_0|rx_bits                                                ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |top_level|simple_struct:u0|controller:controller_0|PresState                                    ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |top_level|simple_struct:u0|controller:controller_0|I2C_ByteCnt                                  ;
-; 7:1                ; 3 bits    ; 12 LEs        ; 9 LEs                ; 3 LEs                  ; No         ; |top_level|simple_struct:u0|usart:usart_0|Selector23                                             ;
-; 9:1                ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |top_level|simple_struct:u0|usart:usart_0|Selector19                                             ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------+
+; 3:1                ; 11 bits   ; 22 LEs        ; 11 LEs               ; 11 LEs                 ; Yes        ; |top_level|simple_struct:u0|DigitalFilter:digitalfilter_1|count[0]                                ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_level|simple_struct:u0|DigitalFilter:digitalfilter_0|count[3]                                ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 0 LEs                ; 14 LEs                 ; Yes        ; |top_level|simple_struct:u0|controller:controller_0|I2C_RxArray[0][4]                             ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |top_level|simple_struct:u0|controller:controller_0|\FSM:show_cnt[0]                              ;
+; 5:1                ; 6 bits    ; 18 LEs        ; 6 LEs                ; 12 LEs                 ; Yes        ; |top_level|simple_struct:u0|controller:controller_0|uart_tx_data[7]                               ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; Yes        ; |top_level|simple_struct:u0|controller:controller_0|uart_tx_data[0]                               ;
+; 6:1                ; 13 bits   ; 52 LEs        ; 13 LEs               ; 39 LEs                 ; Yes        ; |top_level|simple_struct:u0|usart:usart_0|rx_counter[2]                                           ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |top_level|simple_struct:u0|i2c_master:i2c_transcever_0|bit_cnt[2]                                ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |top_level|simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|Mux11 ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |top_level|simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|Mux10 ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |top_level|simple_struct:u0|usart:usart_0|rx_bits                                                 ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |top_level|simple_struct:u0|controller:controller_0|PresState                                     ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |top_level|simple_struct:u0|controller:controller_0|I2C_ByteCnt                                   ;
+; 7:1                ; 3 bits    ; 12 LEs        ; 9 LEs                ; 3 LEs                  ; No         ; |top_level|simple_struct:u0|usart:usart_0|Selector23                                              ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |top_level|simple_struct:u0|usart:usart_0|Selector19                                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
@@ -750,9 +764,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-------+----------+--------------+
 ; Port                  ; Type  ; Severity ; Details      ;
 +-----------------------+-------+----------+--------------+
-; enable_enable[1..0]   ; Input ; Info     ; Stuck at VCC ;
-; enable_enable[3..2]   ; Input ; Info     ; Stuck at GND ;
-; indicator2_indicator2 ; Input ; Info     ; Stuck at GND ;
+; enable_enable[2..0]   ; Input ; Info     ; Stuck at VCC ;
+; enable_enable[3]      ; Input ; Info     ; Stuck at GND ;
 ; indicator3_indicator3 ; Input ; Info     ; Stuck at GND ;
 +-----------------------+-------+----------+--------------+
 
@@ -763,31 +776,31 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 27                          ;
-; cycloneiii_ff         ; 357                         ;
+; cycloneiii_ff         ; 358                         ;
 ;     CLR               ; 49                          ;
-;     CLR SCLR          ; 98                          ;
+;     CLR SCLR          ; 97                          ;
 ;     CLR SLD           ; 4                           ;
-;     ENA               ; 87                          ;
+;     ENA               ; 89                          ;
 ;     ENA CLR           ; 40                          ;
 ;     ENA CLR SCLR      ; 5                           ;
 ;     ENA SLD           ; 4                           ;
 ;     SCLR              ; 36                          ;
 ;     plain             ; 34                          ;
 ; cycloneiii_io_obuf    ; 2                           ;
-; cycloneiii_lcell_comb ; 671                         ;
-;     arith             ; 222                         ;
-;         1 data inputs ; 1                           ;
-;         2 data inputs ; 146                         ;
-;         3 data inputs ; 75                          ;
-;     normal            ; 449                         ;
-;         0 data inputs ; 13                          ;
-;         1 data inputs ; 22                          ;
-;         2 data inputs ; 116                         ;
-;         3 data inputs ; 84                          ;
-;         4 data inputs ; 214                         ;
+; cycloneiii_lcell_comb ; 664                         ;
+;     arith             ; 218                         ;
+;         1 data inputs ; 2                           ;
+;         2 data inputs ; 147                         ;
+;         3 data inputs ; 69                          ;
+;     normal            ; 446                         ;
+;         0 data inputs ; 12                          ;
+;         1 data inputs ; 23                          ;
+;         2 data inputs ; 115                         ;
+;         3 data inputs ; 77                          ;
+;         4 data inputs ; 219                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 32.80                       ;
-; Average LUT depth     ; 8.70                        ;
+; Max LUT depth         ; 30.50                       ;
+; Average LUT depth     ; 7.87                        ;
 +-----------------------+-----------------------------+
 
 
@@ -806,35 +819,35 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 22.1std.0 Build 915 10/25/2022 SC Standard Edition
-    Info: Processing started: Thu Apr 11 11:16:51 2024
+    Info: Processing started: Thu Apr 11 12:08:46 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off 19_PD_VHDL -c 19_PD_VHDL
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12248): Elaborating Platform Designer system entity "simple_struct.qsys"
-Info (12250): 2024.04.11.11:17:03 Progress: Loading 19_PD_VHDL/simple_struct.qsys
-Info (12250): 2024.04.11.11:17:03 Progress: Reading input file
-Info (12250): 2024.04.11.11:17:03 Progress: Adding Count250000_0 [Count250000 1.0]
-Info (12250): 2024.04.11.11:17:04 Progress: Parameterizing module Count250000_0
-Info (12250): 2024.04.11.11:17:04 Progress: Adding DataConversionUnit_0 [DataConversionUnit 1.0]
-Info (12250): 2024.04.11.11:17:04 Progress: Parameterizing module DataConversionUnit_0
-Info (12250): 2024.04.11.11:17:04 Progress: Adding DigitalFilter_0 [DigitalFilter 1.0]
-Info (12250): 2024.04.11.11:17:04 Progress: Parameterizing module DigitalFilter_0
-Info (12250): 2024.04.11.11:17:04 Progress: Adding DigitalFilter_1 [DigitalFilter 1.0]
-Info (12250): 2024.04.11.11:17:04 Progress: Parameterizing module DigitalFilter_1
-Info (12250): 2024.04.11.11:17:04 Progress: Adding DynamicIllumination4Indicators_0 [DynamicIllumination4Indicators 1.0]
-Info (12250): 2024.04.11.11:17:04 Progress: Parameterizing module DynamicIllumination4Indicators_0
-Info (12250): 2024.04.11.11:17:04 Progress: Adding clk_0 [clock_source 22.1]
-Info (12250): 2024.04.11.11:17:04 Progress: Parameterizing module clk_0
-Info (12250): 2024.04.11.11:17:04 Progress: Adding controller_0 [controller 1.0]
-Info (12250): 2024.04.11.11:17:04 Progress: Parameterizing module controller_0
-Info (12250): 2024.04.11.11:17:04 Progress: Adding i2c_transcever_0 [i2c_transcever 1.0]
-Info (12250): 2024.04.11.11:17:04 Progress: Parameterizing module i2c_transcever_0
-Info (12250): 2024.04.11.11:17:04 Progress: Adding usart_0 [usart 1.0]
-Info (12250): 2024.04.11.11:17:04 Progress: Parameterizing module usart_0
-Info (12250): 2024.04.11.11:17:04 Progress: Building connections
-Info (12250): 2024.04.11.11:17:04 Progress: Parameterizing connections
-Info (12250): 2024.04.11.11:17:04 Progress: Validating
-Info (12250): 2024.04.11.11:17:04 Progress: Done reading input file
+Info (12250): 2024.04.11.12:08:58 Progress: Loading 19_PD_VHDL/simple_struct.qsys
+Info (12250): 2024.04.11.12:08:59 Progress: Reading input file
+Info (12250): 2024.04.11.12:08:59 Progress: Adding Count250000_0 [Count250000 1.0]
+Info (12250): 2024.04.11.12:09:01 Progress: Parameterizing module Count250000_0
+Info (12250): 2024.04.11.12:09:01 Progress: Adding DataConversionUnit_0 [DataConversionUnit 1.0]
+Info (12250): 2024.04.11.12:09:01 Progress: Parameterizing module DataConversionUnit_0
+Info (12250): 2024.04.11.12:09:01 Progress: Adding DigitalFilter_0 [DigitalFilter 1.0]
+Info (12250): 2024.04.11.12:09:01 Progress: Parameterizing module DigitalFilter_0
+Info (12250): 2024.04.11.12:09:01 Progress: Adding DigitalFilter_1 [DigitalFilter 1.0]
+Info (12250): 2024.04.11.12:09:01 Progress: Parameterizing module DigitalFilter_1
+Info (12250): 2024.04.11.12:09:01 Progress: Adding DynamicIllumination4Indicators_0 [DynamicIllumination4Indicators 1.0]
+Info (12250): 2024.04.11.12:09:02 Progress: Parameterizing module DynamicIllumination4Indicators_0
+Info (12250): 2024.04.11.12:09:02 Progress: Adding clk_0 [clock_source 22.1]
+Info (12250): 2024.04.11.12:09:02 Progress: Parameterizing module clk_0
+Info (12250): 2024.04.11.12:09:02 Progress: Adding controller_0 [controller 1.0]
+Info (12250): 2024.04.11.12:09:02 Progress: Parameterizing module controller_0
+Info (12250): 2024.04.11.12:09:02 Progress: Adding i2c_transcever_0 [i2c_transcever 1.0]
+Info (12250): 2024.04.11.12:09:02 Progress: Parameterizing module i2c_transcever_0
+Info (12250): 2024.04.11.12:09:02 Progress: Adding usart_0 [usart 1.0]
+Info (12250): 2024.04.11.12:09:02 Progress: Parameterizing module usart_0
+Info (12250): 2024.04.11.12:09:02 Progress: Building connections
+Info (12250): 2024.04.11.12:09:02 Progress: Parameterizing connections
+Info (12250): 2024.04.11.12:09:02 Progress: Validating
+Info (12250): 2024.04.11.12:09:02 Progress: Done reading input file
 Info (12250): Simple_struct: Generating simple_struct "simple_struct" for QUARTUS_SYNTH
 Info (12250): Count250000_0: "simple_struct" instantiated Count250000 "Count250000_0"
 Info (12250): DataConversionUnit_0: "simple_struct" instantiated DataConversionUnit "DataConversionUnit_0"
@@ -850,7 +863,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file compone
     Info (12022): Found design unit 1: DynamicIllumination4Indicators-Behavioral File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/components/DynamicIllumination4Indicators.vhd Line: 18
     Info (12023): Found entity 1: DynamicIllumination4Indicators File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/components/DynamicIllumination4Indicators.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file components/dataconversionunit.vhd
-    Info (12022): Found design unit 1: DataConversionUnit-Behavioral File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/components/DataConversionUnit.vhd Line: 16
+    Info (12022): Found design unit 1: DataConversionUnit-Behavioral File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/components/DataConversionUnit.vhd Line: 17
     Info (12023): Found entity 1: DataConversionUnit File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/components/DataConversionUnit.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file components/count250000.vhd
     Info (12022): Found design unit 1: Count250000-Behavioral File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/components/Count250000.vhd Line: 12
@@ -882,7 +895,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file db/ip/s
     Info (12022): Found design unit 1: Count250000-Behavioral File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/count250000.vhd Line: 12
     Info (12023): Found entity 1: Count250000 File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/count250000.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file db/ip/simple_struct/submodules/dataconversionunit.vhd
-    Info (12022): Found design unit 1: DataConversionUnit-Behavioral File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/dataconversionunit.vhd Line: 16
+    Info (12022): Found design unit 1: DataConversionUnit-Behavioral File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/dataconversionunit.vhd Line: 17
     Info (12023): Found entity 1: DataConversionUnit File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/dataconversionunit.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file db/ip/simple_struct/submodules/digitalfilter.vhd
     Info (12022): Found design unit 1: DigitalFilter-Behavioral File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/digitalfilter.vhd Line: 15
@@ -907,12 +920,12 @@ Info (12021): Found 2 design units, including 1 entities, in source file db/ip/s
     Info (12022): Found design unit 1: usart-Behavioral File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/usart.vhd Line: 26
     Info (12023): Found entity 1: usart File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/usart.vhd Line: 5
 Info (12127): Elaborating entity "top_level" for the top level hierarchy
-Info (12128): Elaborating entity "simple_struct" for hierarchy "simple_struct:u0" File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/top_level.vhd Line: 54
+Info (12128): Elaborating entity "simple_struct" for hierarchy "simple_struct:u0" File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/top_level.vhd Line: 53
 Info (12128): Elaborating entity "Count250000" for hierarchy "simple_struct:u0|Count250000:count250000_0" File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/simple_struct.v Line: 50
-Info (12128): Elaborating entity "DataConversionUnit" for hierarchy "simple_struct:u0|DataConversionUnit:dataconversionunit_0" File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/simple_struct.v Line: 58
-Info (12128): Elaborating entity "DigitalFilter" for hierarchy "simple_struct:u0|DigitalFilter:digitalfilter_0" File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/simple_struct.v Line: 66
-Info (12128): Elaborating entity "DigitalFilter" for hierarchy "simple_struct:u0|DigitalFilter:digitalfilter_1" File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/simple_struct.v Line: 74
-Info (12128): Elaborating entity "DynamicIllumination4Indicators" for hierarchy "simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0" File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/simple_struct.v Line: 85
+Info (12128): Elaborating entity "DataConversionUnit" for hierarchy "simple_struct:u0|DataConversionUnit:dataconversionunit_0" File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/simple_struct.v Line: 59
+Info (12128): Elaborating entity "DigitalFilter" for hierarchy "simple_struct:u0|DigitalFilter:digitalfilter_0" File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/simple_struct.v Line: 67
+Info (12128): Elaborating entity "DigitalFilter" for hierarchy "simple_struct:u0|DigitalFilter:digitalfilter_1" File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/simple_struct.v Line: 75
+Info (12128): Elaborating entity "DynamicIllumination4Indicators" for hierarchy "simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0" File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/simple_struct.v Line: 86
 Warning (10492): VHDL Process Statement warning at dynamicillumination4indicators.vhd(42): signal "enable" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/dynamicillumination4indicators.vhd Line: 42
 Warning (10492): VHDL Process Statement warning at dynamicillumination4indicators.vhd(42): signal "indicator0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/dynamicillumination4indicators.vhd Line: 42
 Warning (10492): VHDL Process Statement warning at dynamicillumination4indicators.vhd(43): signal "enable" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/dynamicillumination4indicators.vhd Line: 43
@@ -930,31 +943,32 @@ Info (10041): Inferred latch for "segment[3]" at dynamicillumination4indicators.
 Info (10041): Inferred latch for "segment[4]" at dynamicillumination4indicators.vhd(39) File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/dynamicillumination4indicators.vhd Line: 39
 Info (10041): Inferred latch for "segment[5]" at dynamicillumination4indicators.vhd(39) File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/dynamicillumination4indicators.vhd Line: 39
 Info (10041): Inferred latch for "segment[6]" at dynamicillumination4indicators.vhd(39) File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/dynamicillumination4indicators.vhd Line: 39
+Info (10041): Inferred latch for "segment[7]" at dynamicillumination4indicators.vhd(39) File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/dynamicillumination4indicators.vhd Line: 39
 Info (10041): Inferred latch for "indicator[0]" at dynamicillumination4indicators.vhd(39) File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/dynamicillumination4indicators.vhd Line: 39
 Info (10041): Inferred latch for "indicator[1]" at dynamicillumination4indicators.vhd(39) File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/dynamicillumination4indicators.vhd Line: 39
 Info (10041): Inferred latch for "indicator[2]" at dynamicillumination4indicators.vhd(39) File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/dynamicillumination4indicators.vhd Line: 39
 Info (10041): Inferred latch for "indicator[3]" at dynamicillumination4indicators.vhd(39) File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/dynamicillumination4indicators.vhd Line: 39
-Info (12128): Elaborating entity "controller" for hierarchy "simple_struct:u0|controller:controller_0" File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/simple_struct.v Line: 108
+Info (12128): Elaborating entity "controller" for hierarchy "simple_struct:u0|controller:controller_0" File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/simple_struct.v Line: 109
 Warning (10036): Verilog HDL or VHDL warning at controller.vhd(114): object "RegWrDone" assigned a value but never read File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/controller.vhd Line: 114
 Warning (10492): VHDL Process Statement warning at controller.vhd(287): signal "start_stop" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/controller.vhd Line: 287
 Warning (10873): Using initial value X (don't care) for net "uart_tx_data[15..8]" at controller.vhd(14) File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/controller.vhd Line: 14
 Info (12128): Elaborating entity "pgen" for hierarchy "simple_struct:u0|controller:controller_0|pgen:start_gen" File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/controller.vhd Line: 145
-Info (12128): Elaborating entity "i2c_master" for hierarchy "simple_struct:u0|i2c_master:i2c_transcever_0" File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/simple_struct.v Line: 127
-Info (12128): Elaborating entity "usart" for hierarchy "simple_struct:u0|usart:usart_0" File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/simple_struct.v Line: 146
+Info (12128): Elaborating entity "i2c_master" for hierarchy "simple_struct:u0|i2c_master:i2c_transcever_0" File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/simple_struct.v Line: 128
+Info (12128): Elaborating entity "usart" for hierarchy "simple_struct:u0|usart:usart_0" File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/simple_struct.v Line: 147
 Warning (10631): VHDL Process Statement warning at usart.vhd(121): inferring latch(es) for signal or variable "receive_data", which holds its previous value in one or more paths through the process File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/usart.vhd Line: 121
 Info (10041): Inferred latch for "receive_data[11]" at usart.vhd(121) File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/usart.vhd Line: 121
 Info (10041): Inferred latch for "receive_data[12]" at usart.vhd(121) File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/usart.vhd Line: 121
 Info (10041): Inferred latch for "receive_data[13]" at usart.vhd(121) File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/usart.vhd Line: 121
 Info (10041): Inferred latch for "receive_data[14]" at usart.vhd(121) File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/usart.vhd Line: 121
 Info (10041): Inferred latch for "receive_data[15]" at usart.vhd(121) File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/usart.vhd Line: 121
-Info (12128): Elaborating entity "altera_reset_controller" for hierarchy "simple_struct:u0|altera_reset_controller:rst_controller" File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/simple_struct.v Line: 209
+Info (12128): Elaborating entity "altera_reset_controller" for hierarchy "simple_struct:u0|altera_reset_controller:rst_controller" File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/simple_struct.v Line: 210
 Info (12128): Elaborating entity "altera_reset_synchronizer" for hierarchy "simple_struct:u0|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1" File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/altera_reset_controller.v Line: 208
 Info (12128): Elaborating entity "altera_reset_synchronizer" for hierarchy "simple_struct:u0|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_req_sync_uq1" File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/altera_reset_controller.v Line: 220
 Info (278001): Inferred 2 megafunctions from design logic
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "simple_struct:u0|DataConversionUnit:dataconversionunit_0|Mod0" File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/dataconversionunit.vhd Line: 30
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "simple_struct:u0|DataConversionUnit:dataconversionunit_0|Div0" File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/dataconversionunit.vhd Line: 30
-Info (12130): Elaborated megafunction instantiation "simple_struct:u0|DataConversionUnit:dataconversionunit_0|lpm_divide:Mod0" File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/dataconversionunit.vhd Line: 30
-Info (12133): Instantiated megafunction "simple_struct:u0|DataConversionUnit:dataconversionunit_0|lpm_divide:Mod0" with the following parameter: File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/dataconversionunit.vhd Line: 30
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "simple_struct:u0|DataConversionUnit:dataconversionunit_0|Mod0" File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/dataconversionunit.vhd Line: 36
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "simple_struct:u0|DataConversionUnit:dataconversionunit_0|Div0" File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/dataconversionunit.vhd Line: 36
+Info (12130): Elaborated megafunction instantiation "simple_struct:u0|DataConversionUnit:dataconversionunit_0|lpm_divide:Mod0" File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/dataconversionunit.vhd Line: 36
+Info (12133): Instantiated megafunction "simple_struct:u0|DataConversionUnit:dataconversionunit_0|lpm_divide:Mod0" with the following parameter: File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/dataconversionunit.vhd Line: 36
     Info (12134): Parameter "LPM_WIDTHN" = "8"
     Info (12134): Parameter "LPM_WIDTHD" = "8"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -969,8 +983,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/add_
     Info (12023): Found entity 1: add_sub_7pc File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/add_sub_7pc.tdf Line: 23
 Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_8pc.tdf
     Info (12023): Found entity 1: add_sub_8pc File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/add_sub_8pc.tdf Line: 23
-Info (12130): Elaborated megafunction instantiation "simple_struct:u0|DataConversionUnit:dataconversionunit_0|lpm_divide:Div0" File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/dataconversionunit.vhd Line: 30
-Info (12133): Instantiated megafunction "simple_struct:u0|DataConversionUnit:dataconversionunit_0|lpm_divide:Div0" with the following parameter: File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/dataconversionunit.vhd Line: 30
+Info (12130): Elaborated megafunction instantiation "simple_struct:u0|DataConversionUnit:dataconversionunit_0|lpm_divide:Div0" File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/dataconversionunit.vhd Line: 36
+Info (12133): Instantiated megafunction "simple_struct:u0|DataConversionUnit:dataconversionunit_0|lpm_divide:Div0" with the following parameter: File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/dataconversionunit.vhd Line: 36
     Info (12134): Parameter "LPM_WIDTHN" = "10"
     Info (12134): Parameter "LPM_WIDTHD" = "5"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
@@ -989,12 +1003,32 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_
 Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Info (13014): Ignored 8 buffer(s)
     Info (13016): Ignored 8 CARRY_SUM buffer(s)
+Warning (13012): Latch simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|indicator[0] has unsafe behavior File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/dynamicillumination4indicators.vhd Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|clkCounter[0] File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/dynamicillumination4indicators.vhd Line: 25
+Warning (13012): Latch simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|indicator[1] has unsafe behavior File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/dynamicillumination4indicators.vhd Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|clkCounter[1] File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/dynamicillumination4indicators.vhd Line: 25
+Warning (13012): Latch simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|indicator[2] has unsafe behavior File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/dynamicillumination4indicators.vhd Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|clkCounter[0] File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/dynamicillumination4indicators.vhd Line: 25
+Warning (13012): Latch simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|segment[0] has unsafe behavior File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/dynamicillumination4indicators.vhd Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|clkCounter[0] File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/dynamicillumination4indicators.vhd Line: 25
+Warning (13012): Latch simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|segment[1] has unsafe behavior File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/dynamicillumination4indicators.vhd Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|clkCounter[0] File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/dynamicillumination4indicators.vhd Line: 25
+Warning (13012): Latch simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|segment[2] has unsafe behavior File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/dynamicillumination4indicators.vhd Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|clkCounter[0] File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/dynamicillumination4indicators.vhd Line: 25
+Warning (13012): Latch simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|segment[3] has unsafe behavior File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/dynamicillumination4indicators.vhd Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|clkCounter[0] File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/dynamicillumination4indicators.vhd Line: 25
+Warning (13012): Latch simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|segment[4] has unsafe behavior File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/dynamicillumination4indicators.vhd Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|clkCounter[0] File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/dynamicillumination4indicators.vhd Line: 25
+Warning (13012): Latch simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|segment[5] has unsafe behavior File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/dynamicillumination4indicators.vhd Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|clkCounter[0] File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/dynamicillumination4indicators.vhd Line: 25
+Warning (13012): Latch simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|segment[6] has unsafe behavior File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/dynamicillumination4indicators.vhd Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|clkCounter[0] File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/dynamicillumination4indicators.vhd Line: 25
+Warning (13012): Latch simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|segment[7] has unsafe behavior File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/dynamicillumination4indicators.vhd Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|clkCounter[0] File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/dynamicillumination4indicators.vhd Line: 25
 Info (13000): Registers with preset signals will power-up high File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/usart.vhd Line: 98
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "dig_sel[2]" is stuck at VCC File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/top_level.vhd Line: 16
     Warning (13410): Pin "dig_sel[3]" is stuck at VCC File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/top_level.vhd Line: 16
-    Warning (13410): Pin "seg7_code[7]" is stuck at VCC File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/top_level.vhd Line: 17
 Info (286030): Timing-Driven Synthesis is running
 Critical Warning (18061): Ignored Power-Up Level option on the following registers
     Critical Warning (18010): Register simple_struct:u0|controller:controller_0|start_stop will power up to Low File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/controller.vhd Line: 133
@@ -1005,15 +1039,15 @@ Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
 Warning (21074): Design contains 2 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "keys_in[2]" File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/top_level.vhd Line: 15
     Warning (15610): No output dependent on input pin "keys_in[3]" File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/top_level.vhd Line: 15
-Info (21057): Implemented 794 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 788 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 7 input pins
     Info (21059): Implemented 18 output pins
     Info (21060): Implemented 2 bidirectional pins
-    Info (21061): Implemented 767 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 27 warnings
-    Info: Peak virtual memory: 4860 megabytes
-    Info: Processing ended: Thu Apr 11 11:17:09 2024
-    Info: Elapsed time: 00:00:18
-    Info: Total CPU time (on all processors): 00:00:43
+    Info (21061): Implemented 761 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 47 warnings
+    Info: Peak virtual memory: 4844 megabytes
+    Info: Processing ended: Thu Apr 11 12:09:07 2024
+    Info: Elapsed time: 00:00:21
+    Info: Total CPU time (on all processors): 00:00:48
 
 

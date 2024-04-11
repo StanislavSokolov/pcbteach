@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="simple_struct" kind="simple_struct" version="1.0" fabric="QSYS">
  <!-- Format version 22.1 915 (Future versions may contain additional information.) -->
- <!-- 2024.04.11.11:19:46 -->
+ <!-- 2024.04.11.12:09:03 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
-  <value>1712823586</value>
+  <value>1712826543</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -393,7 +393,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>indicator0</name>
     <direction>Output</direction>
-    <width>7</width>
+    <width>8</width>
     <role>indic0</role>
    </port>
   </interface>
@@ -438,7 +438,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>indicator1</name>
     <direction>Output</direction>
-    <width>7</width>
+    <width>8</width>
     <role>indic1</role>
    </port>
   </interface>
@@ -485,6 +485,51 @@ parameters are a RESULT of the module parameters. -->
     <direction>Input</direction>
     <width>1</width>
     <role>clk</role>
+   </port>
+  </interface>
+  <interface name="indic2" kind="conduit_end" version="22.1">
+   <!-- The connection points exposed by a module instance for the
+particular module parameters. Connection points and their
+parameters are a RESULT of the module parameters. -->
+   <parameter name="associatedClock">
+    <type>java.lang.String</type>
+    <value>clock</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="associatedReset">
+    <type>java.lang.String</type>
+    <value></value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="deviceFamily">
+    <type>java.lang.String</type>
+    <value>UNKNOWN</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="generateLegacySim">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <type>conduit</type>
+   <isStart>false</isStart>
+   <port>
+    <name>indicator2</name>
+    <direction>Output</direction>
+    <width>8</width>
+    <role>indic2</role>
    </port>
   </interface>
  </module>
@@ -976,7 +1021,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>indicator0</name>
     <direction>Input</direction>
-    <width>7</width>
+    <width>8</width>
     <role>indic0</role>
    </port>
   </interface>
@@ -1021,7 +1066,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>indicator1</name>
     <direction>Input</direction>
-    <width>7</width>
+    <width>8</width>
     <role>indic1</role>
    </port>
   </interface>
@@ -1066,8 +1111,8 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>indicator2</name>
     <direction>Input</direction>
-    <width>7</width>
-    <role>indicator2</role>
+    <width>8</width>
+    <role>indic2</role>
    </port>
   </interface>
   <interface name="indicator3" kind="conduit_end" version="22.1">
@@ -1111,7 +1156,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>indicator3</name>
     <direction>Input</direction>
-    <width>7</width>
+    <width>8</width>
     <role>indicator3</role>
    </port>
   </interface>
@@ -1156,7 +1201,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>segment</name>
     <direction>Output</direction>
-    <width>7</width>
+    <width>8</width>
     <role>segment</role>
    </port>
   </interface>
@@ -3081,6 +3126,73 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>indicator1</endConnectionPoint>
  </connection>
  <connection
+   name="DataConversionUnit_0.indic2/DynamicIllumination4Indicators_0.indicator2"
+   kind="conduit"
+   version="22.1"
+   start="DataConversionUnit_0.indic2"
+   end="DynamicIllumination4Indicators_0.indicator2">
+  <parameter name="endPort">
+   <type>com.altera.entityinterfaces.IPort</type>
+   <value></value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="endPortLSB">
+   <type>int</type>
+   <value>0</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="startPort">
+   <type>com.altera.entityinterfaces.IPort</type>
+   <value></value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="startPortLSB">
+   <type>int</type>
+   <value>0</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="width">
+   <type>int</type>
+   <value>0</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="deviceFamily">
+   <type>java.lang.String</type>
+   <value>UNKNOWN</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="generateLegacySim">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <startModule>DataConversionUnit_0</startModule>
+  <startConnectionPoint>indic2</startConnectionPoint>
+  <endModule>DynamicIllumination4Indicators_0</endModule>
+  <endConnectionPoint>indicator2</endConnectionPoint>
+ </connection>
+ <connection
    name="controller_0.key1/DigitalFilter_0.output0"
    kind="conduit"
    version="22.1"
@@ -3462,7 +3574,7 @@ parameters are a RESULT of the module parameters. -->
   <version>1.0</version>
  </plugin>
  <plugin>
-  <instanceCount>26</instanceCount>
+  <instanceCount>27</instanceCount>
   <name>conduit_end</name>
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
@@ -3566,7 +3678,7 @@ parameters are a RESULT of the module parameters. -->
   <version>22.1</version>
  </plugin>
  <plugin>
-  <instanceCount>7</instanceCount>
+  <instanceCount>8</instanceCount>
   <name>conduit</name>
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IConnection</subtype>

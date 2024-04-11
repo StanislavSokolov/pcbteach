@@ -4,8 +4,7 @@
 			clk_clk               : in  std_logic                    := 'X';             -- clk
 			enable_enable         : in  std_logic_vector(3 downto 0) := (others => 'X'); -- enable
 			indicator_indicator   : out std_logic_vector(3 downto 0);                    -- indicator
-			indicator2_indicator2 : in  std_logic_vector(6 downto 0) := (others => 'X'); -- indicator2
-			indicator3_indicator3 : in  std_logic_vector(6 downto 0) := (others => 'X'); -- indicator3
+			indicator3_indicator3 : in  std_logic_vector(7 downto 0) := (others => 'X'); -- indicator3
 			input0_input0         : in  std_logic                    := 'X';             -- input0
 			input0_1_input0       : in  std_logic                    := 'X';             -- input0
 			leds_leds             : out std_logic_vector(3 downto 0);                    -- leds
@@ -14,7 +13,7 @@
 			scl_oe                : out std_logic;                                       -- oe
 			sda_in                : in  std_logic                    := 'X';             -- in
 			sda_oe                : out std_logic;                                       -- oe
-			segment_segment       : out std_logic_vector(6 downto 0);                    -- segment
+			segment_segment       : out std_logic_vector(7 downto 0);                    -- segment
 			usart_rxd             : in  std_logic                    := 'X';             -- rxd
 			usart_txd             : out std_logic                                        -- txd
 		);

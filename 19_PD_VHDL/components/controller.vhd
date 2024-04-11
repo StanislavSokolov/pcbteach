@@ -123,8 +123,8 @@ architecture behave of controller is
 	signal I2C_Err      : STD_LOGIC;	
 	
 	SIGNAL Temper  		: STD_LOGIC_VECTOR( 7 DOWNTO 0 );
-	SIGNAL Temper_Limit_Low  		: STD_LOGIC_VECTOR( 7 DOWNTO 0 ) := x"14"; -- 20 градусов
-	SIGNAL Temper_Limit_High  		: STD_LOGIC_VECTOR( 7 DOWNTO 0 ) := x"1E"; -- 30 градусов
+	SIGNAL Temper_Limit_Low  		: STD_LOGIC_VECTOR( 7 DOWNTO 0 ) := x"28"; -- 20.0 градусов
+	SIGNAL Temper_Limit_High  		: STD_LOGIC_VECTOR( 7 DOWNTO 0 ) := x"3C"; -- 30.0 градусов
 	SIGNAL CMD : STD_LOGIC_VECTOR( 7 DOWNTO 0 ) := x"F0";
 	SIGNAL send_limit_en : STD_LOGIC := '0';
 	
@@ -363,7 +363,8 @@ begin
 					PresState <= READ_TEMPER;
 				
 				elsif I2C_Err = '0' then
-					Temper 		<= I2C_RxArray(0);	-- use MSB of readed temper value. It's in integer temper value
+					Temper(7 downto 1) 		<= I2C_RxArray(0)(6 downto 0);	-- use MSB of readed temper value. It's in integer temper value
+					Temper(0) 		<= I2C_RxArray(1)(7);
 					RegRdDone 	<= '0';
 					PresState 	<= UPDATE_IND;
 				else
