@@ -1,5 +1,5 @@
 Analysis & Synthesis report for 19_PD_VHDL
-Wed Apr 10 16:35:19 2024
+Thu Apr 11 11:17:09 2024
 Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Standard Edition
 
 
@@ -70,16 +70,16 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                            ;
 +------------------------------------+----------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Apr 10 16:35:19 2024              ;
+; Analysis & Synthesis Status        ; Successful - Thu Apr 11 11:17:09 2024              ;
 ; Quartus Prime Version              ; 22.1std.0 Build 915 10/25/2022 SC Standard Edition ;
 ; Revision Name                      ; 19_PD_VHDL                                         ;
 ; Top-level Entity Name              ; top_level                                          ;
 ; Family                             ; Cyclone IV E                                       ;
-; Total logic elements               ; 686                                                ;
-;     Total combinational functions  ; 602                                                ;
-;     Dedicated logic registers      ; 303                                                ;
-; Total registers                    ; 303                                                ;
-; Total pins                         ; 26                                                 ;
+; Total logic elements               ; 754                                                ;
+;     Total combinational functions  ; 669                                                ;
+;     Dedicated logic registers      ; 357                                                ;
+; Total registers                    ; 357                                                ;
+; Total pins                         ; 27                                                 ;
 ; Total virtual pins                 ; 0                                                  ;
 ; Total memory bits                  ; 0                                                  ;
 ; Embedded Multiplier 9-bit elements ; 0                                                  ;
@@ -232,30 +232,30 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 686       ;
+; Estimated Total logic elements              ; 754       ;
 ;                                             ;           ;
-; Total combinational functions               ; 602       ;
+; Total combinational functions               ; 669       ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 202       ;
-;     -- 3 input functions                    ; 157       ;
-;     -- <=2 input functions                  ; 243       ;
+;     -- 4 input functions                    ; 214       ;
+;     -- 3 input functions                    ; 159       ;
+;     -- <=2 input functions                  ; 296       ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 425       ;
-;     -- arithmetic mode                      ; 177       ;
+;     -- normal mode                          ; 447       ;
+;     -- arithmetic mode                      ; 222       ;
 ;                                             ;           ;
-; Total registers                             ; 303       ;
-;     -- Dedicated logic registers            ; 303       ;
+; Total registers                             ; 357       ;
+;     -- Dedicated logic registers            ; 357       ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
-; I/O pins                                    ; 26        ;
+; I/O pins                                    ; 27        ;
 ;                                             ;           ;
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 297       ;
-; Total fan-out                               ; 2755      ;
-; Average fan-out                             ; 2.87      ;
+; Maximum fan-out                             ; 351       ;
+; Total fan-out                               ; 3125      ;
+; Average fan-out                             ; 2.89      ;
 +---------------------------------------------+-----------+
 
 
@@ -264,8 +264,8 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------+---------------+
 ; Compilation Hierarchy Node                                              ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                 ; Entity Name                    ; Library Name  ;
 +-------------------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------+---------------+
-; |top_level                                                              ; 602 (0)             ; 303 (0)                   ; 0           ; 0            ; 0       ; 0         ; 26   ; 0            ; |top_level                                                                                                                                                          ; top_level                      ; work          ;
-;    |simple_struct:u0|                                                   ; 602 (0)             ; 303 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|simple_struct:u0                                                                                                                                         ; simple_struct                  ; simple_struct ;
+; |top_level                                                              ; 669 (0)             ; 357 (0)                   ; 0           ; 0            ; 0       ; 0         ; 27   ; 0            ; |top_level                                                                                                                                                          ; top_level                      ; work          ;
+;    |simple_struct:u0|                                                   ; 669 (0)             ; 357 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|simple_struct:u0                                                                                                                                         ; simple_struct                  ; simple_struct ;
 ;       |Count250000:count250000_0|                                       ; 17 (17)             ; 17 (17)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|simple_struct:u0|Count250000:count250000_0                                                                                                               ; Count250000                    ; simple_struct ;
 ;       |DataConversionUnit:dataconversionunit_0|                         ; 206 (24)            ; 31 (31)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|simple_struct:u0|DataConversionUnit:dataconversionunit_0                                                                                                 ; DataConversionUnit             ; simple_struct ;
 ;          |lpm_divide:Div0|                                              ; 101 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|simple_struct:u0|DataConversionUnit:dataconversionunit_0|lpm_divide:Div0                                                                                 ; lpm_divide                     ; work          ;
@@ -282,7 +282,7 @@ https://fpgasoftware.intel.com/eula.
 ;       |DynamicIllumination4Indicators:dynamicillumination4indicators_0| ; 22 (22)             ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0                                                                         ; DynamicIllumination4Indicators ; simple_struct ;
 ;       |altera_reset_controller:rst_controller|                          ; 0 (0)               ; 3 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|simple_struct:u0|altera_reset_controller:rst_controller                                                                                                  ; altera_reset_controller        ; simple_struct ;
 ;          |altera_reset_synchronizer:alt_rst_sync_uq1|                   ; 0 (0)               ; 3 (3)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|simple_struct:u0|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1                                                       ; altera_reset_synchronizer      ; simple_struct ;
-;       |controller:controller_0|                                         ; 141 (140)           ; 110 (107)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|simple_struct:u0|controller:controller_0                                                                                                                 ; controller                     ; simple_struct ;
+;       |controller:controller_0|                                         ; 208 (207)           ; 164 (161)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|simple_struct:u0|controller:controller_0                                                                                                                 ; controller                     ; simple_struct ;
 ;          |pgen:start_gen|                                               ; 1 (1)               ; 3 (3)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|simple_struct:u0|controller:controller_0|pgen:start_gen                                                                                                  ; pgen                           ; work          ;
 ;       |i2c_master:i2c_transcever_0|                                     ; 94 (94)             ; 46 (46)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|simple_struct:u0|i2c_master:i2c_transcever_0                                                                                                             ; i2c_master                     ; simple_struct ;
 ;       |usart:usart_0|                                                   ; 95 (95)             ; 71 (71)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|simple_struct:u0|usart:usart_0                                                                                                                           ; usart                          ; simple_struct ;
@@ -454,12 +454,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 303   ;
-; Number of registers using Synchronous Clear  ; 91    ;
+; Total registers                              ; 357   ;
+; Number of registers using Synchronous Clear  ; 139   ;
 ; Number of registers using Synchronous Load   ; 8     ;
-; Number of registers using Asynchronous Clear ; 142   ;
+; Number of registers using Asynchronous Clear ; 196   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 134   ;
+; Number of registers using Clock Enable       ; 136   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -472,41 +472,43 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; simple_struct:u0|usart:usart_0|tx_out                                                                                                      ; 1       ;
 ; simple_struct:u0|controller:controller_0|Temper_Limit_Low[4]                                                                               ; 2       ;
 ; simple_struct:u0|controller:controller_0|Temper_Limit_Low[2]                                                                               ; 2       ;
+; simple_struct:u0|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1|altera_reset_synchronizer_int_chain_out ; 188     ;
 ; simple_struct:u0|controller:controller_0|Temper_Limit_High[4]                                                                              ; 2       ;
 ; simple_struct:u0|controller:controller_0|Temper_Limit_High[3]                                                                              ; 2       ;
 ; simple_struct:u0|controller:controller_0|Temper_Limit_High[2]                                                                              ; 2       ;
 ; simple_struct:u0|controller:controller_0|Temper_Limit_High[1]                                                                              ; 2       ;
-; simple_struct:u0|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1|altera_reset_synchronizer_int_chain_out ; 136     ;
+; simple_struct:u0|controller:controller_0|buzz_mode[1]                                                                                      ; 1       ;
+; simple_struct:u0|controller:controller_0|buzz_mode[0]                                                                                      ; 1       ;
 ; simple_struct:u0|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1|altera_reset_synchronizer_int_chain[0]  ; 1       ;
 ; simple_struct:u0|i2c_master:i2c_transcever_0|sda_int                                                                                       ; 2       ;
 ; simple_struct:u0|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1|altera_reset_synchronizer_int_chain[1]  ; 1       ;
 ; simple_struct:u0|i2c_master:i2c_transcever_0|bit_cnt[1]                                                                                    ; 16      ;
 ; simple_struct:u0|i2c_master:i2c_transcever_0|bit_cnt[2]                                                                                    ; 16      ;
 ; simple_struct:u0|i2c_master:i2c_transcever_0|bit_cnt[0]                                                                                    ; 18      ;
-; Total number of inverted registers = 14                                                                                                    ;         ;
+; Total number of inverted registers = 16                                                                                                    ;         ;
 +--------------------------------------------------------------------------------------------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                  ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                        ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------+
-; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |top_level|simple_struct:u0|controller:controller_0|I2C_RxArray[0][7]                             ;
-; 3:1                ; 11 bits   ; 22 LEs        ; 11 LEs               ; 11 LEs                 ; Yes        ; |top_level|simple_struct:u0|DigitalFilter:digitalfilter_1|count[6]                                ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_level|simple_struct:u0|DigitalFilter:digitalfilter_0|count[3]                                ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |top_level|simple_struct:u0|controller:controller_0|\FSM:show_cnt[0]                              ;
-; 5:1                ; 6 bits    ; 18 LEs        ; 6 LEs                ; 12 LEs                 ; Yes        ; |top_level|simple_struct:u0|controller:controller_0|uart_tx_data[2]                               ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; Yes        ; |top_level|simple_struct:u0|controller:controller_0|uart_tx_data[0]                               ;
-; 6:1                ; 13 bits   ; 52 LEs        ; 13 LEs               ; 39 LEs                 ; Yes        ; |top_level|simple_struct:u0|usart:usart_0|rx_counter[3]                                           ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |top_level|simple_struct:u0|i2c_master:i2c_transcever_0|bit_cnt[0]                                ;
-; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |top_level|simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|Mux10 ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |top_level|simple_struct:u0|usart:usart_0|rx_bits                                                 ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |top_level|simple_struct:u0|controller:controller_0|PresState                                     ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |top_level|simple_struct:u0|controller:controller_0|I2C_ByteCnt                                   ;
-; 7:1                ; 3 bits    ; 12 LEs        ; 9 LEs                ; 3 LEs                  ; No         ; |top_level|simple_struct:u0|usart:usart_0|Selector23                                              ;
-; 9:1                ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |top_level|simple_struct:u0|usart:usart_0|Selector21                                              ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------+
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |top_level|simple_struct:u0|controller:controller_0|I2C_RxArray[0][5]                            ;
+; 3:1                ; 11 bits   ; 22 LEs        ; 11 LEs               ; 11 LEs                 ; Yes        ; |top_level|simple_struct:u0|DigitalFilter:digitalfilter_1|count[0]                               ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_level|simple_struct:u0|DigitalFilter:digitalfilter_0|count[0]                               ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |top_level|simple_struct:u0|controller:controller_0|\FSM:show_cnt[0]                             ;
+; 5:1                ; 6 bits    ; 18 LEs        ; 6 LEs                ; 12 LEs                 ; Yes        ; |top_level|simple_struct:u0|controller:controller_0|uart_tx_data[7]                              ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; Yes        ; |top_level|simple_struct:u0|controller:controller_0|uart_tx_data[0]                              ;
+; 6:1                ; 13 bits   ; 52 LEs        ; 13 LEs               ; 39 LEs                 ; Yes        ; |top_level|simple_struct:u0|usart:usart_0|rx_counter[2]                                          ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |top_level|simple_struct:u0|i2c_master:i2c_transcever_0|bit_cnt[2]                               ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |top_level|simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0|Mux9 ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |top_level|simple_struct:u0|usart:usart_0|rx_bits                                                ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |top_level|simple_struct:u0|controller:controller_0|PresState                                    ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |top_level|simple_struct:u0|controller:controller_0|I2C_ByteCnt                                  ;
+; 7:1                ; 3 bits    ; 12 LEs        ; 9 LEs                ; 3 LEs                  ; No         ; |top_level|simple_struct:u0|usart:usart_0|Selector23                                             ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |top_level|simple_struct:u0|usart:usart_0|Selector19                                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
@@ -760,32 +762,32 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 26                          ;
-; cycloneiii_ff         ; 303                         ;
-;     CLR               ; 45                          ;
-;     CLR SCLR          ; 50                          ;
+; boundary_port         ; 27                          ;
+; cycloneiii_ff         ; 357                         ;
+;     CLR               ; 49                          ;
+;     CLR SCLR          ; 98                          ;
 ;     CLR SLD           ; 4                           ;
 ;     ENA               ; 87                          ;
-;     ENA CLR           ; 38                          ;
+;     ENA CLR           ; 40                          ;
 ;     ENA CLR SCLR      ; 5                           ;
 ;     ENA SLD           ; 4                           ;
 ;     SCLR              ; 36                          ;
 ;     plain             ; 34                          ;
 ; cycloneiii_io_obuf    ; 2                           ;
-; cycloneiii_lcell_comb ; 604                         ;
-;     arith             ; 177                         ;
+; cycloneiii_lcell_comb ; 671                         ;
+;     arith             ; 222                         ;
 ;         1 data inputs ; 1                           ;
-;         2 data inputs ; 101                         ;
+;         2 data inputs ; 146                         ;
 ;         3 data inputs ; 75                          ;
-;     normal            ; 427                         ;
+;     normal            ; 449                         ;
 ;         0 data inputs ; 13                          ;
-;         1 data inputs ; 18                          ;
-;         2 data inputs ; 112                         ;
-;         3 data inputs ; 82                          ;
-;         4 data inputs ; 202                         ;
+;         1 data inputs ; 22                          ;
+;         2 data inputs ; 116                         ;
+;         3 data inputs ; 84                          ;
+;         4 data inputs ; 214                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 32.80                       ;
-; Average LUT depth     ; 9.63                        ;
+; Average LUT depth     ; 8.70                        ;
 +-----------------------+-----------------------------+
 
 
@@ -804,35 +806,35 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 22.1std.0 Build 915 10/25/2022 SC Standard Edition
-    Info: Processing started: Wed Apr 10 16:35:01 2024
+    Info: Processing started: Thu Apr 11 11:16:51 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off 19_PD_VHDL -c 19_PD_VHDL
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12248): Elaborating Platform Designer system entity "simple_struct.qsys"
-Info (12250): 2024.04.10.16:35:13 Progress: Loading 19_PD_VHDL/simple_struct.qsys
-Info (12250): 2024.04.10.16:35:13 Progress: Reading input file
-Info (12250): 2024.04.10.16:35:13 Progress: Adding Count250000_0 [Count250000 1.0]
-Info (12250): 2024.04.10.16:35:14 Progress: Parameterizing module Count250000_0
-Info (12250): 2024.04.10.16:35:14 Progress: Adding DataConversionUnit_0 [DataConversionUnit 1.0]
-Info (12250): 2024.04.10.16:35:14 Progress: Parameterizing module DataConversionUnit_0
-Info (12250): 2024.04.10.16:35:14 Progress: Adding DigitalFilter_0 [DigitalFilter 1.0]
-Info (12250): 2024.04.10.16:35:14 Progress: Parameterizing module DigitalFilter_0
-Info (12250): 2024.04.10.16:35:14 Progress: Adding DigitalFilter_1 [DigitalFilter 1.0]
-Info (12250): 2024.04.10.16:35:14 Progress: Parameterizing module DigitalFilter_1
-Info (12250): 2024.04.10.16:35:14 Progress: Adding DynamicIllumination4Indicators_0 [DynamicIllumination4Indicators 1.0]
-Info (12250): 2024.04.10.16:35:14 Progress: Parameterizing module DynamicIllumination4Indicators_0
-Info (12250): 2024.04.10.16:35:14 Progress: Adding clk_0 [clock_source 22.1]
-Info (12250): 2024.04.10.16:35:14 Progress: Parameterizing module clk_0
-Info (12250): 2024.04.10.16:35:14 Progress: Adding controller_0 [controller 1.0]
-Info (12250): 2024.04.10.16:35:14 Progress: Parameterizing module controller_0
-Info (12250): 2024.04.10.16:35:14 Progress: Adding i2c_transcever_0 [i2c_transcever 1.0]
-Info (12250): 2024.04.10.16:35:14 Progress: Parameterizing module i2c_transcever_0
-Info (12250): 2024.04.10.16:35:14 Progress: Adding usart_0 [usart 1.0]
-Info (12250): 2024.04.10.16:35:14 Progress: Parameterizing module usart_0
-Info (12250): 2024.04.10.16:35:14 Progress: Building connections
-Info (12250): 2024.04.10.16:35:14 Progress: Parameterizing connections
-Info (12250): 2024.04.10.16:35:14 Progress: Validating
-Info (12250): 2024.04.10.16:35:14 Progress: Done reading input file
+Info (12250): 2024.04.11.11:17:03 Progress: Loading 19_PD_VHDL/simple_struct.qsys
+Info (12250): 2024.04.11.11:17:03 Progress: Reading input file
+Info (12250): 2024.04.11.11:17:03 Progress: Adding Count250000_0 [Count250000 1.0]
+Info (12250): 2024.04.11.11:17:04 Progress: Parameterizing module Count250000_0
+Info (12250): 2024.04.11.11:17:04 Progress: Adding DataConversionUnit_0 [DataConversionUnit 1.0]
+Info (12250): 2024.04.11.11:17:04 Progress: Parameterizing module DataConversionUnit_0
+Info (12250): 2024.04.11.11:17:04 Progress: Adding DigitalFilter_0 [DigitalFilter 1.0]
+Info (12250): 2024.04.11.11:17:04 Progress: Parameterizing module DigitalFilter_0
+Info (12250): 2024.04.11.11:17:04 Progress: Adding DigitalFilter_1 [DigitalFilter 1.0]
+Info (12250): 2024.04.11.11:17:04 Progress: Parameterizing module DigitalFilter_1
+Info (12250): 2024.04.11.11:17:04 Progress: Adding DynamicIllumination4Indicators_0 [DynamicIllumination4Indicators 1.0]
+Info (12250): 2024.04.11.11:17:04 Progress: Parameterizing module DynamicIllumination4Indicators_0
+Info (12250): 2024.04.11.11:17:04 Progress: Adding clk_0 [clock_source 22.1]
+Info (12250): 2024.04.11.11:17:04 Progress: Parameterizing module clk_0
+Info (12250): 2024.04.11.11:17:04 Progress: Adding controller_0 [controller 1.0]
+Info (12250): 2024.04.11.11:17:04 Progress: Parameterizing module controller_0
+Info (12250): 2024.04.11.11:17:04 Progress: Adding i2c_transcever_0 [i2c_transcever 1.0]
+Info (12250): 2024.04.11.11:17:04 Progress: Parameterizing module i2c_transcever_0
+Info (12250): 2024.04.11.11:17:04 Progress: Adding usart_0 [usart 1.0]
+Info (12250): 2024.04.11.11:17:04 Progress: Parameterizing module usart_0
+Info (12250): 2024.04.11.11:17:04 Progress: Building connections
+Info (12250): 2024.04.11.11:17:04 Progress: Parameterizing connections
+Info (12250): 2024.04.11.11:17:04 Progress: Validating
+Info (12250): 2024.04.11.11:17:04 Progress: Done reading input file
 Info (12250): Simple_struct: Generating simple_struct "simple_struct" for QUARTUS_SYNTH
 Info (12250): Count250000_0: "simple_struct" instantiated Count250000 "Count250000_0"
 Info (12250): DataConversionUnit_0: "simple_struct" instantiated DataConversionUnit "DataConversionUnit_0"
@@ -866,10 +868,10 @@ Info (12021): Found 2 design units, including 1 entities, in source file compone
     Info (12022): Found design unit 1: usart-Behavioral File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/components/usart.vhd Line: 26
     Info (12023): Found entity 1: usart File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/components/usart.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file components/controller.vhd
-    Info (12022): Found design unit 1: controller-behave File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/components/controller.vhd Line: 39
+    Info (12022): Found design unit 1: controller-behave File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/components/controller.vhd Line: 41
     Info (12023): Found entity 1: controller File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/components/controller.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file top_level.vhd
-    Info (12022): Found design unit 1: top_level-arch File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/top_level.vhd Line: 23
+    Info (12022): Found design unit 1: top_level-arch File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/top_level.vhd Line: 24
     Info (12023): Found entity 1: top_level File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/top_level.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file components/digitalfilter.vhd
     Info (12022): Found design unit 1: DigitalFilter-Behavioral File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/components/DigitalFilter.vhd Line: 15
@@ -893,7 +895,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/ip/s
 Info (12021): Found 1 design units, including 1 entities, in source file db/ip/simple_struct/submodules/altera_reset_synchronizer.v
     Info (12023): Found entity 1: altera_reset_synchronizer File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/altera_reset_synchronizer.v Line: 24
 Info (12021): Found 2 design units, including 1 entities, in source file db/ip/simple_struct/submodules/controller.vhd
-    Info (12022): Found design unit 1: controller-behave File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/controller.vhd Line: 39
+    Info (12022): Found design unit 1: controller-behave File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/controller.vhd Line: 41
     Info (12023): Found entity 1: controller File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/controller.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file db/ip/simple_struct/submodules/i2c_master.vhd
     Info (12022): Found design unit 1: i2c_master-logic File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/i2c_master.vhd Line: 28
@@ -905,12 +907,12 @@ Info (12021): Found 2 design units, including 1 entities, in source file db/ip/s
     Info (12022): Found design unit 1: usart-Behavioral File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/usart.vhd Line: 26
     Info (12023): Found entity 1: usart File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/usart.vhd Line: 5
 Info (12127): Elaborating entity "top_level" for the top level hierarchy
-Info (12128): Elaborating entity "simple_struct" for hierarchy "simple_struct:u0" File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/top_level.vhd Line: 52
-Info (12128): Elaborating entity "Count250000" for hierarchy "simple_struct:u0|Count250000:count250000_0" File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/simple_struct.v Line: 49
-Info (12128): Elaborating entity "DataConversionUnit" for hierarchy "simple_struct:u0|DataConversionUnit:dataconversionunit_0" File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/simple_struct.v Line: 57
-Info (12128): Elaborating entity "DigitalFilter" for hierarchy "simple_struct:u0|DigitalFilter:digitalfilter_0" File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/simple_struct.v Line: 65
-Info (12128): Elaborating entity "DigitalFilter" for hierarchy "simple_struct:u0|DigitalFilter:digitalfilter_1" File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/simple_struct.v Line: 73
-Info (12128): Elaborating entity "DynamicIllumination4Indicators" for hierarchy "simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0" File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/simple_struct.v Line: 84
+Info (12128): Elaborating entity "simple_struct" for hierarchy "simple_struct:u0" File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/top_level.vhd Line: 54
+Info (12128): Elaborating entity "Count250000" for hierarchy "simple_struct:u0|Count250000:count250000_0" File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/simple_struct.v Line: 50
+Info (12128): Elaborating entity "DataConversionUnit" for hierarchy "simple_struct:u0|DataConversionUnit:dataconversionunit_0" File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/simple_struct.v Line: 58
+Info (12128): Elaborating entity "DigitalFilter" for hierarchy "simple_struct:u0|DigitalFilter:digitalfilter_0" File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/simple_struct.v Line: 66
+Info (12128): Elaborating entity "DigitalFilter" for hierarchy "simple_struct:u0|DigitalFilter:digitalfilter_1" File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/simple_struct.v Line: 74
+Info (12128): Elaborating entity "DynamicIllumination4Indicators" for hierarchy "simple_struct:u0|DynamicIllumination4Indicators:dynamicillumination4indicators_0" File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/simple_struct.v Line: 85
 Warning (10492): VHDL Process Statement warning at dynamicillumination4indicators.vhd(42): signal "enable" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/dynamicillumination4indicators.vhd Line: 42
 Warning (10492): VHDL Process Statement warning at dynamicillumination4indicators.vhd(42): signal "indicator0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/dynamicillumination4indicators.vhd Line: 42
 Warning (10492): VHDL Process Statement warning at dynamicillumination4indicators.vhd(43): signal "enable" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/dynamicillumination4indicators.vhd Line: 43
@@ -932,20 +934,20 @@ Info (10041): Inferred latch for "indicator[0]" at dynamicillumination4indicator
 Info (10041): Inferred latch for "indicator[1]" at dynamicillumination4indicators.vhd(39) File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/dynamicillumination4indicators.vhd Line: 39
 Info (10041): Inferred latch for "indicator[2]" at dynamicillumination4indicators.vhd(39) File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/dynamicillumination4indicators.vhd Line: 39
 Info (10041): Inferred latch for "indicator[3]" at dynamicillumination4indicators.vhd(39) File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/dynamicillumination4indicators.vhd Line: 39
-Info (12128): Elaborating entity "controller" for hierarchy "simple_struct:u0|controller:controller_0" File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/simple_struct.v Line: 106
-Warning (10036): Verilog HDL or VHDL warning at controller.vhd(104): object "RegWrDone" assigned a value but never read File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/controller.vhd Line: 104
-Warning (10492): VHDL Process Statement warning at controller.vhd(217): signal "start_stop" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/controller.vhd Line: 217
+Info (12128): Elaborating entity "controller" for hierarchy "simple_struct:u0|controller:controller_0" File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/simple_struct.v Line: 108
+Warning (10036): Verilog HDL or VHDL warning at controller.vhd(114): object "RegWrDone" assigned a value but never read File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/controller.vhd Line: 114
+Warning (10492): VHDL Process Statement warning at controller.vhd(287): signal "start_stop" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/controller.vhd Line: 287
 Warning (10873): Using initial value X (don't care) for net "uart_tx_data[15..8]" at controller.vhd(14) File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/controller.vhd Line: 14
-Info (12128): Elaborating entity "pgen" for hierarchy "simple_struct:u0|controller:controller_0|pgen:start_gen" File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/controller.vhd Line: 135
-Info (12128): Elaborating entity "i2c_master" for hierarchy "simple_struct:u0|i2c_master:i2c_transcever_0" File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/simple_struct.v Line: 125
-Info (12128): Elaborating entity "usart" for hierarchy "simple_struct:u0|usart:usart_0" File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/simple_struct.v Line: 144
+Info (12128): Elaborating entity "pgen" for hierarchy "simple_struct:u0|controller:controller_0|pgen:start_gen" File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/controller.vhd Line: 145
+Info (12128): Elaborating entity "i2c_master" for hierarchy "simple_struct:u0|i2c_master:i2c_transcever_0" File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/simple_struct.v Line: 127
+Info (12128): Elaborating entity "usart" for hierarchy "simple_struct:u0|usart:usart_0" File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/simple_struct.v Line: 146
 Warning (10631): VHDL Process Statement warning at usart.vhd(121): inferring latch(es) for signal or variable "receive_data", which holds its previous value in one or more paths through the process File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/usart.vhd Line: 121
 Info (10041): Inferred latch for "receive_data[11]" at usart.vhd(121) File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/usart.vhd Line: 121
 Info (10041): Inferred latch for "receive_data[12]" at usart.vhd(121) File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/usart.vhd Line: 121
 Info (10041): Inferred latch for "receive_data[13]" at usart.vhd(121) File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/usart.vhd Line: 121
 Info (10041): Inferred latch for "receive_data[14]" at usart.vhd(121) File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/usart.vhd Line: 121
 Info (10041): Inferred latch for "receive_data[15]" at usart.vhd(121) File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/usart.vhd Line: 121
-Info (12128): Elaborating entity "altera_reset_controller" for hierarchy "simple_struct:u0|altera_reset_controller:rst_controller" File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/simple_struct.v Line: 207
+Info (12128): Elaborating entity "altera_reset_controller" for hierarchy "simple_struct:u0|altera_reset_controller:rst_controller" File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/simple_struct.v Line: 209
 Info (12128): Elaborating entity "altera_reset_synchronizer" for hierarchy "simple_struct:u0|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1" File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/altera_reset_controller.v Line: 208
 Info (12128): Elaborating entity "altera_reset_synchronizer" for hierarchy "simple_struct:u0|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_req_sync_uq1" File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/altera_reset_controller.v Line: 220
 Info (278001): Inferred 2 megafunctions from design logic
@@ -995,20 +997,22 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "seg7_code[7]" is stuck at VCC File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/top_level.vhd Line: 17
 Info (286030): Timing-Driven Synthesis is running
 Critical Warning (18061): Ignored Power-Up Level option on the following registers
-    Critical Warning (18010): Register simple_struct:u0|controller:controller_0|start_stop will power up to Low File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/controller.vhd Line: 123
+    Critical Warning (18010): Register simple_struct:u0|controller:controller_0|start_stop will power up to Low File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/controller.vhd Line: 133
+    Critical Warning (18010): Register simple_struct:u0|controller:controller_0|buzz_mode[1] will power up to High File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/controller.vhd Line: 287
+    Critical Warning (18010): Register simple_struct:u0|controller:controller_0|buzz_mode[0] will power up to High File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/db/ip/simple_struct/submodules/controller.vhd Line: 287
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 2 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "keys_in[2]" File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/top_level.vhd Line: 15
     Warning (15610): No output dependent on input pin "keys_in[3]" File: D:/GITEA/GitHub/ES/pcbteach/19_PD_VHDL/top_level.vhd Line: 15
-Info (21057): Implemented 724 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 794 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 7 input pins
-    Info (21059): Implemented 17 output pins
+    Info (21059): Implemented 18 output pins
     Info (21060): Implemented 2 bidirectional pins
-    Info (21061): Implemented 698 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 25 warnings
-    Info: Peak virtual memory: 4865 megabytes
-    Info: Processing ended: Wed Apr 10 16:35:19 2024
+    Info (21061): Implemented 767 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 27 warnings
+    Info: Peak virtual memory: 4860 megabytes
+    Info: Processing ended: Thu Apr 11 11:17:09 2024
     Info: Elapsed time: 00:00:18
     Info: Total CPU time (on all processors): 00:00:43
 

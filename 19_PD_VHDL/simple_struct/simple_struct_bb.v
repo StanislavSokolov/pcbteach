@@ -15,7 +15,8 @@ module simple_struct (
 	sda_oe,
 	segment_segment,
 	usart_rxd,
-	usart_txd);	
+	usart_txd,
+	buzz_buzz);	
 
 	input		clk_clk;
 	input	[3:0]	enable_enable;
@@ -33,4 +34,5 @@ module simple_struct (
 	output	[6:0]	segment_segment;
 	input		usart_rxd;
 	output		usart_txd;
+	output		buzz_buzz;
 endmodule

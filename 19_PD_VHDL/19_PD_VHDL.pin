@@ -178,7 +178,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : 106       :        :                   :      
 VCCA2                        : 107       : power  :                   : 2.5V    :           :                
 GNDA2                        : 108       : gnd    :                   :         :           :                
 VCCD_PLL2                    : 109       : power  :                   : 1.2V    :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 110       :        :                   :         : 7         :                
+buzz                         : 110       : output : 3.3-V LVTTL       :         : 7         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : 111       :        :                   :         : 7         :                
 SCL                          : 112       : bidir  : 3.3-V LVTTL       :         : 7         : Y              
 SDA                          : 113       : bidir  : 3.3-V LVTTL       :         : 7         : Y              

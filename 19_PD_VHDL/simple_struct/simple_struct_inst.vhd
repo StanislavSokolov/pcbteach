@@ -15,7 +15,8 @@
 			sda_oe                : out std_logic;                                       -- oe
 			segment_segment       : out std_logic_vector(6 downto 0);                    -- segment
 			usart_rxd             : in  std_logic                    := 'X';             -- rxd
-			usart_txd             : out std_logic                                        -- txd
+			usart_txd             : out std_logic;                                       -- txd
+			buzz_buzz             : out std_logic                                        -- buzz
 		);
 	end component simple_struct;
 
@@ -36,6 +37,7 @@
 			sda_oe                => CONNECTED_TO_sda_oe,                --           .oe
 			segment_segment       => CONNECTED_TO_segment_segment,       --    segment.segment
 			usart_rxd             => CONNECTED_TO_usart_rxd,             --      usart.rxd
-			usart_txd             => CONNECTED_TO_usart_txd              --           .txd
+			usart_txd             => CONNECTED_TO_usart_txd,             --           .txd
+			buzz_buzz             => CONNECTED_TO_buzz_buzz              --       buzz.buzz
 		);
 

@@ -14,6 +14,7 @@
 		.sda_oe                (<connected-to-sda_oe>),                //           .oe
 		.segment_segment       (<connected-to-segment_segment>),       //    segment.segment
 		.usart_rxd             (<connected-to-usart_rxd>),             //      usart.rxd
-		.usart_txd             (<connected-to-usart_txd>)              //           .txd
+		.usart_txd             (<connected-to-usart_txd>),             //           .txd
+		.buzz_buzz             (<connected-to-buzz_buzz>)              //       buzz.buzz
 	);
 

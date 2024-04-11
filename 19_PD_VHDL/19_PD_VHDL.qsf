@@ -119,4 +119,6 @@ set_global_assignment -name VHDL_FILE components/controller.vhd
 set_global_assignment -name VHDL_FILE top_level.vhd
 set_global_assignment -name SIGNALTAP_FILE i2c_uart_test.stp
 set_global_assignment -name VHDL_FILE components/DigitalFilter.vhd
+set_location_assignment PIN_110 -to buzz
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to buzz
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

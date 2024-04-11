@@ -14,7 +14,8 @@ entity top_level is
 		SCL			: inout	std_Logic;
 		keys_in : in std_logic_vector( 3 downto 0 );
 		dig_sel : out std_logic_vector( 3 downto 0 );
-		seg7_code : out std_logic_vector( 7 downto 0 )
+		seg7_code : out std_logic_vector( 7 downto 0 );
+		buzz : out std_logic
 	);
 	
 end top_level;
@@ -43,7 +44,8 @@ architecture arch of top_level is
 				indicator_indicator : out std_logic_vector(3 downto 0);
 				indicator2_indicator2  : in std_logic_vector(6 downto 0);
 				indicator3_indicator3  : in std_logic_vector(6 downto 0);
-				segment_segment : out std_logic_vector(6 downto 0)
+				segment_segment : out std_logic_vector(6 downto 0);
+				buzz_buzz : out std_logic
         );
     end component simple_struct;
 
@@ -66,7 +68,8 @@ begin
 				indicator_indicator => dig_sel,
 				enable_enable => x"3",
 				indicator2_indicator2 => (others => '0'),
-				indicator3_indicator3 => (others => '0')
+				indicator3_indicator3 => (others => '0'),
+				buzz_buzz => buzz
         );
 	
 	

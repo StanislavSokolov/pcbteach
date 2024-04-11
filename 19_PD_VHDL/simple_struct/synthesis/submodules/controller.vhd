@@ -30,7 +30,9 @@ entity controller is
 		key1 : in STD_LOGIC;									--start
 		key2 : in STD_LOGIC;									--stop
 		
-		dataToUpdate : out STD_LOGIC_VECTOR(7 DOWNTO 0)
+		dataToUpdate : out STD_LOGIC_VECTOR(7 DOWNTO 0);
+		
+		buzz : out std_logic
 		
 	);
 end controller;
@@ -43,7 +45,10 @@ architecture behave of controller is
 	constant CLK_I2C_HZ			: INTEGER := 100_000;
 	
 	CONSTANT wait_500ms  		: INTEGER := CLK_FREQ_HZ / 2;  
-	CONSTANT wait_5ms			: INTEGER := CLK_FREQ_HZ / 200;
+	--CONSTANT wait_5ms			: INTEGER := CLK_FREQ_HZ / 200;
+	
+	CONSTANT wait_05ms  		: INTEGER := CLK_FREQ_HZ / 25000; -- 1000 Hz
+	CONSTANT wait_1ms  		: INTEGER := CLK_FREQ_HZ / 50000; -- 500 Hz
 	
 	constant I2C_SLAVE_ADDR 	: STD_LOGIC_VECTOR( 6 DOWNTO 0 ) := "1001000";
 	constant TEMPER_REG_ADDR	: STD_LOGIC_VECTOR( 7 DOWNTO 0 ) := x"00";
@@ -73,13 +78,18 @@ architecture behave of controller is
 	SIGNAL dv_cnt 				: integer range 0 to 2;
 	SIGNAL symbol_counter  		: integer range 0 to 3;
 	
-	signal cnt_100Hz   			: integer range 0 to wait_5ms;
-	signal clk_100Hz			: std_logic;
-	signal btn_cnt              : integer range 0 to 4;
+--	signal cnt_100Hz   			: integer range 0 to wait_5ms;
+--	signal clk_100Hz			: std_logic;
+--	signal btn_cnt              : integer range 0 to 4;
+
+	signal cnt_500Hz   			: integer range 0 to wait_1ms;
+	signal clk_500Hz			: std_logic;
 	
-	
-	
-	
+	signal cnt_1000Hz   			: integer range 0 to wait_05ms;
+	signal clk_1000Hz			: std_logic;
+
+	signal cnt_05Hz   			: integer range 0 to CLK_FREQ_HZ;
+	signal clk_05Hz			: std_logic;	
 	
 	type FSM_State	is 	( IDLE, READ_TEMPER, UPDATE_IND, SEND_TEMPER, SEND_LIMIT );
 	signal PresState : FSM_State;
@@ -121,8 +131,8 @@ architecture behave of controller is
 	SIGNAL key1Prev : STD_LOGIC := '0';
 	SIGNAL key2Prev : STD_LOGIC := '0';
 	SIGNAL start_stop : STD_LOGIC := '1';
-	SIGNAL led : STD_LOGIC := '1';
-	SIGNAL led1 : STD_LOGIC := '1';
+	
+	SIGNAL buzz_mode : STD_LOGIC_VECTOR(1 DOWNTO 0) := b"00";
 	
 	
 	SIGNAL cmdLimit : STD_LOGIC := '0';
@@ -168,8 +178,52 @@ begin
 			key1Prev <= key1;
 			key2Prev <= key2;				
 		end if;
-	end process;
+	end process;	
 	
+	gen_05Hz: process( reset_n, clk )
+	begin
+		if reset_n = '0' then
+			cnt_05Hz 	<= 0;
+			clk_05Hz		<= '0';
+		elsif rising_edge( clk ) then
+			if cnt_05Hz < CLK_FREQ_HZ then
+				cnt_05Hz <= cnt_05Hz + 1;
+			else	
+				cnt_05Hz <= 0;
+				clk_05Hz <= NOT clk_05Hz;
+			end if;
+		end if;
+	end process;
+
+	gen_500Hz: process( reset_n, clk )
+	begin
+		if reset_n = '0' then
+			cnt_500Hz 	<= 0;
+			clk_500Hz		<= '0';
+		elsif rising_edge( clk ) then
+			if cnt_500Hz < wait_1ms then
+				cnt_500Hz <= cnt_500Hz + 1;
+			else	
+				cnt_500Hz <= 0;
+				clk_500Hz <= NOT clk_500Hz;
+			end if;
+		end if;
+	end process;
+
+	gen_1000Hz: process( reset_n, clk )
+	begin
+		if reset_n = '0' then
+			cnt_1000Hz 	<= 0;
+			clk_1000Hz		<= '0';
+		elsif rising_edge( clk ) then
+			if cnt_1000Hz < wait_05ms then
+				cnt_1000Hz <= cnt_1000Hz + 1;
+			else	
+				cnt_1000Hz <= 0;
+				clk_1000Hz <= NOT clk_1000Hz;
+			end if;
+		end if;
+	end process;	
 	
 	gen_1Hz: process( reset_n, clk )
 	begin
@@ -183,6 +237,22 @@ begin
 				count_1Hz <= 0;
 				clk_1Hz <= NOT clk_1Hz;
 			end if;
+		end if;
+	end process;
+	
+	work_buzz: process( reset_n, clk )
+	begin
+		if reset_n = '0' then
+			buzz <= '0';
+		elsif rising_edge( clk ) then
+			case buzz_mode is
+				when b"01" =>
+					buzz <= clk_05Hz and clk_500Hz;
+				when b"10" => 
+					buzz <= clk_05Hz and clk_1000Hz; 	
+				when others =>
+					buzz <= '0';
+			end case;				
 		end if;
 	end process;
 	
@@ -218,7 +288,7 @@ begin
 			PresState <= IDLE;
 			show_cnt 	:= 0;
 			Temper		 <= ( others => '0' );
-			
+			buzz_mode <= b"11";
 			uart_tx_dv 		<= '0';
 		elsif rising_edge( clk ) then
 		
@@ -248,13 +318,16 @@ begin
 							IF Temper < Temper_Limit_Low THEN
 								CMD <= x"F1";							-- превышен нижний порог
 								leds <= b"1110";
+								buzz_mode <= b"01";
 							ELSE 
 								IF Temper >	Temper_Limit_High THEN
 									CMD <= x"F2";						-- превышен верхний порог
 									leds <= b"0111";
+									buzz_mode <= b"10";
 								ELSE
 									CMD <= x"F0";						-- темпреатура в норме
 									leds <= b"1001";
+									buzz_mode <= b"00";
 								END IF;
 							END IF;
 						ELSE

@@ -4,6 +4,7 @@
 
 `timescale 1 ps / 1 ps
 module simple_struct (
+		output wire       buzz_buzz,             //       buzz.buzz
 		input  wire       clk_clk,               //        clk.clk
 		input  wire [3:0] enable_enable,         //     enable.enable
 		output wire [3:0] indicator_indicator,   //  indicator.indicator
@@ -102,7 +103,8 @@ module simple_struct (
 		.leds          (leds_leds),                       //         leds.leds
 		.dataToUpdate  (controller_0_datatoupdate_data),  // dataToUpdate.data
 		.key1          (digitalfilter_0_output0_key),     //         key1.key
-		.key2          (digitalfilter_1_output0_key)      //         key2.key
+		.key2          (digitalfilter_1_output0_key),     //         key2.key
+		.buzz          (buzz_buzz)                        //         buzz.buzz
 	);
 
 	i2c_master #(

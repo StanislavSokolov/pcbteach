@@ -60,6 +60,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "buzz",
+					"strict" : false
+				},
+				{
 					"name" : "SDA",
 					"strict" : false
 				},

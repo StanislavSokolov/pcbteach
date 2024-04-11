@@ -8,6 +8,7 @@ use IEEE.numeric_std.all;
 
 entity simple_struct is
 	port (
+		buzz_buzz             : out std_logic;                                       --       buzz.buzz
 		clk_clk               : in  std_logic                    := '0';             --        clk.clk
 		enable_enable         : in  std_logic_vector(3 downto 0) := (others => '0'); --     enable.enable
 		indicator_indicator   : out std_logic_vector(3 downto 0);                    --  indicator.indicator
@@ -89,7 +90,8 @@ architecture rtl of simple_struct is
 			leds          : out   std_logic_vector(3 downto 0);                     -- leds
 			dataToUpdate  : out   std_logic_vector(7 downto 0);                     -- data
 			key1          : in    std_logic                     := 'X';             -- key
-			key2          : in    std_logic                     := 'X'              -- key
+			key2          : in    std_logic                     := 'X';             -- key
+			buzz          : out   std_logic                                         -- buzz
 		);
 	end component controller;
 
@@ -295,7 +297,8 @@ begin
 			leds          => leds_leds,                                --         leds.leds
 			dataToUpdate  => controller_0_datatoupdate_data,           -- dataToUpdate.data
 			key1          => digitalfilter_0_output0_key,              --         key1.key
-			key2          => digitalfilter_1_output0_key               --         key2.key
+			key2          => digitalfilter_1_output0_key,              --         key2.key
+			buzz          => buzz_buzz                                 --         buzz.buzz
 		);
 
 	i2c_transcever_0 : component i2c_master

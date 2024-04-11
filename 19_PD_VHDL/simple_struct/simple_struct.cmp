@@ -1,5 +1,6 @@
 	component simple_struct is
 		port (
+			buzz_buzz             : out std_logic;                                       -- buzz
 			clk_clk               : in  std_logic                    := 'X';             -- clk
 			enable_enable         : in  std_logic_vector(3 downto 0) := (others => 'X'); -- enable
 			indicator_indicator   : out std_logic_vector(3 downto 0);                    -- indicator
