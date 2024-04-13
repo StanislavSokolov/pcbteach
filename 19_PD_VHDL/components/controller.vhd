@@ -268,9 +268,13 @@ begin
 					byteCount := 1;
 				else
 					if cmdLimit = '0' then
-						Temper_Limit_Low <= uart_rx_data(7 downto 0);
-					else 
-						Temper_Limit_High <= uart_rx_data(7 downto 0);
+						if uart_rx_data(7 downto 0) <= Temper_Limit_High then
+							Temper_Limit_Low <= uart_rx_data(7 downto 0);
+						end if;
+					else
+						if uart_rx_data(7 downto 0) => Temper_Limit_Low;
+							Temper_Limit_High <= uart_rx_data(7 downto 0);
+						end if;	
 					end if;
 					byteCount := 0;
 				end if;		

@@ -47,8 +47,8 @@ architecture behave of controller is
 	CONSTANT wait_500ms  		: INTEGER := CLK_FREQ_HZ / 2;  
 	--CONSTANT wait_5ms			: INTEGER := CLK_FREQ_HZ / 200;
 	
-	CONSTANT wait_05ms  		: INTEGER := CLK_FREQ_HZ / 25000; -- 1000 Hz
-	CONSTANT wait_1ms  		: INTEGER := CLK_FREQ_HZ / 50000; -- 500 Hz
+	CONSTANT wait_05ms  		: INTEGER := CLK_FREQ_HZ / 2000; -- 1000 Hz
+	CONSTANT wait_1ms  		: INTEGER := CLK_FREQ_HZ / 1000; -- 500 Hz
 	
 	constant I2C_SLAVE_ADDR 	: STD_LOGIC_VECTOR( 6 DOWNTO 0 ) := "1001000";
 	constant TEMPER_REG_ADDR	: STD_LOGIC_VECTOR( 7 DOWNTO 0 ) := x"00";
@@ -268,9 +268,13 @@ begin
 					byteCount := 1;
 				else
 					if cmdLimit = '0' then
-						Temper_Limit_Low <= uart_rx_data(7 downto 0);
-					else 
-						Temper_Limit_High <= uart_rx_data(7 downto 0);
+						if uart_rx_data(7 downto 0) <= Temper_Limit_High then
+							Temper_Limit_Low <= uart_rx_data(7 downto 0);
+						end if;
+					else
+						if uart_rx_data(7 downto 0) => Temper_Limit_High;
+							Temper_Limit_High <= uart_rx_data(7 downto 0);
+						end if;	
 					end if;
 					byteCount := 0;
 				end if;		
